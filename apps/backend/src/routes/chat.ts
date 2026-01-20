@@ -130,7 +130,7 @@ router.post('/', chatRateLimiter, piiFilter, async (req: Request, res: Response)
           { role: 'system', content: SYSTEM_PROMPT },
           ...conversationHistory,
         ],
-        max_tokens: 1000,
+        max_completion_tokens: 1000,
         temperature: 0.7,
       });
 
