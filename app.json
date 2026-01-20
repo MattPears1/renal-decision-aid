@@ -1,0 +1,26 @@
+{
+  "name": "NHS Renal Decision Aid",
+  "description": "NHS Multilingual Renal Patient Decision Support Tool",
+  "repository": "https://github.com/USERNAME/renal-decision-aid",
+  "keywords": ["nhs", "kidney", "renal", "patient-education", "decision-aid"],
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment mode",
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Install devDependencies for build",
+      "value": "false"
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for chat functionality (optional)",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-24"
+}

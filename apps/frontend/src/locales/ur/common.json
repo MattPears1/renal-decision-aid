@@ -93,11 +93,10 @@
     },
     "trustAriaLabel": "اعتماد اور حفاظت کی معلومات",
     "trust": {
-      "nhsApproved": "این ایچ ایس منظور شدہ مواد",
+      "evidenceBased": "[EN] Evidence-based information",
       "languages": "7 زبانوں میں دستیاب",
       "accessible": "تمام صارفین کے لیے قابل رسائی",
-      "noAccount": "اکاؤنٹ کی ضرورت نہیں",
-      "evidenceBased": "[EN] Evidence-based information"
+      "noAccount": "اکاؤنٹ کی ضرورت نہیں"
     },
     "ctaHeading": "شروع کرنے کے لیے تیار ہیں؟",
     "ctaDescription": "اپنے گردے کے علاج کے اختیارات کو سمجھنے کی طرف پہلا قدم اٹھائیں۔ ابھی شروع کر سکتے ہیں اور بعد میں واپس آ سکتے ہیں اگر وقفے کی ضرورت ہو۔"
@@ -107,13 +106,6 @@
     "instruction": "براہ کرم اپنی پسندیدہ زبان منتخب کریں۔ آپ اسے کسی بھی وقت تبدیل کر سکتے ہیں۔",
     "selectLanguage": "زبان منتخب کریں",
     "currentLanguage": "موجودہ زبان"
-  },
-  "header": {
-    "nhs": "NHS",
-    "demo": "[EN] Demo",
-    "serviceName": "[EN] Kidney Treatment Decision Aid",
-    "tagline": "[EN] Helping you make informed choices",
-    "homeAriaLabel": "[EN] NHS Kidney Treatment Decision Aid - Home"
   },
   "privacy": {
     "pageAriaLabel": "رازداری کی معلومات",
@@ -173,6 +165,13 @@
     "continueButton": "میں سمجھتا ہوں، جاری رکھیں",
     "continueAriaLabel": "سفر کے مرحلے کے انتخاب پر جائیں",
     "readFullPolicy": "مکمل این ایچ ایس رازداری پالیسی پڑھیں"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "[EN] Demo",
+    "serviceName": "[EN] Kidney Treatment Decision Aid",
+    "tagline": "[EN] Helping you make informed choices",
+    "homeAriaLabel": "[EN] NHS Kidney Treatment Decision Aid - Home"
   },
   "progress": {
     "language": "زبان",
@@ -541,7 +540,8 @@
       "dailyLife": "[EN] Daily Life Impact",
       "practical": "[EN] Practical Considerations",
       "medical": "[EN] Medical Factors",
-      "support": "[EN] Support Requirements"
+      "support": "[EN] Support Requirements",
+      "health": "[EN] Health Outcomes"
     },
     "criteria": {
       "timeCommitment": "[EN] Time commitment per week",
@@ -559,7 +559,17 @@
       "recoveryTime": "[EN] Recovery time",
       "recoveryTimeHint": "[EN] Time to adjust to treatment",
       "longTermOutlook": "[EN] Long-term outlook",
-      "longTermOutlookHint": "[EN] Expected outcomes over time"
+      "longTermOutlookHint": "[EN] Expected outcomes over time",
+      "scheduleFlexibility": "[EN] Schedule flexibility",
+      "scheduleFlexibilityHint": "[EN] Control over your schedule",
+      "trainingRequired": "[EN] Training required",
+      "trainingRequiredHint": "[EN] Learning time needed",
+      "survivalRates": "[EN] Survival rates",
+      "survivalRatesHint": "[EN] General outcomes (varies by person)",
+      "qualityOfLife": "[EN] Quality of life",
+      "qualityOfLifeHint": "[EN] Overall wellbeing",
+      "energyLevels": "[EN] Energy levels",
+      "energyLevelsHint": "[EN] Typical energy and fatigue"
     },
     "values": {
       "minimalAfterRecovery": "[EN] Minimal after recovery",
@@ -598,7 +608,48 @@
       "minorProcedure": "[EN] Minor procedure",
       "pdCatheterInsertion": "[EN] PD catheter insertion",
       "noneRequired": "[EN] None required",
-      "noSurgicalProcedures": "[EN] No surgical procedures"
+      "noSurgicalProcedures": "[EN] No surgical procedures",
+      "initialSupport": "[EN] Initial support",
+      "duringRecoveryPeriod": "[EN] During recovery period",
+      "noneNeeded": "[EN] None needed",
+      "professionalStaffProvideCare": "[EN] Professional staff provide care",
+      "canDoIndependently": "[EN] Can do independently",
+      "varies": "[EN] Varies",
+      "dependsOnSymptoms": "[EN] Depends on symptoms",
+      "high": "[EN] High",
+      "normalDailyLifePossible": "[EN] Normal daily life possible",
+      "low": "[EN] Low",
+      "fixedHospitalSlots": "[EN] Fixed hospital slots",
+      "chooseYourSchedule": "[EN] Choose your schedule",
+      "noFixedSchedule": "[EN] No fixed schedule",
+      "medicationTraining": "[EN] Medication training",
+      "learningYourNewRoutine": "[EN] Learning your new routine",
+      "staffDoEverything": "[EN] Staff do everything",
+      "oneToTwoWeeksTraining": "[EN] 1-2 weeks training",
+      "learnTheTechnique": "[EN] Learn the technique",
+      "symptomManagement": "[EN] Symptom management",
+      "medicationGuidance": "[EN] Medication guidance",
+      "bestOutcomes": "[EN] Best outcomes",
+      "forSuitableCandidates": "[EN] For suitable candidates",
+      "good": "[EN] Good",
+      "wellEstablishedTreatment": "[EN] Well-established treatment",
+      "similarToHaemodialysis": "[EN] Similar to haemodialysis",
+      "qualityFocused": "[EN] Quality focused",
+      "comfortOverLongevity": "[EN] Comfort over longevity",
+      "excellent": "[EN] Excellent",
+      "nearNormalLifePossible": "[EN] Near-normal life possible",
+      "moderate": "[EN] Moderate",
+      "treatmentAffectsDailyRoutine": "[EN] Treatment affects daily routine",
+      "moreIndependence": "[EN] More independence",
+      "focusOnComfort": "[EN] Focus on comfort",
+      "symptomManagementPriority": "[EN] Symptom management priority",
+      "oftenExcellent": "[EN] Often excellent",
+      "energyRestored": "[EN] Energy restored",
+      "variable": "[EN] Variable",
+      "fatigueAfterSessions": "[EN] Fatigue after sessions",
+      "generallyGood": "[EN] Generally good",
+      "steadyEnergyLevels": "[EN] Steady energy levels",
+      "managedWithSupport": "[EN] Managed with support"
     },
     "legend": {
       "title": "[EN] Rating Guide",
@@ -606,7 +657,12 @@
       "good": "[EN] Good",
       "moderate": "[EN] Moderate",
       "challenging": "[EN] Challenging",
-      "varies": "[EN] Varies"
+      "varies": "[EN] Varies",
+      "excellentDesc": "[EN] Excellent - Generally very favourable",
+      "goodDesc": "[EN] Good - Generally favourable",
+      "moderateDesc": "[EN] Moderate - Some limitations to consider",
+      "challengingDesc": "[EN] Challenging - Significant considerations",
+      "variesDesc": "[EN] Varies - Depends on individual circumstances"
     },
     "viewDetails": "[EN] View details",
     "backToHub": "[EN] Back to Hub",
@@ -662,8 +718,6 @@
     "statementsRemaining_one": "[EN] {{count}} statement remaining",
     "statementsRemaining_other": "[EN] {{count}} statements remaining",
     "completed": "[EN] Completed",
-    "defaultHint": "[EN] Rate how important this is to you from 1 (Not important) to 5 (Very important)",
-    "listenStatement": "[EN] Listen to this statement",
     "intro": {
       "title": "آپ کے لیے سب سے زیادہ کیا اہم ہے؟",
       "description": "گردے کا علاج منتخب کرنا ایک ذاتی فیصلہ ہے۔ یہ مشق آپ کو اپنی اقدار اور ترجیحات کے بارے میں سوچنے میں مدد کرتی ہے۔",
@@ -679,6 +733,8 @@
       "statement": "بیان",
       "of": "میں سے"
     },
+    "defaultHint": "[EN] Rate how important this is to you from 1 (Not important) to 5 (Very important)",
+    "listenStatement": "[EN] Listen to this statement",
     "nav": {
       "back": "واپس",
       "skip": "چھوڑیں",
@@ -824,10 +880,10 @@
     "learnMore": "علاج کے اختیارات کے بارے میں مزید جانیں",
     "exploreTreatments": "علاج دریافت کریں",
     "compareTreatments": "علاج کا موازنہ کریں",
+    "continueJourney": "علاج کے اختیارات دریافت کرکے اپنا سفر جاری رکھیں",
     "loading": "3D ماڈل لوڈ ہو رہا ہے...",
     "interactiveTool": "انٹرایکٹو سیکھنے کا آلہ",
     "interactive3DModel": "انٹرایکٹو 3D ماڈل",
-    "continueJourney": "علاج کے اختیارات دریافت کرکے اپنا سفر جاری رکھیں",
     "anatomy": {
       "kidney": {
         "label": "گردہ",
@@ -902,16 +958,16 @@
     },
     "printForAppointment": "[EN] Print for Your Appointment",
     "askMore": "[EN] Have more questions?",
-    "shareTitle": "NHS گردے کے علاج کا خلاصہ",
-    "shareText": "میرے گردے کے علاج کے فیصلے کا خلاصہ",
-    "readyForAppointment": "اپنی اگلی ملاقات کے لیے تیار ہیں؟",
-    "printInstructions": "اپنی گردے کی دیکھ بھال کی ٹیم کے پاس لے جانے کے لیے اس خلاصے کو پرنٹ کریں",
     "printHeader": {
       "title": "NHS گردے کے علاج کا فیصلہ ساز آلہ",
       "subtitle": "آپ کا ذاتی سیشن خلاصہ",
       "dateLabel": "تاریخ: {{date}}",
       "footer": "[EN] Generated by NHS Kidney Treatment Decision Aid - {{date}} - This document is for discussion with your healthcare team only"
     },
+    "shareTitle": "NHS گردے کے علاج کا خلاصہ",
+    "shareText": "میرے گردے کے علاج کے فیصلے کا خلاصہ",
+    "readyForAppointment": "اپنی اگلی ملاقات کے لیے تیار ہیں؟",
+    "printInstructions": "اپنی گردے کی دیکھ بھال کی ٹیم کے پاس لے جانے کے لیے اس خلاصے کو پرنٹ کریں",
     "journeyStages": {
       "newly-diagnosed": "[EN] Newly Diagnosed",
       "monitoring": "[EN] Being Monitored",
@@ -948,7 +1004,7 @@
     }
   },
   "session": {
-    "timeRemaining": "باقی وقت: {{minutes}} منٹ",
+    "timeRemaining": "[EN] Time remaining: {{minutes}}",
     "sessionExpiring": "آپ کا سیشن جلد ختم ہو جائے گا۔ کیا آپ جاری رکھنا چاہیں گے؟",
     "expiringMessage": "[EN] Your session will expire in {{minutes}} minutes. Would you like to continue?",
     "extendSession": "سیشن بڑھائیں",

@@ -540,7 +540,8 @@
       "dailyLife": "दैनिक जीवन पर प्रभाव",
       "practical": "व्यावहारिक विचार",
       "medical": "चिकित्सा कारक",
-      "support": "सहायता आवश्यकताएं"
+      "support": "सहायता आवश्यकताएं",
+      "health": "[EN] Health Outcomes"
     },
     "criteria": {
       "timeCommitment": "साप्ताहिक समय प्रतिबद्धता",
@@ -558,7 +559,17 @@
       "recoveryTime": "ठीक होने का समय",
       "recoveryTimeHint": "उपचार के अनुकूल होने का समय",
       "longTermOutlook": "दीर्घकालिक दृष्टिकोण",
-      "longTermOutlookHint": "समय के साथ अपेक्षित परिणाम"
+      "longTermOutlookHint": "समय के साथ अपेक्षित परिणाम",
+      "scheduleFlexibility": "[EN] Schedule flexibility",
+      "scheduleFlexibilityHint": "[EN] Control over your schedule",
+      "trainingRequired": "[EN] Training required",
+      "trainingRequiredHint": "[EN] Learning time needed",
+      "survivalRates": "[EN] Survival rates",
+      "survivalRatesHint": "[EN] General outcomes (varies by person)",
+      "qualityOfLife": "[EN] Quality of life",
+      "qualityOfLifeHint": "[EN] Overall wellbeing",
+      "energyLevels": "[EN] Energy levels",
+      "energyLevelsHint": "[EN] Typical energy and fatigue"
     },
     "values": {
       "minimalAfterRecovery": "ठीक होने के बाद न्यूनतम",
@@ -597,7 +608,48 @@
       "minorProcedure": "छोटी प्रक्रिया",
       "pdCatheterInsertion": "पीडी कैथेटर डालना",
       "noneRequired": "आवश्यकता नहीं",
-      "noSurgicalProcedures": "कोई सर्जिकल प्रक्रिया नहीं"
+      "noSurgicalProcedures": "कोई सर्जिकल प्रक्रिया नहीं",
+      "initialSupport": "[EN] Initial support",
+      "duringRecoveryPeriod": "[EN] During recovery period",
+      "noneNeeded": "[EN] None needed",
+      "professionalStaffProvideCare": "[EN] Professional staff provide care",
+      "canDoIndependently": "[EN] Can do independently",
+      "varies": "[EN] Varies",
+      "dependsOnSymptoms": "[EN] Depends on symptoms",
+      "high": "[EN] High",
+      "normalDailyLifePossible": "[EN] Normal daily life possible",
+      "low": "[EN] Low",
+      "fixedHospitalSlots": "[EN] Fixed hospital slots",
+      "chooseYourSchedule": "[EN] Choose your schedule",
+      "noFixedSchedule": "[EN] No fixed schedule",
+      "medicationTraining": "[EN] Medication training",
+      "learningYourNewRoutine": "[EN] Learning your new routine",
+      "staffDoEverything": "[EN] Staff do everything",
+      "oneToTwoWeeksTraining": "[EN] 1-2 weeks training",
+      "learnTheTechnique": "[EN] Learn the technique",
+      "symptomManagement": "[EN] Symptom management",
+      "medicationGuidance": "[EN] Medication guidance",
+      "bestOutcomes": "[EN] Best outcomes",
+      "forSuitableCandidates": "[EN] For suitable candidates",
+      "good": "[EN] Good",
+      "wellEstablishedTreatment": "[EN] Well-established treatment",
+      "similarToHaemodialysis": "[EN] Similar to haemodialysis",
+      "qualityFocused": "[EN] Quality focused",
+      "comfortOverLongevity": "[EN] Comfort over longevity",
+      "excellent": "[EN] Excellent",
+      "nearNormalLifePossible": "[EN] Near-normal life possible",
+      "moderate": "[EN] Moderate",
+      "treatmentAffectsDailyRoutine": "[EN] Treatment affects daily routine",
+      "moreIndependence": "[EN] More independence",
+      "focusOnComfort": "[EN] Focus on comfort",
+      "symptomManagementPriority": "[EN] Symptom management priority",
+      "oftenExcellent": "[EN] Often excellent",
+      "energyRestored": "[EN] Energy restored",
+      "variable": "[EN] Variable",
+      "fatigueAfterSessions": "[EN] Fatigue after sessions",
+      "generallyGood": "[EN] Generally good",
+      "steadyEnergyLevels": "[EN] Steady energy levels",
+      "managedWithSupport": "[EN] Managed with support"
     },
     "legend": {
       "title": "रेटिंग गाइड",
@@ -605,7 +657,12 @@
       "good": "अच्छा",
       "moderate": "मध्यम",
       "challenging": "चुनौतीपूर्ण",
-      "varies": "भिन्न होता है"
+      "varies": "भिन्न होता है",
+      "excellentDesc": "[EN] Excellent - Generally very favourable",
+      "goodDesc": "[EN] Good - Generally favourable",
+      "moderateDesc": "[EN] Moderate - Some limitations to consider",
+      "challengingDesc": "[EN] Challenging - Significant considerations",
+      "variesDesc": "[EN] Varies - Depends on individual circumstances"
     },
     "viewDetails": "विवरण देखें",
     "backToHub": "हब पर वापस",
@@ -759,12 +816,46 @@
       }
     },
     "statements": {
-      "independence": "मेरी स्वतंत्रता और दैनिक दिनचर्या बनाए रखना",
-      "hospitalTime": "अस्पताल में बिताए समय को कम करना",
-      "familyBurden": "अपने परिवार पर बोझ नहीं बनना",
-      "longevity": "जितना संभव हो उतना लंबा जीना",
-      "qualityOfLife": "जीवन की लंबाई से अधिक जीवन की गुणवत्ता",
-      "naturalApproach": "अधिक प्राकृतिक दृष्टिकोण अपनाना"
+      "travel": {
+        "statement": "[EN] Being able to travel is important to me",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "hospital-time": {
+        "statement": "[EN] I want to minimise time spent in hospital",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "needles": {
+        "statement": "[EN] I am comfortable with needles and medical procedures",
+        "hint": "[EN] Rate how much you agree with this statement"
+      },
+      "independence": {
+        "statement": "[EN] Maintaining my independence is very important to me",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "family-burden": {
+        "statement": "[EN] I want to avoid being a burden on my family",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "longevity": {
+        "statement": "[EN] Living as long as possible is my priority",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "quality-of-life": {
+        "statement": "[EN] Quality of life matters more than length of life",
+        "hint": "[EN] Rate how much you agree with this statement"
+      },
+      "home-treatment": {
+        "statement": "[EN] I would prefer to have treatment at home",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "work-activities": {
+        "statement": "[EN] Continuing to work or do my usual activities is important",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "professional-care": {
+        "statement": "[EN] I would rather have professionals take care of my treatment",
+        "hint": "[EN] Rate how much you agree with this statement"
+      }
     }
   },
   "modelViewer": {
