@@ -25,22 +25,9 @@ const corsOptions: cors.CorsOptions = {
   maxAge: 86400, // 24 hours
 };
 
-// Security middleware - more permissive CSP for production SPA
+// Security middleware - disable CSP for WebGL/Three.js compatibility
 app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
-      connectSrc: ["'self'", 'https://api.openai.com'],
-      fontSrc: ["'self'", 'data:'],
-      objectSrc: ["'none'"],
-      mediaSrc: ["'self'", 'blob:'],
-      frameSrc: ["'none'"],
-      workerSrc: ["'self'", 'blob:'],
-    },
-  },
+  contentSecurityPolicy: false,
   crossOriginEmbedderPolicy: false,
 }));
 
