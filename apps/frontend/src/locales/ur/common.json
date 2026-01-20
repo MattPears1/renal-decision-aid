@@ -302,6 +302,9 @@
     "audio": {
       "listen": "یہ سوال سنیں"
     },
+    "slider": {
+      "ariaLabel": "{{min}} سے {{max}} تک کی قدر"
+    },
     "skipQuestion": "یہ سوال چھوڑیں",
     "viewResults": "میرے نتائج دیکھیں",
     "nextQuestion": "اگلا سوال"
@@ -385,6 +388,7 @@
   "treatments": {
     "title": "اپنے علاج کے اختیارات کو سمجھیں",
     "subtitle": "گردے کی ناکامی کے علاج کے مختلف طریقے ہیں۔ ہر ایک کے فوائد اور غور طلب باتیں ہیں۔",
+    "detailedInfoAriaLabel": "{{treatment}} تفصیلی معلومات",
     "facts": {
       "transplant": {
         "survival": "طویل مدتی بقا کے بہترین نتائج",

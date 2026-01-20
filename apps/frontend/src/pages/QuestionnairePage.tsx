@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
 
-interface QuestionOption {
+interface QuestionOptionKey {
   value: string;
-  label: string;
-  description?: string;
+  labelKey: string;
+  descriptionKey?: string;
 }
 
 interface Question {
@@ -14,8 +14,8 @@ interface Question {
   type: 'slider' | 'radio' | 'checkbox';
   questionKey: string;
   hintKey?: string;
-  options?: QuestionOption[];
-  sliderLabels?: string[];
+  optionKeys?: QuestionOptionKey[];
+  sliderLabelKeys?: string[];
   min?: number;
   max?: number;
   maxSelections?: number;
@@ -29,12 +29,12 @@ const QUESTIONS: Question[] = [
     hintKey: 'questionnaire.questions.knowledge.hint',
     min: 1,
     max: 5,
-    sliderLabels: [
-      'I know very little',
-      'I know a little',
-      'I know some things',
-      'I know quite a lot',
-      'I am well informed',
+    sliderLabelKeys: [
+      'questionnaire.knowledge.levels.1',
+      'questionnaire.knowledge.levels.2',
+      'questionnaire.knowledge.levels.3',
+      'questionnaire.knowledge.levels.4',
+      'questionnaire.knowledge.levels.5',
     ],
   },
   {
@@ -42,12 +42,12 @@ const QUESTIONS: Question[] = [
     type: 'radio',
     questionKey: 'questionnaire.questions.goal.title',
     hintKey: 'questionnaire.questions.goal.hint',
-    options: [
-      { value: 'learn-basics', label: 'Learn the basics about kidney treatment', description: 'I want a general understanding of what my options are' },
-      { value: 'compare-options', label: 'Compare different treatment options', description: 'I want to understand how treatments differ from each other' },
-      { value: 'prepare-discussion', label: 'Prepare for a discussion with my kidney team', description: 'I want to be ready with questions and understand what to ask' },
-      { value: 'support-someone', label: 'Support a family member or friend', description: 'I want to help someone I care about understand their options' },
-      { value: 'not-sure', label: 'I am not sure yet', description: 'I would like to explore and see what might be helpful' },
+    optionKeys: [
+      { value: 'learn-basics', labelKey: 'questionnaire.goal.options.learnBasics.label', descriptionKey: 'questionnaire.goal.options.learnBasics.description' },
+      { value: 'compare-options', labelKey: 'questionnaire.goal.options.compare.label', descriptionKey: 'questionnaire.goal.options.compare.description' },
+      { value: 'prepare-discussion', labelKey: 'questionnaire.goal.options.prepare.label', descriptionKey: 'questionnaire.goal.options.prepare.description' },
+      { value: 'support-someone', labelKey: 'questionnaire.goal.options.support.label', descriptionKey: 'questionnaire.goal.options.support.description' },
+      { value: 'not-sure', labelKey: 'questionnaire.goal.options.notSure.label', descriptionKey: 'questionnaire.goal.options.notSure.description' },
     ],
   },
   {
@@ -55,12 +55,12 @@ const QUESTIONS: Question[] = [
     type: 'checkbox',
     questionKey: 'questionnaire.questions.learning.title',
     hintKey: 'questionnaire.questions.learning.hint',
-    options: [
-      { value: 'visual', label: 'Pictures and diagrams', description: 'I understand things better when I can see them illustrated' },
-      { value: 'audio', label: 'Listening to explanations', description: 'I prefer to hear information spoken aloud' },
-      { value: 'reading', label: 'Reading text at my own pace', description: 'I like to read and re-read information carefully' },
-      { value: 'video', label: 'Watching videos', description: 'I learn well from video demonstrations and stories' },
-      { value: 'interactive', label: 'Interactive activities', description: 'I learn by doing, exploring, and trying things out' },
+    optionKeys: [
+      { value: 'visual', labelKey: 'questionnaire.learning.options.visual.label', descriptionKey: 'questionnaire.learning.options.visual.description' },
+      { value: 'audio', labelKey: 'questionnaire.learning.options.audio.label', descriptionKey: 'questionnaire.learning.options.audio.description' },
+      { value: 'reading', labelKey: 'questionnaire.learning.options.reading.label', descriptionKey: 'questionnaire.learning.options.reading.description' },
+      { value: 'video', labelKey: 'questionnaire.learning.options.video.label', descriptionKey: 'questionnaire.learning.options.video.description' },
+      { value: 'interactive', labelKey: 'questionnaire.learning.options.interactive.label', descriptionKey: 'questionnaire.learning.options.interactive.description' },
     ],
   },
   {
@@ -70,12 +70,12 @@ const QUESTIONS: Question[] = [
     hintKey: 'questionnaire.questions.comfort.hint',
     min: 1,
     max: 5,
-    sliderLabels: [
-      'Very anxious',
-      'Somewhat anxious',
-      'Neutral',
-      'Fairly comfortable',
-      'Very comfortable',
+    sliderLabelKeys: [
+      'questionnaire.comfort.levels.1',
+      'questionnaire.comfort.levels.2',
+      'questionnaire.comfort.levels.3',
+      'questionnaire.comfort.levels.4',
+      'questionnaire.comfort.levels.5',
     ],
   },
   {
@@ -83,12 +83,12 @@ const QUESTIONS: Question[] = [
     type: 'radio',
     questionKey: 'questionnaire.questions.support.title',
     hintKey: 'questionnaire.questions.support.hint',
-    options: [
-      { value: 'family-partner', label: 'Yes, I live with family or a partner who can help' },
-      { value: 'carers', label: 'Yes, I have carers who visit regularly' },
-      { value: 'family-nearby', label: 'I live alone but have family nearby' },
-      { value: 'limited-support', label: 'I live alone with limited support' },
-      { value: 'prefer-not-say', label: 'Prefer not to say' },
+    optionKeys: [
+      { value: 'family-partner', labelKey: 'questionnaire.support.options.familyPartner' },
+      { value: 'carers', labelKey: 'questionnaire.support.options.carers' },
+      { value: 'family-nearby', labelKey: 'questionnaire.support.options.familyNearby' },
+      { value: 'limited-support', labelKey: 'questionnaire.support.options.limitedSupport' },
+      { value: 'prefer-not-say', labelKey: 'questionnaire.support.options.preferNotSay' },
     ],
   },
   {
@@ -96,12 +96,12 @@ const QUESTIONS: Question[] = [
     type: 'radio',
     questionKey: 'questionnaire.questions.living.title',
     hintKey: 'questionnaire.questions.living.hint',
-    options: [
-      { value: 'home-space', label: 'In my own home with space for equipment' },
-      { value: 'home-limited', label: 'In my own home with limited space' },
-      { value: 'flat', label: 'In a flat or apartment' },
-      { value: 'supported', label: 'In supported housing or care home' },
-      { value: 'prefer-not-say', label: 'Prefer not to say' },
+    optionKeys: [
+      { value: 'home-space', labelKey: 'questionnaire.living.options.homeSpace' },
+      { value: 'home-limited', labelKey: 'questionnaire.living.options.homeLimited' },
+      { value: 'flat', labelKey: 'questionnaire.living.options.flat' },
+      { value: 'supported', labelKey: 'questionnaire.living.options.supported' },
+      { value: 'prefer-not-say', labelKey: 'questionnaire.support.options.preferNotSay' },
     ],
   },
   {
@@ -110,15 +110,15 @@ const QUESTIONS: Question[] = [
     questionKey: 'questionnaire.questions.priorities.title',
     hintKey: 'questionnaire.questions.priorities.hint',
     maxSelections: 3,
-    options: [
-      { value: 'family-time', label: 'Spending time with family' },
-      { value: 'independence', label: 'Maintaining independence' },
-      { value: 'minimise-hospital', label: 'Minimising time in hospital' },
-      { value: 'routine', label: 'Keeping my daily routine' },
-      { value: 'control', label: 'Feeling in control of my treatment' },
-      { value: 'longevity', label: 'Having the longest possible life' },
-      { value: 'quality', label: 'Quality of life over quantity' },
-      { value: 'travel', label: 'Being able to travel' },
+    optionKeys: [
+      { value: 'family-time', labelKey: 'questionnaire.priorities.options.familyTime' },
+      { value: 'independence', labelKey: 'questionnaire.priorities.options.independence' },
+      { value: 'minimise-hospital', labelKey: 'questionnaire.priorities.options.minimiseHospital' },
+      { value: 'routine', labelKey: 'questionnaire.priorities.options.routine' },
+      { value: 'control', labelKey: 'questionnaire.priorities.options.control' },
+      { value: 'longevity', labelKey: 'questionnaire.priorities.options.longevity' },
+      { value: 'quality', labelKey: 'questionnaire.priorities.options.quality' },
+      { value: 'travel', labelKey: 'questionnaire.priorities.options.travel' },
     ],
   },
 ];
@@ -358,20 +358,20 @@ export default function QuestionnairePage() {
             )}
 
             {/* Slider Question */}
-            {question.type === 'slider' && question.sliderLabels && (
+            {question.type === 'slider' && question.sliderLabelKeys && (
               <SliderQuestion
                 value={(answers[question.id] as number) || 3}
                 onChange={handleSliderChange}
-                labels={question.sliderLabels}
+                labelKeys={question.sliderLabelKeys}
                 min={question.min || 1}
                 max={question.max || 5}
               />
             )}
 
             {/* Radio Question */}
-            {question.type === 'radio' && question.options && (
+            {question.type === 'radio' && question.optionKeys && (
               <div className="flex flex-col gap-3">
-                {question.options.map(option => (
+                {question.optionKeys.map(option => (
                   <label
                     key={option.value}
                     className={`relative flex items-center gap-4 p-4 bg-white border-2 rounded-md cursor-pointer transition-all min-h-[64px]
@@ -390,9 +390,9 @@ export default function QuestionnairePage() {
                       className="w-7 h-7 accent-nhs-blue cursor-pointer"
                     />
                     <span className="flex-1">
-                      <span className="font-semibold text-text-primary block">{option.label}</span>
-                      {option.description && (
-                        <span className="text-sm text-text-secondary">{option.description}</span>
+                      <span className="font-semibold text-text-primary block">{t(option.labelKey)}</span>
+                      {option.descriptionKey && (
+                        <span className="text-sm text-text-secondary">{t(option.descriptionKey)}</span>
                       )}
                     </span>
                   </label>
@@ -401,9 +401,9 @@ export default function QuestionnairePage() {
             )}
 
             {/* Checkbox Question */}
-            {question.type === 'checkbox' && question.options && (
+            {question.type === 'checkbox' && question.optionKeys && (
               <div className="flex flex-col gap-3">
-                {question.options.map(option => {
+                {question.optionKeys.map(option => {
                   const currentValues = (answers[question.id] as string[]) || [];
                   const isChecked = currentValues.includes(option.value);
                   const isDisabled = !isChecked && !!question.maxSelections && currentValues.length >= question.maxSelections;
@@ -430,9 +430,9 @@ export default function QuestionnairePage() {
                         className="w-7 h-7 accent-nhs-blue cursor-pointer disabled:cursor-not-allowed"
                       />
                       <span className="flex-1">
-                        <span className="font-semibold text-text-primary block">{option.label}</span>
-                        {option.description && (
-                          <span className="text-sm text-text-secondary">{option.description}</span>
+                        <span className="font-semibold text-text-primary block">{t(option.labelKey)}</span>
+                        {option.descriptionKey && (
+                          <span className="text-sm text-text-secondary">{t(option.descriptionKey)}</span>
                         )}
                       </span>
                     </label>
@@ -482,22 +482,23 @@ export default function QuestionnairePage() {
 interface SliderQuestionProps {
   value: number;
   onChange: (value: number) => void;
-  labels: string[];
+  labelKeys: string[];
   min: number;
   max: number;
 }
 
-function SliderQuestion({ value, onChange, labels, min, max }: SliderQuestionProps) {
+function SliderQuestion({ value, onChange, labelKeys, min, max }: SliderQuestionProps) {
+  const { t } = useTranslation();
   const getValueText = (val: number) => {
     const index = val - min;
-    return labels[index] || '';
+    return labelKeys[index] ? t(labelKeys[index]) : '';
   };
 
   return (
     <div className="py-8">
       {/* Labels */}
       <div className="flex justify-between mb-4">
-        {labels.map((label, index) => (
+        {labelKeys.map((labelKey, index) => (
           <span
             key={index}
             className={`text-center text-sm max-w-[100px] ${
@@ -506,7 +507,7 @@ function SliderQuestion({ value, onChange, labels, min, max }: SliderQuestionPro
                 : 'text-text-secondary'
             }`}
           >
-            {label}
+            {t(labelKey)}
           </span>
         ))}
       </div>
@@ -524,7 +525,7 @@ function SliderQuestion({ value, onChange, labels, min, max }: SliderQuestionPro
                    [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer
                    [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-110
                    focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
-        aria-label={`Value from ${min} to ${max}`}
+        aria-label={t('questionnaire.slider.ariaLabel', { min, max })}
         aria-valuetext={getValueText(value)}
       />
 

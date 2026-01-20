@@ -1,21 +1,22 @@
 {
   "nav": {
-    "home": "ਘਰ",
-    "back": "ਪਿੱਛੇ",
-    "next": "ਅੱਗੇ",
-    "skip": "ਛੱਡੋ",
+    "home": "Home",
+    "back": "Go Back",
+    "next": "Next",
+    "skip": "Skip",
     "backToHub": "Back to Hub",
     "returnToHome": "Return to Home"
   },
   "landing": {
-    "title": "ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਹਾਇਤਾ",
-    "subtitle": "NHS ਗੁਰਦਾ ਸੇਵਾਵਾਂ",
-    "description": "ਇਹ ਸੰਦ ਤੁਹਾਡੀ ਗੁਰਦਾ ਇਲਾਜ ਵਿਕਲਪਾਂ ਨੂੰ ਸਮਝਣ ਅਤੇ ਇਹ ਸੋਚਣ ਵਿੱਚ ਮਦਦ ਕਰੇਗਾ ਕਿ ਤੁਹਾਡੇ ਲਈ ਸਭ ਤੋਂ ਮਹੱਤਵਪੂਰਨ ਕੀ ਹੈ। ਆਪਣਾ ਸਮਾਂ ਲਓ - ਕੋਈ ਸਹੀ ਜਾਂ ਗਲਤ ਜਵਾਬ ਨਹੀਂ ਹਨ।",
-    "startButton": "ਆਪਣਾ ਸਫ਼ਰ ਸ਼ੁਰੂ ਕਰੋ",
+    "title": "Kidney Treatment Decision Aid",
+    "subtitle": "NHS Renal Services",
+    "description": "This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.",
+    "startButton": "Start Your Journey",
     "startButtonAriaLabel": "Start your kidney treatment decision journey",
-    "learnMore": "ਇਸ ਸੰਦ ਬਾਰੇ ਹੋਰ ਜਾਣੋ",
+    "learnMore": "Learn More About Kidney Disease",
     "heroAriaLabel": "Welcome section",
     "featuresHeading": "How This Tool Helps You",
+    "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
     "featuresSubtitle": "Everything you need to make an informed decision about your kidney treatment",
     "features": {
       "time": {
@@ -64,14 +65,14 @@
     "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
   },
   "language": {
-    "title": "ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ",
-    "instruction": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਚੁਣੋ। ਤੁਸੀਂ ਇਸਨੂੰ ਕਿਸੇ ਵੀ ਸਮੇਂ ਬਦਲ ਸਕਦੇ ਹੋ।",
-    "selectLanguage": "ਭਾਸ਼ਾ ਚੁਣੋ",
-    "currentLanguage": "ਮੌਜੂਦਾ ਭਾਸ਼ਾ",
+    "title": "Choose Your Language",
+    "instruction": "Please select your preferred language. You can change this at any time.",
+    "selectLanguage": "Select language",
+    "currentLanguage": "Current language",
     "fallbackAudioText": "Hello"
   },
   "privacy": {
-    "title": "ਤੁਹਾਡੀ ਗੋਪਨੀਯਤਾ ਅਤੇ ਜਾਣਕਾਰੀ",
+    "title": "Your Privacy Matters",
     "subtitle": "Before you begin, we want you to understand how this tool handles your information.",
     "pageAriaLabel": "Privacy information",
     "progressLabel": "Setup progress: 30%",
@@ -80,22 +81,22 @@
     "stopReading": "Stop reading",
     "sections": {
       "privacy": {
-        "title": "ਅਸੀਂ ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਦੀ ਰੱਖਿਆ ਕਿਵੇਂ ਕਰਦੇ ਹਾਂ",
-        "content": "ਤੁਹਾਡੇ ਜਵਾਬ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਪ੍ਰੋਸੈਸ ਕੀਤੇ ਜਾਂਦੇ ਹਨ ਅਤੇ ਸਥਾਈ ਤੌਰ 'ਤੇ ਸਟੋਰ ਨਹੀਂ ਕੀਤੇ ਜਾਂਦੇ। ਇਹ ਸੰਦ ਨਿੱਜੀ ਸਿਹਤ ਜਾਣਕਾਰੀ ਇਕੱਠੀ ਨਹੀਂ ਕਰਦਾ ਜੋ ਤੁਹਾਡੀ ਪਛਾਣ ਕਰ ਸਕੇ। ਜਦੋਂ ਤੁਸੀਂ ਇਸ ਸੰਦ ਨੂੰ ਬੰਦ ਕਰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਡਾ ਸੈਸ਼ਨ ਡੇਟਾ ਆਪਣੇ ਆਪ ਮਿਟ ਜਾਂਦਾ ਹੈ।",
+        "title": "How We Handle Your Information",
+        "content": "Your responses are processed securely and are not stored permanently. This tool does not collect personal health information that can identify you. Your session data is automatically deleted when you close this tool.",
         "p1": "This tool uses session-only storage. Any information you enter, including your answers to questions and treatment preferences, is only kept while you are using the tool.",
         "p2": "When you close your browser or after 15 minutes of inactivity, all your information is automatically deleted. We do not save anything about you.",
         "p3": "We collect anonymous information about how people use this tool to help us improve it. This cannot identify you personally."
       },
       "ai": {
-        "title": "ਇਹ ਸੰਦ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ",
-        "content": "ਇਹ ਫੈਸਲਾ ਸਹਾਇਤਾ ਤੁਹਾਡੇ ਜਵਾਬਾਂ ਦੇ ਆਧਾਰ 'ਤੇ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਪ੍ਰਦਾਨ ਕਰਨ ਲਈ ਤਕਨਾਲੋਜੀ ਦੀ ਵਰਤੋਂ ਕਰਦੀ ਹੈ। ਪ੍ਰਦਾਨ ਕੀਤੀ ਜਾਣਕਾਰੀ NHS ਕਲੀਨਿਕਲ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ਾਂ ਅਤੇ ਸਬੂਤ-ਆਧਾਰਿਤ ਖੋਜ ਤੋਂ ਲਈ ਗਈ ਹੈ। ਇਹ ਸੰਦ ਤੁਹਾਡੀ ਗੁਰਦਾ ਦੇਖਭਾਲ ਟੀਮ ਨਾਲ ਚਰਚਾਵਾਂ ਦਾ ਸਮਰਥਨ ਕਰਦਾ ਹੈ, ਪਰ ਉਹਨਾਂ ਦੀ ਥਾਂ ਨਹੀਂ ਲੈਂਦਾ।",
+        "title": "About the AI Assistant",
+        "content": "This decision aid uses technology to provide personalised information based on your responses. The information provided is drawn from NHS clinical guidelines and evidence-based research. This tool supports but does not replace discussions with your kidney care team.",
         "p1": "This tool includes an AI assistant that can answer general questions about kidney treatments. The AI provides information only - it cannot give you medical advice specific to your situation.",
         "p2": "The AI may sometimes make mistakes or provide incomplete information. Always discuss important decisions with your kidney team who know your full medical history.",
         "p3": "This tool does not replace advice from your healthcare team. It is designed to help you feel more informed when discussing your options with your doctors and nurses."
       },
       "medical": {
-        "title": "ਮਹੱਤਵਪੂਰਨ ਡਾਕਟਰੀ ਜਾਣਕਾਰੀ",
-        "content": "ਇਹ ਸੰਦ ਗੁਰਦਾ ਇਲਾਜ ਵਿਕਲਪਾਂ ਬਾਰੇ ਆਮ ਜਾਣਕਾਰੀ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ। ਇਹ ਪੇਸ਼ੇਵਰ ਡਾਕਟਰੀ ਸਲਾਹ, ਨਿਦਾਨ ਜਾਂ ਇਲਾਜ ਦਾ ਬਦਲ ਨਹੀਂ ਹੈ। ਆਪਣੇ ਇਲਾਜ ਬਾਰੇ ਕੋਈ ਵੀ ਫੈਸਲਾ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਹਮੇਸ਼ਾ ਆਪਣੇ ਗੁਰਦਾ ਮਾਹਿਰ ਜਾਂ ਸਿਹਤ ਸੇਵਾ ਟੀਮ ਨਾਲ ਸਲਾਹ ਕਰੋ। ਜੇਕਰ ਤੁਹਾਨੂੰ ਜ਼ਰੂਰੀ ਸਿਹਤ ਚਿੰਤਾਵਾਂ ਹਨ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ GP ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜਾਂ NHS 111 'ਤੇ ਕਾਲ ਕਰੋ।"
+        "title": "Important Medical Information",
+        "content": "This tool provides general information about kidney treatment options. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with your kidney specialist or healthcare team before making any decisions about your treatment. If you have urgent health concerns, please contact your GP or call NHS 111."
       },
       "pii": {
         "title": "Please Do Not Share Personal Details",
@@ -130,8 +131,8 @@
     "readFullPolicy": "Read the full NHS Privacy Policy"
   },
   "journey": {
-    "title": "ਤੁਸੀਂ ਆਪਣੀ ਗੁਰਦਾ ਦੇਖਭਾਲ ਯਾਤਰਾ ਵਿੱਚ ਕਿੱਥੇ ਹੋ?",
-    "instruction": "ਉਹ ਵਿਕਲਪ ਚੁਣੋ ਜੋ ਤੁਹਾਡੀ ਮੌਜੂਦਾ ਸਥਿਤੀ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਵਰਣਨ ਕਰਦਾ ਹੈ",
+    "title": "Where Are You in Your Kidney Care Journey?",
+    "instruction": "Select the option that best describes your current situation",
     "stages": {
       "newlyDiagnosed": {
         "title": "I think I may have kidney disease",
@@ -164,6 +165,40 @@
     }
   },
   "questionnaire": {
+    "intro": {
+      "title": "Tell Us About Yourself",
+      "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "features": {
+        "questions": "7 quick questions",
+        "time": "Takes 3-5 minutes",
+        "private": "Completely private",
+        "skip": "Skip any question"
+      },
+      "beginButton": "Begin Questions",
+      "skipText": "If you prefer not to answer these questions, you can skip to general treatment information.",
+      "skipButton": "Skip All Questions",
+      "backToJourney": "Back to Journey Stage"
+    },
+    "progress": {
+      "label": "Question progress",
+      "questionOf": "Question {{current}} of {{total}}",
+      "complete": "complete"
+    },
+    "types": {
+      "scale": "Scale Rating",
+      "single": "Single Choice",
+      "multiple": "Multiple Choice"
+    },
+    "hints": {
+      "selectUpTo": "Select up to {{max}} priorities that are most important to you.",
+      "selectAll": "Select all that apply - you can choose more than one option."
+    },
+    "audio": {
+      "listen": "Listen to this question"
+    },
+    "skipQuestion": "Skip this question",
+    "viewResults": "View My Results",
+    "nextQuestion": "Next Question",
     "questions": {
       "knowledge": {
         "title": "How much do you know about kidney disease and its treatments?",
@@ -367,24 +402,24 @@
     }
   },
   "treatments": {
-    "title": "ਆਪਣੇ ਇਲਾਜ ਵਿਕਲਪਾਂ ਨੂੰ ਸਮਝਣਾ",
-    "subtitle": "ਗੁਰਦੇ ਦੀ ਅਸਫਲਤਾ ਦੇ ਇਲਾਜ ਦੇ ਵੱਖ-ਵੱਖ ਤਰੀਕੇ ਹਨ। ਹਰੇਕ ਦੇ ਲਾਭ ਅਤੇ ਵਿਚਾਰ ਹਨ।",
+    "title": "Understanding Your Treatment Options",
+    "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
     "types": {
       "transplant": {
-        "title": "ਗੁਰਦਾ ਟ੍ਰਾਂਸਪਲਾਂਟ",
-        "shortDescription": "ਇੱਕ ਦਾਨੀ ਤੋਂ ਸਿਹਤਮੰਦ ਗੁਰਦਾ ਪ੍ਰਾਪਤ ਕਰਨਾ",
-        "description": "ਗੁਰਦਾ ਟ੍ਰਾਂਸਪਲਾਂਟ ਵਿੱਚ ਜਾਂ ਤਾਂ ਜੀਵਤ ਦਾਨੀ (ਜਿਵੇਂ ਕਿ ਪਰਿਵਾਰਕ ਮੈਂਬਰ ਜਾਂ ਦੋਸਤ) ਜਾਂ ਮ੍ਰਿਤਕ ਦਾਨੀ ਤੋਂ ਸਿਹਤਮੰਦ ਗੁਰਦਾ ਪ੍ਰਾਪਤ ਕਰਨਾ ਸ਼ਾਮਲ ਹੈ। ਇੱਕ ਸਫਲ ਟ੍ਰਾਂਸਪਲਾਂਟ ਗੁਰਦੇ ਦੀ ਅਸਫਲਤਾ ਵਾਲੇ ਬਹੁਤ ਸਾਰੇ ਲੋਕਾਂ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਜੀਵਨ ਗੁਣਵੱਤਾ ਅਤੇ ਸਭ ਤੋਂ ਲੰਬਾ ਜੀਵਨ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦਾ ਹੈ।",
+        "title": "Kidney Transplant",
+        "shortDescription": "Receiving a healthy kidney from a donor",
+        "description": "A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor. A successful transplant can provide the best quality of life and longest survival for many people with kidney failure.",
         "benefits": [
-          "ਅਕਸਰ ਸਭ ਤੋਂ ਵਧੀਆ ਜੀਵਨ ਗੁਣਵੱਤਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ",
-          "ਨਿਯਮਿਤ ਡਾਇਲਸਿਸ ਸੈਸ਼ਨਾਂ ਦੀ ਲੋੜ ਨਹੀਂ",
-          "ਘੱਟ ਖੁਰਾਕ ਪਾਬੰਦੀਆਂ",
-          "ਜ਼ਿਆਦਾਤਰ ਲੋਕਾਂ ਲਈ ਬਿਹਤਰ ਊਰਜਾ ਪੱਧਰ"
+          "Often provides the best quality of life",
+          "No regular dialysis sessions needed",
+          "Fewer dietary restrictions",
+          "Better energy levels for most people"
         ],
         "considerations": [
-          "ਵੱਡੀ ਸਰਜਰੀ ਦੀ ਲੋੜ ਹੈ",
-          "ਜ਼ਿੰਦਗੀ ਭਰ ਇਮਿਊਨੋਸਪ੍ਰੈਸੈਂਟ ਦਵਾਈਆਂ ਲੈਣੀਆਂ ਪੈਂਦੀਆਂ ਹਨ",
-          "ਢੁਕਵੇਂ ਗੁਰਦੇ ਲਈ ਉਡੀਕ ਕਰਨੀ ਪੈ ਸਕਦੀ ਹੈ",
-          "ਸਾਰਿਆਂ ਲਈ ਢੁਕਵਾਂ ਨਹੀਂ"
+          "Requires major surgery",
+          "Need to take immunosuppressant medications for life",
+          "May need to wait for a suitable kidney",
+          "Not suitable for everyone"
         ],
         "facts": {
           "survival": "Best long-term survival outcomes",
@@ -392,21 +427,25 @@
           "medication": "Lifelong medication needed"
         }
       },
+      "haemodialysis": {
+        "title": "Haemodialysis",
+        "shortDescription": "Filtering blood using a machine"
+      },
       "hemodialysis": {
-        "title": "ਹੀਮੋਡਾਇਲਸਿਸ",
-        "shortDescription": "ਮਸ਼ੀਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਖੂਨ ਨੂੰ ਫਿਲਟਰ ਕਰਨਾ",
-        "description": "ਹੀਮੋਡਾਇਲਸਿਸ ਤੁਹਾਡੇ ਸਰੀਰ ਦੇ ਬਾਹਰ ਤੁਹਾਡੇ ਖੂਨ ਨੂੰ ਫਿਲਟਰ ਕਰਨ ਲਈ ਇੱਕ ਮਸ਼ੀਨ ਦੀ ਵਰਤੋਂ ਕਰਦੀ ਹੈ। ਇਹ ਆਮ ਤੌਰ 'ਤੇ ਹਸਪਤਾਲ ਜਾਂ ਕਮਿਊਨਿਟੀ ਸੈਂਟਰ ਵਿੱਚ ਡਾਇਲਸਿਸ ਯੂਨਿਟ ਵਿੱਚ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਆਮ ਤੌਰ 'ਤੇ ਹਫ਼ਤੇ ਵਿੱਚ ਤਿੰਨ ਵਾਰ ਲਗਭਗ ਚਾਰ ਘੰਟੇ ਹਰੇਕ ਸੈਸ਼ਨ ਲਈ। ਕੁਝ ਲੋਕ ਘਰ ਵਿੱਚ ਹੀਮੋਡਾਇਲਸਿਸ ਕਰਦੇ ਹਨ।",
+        "title": "Haemodialysis",
+        "shortDescription": "Filtering blood using a machine",
+        "description": "Haemodialysis uses a machine to filter your blood outside your body. This is usually done at a dialysis unit in hospital or a community centre, typically three times a week for about four hours each session. Some people do haemodialysis at home.",
         "benefits": [
-          "ਕੂੜਾ ਅਤੇ ਵਾਧੂ ਤਰਲ ਕੱਢਣ ਵਿੱਚ ਪ੍ਰਭਾਵਸ਼ਾਲੀ",
-          "ਸਿਹਤ ਸੇਵਾ ਟੀਮ ਨਾਲ ਨਿਯਮਿਤ ਸੰਪਰਕ",
-          "ਕੁਝ ਲਈ ਘਰੇਲੂ ਹੀਮੋਡਾਇਲਸਿਸ ਵਿਕਲਪ ਉਪਲਬਧ",
-          "ਇਲਾਜ ਤੁਹਾਡੇ ਲਈ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
+          "Effective at removing waste and excess fluid",
+          "Regular contact with healthcare team",
+          "Home haemodialysis option available for some",
+          "Treatment is done for you"
         ],
         "considerations": [
-          "ਨਿਯਮਿਤ ਹਸਪਤਾਲ ਜਾਂ ਸੈਂਟਰ ਜਾਣਾ ਪੈਂਦਾ ਹੈ",
-          "ਵੈਸਕੁਲਰ ਪਹੁੰਚ (ਫਿਸਟੁਲਾ ਜਾਂ ਲਾਈਨ) ਦੀ ਲੋੜ ਹੈ",
-          "ਇਲਾਜ ਤੋਂ ਬਾਅਦ ਥਕਾਵਟ ਮਹਿਸੂਸ ਹੋ ਸਕਦੀ ਹੈ",
-          "ਖੁਰਾਕ ਅਤੇ ਤਰਲ ਪਾਬੰਦੀਆਂ ਲਾਗੂ ਹੁੰਦੀਆਂ ਹਨ"
+          "Requires regular hospital or centre visits",
+          "Needs vascular access (fistula or line)",
+          "May feel tired after treatment",
+          "Dietary and fluid restrictions apply"
         ],
         "facts": {
           "frequency": "3-4 times per week, 4-5 hours each",
@@ -415,20 +454,20 @@
         }
       },
       "peritonealDialysis": {
-        "title": "ਪੈਰੀਟੋਨੀਅਲ ਡਾਇਲਸਿਸ",
-        "shortDescription": "ਪੇਟ ਦੀ ਪਰਤ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸਰੀਰ ਅੰਦਰ ਖੂਨ ਫਿਲਟਰ ਕਰਨਾ",
-        "description": "ਪੈਰੀਟੋਨੀਅਲ ਡਾਇਲਸਿਸ ਤੁਹਾਡੇ ਪੇਟ ਦੀ ਪਰਤ (ਪੈਰੀਟੋਨੀਅਮ) ਨੂੰ ਕੁਦਰਤੀ ਫਿਲਟਰ ਵਜੋਂ ਵਰਤਦੀ ਹੈ। ਇੱਕ ਵਿਸ਼ੇਸ਼ ਤਰਲ ਇੱਕ ਛੋਟੀ ਟਿਊਬ ਰਾਹੀਂ ਤੁਹਾਡੇ ਪੇਟ ਵਿੱਚ ਪਾਇਆ ਜਾਂਦਾ ਹੈ, ਕੂੜੇ ਨੂੰ ਸੋਖ ਲੈਂਦਾ ਹੈ, ਅਤੇ ਫਿਰ ਬਾਹਰ ਕੱਢਿਆ ਜਾਂਦਾ ਹੈ। ਇਹ ਘਰ ਵਿੱਚ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਜਾਂ ਤਾਂ ਦਿਨ ਦੌਰਾਨ ਜਾਂ ਰਾਤ ਨੂੰ ਜਦੋਂ ਤੁਸੀਂ ਸੌਂਦੇ ਹੋ।",
+        "title": "Peritoneal Dialysis",
+        "shortDescription": "Filtering blood inside the body using the abdomen lining",
+        "description": "Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter. A special fluid is put into your abdomen through a small tube, absorbs waste products, and is then drained out. This can be done at home, either during the day or overnight while you sleep.",
         "benefits": [
-          "ਘਰ ਵਿੱਚ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਵਧੇਰੇ ਆਜ਼ਾਦੀ",
-          "ਵਧੇਰੇ ਲਚਕਦਾਰ ਸਮਾਂ-ਸੂਚੀ",
-          "ਸਰੀਰ 'ਤੇ ਹਲਕੀ, ਘੱਟ ਉਤਰਾਅ-ਚੜ੍ਹਾਅ",
-          "ਯਾਤਰਾ ਕਰਨਾ ਆਸਾਨ"
+          "Done at home, more independence",
+          "More flexible schedule",
+          "Gentler on the body, fewer ups and downs",
+          "Easier to travel"
         ],
         "considerations": [
-          "ਰੋਜ਼ਾਨਾ ਇਲਾਜ ਪ੍ਰਤੀਬੱਧਤਾ ਦੀ ਲੋੜ",
-          "ਤੁਹਾਡੇ ਪੇਟ ਵਿੱਚ ਸਥਾਈ ਟਿਊਬ ਦੀ ਲੋੜ",
-          "ਤਕਨੀਕ ਨਾ ਰੱਖਣ 'ਤੇ ਇਨਫੈਕਸ਼ਨ ਦਾ ਖ਼ਤਰਾ",
-          "ਸਪਲਾਈ ਲਈ ਸਟੋਰੇਜ ਜਗ੍ਹਾ ਦੀ ਲੋੜ"
+          "Requires daily treatment commitment",
+          "Need a permanent tube in your abdomen",
+          "Risk of infection if technique is not maintained",
+          "Requires storage space for supplies"
         ],
         "facts": {
           "daily": "Daily treatment at home",
@@ -437,20 +476,20 @@
         }
       },
       "conservative": {
-        "title": "ਰੂੜ੍ਹੀਵਾਦੀ ਪ੍ਰਬੰਧਨ",
-        "shortDescription": "ਡਾਇਲਸਿਸ ਤੋਂ ਬਿਨਾਂ ਲੱਛਣਾਂ ਦਾ ਪ੍ਰਬੰਧਨ",
-        "description": "ਰੂੜ੍ਹੀਵਾਦੀ ਪ੍ਰਬੰਧਨ ਡਾਇਲਸਿਸ ਜਾਂ ਟ੍ਰਾਂਸਪਲਾਂਟ ਤੋਂ ਬਿਨਾਂ ਜੀਵਨ ਦੀ ਗੁਣਵੱਤਾ ਬਣਾਈ ਰੱਖਣ ਅਤੇ ਲੱਛਣਾਂ ਦੇ ਪ੍ਰਬੰਧਨ 'ਤੇ ਕੇਂਦ੍ਰਿਤ ਹੈ। ਇਹ ਪਹੁੰਚ ਕੁਝ ਲੋਕਾਂ ਲਈ ਸਹੀ ਹੋ ਸਕਦੀ ਹੈ, ਖਾਸ ਕਰਕੇ ਜੋ ਬਜ਼ੁਰਗ, ਕਮਜ਼ੋਰ ਹਨ, ਜਾਂ ਹੋਰ ਗੰਭੀਰ ਸਿਹਤ ਸਥਿਤੀਆਂ ਹਨ। ਇਸ ਵਿੱਚ ਧਿਆਨ ਨਾਲ ਲੱਛਣ ਪ੍ਰਬੰਧਨ, ਦਵਾਈਆਂ ਅਤੇ ਗੁਰਦਾ ਦੇਖਭਾਲ ਟੀਮ ਤੋਂ ਸਹਾਇਤਾ ਸ਼ਾਮਲ ਹੈ।",
+        "title": "Conservative Management",
+        "shortDescription": "Managing symptoms without dialysis",
+        "description": "Conservative management focuses on maintaining quality of life and managing symptoms without dialysis or transplant. This approach may be right for some people, particularly those who are elderly, frail, or have other serious health conditions. It involves careful symptom management, medications, and support from the kidney care team.",
         "benefits": [
-          "ਕੋਈ ਡਾਇਲਸਿਸ ਸੈਸ਼ਨ ਜਾਂ ਸਰਜਰੀ ਦੀ ਲੋੜ ਨਹੀਂ",
-          "ਜੀਵਨ ਦੀ ਗੁਣਵੱਤਾ ਅਤੇ ਆਰਾਮ 'ਤੇ ਧਿਆਨ",
-          "ਕੁਝ ਬਜ਼ੁਰਗ ਜਾਂ ਕਮਜ਼ੋਰ ਮਰੀਜ਼ਾਂ ਲਈ ਢੁਕਵਾਂ ਹੋ ਸਕਦਾ ਹੈ",
-          "ਜਿੱਥੋਂ ਤੱਕ ਹੋ ਸਕੇ ਆਮ ਰੁਟੀਨ ਬਣਾਈ ਰੱਖੋ"
+          "No dialysis sessions or surgery needed",
+          "Focus on quality of life and comfort",
+          "May be appropriate for some elderly or frail patients",
+          "Maintain usual routine as much as possible"
         ],
         "considerations": [
-          "ਗੁਰਦਾ ਕਾਰਜ ਘਟਦਾ ਰਹੇਗਾ",
-          "ਲੱਛਣਾਂ ਨੂੰ ਸਰਗਰਮ ਪ੍ਰਬੰਧਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ",
-          "ਉਮੀਦਾਂ ਬਾਰੇ ਇਮਾਨਦਾਰ ਗੱਲਬਾਤ ਮਹੱਤਵਪੂਰਨ ਹੈ",
-          "ਅਡਵਾਂਸ ਕੇਅਰ ਪਲੈਨਿੰਗ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ"
+          "Kidney function will continue to decline",
+          "Symptoms will need active management",
+          "Important to have honest conversations about expectations",
+          "Advance care planning is recommended"
         ],
         "facts": {
           "comfort": "Focus on comfort and quality of life",
@@ -459,6 +498,33 @@
         }
       }
     },
+    "facts": {
+      "transplant": {
+        "survival": "Best long-term survival outcomes",
+        "surgery": "Requires surgery and recovery time",
+        "medication": "Lifelong medication needed"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 times per week, 4-5 hours each",
+        "professionalCare": "Professional care and monitoring",
+        "travel": "Travel to centre required"
+      },
+      "peritoneal": {
+        "dailyHome": "Daily treatment at home",
+        "timingOptions": "Overnight or daytime options",
+        "flexibility": "Greater flexibility and independence"
+      },
+      "conservative": {
+        "comfort": "Focus on comfort and quality of life",
+        "noDialysis": "No dialysis treatment required",
+        "symptomManagement": "Active symptom management"
+      }
+    },
+    "infoBox": {
+      "title": "Your kidney team will guide you",
+      "text": "This information is to help you understand your options. Your kidney team are the experts in your care and will help you decide which treatment is most suitable for your individual situation."
+    },
+    "mainChoices": "Your Main Treatment Choices",
     "detail": {
       "transplant": {
         "title": "Kidney Transplant",
@@ -956,6 +1022,11 @@
       "moderate": "Moderate - Some limitations to consider",
       "challenging": "Challenging - Significant considerations",
       "varies": "Varies - Depends on individual circumstances"
+    },
+    "cta": {
+      "title": "Compare All Treatments",
+      "description": "See all treatment options side by side to understand how they differ on the factors that matter most to you.",
+      "button": "Compare All Treatments"
     }
   },
   "values": {
@@ -1053,7 +1124,8 @@
     "scale": {
       "lessImportant": "Less important",
       "moreImportant": "More important"
-    }
+    },
+    "cta": "What Matters to You?"
   },
   "chat": {
     "title": "Ask Questions",
@@ -1093,11 +1165,34 @@
     }
   },
   "modelViewer": {
-    "title": "3D Kidney Model",
+    "title": "3D Kidney Model Viewer",
     "subtitle": "Explore how different treatments work",
     "loading": "Loading 3D Model...",
     "headerBadge": "Interactive 3D Model",
     "badge": "Interactive Learning Tool",
+    "breadcrumb": "3D Kidney Model",
+    "backToHub": "Back to Hub",
+    "interactive3DModel": "Interactive 3D Model",
+    "interactiveTool": "Interactive Learning Tool",
+    "interactiveDescription": "Explore an interactive 3D model of human kidneys. Use your mouse or touch to rotate and zoom.",
+    "dragToRotate": "Drag to rotate",
+    "scrollToZoom": "Scroll to zoom",
+    "labelsOn": "Labels: On",
+    "labelsOff": "Labels: Off",
+    "autoRotateOn": "Auto-Rotate: On",
+    "autoRotateOff": "Auto-Rotate: Off",
+    "resetView": "Reset view",
+    "reset": "Reset",
+    "aboutKidneys": "About Your Kidneys",
+    "kidneyInfo": "Your kidneys are bean-shaped organs about the size of your fist. They filter about 200 litres of blood daily, removing waste and extra fluid.",
+    "kidneyFunction": "What Kidneys Do",
+    "functionInfo": "Kidneys regulate blood pressure, produce hormones, balance body fluids, and filter waste products into urine.",
+    "whenKidneysFail": "When Kidneys Fail",
+    "failureInfo": "When kidneys lose function, treatments like dialysis or transplant can help do the work your kidneys can no longer do.",
+    "learnMore": "Learn More About Treatment Options",
+    "continueJourney": "Continue your kidney care journey by exploring your treatment options.",
+    "exploreTreatments": "Explore Treatments",
+    "compareTreatments": "Compare Treatments",
     "controls": {
       "rotate": "Click and drag to rotate",
       "zoom": "Scroll to zoom",
@@ -1250,6 +1345,8 @@
     "demo": "Demo",
     "serviceName": "Kidney Treatment Decision Aid",
     "subtitle": "Supporting informed healthcare decisions",
+    "supportingDecisions": "Supporting informed healthcare decisions",
+    "navigationLabel": "Footer navigation",
     "navAriaLabel": "Footer navigation",
     "accessibilityLink": "Accessibility",
     "privacyPolicyLink": "Privacy Policy",
@@ -1258,55 +1355,97 @@
     "disclaimerText": "This application is a mock design created by Pears Research Services for demonstration purposes only. It is not affiliated with or endorsed by the NHS.",
     "mockDesign": "mock design",
     "companyName": "Pears Research Services",
-    "contactUs": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+    "contactUs": "Contact Us",
     "copyright": "Pears Research Services. All rights reserved.",
     "versionText": "Demo Version 1.0",
-    "nhsInfo": "NHS ਗੁਰਦਾ ਦੇਖਭਾਲ",
-    "accessibility": "ਪਹੁੰਚਯੋਗਤਾ",
-    "privacyPolicy": "ਗੋਪਨੀਯਤਾ ਨੀਤੀ",
-    "termsOfUse": "ਵਰਤੋਂ ਦੀਆਂ ਸ਼ਰਤਾਂ"
+    "demoVersion": "Demo Version 1.0",
+    "nhsInfo": "NHS Kidney Care",
+    "accessibility": "Accessibility",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "contact": "Contact",
+    "disclaimer": {
+      "title": "Important Disclaimer",
+      "text1": "This application is a",
+      "mockDesign": "mock design",
+      "text2": "created by",
+      "company": "Pears Research Services",
+      "text3": "for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
+    }
   },
   "progressBar": {
     "stepOfTotal": "Step {{current}} of {{total}}",
     "percentComplete": "{{percentage}}% complete",
     "ariaLabel": "Progress: {{current}} of {{total}} steps completed"
   },
+  "progress": {
+    "stepOfTotal": "Step {{current}} of {{total}}",
+    "percentComplete": "{{percentage}}% complete",
+    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed"
+  },
   "session": {
-    "timeRemaining": "ਬਾਕੀ ਸਮਾਂ: {{minutes}} ਮਿੰਟ",
+    "timeRemaining": "Time remaining: {{minutes}}",
     "sessionExpiring": "Your session will expire soon",
     "expiringMessage": "Your session will expire in {{minutes}} minutes. Would you like to continue?",
-    "extendSession": "ਸੈਸ਼ਨ ਵਧਾਓ",
-    "sessionExpired": "ਤੁਹਾਡਾ ਸੈਸ਼ਨ ਖਤਮ ਹੋ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ।",
+    "extendSession": "Continue Session",
+    "sessionExpired": "Your session has expired. Please start again.",
     "expiredMessage": "Your session has expired. Please start again.",
     "createError": "Failed to create session. Please try again.",
-    "startNewSession": "ਨਵਾਂ ਸੈਸ਼ਨ ਸ਼ੁਰੂ ਕਰੋ"
+    "startNewSession": "Start New Session"
   },
   "common": {
-    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
-    "error": "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
-    "continue": "ਜਾਰੀ ਰੱਖੋ",
-    "cancel": "ਰੱਦ ਕਰੋ",
-    "save": "ਸੇਵ ਕਰੋ",
-    "print": "ਪ੍ਰਿੰਟ ਕਰੋ",
-    "yes": "ਹਾਂ",
-    "no": "ਨਹੀਂ",
-    "notSure": "ਯਕੀਨੀ ਨਹੀਂ",
-    "moreInfo": "ਹੋਰ ਜਾਣਕਾਰੀ",
-    "close": "ਬੰਦ ਕਰੋ",
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "print": "Print",
+    "yes": "Yes",
+    "no": "No",
+    "notSure": "Not sure",
+    "moreInfo": "More information",
+    "close": "Close",
     "edit": "Edit",
     "remove": "Remove",
-    "add": "Add"
+    "add": "Add",
+    "back": "Back",
+    "learnMore": "Learn More",
+    "listenToPage": "Listen to this page"
   },
   "accessibility": {
-    "skipToContent": "ਮੁੱਖ ਸਮੱਗਰੀ 'ਤੇ ਜਾਓ",
-    "openMenu": "ਮੀਨੂ ਖੋਲ੍ਹੋ",
-    "closeMenu": "ਮੀਨੂ ਬੰਦ ਕਰੋ",
-    "expandSection": "ਸੈਕਸ਼ਨ ਵਿਸਤਾਰ ਕਰੋ",
-    "collapseSection": "ਸੈਕਸ਼ਨ ਸੰਖੇਪ ਕਰੋ",
-    "newWindow": "ਨਵੀਂ ਵਿੰਡੋ ਵਿੱਚ ਖੁੱਲ੍ਹਦਾ ਹੈ",
-    "externalLink": "ਬਾਹਰੀ ਲਿੰਕ",
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandSection": "Expand section",
+    "collapseSection": "Collapse section",
+    "newWindow": "opens in new tab",
+    "externalLink": "External link",
     "settings": "Accessibility",
     "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
-    "settingsTitle": "Adjust text size, contrast, and other accessibility settings"
+    "settingsTitle": "Adjust text size, contrast, and other accessibility settings",
+    "breadcrumb": "Breadcrumb navigation",
+    "pageNavigation": "Page navigation",
+    "listenToPage": "Listen to this page being read aloud",
+    "modal": {
+      "title": "Accessibility Settings",
+      "textSize": "Text Size",
+      "textSizeOptions": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "extra-large": "Extra Large"
+      },
+      "highContrast": "High Contrast Mode",
+      "reducedMotion": "Reduce Motion",
+      "lineSpacing": "Line Spacing",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Relaxed",
+        "loose": "Loose"
+      },
+      "reset": "Reset to Defaults",
+      "cancel": "Cancel",
+      "save": "Save Changes"
+    }
   }
 }

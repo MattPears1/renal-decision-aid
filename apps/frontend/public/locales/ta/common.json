@@ -1,21 +1,22 @@
 {
   "nav": {
-    "home": "முகப்பு",
-    "back": "பின்செல்",
-    "next": "அடுத்து",
-    "skip": "தவிர்க்க",
+    "home": "Home",
+    "back": "Go Back",
+    "next": "Next",
+    "skip": "Skip",
     "backToHub": "Back to Hub",
     "returnToHome": "Return to Home"
   },
   "landing": {
-    "title": "சிறுநீரக சிகிச்சை முடிவு உதவி",
-    "subtitle": "NHS சிறுநீரக சேவைகள்",
-    "description": "இந்த கருவி உங்கள் சிறுநீரக சிகிச்சை விருப்பங்களைப் புரிந்துகொள்ளவும், உங்களுக்கு எது மிக முக்கியம் என்று சிந்திக்கவும் உதவும். உங்கள் நேரத்தை எடுத்துக்கொள்ளுங்கள் - சரியான அல்லது தவறான பதில்கள் இல்லை.",
-    "startButton": "உங்கள் பயணத்தைத் தொடங்குங்கள்",
+    "title": "Kidney Treatment Decision Aid",
+    "subtitle": "NHS Renal Services",
+    "description": "This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.",
+    "startButton": "Start Your Journey",
     "startButtonAriaLabel": "Start your kidney treatment decision journey",
-    "learnMore": "இந்த கருவியைப் பற்றி மேலும் அறிக",
+    "learnMore": "Learn More About Kidney Disease",
     "heroAriaLabel": "Welcome section",
     "featuresHeading": "How This Tool Helps You",
+    "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
     "featuresSubtitle": "Everything you need to make an informed decision about your kidney treatment",
     "features": {
       "time": {
@@ -64,14 +65,14 @@
     "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
   },
   "language": {
-    "title": "உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்",
-    "instruction": "உங்கள் விருப்பமான மொழியைத் தேர்ந்தெடுக்கவும். நீங்கள் எப்போது வேண்டுமானாலும் இதை மாற்றலாம்.",
-    "selectLanguage": "மொழியைத் தேர்ந்தெடுக்கவும்",
-    "currentLanguage": "தற்போதைய மொழி",
+    "title": "Choose Your Language",
+    "instruction": "Please select your preferred language. You can change this at any time.",
+    "selectLanguage": "Select language",
+    "currentLanguage": "Current language",
     "fallbackAudioText": "Hello"
   },
   "privacy": {
-    "title": "உங்கள் தனியுரிமை மற்றும் தகவல்",
+    "title": "Your Privacy Matters",
     "subtitle": "Before you begin, we want you to understand how this tool handles your information.",
     "pageAriaLabel": "Privacy information",
     "progressLabel": "Setup progress: 30%",
@@ -80,22 +81,22 @@
     "stopReading": "Stop reading",
     "sections": {
       "privacy": {
-        "title": "உங்கள் தகவலை நாங்கள் எவ்வாறு பாதுகாக்கிறோம்",
-        "content": "உங்கள் பதில்கள் பாதுகாப்பாக செயலாக்கப்படுகின்றன மற்றும் நிரந்தரமாக சேமிக்கப்படுவதில்லை. இந்த கருவி உங்களை அடையாளம் காணக்கூடிய தனிப்பட்ட சுகாதார தகவல்களை சேகரிக்காது. நீங்கள் இந்த கருவியை மூடும்போது உங்கள் அமர்வு தரவு தானாகவே நீக்கப்படும்.",
+        "title": "How We Handle Your Information",
+        "content": "Your responses are processed securely and are not stored permanently. This tool does not collect personal health information that can identify you. Your session data is automatically deleted when you close this tool.",
         "p1": "This tool uses session-only storage. Any information you enter, including your answers to questions and treatment preferences, is only kept while you are using the tool.",
         "p2": "When you close your browser or after 15 minutes of inactivity, all your information is automatically deleted. We do not save anything about you.",
         "p3": "We collect anonymous information about how people use this tool to help us improve it. This cannot identify you personally."
       },
       "ai": {
-        "title": "இந்த கருவி எவ்வாறு செயல்படுகிறது",
-        "content": "இந்த முடிவு உதவி உங்கள் பதில்களின் அடிப்படையில் தனிப்பயனாக்கப்பட்ட தகவல்களை வழங்க தொழில்நுட்பத்தைப் பயன்படுத்துகிறது. வழங்கப்பட்ட தகவல் NHS மருத்துவ வழிகாட்டுதல்கள் மற்றும் ஆதாரம் சார்ந்த ஆராய்ச்சியிலிருந்து எடுக்கப்பட்டது. இந்த கருவி உங்கள் சிறுநீரக பராமரிப்பு குழுவுடனான விவாதங்களை ஆதரிக்கிறது, ஆனால் அவற்றை மாற்றாது.",
+        "title": "About the AI Assistant",
+        "content": "This decision aid uses technology to provide personalised information based on your responses. The information provided is drawn from NHS clinical guidelines and evidence-based research. This tool supports but does not replace discussions with your kidney care team.",
         "p1": "This tool includes an AI assistant that can answer general questions about kidney treatments. The AI provides information only - it cannot give you medical advice specific to your situation.",
         "p2": "The AI may sometimes make mistakes or provide incomplete information. Always discuss important decisions with your kidney team who know your full medical history.",
         "p3": "This tool does not replace advice from your healthcare team. It is designed to help you feel more informed when discussing your options with your doctors and nurses."
       },
       "medical": {
-        "title": "முக்கியமான மருத்துவ தகவல்",
-        "content": "இந்த கருவி சிறுநீரக சிகிச்சை விருப்பங்களைப் பற்றிய பொதுவான தகவல்களை வழங்குகிறது. இது தொழில்முறை மருத்துவ ஆலோசனை, நோயறிதல் அல்லது சிகிச்சைக்கு மாற்றாக இல்லை. உங்கள் சிகிச்சை குறித்து எந்த முடிவையும் எடுப்பதற்கு முன் எப்போதும் உங்கள் சிறுநீரக நிபுணர் அல்லது சுகாதார குழுவிடம் ஆலோசிக்கவும். அவசர சுகாதார கவலைகள் இருந்தால், உங்கள் GP ஐ தொடர்புகொள்ளவும் அல்லது NHS 111 ஐ அழைக்கவும்."
+        "title": "Important Medical Information",
+        "content": "This tool provides general information about kidney treatment options. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with your kidney specialist or healthcare team before making any decisions about your treatment. If you have urgent health concerns, please contact your GP or call NHS 111."
       },
       "pii": {
         "title": "Please Do Not Share Personal Details",
@@ -130,8 +131,8 @@
     "readFullPolicy": "Read the full NHS Privacy Policy"
   },
   "journey": {
-    "title": "உங்கள் சிறுநீரக பராமரிப்பு பயணத்தில் நீங்கள் எங்கே இருக்கிறீர்கள்?",
-    "instruction": "உங்கள் தற்போதைய நிலையை சிறப்பாக விவரிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
+    "title": "Where Are You in Your Kidney Care Journey?",
+    "instruction": "Select the option that best describes your current situation",
     "stages": {
       "newlyDiagnosed": {
         "title": "I think I may have kidney disease",
@@ -164,6 +165,40 @@
     }
   },
   "questionnaire": {
+    "intro": {
+      "title": "Tell Us About Yourself",
+      "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "features": {
+        "questions": "7 quick questions",
+        "time": "Takes 3-5 minutes",
+        "private": "Completely private",
+        "skip": "Skip any question"
+      },
+      "beginButton": "Begin Questions",
+      "skipText": "If you prefer not to answer these questions, you can skip to general treatment information.",
+      "skipButton": "Skip All Questions",
+      "backToJourney": "Back to Journey Stage"
+    },
+    "progress": {
+      "label": "Question progress",
+      "questionOf": "Question {{current}} of {{total}}",
+      "complete": "complete"
+    },
+    "types": {
+      "scale": "Scale Rating",
+      "single": "Single Choice",
+      "multiple": "Multiple Choice"
+    },
+    "hints": {
+      "selectUpTo": "Select up to {{max}} priorities that are most important to you.",
+      "selectAll": "Select all that apply - you can choose more than one option."
+    },
+    "audio": {
+      "listen": "Listen to this question"
+    },
+    "skipQuestion": "Skip this question",
+    "viewResults": "View My Results",
+    "nextQuestion": "Next Question",
     "questions": {
       "knowledge": {
         "title": "How much do you know about kidney disease and its treatments?",
@@ -367,24 +402,24 @@
     }
   },
   "treatments": {
-    "title": "உங்கள் சிகிச்சை விருப்பங்களைப் புரிந்துகொள்ளுதல்",
-    "subtitle": "சிறுநீரக செயலிழப்புக்கு சிகிச்சையளிக்க வெவ்வேறு வழிகள் உள்ளன. ஒவ்வொன்றும் நன்மைகள் மற்றும் கருத்தில் கொள்ள வேண்டியவை உள்ளன.",
+    "title": "Understanding Your Treatment Options",
+    "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
     "types": {
       "transplant": {
-        "title": "சிறுநீரக மாற்று அறுவை சிகிச்சை",
-        "shortDescription": "தானம் செய்பவரிடமிருந்து ஆரோக்கியமான சிறுநீரகத்தைப் பெறுதல்",
-        "description": "சிறுநீரக மாற்று அறுவை சிகிச்சையில் உயிருள்ள தானம் செய்பவர் (குடும்ப உறுப்பினர் அல்லது நண்பர் போன்றவர்) அல்லது இறந்த தானம் செய்பவரிடமிருந்து ஆரோக்கியமான சிறுநீரகத்தைப் பெறுவது அடங்கும். வெற்றிகரமான மாற்று அறுவை சிகிச்சை சிறுநீரக செயலிழப்பு உள்ள பலருக்கு சிறந்த வாழ்க்கைத் தரத்தையும் நீண்ட ஆயுளையும் வழங்கும்.",
+        "title": "Kidney Transplant",
+        "shortDescription": "Receiving a healthy kidney from a donor",
+        "description": "A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor. A successful transplant can provide the best quality of life and longest survival for many people with kidney failure.",
         "benefits": [
-          "பெரும்பாலும் சிறந்த வாழ்க்கைத் தரத்தை வழங்குகிறது",
-          "வழக்கமான டயாலிசிஸ் அமர்வுகள் தேவையில்லை",
-          "குறைவான உணவுக் கட்டுப்பாடுகள்",
-          "பெரும்பாலான மக்களுக்கு சிறந்த ஆற்றல் நிலைகள்"
+          "Often provides the best quality of life",
+          "No regular dialysis sessions needed",
+          "Fewer dietary restrictions",
+          "Better energy levels for most people"
         ],
         "considerations": [
-          "பெரிய அறுவை சிகிச்சை தேவை",
-          "வாழ்நாள் முழுவதும் நோய் எதிர்ப்பு சக்தியை அடக்கும் மருந்துகள் எடுக்க வேண்டும்",
-          "பொருத்தமான சிறுநீரகத்திற்கு காத்திருக்க வேண்டியிருக்கலாம்",
-          "எல்லோருக்கும் பொருத்தமானது அல்ல"
+          "Requires major surgery",
+          "Need to take immunosuppressant medications for life",
+          "May need to wait for a suitable kidney",
+          "Not suitable for everyone"
         ],
         "facts": {
           "survival": "Best long-term survival outcomes",
@@ -392,21 +427,25 @@
           "medication": "Lifelong medication needed"
         }
       },
+      "haemodialysis": {
+        "title": "Haemodialysis",
+        "shortDescription": "Filtering blood using a machine"
+      },
       "hemodialysis": {
-        "title": "ஹீமோடயாலிசிஸ்",
-        "shortDescription": "இயந்திரத்தைப் பயன்படுத்தி இரத்தத்தை வடிகட்டுதல்",
-        "description": "ஹீமோடயாலிசிஸ் உங்கள் உடலுக்கு வெளியே உங்கள் இரத்தத்தை வடிகட்ட இயந்திரத்தைப் பயன்படுத்துகிறது. இது வழக்கமாக மருத்துவமனை அல்லது சமூக மையத்தில் டயாலிசிஸ் பிரிவில் செய்யப்படுகிறது, பொதுவாக வாரத்திற்கு மூன்று முறை ஒவ்வொரு அமர்வுக்கும் சுமார் நான்கு மணி நேரம். சிலர் வீட்டிலேயே ஹீமோடயாலிசிஸ் செய்கிறார்கள்.",
+        "title": "Haemodialysis",
+        "shortDescription": "Filtering blood using a machine",
+        "description": "Haemodialysis uses a machine to filter your blood outside your body. This is usually done at a dialysis unit in hospital or a community centre, typically three times a week for about four hours each session. Some people do haemodialysis at home.",
         "benefits": [
-          "கழிவுகள் மற்றும் அதிகப்படியான திரவத்தை அகற்றுவதில் பயனுள்ளது",
-          "சுகாதார குழுவுடன் வழக்கமான தொடர்பு",
-          "சிலருக்கு வீட்டு ஹீமோடயாலிசிஸ் விருப்பம் உள்ளது",
-          "சிகிச்சை உங்களுக்காக செய்யப்படுகிறது"
+          "Effective at removing waste and excess fluid",
+          "Regular contact with healthcare team",
+          "Home haemodialysis option available for some",
+          "Treatment is done for you"
         ],
         "considerations": [
-          "வழக்கமான மருத்துவமனை அல்லது மைய வருகைகள் தேவை",
-          "இரத்த நாள அணுகல் (ஃபிஸ்டுலா அல்லது லைன்) தேவை",
-          "சிகிச்சைக்குப் பிறகு சோர்வாக உணரலாம்",
-          "உணவு மற்றும் திரவ கட்டுப்பாடுகள் பொருந்தும்"
+          "Requires regular hospital or centre visits",
+          "Needs vascular access (fistula or line)",
+          "May feel tired after treatment",
+          "Dietary and fluid restrictions apply"
         ],
         "facts": {
           "frequency": "3-4 times per week, 4-5 hours each",
@@ -415,20 +454,20 @@
         }
       },
       "peritonealDialysis": {
-        "title": "பெரிடோனியல் டயாலிசிஸ்",
-        "shortDescription": "வயிற்று உள்ளடுக்கைப் பயன்படுத்தி உடலுக்குள் இரத்தத்தை வடிகட்டுதல்",
-        "description": "பெரிடோனியல் டயாலிசிஸ் உங்கள் வயிற்று உள்ளடுக்கை (பெரிடோனியம்) இயற்கையான வடிகட்டியாகப் பயன்படுத்துகிறது. ஒரு சிறிய குழாய் மூலம் உங்கள் வயிற்றில் ஒரு சிறப்பு திரவம் செலுத்தப்படுகிறது, கழிவுப் பொருட்களை உறிஞ்சி, பின்னர் வெளியேற்றப்படுகிறது. இது வீட்டிலேயே செய்யலாம், பகலில் அல்லது இரவில் நீங்கள் தூங்கும்போது.",
+        "title": "Peritoneal Dialysis",
+        "shortDescription": "Filtering blood inside the body using the abdomen lining",
+        "description": "Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter. A special fluid is put into your abdomen through a small tube, absorbs waste products, and is then drained out. This can be done at home, either during the day or overnight while you sleep.",
         "benefits": [
-          "வீட்டிலேயே செய்யப்படுகிறது, அதிக சுதந்திரம்",
-          "அதிக நெகிழ்வான அட்டவணை",
-          "உடலில் மென்மையானது, குறைவான ஏற்ற இறக்கங்கள்",
-          "பயணம் செய்வது எளிது"
+          "Done at home, more independence",
+          "More flexible schedule",
+          "Gentler on the body, fewer ups and downs",
+          "Easier to travel"
         ],
         "considerations": [
-          "தினசரி சிகிச்சை அர்ப்பணிப்பு தேவை",
-          "உங்கள் வயிற்றில் நிரந்தர குழாய் தேவை",
-          "நுட்பத்தை பராமரிக்கவில்லை என்றால் தொற்று ஆபத்து",
-          "பொருட்களுக்கு சேமிப்பு இடம் தேவை"
+          "Requires daily treatment commitment",
+          "Need a permanent tube in your abdomen",
+          "Risk of infection if technique is not maintained",
+          "Requires storage space for supplies"
         ],
         "facts": {
           "daily": "Daily treatment at home",
@@ -437,20 +476,20 @@
         }
       },
       "conservative": {
-        "title": "பழமைவாத மேலாண்மை",
-        "shortDescription": "டயாலிசிஸ் இல்லாமல் அறிகுறிகளை நிர்வகித்தல்",
-        "description": "பழமைவாத மேலாண்மை டயாலிசிஸ் அல்லது மாற்று அறுவை சிகிச்சை இல்லாமல் வாழ்க்கைத் தரத்தை பராமரிப்பதிலும் அறிகுறிகளை நிர்வகிப்பதிலும் கவனம் செலுத்துகிறது. இந்த அணுகுமுறை சிலருக்கு, குறிப்பாக வயதானவர்கள், பலவீனமானவர்கள் அல்லது பிற தீவிர சுகாதார நிலைமைகள் உள்ளவர்களுக்கு சரியானதாக இருக்கலாம். இதில் கவனமான அறிகுறி மேலாண்மை, மருந்துகள் மற்றும் சிறுநீரக பராமரிப்பு குழுவின் ஆதரவு அடங்கும்.",
+        "title": "Conservative Management",
+        "shortDescription": "Managing symptoms without dialysis",
+        "description": "Conservative management focuses on maintaining quality of life and managing symptoms without dialysis or transplant. This approach may be right for some people, particularly those who are elderly, frail, or have other serious health conditions. It involves careful symptom management, medications, and support from the kidney care team.",
         "benefits": [
-          "டயாலிசிஸ் அமர்வுகள் அல்லது அறுவை சிகிச்சை தேவையில்லை",
-          "வாழ்க்கைத் தரம் மற்றும் ஆறுதலில் கவனம்",
-          "சில வயதான அல்லது பலவீனமான நோயாளிகளுக்கு பொருத்தமானதாக இருக்கலாம்",
-          "இயன்றவரை வழக்கமான நடைமுறையை பராமரிக்கவும்"
+          "No dialysis sessions or surgery needed",
+          "Focus on quality of life and comfort",
+          "May be appropriate for some elderly or frail patients",
+          "Maintain usual routine as much as possible"
         ],
         "considerations": [
-          "சிறுநீரக செயல்பாடு தொடர்ந்து குறையும்",
-          "அறிகுறிகளுக்கு செயலில் நிர்வாகம் தேவைப்படும்",
-          "எதிர்பார்ப்புகள் பற்றி நேர்மையான உரையாடல்கள் முக்கியம்",
-          "முன்கூட்டிய பராமரிப்பு திட்டமிடல் பரிந்துரைக்கப்படுகிறது"
+          "Kidney function will continue to decline",
+          "Symptoms will need active management",
+          "Important to have honest conversations about expectations",
+          "Advance care planning is recommended"
         ],
         "facts": {
           "comfort": "Focus on comfort and quality of life",
@@ -459,6 +498,33 @@
         }
       }
     },
+    "facts": {
+      "transplant": {
+        "survival": "Best long-term survival outcomes",
+        "surgery": "Requires surgery and recovery time",
+        "medication": "Lifelong medication needed"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 times per week, 4-5 hours each",
+        "professionalCare": "Professional care and monitoring",
+        "travel": "Travel to centre required"
+      },
+      "peritoneal": {
+        "dailyHome": "Daily treatment at home",
+        "timingOptions": "Overnight or daytime options",
+        "flexibility": "Greater flexibility and independence"
+      },
+      "conservative": {
+        "comfort": "Focus on comfort and quality of life",
+        "noDialysis": "No dialysis treatment required",
+        "symptomManagement": "Active symptom management"
+      }
+    },
+    "infoBox": {
+      "title": "Your kidney team will guide you",
+      "text": "This information is to help you understand your options. Your kidney team are the experts in your care and will help you decide which treatment is most suitable for your individual situation."
+    },
+    "mainChoices": "Your Main Treatment Choices",
     "detail": {
       "transplant": {
         "title": "Kidney Transplant",
@@ -956,6 +1022,11 @@
       "moderate": "Moderate - Some limitations to consider",
       "challenging": "Challenging - Significant considerations",
       "varies": "Varies - Depends on individual circumstances"
+    },
+    "cta": {
+      "title": "Compare All Treatments",
+      "description": "See all treatment options side by side to understand how they differ on the factors that matter most to you.",
+      "button": "Compare All Treatments"
     }
   },
   "values": {
@@ -1053,7 +1124,8 @@
     "scale": {
       "lessImportant": "Less important",
       "moreImportant": "More important"
-    }
+    },
+    "cta": "What Matters to You?"
   },
   "chat": {
     "title": "Ask Questions",
@@ -1093,11 +1165,34 @@
     }
   },
   "modelViewer": {
-    "title": "3D Kidney Model",
+    "title": "3D Kidney Model Viewer",
     "subtitle": "Explore how different treatments work",
     "loading": "Loading 3D Model...",
     "headerBadge": "Interactive 3D Model",
     "badge": "Interactive Learning Tool",
+    "breadcrumb": "3D Kidney Model",
+    "backToHub": "Back to Hub",
+    "interactive3DModel": "Interactive 3D Model",
+    "interactiveTool": "Interactive Learning Tool",
+    "interactiveDescription": "Explore an interactive 3D model of human kidneys. Use your mouse or touch to rotate and zoom.",
+    "dragToRotate": "Drag to rotate",
+    "scrollToZoom": "Scroll to zoom",
+    "labelsOn": "Labels: On",
+    "labelsOff": "Labels: Off",
+    "autoRotateOn": "Auto-Rotate: On",
+    "autoRotateOff": "Auto-Rotate: Off",
+    "resetView": "Reset view",
+    "reset": "Reset",
+    "aboutKidneys": "About Your Kidneys",
+    "kidneyInfo": "Your kidneys are bean-shaped organs about the size of your fist. They filter about 200 litres of blood daily, removing waste and extra fluid.",
+    "kidneyFunction": "What Kidneys Do",
+    "functionInfo": "Kidneys regulate blood pressure, produce hormones, balance body fluids, and filter waste products into urine.",
+    "whenKidneysFail": "When Kidneys Fail",
+    "failureInfo": "When kidneys lose function, treatments like dialysis or transplant can help do the work your kidneys can no longer do.",
+    "learnMore": "Learn More About Treatment Options",
+    "continueJourney": "Continue your kidney care journey by exploring your treatment options.",
+    "exploreTreatments": "Explore Treatments",
+    "compareTreatments": "Compare Treatments",
     "controls": {
       "rotate": "Click and drag to rotate",
       "zoom": "Scroll to zoom",
@@ -1250,6 +1345,8 @@
     "demo": "Demo",
     "serviceName": "Kidney Treatment Decision Aid",
     "subtitle": "Supporting informed healthcare decisions",
+    "supportingDecisions": "Supporting informed healthcare decisions",
+    "navigationLabel": "Footer navigation",
     "navAriaLabel": "Footer navigation",
     "accessibilityLink": "Accessibility",
     "privacyPolicyLink": "Privacy Policy",
@@ -1258,55 +1355,97 @@
     "disclaimerText": "This application is a mock design created by Pears Research Services for demonstration purposes only. It is not affiliated with or endorsed by the NHS.",
     "mockDesign": "mock design",
     "companyName": "Pears Research Services",
-    "contactUs": "எங்களைத் தொடர்புகொள்ளுங்கள்",
+    "contactUs": "Contact Us",
     "copyright": "Pears Research Services. All rights reserved.",
     "versionText": "Demo Version 1.0",
-    "nhsInfo": "NHS சிறுநீரக பராமரிப்பு",
-    "accessibility": "அணுகல்தன்மை",
-    "privacyPolicy": "தனியுரிமைக் கொள்கை",
-    "termsOfUse": "பயன்பாட்டு விதிமுறைகள்"
+    "demoVersion": "Demo Version 1.0",
+    "nhsInfo": "NHS Kidney Care",
+    "accessibility": "Accessibility",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "contact": "Contact",
+    "disclaimer": {
+      "title": "Important Disclaimer",
+      "text1": "This application is a",
+      "mockDesign": "mock design",
+      "text2": "created by",
+      "company": "Pears Research Services",
+      "text3": "for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
+    }
   },
   "progressBar": {
     "stepOfTotal": "Step {{current}} of {{total}}",
     "percentComplete": "{{percentage}}% complete",
     "ariaLabel": "Progress: {{current}} of {{total}} steps completed"
   },
+  "progress": {
+    "stepOfTotal": "Step {{current}} of {{total}}",
+    "percentComplete": "{{percentage}}% complete",
+    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed"
+  },
   "session": {
-    "timeRemaining": "மீதமுள்ள நேரம்: {{minutes}} நிமிடங்கள்",
-    "sessionExpiring": "உங்கள் அமர்வு விரைவில் காலாவதியாகும். தொடர விரும்புகிறீர்களா?",
+    "timeRemaining": "Time remaining: {{minutes}}",
+    "sessionExpiring": "Your session will expire soon",
     "expiringMessage": "Your session will expire in {{minutes}} minutes. Would you like to continue?",
-    "extendSession": "அமர்வை நீட்டிக்க",
-    "sessionExpired": "உங்கள் அமர்வு காலாவதியாகிவிட்டது. மீண்டும் தொடங்கவும்.",
+    "extendSession": "Continue Session",
+    "sessionExpired": "Your session has expired. Please start again.",
     "expiredMessage": "Your session has expired. Please start again.",
     "createError": "Failed to create session. Please try again.",
-    "startNewSession": "புதிய அமர்வைத் தொடங்கு"
+    "startNewSession": "Start New Session"
   },
   "common": {
-    "loading": "ஏற்றுகிறது...",
-    "error": "ஏதோ தவறு நடந்துவிட்டது. மீண்டும் முயற்சிக்கவும்.",
-    "continue": "தொடரவும்",
-    "cancel": "ரத்துசெய்",
-    "save": "சேமி",
-    "print": "அச்சிடு",
-    "yes": "ஆம்",
-    "no": "இல்லை",
-    "notSure": "உறுதியாக தெரியவில்லை",
-    "moreInfo": "மேலும் தகவல்",
-    "close": "மூடு",
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "print": "Print",
+    "yes": "Yes",
+    "no": "No",
+    "notSure": "Not sure",
+    "moreInfo": "More information",
+    "close": "Close",
     "edit": "Edit",
     "remove": "Remove",
-    "add": "Add"
+    "add": "Add",
+    "back": "Back",
+    "learnMore": "Learn More",
+    "listenToPage": "Listen to this page"
   },
   "accessibility": {
-    "skipToContent": "முக்கிய உள்ளடக்கத்திற்குச் செல்",
-    "openMenu": "மெனுவைத் திற",
-    "closeMenu": "மெனுவை மூடு",
-    "expandSection": "பகுதியை விரிவாக்கு",
-    "collapseSection": "பகுதியைச் சுருக்கு",
-    "newWindow": "புதிய சாளரத்தில் திறக்கிறது",
-    "externalLink": "வெளிப்புற இணைப்பு",
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandSection": "Expand section",
+    "collapseSection": "Collapse section",
+    "newWindow": "opens in new tab",
+    "externalLink": "External link",
     "settings": "Accessibility",
     "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
-    "settingsTitle": "Adjust text size, contrast, and other accessibility settings"
+    "settingsTitle": "Adjust text size, contrast, and other accessibility settings",
+    "breadcrumb": "Breadcrumb navigation",
+    "pageNavigation": "Page navigation",
+    "listenToPage": "Listen to this page being read aloud",
+    "modal": {
+      "title": "Accessibility Settings",
+      "textSize": "Text Size",
+      "textSizeOptions": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "extra-large": "Extra Large"
+      },
+      "highContrast": "High Contrast Mode",
+      "reducedMotion": "Reduce Motion",
+      "lineSpacing": "Line Spacing",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Relaxed",
+        "loose": "Loose"
+      },
+      "reset": "Reset to Defaults",
+      "cancel": "Cancel",
+      "save": "Save Changes"
+    }
   }
 }

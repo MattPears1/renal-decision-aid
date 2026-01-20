@@ -302,6 +302,9 @@
     "audio": {
       "listen": "Listen to this question"
     },
+    "slider": {
+      "ariaLabel": "Value from {{min}} to {{max}}"
+    },
     "skipQuestion": "Skip this question",
     "viewResults": "View My Results",
     "nextQuestion": "Next Question"
@@ -385,6 +388,7 @@
   "treatments": {
     "title": "Understanding Your Treatment Options",
     "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
+    "detailedInfoAriaLabel": "{{treatment}} detailed information",
     "facts": {
       "transplant": {
         "survival": "Best long-term survival outcomes",

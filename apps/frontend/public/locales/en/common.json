@@ -16,6 +16,7 @@
     "learnMore": "Learn More About Kidney Disease",
     "heroAriaLabel": "Welcome section",
     "featuresHeading": "How This Tool Helps You",
+    "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
     "featuresSubtitle": "Everything you need to make an informed decision about your kidney treatment",
     "features": {
       "time": {
@@ -164,6 +165,40 @@
     }
   },
   "questionnaire": {
+    "intro": {
+      "title": "Tell Us About Yourself",
+      "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "features": {
+        "questions": "7 quick questions",
+        "time": "Takes 3-5 minutes",
+        "private": "Completely private",
+        "skip": "Skip any question"
+      },
+      "beginButton": "Begin Questions",
+      "skipText": "If you prefer not to answer these questions, you can skip to general treatment information.",
+      "skipButton": "Skip All Questions",
+      "backToJourney": "Back to Journey Stage"
+    },
+    "progress": {
+      "label": "Question progress",
+      "questionOf": "Question {{current}} of {{total}}",
+      "complete": "complete"
+    },
+    "types": {
+      "scale": "Scale Rating",
+      "single": "Single Choice",
+      "multiple": "Multiple Choice"
+    },
+    "hints": {
+      "selectUpTo": "Select up to {{max}} priorities that are most important to you.",
+      "selectAll": "Select all that apply - you can choose more than one option."
+    },
+    "audio": {
+      "listen": "Listen to this question"
+    },
+    "skipQuestion": "Skip this question",
+    "viewResults": "View My Results",
+    "nextQuestion": "Next Question",
     "questions": {
       "knowledge": {
         "title": "How much do you know about kidney disease and its treatments?",
@@ -392,6 +427,10 @@
           "medication": "Lifelong medication needed"
         }
       },
+      "haemodialysis": {
+        "title": "Haemodialysis",
+        "shortDescription": "Filtering blood using a machine"
+      },
       "hemodialysis": {
         "title": "Haemodialysis",
         "shortDescription": "Filtering blood using a machine",
@@ -459,6 +498,33 @@
         }
       }
     },
+    "facts": {
+      "transplant": {
+        "survival": "Best long-term survival outcomes",
+        "surgery": "Requires surgery and recovery time",
+        "medication": "Lifelong medication needed"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 times per week, 4-5 hours each",
+        "professionalCare": "Professional care and monitoring",
+        "travel": "Travel to centre required"
+      },
+      "peritoneal": {
+        "dailyHome": "Daily treatment at home",
+        "timingOptions": "Overnight or daytime options",
+        "flexibility": "Greater flexibility and independence"
+      },
+      "conservative": {
+        "comfort": "Focus on comfort and quality of life",
+        "noDialysis": "No dialysis treatment required",
+        "symptomManagement": "Active symptom management"
+      }
+    },
+    "infoBox": {
+      "title": "Your kidney team will guide you",
+      "text": "This information is to help you understand your options. Your kidney team are the experts in your care and will help you decide which treatment is most suitable for your individual situation."
+    },
+    "mainChoices": "Your Main Treatment Choices",
     "detail": {
       "transplant": {
         "title": "Kidney Transplant",
@@ -956,6 +1022,11 @@
       "moderate": "Moderate - Some limitations to consider",
       "challenging": "Challenging - Significant considerations",
       "varies": "Varies - Depends on individual circumstances"
+    },
+    "cta": {
+      "title": "Compare All Treatments",
+      "description": "See all treatment options side by side to understand how they differ on the factors that matter most to you.",
+      "button": "Compare All Treatments"
     }
   },
   "values": {
@@ -1053,7 +1124,8 @@
     "scale": {
       "lessImportant": "Less important",
       "moreImportant": "More important"
-    }
+    },
+    "cta": "What Matters to You?"
   },
   "chat": {
     "title": "Ask Questions",
@@ -1093,11 +1165,34 @@
     }
   },
   "modelViewer": {
-    "title": "3D Kidney Model",
+    "title": "3D Kidney Model Viewer",
     "subtitle": "Explore how different treatments work",
     "loading": "Loading 3D Model...",
     "headerBadge": "Interactive 3D Model",
     "badge": "Interactive Learning Tool",
+    "breadcrumb": "3D Kidney Model",
+    "backToHub": "Back to Hub",
+    "interactive3DModel": "Interactive 3D Model",
+    "interactiveTool": "Interactive Learning Tool",
+    "interactiveDescription": "Explore an interactive 3D model of human kidneys. Use your mouse or touch to rotate and zoom.",
+    "dragToRotate": "Drag to rotate",
+    "scrollToZoom": "Scroll to zoom",
+    "labelsOn": "Labels: On",
+    "labelsOff": "Labels: Off",
+    "autoRotateOn": "Auto-Rotate: On",
+    "autoRotateOff": "Auto-Rotate: Off",
+    "resetView": "Reset view",
+    "reset": "Reset",
+    "aboutKidneys": "About Your Kidneys",
+    "kidneyInfo": "Your kidneys are bean-shaped organs about the size of your fist. They filter about 200 litres of blood daily, removing waste and extra fluid.",
+    "kidneyFunction": "What Kidneys Do",
+    "functionInfo": "Kidneys regulate blood pressure, produce hormones, balance body fluids, and filter waste products into urine.",
+    "whenKidneysFail": "When Kidneys Fail",
+    "failureInfo": "When kidneys lose function, treatments like dialysis or transplant can help do the work your kidneys can no longer do.",
+    "learnMore": "Learn More About Treatment Options",
+    "continueJourney": "Continue your kidney care journey by exploring your treatment options.",
+    "exploreTreatments": "Explore Treatments",
+    "compareTreatments": "Compare Treatments",
     "controls": {
       "rotate": "Click and drag to rotate",
       "zoom": "Scroll to zoom",
@@ -1250,6 +1345,8 @@
     "demo": "Demo",
     "serviceName": "Kidney Treatment Decision Aid",
     "subtitle": "Supporting informed healthcare decisions",
+    "supportingDecisions": "Supporting informed healthcare decisions",
+    "navigationLabel": "Footer navigation",
     "navAriaLabel": "Footer navigation",
     "accessibilityLink": "Accessibility",
     "privacyPolicyLink": "Privacy Policy",
@@ -1261,15 +1358,30 @@
     "contactUs": "Contact Us",
     "copyright": "Pears Research Services. All rights reserved.",
     "versionText": "Demo Version 1.0",
+    "demoVersion": "Demo Version 1.0",
     "nhsInfo": "NHS Kidney Care",
     "accessibility": "Accessibility",
     "privacyPolicy": "Privacy Policy",
-    "termsOfUse": "Terms of Use"
+    "termsOfUse": "Terms of Use",
+    "contact": "Contact",
+    "disclaimer": {
+      "title": "Important Disclaimer",
+      "text1": "This application is a",
+      "mockDesign": "mock design",
+      "text2": "created by",
+      "company": "Pears Research Services",
+      "text3": "for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
+    }
   },
   "progressBar": {
     "stepOfTotal": "Step {{current}} of {{total}}",
     "percentComplete": "{{percentage}}% complete",
     "ariaLabel": "Progress: {{current}} of {{total}} steps completed"
+  },
+  "progress": {
+    "stepOfTotal": "Step {{current}} of {{total}}",
+    "percentComplete": "{{percentage}}% complete",
+    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed"
   },
   "session": {
     "timeRemaining": "Time remaining: {{minutes}}",
@@ -1295,7 +1407,10 @@
     "close": "Close",
     "edit": "Edit",
     "remove": "Remove",
-    "add": "Add"
+    "add": "Add",
+    "back": "Back",
+    "learnMore": "Learn More",
+    "listenToPage": "Listen to this page"
   },
   "accessibility": {
     "skipToContent": "Skip to main content",
@@ -1303,10 +1418,34 @@
     "closeMenu": "Close menu",
     "expandSection": "Expand section",
     "collapseSection": "Collapse section",
-    "newWindow": "Opens in a new window",
+    "newWindow": "opens in new tab",
     "externalLink": "External link",
     "settings": "Accessibility",
     "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
-    "settingsTitle": "Adjust text size, contrast, and other accessibility settings"
+    "settingsTitle": "Adjust text size, contrast, and other accessibility settings",
+    "breadcrumb": "Breadcrumb navigation",
+    "pageNavigation": "Page navigation",
+    "listenToPage": "Listen to this page being read aloud",
+    "modal": {
+      "title": "Accessibility Settings",
+      "textSize": "Text Size",
+      "textSizeOptions": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "extra-large": "Extra Large"
+      },
+      "highContrast": "High Contrast Mode",
+      "reducedMotion": "Reduce Motion",
+      "lineSpacing": "Line Spacing",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Relaxed",
+        "loose": "Loose"
+      },
+      "reset": "Reset to Defaults",
+      "cancel": "Cancel",
+      "save": "Save Changes"
+    }
   }
 }

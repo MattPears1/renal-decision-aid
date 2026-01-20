@@ -335,7 +335,7 @@ export default function TreatmentDetailPage() {
   }
 
   return (
-    <main className="min-h-screen bg-bg-page" id="main-content" aria-label={`${treatment.title} detailed information`}>
+    <main className="min-h-screen bg-bg-page" id="main-content" aria-label={t('treatments.detailedInfoAriaLabel', { treatment: treatment.title })}>
       {/* Breadcrumb */}
       <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-xl mx-auto px-4 py-3">

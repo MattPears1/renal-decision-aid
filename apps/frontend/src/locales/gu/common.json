@@ -302,6 +302,9 @@
     "audio": {
       "listen": "[EN] Listen to this question"
     },
+    "slider": {
+      "ariaLabel": "{{min}} થી {{max}} સુધીનું મૂલ્ય"
+    },
     "skipQuestion": "[EN] Skip this question",
     "viewResults": "[EN] View My Results",
     "nextQuestion": "[EN] Next Question"
@@ -391,6 +394,7 @@
   "treatments": {
     "title": "તમારા સારવારના વિકલ્પોને સમજવું",
     "subtitle": "કિડની નિષ્ફળતાની સારવાર માટે વિવિધ રીતો છે. દરેકના ફાયદા અને વિચારણાઓ છે.",
+    "detailedInfoAriaLabel": "{{treatment}} વિગતવાર માહિતી",
     "facts": {
       "transplant": {
         "survival": "શ્રેષ્ઠ લાંબા ગાળાના જીવિત રહેવાના પરિણામો",

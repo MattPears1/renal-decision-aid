@@ -189,6 +189,7 @@
   "treatments": {
     "title": "আপনার চিকিৎসার বিকল্পগুলি বোঝা",
     "subtitle": "কিডনি বিকল হলে বিভিন্ন উপায়ে চিকিৎসা করা যায়। প্রতিটির সুবিধা এবং বিবেচনাযোগ্য বিষয় রয়েছে।",
+    "detailedInfoAriaLabel": "{{treatment}} বিস্তারিত তথ্য",
     "facts": {
       "transplant": {
         "survival": "দীর্ঘমেয়াদী বেঁচে থাকার সর্বোত্তম ফলাফল",
@@ -483,6 +484,9 @@
     },
     "audio": {
       "listen": "[EN] Listen to this question"
+    },
+    "slider": {
+      "ariaLabel": "{{min}} থেকে {{max}} পর্যন্ত মান"
     },
     "skipQuestion": "[EN] Skip this question",
     "viewResults": "[EN] View My Results",

@@ -189,6 +189,7 @@
   "treatments": {
     "title": "ਆਪਣੇ ਇਲਾਜ ਵਿਕਲਪਾਂ ਨੂੰ ਸਮਝਣਾ",
     "subtitle": "ਗੁਰਦੇ ਦੀ ਅਸਫਲਤਾ ਦੇ ਇਲਾਜ ਦੇ ਵੱਖ-ਵੱਖ ਤਰੀਕੇ ਹਨ। ਹਰੇਕ ਦੇ ਲਾਭ ਅਤੇ ਵਿਚਾਰ ਹਨ।",
+    "detailedInfoAriaLabel": "{{treatment}} ਵਿਸਤ੍ਰਿਤ ਜਾਣਕਾਰੀ",
     "facts": {
       "transplant": {
         "survival": "ਸਭ ਤੋਂ ਵਧੀਆ ਲੰਬੇ ਸਮੇਂ ਦੇ ਬਚਾਅ ਦੇ ਨਤੀਜੇ",
@@ -541,6 +542,9 @@
     },
     "audio": {
       "listen": "Listen to this question"
+    },
+    "slider": {
+      "ariaLabel": "{{min}} ਤੋਂ {{max}} ਤੱਕ ਦਾ ਮੁੱਲ"
     },
     "skipQuestion": "Skip this question",
     "viewResults": "View My Results",

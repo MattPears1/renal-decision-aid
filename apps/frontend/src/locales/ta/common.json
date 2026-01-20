@@ -366,6 +366,9 @@
     "audio": {
       "listen": "[EN] Listen to this question"
     },
+    "slider": {
+      "ariaLabel": "{{min}} முதல் {{max}} வரை மதிப்பு"
+    },
     "skipQuestion": "[EN] Skip this question",
     "viewResults": "[EN] View My Results",
     "nextQuestion": "[EN] Next Question",
@@ -457,6 +460,7 @@
   "treatments": {
     "title": "உங்கள் சிகிச்சை விருப்பங்களைப் புரிந்துகொள்ளுங்கள்",
     "subtitle": "சிறுநீரக செயலிழப்பை சிகிச்சை செய்ய பல்வேறு வழிகள் உள்ளன. ஒவ்வொன்றிற்கும் நன்மைகளும் கருத்தில் கொள்ள வேண்டியவையும் உள்ளன.",
+    "detailedInfoAriaLabel": "{{treatment}} விரிவான தகவல்",
     "facts": {
       "transplant": {
         "survival": "சிறந்த நீண்டகால உயிர்வாழ்வு முடிவுகள்",
