@@ -353,7 +353,85 @@
 }
 
 /* ==========================================================================
-   Accessibility - Reduced Motion
+   Accessibility Settings (User Preferences)
+   ========================================================================== */
+
+:root {
+  /* Accessibility Custom Properties */
+  --text-scale: 1;
+  --line-height: 1.5;
+}
+
+/* Apply text scale globally */
+html {
+  font-size: calc(16px * var(--text-scale));
+}
+
+/* Apply line height to body content */
+body {
+  line-height: var(--line-height);
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --color-text-primary: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-text-muted: #333333;
+  --color-bg-page: #FFFFFF;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-secondary: #F5F5F5;
+  --nhs-blue: #0000EE;
+  --nhs-blue-dark: #000099;
+  --nhs-green: #006600;
+  --nhs-red: #CC0000;
+}
+
+.high-contrast body {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.high-contrast a {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+.high-contrast a:visited {
+  color: #551A8B;
+}
+
+.high-contrast button,
+.high-contrast .btn-primary,
+.high-contrast .btn-secondary,
+.high-contrast .btn-outline {
+  border-width: 3px;
+}
+
+.high-contrast :focus-visible,
+.high-contrast a:focus-visible,
+.high-contrast button:focus-visible {
+  outline: 3px solid #000000 !important;
+  outline-offset: 2px;
+}
+
+.high-contrast .card,
+.high-contrast .card-elevated,
+.high-contrast .card-interactive {
+  border: 2px solid #000000;
+}
+
+/* Reduced Motion (User Preference Override) */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ==========================================================================
+   Accessibility - Reduced Motion (System Preference)
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {

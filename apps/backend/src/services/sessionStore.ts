@@ -4,7 +4,8 @@
  * Supports multiple storage backends:
  * - Memory (default, for development)
  * - File-based (for Heroku without Redis)
- * - Redis (recommended for production)
+ * - SQLite (recommended for production, persistent)
+ * - Redis (optional, for distributed systems)
  *
  * The storage backend is selected based on environment variables.
  */
@@ -12,6 +13,8 @@
 import fs from 'fs';
 import path from 'path';
 import logger, { apiLogger } from './logger.js';
+import { getDatabase, closeDatabase } from '../db/database.js';
+import type Database from 'better-sqlite3';
 
 export interface ChatMessage {
   id: string;
@@ -230,6 +233,172 @@ class FileBackend implements StorageBackend {
 }
 
 /**
+ * SQLite storage backend for persistent session storage
+ * Sessions survive server restarts and are stored in a local database file
+ */
+class SQLiteBackend implements StorageBackend {
+  private db: Database.Database;
+  private stmtGet: Database.Statement;
+  private stmtSet: Database.Statement;
+  private stmtDelete: Database.Statement;
+  private stmtGetAll: Database.Statement;
+  private stmtCount: Database.Statement;
+  private stmtClear: Database.Statement;
+  private stmtCleanup: Database.Statement;
+
+  constructor() {
+    this.db = getDatabase();
+
+    // Prepare statements for better performance
+    this.stmtGet = this.db.prepare(
+      'SELECT data FROM sessions WHERE id = ?'
+    );
+
+    this.stmtSet = this.db.prepare(`
+      INSERT INTO sessions (id, data, created_at, updated_at, expires_at)
+      VALUES (?, ?, ?, ?, ?)
+      ON CONFLICT(id) DO UPDATE SET
+        data = excluded.data,
+        updated_at = excluded.updated_at,
+        expires_at = excluded.expires_at
+    `);
+
+    this.stmtDelete = this.db.prepare(
+      'DELETE FROM sessions WHERE id = ?'
+    );
+
+    this.stmtGetAll = this.db.prepare(
+      'SELECT id, data FROM sessions'
+    );
+
+    this.stmtCount = this.db.prepare(
+      'SELECT COUNT(*) as count FROM sessions'
+    );
+
+    this.stmtClear = this.db.prepare(
+      'DELETE FROM sessions'
+    );
+
+    this.stmtCleanup = this.db.prepare(
+      'DELETE FROM sessions WHERE expires_at < ?'
+    );
+
+    logger.info('SQLite session storage backend initialized');
+  }
+
+  get(sessionId: string): SessionData | undefined {
+    try {
+      const row = this.stmtGet.get(sessionId) as { data: string } | undefined;
+      if (row) {
+        return JSON.parse(row.data) as SessionData;
+      }
+      return undefined;
+    } catch (error) {
+      logger.error('SQLite get error', {
+        sessionId,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+      return undefined;
+    }
+  }
+
+  set(sessionId: string, data: SessionData): void {
+    try {
+      const now = new Date().toISOString();
+      this.stmtSet.run(
+        sessionId,
+        JSON.stringify(data),
+        data.createdAt,
+        now,
+        data.expiresAt
+      );
+    } catch (error) {
+      logger.error('SQLite set error', {
+        sessionId,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+    }
+  }
+
+  delete(sessionId: string): boolean {
+    try {
+      const result = this.stmtDelete.run(sessionId);
+      return result.changes > 0;
+    } catch (error) {
+      logger.error('SQLite delete error', {
+        sessionId,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+      return false;
+    }
+  }
+
+  *entries(): IterableIterator<[string, SessionData]> {
+    try {
+      const rows = this.stmtGetAll.all() as Array<{ id: string; data: string }>;
+      for (const row of rows) {
+        try {
+          const sessionData = JSON.parse(row.data) as SessionData;
+          yield [row.id, sessionData];
+        } catch {
+          logger.warn('Failed to parse session data', { sessionId: row.id });
+        }
+      }
+    } catch (error) {
+      logger.error('SQLite entries error', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+    }
+  }
+
+  get size(): number {
+    try {
+      const row = this.stmtCount.get() as { count: number };
+      return row.count;
+    } catch (error) {
+      logger.error('SQLite size error', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+      return 0;
+    }
+  }
+
+  clear(): void {
+    try {
+      this.stmtClear.run();
+    } catch (error) {
+      logger.error('SQLite clear error', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+    }
+  }
+
+  /**
+   * Delete expired sessions from the database
+   * Returns the number of sessions deleted
+   */
+  cleanupExpired(): number {
+    try {
+      const now = new Date().toISOString();
+      const result = this.stmtCleanup.run(now);
+      return result.changes;
+    } catch (error) {
+      logger.error('SQLite cleanup error', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+      });
+      return 0;
+    }
+  }
+
+  /**
+   * Close the database connection
+   */
+  close(): void {
+    closeDatabase();
+  }
+}
+
+/**
  * Redis storage backend (optional, requires ioredis)
  * This is a stub that falls back to file storage if Redis is not available
  */
@@ -271,23 +440,44 @@ async function createRedisBackend(redisUrl: string): Promise<StorageBackend | nu
 
 /**
  * Determine which storage backend to use
+ * Priority: explicit SESSION_STORAGE > production default (sqlite) > development default (memory)
  */
 function createStorageBackend(): StorageBackend {
-  const sessionStorage = process.env.SESSION_STORAGE || 'memory';
+  const sessionStorage = process.env.SESSION_STORAGE || '';
 
-  if (sessionStorage === 'redis' && process.env.REDIS_URL) {
-    // Try Redis but fall back to file if it fails
-    // For now, we'll use file storage as Redis requires async handling
-    logger.info('Redis storage configured but using file storage for sync compatibility');
-    return new FileBackend(SESSION_FILE_PATH);
+  // Explicit SQLite storage
+  if (sessionStorage === 'sqlite') {
+    logger.info('Using SQLite session storage');
+    return new SQLiteBackend();
   }
 
-  if (sessionStorage === 'file' || process.env.NODE_ENV === 'production') {
+  // Explicit Redis storage (falls back to SQLite if unavailable)
+  if (sessionStorage === 'redis' && process.env.REDIS_URL) {
+    // Try Redis but fall back to SQLite if it fails
+    // For now, we'll use SQLite storage as Redis requires async handling
+    logger.info('Redis storage configured but using SQLite for sync compatibility');
+    return new SQLiteBackend();
+  }
+
+  // Explicit file storage
+  if (sessionStorage === 'file') {
     logger.info('Using file-based session storage', { path: SESSION_FILE_PATH });
     return new FileBackend(SESSION_FILE_PATH);
   }
 
-  logger.info('Using in-memory session storage');
+  // Explicit memory storage
+  if (sessionStorage === 'memory') {
+    logger.info('Using in-memory session storage');
+    return new MemoryBackend();
+  }
+
+  // Default: production uses SQLite, development uses memory
+  if (process.env.NODE_ENV === 'production') {
+    logger.info('Using SQLite session storage (production default)');
+    return new SQLiteBackend();
+  }
+
+  logger.info('Using in-memory session storage (development default)');
   return new MemoryBackend();
 }
 
@@ -418,15 +608,22 @@ class SessionStore {
 
   /**
    * Clean up expired sessions
+   * Uses optimized database query for SQLite backend
    */
   cleanup(): number {
-    const now = new Date();
     let cleaned = 0;
 
-    for (const [sessionId, session] of this.storage.entries()) {
-      if (new Date(session.expiresAt) < now) {
-        this.storage.delete(sessionId);
-        cleaned++;
+    // Use optimized cleanup for SQLite backend
+    if (this.storage instanceof SQLiteBackend) {
+      cleaned = this.storage.cleanupExpired();
+    } else {
+      // Fallback for other backends: iterate and delete
+      const now = new Date();
+      for (const [sessionId, session] of this.storage.entries()) {
+        if (new Date(session.expiresAt) < now) {
+          this.storage.delete(sessionId);
+          cleaned++;
+        }
       }
     }
 

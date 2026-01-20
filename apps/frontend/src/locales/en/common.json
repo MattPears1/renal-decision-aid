@@ -5,6 +5,7 @@
     "next": "Next",
     "skip": "Skip",
     "returnToHub": "Return to Hub",
+    "backToHub": "Back to Hub",
     "continueToQuestionnaire": "Continue to questionnaire"
   },
   "common": {
@@ -19,7 +20,10 @@
     "notSure": "Not sure",
     "moreInfo": "More information",
     "close": "Close",
-    "back": "Back"
+    "back": "Back",
+    "edit": "Edit",
+    "add": "Add",
+    "remove": "Remove"
   },
   "accessibility": {
     "skipToContent": "Skip to main content",
@@ -31,7 +35,32 @@
     "externalLink": "External link",
     "settings": "Accessibility",
     "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
-    "settingsTitle": "Adjust text size, contrast, and other accessibility settings"
+    "settingsTitle": "Adjust text size, contrast, and other accessibility settings",
+    "breadcrumb": "Breadcrumb navigation",
+    "pageNavigation": "Page navigation",
+    "faq": "Frequently asked questions",
+    "frequentlyAskedQuestions": "Frequently asked questions",
+    "modal": {
+      "title": "Accessibility Settings",
+      "textSize": "Text Size",
+      "textSizeOptions": {
+        "small": "Small",
+        "medium": "Medium (Default)",
+        "large": "Large",
+        "extra-large": "Extra Large"
+      },
+      "highContrast": "High Contrast Mode",
+      "reducedMotion": "Reduced Motion",
+      "lineSpacing": "Line Spacing",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Relaxed",
+        "loose": "Loose"
+      },
+      "save": "Save Settings",
+      "cancel": "Cancel",
+      "reset": "Reset to Defaults"
+    }
   },
   "landing": {
     "title": "Kidney Treatment Decision Aid",
@@ -356,6 +385,28 @@
   "treatments": {
     "title": "Understanding Your Treatment Options",
     "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
+    "facts": {
+      "transplant": {
+        "survival": "Best long-term survival outcomes",
+        "surgery": "Requires surgery and recovery time",
+        "medication": "Lifelong medication needed"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 times per week, 4-5 hours each",
+        "professionalCare": "Professional care and monitoring",
+        "travel": "Travel to centre required"
+      },
+      "peritoneal": {
+        "dailyHome": "Daily treatment at home",
+        "timingOptions": "Overnight or daytime options",
+        "flexibility": "Greater flexibility and independence"
+      },
+      "conservative": {
+        "comfort": "Focus on comfort and quality of life",
+        "noDialysis": "No dialysis treatment required",
+        "symptomManagement": "Active symptom management"
+      }
+    },
     "types": {
       "transplant": {
         "title": "Kidney Transplant",
@@ -463,6 +514,160 @@
       "symptomBased": "Symptom-based"
     }
   },
+  "compare": {
+    "title": "Compare Treatment Options",
+    "subtitle": "See how different treatments compare across the factors that matter to you.",
+    "intro": "This comparison shows how each treatment option performs across different aspects of daily life and medical care.",
+    "treatments": {
+      "transplant": {
+        "name": "Kidney Transplant",
+        "type": "Surgery"
+      },
+      "hemodialysis": {
+        "name": "Haemodialysis",
+        "type": "In-centre dialysis"
+      },
+      "peritoneal": {
+        "name": "Peritoneal Dialysis",
+        "type": "Home dialysis"
+      },
+      "conservative": {
+        "name": "Conservative Care",
+        "type": "Supportive care"
+      }
+    },
+    "categories": {
+      "dailyLife": "Daily Life Impact",
+      "practical": "Practical Considerations",
+      "medical": "Medical Factors",
+      "support": "Support Requirements",
+      "health": "Health Outcomes"
+    },
+    "criteria": {
+      "timeCommitment": "Time commitment per week",
+      "timeCommitmentHint": "Hours spent on treatment",
+      "location": "Treatment location",
+      "locationHint": "Where treatment takes place",
+      "travel": "Impact on travel",
+      "travelHint": "Ability to travel and holiday",
+      "diet": "Diet restrictions",
+      "dietHint": "Limitations on food and drink",
+      "surgery": "Surgery required",
+      "surgeryHint": "Initial procedures needed",
+      "supportNeeded": "Support needed",
+      "supportNeededHint": "Help from family or carers",
+      "recoveryTime": "Recovery time",
+      "recoveryTimeHint": "Time to adjust to treatment",
+      "longTermOutlook": "Long-term outlook",
+      "longTermOutlookHint": "Expected outcomes over time",
+      "scheduleFlexibility": "Schedule flexibility",
+      "scheduleFlexibilityHint": "Control over your schedule",
+      "trainingRequired": "Training required",
+      "trainingRequiredHint": "Learning time needed",
+      "survivalRates": "Survival rates",
+      "survivalRatesHint": "General outcomes (varies by person)",
+      "qualityOfLife": "Quality of life",
+      "qualityOfLifeHint": "Overall wellbeing",
+      "energyLevels": "Energy levels",
+      "energyLevelsHint": "Typical energy and fatigue"
+    },
+    "values": {
+      "minimalAfterRecovery": "Minimal after recovery",
+      "regularCheckupsOnly": "Regular checkups only",
+      "12to15HrsWeekly": "12-15 hrs weekly",
+      "plusTravelTime": "Plus travel time",
+      "dailyExchanges": "Daily exchanges",
+      "canBeDoneOvernight": "Can be done overnight",
+      "minimal": "Minimal",
+      "clinicVisitsAsNeeded": "Clinic visits as needed",
+      "noRestrictions": "No restrictions",
+      "afterRecovery": "After recovery",
+      "hospitalClinic": "Hospital/clinic",
+      "dialysisUnit": "Dialysis unit",
+      "home": "Home",
+      "anyCleanSpace": "Any clean space",
+      "noEquipmentNeeded": "No equipment needed",
+      "veryFlexible": "Very flexible",
+      "takeMedicationsOnly": "Take medications only",
+      "difficult": "Difficult",
+      "mustArrangeHolidayDialysis": "Must arrange holiday dialysis",
+      "goodFlexibility": "Good flexibility",
+      "suppliesCanBeSentAhead": "Supplies can be sent ahead",
+      "fewRestrictions": "Few restrictions",
+      "nearNormalDiet": "Near-normal diet",
+      "moderateRestrictions": "Moderate restrictions",
+      "fluidAndPotassiumLimits": "Fluid and potassium limits",
+      "lessStrict": "Less strict",
+      "moreFlexibility": "More flexibility",
+      "managedDiet": "Managed diet",
+      "tailoredToSymptoms": "Tailored to symptoms",
+      "majorSurgery": "Major surgery",
+      "transplantOperationRequired": "Transplant operation required",
+      "minorSurgery": "Minor surgery",
+      "fistulaOrGraftCreation": "Fistula or graft creation",
+      "minorProcedure": "Minor procedure",
+      "pdCatheterInsertion": "PD catheter insertion",
+      "noneRequired": "None required",
+      "noSurgicalProcedures": "No surgical procedures",
+      "initialSupport": "Initial support",
+      "duringRecoveryPeriod": "During recovery period",
+      "noneNeeded": "None needed",
+      "professionalStaffProvideCare": "Professional staff provide care",
+      "canDoIndependently": "Can do independently",
+      "varies": "Varies",
+      "dependsOnSymptoms": "Depends on symptoms",
+      "high": "High",
+      "normalDailyLifePossible": "Normal daily life possible",
+      "low": "Low",
+      "fixedHospitalSlots": "Fixed hospital slots",
+      "chooseYourSchedule": "Choose your schedule",
+      "noFixedSchedule": "No fixed schedule",
+      "medicationTraining": "Medication training",
+      "learningYourNewRoutine": "Learning your new routine",
+      "staffDoEverything": "Staff do everything",
+      "oneToTwoWeeksTraining": "1-2 weeks training",
+      "learnTheTechnique": "Learn the technique",
+      "symptomManagement": "Symptom management",
+      "medicationGuidance": "Medication guidance",
+      "bestOutcomes": "Best outcomes",
+      "forSuitableCandidates": "For suitable candidates",
+      "good": "Good",
+      "wellEstablishedTreatment": "Well-established treatment",
+      "similarToHaemodialysis": "Similar to haemodialysis",
+      "qualityFocused": "Quality focused",
+      "comfortOverLongevity": "Comfort over longevity",
+      "excellent": "Excellent",
+      "nearNormalLifePossible": "Near-normal life possible",
+      "moderate": "Moderate",
+      "treatmentAffectsDailyRoutine": "Treatment affects daily routine",
+      "moreIndependence": "More independence",
+      "focusOnComfort": "Focus on comfort",
+      "symptomManagementPriority": "Symptom management priority",
+      "oftenExcellent": "Often excellent",
+      "energyRestored": "Energy restored",
+      "variable": "Variable",
+      "fatigueAfterSessions": "Fatigue after sessions",
+      "generallyGood": "Generally good",
+      "steadyEnergyLevels": "Steady energy levels",
+      "managedWithSupport": "Managed with support"
+    },
+    "legend": {
+      "title": "Rating Guide",
+      "excellent": "Excellent",
+      "good": "Good",
+      "moderate": "Moderate",
+      "challenging": "Challenging",
+      "varies": "Varies",
+      "excellentDesc": "Excellent - Generally very favourable",
+      "goodDesc": "Good - Generally favourable",
+      "moderateDesc": "Moderate - Some limitations to consider",
+      "challengingDesc": "Challenging - Significant considerations",
+      "variesDesc": "Varies - Depends on individual circumstances"
+    },
+    "viewDetails": "View details",
+    "backToHub": "Back to Hub",
+    "printComparison": "Print comparison"
+  },
   "chat": {
     "title": "Ask Questions",
     "subtitle": "Our AI assistant can answer general questions about kidney treatments.",
@@ -473,6 +678,8 @@
     "errorMessage": "Sorry, I couldn't process your message. Please try again.",
     "thinking": "Thinking...",
     "backToHub": "Back to Hub",
+    "privacyReminder": "Privacy reminder:",
+    "readyToHelp": "Ready to help",
     "status": {
       "online": "Online"
     },
@@ -484,19 +691,171 @@
       "greeting": "Hello! I am the NHS Kidney Care Assistant. I am here to help you understand kidney treatment options.",
       "prompt": "You can ask me questions about dialysis, transplants, conservative care, or anything else related to kidney treatment. How can I help you today?"
     },
-    "suggestedQuestions": "Suggested Questions"
+    "suggestedQuestions": "Suggested Questions",
+    "questions": {
+      "q1": "What is the difference between haemodialysis and peritoneal dialysis?",
+      "q2": "How long does a kidney transplant surgery take?",
+      "q3": "Can I travel while on dialysis?",
+      "q4": "What are the side effects of dialysis treatment?",
+      "q5": "How do I know if I am suitable for a transplant?",
+      "q6": "What is conservative care and who might choose it?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Tell me more",
+      "prosAndCons": "What are the pros and cons?",
+      "dailyLife": "How does this affect daily life?"
+    }
   },
   "values": {
     "title": "What Matters to You",
     "subtitle": "Rate how important each factor is to you. This helps us personalise your information.",
     "instructions": "Move the slider to indicate importance (1 = Not important, 5 = Very important)",
+    "sliderLabel": "Importance rating",
+    "lessImportant": "Less important",
+    "moreImportant": "More important",
+    "skipStatement": "Skip this statement",
+    "viewResults": "View My Results",
+    "statementsRemaining_one": "{{count}} statement remaining",
+    "statementsRemaining_other": "{{count}} statements remaining",
+    "completed": "Completed",
+    "intro": {
+      "title": "What Matters Most to You?",
+      "description": "Choosing a kidney treatment is a personal decision. This exercise helps you think about your values and priorities so you can discuss them with your kidney team.",
+      "feature1": "10 value statements to rate",
+      "feature2": "Takes about 5 minutes",
+      "feature3": "No right or wrong answers",
+      "feature4": "See your priorities summarised",
+      "beginButton": "Begin Exercise",
+      "allAtOnce": "Prefer to see all statements at once?",
+      "viewAll": "View All Statements"
+    },
+    "progress": {
+      "statement": "Statement",
+      "of": "of"
+    },
+    "defaultHint": "Rate how important this is to you from 1 (Not important) to 5 (Very important)",
+    "listenStatement": "Listen to this statement",
+    "nav": {
+      "back": "Back",
+      "skip": "Skip",
+      "next": "Next",
+      "finish": "Finish",
+      "backToIntro": "Back to Introduction",
+      "seeResults": "See My Results"
+    },
+    "allAtOnce": {
+      "title": "Rate All Statements",
+      "description": "Rate each statement from 1 (Not important) to 5 (Very important).",
+      "progress": "Completed"
+    },
+    "results": {
+      "title": "Your Values Summary",
+      "description": "Based on your responses, here is what matters most to you.",
+      "topPriorities": "Your Top Priorities",
+      "allValues": "All Your Values",
+      "editValues": "Edit Your Values",
+      "compareLink": "Compare Treatments",
+      "addToSummary": "Add to My Summary",
+      "viewTreatments": "View treatments that match your values",
+      "backToHub": "Back to Hub"
+    },
+    "ratingLabels": {
+      "1": "Not important",
+      "2": "Slightly important",
+      "3": "Moderately important",
+      "4": "Important",
+      "5": "Very important"
+    },
+    "ratings": {
+      "1": "Not important",
+      "2": "Slightly important",
+      "3": "Moderately important",
+      "4": "Very important",
+      "5": "Extremely important"
+    },
     "statements": {
-      "independence": "Maintaining my independence and daily routine",
-      "hospitalTime": "Minimising time spent at hospital",
-      "familyBurden": "Not being a burden on my family",
-      "longevity": "Living as long as possible",
-      "qualityOfLife": "Quality of life over length of life",
-      "naturalApproach": "Taking a more natural approach"
+      "travel": {
+        "statement": "Being able to travel is important to me",
+        "hint": "Rate how important this is to you"
+      },
+      "hospital-time": {
+        "statement": "I want to minimise time spent in hospital",
+        "hint": "Rate how important this is to you"
+      },
+      "needles": {
+        "statement": "I am comfortable with needles and medical procedures",
+        "hint": "Rate how much you agree with this statement"
+      },
+      "independence": {
+        "statement": "Maintaining my independence is very important to me",
+        "hint": "Rate how important this is to you"
+      },
+      "family-burden": {
+        "statement": "I want to avoid being a burden on my family",
+        "hint": "Rate how important this is to you"
+      },
+      "longevity": {
+        "statement": "Living as long as possible is my priority",
+        "hint": "Rate how important this is to you"
+      },
+      "quality-of-life": {
+        "statement": "Quality of life matters more than length of life",
+        "hint": "Rate how much you agree with this statement"
+      },
+      "home-treatment": {
+        "statement": "I would prefer to have treatment at home",
+        "hint": "Rate how important this is to you"
+      },
+      "work-activities": {
+        "statement": "Continuing to work or do my usual activities is important",
+        "hint": "Rate how important this is to you"
+      },
+      "professional-care": {
+        "statement": "I would rather have professionals take care of my treatment",
+        "hint": "Rate how much you agree with this statement"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Maintaining my independence and being able to care for myself",
+        "hint": "Being able to do daily activities without relying heavily on others"
+      },
+      "schedule": {
+        "text": "Having flexibility in my schedule and being able to travel",
+        "hint": "Being able to plan activities and trips without strict treatment times"
+      },
+      "hospitalTime": {
+        "text": "Spending less time at hospital or clinic",
+        "hint": "Minimising the number and length of hospital visits"
+      },
+      "homeComfort": {
+        "text": "Receiving treatment in the comfort of my home",
+        "hint": "Being able to manage treatment at home rather than a medical facility"
+      },
+      "familyBurden": {
+        "text": "Not being a burden on my family",
+        "hint": "Minimising the impact of my treatment on family members and carers"
+      },
+      "longevity": {
+        "text": "Living as long as possible",
+        "hint": "Prioritising treatments that may extend life expectancy"
+      },
+      "qualityOfLife": {
+        "text": "Quality of life over length of life",
+        "hint": "Prioritising daily wellbeing and comfort over maximum lifespan"
+      },
+      "energyLevels": {
+        "text": "Having good energy levels and feeling well",
+        "hint": "Minimising fatigue and maintaining normal energy for activities"
+      },
+      "dietRestrictions": {
+        "text": "Having fewer restrictions on food and drink",
+        "hint": "Being able to eat and drink with minimal limitations"
+      },
+      "naturalApproach": {
+        "text": "Taking a more natural approach with fewer interventions",
+        "hint": "Preferring treatment options that feel less invasive or medical"
+      }
     }
   },
   "modelViewer": {
@@ -521,6 +880,10 @@
     "learnMore": "Learn More About Treatment Options",
     "exploreTreatments": "Explore Treatments",
     "compareTreatments": "Compare Treatments",
+    "continueJourney": "Continue your journey by exploring treatment options",
+    "loading": "Loading 3D Model...",
+    "interactiveTool": "Interactive Learning Tool",
+    "interactive3DModel": "Interactive 3D Model",
     "anatomy": {
       "kidney": {
         "label": "Kidney",
@@ -551,11 +914,94 @@
       "journey": "Your Journey Stage",
       "values": "What Matters to You",
       "viewed": "Treatments Explored",
-      "questions": "Questions to Discuss"
+      "questions": "Questions for Your Team",
+      "priorities": "Your Priorities",
+      "nextSteps": "Suggested Next Steps"
     },
     "print": "Print Summary",
     "email": "Email Summary",
-    "startOver": "Start Over"
+    "startOver": "Start Over",
+    "share": "Share",
+    "sessionId": "Session ID",
+    "notSpecified": "Not specified",
+    "readyToReview": "Ready to review",
+    "viewed": "Viewed",
+    "noValues": "You have not completed the values exercise yet.",
+    "completeValues": "Complete now",
+    "noTreatments": "You have not explored any treatments yet.",
+    "exploreTreatments": "Explore treatments",
+    "seeAll": "See all",
+    "confirmReset": "Are you sure you want to start over? All your progress will be lost.",
+    "addQuestionPlaceholder": "Type your own question...",
+    "question1": "Which treatment options are suitable for my situation?",
+    "question2": "What would my daily life look like with each treatment?",
+    "question3": "How do I start the process for my preferred treatment?",
+    "step1": {
+      "title": "Review this summary",
+      "description": "Take time to look through what you have explored and think about any additional questions."
+    },
+    "step2": {
+      "title": "Share with family or carers",
+      "description": "If you have support at home, discuss your thoughts with them."
+    },
+    "step3": {
+      "title": "Discuss with your kidney care team",
+      "description": "Bring this summary to your next appointment to discuss your options."
+    },
+    "privacy": {
+      "title": "Your Privacy",
+      "text": "This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server."
+    },
+    "disclaimer": {
+      "title": "Important Reminder",
+      "text": "This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances."
+    },
+    "printForAppointment": "Print for Your Appointment",
+    "askMore": "Have more questions?",
+    "printHeader": {
+      "title": "NHS Kidney Treatment Decision Aid",
+      "subtitle": "Your Personal Session Summary",
+      "dateLabel": "Date: {{date}}",
+      "footer": "Generated by NHS Kidney Treatment Decision Aid - {{date}} - This document is for discussion with your healthcare team only"
+    },
+    "shareTitle": "NHS Kidney Treatment Summary",
+    "shareText": "My kidney treatment decision summary",
+    "readyForAppointment": "Ready for your next appointment?",
+    "printInstructions": "Print this summary to take with you to your kidney care team",
+    "journeyStages": {
+      "newly-diagnosed": "Newly Diagnosed",
+      "monitoring": "Being Monitored",
+      "preparing": "Preparing for Treatment",
+      "on-dialysis": "Currently on Dialysis",
+      "transplant-waiting": "On Transplant Waiting List",
+      "post-transplant": "After Transplant",
+      "supporting-someone": "Supporting Someone"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "You are learning about your kidney condition and want to understand your options.",
+      "monitoring": "Your kidneys are being monitored and you are preparing for the future.",
+      "preparing": "You need to start treatment soon and want to understand your choices.",
+      "on-dialysis": "You are receiving dialysis and exploring other options.",
+      "transplant-waiting": "You are on the transplant waiting list.",
+      "post-transplant": "You have had a kidney transplant and want ongoing support.",
+      "supporting-someone": "You are supporting a loved one with kidney disease.",
+      "default": "Your current stage in the kidney care journey."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Haemodialysis",
+      "peritoneal-dialysis": "Peritoneal Dialysis",
+      "home-haemodialysis": "Home Haemodialysis",
+      "kidney-transplant": "Kidney Transplant",
+      "conservative-care": "Conservative Care"
+    },
+    "valueLabels": {
+      "1": "Not important",
+      "2": "Slightly important",
+      "3": "Moderately important",
+      "4": "Important",
+      "5": "Very important",
+      "default": "Important"
+    }
   },
   "session": {
     "timeRemaining": "Time remaining: {{minutes}}",
@@ -563,7 +1009,8 @@
     "expiringMessage": "Your session will expire in {{minutes}} minutes. Would you like to continue?",
     "extendSession": "Continue Session",
     "sessionExpired": "Your session has expired. Please start again.",
-    "startNewSession": "Start New Session"
+    "startNewSession": "Start New Session",
+    "createError": "Failed to create session. Please try again."
   },
   "footer": {
     "nhsInfo": "NHS Kidney Care",

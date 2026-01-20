@@ -337,7 +337,7 @@ export default function TreatmentDetailPage() {
   return (
     <main className="min-h-screen bg-bg-page" id="main-content" aria-label={`${treatment.title} detailed information`}>
       {/* Breadcrumb */}
-      <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label="Breadcrumb">
+      <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-xl mx-auto px-4 py-3">
           <ol className="flex items-center gap-2 text-sm">
             <li>
@@ -537,7 +537,7 @@ export default function TreatmentDetailPage() {
               {t('treatment.faq', 'Frequently Asked Questions')}
             </h2>
           </header>
-          <div className="space-y-2" role="list" aria-label="Frequently asked questions">
+          <div className="space-y-2" role="list" aria-label={t('accessibility.faq')}>
             {treatment.faqs.map((faq, idx) => (
               <div key={idx} className="border border-nhs-pale-grey rounded-md overflow-hidden" role="listitem">
                 <button
@@ -660,7 +660,7 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Navigation Buttons */}
-        <nav className="flex flex-col sm:flex-row justify-between gap-4 pt-8 border-t border-nhs-pale-grey" aria-label="Page navigation">
+        <nav className="flex flex-col sm:flex-row justify-between gap-4 pt-8 border-t border-nhs-pale-grey" aria-label={t('accessibility.pageNavigation')}>
           <button
             onClick={() => navigate('/treatments')}
             className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded"

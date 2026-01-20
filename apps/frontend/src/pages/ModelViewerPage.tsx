@@ -184,12 +184,12 @@ function KidneyModel({ position = [0, 0, 0] }: { position?: [number, number, num
 useGLTF.preload('/models/kidney.glb');
 
 // Loading component for Suspense
-function LoadingSpinner() {
+function LoadingSpinner({ t }: { t: (key: string) => string }) {
   return (
     <Html center>
       <div className="flex flex-col items-center gap-3">
         <div className="w-12 h-12 border-4 border-nhs-blue border-t-transparent rounded-full animate-spin" />
-        <p className="text-nhs-blue font-medium">Loading 3D Model...</p>
+        <p className="text-nhs-blue font-medium">{t('modelViewer.loading')}</p>
       </div>
     </Html>
   );
@@ -223,7 +223,7 @@ export default function ModelViewerPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-bg-page to-nhs-pale-grey/30">
       {/* Breadcrumb Navigation - Enhanced */}
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey sticky top-0 z-40" aria-label="Breadcrumb">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey sticky top-0 z-40" aria-label={t('accessibility.breadcrumb')}>
         <div className="container-page py-3">
           <ol className="flex items-center gap-2 text-sm">
             <li>
@@ -261,7 +261,7 @@ export default function ModelViewerPage() {
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
-              Interactive 3D Model
+              {t('modelViewer.interactive3DModel')}
             </div>
           </div>
         </div>
@@ -274,7 +274,7 @@ export default function ModelViewerPage() {
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
             </svg>
-            Interactive Learning Tool
+            {t('modelViewer.interactiveTool')}
           </div>
           <h1
             id="model-viewer-title"
@@ -347,7 +347,7 @@ export default function ModelViewerPage() {
               camera={{ position: [0, 0, 5], fov: 45 }}
               gl={{ antialias: true, alpha: true }}
             >
-              <Suspense fallback={<LoadingSpinner />}>
+              <Suspense fallback={<LoadingSpinner t={t} />}>
                 {/* Lighting */}
                 <ambientLight intensity={0.6} />
                 <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -453,7 +453,7 @@ export default function ModelViewerPage() {
             <h2 className="text-2xl font-bold text-text-primary mb-2">
               {t('modelViewer.learnMore', 'Learn More About Treatment Options')}
             </h2>
-            <p className="text-text-secondary">Continue your journey by exploring treatment options</p>
+            <p className="text-text-secondary">{t('modelViewer.continueJourney')}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link

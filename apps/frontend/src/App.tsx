@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SessionProvider } from './context/SessionContext';
 import Layout from './components/Layout';
 import LandingPage from './pages/LandingPage';
@@ -20,11 +21,12 @@ const SummaryPage = lazy(() => import('./pages/SummaryPage'));
 
 // Loading fallback component
 function PageLoader() {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center justify-center min-h-[50vh]">
       <div className="flex flex-col items-center gap-4">
         <div className="w-10 h-10 border-4 border-nhs-pale-grey border-t-nhs-blue rounded-full animate-spin" />
-        <p className="text-text-secondary">Loading...</p>
+        <p className="text-text-secondary">{t('common.loading')}</p>
       </div>
     </div>
   );

@@ -3,7 +3,9 @@
     "home": "Home",
     "back": "Go Back",
     "next": "Next",
-    "skip": "Skip"
+    "skip": "Skip",
+    "backToHub": "Back to Hub",
+    "returnToHome": "Return to Home"
   },
   "landing": {
     "title": "Kidney Treatment Decision Aid",
@@ -960,6 +962,45 @@
     "title": "What Matters Most to You?",
     "subtitle": "Rate how important each of these factors is in your treatment decision",
     "instructions": "Move the slider to indicate how important each statement is to you",
+    "intro": {
+      "title": "What Matters Most to You?",
+      "description": "Choosing a kidney treatment is a personal decision. This exercise helps you think about your values and priorities so you can discuss them with your kidney team.",
+      "feature1": "10 value statements to rate",
+      "feature2": "Takes about 5 minutes",
+      "feature3": "No right or wrong answers",
+      "feature4": "See your priorities summarised",
+      "beginButton": "Begin Exercise",
+      "allAtOnce": "Prefer to see all statements at once?",
+      "viewAll": "View All Statements"
+    },
+    "progress": {
+      "statement": "Statement",
+      "of": "of"
+    },
+    "nav": {
+      "back": "Back",
+      "skip": "Skip",
+      "finish": "Finish",
+      "next": "Next",
+      "backToIntro": "Back to Introduction",
+      "seeResults": "See My Results"
+    },
+    "allAtOnce": {
+      "title": "Rate All Statements",
+      "description": "Rate each statement from 1 (Not important) to 5 (Very important).",
+      "progress": "Completed"
+    },
+    "results": {
+      "title": "Your Values Summary",
+      "description": "Based on your responses, here is what matters most to you.",
+      "topPriorities": "Your Top Priorities",
+      "allValues": "All Your Values",
+      "editValues": "Edit Your Values",
+      "compareLink": "Compare Treatments",
+      "addToSummary": "Add to My Summary"
+    },
+    "listenStatement": "Listen to this statement",
+    "defaultHint": "Rate how important this is to you from 1 (Not important) to 5 (Very important)",
     "statements": {
       "travel": {
         "text": "Being able to travel is important to me",
@@ -1091,16 +1132,18 @@
   "summary": {
     "title": "Your Session Summary",
     "subtitle": "Review what you have explored and create a summary for your kidney team",
+    "confirmReset": "Are you sure you want to start over? All your progress will be lost.",
     "printHeader": {
       "title": "NHS Kidney Treatment Decision Aid",
       "subtitle": "Your Personal Session Summary",
-      "date": "Date:"
+      "dateLabel": "{{date}}",
+      "footer": "Generated on {{date}} by NHS Kidney Treatment Decision Aid. This summary is for discussion with your healthcare team only."
     },
-    "badge": "Ready to review",
-    "share": {
-      "title": "NHS Kidney Treatment Summary",
-      "text": "My kidney treatment decision summary"
-    },
+    "sessionId": "Session ID",
+    "readyToReview": "Ready to review",
+    "shareTitle": "NHS Kidney Treatment Summary",
+    "shareText": "My kidney treatment decision summary",
+    "notSpecified": "Not specified",
     "journeyStages": {
       "newlyDiagnosed": "Newly Diagnosed",
       "monitoring": "Being Monitored",
@@ -1108,25 +1151,81 @@
       "onDialysis": "Currently on Dialysis",
       "transplantWaiting": "On Transplant Waiting List",
       "postTransplant": "After Transplant",
-      "supporting": "Supporting Someone",
-      "default": {
-        "description": "Your current stage in the kidney care journey."
-      }
+      "supporting": "Supporting Someone"
+    },
+    "journeyDescriptions": {
+      "newlyDiagnosed": "You are at the beginning of your kidney care journey and learning about your condition.",
+      "monitoring": "Your kidney function is being monitored regularly by your healthcare team.",
+      "preparing": "You are preparing to start treatment and exploring your options.",
+      "onDialysis": "You are currently receiving dialysis treatment.",
+      "transplantWaiting": "You are on the waiting list for a kidney transplant.",
+      "postTransplant": "You have received a kidney transplant and are in recovery or ongoing care.",
+      "supporting": "You are supporting a family member or friend with kidney disease.",
+      "default": "Your current stage in the kidney care journey."
     },
     "valueLabels": {
-      "notImportant": "Not important",
-      "slightlyImportant": "Slightly important",
-      "moderatelyImportant": "Moderately important",
-      "important": "Important",
-      "veryImportant": "Very important"
+      "1": "Not important",
+      "2": "Slightly important",
+      "3": "Moderately important",
+      "4": "Important",
+      "5": "Very important",
+      "default": "Not rated"
     },
     "treatmentLabels": {
       "haemodialysis": "Haemodialysis",
       "peritonealDialysis": "Peritoneal Dialysis",
       "homeHaemodialysis": "Home Haemodialysis",
       "kidneyTransplant": "Kidney Transplant",
-      "conservativeCare": "Conservative Care"
+      "conservativeCare": "Conservative Care",
+      "transplant": "Kidney Transplant",
+      "hemodialysis": "Haemodialysis",
+      "pd": "Peritoneal Dialysis",
+      "conservative": "Conservative Care"
     },
+    "sections": {
+      "journey": "Your Journey Stage",
+      "priorities": "Your Priorities",
+      "viewed": "Treatments Explored",
+      "questions": "Questions for Your Team",
+      "nextSteps": "Suggested Next Steps"
+    },
+    "print": "Print Summary",
+    "share": "Share",
+    "seeAll": "See all",
+    "viewed": "Viewed",
+    "noValues": "You have not completed the values exercise yet.",
+    "completeValues": "Complete now",
+    "noTreatments": "You have not explored any treatments yet.",
+    "exploreTreatments": "Explore treatments",
+    "question1": "Which treatment options are suitable for my situation?",
+    "question2": "What would my daily life look like with each treatment?",
+    "question3": "How do I start the process for my preferred treatment?",
+    "addQuestionPlaceholder": "Type your own question...",
+    "step1": {
+      "title": "Review this summary",
+      "description": "Take time to look through what you have explored and think about any additional questions."
+    },
+    "step2": {
+      "title": "Share with family or carers",
+      "description": "If you have support at home, discuss your thoughts with them."
+    },
+    "step3": {
+      "title": "Discuss with your kidney care team",
+      "description": "Bring this summary to your next appointment to discuss your options."
+    },
+    "privacy": {
+      "title": "Your Privacy",
+      "text": "This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server."
+    },
+    "disclaimer": {
+      "title": "Important Reminder",
+      "text": "This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances."
+    },
+    "readyForAppointment": "Ready for your next appointment?",
+    "printInstructions": "Print this summary to take with you to your kidney care team.",
+    "printForAppointment": "Print for Your Appointment",
+    "startOver": "Start Over",
+    "askMore": "Have more questions?",
     "cta": {
       "title": "Ready for your next appointment?",
       "subtitle": "Print this summary to take with you to your kidney care team"
@@ -1178,6 +1277,8 @@
     "expiringMessage": "Your session will expire in {{minutes}} minutes. Would you like to continue?",
     "extendSession": "Continue Session",
     "sessionExpired": "Your session has expired. Please start again.",
+    "expiredMessage": "Your session has expired. Please start again.",
+    "createError": "Failed to create session. Please try again.",
     "startNewSession": "Start New Session"
   },
   "common": {
@@ -1191,7 +1292,10 @@
     "no": "No",
     "notSure": "Not sure",
     "moreInfo": "More information",
-    "close": "Close"
+    "close": "Close",
+    "edit": "Edit",
+    "remove": "Remove",
+    "add": "Add"
   },
   "accessibility": {
     "skipToContent": "Skip to main content",

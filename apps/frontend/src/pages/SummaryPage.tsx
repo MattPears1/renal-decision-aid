@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '@/context/SessionContext';
 
 export default function SummaryPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { session, endSession } = useSession();
   const [userQuestions, setUserQuestions] = useState<string[]>([]);
@@ -33,56 +33,30 @@ export default function SummaryPage() {
   };
 
   const getJourneyStageLabel = (stage: string): string => {
-    const stageLabels: Record<string, string> = {
-      'newly-diagnosed': 'Newly Diagnosed',
-      'monitoring': 'Being Monitored',
-      'preparing': 'Preparing for Treatment',
-      'on-dialysis': 'Currently on Dialysis',
-      'transplant-waiting': 'On Transplant Waiting List',
-      'post-transplant': 'After Transplant',
-      'supporting-someone': 'Supporting Someone',
-    };
-    return stageLabels[stage] || stage;
+    return t(`summary.journeyStages.${stage}`, stage);
   };
 
   const getJourneyStageDescription = (stage: string): string => {
-    const descriptions: Record<string, string> = {
-      'newly-diagnosed': 'You are learning about your kidney condition and want to understand your options.',
-      'monitoring': 'Your kidneys are being monitored and you are preparing for the future.',
-      'preparing': 'You need to start treatment soon and want to understand your choices.',
-      'on-dialysis': 'You are receiving dialysis and exploring other options.',
-      'transplant-waiting': 'You are on the transplant waiting list.',
-      'post-transplant': 'You have had a kidney transplant and want ongoing support.',
-      'supporting-someone': 'You are supporting a loved one with kidney disease.',
-    };
-    return descriptions[stage] || 'Your current stage in the kidney care journey.';
+    return t(`summary.journeyDescriptions.${stage}`, t('summary.journeyDescriptions.default'));
   };
 
   const getValueLabel = (value: number): string => {
-    if (value === 1) return 'Not important';
-    if (value === 2) return 'Slightly important';
-    if (value === 3) return 'Moderately important';
-    if (value === 4) return 'Important';
-    return 'Very important';
+    return t(`summary.valueLabels.${value}`, t('summary.valueLabels.default'));
   };
 
   const getTreatmentLabel = (treatment: string): string => {
-    const labels: Record<string, string> = {
-      'haemodialysis': 'Haemodialysis',
-      'peritoneal-dialysis': 'Peritoneal Dialysis',
-      'home-haemodialysis': 'Home Haemodialysis',
-      'kidney-transplant': 'Kidney Transplant',
-      'conservative-care': 'Conservative Care',
-    };
-    return labels[treatment] || treatment;
+    return t(`summary.treatmentLabels.${treatment}`, treatment);
   };
 
-  const sessionDate = new Date().toLocaleDateString('en-GB', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+  const sessionDate = useMemo(() => {
+    const locale = i18n.language || 'en-GB';
+    return new Date().toLocaleDateString(locale, {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  }, [i18n.language]);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-bg-page to-nhs-pale-grey/30 print:bg-white">
@@ -90,12 +64,12 @@ export default function SummaryPage() {
       <div className="hidden print:block print:mb-8">
         <div className="flex items-center justify-between border-b-4 border-nhs-blue pb-4">
           <div>
-            <h1 className="text-3xl font-bold text-nhs-blue">NHS Kidney Treatment Decision Aid</h1>
-            <p className="text-lg text-text-secondary mt-1">Your Personal Session Summary</p>
+            <h1 className="text-3xl font-bold text-nhs-blue">{t('summary.printHeader.title')}</h1>
+            <p className="text-lg text-text-secondary mt-1">{t('summary.printHeader.subtitle')}</p>
           </div>
           <div className="text-right text-sm text-text-secondary">
-            <p className="font-semibold">Date: {sessionDate}</p>
-            <p className="font-mono text-xs mt-1">Session ID: {session?.id?.slice(0, 8) || 'N/A'}</p>
+            <p className="font-semibold">{t('summary.printHeader.dateLabel', { date: sessionDate })}</p>
+            <p className="font-mono text-xs mt-1">{t('summary.sessionId')}: {session?.id?.slice(0, 8) || 'N/A'}</p>
           </div>
         </div>
       </div>
@@ -108,7 +82,7 @@ export default function SummaryPage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-nhs-green/10 rounded-full text-sm font-medium text-nhs-green mb-4">
                   <CheckIcon className="w-4 h-4" />
-                  Ready to review
+                  {t('summary.readyToReview')}
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-3">
                   {t('summary.title', 'Your Session Summary')}
@@ -133,8 +107,8 @@ export default function SummaryPage() {
                 </button>
                 <button
                   onClick={() => navigator.share?.({
-                    title: 'NHS Kidney Treatment Summary',
-                    text: 'My kidney treatment decision summary',
+                    title: t('summary.shareTitle'),
+                    text: t('summary.shareText'),
                     url: window.location.href,
                   }).catch(() => {})}
                   className="inline-flex items-center gap-2 px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-bold rounded-xl hover:bg-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
@@ -462,8 +436,8 @@ export default function SummaryPage() {
 
         {/* Action Buttons - Enhanced */}
         <div className="bg-gradient-to-r from-nhs-green/10 to-nhs-green/5 rounded-2xl p-8 mb-8 text-center print:hidden">
-          <h3 className="text-xl font-bold text-text-primary mb-2">Ready for your next appointment?</h3>
-          <p className="text-text-secondary mb-6">Print this summary to take with you to your kidney care team</p>
+          <h3 className="text-xl font-bold text-text-primary mb-2">{t('summary.readyForAppointment')}</h3>
+          <p className="text-text-secondary mb-6">{t('summary.printInstructions')}</p>
           <button
             onClick={handlePrint}
             className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
@@ -487,7 +461,7 @@ export default function SummaryPage() {
         {/* Navigation - Enhanced */}
         <nav
           className="bg-white rounded-2xl p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-center gap-4 print:hidden"
-          aria-label="Page navigation"
+          aria-label={t('accessibility.pageNavigation')}
         >
           <div className="flex items-center gap-4">
             <button
@@ -518,7 +492,7 @@ export default function SummaryPage() {
         {/* Print Footer */}
         <div className="hidden print:block print:mt-8 print:pt-4 print:border-t print:border-gray-300">
           <p className="text-xs text-gray-500 text-center">
-            Generated by NHS Kidney Treatment Decision Aid - {sessionDate} - This document is for discussion with your healthcare team only
+            {t('summary.printHeader.footer', { date: sessionDate })}
           </p>
         </div>
       </div>

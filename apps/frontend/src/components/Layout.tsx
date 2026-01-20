@@ -1,11 +1,20 @@
+import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import NHSHeader from './NHSHeader';
 import NHSFooter from './NHSFooter';
+import AccessibilityModal, { loadAccessibilitySettings, applyAccessibilitySettings } from './AccessibilityModal';
 
 export default function Layout() {
   const { t } = useTranslation();
   const location = useLocation();
+  const [isAccessibilityModalOpen, setIsAccessibilityModalOpen] = useState(false);
+
+  // Apply saved accessibility settings on mount
+  useEffect(() => {
+    const settings = loadAccessibilitySettings();
+    applyAccessibilitySettings(settings);
+  }, []);
 
   // Handle skip link functionality
   const handleSkipToMain = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -46,12 +55,22 @@ export default function Layout() {
       <NHSFooter />
 
       {/* Accessibility Settings Button (Fixed Position) */}
-      <AccessibilityButton />
+      <AccessibilityButton onOpenModal={() => setIsAccessibilityModalOpen(true)} />
+
+      {/* Accessibility Settings Modal */}
+      <AccessibilityModal
+        isOpen={isAccessibilityModalOpen}
+        onClose={() => setIsAccessibilityModalOpen(false)}
+      />
     </div>
   );
 }
 
-function AccessibilityButton() {
+interface AccessibilityButtonProps {
+  onOpenModal: () => void;
+}
+
+function AccessibilityButton({ onOpenModal }: AccessibilityButtonProps) {
   const { t } = useTranslation();
 
   return (
@@ -65,10 +84,7 @@ function AccessibilityButton() {
                  focus:outline-none focus:ring-[3px] focus:ring-focus focus:bg-focus focus:text-text-primary"
       aria-label={t('accessibility.settingsLabel')}
       title={t('accessibility.settingsTitle')}
-      onClick={() => {
-        // TODO: Implement accessibility settings modal
-        console.log('Accessibility settings clicked');
-      }}
+      onClick={onOpenModal}
     >
       <svg
         className="w-5 h-5"

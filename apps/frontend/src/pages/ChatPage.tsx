@@ -6,23 +6,24 @@ import { chatApi } from '@/services/api';
 import { Button } from '@/components/ui';
 import type { ChatMessage } from '@renal-decision-aid/shared-types';
 
-const SUGGESTED_QUESTIONS = [
-  'What is the difference between haemodialysis and peritoneal dialysis?',
-  'How long does a kidney transplant surgery take?',
-  'Can I travel while on dialysis?',
-  'What are the side effects of dialysis treatment?',
-  'How do I know if I am suitable for a transplant?',
-  'What is conservative care and who might choose it?',
+// These arrays use translation keys - the actual values are retrieved via t()
+const SUGGESTED_QUESTION_KEYS = [
+  'chat.questions.q1',
+  'chat.questions.q2',
+  'chat.questions.q3',
+  'chat.questions.q4',
+  'chat.questions.q5',
+  'chat.questions.q6',
 ];
 
-const QUICK_REPLIES = [
-  'Tell me more',
-  'What are the pros and cons?',
-  'How does this affect daily life?',
+const QUICK_REPLY_KEYS = [
+  'chat.quickReplies.tellMeMore',
+  'chat.quickReplies.prosAndCons',
+  'chat.quickReplies.dailyLife',
 ];
 
 export default function ChatPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { session, addChatMessage } = useSession();
   const [input, setInput] = useState('');
@@ -54,7 +55,9 @@ export default function ChatPage() {
 
   const formatTime = (timestamp: string | number) => {
     const date = typeof timestamp === 'string' ? new Date(timestamp) : new Date(timestamp);
-    return date.toLocaleTimeString('en-GB', {
+    // Use current language locale for date formatting
+    const locale = i18n.language || 'en-GB';
+    return date.toLocaleTimeString(locale, {
       hour: '2-digit',
       minute: '2-digit',
     });
@@ -120,7 +123,7 @@ export default function ChatPage() {
   return (
     <main className="flex flex-col h-[calc(100vh-64px)] max-h-[calc(100vh-64px)] bg-gradient-to-b from-bg-page to-nhs-pale-grey/30">
       {/* Breadcrumb Navigation - Enhanced */}
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey flex-shrink-0" aria-label="Breadcrumb">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey flex-shrink-0" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-lg mx-auto px-4 py-3">
           <ol className="flex items-center gap-2 text-sm">
             <li>
@@ -149,8 +152,8 @@ export default function ChatPage() {
             <WarningIcon className="w-5 h-5 text-nhs-orange" />
           </div>
           <p className="text-sm text-text-primary flex-1">
-            <span className="font-semibold">Privacy reminder:</span>{' '}
-            {t('chat.piiWarning', 'Please do not share personal information like your name, NHS number, or address. This chat is not saved.')}
+            <span className="font-semibold">{t('chat.privacyReminder', 'Privacy reminder:')}</span>{' '}
+            {t('chat.piiWarning')}
           </p>
           <button
             onClick={() => setShowPiiWarning(false)}
@@ -177,8 +180,8 @@ export default function ChatPage() {
             </h1>
             <div className="flex items-center gap-1.5 text-sm text-nhs-green font-medium">
               <span className="w-2 h-2 rounded-full bg-nhs-green animate-pulse" />
-              {t('chat.status.online', 'Online')}
-              <span className="text-text-muted font-normal">- Ready to help</span>
+              {t('chat.status.online')}
+              <span className="text-text-muted font-normal">- {t('chat.readyToHelp')}</span>
             </div>
           </div>
         </div>
@@ -232,18 +235,21 @@ export default function ChatPage() {
                   {t('chat.suggestedQuestions', 'Suggested Questions')}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {SUGGESTED_QUESTIONS.map((question, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleSend(question)}
-                      className="group text-left px-4 py-3 bg-white border border-nhs-pale-grey rounded-xl text-sm text-text-primary hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus"
-                    >
-                      <span className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-nhs-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                        {question}
-                      </span>
-                    </button>
-                  ))}
+                  {SUGGESTED_QUESTION_KEYS.map((key, index) => {
+                    const question = t(key);
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => handleSend(question)}
+                        className="group text-left px-4 py-3 bg-white border border-nhs-pale-grey rounded-xl text-sm text-text-primary hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-nhs-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                          {question}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </>
@@ -290,15 +296,18 @@ export default function ChatPage() {
                 {/* Quick Replies for last assistant message - Enhanced */}
                 {message.role === 'assistant' && index === messages.length - 1 && !isLoading && (
                   <div className="flex flex-wrap gap-2 mt-2">
-                    {QUICK_REPLIES.map((reply, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleSend(reply)}
-                        className="px-4 py-2 bg-white border-2 border-nhs-blue/30 text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm"
-                      >
-                        {reply}
-                      </button>
-                    ))}
+                    {QUICK_REPLY_KEYS.map((key, idx) => {
+                      const reply = t(key);
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => handleSend(reply)}
+                          className="px-4 py-2 bg-white border-2 border-nhs-blue/30 text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm"
+                        >
+                          {reply}
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
               </div>

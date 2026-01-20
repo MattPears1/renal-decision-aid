@@ -6,7 +6,7 @@ interface TreatmentCardData {
   id: TreatmentType;
   titleKey: string;
   descriptionKey: string;
-  facts: string[];
+  factKeys: string[];
   colorClass: string;
   bgClass: string;
   iconColorClass: string;
@@ -18,10 +18,10 @@ const TREATMENTS: TreatmentCardData[] = [
     id: 'kidney-transplant',
     titleKey: 'treatments.types.transplant.title',
     descriptionKey: 'treatments.types.transplant.shortDescription',
-    facts: [
-      'Best long-term survival outcomes',
-      'Requires surgery and recovery time',
-      'Lifelong medication needed',
+    factKeys: [
+      'treatments.facts.transplant.survival',
+      'treatments.facts.transplant.surgery',
+      'treatments.facts.transplant.medication',
     ],
     colorClass: 'border-nhs-green',
     bgClass: 'bg-[#E6F4EA]',
@@ -40,10 +40,10 @@ const TREATMENTS: TreatmentCardData[] = [
     id: 'hemodialysis',
     titleKey: 'treatments.types.hemodialysis.title',
     descriptionKey: 'treatments.types.hemodialysis.shortDescription',
-    facts: [
-      '3-4 times per week, 4-5 hours each',
-      'Professional care and monitoring',
-      'Travel to centre required',
+    factKeys: [
+      'treatments.facts.hemodialysis.frequency',
+      'treatments.facts.hemodialysis.professionalCare',
+      'treatments.facts.hemodialysis.travel',
     ],
     colorClass: 'border-nhs-orange',
     bgClass: 'bg-[#FFF7E6]',
@@ -65,10 +65,10 @@ const TREATMENTS: TreatmentCardData[] = [
     id: 'peritoneal-dialysis',
     titleKey: 'treatments.types.peritonealDialysis.title',
     descriptionKey: 'treatments.types.peritonealDialysis.shortDescription',
-    facts: [
-      'Daily treatment at home',
-      'Overnight or daytime options',
-      'Greater flexibility and independence',
+    factKeys: [
+      'treatments.facts.peritoneal.dailyHome',
+      'treatments.facts.peritoneal.timingOptions',
+      'treatments.facts.peritoneal.flexibility',
     ],
     colorClass: 'border-nhs-blue',
     bgClass: 'bg-[#E6F0FA]',
@@ -87,10 +87,10 @@ const TREATMENTS: TreatmentCardData[] = [
     id: 'conservative-care',
     titleKey: 'treatments.types.conservative.title',
     descriptionKey: 'treatments.types.conservative.shortDescription',
-    facts: [
-      'Focus on comfort and quality of life',
-      'No dialysis treatment required',
-      'Active symptom management',
+    factKeys: [
+      'treatments.facts.conservative.comfort',
+      'treatments.facts.conservative.noDialysis',
+      'treatments.facts.conservative.symptomManagement',
     ],
     colorClass: 'border-nhs-purple',
     bgClass: 'bg-[#F3E8FF]',
@@ -113,7 +113,7 @@ export default function TreatmentOverviewPage() {
   return (
     <main className="min-h-screen bg-bg-page" id="main-content">
       {/* Breadcrumb */}
-      <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label="Breadcrumb">
+      <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-xl mx-auto px-4 py-3">
           <ol className="flex items-center gap-2 text-sm">
             <li>
@@ -217,7 +217,7 @@ export default function TreatmentOverviewPage() {
 
                   {/* Key Facts */}
                   <div className="mb-6 flex-1">
-                    {treatment.facts.map((fact, idx) => (
+                    {treatment.factKeys.map((factKey, idx) => (
                       <div key={idx} className="flex items-start gap-2 py-1 text-sm text-text-primary">
                         <svg
                           className={`w-[18px] h-[18px] flex-shrink-0 mt-0.5 ${treatment.iconColorClass}`}
@@ -228,7 +228,7 @@ export default function TreatmentOverviewPage() {
                         >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
-                        <span>{fact}</span>
+                        <span>{t(factKey)}</span>
                       </div>
                     ))}
                   </div>
@@ -283,7 +283,7 @@ export default function TreatmentOverviewPage() {
         {/* Navigation Buttons */}
         <nav
           className="flex flex-col sm:flex-row justify-between gap-4 pt-8 border-t border-nhs-pale-grey"
-          aria-label="Page navigation"
+          aria-label={t('accessibility.pageNavigation')}
         >
           <button
             onClick={() => navigate('/hub')}

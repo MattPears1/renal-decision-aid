@@ -36,142 +36,142 @@ const TREATMENT_HEADERS: { id: TreatmentType; nameKey: string; typeKey: string }
 
 const COMPARISON_DATA: TableRow[] = [
   // Daily Life Impact Category
-  { type: 'category', id: 'daily-life', titleKey: 'Daily Life Impact' },
+  { type: 'category', id: 'daily-life', titleKey: 'compare.categories.dailyLife' },
   {
     id: 'time-commitment',
-    criteriaKey: 'Time commitment per week',
-    hintKey: 'Hours spent on treatment',
+    criteriaKey: 'compare.criteria.timeCommitment',
+    hintKey: 'compare.criteria.timeCommitmentHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'Minimal after recovery', subtext: 'Regular checkups only' },
-      'hemodialysis': { level: 'challenging', text: '12-15 hrs weekly', subtext: 'Plus travel time' },
-      'peritoneal-dialysis': { level: 'good', text: 'Daily exchanges', subtext: 'Can be done overnight' },
-      'conservative-care': { level: 'excellent', text: 'Minimal', subtext: 'Clinic visits as needed' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.minimalAfterRecovery', subtext: 'compare.values.regularCheckupsOnly' },
+      'hemodialysis': { level: 'challenging', text: 'compare.values.12to15HrsWeekly', subtext: 'compare.values.plusTravelTime' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.dailyExchanges', subtext: 'compare.values.canBeDoneOvernight' },
+      'conservative-care': { level: 'excellent', text: 'compare.values.minimal', subtext: 'compare.values.clinicVisitsAsNeeded' },
     },
   },
   {
     id: 'location',
-    criteriaKey: 'Treatment location',
-    hintKey: 'Where treatment takes place',
+    criteriaKey: 'compare.criteria.location',
+    hintKey: 'compare.criteria.locationHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'No restrictions', subtext: 'After recovery' },
-      'hemodialysis': { level: 'challenging', text: 'Hospital/clinic', subtext: 'Dialysis unit' },
-      'peritoneal-dialysis': { level: 'excellent', text: 'Home', subtext: 'Any clean space' },
-      'conservative-care': { level: 'excellent', text: 'Home', subtext: 'No equipment needed' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.noRestrictions', subtext: 'compare.values.afterRecovery' },
+      'hemodialysis': { level: 'challenging', text: 'compare.values.hospitalClinic', subtext: 'compare.values.dialysisUnit' },
+      'peritoneal-dialysis': { level: 'excellent', text: 'compare.values.home', subtext: 'compare.values.anyCleanSpace' },
+      'conservative-care': { level: 'excellent', text: 'compare.values.home', subtext: 'compare.values.noEquipmentNeeded' },
     },
   },
   {
     id: 'travel',
-    criteriaKey: 'Impact on travel',
-    hintKey: 'Ability to travel and holiday',
+    criteriaKey: 'compare.criteria.travel',
+    hintKey: 'compare.criteria.travelHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'Very flexible', subtext: 'Take medications only' },
-      'hemodialysis': { level: 'challenging', text: 'Difficult', subtext: 'Must arrange holiday dialysis' },
-      'peritoneal-dialysis': { level: 'good', text: 'Good flexibility', subtext: 'Supplies can be sent ahead' },
-      'conservative-care': { level: 'good', text: 'Good flexibility', subtext: 'No equipment needed' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.veryFlexible', subtext: 'compare.values.takeMedicationsOnly' },
+      'hemodialysis': { level: 'challenging', text: 'compare.values.difficult', subtext: 'compare.values.mustArrangeHolidayDialysis' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.goodFlexibility', subtext: 'compare.values.suppliesCanBeSentAhead' },
+      'conservative-care': { level: 'good', text: 'compare.values.goodFlexibility', subtext: 'compare.values.noEquipmentNeeded' },
     },
   },
   {
     id: 'diet',
-    criteriaKey: 'Diet restrictions',
-    hintKey: 'Limitations on food and drink',
+    criteriaKey: 'compare.criteria.diet',
+    hintKey: 'compare.criteria.dietHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'Few restrictions', subtext: 'Near-normal diet' },
-      'hemodialysis': { level: 'moderate', text: 'Moderate restrictions', subtext: 'Fluid and potassium limits' },
-      'peritoneal-dialysis': { level: 'good', text: 'Less strict', subtext: 'More flexibility' },
-      'conservative-care': { level: 'good', text: 'Managed diet', subtext: 'Tailored to symptoms' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.fewRestrictions', subtext: 'compare.values.nearNormalDiet' },
+      'hemodialysis': { level: 'moderate', text: 'compare.values.moderateRestrictions', subtext: 'compare.values.fluidAndPotassiumLimits' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.lessStrict', subtext: 'compare.values.moreFlexibility' },
+      'conservative-care': { level: 'good', text: 'compare.values.managedDiet', subtext: 'compare.values.tailoredToSymptoms' },
     },
   },
 
   // Practical Considerations Category
-  { type: 'category', id: 'practical', titleKey: 'Practical Considerations' },
+  { type: 'category', id: 'practical', titleKey: 'compare.categories.practical' },
   {
     id: 'surgery',
-    criteriaKey: 'Surgery required',
-    hintKey: 'Initial procedures needed',
+    criteriaKey: 'compare.criteria.surgery',
+    hintKey: 'compare.criteria.surgeryHint',
     values: {
-      'kidney-transplant': { level: 'moderate', text: 'Major surgery', subtext: 'Transplant operation required' },
-      'hemodialysis': { level: 'moderate', text: 'Minor surgery', subtext: 'Fistula or graft creation' },
-      'peritoneal-dialysis': { level: 'good', text: 'Minor procedure', subtext: 'PD catheter insertion' },
-      'conservative-care': { level: 'excellent', text: 'None required', subtext: 'No surgical procedures' },
+      'kidney-transplant': { level: 'moderate', text: 'compare.values.majorSurgery', subtext: 'compare.values.transplantOperationRequired' },
+      'hemodialysis': { level: 'moderate', text: 'compare.values.minorSurgery', subtext: 'compare.values.fistulaOrGraftCreation' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.minorProcedure', subtext: 'compare.values.pdCatheterInsertion' },
+      'conservative-care': { level: 'excellent', text: 'compare.values.noneRequired', subtext: 'compare.values.noSurgicalProcedures' },
     },
   },
   {
     id: 'support-needed',
-    criteriaKey: 'Support needed',
-    hintKey: 'Help from family or carers',
+    criteriaKey: 'compare.criteria.supportNeeded',
+    hintKey: 'compare.criteria.supportNeededHint',
     values: {
-      'kidney-transplant': { level: 'moderate', text: 'Initial support', subtext: 'During recovery period' },
-      'hemodialysis': { level: 'excellent', text: 'None needed', subtext: 'Professional staff provide care' },
-      'peritoneal-dialysis': { level: 'good', text: 'Minimal', subtext: 'Can do independently' },
-      'conservative-care': { level: 'varies', text: 'Varies', subtext: 'Depends on symptoms' },
+      'kidney-transplant': { level: 'moderate', text: 'compare.values.initialSupport', subtext: 'compare.values.duringRecoveryPeriod' },
+      'hemodialysis': { level: 'excellent', text: 'compare.values.noneNeeded', subtext: 'compare.values.professionalStaffProvideCare' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.minimal', subtext: 'compare.values.canDoIndependently' },
+      'conservative-care': { level: 'varies', text: 'compare.values.varies', subtext: 'compare.values.dependsOnSymptoms' },
     },
   },
   {
     id: 'flexibility',
-    criteriaKey: 'Schedule flexibility',
-    hintKey: 'Control over your schedule',
+    criteriaKey: 'compare.criteria.scheduleFlexibility',
+    hintKey: 'compare.criteria.scheduleFlexibilityHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'High', subtext: 'Normal daily life possible' },
-      'hemodialysis': { level: 'challenging', text: 'Low', subtext: 'Fixed hospital slots' },
-      'peritoneal-dialysis': { level: 'excellent', text: 'High', subtext: 'Choose your schedule' },
-      'conservative-care': { level: 'excellent', text: 'High', subtext: 'No fixed schedule' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.high', subtext: 'compare.values.normalDailyLifePossible' },
+      'hemodialysis': { level: 'challenging', text: 'compare.values.low', subtext: 'compare.values.fixedHospitalSlots' },
+      'peritoneal-dialysis': { level: 'excellent', text: 'compare.values.high', subtext: 'compare.values.chooseYourSchedule' },
+      'conservative-care': { level: 'excellent', text: 'compare.values.high', subtext: 'compare.values.noFixedSchedule' },
     },
   },
   {
     id: 'training',
-    criteriaKey: 'Training required',
-    hintKey: 'Learning time needed',
+    criteriaKey: 'compare.criteria.trainingRequired',
+    hintKey: 'compare.criteria.trainingRequiredHint',
     values: {
-      'kidney-transplant': { level: 'good', text: 'Medication training', subtext: 'Learning your new routine' },
-      'hemodialysis': { level: 'excellent', text: 'None required', subtext: 'Staff do everything' },
-      'peritoneal-dialysis': { level: 'moderate', text: '1-2 weeks training', subtext: 'Learn the technique' },
-      'conservative-care': { level: 'good', text: 'Symptom management', subtext: 'Medication guidance' },
+      'kidney-transplant': { level: 'good', text: 'compare.values.medicationTraining', subtext: 'compare.values.learningYourNewRoutine' },
+      'hemodialysis': { level: 'excellent', text: 'compare.values.noneRequired', subtext: 'compare.values.staffDoEverything' },
+      'peritoneal-dialysis': { level: 'moderate', text: 'compare.values.oneToTwoWeeksTraining', subtext: 'compare.values.learnTheTechnique' },
+      'conservative-care': { level: 'good', text: 'compare.values.symptomManagement', subtext: 'compare.values.medicationGuidance' },
     },
   },
 
   // Health Outcomes Category
-  { type: 'category', id: 'health', titleKey: 'Health Outcomes' },
+  { type: 'category', id: 'health', titleKey: 'compare.categories.health' },
   {
     id: 'survival',
-    criteriaKey: 'Survival rates',
-    hintKey: 'General outcomes (varies by person)',
+    criteriaKey: 'compare.criteria.survivalRates',
+    hintKey: 'compare.criteria.survivalRatesHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'Best outcomes', subtext: 'For suitable candidates' },
-      'hemodialysis': { level: 'good', text: 'Good', subtext: 'Well-established treatment' },
-      'peritoneal-dialysis': { level: 'good', text: 'Good', subtext: 'Similar to haemodialysis' },
-      'conservative-care': { level: 'varies', text: 'Quality focused', subtext: 'Comfort over longevity' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.bestOutcomes', subtext: 'compare.values.forSuitableCandidates' },
+      'hemodialysis': { level: 'good', text: 'compare.values.good', subtext: 'compare.values.wellEstablishedTreatment' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.good', subtext: 'compare.values.similarToHaemodialysis' },
+      'conservative-care': { level: 'varies', text: 'compare.values.qualityFocused', subtext: 'compare.values.comfortOverLongevity' },
     },
   },
   {
     id: 'quality-of-life',
-    criteriaKey: 'Quality of life',
-    hintKey: 'Overall wellbeing',
+    criteriaKey: 'compare.criteria.qualityOfLife',
+    hintKey: 'compare.criteria.qualityOfLifeHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'Excellent', subtext: 'Near-normal life possible' },
-      'hemodialysis': { level: 'moderate', text: 'Moderate', subtext: 'Treatment affects daily routine' },
-      'peritoneal-dialysis': { level: 'good', text: 'Good', subtext: 'More independence' },
-      'conservative-care': { level: 'good', text: 'Focus on comfort', subtext: 'Symptom management priority' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.excellent', subtext: 'compare.values.nearNormalLifePossible' },
+      'hemodialysis': { level: 'moderate', text: 'compare.values.moderate', subtext: 'compare.values.treatmentAffectsDailyRoutine' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.good', subtext: 'compare.values.moreIndependence' },
+      'conservative-care': { level: 'good', text: 'compare.values.focusOnComfort', subtext: 'compare.values.symptomManagementPriority' },
     },
   },
   {
     id: 'energy-levels',
-    criteriaKey: 'Energy levels',
-    hintKey: 'Typical energy and fatigue',
+    criteriaKey: 'compare.criteria.energyLevels',
+    hintKey: 'compare.criteria.energyLevelsHint',
     values: {
-      'kidney-transplant': { level: 'excellent', text: 'Often excellent', subtext: 'Energy restored' },
-      'hemodialysis': { level: 'moderate', text: 'Variable', subtext: 'Fatigue after sessions' },
-      'peritoneal-dialysis': { level: 'good', text: 'Generally good', subtext: 'Steady energy levels' },
-      'conservative-care': { level: 'varies', text: 'Varies', subtext: 'Managed with support' },
+      'kidney-transplant': { level: 'excellent', text: 'compare.values.oftenExcellent', subtext: 'compare.values.energyRestored' },
+      'hemodialysis': { level: 'moderate', text: 'compare.values.variable', subtext: 'compare.values.fatigueAfterSessions' },
+      'peritoneal-dialysis': { level: 'good', text: 'compare.values.generallyGood', subtext: 'compare.values.steadyEnergyLevels' },
+      'conservative-care': { level: 'varies', text: 'compare.values.varies', subtext: 'compare.values.managedWithSupport' },
     },
   },
 ];
 
-const LEGEND_ITEMS: { level: RatingLevel; label: string }[] = [
-  { level: 'excellent', label: 'Excellent - Generally very favourable' },
-  { level: 'good', label: 'Good - Generally favourable' },
-  { level: 'moderate', label: 'Moderate - Some limitations to consider' },
-  { level: 'challenging', label: 'Challenging - Significant considerations' },
-  { level: 'varies', label: 'Varies - Depends on individual circumstances' },
+const LEGEND_ITEMS: { level: RatingLevel; labelKey: string }[] = [
+  { level: 'excellent', labelKey: 'compare.legend.excellentDesc' },
+  { level: 'good', labelKey: 'compare.legend.goodDesc' },
+  { level: 'moderate', labelKey: 'compare.legend.moderateDesc' },
+  { level: 'challenging', labelKey: 'compare.legend.challengingDesc' },
+  { level: 'varies', labelKey: 'compare.legend.variesDesc' },
 ];
 
 function RatingIcon({ level }: { level: RatingLevel }) {
@@ -261,7 +261,7 @@ export default function ComparePage() {
   return (
     <main className="min-h-screen bg-bg-page" id="main-content">
       {/* Breadcrumb */}
-      <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label="Breadcrumb">
+      <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-2xl mx-auto px-4 py-3">
           <ol className="flex items-center gap-2 text-sm">
             <li>
@@ -339,7 +339,7 @@ export default function ComparePage() {
                     onChange={() => toggleTreatment(treatment.id)}
                     className="w-[18px] h-[18px] accent-nhs-blue"
                   />
-                  <span>{treatment.nameKey}</span>
+                  <span>{t(treatment.nameKey)}</span>
                 </label>
               ))}
             </div>
@@ -387,7 +387,7 @@ export default function ComparePage() {
             {LEGEND_ITEMS.map((item) => (
               <div key={item.level} className="flex items-center gap-3" role="listitem">
                 <RatingIcon level={item.level} />
-                <span className="text-sm text-text-secondary">{item.label}</span>
+                <span className="text-sm text-text-secondary">{t(item.labelKey)}</span>
               </div>
             ))}
           </div>
@@ -436,8 +436,8 @@ export default function ComparePage() {
                         index % 2 === 0 ? 'bg-nhs-blue' : 'bg-nhs-blue/90'
                       }`}
                     >
-                      <span className="block text-lg mb-1">{treatment.nameKey}</span>
-                      <span className="block text-xs font-normal opacity-80">{treatment.typeKey}</span>
+                      <span className="block text-lg mb-1">{t(treatment.nameKey)}</span>
+                      <span className="block text-xs font-normal opacity-80">{t(treatment.typeKey)}</span>
                       {recommendedTreatment === treatment.id && (
                         <span className="inline-flex items-center gap-1 mt-3 px-3 py-1 bg-nhs-green text-white text-xs font-semibold rounded-full shadow-md">
                           <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
@@ -462,7 +462,7 @@ export default function ComparePage() {
                         >
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 bg-nhs-blue rounded-full" />
-                            {row.titleKey}
+                            {t(row.titleKey)}
                           </div>
                         </th>
                       </tr>
@@ -480,8 +480,8 @@ export default function ComparePage() {
                         className="bg-white group-hover:bg-nhs-blue/5 p-5 sticky left-0 z-[5] text-left font-semibold border-r border-nhs-pale-grey transition-colors"
                       >
                         <div className="flex flex-col gap-1">
-                          <span className="text-text-primary font-semibold">{dataRow.criteriaKey}</span>
-                          <span className="text-xs font-normal text-text-muted">{dataRow.hintKey}</span>
+                          <span className="text-text-primary font-semibold">{t(dataRow.criteriaKey)}</span>
+                          <span className="text-xs font-normal text-text-muted">{t(dataRow.hintKey)}</span>
                         </div>
                       </th>
                       {visibleTreatments.map((treatment, index) => {
@@ -496,11 +496,11 @@ export default function ComparePage() {
                             <div className="flex flex-col items-center gap-3">
                               <RatingIcon level={cell.level} />
                               <div className="text-sm text-text-primary font-medium leading-snug">
-                                {cell.text}
+                                {t(cell.text)}
                               </div>
                               {cell.subtext && (
                                 <span className="text-xs text-text-muted">
-                                  {cell.subtext}
+                                  {t(cell.subtext)}
                                 </span>
                               )}
                             </div>
@@ -541,7 +541,7 @@ export default function ComparePage() {
         {/* Navigation Section - Enhanced */}
         <nav
           className="bg-white rounded-2xl p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4"
-          aria-label="Page navigation"
+          aria-label={t('accessibility.pageNavigation')}
         >
           <button
             onClick={() => navigate('/hub')}

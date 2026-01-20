@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import i18next from 'i18next';
 import type {
   Session,
   SupportedLanguage,
@@ -58,7 +59,7 @@ export function SessionProvider({ children }: SessionProviderProps) {
       if (remaining <= 0) {
         // Session expired
         setSession(null);
-        setError('Your session has expired. Please start again.');
+        setError(i18next.t('session.sessionExpired'));
       }
     };
 
@@ -95,7 +96,7 @@ export function SessionProvider({ children }: SessionProviderProps) {
       //   body: JSON.stringify({ language }),
       // });
     } catch (err) {
-      setError('Failed to create session. Please try again.');
+      setError(i18next.t('session.createError'));
       console.error('Session creation error:', err);
     } finally {
       setIsLoading(false);

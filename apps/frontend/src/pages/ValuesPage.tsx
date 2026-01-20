@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
@@ -11,76 +11,38 @@ interface ValueStatement {
   category: 'independence' | 'health' | 'lifestyle' | 'social' | 'practical';
 }
 
-const VALUE_STATEMENTS: ValueStatement[] = [
-  {
-    id: 'travel',
-    statement: 'Being able to travel is important to me',
-    hint: 'Rate how important this is to you',
-    category: 'lifestyle',
-  },
-  {
-    id: 'hospital-time',
-    statement: 'I want to minimise time spent in hospital',
-    hint: 'Rate how important this is to you',
-    category: 'practical',
-  },
-  {
-    id: 'needles',
-    statement: 'I am comfortable with needles and medical procedures',
-    hint: 'Rate how much you agree with this statement',
-    category: 'health',
-  },
-  {
-    id: 'independence',
-    statement: 'Maintaining my independence is very important to me',
-    hint: 'Rate how important this is to you',
-    category: 'independence',
-  },
-  {
-    id: 'family-burden',
-    statement: 'I want to avoid being a burden on my family',
-    hint: 'Rate how important this is to you',
-    category: 'social',
-  },
-  {
-    id: 'longevity',
-    statement: 'Living as long as possible is my priority',
-    hint: 'Rate how important this is to you',
-    category: 'health',
-  },
-  {
-    id: 'quality-of-life',
-    statement: 'Quality of life matters more than length of life',
-    hint: 'Rate how much you agree with this statement',
-    category: 'health',
-  },
-  {
-    id: 'home-treatment',
-    statement: 'I would prefer to have treatment at home',
-    hint: 'Rate how important this is to you',
-    category: 'practical',
-  },
-  {
-    id: 'work-activities',
-    statement: 'Continuing to work or do my usual activities is important',
-    hint: 'Rate how important this is to you',
-    category: 'lifestyle',
-  },
-  {
-    id: 'professional-care',
-    statement: 'I would rather have professionals take care of my treatment',
-    hint: 'Rate how much you agree with this statement',
-    category: 'practical',
-  },
+interface RatingLabel {
+  value: number;
+  label: string;
+  shortLabel: string;
+}
+
+// Statement IDs and their categories (static data)
+// IDs match the keys in values.statements in common.json
+const STATEMENT_CONFIGS = [
+  { id: 'travel', category: 'lifestyle' as const },
+  { id: 'hospitalTime', category: 'practical' as const },
+  { id: 'needles', category: 'health' as const },
+  { id: 'independence', category: 'independence' as const },
+  { id: 'familyBurden', category: 'social' as const },
+  { id: 'longevity', category: 'health' as const },
+  { id: 'qualityOfLife', category: 'health' as const },
+  { id: 'homeTreatment', category: 'practical' as const },
+  { id: 'workActivities', category: 'lifestyle' as const },
+  { id: 'professionalCare', category: 'practical' as const },
 ];
 
-const RATING_LABELS = [
-  { value: 1, label: 'Not important', shortLabel: '1' },
-  { value: 2, label: 'Slightly important', shortLabel: '2' },
-  { value: 3, label: 'Moderately important', shortLabel: '3' },
-  { value: 4, label: 'Important', shortLabel: '4' },
-  { value: 5, label: 'Very important', shortLabel: '5' },
-];
+// Rating values (static data)
+const RATING_VALUES = [1, 2, 3, 4, 5];
+
+// Mapping from numeric rating values to translation keys
+const RATING_LABEL_KEYS: Record<number, string> = {
+  1: 'notImportant',
+  2: 'slightlyImportant',
+  3: 'moderatelyImportant',
+  4: 'important',
+  5: 'veryImportant',
+};
 
 type ViewMode = 'intro' | 'one-at-a-time' | 'all-at-once' | 'results';
 
@@ -92,6 +54,27 @@ export default function ValuesPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('intro');
   const [currentStatement, setCurrentStatement] = useState(0);
   const [ratings, setRatings] = useState<Record<string, number>>({});
+
+  // Translated value statements
+  const VALUE_STATEMENTS: ValueStatement[] = useMemo(() =>
+    STATEMENT_CONFIGS.map(({ id, category }) => ({
+      id,
+      statement: t(`values.statements.${id}.text`),
+      hint: t(`values.statements.${id}.hint`),
+      category,
+    })),
+    [t]
+  );
+
+  // Translated rating labels
+  const RATING_LABELS: RatingLabel[] = useMemo(() =>
+    RATING_VALUES.map((value) => ({
+      value,
+      label: t(`values.ratingLabels.${RATING_LABEL_KEYS[value]}`),
+      shortLabel: String(value),
+    })),
+    [t]
+  );
 
   const handleRating = (statementId: string, rating: 1 | 2 | 3 | 4 | 5) => {
     setRatings((prev) => ({ ...prev, [statementId]: rating }));
@@ -342,8 +325,8 @@ export default function ValuesPage() {
               </div>
               {/* Visual scale indicator */}
               <div className="flex justify-between max-w-2xl mx-auto mt-6 px-8">
-                <span className="text-xs text-text-muted">Less important</span>
-                <span className="text-xs text-text-muted">More important</span>
+                <span className="text-xs text-text-muted">{t('values.scale.lessImportant')}</span>
+                <span className="text-xs text-text-muted">{t('values.scale.moreImportant')}</span>
               </div>
             </div>
 
