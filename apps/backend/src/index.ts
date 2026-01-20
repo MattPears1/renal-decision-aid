@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 import dotenv from 'dotenv';
+import path from 'path';
 import routes from './routes/index.js';
 
 // Load environment variables
@@ -12,27 +13,32 @@ const app = express();
 const PORT = process.env.PORT || 5006;
 
 // CORS configuration
+const corsOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(',').map(s => s.trim())
+  : ['http://localhost:3006', 'http://localhost:5173'];
+
 const corsOptions: cors.CorsOptions = {
-  origin: process.env.CORS_ORIGIN || ['http://localhost:3006', 'http://localhost:5173'],
+  origin: corsOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Session-Id'],
   credentials: true,
   maxAge: 86400, // 24 hours
 };
 
-// Security middleware
+// Security middleware - more permissive CSP for production SPA
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
-      imgSrc: ["'self'", 'data:', 'https:'],
-      connectSrc: ["'self'"],
-      fontSrc: ["'self'"],
+      imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
+      connectSrc: ["'self'", 'https://api.openai.com'],
+      fontSrc: ["'self'", 'data:'],
       objectSrc: ["'none'"],
-      mediaSrc: ["'self'"],
+      mediaSrc: ["'self'", 'blob:'],
       frameSrc: ["'none'"],
+      workerSrc: ["'self'", 'blob:'],
     },
   },
   crossOriginEmbedderPolicy: false,
@@ -61,7 +67,22 @@ app.get('/api/health', (_req: Request, res: Response) => {
 // Mount routes
 app.use('/api', routes);
 
-// 404 handler
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  // Heroku runs from project root, so use relative path from there
+  const frontendPath = path.join(process.cwd(), 'apps/frontend/dist');
+  app.use(express.static(frontendPath));
+
+  // Handle SPA routing - serve index.html for non-API routes
+  app.get('*', (req: Request, res: Response, next: NextFunction) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
+}
+
+// 404 handler for API routes
 app.use((_req: Request, res: Response) => {
   res.status(404).json({
     error: 'Not Found',
