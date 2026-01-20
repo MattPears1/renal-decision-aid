@@ -81,7 +81,7 @@ interface AnnotationProps {
   onClick: () => void;
   showLabels: boolean;
   modelOffset: [number, number, number];
-  t: (key: string, defaultValue?: string) => string;
+  t: (key: string, options?: Record<string, unknown>) => string;
 }
 
 function Annotation({ annotation, isSelected, onClick, showLabels, modelOffset, t }: AnnotationProps) {
