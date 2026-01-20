@@ -69,8 +69,8 @@ app.use('/api', routes);
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
-  // Heroku runs from project root, so use relative path from there
-  const frontendPath = path.join(process.cwd(), 'apps/frontend/dist');
+  // Navigate from backend workspace to frontend dist folder
+  const frontendPath = path.resolve(process.cwd(), '../frontend/dist');
   app.use(express.static(frontendPath));
 
   // Handle SPA routing - serve index.html for non-API routes
