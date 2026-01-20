@@ -95,6 +95,33 @@ Renal_Transplant_Decision_Tool/
 └── docs/                   # Implementation documentation
 ```
 
+## Process Management
+
+### Killing Development Servers
+
+**Never kill all Node processes.** This can terminate other running dev servers, Claude Code sessions, and essential services.
+
+**Correct:** Kill by specific port
+```bash
+npx kill-port 3006    # Frontend
+npx kill-port 5006    # Backend
+```
+
+**Wrong:** Killing all Node processes
+```bash
+# DO NOT USE THESE
+taskkill /F /IM node.exe
+pkill node
+killall node
+```
+
+### Service Ports
+
+| Service | Port |
+|---------|------|
+| Frontend (Vite) | 3006 |
+| Backend (Express) | 5006 |
+
 ## Development Workflow
 
 1. **Create a branch** from `main`

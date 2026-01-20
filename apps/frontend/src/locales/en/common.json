@@ -1,0 +1,588 @@
+{
+  "nav": {
+    "home": "Home",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "returnToHub": "Return to Hub",
+    "continueToQuestionnaire": "Continue to questionnaire"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "print": "Print",
+    "yes": "Yes",
+    "no": "No",
+    "notSure": "Not sure",
+    "moreInfo": "More information",
+    "close": "Close",
+    "back": "Back"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandSection": "Expand section",
+    "collapseSection": "Collapse section",
+    "newWindow": "Opens in a new window",
+    "externalLink": "External link",
+    "settings": "Accessibility",
+    "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
+    "settingsTitle": "Adjust text size, contrast, and other accessibility settings"
+  },
+  "landing": {
+    "title": "Kidney Treatment Decision Aid",
+    "subtitle": "NHS Renal Services",
+    "description": "This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.",
+    "startButton": "Start Your Journey",
+    "startButtonAriaLabel": "Start your kidney treatment decision journey",
+    "learnMore": "Learn More About Kidney Disease",
+    "heroAriaLabel": "Welcome section",
+    "featuresHeading": "How This Tool Helps You",
+    "features": {
+      "time": {
+        "title": "Takes About 15 Minutes",
+        "description": "Complete at your own pace. You can take breaks whenever you need and return to where you left off."
+      },
+      "privacy": {
+        "title": "Your Privacy Protected",
+        "description": "No personal information is stored. Your answers help personalise the tool during this session only."
+      },
+      "devices": {
+        "title": "Works on All Devices",
+        "description": "Use on your phone, tablet, or computer. The tool adapts to your screen size automatically."
+      }
+    },
+    "aboutHeading": "What This Tool Does",
+    "about": {
+      "paragraph1": "This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
+      "paragraph2": "You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
+      "paragraph3": "This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you."
+    },
+    "trustAriaLabel": "Trust and safety information",
+    "trust": {
+      "evidenceBased": "Evidence-based information",
+      "languages": "Available in 7 languages",
+      "accessible": "Accessible for all users",
+      "noAccount": "No account required"
+    },
+    "ctaHeading": "Ready to Begin?",
+    "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
+  },
+  "language": {
+    "title": "Choose Your Language",
+    "instruction": "Please select your preferred language. You can change this at any time.",
+    "selectLanguage": "Select language",
+    "currentLanguage": "Current language"
+  },
+  "privacy": {
+    "pageAriaLabel": "Privacy information",
+    "progressLabel": "Setup progress: 30%",
+    "progressText": "Step 2 of 4: Privacy Information",
+    "title": "Your Privacy & Information",
+    "subtitle": "Before you begin, we want you to understand how this tool handles your information.",
+    "listenToPage": "Listen to this page",
+    "stopReading": "Stop reading",
+    "sections": {
+      "privacy": {
+        "title": "How We Protect Your Information",
+        "content": "Your responses are processed securely and are not stored permanently. This tool does not collect personal health information that can identify you. Your session data is automatically deleted when you close this tool.",
+        "p1": "This tool uses session-only storage. Any information you enter, including your answers to questions and treatment preferences, is only kept while you are using the tool.",
+        "p2": "When you close your browser or after 15 minutes of inactivity, all your information is automatically deleted. We do not save anything about you.",
+        "p3": "We collect anonymous information about how people use this tool to help us improve it. This cannot identify you personally."
+      },
+      "ai": {
+        "title": "How This Tool Works",
+        "content": "This decision aid uses technology to provide personalised information based on your responses. The information provided is drawn from NHS clinical guidelines and evidence-based research. This tool supports but does not replace discussions with your kidney care team.",
+        "p1": "This tool includes an AI assistant that can answer general questions about kidney treatments. The AI provides information only - it cannot give you medical advice specific to your situation.",
+        "p2": "The AI may sometimes make mistakes or provide incomplete information. Always discuss important decisions with your kidney team who know your full medical history.",
+        "p3": "This tool does not replace advice from your healthcare team. It is designed to help you feel more informed when discussing your options with your doctors and nurses."
+      },
+      "medical": {
+        "title": "Important Medical Information",
+        "content": "This tool provides general information about kidney treatment options. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with your kidney specialist or healthcare team before making any decisions about your treatment. If you have urgent health concerns, please contact your GP or call NHS 111."
+      },
+      "pii": {
+        "title": "Please Do Not Share Personal Details",
+        "intro": "To protect your privacy, please do not enter any personal information that could identify you when using this tool, especially in the chat feature.",
+        "listLabel": "Information you should not share",
+        "items": {
+          "nhsNumber": "Your NHS number",
+          "fullName": "Your full name",
+          "address": "Your home address",
+          "dob": "Your date of birth",
+          "phone": "Phone numbers",
+          "email": "Email addresses"
+        },
+        "outro": "You can still tell us about your situation in general terms - for example, your living situation or what matters most to you - without sharing identifying details."
+      }
+    },
+    "summaryAriaLabel": "Key points summary",
+    "summary": {
+      "title": "In Summary",
+      "notSaved": "Your answers are not saved",
+      "noData": "No personal data is collected",
+      "leave": "You can leave at any time"
+    },
+    "consent": {
+      "title": "Please confirm to continue",
+      "understand": "I understand that my information is not saved after this session and I will not share personal identifying information",
+      "analytics": "I agree to anonymous analytics being collected to help improve this tool (optional)",
+      "error": "Please confirm you understand the privacy information before continuing"
+    },
+    "continueButton": "I Understand, Continue",
+    "continueAriaLabel": "Continue to journey stage selection",
+    "readFullPolicy": "Read the full NHS Privacy Policy"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Demo",
+    "serviceName": "Kidney Treatment Decision Aid",
+    "tagline": "Helping you make informed choices",
+    "homeAriaLabel": "NHS Kidney Treatment Decision Aid - Home"
+  },
+  "progress": {
+    "language": "Language",
+    "privacy": "Privacy",
+    "yourJourney": "Your Journey",
+    "aboutYou": "About You",
+    "yourOptions": "Your Options",
+    "ariaLabel": "Progress through decision aid",
+    "stepOfTotal": "Step {{current}} of {{total}}",
+    "percentComplete": "{{percentage}}% complete",
+    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed"
+  },
+  "journey": {
+    "title": "Where Are You in Your Kidney Care Journey?",
+    "subtitle": "Select the option that best describes your situation",
+    "instruction": "Select the option that best describes your current situation",
+    "intro": "Everyone's kidney journey is different. To help us show you the most relevant information, please tell us where you are right now. There are no right or wrong answers.",
+    "error": "Please select an option that describes your situation. If none of these fit, select \"I am supporting a family member or friend\" to continue.",
+    "formLabel": "Journey stage options",
+    "legendLabel": "Select where you are in your kidney journey",
+    "radioGroupLabel": "Journey stage options",
+    "listenToQuestion": "Listen to this question",
+    "audioText": "Where are you in your journey? Select the option that best describes your situation.",
+    "reassurance": "Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.",
+    "needHelp": "I need help choosing",
+    "stages": {
+      "suspected": {
+        "title": "I think I may have kidney disease",
+        "description": "You are concerned about your kidney health and want to learn more about what kidney disease means."
+      },
+      "earlyDiagnosis": {
+        "title": "I've just been diagnosed - early stage CKD",
+        "description": "You have recently learned about your kidney condition and want to understand what this means for you."
+      },
+      "lateDiagnosis": {
+        "title": "I've been diagnosed - late stage CKD",
+        "description": "Your kidney function has declined significantly and you may need to think about treatment options soon."
+      },
+      "choosingTreatment": {
+        "title": "I need to choose a treatment soon",
+        "description": "Your kidney team has told you that you will need to start treatment in the coming months and you want to learn about your options."
+      },
+      "transplantPending": {
+        "title": "I'm due to have a transplant - want to learn more",
+        "description": "You are on the transplant list or have a living donor lined up and want to know more about what to expect."
+      },
+      "dialysisPending": {
+        "title": "I'm due to start dialysis - want to learn more",
+        "description": "You will be starting dialysis treatment soon and want to understand the different types and what daily life will be like."
+      },
+      "supporting": {
+        "title": "I'm supporting a family member or friend",
+        "description": "Someone close to you has kidney disease and you want to understand their options to help support them."
+      }
+    },
+    "helpModal": {
+      "title": "Need Help Choosing?",
+      "intro": "It is perfectly normal to feel unsure about which stage describes you best. Here are some tips:",
+      "tip1Title": "Think about your most recent appointment",
+      "tip1Text": "What did your kidney team tell you about your kidney function and any next steps?",
+      "tip2Title": "Consider what brought you here",
+      "tip2Text": "Were you given this tool by a doctor or nurse? They may have suggested which stage applies to you.",
+      "tip3Title": "If you are still unsure",
+      "tip3Text": "Choose the option that feels closest to your situation. You will still be able to explore all the information in this tool, regardless of which option you select.",
+      "note": "Your kidney team are the experts in your care. If you have questions about your kidney health, please contact them directly.",
+      "understand": "I understand"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Tell Us About Yourself",
+      "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "features": {
+        "questions": "7 quick questions",
+        "time": "Takes 3-5 minutes",
+        "private": "Completely private",
+        "skip": "Skip any question"
+      },
+      "beginButton": "Begin Questions",
+      "skipText": "If you prefer not to answer these questions, you can skip to general treatment information.",
+      "skipButton": "Skip All Questions",
+      "backToJourney": "Back to Journey Stage"
+    },
+    "progress": {
+      "label": "Question progress",
+      "questionOf": "Question {{current}} of {{total}}",
+      "complete": "complete"
+    },
+    "types": {
+      "scale": "Scale Rating",
+      "single": "Single Choice",
+      "multiple": "Multiple Choice"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "How much do you know about kidney disease and its treatments?",
+        "hint": "This helps us tailor information to your current understanding."
+      },
+      "goal": {
+        "title": "What would you like to get from this session?",
+        "hint": "Select the option that best describes your main goal today."
+      },
+      "learning": {
+        "title": "How do you prefer to learn new information?",
+        "hint": "This helps us present information in ways that work best for you."
+      },
+      "comfort": {
+        "title": "How comfortable are you with medical procedures?",
+        "hint": "This is a sensitive topic. You can skip this question if you prefer."
+      },
+      "support": {
+        "title": "Do you have support at home?",
+        "hint": "Some treatments are easier with help from family or carers."
+      },
+      "living": {
+        "title": "Where do you live?",
+        "hint": "This helps us understand which treatments might work best in your home environment."
+      },
+      "priorities": {
+        "title": "What matters most to you in choosing a treatment?",
+        "hint": "Your priorities will help us highlight what matters to you in each treatment option."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Select up to {{max}} priorities that are most important to you.",
+      "selectAll": "Select all that apply - you can choose more than one option."
+    },
+    "audio": {
+      "listen": "Listen to this question"
+    },
+    "skipQuestion": "Skip this question",
+    "viewResults": "View My Results",
+    "nextQuestion": "Next Question"
+  },
+  "hub": {
+    "title": "Your Personalised Information",
+    "subtitle": "Based on your responses, here's what we recommend exploring.",
+    "welcome": {
+      "title": "Your Personalised Treatment Options",
+      "message": "Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.",
+      "reminder": "Remember, your kidney team will help you make the final decision."
+    },
+    "session": {
+      "timeRemaining": "Session time remaining:",
+      "extend": "Extend session",
+      "updateAnswers": "Update My Answers",
+      "startOver": "Start Over"
+    },
+    "alert": {
+      "title": "Remember to save your summary",
+      "message": "Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration."
+    },
+    "pathway": {
+      "title": "How would you like to explore?",
+      "guided": {
+        "title": "Your Recommended Journey",
+        "badge": "Recommended",
+        "description": "Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.",
+        "action": "Start guided journey"
+      },
+      "free": {
+        "title": "Explore Freely",
+        "description": "Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.",
+        "action": "Browse all options"
+      }
+    },
+    "content": {
+      "title": "Tools to Help You Decide"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Treatment Options",
+        "description": "Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.",
+        "action": "Explore"
+      },
+      "model": {
+        "title": "3D Kidney Model",
+        "description": "Explore interactive 3D models showing how different treatments work in your body. See the process visually.",
+        "action": "View Model"
+      },
+      "compare": {
+        "title": "Compare Treatments",
+        "description": "See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.",
+        "action": "Compare"
+      },
+      "values": {
+        "title": "Values Exercise",
+        "description": "Think about what matters most to you. This exercise helps clarify your priorities to guide your decision.",
+        "action": "Start"
+      },
+      "chat": {
+        "title": "Ask Questions",
+        "description": "Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.",
+        "action": "Start Chat"
+      }
+    },
+    "status": {
+      "new": "New",
+      "inProgress": "In Progress",
+      "completed": "Completed"
+    },
+    "summary": {
+      "title": "Ready to Review Your Journey?",
+      "description": "View everything you have explored and create a summary to share with your kidney team at your next appointment.",
+      "button": "View Your Summary"
+    },
+    "quickAction": {
+      "summary": "View Your Summary"
+    }
+  },
+  "treatments": {
+    "title": "Understanding Your Treatment Options",
+    "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
+    "types": {
+      "transplant": {
+        "title": "Kidney Transplant",
+        "shortDescription": "Receiving a healthy kidney from a donor",
+        "description": "A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor. A successful transplant can provide the best quality of life and longest survival for many people with kidney failure.",
+        "benefits": [
+          "Often provides the best quality of life",
+          "No regular dialysis sessions needed",
+          "Fewer dietary restrictions",
+          "Better energy levels for most people"
+        ],
+        "considerations": [
+          "Requires major surgery",
+          "Need to take immunosuppressant medications for life",
+          "May need to wait for a suitable kidney",
+          "Not suitable for everyone"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Haemodialysis",
+        "shortDescription": "Filtering blood using a machine",
+        "description": "Haemodialysis uses a machine to filter your blood outside your body. This is usually done at a dialysis unit in hospital or a community centre, typically three times a week for about four hours each session. Some people do haemodialysis at home.",
+        "benefits": [
+          "Effective at removing waste and excess fluid",
+          "Regular contact with healthcare team",
+          "Home haemodialysis option available for some",
+          "Treatment is done for you"
+        ],
+        "considerations": [
+          "Requires regular hospital or centre visits",
+          "Needs vascular access (fistula or line)",
+          "May feel tired after treatment",
+          "Dietary and fluid restrictions apply"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Peritoneal Dialysis",
+        "shortDescription": "Filtering blood inside the body using the abdomen lining",
+        "description": "Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter. A special fluid is put into your abdomen through a small tube, absorbs waste products, and is then drained out. This can be done at home, either during the day or overnight while you sleep.",
+        "benefits": [
+          "Done at home, more independence",
+          "More flexible schedule",
+          "Gentler on the body, fewer ups and downs",
+          "Easier to travel"
+        ],
+        "considerations": [
+          "Requires daily treatment commitment",
+          "Need a permanent tube in your abdomen",
+          "Risk of infection if technique is not maintained",
+          "Requires storage space for supplies"
+        ]
+      },
+      "conservative": {
+        "title": "Conservative Management",
+        "shortDescription": "Managing symptoms without dialysis",
+        "description": "Conservative management focuses on maintaining quality of life and managing symptoms without dialysis or transplant. This approach may be right for some people, particularly those who are elderly, frail, or have other serious health conditions. It involves careful symptom management, medications, and support from the kidney care team.",
+        "benefits": [
+          "No dialysis sessions or surgery needed",
+          "Focus on quality of life and comfort",
+          "May be appropriate for some elderly or frail patients",
+          "Maintain usual routine as much as possible"
+        ],
+        "considerations": [
+          "Kidney function will continue to decline",
+          "Symptoms will need active management",
+          "Important to have honest conversations about expectations",
+          "Advance care planning is recommended"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "Compare Treatment Options",
+    "subtitle": "See how different treatments compare across key factors.",
+    "categories": {
+      "lifestyle": "Lifestyle Impact",
+      "medical": "Medical Considerations"
+    },
+    "items": {
+      "scheduleFlexibility": "Schedule Flexibility",
+      "travelAbility": "Ability to Travel",
+      "dietRestrictions": "Dietary Restrictions",
+      "hospitalVisits": "Hospital Visits",
+      "surgeryRequired": "Surgery Required",
+      "medications": "Medications"
+    },
+    "values": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "limited": "Limited",
+      "varies": "Varies",
+      "fewer": "Fewer",
+      "more": "More",
+      "moderate": "Moderate",
+      "periodic": "Periodic check-ups",
+      "threePerWeek": "3 times per week",
+      "monthly": "Monthly",
+      "asNeeded": "As needed",
+      "major": "Major surgery",
+      "minor": "Minor procedure",
+      "none": "None",
+      "lifelong": "Lifelong immunosuppressants",
+      "several": "Several medications",
+      "symptomBased": "Symptom-based"
+    }
+  },
+  "chat": {
+    "title": "Ask Questions",
+    "subtitle": "Our AI assistant can answer general questions about kidney treatments.",
+    "placeholder": "Type your question here...",
+    "send": "Send",
+    "disclaimer": "This assistant provides general information only and is not a substitute for medical advice from your kidney care team.",
+    "welcomeMessage": "Hello! I'm here to help answer your questions about kidney disease and treatment options. How can I help you today?",
+    "errorMessage": "Sorry, I couldn't process your message. Please try again.",
+    "thinking": "Thinking...",
+    "backToHub": "Back to Hub",
+    "status": {
+      "online": "Online"
+    },
+    "messagesLabel": "Chat messages",
+    "inputLabel": "Message input",
+    "audioInput": "Voice input",
+    "piiWarning": "Please do not share personal information like your name, NHS number, or address. This chat is not saved.",
+    "welcome": {
+      "greeting": "Hello! I am the NHS Kidney Care Assistant. I am here to help you understand kidney treatment options.",
+      "prompt": "You can ask me questions about dialysis, transplants, conservative care, or anything else related to kidney treatment. How can I help you today?"
+    },
+    "suggestedQuestions": "Suggested Questions"
+  },
+  "values": {
+    "title": "What Matters to You",
+    "subtitle": "Rate how important each factor is to you. This helps us personalise your information.",
+    "instructions": "Move the slider to indicate importance (1 = Not important, 5 = Very important)",
+    "statements": {
+      "independence": "Maintaining my independence and daily routine",
+      "hospitalTime": "Minimising time spent at hospital",
+      "familyBurden": "Not being a burden on my family",
+      "longevity": "Living as long as possible",
+      "qualityOfLife": "Quality of life over length of life",
+      "naturalApproach": "Taking a more natural approach"
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "3D Kidney Model",
+    "backToHub": "Back to Hub",
+    "title": "3D Kidney Model Viewer",
+    "interactiveDescription": "Explore an interactive 3D model of human kidneys. Use your mouse or touch to rotate and zoom.",
+    "dragToRotate": "Drag to rotate",
+    "scrollToZoom": "Scroll to zoom",
+    "labelsOn": "Labels: On",
+    "labelsOff": "Labels: Off",
+    "autoRotateOn": "Auto-Rotate: On",
+    "autoRotateOff": "Auto-Rotate: Off",
+    "reset": "Reset",
+    "resetView": "Reset view",
+    "aboutKidneys": "About Your Kidneys",
+    "kidneyInfo": "Your kidneys are bean-shaped organs about the size of your fist. They filter about 200 litres of blood daily, removing waste and extra fluid.",
+    "kidneyFunction": "What Kidneys Do",
+    "functionInfo": "Kidneys regulate blood pressure, produce hormones, balance body fluids, and filter waste products into urine.",
+    "whenKidneysFail": "When Kidneys Fail",
+    "failureInfo": "When kidneys lose function, treatments like dialysis or transplant can help do the work your kidneys can no longer do.",
+    "learnMore": "Learn More About Treatment Options",
+    "exploreTreatments": "Explore Treatments",
+    "compareTreatments": "Compare Treatments",
+    "anatomy": {
+      "kidney": {
+        "label": "Kidney",
+        "description": "The main filtering organ that removes waste from your blood and produces urine."
+      },
+      "renalArtery": {
+        "label": "Renal Artery",
+        "description": "Carries blood from the heart to the kidney for filtering."
+      },
+      "renalVein": {
+        "label": "Renal Vein",
+        "description": "Carries filtered blood from the kidney back to the heart."
+      },
+      "ureter": {
+        "label": "Ureter",
+        "description": "The tube that carries urine from the kidney to the bladder."
+      },
+      "adrenalGland": {
+        "label": "Adrenal Gland",
+        "description": "A small gland on top of the kidney that produces important hormones."
+      }
+    }
+  },
+  "summary": {
+    "title": "Your Session Summary",
+    "subtitle": "Here's a summary of what you've explored today.",
+    "sections": {
+      "journey": "Your Journey Stage",
+      "values": "What Matters to You",
+      "viewed": "Treatments Explored",
+      "questions": "Questions to Discuss"
+    },
+    "print": "Print Summary",
+    "email": "Email Summary",
+    "startOver": "Start Over"
+  },
+  "session": {
+    "timeRemaining": "Time remaining: {{minutes}}",
+    "sessionExpiring": "Your session will expire soon",
+    "expiringMessage": "Your session will expire in {{minutes}} minutes. Would you like to continue?",
+    "extendSession": "Continue Session",
+    "sessionExpired": "Your session has expired. Please start again.",
+    "startNewSession": "Start New Session"
+  },
+  "footer": {
+    "nhsInfo": "NHS Kidney Care",
+    "accessibility": "Accessibility",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "navigationLabel": "Footer navigation",
+    "supportingDecisions": "Supporting informed healthcare decisions",
+    "copyright": "Pears Research Services. All rights reserved.",
+    "demoVersion": "Demo Version 1.0",
+    "disclaimer": {
+      "title": "Important Disclaimer",
+      "text1": "This application is a",
+      "mockDesign": "mock design",
+      "text2": "created by",
+      "company": "Pears Research Services",
+      "text3": "for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
+    }
+  }
+}

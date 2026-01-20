@@ -72,7 +72,7 @@ Create `.env` files based on `.env.example`:
 
 ```bash
 # apps/backend/.env
-PORT=5000
+PORT=5006
 NODE_ENV=development
 OPENAI_API_KEY=your_key_here
 SESSION_SECRET=your_secret_here
@@ -81,6 +81,8 @@ SESSION_SECRET=your_secret_here
 ## Development
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for development rules and guidelines.
+
+See [CLAUDE.md](./CLAUDE.md) for AI agent-specific instructions (process management, etc.).
 
 ### Key Rules
 
