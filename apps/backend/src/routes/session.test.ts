@@ -17,8 +17,6 @@ app.use((req, _res, next) => {
 app.use('/api/session', sessionRouter);
 
 describe('Session API', () => {
-  let sessionId: string;
-
   beforeEach(() => {
     // Clear all sessions before each test
     sessionStore.clear();
@@ -35,7 +33,6 @@ describe('Session API', () => {
       expect(res.status).toBe(201);
       expect(res.body).toHaveProperty('sessionId');
       expect(res.body).toHaveProperty('expiresAt');
-      sessionId = res.body.sessionId;
     });
   });
 

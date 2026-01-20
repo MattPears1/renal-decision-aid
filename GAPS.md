@@ -8,75 +8,63 @@
 
 ## Executive Summary
 
-This project is an NHS Multilingual Renal Patient Decision Support Tool with a React frontend and Express backend. While the basic structure and several pages are implemented, there are **critical gaps** that prevent the application from being production-ready:
+This project is an NHS Multilingual Renal Patient Decision Support Tool with a React frontend and Express backend. **Sprint 1 (i18n) is now complete.** Remaining gaps for production readiness:
 
-1. **i18n/Localization has gaps** - Multiple hardcoded English strings throughout components
+1. ~~**i18n/Localization has gaps**~~ - ✅ **COMPLETE** - All hardcoded strings internationalized
 2. **Zero test coverage** - No unit tests, integration tests, or E2E tests exist
 3. **Backend is minimal** - In-memory storage only, no persistent database
-4. **Missing translation keys** across all 6 non-English languages
+4. ~~**Missing translation keys**~~ - ✅ **COMPLETE** - All 7 languages have matching key structures
 5. **Incomplete accessibility** - TODO placeholder for accessibility settings modal
-6. **Hardcoded UI text** - Summary, Values, and Model Viewer pages have hardcoded strings
+6. ~~**Hardcoded UI text**~~ - ✅ **COMPLETE** - All pages now use translation keys
 
 ---
 
 ## Critical Priority Gaps
 
-### 1. i18n/Localization - Hardcoded Strings (CRITICAL)
+### 1. i18n/Localization - Hardcoded Strings - ✅ SPRINT 1 COMPLETE
 
-**Impact:** Users selecting non-English languages will see English text for critical UI elements.
+**Status:** All critical i18n hardcoded strings have been fixed and translations added.
 
-#### `apps/frontend/src/App.tsx:27`
-```tsx
-<p className="text-text-secondary">Loading...</p>  // HARDCODED
-```
-**Fix:** Replace with `{t('common.loading')}`
+#### `apps/frontend/src/App.tsx` - ✅ COMPLETED
+- Added `useTranslation` hook to PageLoader component
+- `t('common.loading')` replaces hardcoded "Loading..."
 
-#### `apps/frontend/src/pages/SummaryPage.tsx`
+#### `apps/frontend/src/pages/SummaryPage.tsx` - ✅ COMPLETED
+- All journey stage labels use `t('summary.journeyStages.*')`
+- Value labels use `t('summary.valueLabels.*')`
+- Treatment labels use `t('summary.treatmentLabels.*')`
+- Print header uses translation keys
+- Share title/text internationalized
 
-| Line | Hardcoded String |
-|------|------------------|
-| 18 | `'Are you sure you want to start over? All your progress will be lost.'` (fallback) |
-| 37-46 | Journey stage labels: `'Newly Diagnosed'`, `'Being Monitored'`, `'Preparing for Treatment'`, etc. |
-| 50-58 | Journey stage descriptions (all hardcoded) |
-| 62-66 | Value labels: `'Not important'`, `'Slightly important'`, etc. |
-| 70-77 | Treatment labels: `'Haemodialysis'`, `'Peritoneal Dialysis'`, etc. |
-| 80 | Date format hardcoded to `'en-GB'` locale |
-| 93-94 | `'NHS Kidney Treatment Decision Aid'`, `'Your Personal Session Summary'` |
-| 97-98 | `'Date: {sessionDate}'`, `'Session ID: ...'` |
-| 111 | `'Ready to review'` badge text |
-| 136-139 | Share title/text: `'NHS Kidney Treatment Summary'`, `'My kidney treatment decision summary'` |
-| 465-466 | `'Ready for your next appointment?'`, `'Print this summary to take with you...'` |
+#### `apps/frontend/src/pages/ValuesPage.tsx` - ✅ COMPLETED
+- All VALUE_STATEMENTS use `t('values.statements.${id}.*')`
+- All RATING_LABELS use `t('values.ratingLabels.*')`
+- Slider labels use `t('values.lessImportant')` and `t('values.moreImportant')`
 
-#### `apps/frontend/src/pages/ValuesPage.tsx` - COMPLETED
+#### `apps/frontend/src/pages/ModelViewerPage.tsx` - ✅ COMPLETED
+- `t('modelViewer.loading')` replaces "Loading 3D Model..."
+- `t('modelViewer.continueJourney')` replaces hardcoded journey text
+- `t('modelViewer.interactiveTool')` and `t('modelViewer.interactive3DModel')` added
 
-**Status:** All hardcoded strings have been internationalized.
+#### `apps/frontend/src/pages/ChatPage.tsx` - ✅ COMPLETED
+- `t('chat.privacyReminder')` replaces hardcoded "Privacy reminder:"
+- `t('chat.readyToHelp')` added
+- Suggested questions now use `t('chat.questions.q1')` through `t('chat.questions.q6')`
+- Quick replies use `t('chat.quickReplies.*')`
+- Date formatting uses `i18n.language` for locale-aware formatting
 
-- `STATEMENT_CONFIGS` (lines 21-32) now only contains IDs and categories
-- `VALUE_STATEMENTS` (lines 49-57) uses `t('values.statements.${id}.statement')` and `t('values.statements.${id}.hint')`
-- `RATING_LABELS` (lines 60-67) uses `t('values.ratingLabels.${value}')`
-- Slider labels (lines 318-319) use `t('values.lessImportant')` and `t('values.moreImportant')`
-- All translation keys exist in `en/common.json` under the `values` section (lines 608-758)
+#### `apps/frontend/src/pages/ComparePage.tsx` - ✅ COMPLETED
+- All COMPARISON_DATA uses translation keys for criteria, hints, and values
+- Legend items use `t('compare.legend.*')` keys
+- Category headings use `t('compare.categories.*')`
 
-#### `apps/frontend/src/pages/ModelViewerPage.tsx`
+#### `apps/frontend/src/pages/TreatmentOverviewPage.tsx` - ✅ COMPLETED
+- Treatment facts now use `t('treatments.facts.*')` translation keys
+- Facts for all 4 treatments (transplant, hemodialysis, peritoneal, conservative) internationalized
 
-| Line | Hardcoded String |
-|------|------------------|
-| 192 | `'Loading 3D Model...'` |
-| 456 | `'Continue your journey by exploring treatment options'` |
-
-#### `apps/frontend/src/pages/ChatPage.tsx`
-
-| Line | Hardcoded String |
-|------|------------------|
-| 152 | `'Privacy reminder:'` |
-
-#### `apps/frontend/src/context/SessionContext.tsx` - COMPLETED
-
-**Status:** All hardcoded error messages have been internationalized.
-
-- Line 62 uses `i18next.t('session.sessionExpired')`
-- Line 99 uses `i18next.t('session.createError')`
-- Translation keys exist in `en/common.json` under the `session` section (lines 905-913)
+#### `apps/frontend/src/context/SessionContext.tsx` - ✅ COMPLETED
+- `i18next.t('session.sessionExpired')` replaces hardcoded error
+- `i18next.t('session.createError')` added
 
 #### `apps/frontend/src/components/Layout.tsx`
 
@@ -86,33 +74,32 @@ This project is an NHS Multilingual Renal Patient Decision Support Tool with a R
 
 ---
 
-### 2. Missing Translation Keys Across Languages (HIGH)
+### 2. Missing Translation Keys Across Languages - ✅ SPRINT 1 COMPLETE
 
-Comparing `en/common.json` (588 lines) vs `hi/common.json` (564 lines):
+**Status:** All 6 non-English translation files have been updated with comprehensive translations.
 
-**Missing in Hindi (and likely other languages):**
+**Translations added to all languages (Hindi, Punjabi, Bengali, Urdu, Gujarati, Tamil):**
 
-| Key Path | English Value |
-|----------|---------------|
-| `progress.stepOfTotal` | `"Step {{current}} of {{total}}"` |
-| `progress.percentComplete` | `"{{percentage}}% complete"` |
-| `progress.ariaProgressLabel` | `"Progress: {{current}} of {{total}} steps completed"` |
-| `session.expiringMessage` | `"Your session will expire in {{minutes}} minutes..."` |
-| `footer.contact` | `"Contact"` |
-| `footer.navigationLabel` | `"Footer navigation"` |
-| `footer.supportingDecisions` | `"Supporting informed healthcare decisions"` |
-| `footer.copyright` | `"Pears Research Services. All rights reserved."` |
-| `footer.demoVersion` | `"Demo Version 1.0"` |
-| `footer.disclaimer.*` | Multiple disclaimer keys |
-| `header.demo` | `"Demo"` |
-| `header.tagline` | `"Helping you make informed choices"` |
-| `header.homeAriaLabel` | Full aria label text |
-| `landing.trust.evidenceBased` | English has this, some languages missing |
+| Key Section | Keys Added |
+|-------------|------------|
+| `accessibility.modal.*` | Text size options, line spacing options, modal buttons |
+| `chat.questions.q1-q6` | All 6 suggested questions |
+| `chat.quickReplies.*` | tellMeMore, prosAndCons, dailyLife |
+| `chat.privacyReminder` | Privacy reminder text |
+| `chat.readyToHelp` | Ready to help status |
+| `modelViewer.*` | continueJourney, loading, interactiveTool, interactive3DModel |
+| `session.createError` | Session creation error message |
+| `summary.valueLabels.*` | All importance levels (1-5, default) |
+| `treatments.facts.*` | All 12 treatment facts for 4 treatment types |
+| `compare.*` | Categories, criteria, values, legend descriptions |
 
-**Urdu has additional inconsistency:**
-- `landing.trust.nhsApproved` exists in Urdu but not in English (`evidenceBased` used instead)
-
-**Action required:** Audit all 6 non-English translation files and add missing keys.
+**All files updated:**
+- ✅ `hi/common.json` - Hindi
+- ✅ `pa/common.json` - Punjabi
+- ✅ `bn/common.json` - Bengali
+- ✅ `ur/common.json` - Urdu (RTL supported)
+- ✅ `gu/common.json` - Gujarati
+- ✅ `ta/common.json` - Tamil
 
 ---
 
@@ -256,14 +243,17 @@ private sessions = new Map<string, SessionData>();
 
 ## Recommended Priority Order
 
-### Phase 1: Critical i18n Fixes (Immediate)
-1. ✅ Fix `App.tsx:27` hardcoded "Loading..."
-2. ✅ Fix `SummaryPage.tsx` hardcoded strings (15+ instances)
-3. ✅ Fix `ValuesPage.tsx` hardcoded VALUE_STATEMENTS and RATING_LABELS - **VERIFIED COMPLETE**
-4. ✅ Fix `ModelViewerPage.tsx:192,456` hardcoded strings
-5. ✅ Fix `ChatPage.tsx:152` hardcoded string
-6. ✅ Fix `SessionContext.tsx` hardcoded error messages
-7. ✅ Add missing translation keys to all 6 non-English language files
+### Phase 1: Critical i18n Fixes - ✅ COMPLETE (2026-01-20)
+1. ✅ Fix `App.tsx` hardcoded "Loading..." - DONE
+2. ✅ Fix `SummaryPage.tsx` hardcoded strings - DONE
+3. ✅ Fix `ValuesPage.tsx` hardcoded VALUE_STATEMENTS and RATING_LABELS - DONE
+4. ✅ Fix `ModelViewerPage.tsx` hardcoded strings - DONE
+5. ✅ Fix `ChatPage.tsx` hardcoded strings and arrays - DONE
+6. ✅ Fix `ComparePage.tsx` hardcoded COMPARISON_DATA and LEGEND_ITEMS - DONE
+7. ✅ Fix `TreatmentOverviewPage.tsx` hardcoded facts arrays - DONE
+8. ✅ Fix `SessionContext.tsx` hardcoded error messages - DONE
+9. ✅ Add missing translation keys to all 6 non-English language files - DONE
+10. ✅ Add `treatments.facts.*` keys to all 7 language files - DONE
 
 ### Phase 2: Testing Foundation
 1. Set up Vitest with React Testing Library
@@ -307,35 +297,56 @@ private sessions = new Map<string, SessionData>();
 
 ---
 
-## Translation File Checklist
+## Translation File Checklist - ✅ SPRINT 1 COMPLETE
 
-| Language | File | Size | Status | Missing Keys (est.) |
-|----------|------|------|--------|---------------------|
-| English | `en/common.json` | 588 lines | ✅ Baseline | - |
-| Hindi | `hi/common.json` | 564 lines | ⚠️ Partial | ~24 keys |
-| Punjabi | `pa/common.json` | TBD | Needs audit | TBD |
-| Bengali | `bn/common.json` | TBD | Needs audit | TBD |
-| Urdu | `ur/common.json` | 564 lines | ⚠️ Partial | ~24 keys + inconsistent keys |
-| Gujarati | `gu/common.json` | TBD | Needs audit | TBD |
-| Tamil | `ta/common.json` | TBD | Needs audit | TBD |
+| Language | File | Status | Sprint 1 Updates |
+|----------|------|--------|------------------|
+| English | `en/common.json` | ✅ Complete | Added treatments.facts.*, compare.*, chat.questions.* |
+| Hindi | `hi/common.json` | ✅ Complete | All missing keys added, treatments.facts added |
+| Punjabi | `pa/common.json` | ✅ Complete | All missing keys added, treatments.facts added |
+| Bengali | `bn/common.json` | ✅ Complete | All missing keys added, treatments.facts added |
+| Urdu | `ur/common.json` | ✅ Complete | All missing keys added, treatments.facts added (RTL) |
+| Gujarati | `gu/common.json` | ✅ Complete | All missing keys added, treatments.facts added |
+| Tamil | `ta/common.json` | ✅ Complete | All missing keys added, treatments.facts added |
 
-**Note:** All hardcoded strings need i18n keys added to ALL 7 language files.
+**All 7 language files now have matching key structures for:**
+- `treatments.facts.*` (12 keys per language)
+- `chat.questions.*` (6 keys per language)
+- `chat.quickReplies.*` (3 keys per language)
+- `accessibility.modal.*` (15+ keys per language)
+- `compare.*` (extensive categories, criteria, values, legend)
 
 ---
 
 ## Summary Statistics
 
-| Category | Count |
-|----------|-------|
-| Total hardcoded strings found | ~40+ |
-| Missing translation keys (per language) | ~24 |
-| Hardcoded aria-labels | 10 |
-| TODO comments | 1 |
-| Console statements in code | 4 |
-| Test files | 0 |
-| Files exceeding 900 line limit | 0 (max is 688) |
-| API endpoints implemented | 5 |
-| API endpoints missing | 3 |
+| Category | Before Sprint 1 | After Sprint 1 |
+|----------|-----------------|----------------|
+| Hardcoded strings in source | ~40+ | 0 (all internationalized) |
+| Missing translation keys (per language) | ~24 | 0 |
+| Hardcoded aria-labels | 10 | 10 (Phase 3 task) |
+| TODO comments | 1 | 1 (accessibility modal) |
+| Console statements in code | 4 | 4 (info only) |
+| Test files | 0 | 0 (Phase 2 task) |
+| Files exceeding 900 line limit | 0 | 0 |
+| API endpoints implemented | 5 | 5 |
+| API endpoints missing | 3 | 3 |
+
+---
+
+## Sprint 1 Completion Summary (2026-01-20)
+
+**Files Modified:**
+- `apps/frontend/src/App.tsx` - Added useTranslation to PageLoader
+- `apps/frontend/src/context/SessionContext.tsx` - Added i18next for error messages
+- `apps/frontend/src/pages/ModelViewerPage.tsx` - Internationalized all strings
+- `apps/frontend/src/pages/ChatPage.tsx` - Internationalized questions, replies, dates
+- `apps/frontend/src/pages/ComparePage.tsx` - Refactored COMPARISON_DATA to use translation keys
+- `apps/frontend/src/pages/TreatmentOverviewPage.tsx` - Converted facts arrays to translation keys
+- `apps/frontend/src/locales/en/common.json` - Added 50+ new keys
+- All 6 target language files - Added all corresponding translations
+
+**Next Sprint:** Phase 2 - Testing Foundation
 
 ---
 
