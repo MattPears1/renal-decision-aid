@@ -176,7 +176,7 @@ function KidneyModel({ position = [0, 0, 0] }: { position?: [number, number, num
       materials.forEach((mat) => {
         if (mat instanceof THREE.MeshStandardMaterial || mat instanceof THREE.MeshPhysicalMaterial) {
           mat.transparent = true;
-          mat.opacity = 0.4; // 60% transparent (40% opacity)
+          mat.opacity = 0.9; // 10% transparent (90% opacity)
           mat.depthWrite = false; // Helps with transparency rendering
         }
       });
@@ -395,7 +395,7 @@ export default function ModelViewerPage() {
                 <OrbitControls
                   ref={controlsRef}
                   autoRotate={autoRotate}
-                  autoRotateSpeed={2}
+                  autoRotateSpeed={0.8}
                   enablePan={true}
                   enableZoom={true}
                   enableRotate={true}
