@@ -12,6 +12,10 @@
       "description": "Install devDependencies for build",
       "value": "false"
     },
+    "SESSION_STORAGE": {
+      "description": "Session storage backend (memory, file, or sqlite)",
+      "value": "memory"
+    },
     "OPENAI_API_KEY": {
       "description": "OpenAI API key for chat functionality (optional)",
       "required": false
