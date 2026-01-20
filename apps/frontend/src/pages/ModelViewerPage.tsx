@@ -169,6 +169,20 @@ function KidneyModel({ position = [0, 0, 0] }: { position?: [number, number, num
   // Clone the scene to avoid issues with reuse
   const clonedScene = scene.clone();
 
+  // Make the kidney skin 60% transparent
+  clonedScene.traverse((child) => {
+    if (child instanceof THREE.Mesh && child.material) {
+      const materials = Array.isArray(child.material) ? child.material : [child.material];
+      materials.forEach((mat) => {
+        if (mat instanceof THREE.MeshStandardMaterial || mat instanceof THREE.MeshPhysicalMaterial) {
+          mat.transparent = true;
+          mat.opacity = 0.4; // 60% transparent (40% opacity)
+          mat.depthWrite = false; // Helps with transparency rendering
+        }
+      });
+    }
+  });
+
   return (
     <primitive
       ref={modelRef}
