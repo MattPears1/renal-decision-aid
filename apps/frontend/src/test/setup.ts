@@ -6,6 +6,29 @@ import React from 'react';
 
 expect.extend(matchers);
 
+// Mock Web Speech API
+class MockSpeechSynthesisUtterance {
+  text: string;
+  lang: string;
+  rate: number;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+
+  constructor(text: string = '') {
+    this.text = text;
+    this.lang = 'en-GB';
+    this.rate = 1;
+    this.onend = null;
+    this.onerror = null;
+  }
+}
+
+vi.stubGlobal('SpeechSynthesisUtterance', MockSpeechSynthesisUtterance);
+vi.stubGlobal('speechSynthesis', {
+  speak: vi.fn(),
+  cancel: vi.fn(),
+});
+
 // Mock i18next
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
