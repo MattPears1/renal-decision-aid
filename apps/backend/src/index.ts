@@ -5,12 +5,17 @@ import compression from 'compression';
 import dotenv from 'dotenv';
 import path from 'path';
 import routes from './routes/index.js';
+import { requestLogger, appLogger, logError } from './services/logger.js';
+import { globalRateLimiter, burstRateLimiter } from './middleware/rateLimiter.js';
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5006;
+
+// Trust proxy for Heroku (required for rate limiting and IP detection)
+app.set('trust proxy', 1);
 
 // CORS configuration
 const corsOrigins = process.env.CORS_ORIGIN
@@ -20,7 +25,7 @@ const corsOrigins = process.env.CORS_ORIGIN
 const corsOptions: cors.CorsOptions = {
   origin: corsOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Session-Id'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Session-Id', 'X-Request-Id'],
   credentials: true,
   maxAge: 86400, // 24 hours
 };
@@ -41,8 +46,16 @@ app.use(compression());
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
-// Health check endpoint
+// Request logging middleware (adds requestId to all requests)
+app.use(requestLogger);
+
+// Global rate limiting
+app.use(globalRateLimiter);
+app.use(burstRateLimiter);
+
+// Health check endpoint (before API routes for faster response)
 app.get('/api/health', (_req: Request, res: Response) => {
+  appLogger.healthCheck('healthy');
   res.status(200).json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
@@ -83,8 +96,12 @@ interface AppError extends Error {
   code?: string;
 }
 
-app.use((err: AppError, _req: Request, res: Response, _next: NextFunction) => {
-  console.error('Error:', err);
+app.use((err: AppError, req: Request, res: Response, _next: NextFunction) => {
+  logError(err, {
+    requestId: req.requestId,
+    path: req.path,
+    method: req.method,
+  });
 
   const statusCode = err.statusCode || 500;
   const message = process.env.NODE_ENV === 'production'
@@ -98,11 +115,31 @@ app.use((err: AppError, _req: Request, res: Response, _next: NextFunction) => {
   });
 });
 
+// Graceful shutdown handling
+process.on('SIGTERM', () => {
+  appLogger.shutdown('SIGTERM received');
+  process.exit(0);
+});
+
+process.on('SIGINT', () => {
+  appLogger.shutdown('SIGINT received');
+  process.exit(0);
+});
+
 // Start server
 app.listen(PORT, () => {
-  console.log(`NHS Renal Decision Aid API server running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`Health check: http://localhost:${PORT}/api/health`);
+  appLogger.startup(PORT, process.env.NODE_ENV || 'development');
+
+  // Log configuration (only in development)
+  if (process.env.NODE_ENV !== 'production') {
+    appLogger.configLoaded({
+      port: PORT,
+      corsOrigins,
+      sessionStorage: process.env.SESSION_STORAGE || 'memory',
+      logLevel: process.env.LOG_LEVEL || 'debug',
+      openaiConfigured: !!process.env.OPENAI_API_KEY,
+    });
+  }
 });
 
 export default app;

@@ -1,7 +1,9 @@
 import { Router, Request, Response } from 'express';
 import OpenAI from 'openai';
 import { piiFilter } from '../middleware/piiFilter.js';
+import { chatRateLimiter } from '../middleware/rateLimiter.js';
 import { sessionStore, ChatMessage } from '../services/sessionStore.js';
+import logger, { apiLogger, logError } from '../services/logger.js';
 
 const router = Router();
 
@@ -42,12 +44,13 @@ Important guidelines:
  * POST /api/chat
  * Send a message and receive an AI response
  */
-router.post('/', piiFilter, async (req: Request, res: Response) => {
+router.post('/', chatRateLimiter, piiFilter, async (req: Request, res: Response) => {
   try {
     const { message, sessionId } = req.body;
 
     // Validate request
     if (!message || typeof message !== 'string') {
+      logger.debug('Invalid chat request: missing message', { requestId: req.requestId });
       res.status(400).json({
         error: 'Invalid Request',
         message: 'Message is required and must be a string',
@@ -56,6 +59,10 @@ router.post('/', piiFilter, async (req: Request, res: Response) => {
     }
 
     if (message.length > 2000) {
+      logger.debug('Invalid chat request: message too long', {
+        requestId: req.requestId,
+        messageLength: message.length,
+      });
       res.status(400).json({
         error: 'Invalid Request',
         message: 'Message must be 2000 characters or less',
@@ -63,11 +70,18 @@ router.post('/', piiFilter, async (req: Request, res: Response) => {
       return;
     }
 
+    // Log incoming chat request
+    apiLogger.chatRequest(sessionId, message.length, req.requestId);
+
     // Validate session if provided
     let session = null;
     if (sessionId) {
       session = sessionStore.get(sessionId);
       if (!session) {
+        logger.debug('Chat request with invalid session', {
+          requestId: req.requestId,
+          sessionId,
+        });
         res.status(404).json({
           error: 'Session Not Found',
           message: 'The provided session does not exist or has expired',
@@ -97,11 +111,21 @@ router.post('/', piiFilter, async (req: Request, res: Response) => {
     });
 
     let assistantResponse: string;
+    let modelUsed: string = 'fallback';
 
     if (openai) {
       // Use OpenAI API
+      const model = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+      modelUsed = model;
+
+      logger.debug('Calling OpenAI API', {
+        requestId: req.requestId,
+        model,
+        historyLength: conversationHistory.length,
+      });
+
       const completion = await openai.chat.completions.create({
-        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+        model,
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...conversationHistory,
@@ -114,6 +138,7 @@ router.post('/', piiFilter, async (req: Request, res: Response) => {
         'I apologize, but I was unable to generate a response. Please try again.';
     } else {
       // Fallback response when no API key is configured
+      logger.debug('Using fallback response (no OpenAI key)', { requestId: req.requestId });
       assistantResponse = getFallbackResponse(message);
     }
 
@@ -137,15 +162,21 @@ router.post('/', piiFilter, async (req: Request, res: Response) => {
       sessionStore.update(sessionId, { chatHistory: updatedHistory });
     }
 
+    // Log successful response
+    apiLogger.chatResponse(sessionId, assistantResponse.length, modelUsed, req.requestId);
+
     res.status(200).json({
       response: assistantResponse,
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
-    console.error('Error processing chat message:', error);
+    // Log the error
+    apiLogger.chatError(error as Error, req.body?.sessionId, req.requestId);
 
     // Check for OpenAI-specific errors
     if (error instanceof OpenAI.APIError) {
+      apiLogger.openaiError(error.status || 0, error.message, req.requestId);
+
       if (error.status === 429) {
         res.status(429).json({
           error: 'Rate Limited',
@@ -161,6 +192,8 @@ router.post('/', piiFilter, async (req: Request, res: Response) => {
         return;
       }
     }
+
+    logError(error as Error, { requestId: req.requestId, operation: 'chat' });
 
     res.status(500).json({
       error: 'Chat Error',
