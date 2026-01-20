@@ -1064,6 +1064,28 @@
     },
     "navigation": {
       "subtitle": "Continue your journey by exploring treatment options"
+    },
+    "anatomy": {
+      "kidney": {
+        "label": "Kidney",
+        "description": "The kidney filters waste and excess fluid from your blood. Each kidney is about the size of your fist."
+      },
+      "renalArtery": {
+        "label": "Renal Artery",
+        "description": "The renal artery carries blood from your heart to your kidney for filtering."
+      },
+      "renalVein": {
+        "label": "Renal Vein",
+        "description": "The renal vein carries filtered blood from your kidney back to your heart."
+      },
+      "ureter": {
+        "label": "Ureter",
+        "description": "The ureter is a tube that carries urine from your kidney to your bladder."
+      },
+      "adrenalGland": {
+        "label": "Adrenal Gland",
+        "description": "The adrenal gland sits on top of each kidney and produces hormones."
+      }
     }
   },
   "summary": {
