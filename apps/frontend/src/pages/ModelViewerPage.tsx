@@ -388,8 +388,8 @@ export default function ModelViewerPage() {
                   enableRotate={true}
                   minDistance={0.5}
                   maxDistance={20}
-                  minPolarAngle={Math.PI / 6}
-                  maxPolarAngle={Math.PI - Math.PI / 6}
+                  minPolarAngle={0}
+                  maxPolarAngle={Math.PI}
                 />
               </Suspense>
             </Canvas>
