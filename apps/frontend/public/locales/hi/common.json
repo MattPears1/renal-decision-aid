@@ -545,7 +545,7 @@
       "practical": "व्यावहारिक विचार",
       "medical": "चिकित्सा कारक",
       "support": "सहायता आवश्यकताएं",
-      "health": "[EN] Health Outcomes"
+      "health": "स्वास्थ्य परिणाम"
     },
     "criteria": {
       "timeCommitment": "साप्ताहिक समय प्रतिबद्धता",
@@ -564,16 +564,16 @@
       "recoveryTimeHint": "उपचार के अनुकूल होने का समय",
       "longTermOutlook": "दीर्घकालिक दृष्टिकोण",
       "longTermOutlookHint": "समय के साथ अपेक्षित परिणाम",
-      "scheduleFlexibility": "[EN] Schedule flexibility",
-      "scheduleFlexibilityHint": "[EN] Control over your schedule",
-      "trainingRequired": "[EN] Training required",
-      "trainingRequiredHint": "[EN] Learning time needed",
-      "survivalRates": "[EN] Survival rates",
-      "survivalRatesHint": "[EN] General outcomes (varies by person)",
-      "qualityOfLife": "[EN] Quality of life",
-      "qualityOfLifeHint": "[EN] Overall wellbeing",
-      "energyLevels": "[EN] Energy levels",
-      "energyLevelsHint": "[EN] Typical energy and fatigue"
+      "scheduleFlexibility": "समय-सारणी लचीलापन",
+      "scheduleFlexibilityHint": "अपनी समय-सारणी पर नियंत्रण",
+      "trainingRequired": "प्रशिक्षण आवश्यक",
+      "trainingRequiredHint": "सीखने का समय आवश्यक",
+      "survivalRates": "जीवित रहने की दर",
+      "survivalRatesHint": "सामान्य परिणाम (व्यक्ति के अनुसार भिन्न)",
+      "qualityOfLife": "जीवन की गुणवत्ता",
+      "qualityOfLifeHint": "समग्र स्वास्थ्य",
+      "energyLevels": "ऊर्जा स्तर",
+      "energyLevelsHint": "सामान्य ऊर्जा और थकान"
     },
     "values": {
       "minimalAfterRecovery": "ठीक होने के बाद न्यूनतम",
@@ -613,47 +613,47 @@
       "pdCatheterInsertion": "पीडी कैथेटर डालना",
       "noneRequired": "आवश्यकता नहीं",
       "noSurgicalProcedures": "कोई सर्जिकल प्रक्रिया नहीं",
-      "initialSupport": "[EN] Initial support",
-      "duringRecoveryPeriod": "[EN] During recovery period",
-      "noneNeeded": "[EN] None needed",
-      "professionalStaffProvideCare": "[EN] Professional staff provide care",
-      "canDoIndependently": "[EN] Can do independently",
-      "varies": "[EN] Varies",
-      "dependsOnSymptoms": "[EN] Depends on symptoms",
-      "high": "[EN] High",
-      "normalDailyLifePossible": "[EN] Normal daily life possible",
-      "low": "[EN] Low",
-      "fixedHospitalSlots": "[EN] Fixed hospital slots",
-      "chooseYourSchedule": "[EN] Choose your schedule",
-      "noFixedSchedule": "[EN] No fixed schedule",
-      "medicationTraining": "[EN] Medication training",
-      "learningYourNewRoutine": "[EN] Learning your new routine",
-      "staffDoEverything": "[EN] Staff do everything",
-      "oneToTwoWeeksTraining": "[EN] 1-2 weeks training",
-      "learnTheTechnique": "[EN] Learn the technique",
-      "symptomManagement": "[EN] Symptom management",
-      "medicationGuidance": "[EN] Medication guidance",
-      "bestOutcomes": "[EN] Best outcomes",
-      "forSuitableCandidates": "[EN] For suitable candidates",
-      "good": "[EN] Good",
-      "wellEstablishedTreatment": "[EN] Well-established treatment",
-      "similarToHaemodialysis": "[EN] Similar to haemodialysis",
-      "qualityFocused": "[EN] Quality focused",
-      "comfortOverLongevity": "[EN] Comfort over longevity",
-      "excellent": "[EN] Excellent",
-      "nearNormalLifePossible": "[EN] Near-normal life possible",
-      "moderate": "[EN] Moderate",
-      "treatmentAffectsDailyRoutine": "[EN] Treatment affects daily routine",
-      "moreIndependence": "[EN] More independence",
-      "focusOnComfort": "[EN] Focus on comfort",
-      "symptomManagementPriority": "[EN] Symptom management priority",
-      "oftenExcellent": "[EN] Often excellent",
-      "energyRestored": "[EN] Energy restored",
-      "variable": "[EN] Variable",
-      "fatigueAfterSessions": "[EN] Fatigue after sessions",
-      "generallyGood": "[EN] Generally good",
-      "steadyEnergyLevels": "[EN] Steady energy levels",
-      "managedWithSupport": "[EN] Managed with support"
+      "initialSupport": "प्रारंभिक सहायता",
+      "duringRecoveryPeriod": "ठीक होने की अवधि के दौरान",
+      "noneNeeded": "किसी की आवश्यकता नहीं",
+      "professionalStaffProvideCare": "पेशेवर कर्मचारी देखभाल प्रदान करते हैं",
+      "canDoIndependently": "स्वतंत्र रूप से कर सकते हैं",
+      "varies": "भिन्न होता है",
+      "dependsOnSymptoms": "लक्षणों पर निर्भर",
+      "high": "उच्च",
+      "normalDailyLifePossible": "सामान्य दैनिक जीवन संभव",
+      "low": "कम",
+      "fixedHospitalSlots": "निश्चित अस्पताल समय",
+      "chooseYourSchedule": "अपनी समय-सारणी चुनें",
+      "noFixedSchedule": "कोई निश्चित समय-सारणी नहीं",
+      "medicationTraining": "दवा प्रशिक्षण",
+      "learningYourNewRoutine": "अपनी नई दिनचर्या सीखना",
+      "staffDoEverything": "कर्मचारी सब कुछ करते हैं",
+      "oneToTwoWeeksTraining": "1-2 सप्ताह का प्रशिक्षण",
+      "learnTheTechnique": "तकनीक सीखें",
+      "symptomManagement": "लक्षण प्रबंधन",
+      "medicationGuidance": "दवा मार्गदर्शन",
+      "bestOutcomes": "सर्वोत्तम परिणाम",
+      "forSuitableCandidates": "उपयुक्त उम्मीदवारों के लिए",
+      "good": "अच्छा",
+      "wellEstablishedTreatment": "अच्छी तरह से स्थापित उपचार",
+      "similarToHaemodialysis": "हीमोडायलिसिस के समान",
+      "qualityFocused": "गुणवत्ता केंद्रित",
+      "comfortOverLongevity": "लंबी उम्र से अधिक आराम",
+      "excellent": "उत्कृष्ट",
+      "nearNormalLifePossible": "लगभग सामान्य जीवन संभव",
+      "moderate": "मध्यम",
+      "treatmentAffectsDailyRoutine": "उपचार दैनिक दिनचर्या को प्रभावित करता है",
+      "moreIndependence": "अधिक स्वतंत्रता",
+      "focusOnComfort": "आराम पर ध्यान",
+      "symptomManagementPriority": "लक्षण प्रबंधन प्राथमिकता",
+      "oftenExcellent": "अक्सर उत्कृष्ट",
+      "energyRestored": "ऊर्जा बहाल",
+      "variable": "परिवर्तनशील",
+      "fatigueAfterSessions": "सत्रों के बाद थकान",
+      "generallyGood": "आमतौर पर अच्छा",
+      "steadyEnergyLevels": "स्थिर ऊर्जा स्तर",
+      "managedWithSupport": "सहायता से प्रबंधित"
     },
     "legend": {
       "title": "रेटिंग गाइड",
@@ -662,11 +662,11 @@
       "moderate": "मध्यम",
       "challenging": "चुनौतीपूर्ण",
       "varies": "भिन्न होता है",
-      "excellentDesc": "[EN] Excellent - Generally very favourable",
-      "goodDesc": "[EN] Good - Generally favourable",
-      "moderateDesc": "[EN] Moderate - Some limitations to consider",
-      "challengingDesc": "[EN] Challenging - Significant considerations",
-      "variesDesc": "[EN] Varies - Depends on individual circumstances"
+      "excellentDesc": "उत्कृष्ट - आमतौर पर बहुत अनुकूल",
+      "goodDesc": "अच्छा - आमतौर पर अनुकूल",
+      "moderateDesc": "मध्यम - विचार करने के लिए कुछ सीमाएं",
+      "challengingDesc": "चुनौतीपूर्ण - महत्वपूर्ण विचार",
+      "variesDesc": "भिन्न होता है - व्यक्तिगत परिस्थितियों पर निर्भर"
     },
     "viewDetails": "विवरण देखें",
     "backToHub": "हब पर वापस",
@@ -842,44 +842,44 @@
     },
     "statements": {
       "travel": {
-        "statement": "[EN] Being able to travel is important to me",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "यात्रा करने में सक्षम होना मेरे लिए महत्वपूर्ण है",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "hospital-time": {
-        "statement": "[EN] I want to minimise time spent in hospital",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "मैं अस्पताल में बिताए समय को कम करना चाहता/चाहती हूं",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "needles": {
-        "statement": "[EN] I am comfortable with needles and medical procedures",
-        "hint": "[EN] Rate how much you agree with this statement"
+        "statement": "मैं सुइयों और चिकित्सा प्रक्रियाओं के साथ सहज हूं",
+        "hint": "मूल्यांकन करें कि आप इस कथन से कितना सहमत हैं"
       },
       "independence": {
-        "statement": "[EN] Maintaining my independence is very important to me",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "अपनी स्वतंत्रता बनाए रखना मेरे लिए बहुत महत्वपूर्ण है",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "family-burden": {
-        "statement": "[EN] I want to avoid being a burden on my family",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "मैं अपने परिवार पर बोझ बनने से बचना चाहता/चाहती हूं",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "longevity": {
-        "statement": "[EN] Living as long as possible is my priority",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "जितना संभव हो उतना लंबा जीवन जीना मेरी प्राथमिकता है",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "quality-of-life": {
-        "statement": "[EN] Quality of life matters more than length of life",
-        "hint": "[EN] Rate how much you agree with this statement"
+        "statement": "जीवन की गुणवत्ता जीवन की लंबाई से अधिक महत्वपूर्ण है",
+        "hint": "मूल्यांकन करें कि आप इस कथन से कितना सहमत हैं"
       },
       "home-treatment": {
-        "statement": "[EN] I would prefer to have treatment at home",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "मैं घर पर उपचार प्राप्त करना पसंद करूंगा/करूंगी",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "work-activities": {
-        "statement": "[EN] Continuing to work or do my usual activities is important",
-        "hint": "[EN] Rate how important this is to you"
+        "statement": "काम जारी रखना या अपनी सामान्य गतिविधियां करना महत्वपूर्ण है",
+        "hint": "मूल्यांकन करें कि यह आपके लिए कितना महत्वपूर्ण है"
       },
       "professional-care": {
-        "statement": "[EN] I would rather have professionals take care of my treatment",
-        "hint": "[EN] Rate how much you agree with this statement"
+        "statement": "मैं चाहूंगा/चाहूंगी कि पेशेवर मेरे उपचार की देखभाल करें",
+        "hint": "मूल्यांकन करें कि आप इस कथन से कितना सहमत हैं"
       }
     }
   },
