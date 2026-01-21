@@ -93,11 +93,11 @@ router.post('/', upload.single('audio'), async (req: Request, res: Response) => 
       { type: req.file.mimetype }
     );
 
-    // Call OpenAI Whisper API
+    // Call OpenAI Speech-to-Text API
     const transcription = await openai.audio.transcriptions.create({
       file: audioFile,
-      model: 'whisper-1',
-      language: languageHint, // Optional - Whisper can auto-detect
+      model: 'gpt-4o-transcribe',
+      language: languageHint, // Optional - can auto-detect
       response_format: 'verbose_json', // Get detected language info
     });
 

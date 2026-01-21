@@ -26,7 +26,7 @@ const LANGUAGE_VOICE_MAP: Record<string, TTSVoice> = {
 };
 
 // TTS models available
-type TTSModel = 'tts-1' | 'tts-1-hd';
+type TTSModel = 'gpt-4o-mini-tts' | 'tts-1' | 'tts-1-hd';
 
 /**
  * POST /api/synthesize
@@ -74,8 +74,8 @@ router.post('/', async (req: Request, res: Response) => {
       ? voice
       : LANGUAGE_VOICE_MAP[language] || 'alloy';
 
-    // Determine model (tts-1 for speed, tts-1-hd for quality)
-    const selectedModel: TTSModel = model === 'tts-1-hd' ? 'tts-1-hd' : 'tts-1';
+    // Determine model - default to gpt-4o-mini-tts
+    const selectedModel: TTSModel = model === 'tts-1-hd' ? 'tts-1-hd' : model === 'tts-1' ? 'tts-1' : 'gpt-4o-mini-tts';
 
     // Speed control (0.25 to 4.0, default 1.0)
     const selectedSpeed = typeof speed === 'number'
@@ -163,6 +163,7 @@ router.get('/voices', (_req: Request, res: Response) => {
     ],
     languageDefaults: LANGUAGE_VOICE_MAP,
     models: [
+      { id: 'gpt-4o-mini-tts', name: 'GPT-4o Mini TTS', description: 'Latest, best quality' },
       { id: 'tts-1', name: 'Standard', description: 'Fast, lower latency' },
       { id: 'tts-1-hd', name: 'HD', description: 'Higher quality audio' },
     ],
