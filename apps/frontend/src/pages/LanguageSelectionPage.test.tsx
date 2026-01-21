@@ -47,6 +47,14 @@ vi.mock('@/context/SessionContext', () => ({
   SessionProvider: ({ children }: { children: React.ReactNode }) => children,
 }));
 
+// Mock the i18n config module
+vi.mock('@/config/i18n', () => ({
+  changeLanguageAndWait: vi.fn().mockResolvedValue(true),
+}));
+
+// Import the mocked function for assertions
+import { changeLanguageAndWait as mockChangeLanguageAndWait } from '@/config/i18n';
+
 describe('LanguageSelectionPage', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -163,33 +171,25 @@ describe('LanguageSelectionPage', () => {
   });
 
   describe('Error Handling', () => {
-    it('shows error when continuing without selecting a language', async () => {
-      const user = userEvent.setup();
+    it('disables continue button when no language is selected', () => {
       render(<LanguageSelectionPage />);
 
       const continueButton = screen.getByText('Continue');
-      await user.click(continueButton);
-
-      expect(screen.getByRole('alert')).toBeInTheDocument();
-      expect(screen.getByText('Please select a language to continue')).toBeInTheDocument();
+      expect(continueButton).toBeDisabled();
     });
 
-    it('clears error when a language is selected', async () => {
+    it('enables continue button when a language is selected', async () => {
       const user = userEvent.setup();
       render(<LanguageSelectionPage />);
 
-      // Trigger error first
       const continueButton = screen.getByText('Continue');
-      await user.click(continueButton);
-
-      expect(screen.getByRole('alert')).toBeInTheDocument();
+      expect(continueButton).toBeDisabled();
 
       // Select a language
       const radios = screen.getAllByRole('radio');
       await user.click(radios[0]);
 
-      // Error should be cleared
-      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+      expect(continueButton).not.toBeDisabled();
     });
   });
 
@@ -217,7 +217,7 @@ describe('LanguageSelectionPage', () => {
       await user.click(continueButton);
 
       await waitFor(() => {
-        expect(mockChangeLanguage).toHaveBeenCalledWith('en');
+        expect(mockChangeLanguageAndWait).toHaveBeenCalledWith('en');
         expect(mockCreateSession).toHaveBeenCalledWith('en');
         expect(mockNavigate).toHaveBeenCalledWith('/disclaimer');
       });
@@ -275,16 +275,17 @@ describe('LanguageSelectionPage', () => {
       expect(helpText.closest('[aria-live]')).toHaveAttribute('aria-live', 'polite');
     });
 
-    it('has aria-live region for error messages', async () => {
+    it('has aria-busy on continue button while loading', async () => {
       const user = userEvent.setup();
       render(<LanguageSelectionPage />);
 
-      // Trigger error
-      const continueButton = screen.getByText('Continue');
-      await user.click(continueButton);
+      // Select a language first
+      const radios = screen.getAllByRole('radio');
+      await user.click(radios[0]);
 
-      const errorRegion = screen.getByRole('alert');
-      expect(errorRegion).toHaveAttribute('aria-live', 'assertive');
+      const continueButton = screen.getByLabelText(/continue with selected language/i);
+      // Button should have aria-busy attribute (false initially)
+      expect(continueButton).toHaveAttribute('aria-busy', 'false');
     });
 
     it('provides aria-labels for navigation buttons', () => {

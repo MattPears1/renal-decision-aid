@@ -61,10 +61,10 @@ export default function PrivacyDisclaimerPage() {
 
   return (
     <main className="min-h-screen bg-bg-page page-content" aria-label={t('privacy.pageAriaLabel', 'Privacy information')}>
-      <div className="max-w-container-lg mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
         {/* Progress Indicator */}
         <div
-          className="mb-8"
+          className="mb-6 sm:mb-8"
           role="progressbar"
           aria-valuenow={30}
           aria-valuemin={0}
@@ -74,29 +74,29 @@ export default function PrivacyDisclaimerPage() {
           <div className="h-2 bg-nhs-pale-grey rounded-full mb-2">
             <div className="h-full w-[30%] bg-nhs-blue rounded-full transition-all duration-300" />
           </div>
-          <p className="text-center text-sm text-text-secondary">
+          <p className="text-center text-xs sm:text-sm text-text-secondary">
             {t('privacy.progressText', 'Step 2 of 4: Privacy Information')}
           </p>
         </div>
 
         {/* Page Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-3">
+        <header className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-3">
             {t('privacy.title', 'Your Privacy Matters')}
           </h1>
-          <p className="text-lg text-text-secondary max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-xl mx-auto px-2">
             {t('privacy.subtitle', 'Before you begin, we want you to understand how this tool handles your information.')}
           </p>
         </header>
 
         {/* Audio Control */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-6 sm:mb-8">
           <button
             type="button"
             onClick={handlePlayAudio}
-            className="inline-flex items-center gap-3 px-6 py-3
+            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 min-h-[48px]
                        bg-white border-2 border-nhs-blue rounded-full
-                       text-nhs-blue font-semibold
+                       text-nhs-blue font-semibold text-sm sm:text-base
                        transition-colors duration-150
                        hover:bg-nhs-blue hover:text-white
                        focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
@@ -116,7 +116,7 @@ export default function PrivacyDisclaimerPage() {
         </div>
 
         {/* Privacy Sections */}
-        <div className="space-y-6 mb-8">
+        <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
           {/* Section 1: Privacy Notice */}
           <PrivacySection
             icon={<ShieldCheckIcon />}
@@ -153,32 +153,32 @@ export default function PrivacyDisclaimerPage() {
 
           {/* Section 3: PII Warning */}
           <section
-            className="bg-amber-50 border-2 border-nhs-warm-yellow rounded-lg p-6"
+            className="bg-amber-50 border-2 border-nhs-warm-yellow rounded-lg p-4 sm:p-6"
             aria-labelledby="pii-heading"
           >
-            <div className="flex items-start gap-4 mb-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-md flex items-center justify-center text-amber-700">
+            <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 rounded-md flex items-center justify-center text-amber-700">
                 <WarningIcon />
               </div>
-              <h2 id="pii-heading" className="text-xl font-bold text-amber-800">
+              <h2 id="pii-heading" className="text-lg sm:text-xl font-bold text-amber-800">
                 {t('privacy.sections.pii.title', 'Please Do Not Share Personal Details')}
               </h2>
             </div>
-            <div className="text-amber-900 space-y-4">
+            <div className="text-amber-900 space-y-3 sm:space-y-4 text-sm sm:text-base">
               <p>
                 {t('privacy.sections.pii.intro', 'To protect your privacy, please do not enter any personal information that could identify you when using this tool, especially in the chat feature.')}
               </p>
               <ul
-                className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none p-0 m-0"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 list-none p-0 m-0"
                 aria-label={t('privacy.sections.pii.listLabel', 'Information you should not share')}
               >
                 {PII_ITEMS.map((item) => (
                   <li
                     key={item.key}
-                    className="flex items-center gap-3 px-4 py-2 bg-white/70 rounded"
+                    className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-white/70 rounded min-h-[44px]"
                   >
                     <CrossCircleIcon />
-                    <span>{t(`privacy.sections.pii.items.${item.key}`, item.label)}</span>
+                    <span className="text-sm sm:text-base">{t(`privacy.sections.pii.items.${item.key}`, item.label)}</span>
                   </li>
                 ))}
               </ul>
@@ -191,15 +191,15 @@ export default function PrivacyDisclaimerPage() {
 
         {/* Summary Box */}
         <div
-          className="bg-green-50 border-2 border-nhs-green rounded-lg p-6 mb-8 text-center"
+          className="bg-green-50 border-2 border-nhs-green rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 text-center"
           role="region"
           aria-label={t('privacy.summaryAriaLabel', 'Key points summary')}
         >
-          <h3 className="flex items-center justify-center gap-2 text-lg font-bold text-nhs-green-dark mb-4">
+          <h3 className="flex items-center justify-center gap-2 text-base sm:text-lg font-bold text-nhs-green-dark mb-3 sm:mb-4">
             <CheckCircleIcon />
             {t('privacy.summary.title', 'In Summary')}
           </h3>
-          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3 list-none p-0 m-0">
+          <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-x-8 sm:gap-y-3 list-none p-0 m-0">
             <SummaryItem text={t('privacy.summary.notSaved', 'Your answers are not saved')} />
             <SummaryItem text={t('privacy.summary.noData', 'No personal data is collected')} />
             <SummaryItem text={t('privacy.summary.leave', 'You can leave at any time')} />
@@ -208,39 +208,39 @@ export default function PrivacyDisclaimerPage() {
 
         {/* Consent Section */}
         <div
-          className="bg-white rounded-lg shadow-md p-6 mb-8"
+          className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8"
           role="region"
           aria-labelledby="consent-heading"
         >
-          <h3 id="consent-heading" className="text-lg font-bold text-text-primary mb-6">
+          <h3 id="consent-heading" className="text-base sm:text-lg font-bold text-text-primary mb-4 sm:mb-6">
             {t('privacy.consent.title', 'Please confirm to continue')}
           </h3>
 
           {/* Required Consent */}
-          <label className="flex items-start gap-4 p-4 bg-bg-surface-secondary rounded-md cursor-pointer hover:bg-nhs-pale-grey transition-colors mb-4">
+          <label className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-bg-surface-secondary rounded-md cursor-pointer hover:bg-nhs-pale-grey transition-colors mb-3 sm:mb-4 min-h-[48px]">
             <input
               type="checkbox"
               checked={consentUnderstood}
               onChange={(e) => handleConsentChange(e.target.checked)}
-              className="flex-shrink-0 w-7 h-7 mt-0.5 accent-nhs-blue cursor-pointer"
+              className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 mt-0.5 accent-nhs-blue cursor-pointer"
               aria-describedby={showError ? 'consent-error' : undefined}
               required
             />
-            <span className="text-text-primary">
+            <span className="text-text-primary text-sm sm:text-base">
               <span className="text-nhs-red font-bold" aria-hidden="true">* </span>
               {t('privacy.consent.understand', 'I understand that my information is not saved after this session and I will not share personal identifying information')}
             </span>
           </label>
 
           {/* Optional Analytics Consent */}
-          <label className="flex items-start gap-4 p-4 bg-bg-surface-secondary rounded-md cursor-pointer hover:bg-nhs-pale-grey transition-colors">
+          <label className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-bg-surface-secondary rounded-md cursor-pointer hover:bg-nhs-pale-grey transition-colors min-h-[48px]">
             <input
               type="checkbox"
               checked={consentAnalytics}
               onChange={(e) => setConsentAnalytics(e.target.checked)}
-              className="flex-shrink-0 w-7 h-7 mt-0.5 accent-nhs-blue cursor-pointer"
+              className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 mt-0.5 accent-nhs-blue cursor-pointer"
             />
-            <span className="text-text-primary">
+            <span className="text-text-primary text-sm sm:text-base">
               {t('privacy.consent.analytics', 'I agree to anonymous analytics being collected to help improve this tool (optional)')}
             </span>
           </label>
@@ -249,7 +249,7 @@ export default function PrivacyDisclaimerPage() {
           {showError && (
             <div
               id="consent-error"
-              className="flex items-center gap-3 p-4 mt-4 bg-red-50 rounded-md text-nhs-red"
+              className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 mt-3 sm:mt-4 bg-red-50 rounded-md text-nhs-red text-sm sm:text-base"
               role="alert"
               aria-live="polite"
             >
@@ -260,12 +260,12 @@ export default function PrivacyDisclaimerPage() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4">
           <button
             type="button"
             onClick={() => navigate('/language')}
-            className="inline-flex items-center gap-2 px-6 py-3 text-nhs-blue hover:underline
-                       focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue hover:underline
+                       focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded text-base"
           >
             <BackIcon />
             {t('nav.back', 'Go Back')}
@@ -275,7 +275,7 @@ export default function PrivacyDisclaimerPage() {
             type="button"
             onClick={handleContinue}
             disabled={!consentUnderstood}
-            className={`inline-flex items-center gap-2 px-8 py-3 font-bold rounded-md text-lg
+            className={`inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] w-full sm:w-auto font-bold rounded-md text-base sm:text-lg justify-center
                         transition-colors duration-150
                         focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2
                         ${consentUnderstood
@@ -291,12 +291,12 @@ export default function PrivacyDisclaimerPage() {
         </div>
 
         {/* Privacy Policy Link */}
-        <p className="text-center text-sm text-text-secondary mt-8">
+        <p className="text-center text-sm text-text-secondary mt-6 sm:mt-8">
           <a
             href="https://www.nhs.uk/conditions/nhs-privacy-policy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-nhs-blue hover:underline focus:outline-none focus:ring-2 focus:ring-focus rounded"
+            className="text-nhs-blue hover:underline focus:outline-none focus:ring-2 focus:ring-focus rounded min-h-[44px] inline-flex items-center"
           >
             {t('privacy.readFullPolicy', 'Read the full NHS Privacy Policy')}
           </a>
@@ -319,18 +319,18 @@ function PrivacySection({ icon, iconBg, title, children }: PrivacySectionProps) 
 
   return (
     <section
-      className="bg-white rounded-lg shadow-sm p-6"
+      className="bg-white rounded-lg shadow-sm p-4 sm:p-6"
       aria-labelledby={headingId}
     >
-      <div className="flex items-start gap-4 mb-4">
-        <div className={`flex-shrink-0 w-12 h-12 rounded-md flex items-center justify-center ${iconBg}`}>
+      <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+        <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center ${iconBg}`}>
           {icon}
         </div>
-        <h2 id={headingId} className="text-xl font-bold text-text-primary">
+        <h2 id={headingId} className="text-lg sm:text-xl font-bold text-text-primary">
           {title}
         </h2>
       </div>
-      <div className="text-text-secondary space-y-4 leading-relaxed">
+      <div className="text-text-secondary space-y-3 sm:space-y-4 leading-relaxed text-sm sm:text-base">
         {children}
       </div>
     </section>
@@ -344,7 +344,7 @@ interface SummaryItemProps {
 
 function SummaryItem({ text }: SummaryItemProps) {
   return (
-    <li className="flex items-center gap-2 text-nhs-green-dark font-medium">
+    <li className="flex items-center gap-2 text-nhs-green-dark font-medium text-sm sm:text-base">
       <CheckIcon />
       <span>{text}</span>
     </li>

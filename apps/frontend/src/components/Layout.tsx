@@ -76,18 +76,20 @@ function AccessibilityButton({ onOpenModal }: AccessibilityButtonProps) {
   return (
     <button
       type="button"
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-2 px-3 py-2 sm:px-4
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center justify-center gap-2
+                 min-w-[44px] min-h-[44px] px-3 py-2.5 sm:px-4
                  bg-bg-surface border-2 border-nhs-blue rounded-md
                  text-sm font-semibold text-nhs-blue shadow-md
-                 transition-colors duration-fast z-[300]
+                 transition-colors duration-fast z-[300] touch-manipulation
                  hover:bg-nhs-blue hover:text-white
-                 focus:outline-none focus:ring-[3px] focus:ring-focus focus:bg-focus focus:text-text-primary"
+                 focus:outline-none focus:ring-[3px] focus:ring-focus focus:bg-focus focus:text-text-primary
+                 active:scale-95"
       aria-label={t('accessibility.settingsLabel')}
       title={t('accessibility.settingsTitle')}
       onClick={onOpenModal}
     >
       <svg
-        className="w-5 h-5"
+        className="w-5 h-5 flex-shrink-0"
         viewBox="0 0 24 24"
         fill="currentColor"
         aria-hidden="true"

@@ -311,10 +311,10 @@ export default function ComparePage() {
 
         {/* Filter Controls Section */}
         <section
-          className="bg-white border border-nhs-pale-grey rounded-lg p-6 mb-8"
+          className="bg-white border border-nhs-pale-grey rounded-lg p-4 sm:p-6 mb-6 sm:mb-8"
           aria-labelledby="filter-heading"
         >
-          <h2 id="filter-heading" className="text-lg font-bold mb-4">
+          <h2 id="filter-heading" className="text-base sm:text-lg font-bold mb-4">
             {t('compare.customise', 'Customise Your Comparison')}
           </h2>
 
@@ -323,11 +323,11 @@ export default function ComparePage() {
             <span className="block text-sm font-semibold text-text-secondary mb-2">
               {t('compare.showTreatments', 'Show treatments:')}
             </span>
-            <div className="flex flex-wrap gap-3" role="group" aria-label={t('compare.showTreatments', 'Show treatments')}>
+            <div className="flex flex-wrap gap-2 sm:gap-3" role="group" aria-label={t('compare.showTreatments', 'Show treatments')}>
               {TREATMENT_HEADERS.map((treatment) => (
                 <label
                   key={treatment.id}
-                  className={`flex items-center gap-2 px-3 py-2 border-2 rounded-md text-sm cursor-pointer transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2.5 border-2 rounded-md text-sm cursor-pointer transition-colors min-h-[44px] touch-manipulation ${
                     selectedTreatments.has(treatment.id)
                       ? 'border-nhs-blue bg-[#E6F0FA]'
                       : 'border-nhs-pale-grey bg-bg-surface-secondary hover:border-nhs-blue'
@@ -337,17 +337,17 @@ export default function ComparePage() {
                     type="checkbox"
                     checked={selectedTreatments.has(treatment.id)}
                     onChange={() => toggleTreatment(treatment.id)}
-                    className="w-[18px] h-[18px] accent-nhs-blue"
+                    className="w-5 h-5 accent-nhs-blue"
                   />
-                  <span>{t(treatment.nameKey)}</span>
+                  <span className="text-xs sm:text-sm">{t(treatment.nameKey)}</span>
                 </label>
               ))}
             </div>
           </div>
 
           {/* Highlight Toggle */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-[#E6F0FA] border border-nhs-blue rounded-md">
-            <label className="flex items-center gap-3 font-semibold cursor-pointer">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-[#E6F0FA] border border-nhs-blue rounded-md">
+            <label className="flex items-center gap-3 font-semibold cursor-pointer min-h-[44px] touch-manipulation">
               <input
                 type="checkbox"
                 checked={highlightValues}
@@ -355,21 +355,21 @@ export default function ComparePage() {
                 className="sr-only"
               />
               <span
-                className={`relative w-12 h-[26px] rounded-full transition-colors ${
+                className={`relative w-14 h-8 rounded-full transition-colors flex-shrink-0 ${
                   highlightValues ? 'bg-nhs-green' : 'bg-nhs-mid-grey'
                 }`}
                 role="switch"
                 aria-checked={highlightValues}
               >
                 <span
-                  className={`absolute top-[3px] left-[3px] w-5 h-5 bg-white rounded-full transition-transform ${
-                    highlightValues ? 'translate-x-[22px]' : ''
+                  className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-transform shadow-sm ${
+                    highlightValues ? 'translate-x-6' : ''
                   }`}
                 />
               </span>
-              <span>{t('compare.highlightForMe', 'Highlight treatments for me')}</span>
+              <span className="text-sm sm:text-base">{t('compare.highlightForMe', 'Highlight treatments for me')}</span>
             </label>
-            <span className="text-sm text-text-secondary">
+            <span className="text-xs sm:text-sm text-text-secondary">
               {t('compare.highlightHint', 'Based on your values and priorities from the questionnaire')}
             </span>
           </div>
@@ -377,17 +377,17 @@ export default function ComparePage() {
 
         {/* Legend Section */}
         <section
-          className="bg-white border border-nhs-pale-grey rounded-lg p-6 mb-8"
+          className="bg-white border border-nhs-pale-grey rounded-lg p-4 sm:p-6 mb-6 sm:mb-8"
           aria-labelledby="legend-heading"
         >
-          <h2 id="legend-heading" className="text-base font-bold mb-4">
+          <h2 id="legend-heading" className="text-sm sm:text-base font-bold mb-3 sm:mb-4">
             {t('compare.understandingIcons', 'Understanding the Icons')}
           </h2>
-          <div className="flex flex-wrap gap-6" role="list">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-6" role="list">
             {LEGEND_ITEMS.map((item) => (
-              <div key={item.level} className="flex items-center gap-3" role="listitem">
+              <div key={item.level} className="flex items-center gap-2 sm:gap-3" role="listitem">
                 <RatingIcon level={item.level} />
-                <span className="text-sm text-text-secondary">{t(item.labelKey)}</span>
+                <span className="text-xs sm:text-sm text-text-secondary">{t(item.labelKey)}</span>
               </div>
             ))}
           </div>
@@ -395,52 +395,52 @@ export default function ComparePage() {
 
         {/* Mobile Scroll Indicator */}
         <div
-          className="flex lg:hidden items-center justify-center gap-2 p-3 bg-[#FFF7E6] rounded-md mb-4 text-sm text-[#856404]"
+          className="flex md:hidden items-center justify-center gap-2 p-3 bg-[#FFF7E6] rounded-md mb-4 text-xs sm:text-sm text-[#856404]"
           role="status"
           aria-live="polite"
         >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-5 h-5 flex-shrink-0 animate-pulse" viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
           </svg>
-          {t('compare.scrollHint', 'Scroll horizontally to see all treatments')}
+          <span>{t('compare.scrollHint', 'Scroll horizontally to see all treatments')}</span>
         </div>
 
         {/* Comparison Table - Enhanced */}
         <section
-          className="bg-white border border-nhs-pale-grey rounded-2xl overflow-hidden mb-8 shadow-lg"
+          className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl overflow-hidden mb-6 sm:mb-8 shadow-lg"
           aria-labelledby="table-heading"
         >
           <h2 id="table-heading" className="sr-only">
             {t('compare.tableHeading', 'Treatment Comparison Table')}
           </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse min-w-[900px]" aria-label={t('compare.tableLabel', 'Comparison of kidney treatment options')}>
+          <div className="overflow-x-auto -webkit-overflow-scrolling-touch scroll-smooth" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <table className="w-full border-collapse min-w-[700px] sm:min-w-[900px]" aria-label={t('compare.tableLabel', 'Comparison of kidney treatment options')}>
               <thead>
                 <tr>
                   <th
                     scope="col"
-                    className="bg-gradient-to-r from-nhs-blue-dark to-nhs-blue text-white font-bold text-left p-5 sticky left-0 z-10 min-w-[200px]"
+                    className="bg-gradient-to-r from-nhs-blue-dark to-nhs-blue text-white font-bold text-left p-3 sm:p-5 sticky left-0 z-10 min-w-[140px] sm:min-w-[200px]"
                   >
                     <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 hidden sm:block" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
                       </svg>
-                      {t('compare.criteria', 'Criteria')}
+                      <span className="text-sm sm:text-base">{t('compare.criteria', 'Criteria')}</span>
                     </div>
                   </th>
                   {visibleTreatments.map((treatment, index) => (
                     <th
                       key={treatment.id}
                       scope="col"
-                      className={`text-white font-bold text-center p-5 min-w-[180px] ${
+                      className={`text-white font-bold text-center p-3 sm:p-5 min-w-[130px] sm:min-w-[180px] ${
                         index % 2 === 0 ? 'bg-nhs-blue' : 'bg-nhs-blue/90'
                       }`}
                     >
-                      <span className="block text-lg mb-1">{t(treatment.nameKey)}</span>
-                      <span className="block text-xs font-normal opacity-80">{t(treatment.typeKey)}</span>
+                      <span className="block text-sm sm:text-lg mb-1">{t(treatment.nameKey)}</span>
+                      <span className="block text-[10px] sm:text-xs font-normal opacity-80">{t(treatment.typeKey)}</span>
                       {recommendedTreatment === treatment.id && (
-                        <span className="inline-flex items-center gap-1 mt-3 px-3 py-1 bg-nhs-green text-white text-xs font-semibold rounded-full shadow-md">
-                          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                        <span className="inline-flex items-center gap-1 mt-2 sm:mt-3 px-2 sm:px-3 py-1 bg-nhs-green text-white text-[10px] sm:text-xs font-semibold rounded-full shadow-md">
+                          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                           </svg>
                           {t('compare.recommended', 'Recommended')}
@@ -458,10 +458,10 @@ export default function ComparePage() {
                         <th
                           scope="row"
                           colSpan={visibleTreatments.length + 1}
-                          className="font-bold text-sm uppercase tracking-wider text-nhs-blue-dark p-4 border-l-4 border-nhs-blue"
+                          className="font-bold text-xs sm:text-sm uppercase tracking-wider text-nhs-blue-dark p-3 sm:p-4 border-l-4 border-nhs-blue"
                         >
                           <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-nhs-blue rounded-full" />
+                            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-nhs-blue rounded-full flex-shrink-0" />
                             {t(row.titleKey)}
                           </div>
                         </th>
@@ -477,11 +477,11 @@ export default function ComparePage() {
                     >
                       <th
                         scope="row"
-                        className="bg-white group-hover:bg-nhs-blue/5 p-5 sticky left-0 z-[5] text-left font-semibold border-r border-nhs-pale-grey transition-colors"
+                        className="bg-white group-hover:bg-nhs-blue/5 p-3 sm:p-5 sticky left-0 z-[5] text-left font-semibold border-r border-nhs-pale-grey transition-colors"
                       >
-                        <div className="flex flex-col gap-1">
-                          <span className="text-text-primary font-semibold">{t(dataRow.criteriaKey)}</span>
-                          <span className="text-xs font-normal text-text-muted">{t(dataRow.hintKey)}</span>
+                        <div className="flex flex-col gap-0.5 sm:gap-1">
+                          <span className="text-text-primary font-semibold text-xs sm:text-sm">{t(dataRow.criteriaKey)}</span>
+                          <span className="text-[10px] sm:text-xs font-normal text-text-muted hidden sm:block">{t(dataRow.hintKey)}</span>
                         </div>
                       </th>
                       {visibleTreatments.map((treatment, index) => {
@@ -489,17 +489,17 @@ export default function ComparePage() {
                         return (
                           <td
                             key={treatment.id}
-                            className={`p-5 text-center align-middle ${
+                            className={`p-2 sm:p-5 text-center align-middle ${
                               index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
                             } group-hover:bg-nhs-blue/5 transition-colors`}
                           >
-                            <div className="flex flex-col items-center gap-3">
+                            <div className="flex flex-col items-center gap-1.5 sm:gap-3">
                               <RatingIcon level={cell.level} />
-                              <div className="text-sm text-text-primary font-medium leading-snug">
+                              <div className="text-[10px] sm:text-sm text-text-primary font-medium leading-snug">
                                 {t(cell.text)}
                               </div>
                               {cell.subtext && (
-                                <span className="text-xs text-text-muted">
+                                <span className="text-[9px] sm:text-xs text-text-muted hidden sm:block">
                                   {t(cell.subtext)}
                                 </span>
                               )}
@@ -517,19 +517,19 @@ export default function ComparePage() {
 
         {/* Guidance Section - Enhanced */}
         <section
-          className="bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 border-l-4 border-nhs-blue rounded-xl p-6 mb-8 flex gap-5 shadow-sm"
+          className="bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 border-l-4 border-nhs-blue rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 flex gap-3 sm:gap-5 shadow-sm"
           aria-labelledby="guidance-heading"
         >
-          <div className="w-12 h-12 bg-nhs-blue/20 rounded-full flex items-center justify-center flex-shrink-0">
-            <svg className="w-6 h-6 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-blue/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
             </svg>
           </div>
           <div>
-            <h2 id="guidance-heading" className="text-lg font-bold text-text-primary mb-2">
+            <h2 id="guidance-heading" className="text-base sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">
               {t('compare.remember', 'Remember')}
             </h2>
-            <p className="text-sm text-text-secondary leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {t(
                 'compare.guidance',
                 'No treatment is perfect for everyone. The best choice depends on your personal situation, health, and values. This comparison is a starting point for discussions with your kidney team.'
@@ -540,12 +540,12 @@ export default function ComparePage() {
 
         {/* Navigation Section - Enhanced */}
         <nav
-          className="bg-white rounded-2xl p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4"
+          className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-4"
           aria-label={t('accessibility.pageNavigation')}
         >
           <button
             onClick={() => navigate('/hub')}
-            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:bg-nhs-blue/5 rounded-lg transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:bg-nhs-blue/5 rounded-lg transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
@@ -555,18 +555,18 @@ export default function ComparePage() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               to="/values"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-xl hover:bg-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-xl hover:bg-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
               </svg>
-              {t('values.startExercise', 'Start Values Exercise')}
+              <span className="text-sm sm:text-base">{t('values.startExercise', 'Start Values Exercise')}</span>
             </Link>
             <Link
               to="/summary"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
             >
-              {t('compare.addToSummary', 'Add to My Summary')}
+              <span className="text-sm sm:text-base">{t('compare.addToSummary', 'Add to My Summary')}</span>
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
               </svg>

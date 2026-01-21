@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
 import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '@renal-decision-aid/shared-types';
+import { changeLanguageAndWait } from '@/config/i18n';
 
 export default function LanguageSelectionPage() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export default function LanguageSelectionPage() {
   const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage | null>(null);
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSelectLanguage = useCallback((langCode: SupportedLanguage) => {
     setSelectedLanguage(langCode);
@@ -71,9 +73,20 @@ export default function LanguageSelectionPage() {
       return;
     }
 
+    // Prevent double submission
+    if (isLoading) return;
+
+    setIsLoading(true);
+    setError(null);
+
     try {
-      // Change i18n language
-      await i18n.changeLanguage(selectedLanguage);
+      // Change i18n language and wait for translations to load
+      const success = await changeLanguageAndWait(selectedLanguage);
+
+      if (!success) {
+        // If language change failed but didn't throw, show a warning but continue
+        console.warn(`Language change to ${selectedLanguage} may not have fully loaded`);
+      }
 
       // Create session with selected language
       await createSession(selectedLanguage);
@@ -83,31 +96,32 @@ export default function LanguageSelectionPage() {
     } catch (err) {
       console.error('Failed to set language:', err);
       setError(t('common.error', 'Something went wrong. Please try again.'));
+      setIsLoading(false);
     }
   };
 
   return (
     <main className="min-h-screen bg-bg-page">
-      <div className="max-w-container-lg mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
         {/* Page Header */}
-        <header className="text-center mb-8 md:mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-3">
+        <header className="text-center mb-6 sm:mb-8 md:mb-10">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-3">
             {t('language.title', 'Choose Your Language')}
           </h1>
-          <p className="text-lg text-text-secondary max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-xl mx-auto px-2">
             {t('language.instruction', 'Please select your preferred language. You can change this at any time.')}
           </p>
         </header>
 
         {/* Instruction Text */}
-        <p className="text-center text-text-secondary mb-8 max-w-[700px] mx-auto">
+        <p className="text-center text-sm sm:text-base text-text-secondary mb-6 sm:mb-8 max-w-[700px] mx-auto px-2">
           {t('language.changeAnytime', 'Please select the language you would like to use. You can change this at any time using the language button at the top of the screen.')}
         </p>
 
         {/* Error Message */}
         {error && (
           <div
-            className="flex items-center gap-3 p-4 mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[700px] mx-auto"
+            className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 mb-4 sm:mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[700px] mx-auto text-sm sm:text-base"
             role="alert"
             aria-live="assertive"
           >
@@ -122,7 +136,7 @@ export default function LanguageSelectionPage() {
             <legend className="sr-only">{t('language.legendLabel', 'Available languages - select one')}</legend>
 
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8"
               role="radiogroup"
               aria-label={t('language.radioGroupLabel', 'Available languages')}
             >
@@ -145,7 +159,7 @@ export default function LanguageSelectionPage() {
 
           {/* Help Text */}
           <div
-            className="flex items-center justify-center gap-2 p-4 mb-8 bg-blue-50 rounded-md text-nhs-blue-dark max-w-[700px] mx-auto"
+            className="flex items-center justify-center gap-2 p-3 sm:p-4 mb-6 sm:mb-8 bg-blue-50 rounded-md text-nhs-blue-dark max-w-[700px] mx-auto text-sm sm:text-base"
             aria-live="polite"
           >
             <InfoIcon />
@@ -153,12 +167,12 @@ export default function LanguageSelectionPage() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-nhs-pale-grey max-w-[700px] mx-auto">
+          <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-nhs-pale-grey max-w-[700px] mx-auto">
             <button
               type="button"
               onClick={() => navigate('/')}
-              className="inline-flex items-center gap-2 px-6 py-3 text-nhs-blue hover:underline
-                         focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue hover:underline
+                         focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded text-base"
               aria-label={t('nav.backToHome', 'Go back to home page')}
             >
               <BackIcon />
@@ -168,16 +182,27 @@ export default function LanguageSelectionPage() {
             <button
               type="button"
               onClick={handleContinue}
-              className="inline-flex items-center gap-2 px-8 py-3 min-w-[200px] justify-center
-                         bg-nhs-green text-white font-bold rounded-md text-lg
+              disabled={isLoading || !selectedLanguage}
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] w-full sm:w-auto sm:min-w-[200px] justify-center
+                         bg-nhs-green text-white font-bold rounded-md text-base sm:text-lg
                          transition-colors duration-150
                          hover:bg-nhs-green-dark
                          focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2
                          disabled:bg-nhs-mid-grey disabled:cursor-not-allowed"
               aria-label={t('nav.continueWithLanguage', 'Continue with selected language')}
+              aria-busy={isLoading}
             >
-              {t('common.continue', 'Continue')}
-              <ForwardIcon />
+              {isLoading ? (
+                <>
+                  <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  {t('common.loading', 'Loading...')}
+                </>
+              ) : (
+                <>
+                  {t('common.continue', 'Continue')}
+                  <ForwardIcon />
+                </>
+              )}
             </button>
           </div>
         </form>
@@ -214,7 +239,7 @@ function LanguageCard({
 
   return (
     <label
-      className={`relative flex flex-col items-center text-center p-6 min-h-[180px]
+      className={`relative flex flex-col items-center text-center p-4 sm:p-6 min-h-[160px] sm:min-h-[180px]
                   bg-white border-2 rounded-lg cursor-pointer
                   transition-all duration-200
                   hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5
@@ -239,7 +264,7 @@ function LanguageCard({
       {/* Selected Checkmark */}
       {isSelected && (
         <span
-          className="absolute top-2 right-2 w-7 h-7 bg-nhs-blue rounded-full flex items-center justify-center"
+          className="absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue rounded-full flex items-center justify-center"
           aria-hidden="true"
         >
           <CheckIcon />
@@ -248,7 +273,7 @@ function LanguageCard({
 
       {/* Language Icon */}
       <div
-        className={`w-12 h-12 mb-4 flex items-center justify-center rounded-md text-xl font-bold
+        className={`w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-4 flex items-center justify-center rounded-md text-lg sm:text-xl font-bold
                     ${isSelected ? 'bg-nhs-blue text-white' : 'bg-nhs-pale-grey text-nhs-blue'}`}
         aria-hidden="true"
       >
@@ -257,14 +282,14 @@ function LanguageCard({
 
       {/* Native Name */}
       <span
-        className="text-2xl font-bold text-text-primary mb-1 leading-tight"
+        className="text-xl sm:text-2xl font-bold text-text-primary mb-1 leading-tight"
         style={{ fontFamily, direction }}
       >
         {nativeName}
       </span>
 
       {/* English Name */}
-      <span className="text-base text-text-secondary mb-4">
+      <span className="text-sm sm:text-base text-text-secondary mb-3 sm:mb-4">
         {englishName}
       </span>
 
@@ -272,7 +297,7 @@ function LanguageCard({
       <button
         type="button"
         onClick={onPlayAudio}
-        className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium
+        className={`inline-flex items-center gap-2 px-3 sm:px-4 py-2 min-h-[44px] text-sm font-medium
                     border rounded-full z-10 relative
                     transition-colors duration-150
                     focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2

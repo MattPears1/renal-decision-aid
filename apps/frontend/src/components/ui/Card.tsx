@@ -8,21 +8,22 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', padding = 'md', children, ...props }, ref) => {
-    const baseStyles = 'bg-white rounded-lg';
+    const baseStyles = 'bg-white rounded-lg w-full';
 
     const variants = {
       default: 'border border-nhs-pale-grey',
       elevated: 'shadow-md',
       bordered: 'border-2 border-nhs-pale-grey',
       interactive:
-        'border-2 border-nhs-pale-grey hover:border-nhs-blue hover:shadow-md transition-all duration-200 cursor-pointer',
+        'border-2 border-nhs-pale-grey hover:border-nhs-blue hover:shadow-md transition-all duration-200 cursor-pointer touch-manipulation',
     };
 
+    // Mobile-first responsive padding
     const paddings = {
       none: '',
-      sm: 'p-3',
-      md: 'p-4 md:p-6',
-      lg: 'p-6 md:p-8',
+      sm: 'p-3 sm:p-4',
+      md: 'p-4 sm:p-5 md:p-6',
+      lg: 'p-4 sm:p-6 md:p-8',
     };
 
     return (

@@ -361,18 +361,18 @@ export default function TreatmentDetailPage() {
 
       <div className="max-w-container-xl mx-auto px-4 py-8 md:py-12">
         {/* Hero Section */}
-        <section className={`bg-gradient-to-br ${treatment.bgGradient} rounded-lg p-8 md:p-10 mb-10 flex flex-col md:flex-row gap-8 items-center`} aria-labelledby="treatment-title">
-          <div className={treatment.iconColor}>{treatment.icon}</div>
+        <section className={`bg-gradient-to-br ${treatment.bgGradient} rounded-lg p-4 sm:p-8 md:p-10 mb-6 sm:mb-10 flex flex-col md:flex-row gap-4 sm:gap-8 items-center`} aria-labelledby="treatment-title">
+          <div className={`${treatment.iconColor} scale-75 sm:scale-100`}>{treatment.icon}</div>
           <div className="flex-1 text-center md:text-left">
-            <h1 id="treatment-title" className="text-3xl md:text-4xl font-bold text-text-primary mb-3">
+            <h1 id="treatment-title" className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-3">
               {treatment.title}
             </h1>
-            <p className="text-lg text-text-secondary leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-3 sm:mb-4">
               {treatment.subtitle}
             </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-4">
+            <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 mb-4">
               {treatment.tags.map((tag, idx) => (
-                <span key={idx} className="inline-flex items-center gap-1 px-3 py-1 bg-white border border-nhs-blue rounded-full text-sm text-nhs-blue">
+                <span key={idx} className="inline-flex items-center gap-1 px-2 sm:px-3 py-1 bg-white border border-nhs-blue rounded-full text-xs sm:text-sm text-nhs-blue">
                   {tag.icon}
                   {tag.label}
                 </span>
@@ -380,7 +380,7 @@ export default function TreatmentDetailPage() {
             </div>
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue text-white rounded-md font-semibold text-sm hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue text-white rounded-md font-semibold text-sm hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] touch-manipulation"
               aria-label={t('accessibility.listenToPage', 'Listen to this page being read aloud')}
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -433,21 +433,21 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="mb-12" aria-labelledby="benefits-heading">
+        <section className="mb-8 sm:mb-12" aria-labelledby="benefits-heading">
           <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <h2 id="benefits-heading" className="text-2xl font-bold text-text-primary">
+            <h2 id="benefits-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
               {t('treatment.benefits', 'Benefits')}
             </h2>
           </header>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {treatment.benefits.map((benefit, idx) => (
-              <div key={idx} className="bg-[#E6F4EA] rounded-md p-4 text-center">
-                <div className="text-nhs-green mx-auto mb-2">{benefit.icon}</div>
-                <span className="font-semibold text-nhs-green-dark text-sm">{benefit.title}</span>
+              <div key={idx} className="bg-[#E6F4EA] rounded-md p-3 sm:p-4 text-center">
+                <div className="text-nhs-green mx-auto mb-2 scale-75 sm:scale-100">{benefit.icon}</div>
+                <span className="font-semibold text-nhs-green-dark text-xs sm:text-sm">{benefit.title}</span>
               </div>
             ))}
           </div>
@@ -478,23 +478,23 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Lifestyle Section */}
-        <section className="mb-12" aria-labelledby="lifestyle-heading">
+        <section className="mb-8 sm:mb-12" aria-labelledby="lifestyle-heading">
           <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
-            <h2 id="lifestyle-heading" className="text-2xl font-bold text-text-primary">
+            <h2 id="lifestyle-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
               {t('treatment.lifestyle', 'Lifestyle Impact')}
             </h2>
           </header>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {treatment.lifestyle.map((item, idx) => (
-              <div key={idx} className="bg-white border border-nhs-pale-grey rounded-lg p-6">
-                <div className="text-nhs-blue mb-3">{item.icon}</div>
-                <h3 className="text-lg font-bold text-text-primary mb-2">{item.title}</h3>
+              <div key={idx} className="bg-white border border-nhs-pale-grey rounded-lg p-4 sm:p-6">
+                <div className="text-nhs-blue mb-3 scale-90 sm:scale-100">{item.icon}</div>
+                <h3 className="text-base sm:text-lg font-bold text-text-primary mb-2">{item.title}</h3>
                 <p className="text-sm text-text-secondary leading-relaxed">{item.content}</p>
               </div>
             ))}
@@ -502,25 +502,25 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Getting Started Steps */}
-        <section className="mb-12" aria-labelledby="steps-heading">
+        <section className="mb-8 sm:mb-12" aria-labelledby="steps-heading">
           <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points="9 11 12 14 22 4" />
               <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
             </svg>
-            <h2 id="steps-heading" className="text-2xl font-bold text-text-primary">
+            <h2 id="steps-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
               {t('treatment.gettingStarted', 'Getting Started')}
             </h2>
           </header>
-          <ol className="space-y-4">
+          <ol className="space-y-3 sm:space-y-4">
             {treatment.steps.map((step, idx) => (
-              <li key={idx} className="flex gap-4 p-4 bg-white border border-nhs-pale-grey rounded-md">
-                <div className="w-10 h-10 flex-shrink-0 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-lg">
+              <li key={idx} className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-nhs-pale-grey rounded-md">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">
                   {idx + 1}
                 </div>
-                <div>
-                  <h3 className="font-semibold text-text-primary mb-1">{step.title}</h3>
-                  <p className="text-sm text-text-secondary">{step.description}</p>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-text-primary mb-1 text-sm sm:text-base">{step.title}</h3>
+                  <p className="text-xs sm:text-sm text-text-secondary">{step.description}</p>
                 </div>
               </li>
             ))}
@@ -528,12 +528,12 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* FAQs Section */}
-        <section className="mb-12" aria-labelledby="faq-heading">
+        <section className="mb-8 sm:mb-12" aria-labelledby="faq-heading">
           <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
             </svg>
-            <h2 id="faq-heading" className="text-2xl font-bold text-text-primary">
+            <h2 id="faq-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
               {t('treatment.faq', 'Frequently Asked Questions')}
             </h2>
           </header>
@@ -541,14 +541,14 @@ export default function TreatmentDetailPage() {
             {treatment.faqs.map((faq, idx) => (
               <div key={idx} className="border border-nhs-pale-grey rounded-md overflow-hidden" role="listitem">
                 <button
-                  className="w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-bg-surface-secondary text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset"
+                  className="w-full px-3 sm:px-4 py-3 flex justify-between items-center gap-2 bg-white hover:bg-bg-surface-secondary text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[48px] touch-manipulation"
                   aria-expanded={openFaq === idx}
                   aria-controls={`faq-answer-${idx}`}
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                 >
-                  <span>{faq.question}</span>
+                  <span className="text-sm sm:text-base">{faq.question}</span>
                   <svg
-                    className={`w-6 h-6 text-nhs-blue flex-shrink-0 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue flex-shrink-0 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`}
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -558,7 +558,7 @@ export default function TreatmentDetailPage() {
                   </svg>
                 </button>
                 {openFaq === idx && (
-                  <div id={`faq-answer-${idx}`} className="px-4 pb-4 text-text-secondary leading-relaxed">
+                  <div id={`faq-answer-${idx}`} className="px-3 sm:px-4 pb-4 text-sm sm:text-base text-text-secondary leading-relaxed">
                     {faq.answer}
                   </div>
                 )}
@@ -605,14 +605,14 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Action Section */}
-        <section className="bg-white border-2 border-nhs-blue rounded-lg p-8 mb-10" aria-labelledby="action-heading">
-          <h2 id="action-heading" className="text-xl font-bold text-text-primary text-center mb-6">
+        <section className="bg-white border-2 border-nhs-blue rounded-lg p-4 sm:p-8 mb-6 sm:mb-10" aria-labelledby="action-heading">
+          <h2 id="action-heading" className="text-lg sm:text-xl font-bold text-text-primary text-center mb-4 sm:mb-6">
             {t('treatment.readyToLearnMore', 'Ready to Learn More?')}
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               to="/compare"
-              className="inline-flex items-center gap-2 px-5 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="3" width="7" height="7" />
@@ -624,7 +624,7 @@ export default function TreatmentDetailPage() {
             </Link>
             <Link
               to="/chat"
-              className="inline-flex items-center gap-2 px-5 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -635,35 +635,35 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Related Treatments */}
-        <section className="mb-10 pt-8 border-t border-nhs-pale-grey" aria-labelledby="related-heading">
-          <h2 id="related-heading" className="text-xl font-bold text-text-primary mb-4">
+        <section className="mb-6 sm:mb-10 pt-6 sm:pt-8 border-t border-nhs-pale-grey" aria-labelledby="related-heading">
+          <h2 id="related-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-4">
             {t('treatment.exploreOthers', 'Explore Other Treatments')}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             {Object.values(TREATMENT_DATA)
               .filter((t) => t.id !== treatment.id)
               .map((relatedTreatment) => (
                 <Link
                   key={relatedTreatment.id}
                   to={`/treatments/${relatedTreatment.id}`}
-                  className="bg-white border border-nhs-pale-grey rounded-md p-4 flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+                  className="bg-white border border-nhs-pale-grey rounded-md p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
                 >
-                  <div className={`w-10 h-10 flex-shrink-0 ${relatedTreatment.iconColor}`}>
-                    <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 ${relatedTreatment.iconColor}`}>
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="12" cy="12" r="10" />
                     </svg>
                   </div>
-                  <span className="font-semibold text-text-primary">{relatedTreatment.title}</span>
+                  <span className="font-semibold text-text-primary text-sm sm:text-base">{relatedTreatment.title}</span>
                 </Link>
               ))}
           </div>
         </section>
 
         {/* Navigation Buttons */}
-        <nav className="flex flex-col sm:flex-row justify-between gap-4 pt-8 border-t border-nhs-pale-grey" aria-label={t('accessibility.pageNavigation')}>
+        <nav className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-nhs-pale-grey" aria-label={t('accessibility.pageNavigation')}>
           <button
             onClick={() => navigate('/treatments')}
-            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded"
+            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded min-h-[48px] touch-manipulation"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="19" y1="12" x2="5" y2="12" />
@@ -673,7 +673,7 @@ export default function TreatmentDetailPage() {
           </button>
           <Link
             to="/summary"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
           >
             <span>{t('summary.addToMy', 'Add to My Summary')}</span>
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

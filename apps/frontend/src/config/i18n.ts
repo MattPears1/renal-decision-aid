@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import HttpBackend from 'i18next-http-backend';
+import HttpBackend, { HttpBackendOptions } from 'i18next-http-backend';
 
 /**
  * Supported languages for the NHS Renal Decision Aid
@@ -102,24 +102,134 @@ i18n
 
     // Backend configuration for loading translation files
     backend: {
-      // Path to translation files
+      // Path to translation files - use relative path for better mobile compatibility
       loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
+
+      // Request timeout for mobile networks (10 seconds)
+      requestOptions: {
+        cache: 'no-store', // Prevent mobile browser caching issues
+      },
+
+      // Custom request function with timeout and retry for mobile reliability
+      request: async (
+        _options: HttpBackendOptions,
+        url: string,
+        _payload: unknown,
+        callback: (err: Error | null, data: { status: number; data: string } | null) => void
+      ) => {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+
+        const attemptFetch = async (retries = 2): Promise<void> => {
+          try {
+            const response = await fetch(url, {
+              signal: controller.signal,
+              cache: 'no-store',
+              headers: {
+                'Accept': 'application/json',
+              },
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}`);
+            }
+
+            const data = await response.text();
+            callback(null, { status: response.status, data });
+          } catch (error) {
+            if (retries > 0 && !(error instanceof DOMException && error.name === 'AbortError')) {
+              // Retry with exponential backoff
+              await new Promise(resolve => setTimeout(resolve, 1000 * (3 - retries)));
+              return attemptFetch(retries - 1);
+            }
+            clearTimeout(timeoutId);
+            callback(error as Error, null);
+          }
+        };
+
+        attemptFetch();
+      },
+    } as HttpBackendOptions,
 
     // React-specific options
     react: {
-      // Use Suspense for loading
-      useSuspense: true,
+      // Disable Suspense for better mobile compatibility
+      // This prevents the app from crashing if translation loading fails
+      useSuspense: false,
 
       // Bind i18n store to React lifecycle
       bindI18n: 'languageChanged loaded',
       bindI18nStore: 'added removed',
     },
+
+    // Load languages on init to improve mobile experience
+    load: 'currentOnly',
+
+    // Preload the fallback language
+    preload: ['en'],
   });
 
 // Save language preference when it changes
 i18n.on('languageChanged', (lng) => {
   localStorage.setItem(LANGUAGE_STORAGE_KEY, lng);
+  // Update document lang attribute immediately when language changes
+  document.documentElement.lang = lng;
+  const dir = SUPPORTED_LANGUAGES[lng as SupportedLanguage]?.dir || 'ltr';
+  document.documentElement.dir = dir;
+});
+
+/**
+ * Change language and ensure translations are fully loaded
+ * This function waits for both the language change and the translation files to load
+ * Includes error handling and timeout for mobile reliability
+ */
+export async function changeLanguageAndWait(lng: SupportedLanguage): Promise<boolean> {
+  try {
+    // Create a timeout promise for mobile reliability
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      setTimeout(() => reject(new Error('Language change timeout')), 20000);
+    });
+
+    // Race between language change and timeout
+    await Promise.race([
+      (async () => {
+        // First change the language
+        await i18n.changeLanguage(lng);
+
+        // Ensure the namespace is loaded for the new language
+        if (!i18n.hasResourceBundle(lng, DEFAULT_NS)) {
+          await i18n.loadNamespaces(DEFAULT_NS);
+        }
+      })(),
+      timeoutPromise,
+    ]);
+
+    // Small delay to ensure React has time to re-render with new translations
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    return true;
+  } catch (error) {
+    console.error(`Failed to change language to ${lng}:`, error);
+
+    // If we failed to load the new language, try to fall back to English
+    if (lng !== 'en') {
+      try {
+        await i18n.changeLanguage('en');
+        console.warn(`Fell back to English after failing to load ${lng}`);
+      } catch {
+        // English should always be available
+      }
+    }
+
+    return false;
+  }
+}
+
+// Add error handler for failed backend requests
+i18n.on('failedLoading', (lng, ns, msg) => {
+  console.warn(`Failed to load translations for ${lng}/${ns}: ${msg}`);
 });
 
 /**

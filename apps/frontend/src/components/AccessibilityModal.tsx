@@ -166,7 +166,7 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
 
   return (
     <div
-      className="fixed inset-0 z-[500] flex items-center justify-center bg-black/50"
+      className="fixed inset-0 z-[500] flex items-end sm:items-center justify-center bg-black/50"
       role="dialog"
       aria-modal="true"
       aria-labelledby="accessibility-modal-title"
@@ -174,13 +174,20 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
     >
       <div
         ref={modalRef}
-        className="bg-white rounded-lg shadow-xl max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-t-2xl sm:rounded-lg shadow-xl w-full sm:max-w-lg sm:mx-4
+                   max-h-[95vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain
+                   flex flex-col"
       >
+        {/* Mobile drag indicator */}
+        <div className="sm:hidden flex justify-center pt-3 pb-1">
+          <div className="w-10 h-1 bg-nhs-mid-grey/30 rounded-full"></div>
+        </div>
+
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-nhs-pale-grey">
+        <div className="flex items-center justify-between p-4 border-b border-nhs-pale-grey sticky top-0 bg-white z-10">
           <h2
             id="accessibility-modal-title"
-            className="text-xl font-bold text-text-primary"
+            className="text-lg sm:text-xl font-bold text-text-primary"
           >
             {t('accessibility.modal.title')}
           </h2>
@@ -188,8 +195,9 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="p-2 text-text-secondary hover:text-text-primary rounded-md
-                       focus:outline-none focus:ring-2 focus:ring-focus focus:bg-focus"
+            className="p-2.5 sm:p-2 text-text-secondary hover:text-text-primary rounded-md
+                       focus:outline-none focus:ring-2 focus:ring-focus focus:bg-focus
+                       min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
             aria-label={t('common.close')}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,19 +206,19 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
           </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 space-y-6">
+        {/* Content - scrollable area */}
+        <div className="p-4 sm:p-6 space-y-5 sm:space-y-6 flex-1 overflow-y-auto">
           {/* Text Size */}
           <fieldset>
             <legend className="text-base font-semibold text-text-primary mb-3">
               {t('accessibility.modal.textSize')}
             </legend>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {(['small', 'medium', 'large', 'extra-large'] as const).map((size) => (
                 <label
                   key={size}
-                  className={`flex items-center justify-center p-3 rounded-md border-2 cursor-pointer
-                             transition-colors duration-fast
+                  className={`flex items-center justify-center p-3 sm:p-4 rounded-md border-2 cursor-pointer
+                             transition-colors duration-fast min-h-[44px] touch-manipulation
                              ${settings.textSize === size
                                ? 'border-nhs-blue bg-nhs-blue/5 text-nhs-blue'
                                : 'border-nhs-pale-grey hover:border-nhs-mid-grey'
@@ -233,9 +241,9 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
             </div>
           </fieldset>
 
-          {/* High Contrast Toggle */}
-          <div className="flex items-center justify-between">
-            <label htmlFor="highContrast" className="text-base font-semibold text-text-primary">
+          {/* High Contrast Toggle - Larger touch target on mobile */}
+          <div className="flex items-center justify-between gap-4 py-2">
+            <label htmlFor="highContrast" className="text-base font-semibold text-text-primary flex-1">
               {t('accessibility.modal.highContrast')}
             </label>
             <button
@@ -244,22 +252,22 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
               role="switch"
               aria-checked={settings.highContrast}
               onClick={() => setSettings((s) => ({ ...s, highContrast: !s.highContrast }))}
-              className={`relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent
-                         transition-colors duration-200 ease-in-out
+              className={`relative inline-flex h-8 w-14 sm:h-7 sm:w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent
+                         transition-colors duration-200 ease-in-out touch-manipulation
                          focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2
                          ${settings.highContrast ? 'bg-nhs-blue' : 'bg-nhs-mid-grey'}`}
             >
               <span
-                className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0
+                className={`pointer-events-none inline-block h-7 w-7 sm:h-6 sm:w-6 transform rounded-full bg-white shadow ring-0
                            transition duration-200 ease-in-out
-                           ${settings.highContrast ? 'translate-x-5' : 'translate-x-0'}`}
+                           ${settings.highContrast ? 'translate-x-6 sm:translate-x-5' : 'translate-x-0'}`}
               />
             </button>
           </div>
 
-          {/* Reduced Motion Toggle */}
-          <div className="flex items-center justify-between">
-            <label htmlFor="reducedMotion" className="text-base font-semibold text-text-primary">
+          {/* Reduced Motion Toggle - Larger touch target on mobile */}
+          <div className="flex items-center justify-between gap-4 py-2">
+            <label htmlFor="reducedMotion" className="text-base font-semibold text-text-primary flex-1">
               {t('accessibility.modal.reducedMotion')}
             </label>
             <button
@@ -268,15 +276,15 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
               role="switch"
               aria-checked={settings.reducedMotion}
               onClick={() => setSettings((s) => ({ ...s, reducedMotion: !s.reducedMotion }))}
-              className={`relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent
-                         transition-colors duration-200 ease-in-out
+              className={`relative inline-flex h-8 w-14 sm:h-7 sm:w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent
+                         transition-colors duration-200 ease-in-out touch-manipulation
                          focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2
                          ${settings.reducedMotion ? 'bg-nhs-blue' : 'bg-nhs-mid-grey'}`}
             >
               <span
-                className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0
+                className={`pointer-events-none inline-block h-7 w-7 sm:h-6 sm:w-6 transform rounded-full bg-white shadow ring-0
                            transition duration-200 ease-in-out
-                           ${settings.reducedMotion ? 'translate-x-5' : 'translate-x-0'}`}
+                           ${settings.reducedMotion ? 'translate-x-6 sm:translate-x-5' : 'translate-x-0'}`}
               />
             </button>
           </div>
@@ -286,12 +294,12 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
             <legend className="text-base font-semibold text-text-primary mb-3">
               {t('accessibility.modal.lineSpacing')}
             </legend>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {(['normal', 'relaxed', 'loose'] as const).map((spacing) => (
                 <label
                   key={spacing}
-                  className={`flex items-center justify-center p-3 rounded-md border-2 cursor-pointer
-                             transition-colors duration-fast
+                  className={`flex items-center justify-center p-3 sm:p-4 rounded-md border-2 cursor-pointer
+                             transition-colors duration-fast min-h-[44px] touch-manipulation
                              ${settings.lineSpacing === spacing
                                ? 'border-nhs-blue bg-nhs-blue/5 text-nhs-blue'
                                : 'border-nhs-pale-grey hover:border-nhs-mid-grey'
@@ -315,26 +323,26 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
           </fieldset>
         </div>
 
-        {/* Footer */}
-        <div className="flex flex-col sm:flex-row gap-3 p-4 border-t border-nhs-pale-grey bg-bg-surface-secondary">
+        {/* Footer - sticky at bottom, full-width buttons on mobile */}
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 p-4 border-t border-nhs-pale-grey bg-bg-surface-secondary sticky bottom-0">
           <Button
             variant="ghost"
             onClick={handleReset}
-            className="order-3 sm:order-1 sm:mr-auto"
+            className="order-3 sm:order-1 sm:mr-auto w-full sm:w-auto"
           >
             {t('accessibility.modal.reset')}
           </Button>
           <Button
             variant="outline"
             onClick={onClose}
-            className="order-2"
+            className="order-2 w-full sm:w-auto"
           >
             {t('accessibility.modal.cancel')}
           </Button>
           <Button
             variant="primary"
             onClick={handleSave}
-            className="order-1 sm:order-3"
+            className="order-1 sm:order-3 w-full sm:w-auto"
           >
             {t('accessibility.modal.save')}
           </Button>

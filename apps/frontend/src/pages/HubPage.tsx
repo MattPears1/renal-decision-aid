@@ -102,10 +102,10 @@ export default function HubPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-bg-page to-bg-surface">
       {/* Session Timer Bar - Enhanced */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey py-3 px-4 sticky top-0 z-40" role="status" aria-live="polite">
-        <div className="max-w-container-xl mx-auto flex justify-between items-center flex-wrap gap-3">
-          <div className={`flex items-center gap-2 text-sm ${isWarning ? 'text-nhs-red' : 'text-text-secondary'}`}>
-            <div className={`p-1.5 rounded-full ${isWarning ? 'bg-nhs-red/10' : 'bg-nhs-blue/10'}`}>
+      <div className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey py-2 sm:py-3 px-3 sm:px-4 sticky top-0 z-40" role="status" aria-live="polite">
+        <div className="max-w-container-xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-3">
+          <div className={`flex items-center gap-2 text-xs sm:text-sm ${isWarning ? 'text-nhs-red' : 'text-text-secondary'}`}>
+            <div className={`p-1 sm:p-1.5 rounded-full ${isWarning ? 'bg-nhs-red/10' : 'bg-nhs-blue/10'}`}>
               <ClockIcon />
             </div>
             <span>
@@ -117,51 +117,53 @@ export default function HubPage() {
             {isWarning && (
               <button
                 onClick={extendSession}
-                className="ml-2 px-3 py-1 bg-nhs-blue text-white text-xs font-semibold rounded-full hover:bg-nhs-blue-dark transition-colors"
+                className="ml-2 px-3 py-1.5 min-h-[36px] bg-nhs-blue text-white text-xs font-semibold rounded-full hover:bg-nhs-blue-dark transition-colors"
               >
                 {t('hub.session.extend', 'Extend session')}
               </button>
             )}
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <Link
               to="/questions"
-              className="flex items-center gap-2 text-sm text-nhs-blue hover:text-nhs-blue-dark transition-colors focus:outline-none focus:ring-2 focus:ring-focus rounded px-2 py-1"
+              className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-nhs-blue hover:text-nhs-blue-dark transition-colors focus:outline-none focus:ring-2 focus:ring-focus rounded px-2 py-1.5 min-h-[36px]"
             >
               <EditIcon />
-              {t('hub.session.updateAnswers', 'Update My Answers')}
+              <span className="hidden xs:inline">{t('hub.session.updateAnswers', 'Update My Answers')}</span>
+              <span className="xs:hidden">{t('hub.session.update', 'Update')}</span>
             </Link>
-            <span className="text-nhs-pale-grey">|</span>
+            <span className="text-nhs-pale-grey hidden sm:inline">|</span>
             <Link
               to="/"
-              className="flex items-center gap-2 text-sm text-text-secondary hover:text-nhs-blue transition-colors focus:outline-none focus:ring-2 focus:ring-focus rounded px-2 py-1"
+              className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-text-secondary hover:text-nhs-blue transition-colors focus:outline-none focus:ring-2 focus:ring-focus rounded px-2 py-1.5 min-h-[36px]"
             >
               <HomeIcon />
-              {t('hub.session.startOver', 'Start Over')}
+              <span className="hidden xs:inline">{t('hub.session.startOver', 'Start Over')}</span>
+              <span className="xs:hidden">{t('hub.session.home', 'Home')}</span>
             </Link>
           </div>
         </div>
       </div>
 
-      <div className="max-w-container-xl mx-auto px-4 py-8 md:py-12 pb-32">
+      <div className="max-w-container-xl mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 pb-28 sm:pb-32">
         {/* Welcome Section - Enhanced */}
-        <section className="mb-10" aria-labelledby="welcome-heading">
-          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-nhs-pale-grey">
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
+        <section className="mb-6 sm:mb-10" aria-labelledby="welcome-heading">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-sm border border-nhs-pale-grey">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 sm:gap-6">
               <div className="flex-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-nhs-blue/10 rounded-full text-sm font-medium text-nhs-blue mb-4">
+                <div className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 bg-nhs-blue/10 rounded-full text-xs sm:text-sm font-medium text-nhs-blue mb-3 sm:mb-4">
                   <span className="w-2 h-2 bg-nhs-green rounded-full animate-pulse" />
                   {t('hub.welcome.badge', 'Your personalised journey')}
                 </div>
-                <h1 id="welcome-heading" className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+                <h1 id="welcome-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-3 sm:mb-4">
                   {t('hub.welcome.title', 'Your Personalised Treatment Options')}
                 </h1>
-                <p className="text-lg text-text-secondary max-w-[700px] leading-relaxed mb-4">
+                <p className="text-sm sm:text-base md:text-lg text-text-secondary max-w-[700px] leading-relaxed mb-3 sm:mb-4">
                   {getWelcomeMessage()}
                 </p>
-                <p className="text-sm text-text-muted flex items-center gap-2">
-                  <InfoIcon className="w-4 h-4" />
-                  {t('hub.welcome.reminder', 'Remember, your kidney team will help you make the final decision.')}
+                <p className="text-xs sm:text-sm text-text-muted flex items-start sm:items-center gap-2">
+                  <InfoIcon className="w-4 h-4 flex-shrink-0 mt-0.5 sm:mt-0" />
+                  <span>{t('hub.welcome.reminder', 'Remember, your kidney team will help you make the final decision.')}</span>
                 </p>
               </div>
             </div>
@@ -170,22 +172,26 @@ export default function HubPage() {
 
         {/* Session Reminder Alert - Enhanced */}
         <div
-          className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-orange/10 border-l-4 border-nhs-warm-yellow rounded-xl p-5 mb-10 flex items-start gap-4 shadow-sm"
+          className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-orange/10 border-l-4 border-nhs-warm-yellow rounded-lg sm:rounded-xl p-3 sm:p-5 mb-6 sm:mb-10 flex flex-col sm:flex-row items-start gap-3 sm:gap-4 shadow-sm"
           role="alert"
           aria-labelledby="session-alert-title"
         >
-          <div className="w-10 h-10 bg-nhs-warm-yellow/20 rounded-full flex items-center justify-center flex-shrink-0">
-            <WarningIcon className="w-5 h-5 text-nhs-orange" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-warm-yellow/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <WarningIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-orange" />
           </div>
           <div className="flex-1">
-            <p className="font-bold text-text-primary mb-1" id="session-alert-title">
+            <p className="font-bold text-text-primary mb-1 text-sm sm:text-base" id="session-alert-title">
               {t('hub.alert.title', 'Remember to save your summary')}
             </p>
-            <p className="text-sm text-text-secondary">
+            <p className="text-xs sm:text-sm text-text-secondary">
               {t('hub.alert.message', 'Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration.')}
             </p>
           </div>
-          <Link to="/summary" className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue text-white text-sm font-semibold rounded-lg hover:bg-nhs-blue-dark transition-colors flex-shrink-0">
+          <Link to="/summary" className="sm:hidden inline-flex items-center gap-2 px-4 py-2 min-h-[44px] bg-nhs-blue text-white text-sm font-semibold rounded-lg hover:bg-nhs-blue-dark transition-colors w-full justify-center mt-2">
+            {t('hub.alert.saveNow', 'Save Now')}
+            <ChevronRightIcon />
+          </Link>
+          <Link to="/summary" className="hidden sm:inline-flex items-center gap-2 px-4 py-2 min-h-[44px] bg-nhs-blue text-white text-sm font-semibold rounded-lg hover:bg-nhs-blue-dark transition-colors flex-shrink-0">
             {t('hub.alert.saveNow', 'Save Now')}
             <ChevronRightIcon />
           </Link>

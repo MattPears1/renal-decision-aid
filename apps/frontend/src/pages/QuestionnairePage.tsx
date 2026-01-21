@@ -199,25 +199,25 @@ export default function QuestionnairePage() {
   if (showIntro) {
     return (
       <main className="min-h-screen bg-bg-page">
-        <div className="max-w-container-lg mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center">
-          <div className="bg-white rounded-lg shadow-md p-8 md:p-12 max-w-[700px] w-full text-center">
+        <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 flex flex-col items-center justify-center">
+          <div className="bg-white rounded-lg shadow-md p-5 sm:p-8 md:p-12 max-w-[700px] w-full text-center">
             {/* Icon */}
-            <div className="w-20 h-20 mx-auto mb-6 bg-nhs-blue/10 rounded-full flex items-center justify-center">
-              <svg className="w-10 h-10 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-nhs-blue/10 rounded-full flex items-center justify-center">
+              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M9 11l3 3L22 4" />
                 <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
               </svg>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 sm:mb-4">
               {t('questionnaire.intro.title', 'Tell Us About Yourself')}
             </h1>
-            <p className="text-lg text-text-secondary mb-8 max-w-[550px] mx-auto">
+            <p className="text-base sm:text-lg text-text-secondary mb-6 sm:mb-8 max-w-[550px] mx-auto">
               {t('questionnaire.intro.description', 'These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.')}
             </p>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8 text-left">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 text-left">
               <FeatureItem icon={<CheckIcon />} text={t('questionnaire.intro.features.questions', '7 quick questions')} />
               <FeatureItem icon={<ClockIcon />} text={t('questionnaire.intro.features.time', 'Takes 3-5 minutes')} />
               <FeatureItem icon={<LockIcon />} text={t('questionnaire.intro.features.private', 'Completely private')} />
@@ -227,8 +227,8 @@ export default function QuestionnairePage() {
             {/* Start Button */}
             <button
               onClick={() => setShowIntro(false)}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4
-                         text-lg font-bold bg-nhs-blue text-white
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto
+                         text-base sm:text-lg font-bold bg-nhs-blue text-white
                          border-2 border-nhs-blue rounded-md min-h-[48px]
                          transition-all duration-fast
                          hover:bg-nhs-blue-dark hover:border-nhs-blue-dark
@@ -239,30 +239,30 @@ export default function QuestionnairePage() {
             </button>
 
             {/* Skip Link */}
-            <div className="mt-8 pt-6 border-t border-nhs-pale-grey">
-              <p className="text-sm text-text-secondary mb-3">
+            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-nhs-pale-grey">
+              <p className="text-xs sm:text-sm text-text-secondary mb-3">
                 {t('questionnaire.intro.skipText', 'If you prefer not to answer these questions, you can skip to general treatment information.')}
               </p>
               <button
                 onClick={handleSkipAll}
-                className="text-sm text-nhs-blue hover:underline focus:outline-none focus:ring-2 focus:ring-focus rounded px-2 py-1"
+                className="text-sm text-nhs-blue hover:underline focus:outline-none focus:ring-2 focus:ring-focus rounded px-3 py-2 min-h-[44px]"
               >
                 {t('questionnaire.intro.skipButton', 'Skip All Questions')}
               </button>
             </div>
 
             {/* Navigation */}
-            <div className="mt-6 pt-6 border-t border-nhs-pale-grey flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-nhs-pale-grey flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
               <button
                 onClick={() => navigate('/journey')}
-                className="inline-flex items-center gap-2 px-4 py-2 text-nhs-blue hover:underline focus:outline-none focus:ring-2 focus:ring-focus rounded"
+                className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] text-nhs-blue hover:underline focus:outline-none focus:ring-2 focus:ring-focus rounded text-sm sm:text-base"
               >
                 <ArrowLeftIcon />
                 {t('questionnaire.intro.backToJourney', 'Back to Journey Stage')}
               </button>
               <button
                 onClick={() => navigate('/hub')}
-                className="inline-flex items-center gap-2 px-4 py-2 text-text-secondary hover:text-nhs-blue focus:outline-none focus:ring-2 focus:ring-focus rounded"
+                className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] text-text-secondary hover:text-nhs-blue focus:outline-none focus:ring-2 focus:ring-focus rounded text-sm sm:text-base"
               >
                 <HomeIcon />
                 {t('nav.returnToHub', 'Return to Hub')}
@@ -277,15 +277,15 @@ export default function QuestionnairePage() {
   // Question Screen
   return (
     <main className="min-h-screen bg-bg-page">
-      <div className="max-w-container-lg mx-auto px-4 py-8 md:py-12 flex flex-col min-h-[calc(100vh-200px)]">
+      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 flex flex-col min-h-[calc(100vh-200px)]">
 
         {/* Progress Bar */}
-        <div className="mb-8" role="progressbar" aria-valuenow={currentQuestion + 1} aria-valuemin={1} aria-valuemax={totalQuestions} aria-label={t('questionnaire.progress.label', 'Question progress')}>
+        <div className="mb-6 sm:mb-8" role="progressbar" aria-valuenow={currentQuestion + 1} aria-valuemin={1} aria-valuemax={totalQuestions} aria-label={t('questionnaire.progress.label', 'Question progress')}>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-lg font-semibold text-nhs-blue">
+            <span className="text-base sm:text-lg font-semibold text-nhs-blue">
               {t('questionnaire.progress.questionOf', 'Question {{current}} of {{total}}', { current: currentQuestion + 1, total: totalQuestions })}
             </span>
-            <span className="text-sm text-text-secondary">
+            <span className="text-xs sm:text-sm text-text-secondary">
               {Math.round(progress)}% {t('questionnaire.progress.complete', 'complete')}
             </span>
           </div>
@@ -298,17 +298,17 @@ export default function QuestionnairePage() {
         </div>
 
         {/* Question Card */}
-        <div className="bg-white rounded-lg shadow-md p-6 md:p-8 flex-1 flex flex-col">
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 flex-1 flex flex-col">
           {/* Question Header */}
-          <div className="mb-8">
-            <span className="inline-flex items-center gap-1 px-3 py-1 bg-nhs-pale-grey rounded text-xs text-text-secondary uppercase tracking-wide mb-4">
+          <div className="mb-6 sm:mb-8">
+            <span className="inline-flex items-center gap-1 px-2 sm:px-3 py-1 bg-nhs-pale-grey rounded text-xs text-text-secondary uppercase tracking-wide mb-3 sm:mb-4">
               {question.type === 'slider' && t('questionnaire.types.scale', 'Scale Rating')}
               {question.type === 'radio' && t('questionnaire.types.single', 'Single Choice')}
               {question.type === 'checkbox' && t('questionnaire.types.multiple', 'Multiple Choice')}
             </span>
 
-            <div className="flex items-start gap-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-text-primary flex-1">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary flex-1">
                 {t(question.questionKey,
                   question.id === 'knowledge-level' ? 'How much do you know about kidney disease and its treatments?' :
                   question.id === 'session-goal' ? 'What would you like to get from this session?' :
@@ -320,7 +320,7 @@ export default function QuestionnairePage() {
                 )}
               </h2>
               <button
-                className="flex-shrink-0 w-12 h-12 rounded-full bg-nhs-blue text-white flex items-center justify-center transition-all hover:bg-nhs-blue-dark hover:scale-105 focus:outline-none focus:ring-3 focus:ring-focus"
+                className="flex-shrink-0 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-nhs-blue text-white flex items-center justify-center transition-all hover:bg-nhs-blue-dark hover:scale-105 focus:outline-none focus:ring-3 focus:ring-focus"
                 aria-label={t('questionnaire.audio.listen', 'Listen to this question')}
                 title={t('questionnaire.audio.listen', 'Listen to this question')}
               >
@@ -329,9 +329,9 @@ export default function QuestionnairePage() {
             </div>
 
             {question.hintKey && (
-              <p className="mt-4 text-base text-text-secondary flex items-center gap-2">
-                <InfoIcon />
-                {t(question.hintKey,
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-text-secondary flex items-start gap-2">
+                <span className="flex-shrink-0 mt-0.5"><InfoIcon /></span>
+                <span>{t(question.hintKey,
                   question.id === 'knowledge-level' ? 'This helps us tailor information to your current understanding.' :
                   question.id === 'session-goal' ? 'Select the option that best describes your main goal today.' :
                   question.id === 'learning-preferences' ? 'This helps us present information in ways that work best for you.' :
@@ -339,7 +339,7 @@ export default function QuestionnairePage() {
                   question.id === 'home-support' ? 'Some treatments are easier with help from family or carers.' :
                   question.id === 'living-situation' ? 'This helps us understand which treatments might work best in your home environment.' :
                   'Your priorities will help us highlight what matters to you in each treatment option.'
-                )}
+                )}</span>
               </p>
             )}
           </div>
@@ -348,12 +348,12 @@ export default function QuestionnairePage() {
           <div className="flex-1" role="group" aria-labelledby={`question-${question.id}`}>
             {/* Checkbox Info */}
             {question.type === 'checkbox' && (
-              <div className="flex items-center gap-2 px-4 py-3 bg-nhs-blue/10 rounded-md text-sm text-nhs-blue-dark mb-4">
-                <InfoIcon />
-                {question.maxSelections
+              <div className="flex items-start gap-2 px-3 sm:px-4 py-2 sm:py-3 bg-nhs-blue/10 rounded-md text-xs sm:text-sm text-nhs-blue-dark mb-3 sm:mb-4">
+                <span className="flex-shrink-0 mt-0.5"><InfoIcon /></span>
+                <span>{question.maxSelections
                   ? t('questionnaire.hints.selectUpTo', 'Select up to {{max}} priorities that are most important to you.', { max: question.maxSelections })
                   : t('questionnaire.hints.selectAll', 'Select all that apply - you can choose more than one option.')
-                }
+                }</span>
               </div>
             )}
 
@@ -370,11 +370,11 @@ export default function QuestionnairePage() {
 
             {/* Radio Question */}
             {question.type === 'radio' && question.optionKeys && (
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2 sm:gap-3">
                 {question.optionKeys.map(option => (
                   <label
                     key={option.value}
-                    className={`relative flex items-center gap-4 p-4 bg-white border-2 rounded-md cursor-pointer transition-all min-h-[64px]
+                    className={`relative flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border-2 rounded-md cursor-pointer transition-all min-h-[56px] sm:min-h-[64px]
                       ${answers[question.id] === option.value
                         ? 'border-nhs-blue bg-nhs-blue/5'
                         : 'border-nhs-pale-grey hover:border-nhs-blue hover:bg-nhs-blue/5'
@@ -387,12 +387,12 @@ export default function QuestionnairePage() {
                       value={option.value}
                       checked={answers[question.id] === option.value}
                       onChange={() => handleRadioChange(option.value)}
-                      className="w-7 h-7 accent-nhs-blue cursor-pointer"
+                      className="w-6 h-6 sm:w-7 sm:h-7 accent-nhs-blue cursor-pointer flex-shrink-0"
                     />
-                    <span className="flex-1">
-                      <span className="font-semibold text-text-primary block">{t(option.labelKey)}</span>
+                    <span className="flex-1 min-w-0">
+                      <span className="font-semibold text-text-primary block text-sm sm:text-base">{t(option.labelKey)}</span>
                       {option.descriptionKey && (
-                        <span className="text-sm text-text-secondary">{t(option.descriptionKey)}</span>
+                        <span className="text-xs sm:text-sm text-text-secondary">{t(option.descriptionKey)}</span>
                       )}
                     </span>
                   </label>
@@ -402,7 +402,7 @@ export default function QuestionnairePage() {
 
             {/* Checkbox Question */}
             {question.type === 'checkbox' && question.optionKeys && (
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2 sm:gap-3">
                 {question.optionKeys.map(option => {
                   const currentValues = (answers[question.id] as string[]) || [];
                   const isChecked = currentValues.includes(option.value);
@@ -411,7 +411,7 @@ export default function QuestionnairePage() {
                   return (
                     <label
                       key={option.value}
-                      className={`relative flex items-center gap-4 p-4 bg-white border-2 rounded-md cursor-pointer transition-all min-h-[64px]
+                      className={`relative flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border-2 rounded-md cursor-pointer transition-all min-h-[56px] sm:min-h-[64px]
                         ${isChecked
                           ? 'border-nhs-blue bg-nhs-blue/5'
                           : isDisabled
@@ -427,12 +427,12 @@ export default function QuestionnairePage() {
                         checked={isChecked}
                         disabled={isDisabled}
                         onChange={(e) => handleCheckboxChange(option.value, e.target.checked)}
-                        className="w-7 h-7 accent-nhs-blue cursor-pointer disabled:cursor-not-allowed"
+                        className="w-6 h-6 sm:w-7 sm:h-7 accent-nhs-blue cursor-pointer disabled:cursor-not-allowed flex-shrink-0"
                       />
-                      <span className="flex-1">
-                        <span className="font-semibold text-text-primary block">{t(option.labelKey)}</span>
+                      <span className="flex-1 min-w-0">
+                        <span className="font-semibold text-text-primary block text-sm sm:text-base">{t(option.labelKey)}</span>
                         {option.descriptionKey && (
-                          <span className="text-sm text-text-secondary">{t(option.descriptionKey)}</span>
+                          <span className="text-xs sm:text-sm text-text-secondary">{t(option.descriptionKey)}</span>
                         )}
                       </span>
                     </label>
@@ -443,26 +443,26 @@ export default function QuestionnairePage() {
           </div>
 
           {/* Navigation */}
-          <div className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div>
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+            <div className="order-2 sm:order-1">
               <button
                 onClick={handleBack}
-                className="inline-flex items-center gap-2 px-4 py-2 text-nhs-blue border-2 border-transparent rounded hover:bg-nhs-pale-grey focus:outline-none focus:ring-3 focus:ring-focus transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] text-nhs-blue border-2 border-transparent rounded hover:bg-nhs-pale-grey focus:outline-none focus:ring-3 focus:ring-focus transition-colors text-sm sm:text-base"
               >
                 <ArrowLeftIcon />
                 {t('common.back', 'Back')}
               </button>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto order-1 sm:order-2">
               <button
                 onClick={handleSkip}
-                className="px-4 py-2 text-text-secondary hover:text-text-primary hover:bg-nhs-pale-grey rounded transition-colors focus:outline-none focus:ring-3 focus:ring-focus"
+                className="px-4 py-2 min-h-[44px] text-text-secondary hover:text-text-primary hover:bg-nhs-pale-grey rounded transition-colors focus:outline-none focus:ring-3 focus:ring-focus text-sm sm:text-base"
               >
                 {t('questionnaire.skipQuestion', 'Skip this question')}
               </button>
               <button
                 onClick={handleNext}
-                className="inline-flex items-center gap-2 px-6 py-3 text-base font-bold bg-nhs-blue text-white border-2 border-nhs-blue rounded-md min-h-[48px] transition-all hover:bg-nhs-blue-dark hover:border-nhs-blue-dark focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm sm:text-base font-bold bg-nhs-blue text-white border-2 border-nhs-blue rounded-md min-h-[48px] w-full sm:w-auto transition-all hover:bg-nhs-blue-dark hover:border-nhs-blue-dark focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
               >
                 {currentQuestion === totalQuestions - 1
                   ? t('questionnaire.viewResults', 'View My Results')
@@ -495,13 +495,13 @@ function SliderQuestion({ value, onChange, labelKeys, min, max }: SliderQuestion
   };
 
   return (
-    <div className="py-8">
-      {/* Labels */}
-      <div className="flex justify-between mb-4">
+    <div className="py-4 sm:py-8">
+      {/* Labels - hidden on mobile, shown above slider on larger screens */}
+      <div className="hidden sm:flex justify-between mb-4">
         {labelKeys.map((labelKey, index) => (
           <span
             key={index}
-            className={`text-center text-sm max-w-[100px] ${
+            className={`text-center text-xs sm:text-sm max-w-[80px] sm:max-w-[100px] ${
               value === index + min
                 ? 'text-nhs-blue font-semibold'
                 : 'text-text-secondary'
@@ -519,8 +519,9 @@ function SliderQuestion({ value, onChange, labelKeys, min, max }: SliderQuestion
         max={max}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full h-2 bg-nhs-pale-grey rounded-full appearance-none cursor-pointer accent-nhs-blue
-                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:h-8
+        className="w-full h-3 sm:h-2 bg-nhs-pale-grey rounded-full appearance-none cursor-pointer accent-nhs-blue
+                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-10 [&::-webkit-slider-thumb]:h-10
+                   sm:[&::-webkit-slider-thumb]:w-8 sm:[&::-webkit-slider-thumb]:h-8
                    [&::-webkit-slider-thumb]:bg-nhs-blue [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4
                    [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer
                    [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-110
@@ -530,11 +531,11 @@ function SliderQuestion({ value, onChange, labelKeys, min, max }: SliderQuestion
       />
 
       {/* Value Display */}
-      <div className="text-center mt-6">
+      <div className="text-center mt-4 sm:mt-6">
         <span className="inline-flex items-center justify-center w-12 h-12 bg-nhs-blue text-white text-xl font-bold rounded-full mb-2">
           {value}
         </span>
-        <p className="text-base text-text-secondary">{getValueText(value)}</p>
+        <p className="text-sm sm:text-base text-text-secondary">{getValueText(value)}</p>
       </div>
     </div>
   );
@@ -548,11 +549,11 @@ interface FeatureItemProps {
 
 function FeatureItem({ icon, text }: FeatureItemProps) {
   return (
-    <div className="flex items-start gap-3">
-      <span className="w-6 h-6 flex-shrink-0 text-nhs-green mt-0.5">
+    <div className="flex items-start gap-2 sm:gap-3">
+      <span className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-nhs-green mt-0.5">
         {icon}
       </span>
-      <span className="text-base text-text-primary">{text}</span>
+      <span className="text-sm sm:text-base text-text-primary">{text}</span>
     </div>
   );
 }

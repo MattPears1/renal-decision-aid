@@ -22,8 +22,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    // Base styles with min-h-[44px] for WCAG 2.2 touch target compliance
     const baseStyles =
-      'inline-flex items-center justify-center font-semibold rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-focus disabled:opacity-50 disabled:cursor-not-allowed';
+      'inline-flex items-center justify-center font-semibold rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-focus disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] touch-manipulation';
 
     const variants = {
       primary:
@@ -38,10 +39,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-nhs-red text-white hover:bg-red-700 active:bg-red-800',
     };
 
+    // Sizes with minimum touch target dimensions (44px) on mobile
     const sizes = {
-      sm: 'px-3 py-1.5 text-sm',
-      md: 'px-4 py-2.5 text-base',
-      lg: 'px-6 py-3 text-lg',
+      sm: 'px-3 py-2 text-sm min-w-[44px]',
+      md: 'px-4 py-2.5 text-base min-w-[44px]',
+      lg: 'px-6 py-3 text-lg min-w-[44px]',
     };
 
     return (

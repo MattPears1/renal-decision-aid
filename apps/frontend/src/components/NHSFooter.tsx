@@ -31,28 +31,34 @@ export default function NHSFooter() {
             </div>
           </div>
 
-          {/* Footer Links - Stack on mobile, inline on larger screens */}
+          {/* Footer Links - Stack on mobile with full-width touch targets, inline on larger screens */}
           <nav
-            className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-1 sm:gap-4 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-0 sm:gap-2 md:gap-4 w-full sm:w-auto"
             aria-label={t('footer.navigationLabel')}
           >
             <Link
               to="/disclaimer"
-              className="text-nhs-blue text-sm font-medium no-underline hover:text-nhs-blue-dark hover:bg-nhs-blue/5 px-3 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-focus"
+              className="text-nhs-blue text-sm font-medium no-underline hover:text-nhs-blue-dark hover:bg-nhs-blue/5
+                         px-3 py-3 sm:py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-focus
+                         min-h-[44px] flex items-center touch-manipulation"
             >
               {t('footer.accessibility')}
             </Link>
-            <span className="text-nhs-mid-grey/50 hidden sm:inline" aria-hidden="true">|</span>
+            <span className="text-nhs-mid-grey/50 hidden sm:inline self-center" aria-hidden="true">|</span>
             <Link
               to="/disclaimer"
-              className="text-nhs-blue text-sm font-medium no-underline hover:text-nhs-blue-dark hover:bg-nhs-blue/5 px-3 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-focus"
+              className="text-nhs-blue text-sm font-medium no-underline hover:text-nhs-blue-dark hover:bg-nhs-blue/5
+                         px-3 py-3 sm:py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-focus
+                         min-h-[44px] flex items-center touch-manipulation"
             >
               {t('footer.privacyPolicy')}
             </Link>
-            <span className="text-nhs-mid-grey/50 hidden sm:inline" aria-hidden="true">|</span>
+            <span className="text-nhs-mid-grey/50 hidden sm:inline self-center" aria-hidden="true">|</span>
             <Link
               to="/disclaimer"
-              className="text-nhs-blue text-sm font-medium no-underline hover:text-nhs-blue-dark hover:bg-nhs-blue/5 px-3 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-focus"
+              className="text-nhs-blue text-sm font-medium no-underline hover:text-nhs-blue-dark hover:bg-nhs-blue/5
+                         px-3 py-3 sm:py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-focus
+                         min-h-[44px] flex items-center touch-manipulation"
             >
               {t('footer.contact')}
             </Link>
@@ -100,10 +106,12 @@ export default function NHSFooter() {
               </div>
             </div>
 
-            {/* Contact button - full width on mobile, auto on larger */}
+            {/* Contact button - full width on mobile, auto on larger, with proper touch target */}
             <a
               href="mailto:pearsresearchservices@outlook.com"
-              className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-2.5 sm:py-2 bg-nhs-blue/5 hover:bg-nhs-blue/10 text-nhs-blue text-sm font-medium rounded-lg transition-colors w-full sm:w-auto sm:self-end"
+              className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 sm:py-2.5
+                         bg-nhs-blue/5 hover:bg-nhs-blue/10 text-nhs-blue text-sm font-medium rounded-lg
+                         transition-colors w-full sm:w-auto sm:self-end min-h-[44px] touch-manipulation"
             >
               <svg
                 className="w-4 h-4 flex-shrink-0"

@@ -6,6 +6,7 @@ import {
   isSupportedLanguage,
   getLanguageDirection,
   getLanguageFont,
+  changeLanguageAndWait,
   type SupportedLanguage,
 } from '../config/i18n';
 
@@ -105,26 +106,22 @@ export function useLanguage(): UseLanguageReturn {
   const isRTL = direction === 'rtl';
   const fontFamily = getLanguageFont(currentLanguage);
 
-  // Change language function
+  // Change language function with proper async handling
   const changeLanguage = useCallback(
     async (lang: SupportedLanguage): Promise<void> => {
       if (!isSupportedLanguage(lang)) {
         console.warn(`Language '${lang}' is not supported. Falling back to English.`);
-        await i18n.changeLanguage('en');
+        await changeLanguageAndWait('en');
         return;
       }
 
-      await i18n.changeLanguage(lang);
-
-      // Update document direction for RTL support
-      const newDirection = getLanguageDirection(lang);
-      document.documentElement.dir = newDirection;
-      document.documentElement.lang = lang;
+      // Use the robust changeLanguageAndWait with timeout and retry logic
+      await changeLanguageAndWait(lang);
 
       // Update font family on body
       document.body.style.fontFamily = getLanguageFont(lang);
     },
-    [i18n]
+    []
   );
 
   // Get list of supported languages

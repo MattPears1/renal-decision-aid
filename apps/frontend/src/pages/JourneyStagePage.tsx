@@ -95,22 +95,22 @@ export default function JourneyStagePage() {
     <main className="min-h-screen bg-bg-page">
       {/* Progress Indicator */}
       <div className="bg-white border-b border-nhs-pale-grey">
-        <div className="max-w-container-lg mx-auto px-4 py-4">
+        <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-3 sm:py-4">
           <ProgressSteps currentStep={3} />
         </div>
       </div>
 
-      <div className="max-w-container-lg mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
         {/* Page Header */}
-        <header className="text-center mb-8">
-          <div className="flex items-center justify-center gap-4 flex-wrap mb-2">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary">
+        <header className="text-center mb-6 sm:mb-8">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap mb-2">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary">
               {t('journey.title', 'Where Are You in Your Journey?')}
             </h1>
             <button
               type="button"
               onClick={handlePlayAudio}
-              className="flex-shrink-0 w-11 h-11 bg-nhs-blue text-white rounded-full
+              className="flex-shrink-0 w-11 h-11 min-w-[44px] min-h-[44px] bg-nhs-blue text-white rounded-full
                          flex items-center justify-center
                          transition-all duration-150
                          hover:bg-nhs-blue-dark hover:scale-105
@@ -121,14 +121,14 @@ export default function JourneyStagePage() {
               <AudioIcon />
             </button>
           </div>
-          <p className="text-lg text-text-secondary">
+          <p className="text-base sm:text-lg text-text-secondary px-2">
             {t('journey.subtitle', 'Select the option that best describes your situation')}
           </p>
         </header>
 
         {/* Introduction Text */}
-        <div className="max-w-[700px] mx-auto text-center mb-8">
-          <p className="text-text-secondary leading-relaxed">
+        <div className="max-w-[700px] mx-auto text-center mb-6 sm:mb-8 px-2">
+          <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
             {t('journey.intro', 'Everyone\'s kidney journey is different. To help us show you the most relevant information, please tell us where you are right now. There are no right or wrong answers.')}
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function JourneyStagePage() {
         {showError && (
           <div
             id="error-message"
-            className="flex items-center gap-3 p-4 mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[900px] mx-auto"
+            className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 mb-4 sm:mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[900px] mx-auto text-sm sm:text-base"
             role="alert"
             aria-live="polite"
           >
@@ -156,7 +156,7 @@ export default function JourneyStagePage() {
             </legend>
 
             <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8"
               role="radiogroup"
               aria-label={t('journey.radioGroupLabel', 'Journey stage options')}
             >
@@ -176,20 +176,20 @@ export default function JourneyStagePage() {
         </form>
 
         {/* Reassurance Box */}
-        <div className="bg-blue-50 border-l-4 border-nhs-blue rounded-r-md p-4 mb-8 max-w-[900px] mx-auto">
-          <p className="text-nhs-blue-dark text-sm">
+        <div className="bg-blue-50 border-l-4 border-nhs-blue rounded-r-md p-3 sm:p-4 mb-6 sm:mb-8 max-w-[900px] mx-auto">
+          <p className="text-nhs-blue-dark text-xs sm:text-sm">
             {t('journey.reassurance', 'Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.')}
           </p>
         </div>
 
         {/* Help Button */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <button
             type="button"
             onClick={() => setShowHelpModal(true)}
-            className="inline-flex items-center gap-2 px-6 py-3
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px]
                        bg-transparent border-2 border-nhs-blue rounded-md
-                       text-nhs-blue font-semibold
+                       text-nhs-blue font-semibold text-sm sm:text-base
                        transition-colors duration-150
                        hover:bg-nhs-blue hover:text-white
                        focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
@@ -201,12 +201,12 @@ export default function JourneyStagePage() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4 pt-6 border-t border-nhs-pale-grey max-w-[900px] mx-auto">
+        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-nhs-pale-grey max-w-[900px] mx-auto">
           <button
             type="button"
             onClick={() => navigate('/disclaimer')}
-            className="inline-flex items-center gap-2 px-6 py-3 text-nhs-blue hover:underline
-                       focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue hover:underline
+                       focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded text-base"
           >
             <BackIcon />
             {t('nav.back', 'Back')}
@@ -215,8 +215,8 @@ export default function JourneyStagePage() {
           <button
             type="button"
             onClick={handleContinue}
-            className="inline-flex items-center gap-2 px-8 py-3 min-w-[140px] justify-center
-                       bg-nhs-green text-white font-bold rounded-md text-lg
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] w-full sm:w-auto sm:min-w-[140px] justify-center
+                       bg-nhs-green text-white font-bold rounded-md text-base sm:text-lg
                        transition-colors duration-150
                        hover:bg-nhs-green-dark
                        focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
@@ -254,16 +254,16 @@ function ProgressSteps({ currentStep }: ProgressStepsProps) {
 
   return (
     <div
-      className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap"
+      className="flex items-center justify-center gap-1 sm:gap-2 md:gap-4 flex-wrap"
       aria-label={t('progress.ariaLabel', 'Progress through decision aid')}
     >
       {steps.map((s, index) => (
         <div
           key={s.step}
-          className={`flex items-center gap-2 ${index < steps.length - 1 ? 'after:content-[""] after:w-4 sm:after:w-8 after:h-0.5 after:bg-nhs-pale-grey after:ml-2 sm:after:ml-4' : ''}`}
+          className={`flex items-center gap-1 sm:gap-2 ${index < steps.length - 1 ? 'after:content-[""] after:w-2 sm:after:w-4 md:after:w-8 after:h-0.5 after:bg-nhs-pale-grey after:ml-1 sm:after:ml-2 md:after:ml-4' : ''}`}
         >
           <div
-            className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-semibold
+            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold flex-shrink-0
                         ${s.step < currentStep
                           ? 'bg-nhs-green text-white'
                           : s.step === currentStep
@@ -275,7 +275,7 @@ function ProgressSteps({ currentStep }: ProgressStepsProps) {
             {s.step < currentStep ? <CheckIcon /> : s.step}
           </div>
           <span
-            className={`text-xs sm:text-sm hidden sm:inline
+            className={`text-xs sm:text-sm hidden md:inline
                         ${s.step === currentStep ? 'font-semibold text-text-primary' : 'text-text-secondary'}`}
           >
             {s.label}
@@ -299,15 +299,14 @@ interface JourneyCardProps {
 function JourneyCard({ id, title, description, icon, isSelected, onSelect }: JourneyCardProps) {
   return (
     <label
-      className={`relative flex gap-4 p-6 bg-white border-2 rounded-lg cursor-pointer
+      className={`relative flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white border-2 rounded-lg cursor-pointer min-h-[100px]
                   transition-all duration-200
                   hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5
                   focus-within:outline-none focus-within:ring-[3px] focus-within:ring-focus focus-within:ring-offset-2
                   ${isSelected
                     ? 'border-nhs-blue bg-blue-50 shadow-md'
                     : 'border-nhs-pale-grey'
-                  }
-                  max-sm:flex-col max-sm:text-center max-sm:items-center max-sm:p-4`}
+                  }`}
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -330,7 +329,7 @@ function JourneyCard({ id, title, description, icon, isSelected, onSelect }: Jou
       {/* Selected Checkmark */}
       {isSelected && (
         <span
-          className="absolute top-2 right-2 w-7 h-7 bg-nhs-blue rounded-full flex items-center justify-center max-sm:top-1 max-sm:right-1"
+          className="absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue rounded-full flex items-center justify-center"
           aria-hidden="true"
         >
           <CheckIcon />
@@ -339,8 +338,8 @@ function JourneyCard({ id, title, description, icon, isSelected, onSelect }: Jou
 
       {/* Icon */}
       <div
-        className={`flex-shrink-0 w-14 h-14 rounded-md flex items-center justify-center
-                    transition-colors duration-150 max-sm:mb-2
+        className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-md flex items-center justify-center
+                    transition-colors duration-150
                     ${isSelected
                       ? 'bg-nhs-blue text-white'
                       : 'bg-bg-surface-secondary text-nhs-blue'
@@ -351,13 +350,13 @@ function JourneyCard({ id, title, description, icon, isSelected, onSelect }: Jou
       </div>
 
       {/* Content */}
-      <div className="flex-1 pr-8 max-sm:pr-0">
-        <h3 className="text-lg font-bold text-text-primary mb-1 leading-tight">
+      <div className="flex-1 pr-6 sm:pr-8 min-w-0">
+        <h3 className="text-base sm:text-lg font-bold text-text-primary mb-1 leading-tight">
           {title}
         </h3>
         <p
           id={`desc-${id}`}
-          className="text-sm text-text-secondary leading-relaxed m-0"
+          className="text-xs sm:text-sm text-text-secondary leading-relaxed m-0"
         >
           {description}
         </p>
@@ -376,7 +375,7 @@ function HelpModal({ onClose }: HelpModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50"
       role="dialog"
       aria-modal="true"
       aria-labelledby="help-modal-title"
@@ -389,14 +388,14 @@ function HelpModal({ onClose }: HelpModalProps) {
     >
       <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-6 border-b border-nhs-pale-grey">
-          <h2 id="help-modal-title" className="text-xl font-bold text-text-primary">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-nhs-pale-grey">
+          <h2 id="help-modal-title" className="text-lg sm:text-xl font-bold text-text-primary">
             {t('journey.helpModal.title', 'Need Help Choosing?')}
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="w-10 h-10 rounded-full flex items-center justify-center
+            className="w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center
                        hover:bg-nhs-pale-grey transition-colors
                        focus:outline-none focus:ring-2 focus:ring-focus"
             aria-label={t('common.close', 'Close help dialog')}
@@ -406,54 +405,54 @@ function HelpModal({ onClose }: HelpModalProps) {
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 space-y-6">
-          <p className="text-text-secondary">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <p className="text-sm sm:text-base text-text-secondary">
             {t('journey.helpModal.intro', 'It is perfectly normal to feel unsure about which stage describes you best. Here are some tips:')}
           </p>
 
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-text-primary mb-2">
               {t('journey.helpModal.tip1Title', 'Think about your most recent appointment')}
             </h3>
-            <p className="text-text-secondary">
+            <p className="text-sm sm:text-base text-text-secondary">
               {t('journey.helpModal.tip1Text', 'What did your kidney team tell you about your kidney function and any next steps?')}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-text-primary mb-2">
               {t('journey.helpModal.tip2Title', 'Consider what brought you here')}
             </h3>
-            <p className="text-text-secondary">
+            <p className="text-sm sm:text-base text-text-secondary">
               {t('journey.helpModal.tip2Text', 'Were you given this tool by a doctor or nurse? They may have suggested which stage applies to you.')}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-text-primary mb-2">
               {t('journey.helpModal.tip3Title', 'If you are still unsure')}
             </h3>
-            <p className="text-text-secondary">
+            <p className="text-sm sm:text-base text-text-secondary">
               {t('journey.helpModal.tip3Text', 'Choose the option that feels closest to your situation. You will still be able to explore all the information in this tool, regardless of which option you select.')}
             </p>
           </div>
 
-          <div className="bg-blue-50 rounded-md p-4 flex items-start gap-3">
+          <div className="bg-blue-50 rounded-md p-3 sm:p-4 flex items-start gap-2 sm:gap-3">
             <div className="flex-shrink-0 text-nhs-blue">
               <InfoCircleIcon />
             </div>
-            <p className="text-nhs-blue-dark text-sm">
+            <p className="text-nhs-blue-dark text-xs sm:text-sm">
               {t('journey.helpModal.note', 'Your kidney team are the experts in your care. If you have questions about your kidney health, please contact them directly.')}
             </p>
           </div>
         </div>
 
         {/* Modal Footer */}
-        <div className="p-6 border-t border-nhs-pale-grey">
+        <div className="p-4 sm:p-6 border-t border-nhs-pale-grey">
           <button
             type="button"
             onClick={onClose}
-            className="w-full px-6 py-3 bg-nhs-green text-white font-bold rounded-md
+            className="w-full px-6 py-3 min-h-[48px] bg-nhs-green text-white font-bold rounded-md text-base
                        hover:bg-nhs-green-dark transition-colors
                        focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
           >

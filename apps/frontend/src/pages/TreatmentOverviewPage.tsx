@@ -191,7 +191,7 @@ export default function TreatmentOverviewPage() {
             {t('treatments.mainChoices', 'Your Main Treatment Choices')}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
             {TREATMENTS.map((treatment) => (
               <article
                 key={treatment.id}
@@ -199,12 +199,12 @@ export default function TreatmentOverviewPage() {
                 aria-labelledby={`${treatment.id}-title`}
               >
                 {/* Visual/Icon */}
-                <div className={`${treatment.bgClass} p-8 flex items-center justify-center min-h-[160px]`}>
-                  <div className={treatment.iconColorClass}>{treatment.icon}</div>
+                <div className={`${treatment.bgClass} p-6 sm:p-8 flex items-center justify-center min-h-[120px] sm:min-h-[160px]`}>
+                  <div className={`${treatment.iconColorClass} scale-75 sm:scale-100`}>{treatment.icon}</div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-4 sm:p-6 flex flex-col flex-1">
                   <h3
                     id={`${treatment.id}-title`}
                     className="text-xl font-bold text-text-primary mb-2"
@@ -237,7 +237,7 @@ export default function TreatmentOverviewPage() {
                   <div className="mt-auto">
                     <Link
                       to={`/treatments/${treatment.id}`}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px]"
+                      className="inline-flex items-center justify-center sm:justify-start gap-2 w-full sm:w-auto px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] min-w-[44px] touch-manipulation"
                     >
                       <span>{t('common.learnMore', 'Learn More')}</span>
                       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -254,7 +254,7 @@ export default function TreatmentOverviewPage() {
 
         {/* Compare All Treatments Section */}
         <section
-          className="bg-white border-2 border-nhs-blue rounded-lg p-8 text-center mb-10"
+          className="bg-white border-2 border-nhs-blue rounded-lg p-4 sm:p-8 text-center mb-10"
           aria-labelledby="compare-heading"
         >
           <h2 id="compare-heading" className="text-2xl font-bold text-text-primary mb-2">
@@ -268,7 +268,7 @@ export default function TreatmentOverviewPage() {
           </p>
           <Link
             to="/compare"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] touch-manipulation"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="3" y="3" width="7" height="7" />
@@ -287,7 +287,7 @@ export default function TreatmentOverviewPage() {
         >
           <button
             onClick={() => navigate('/hub')}
-            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded"
+            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded min-h-[44px] touch-manipulation"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="19" y1="12" x2="5" y2="12" />
@@ -297,7 +297,7 @@ export default function TreatmentOverviewPage() {
           </button>
           <Link
             to="/values"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] touch-manipulation"
           >
             <span>{t('values.cta', "What Matters to You?")}</span>
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

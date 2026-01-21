@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import i18next from 'i18next';
+import { changeLanguageAndWait } from '@/config/i18n';
 import type {
   Session,
   SupportedLanguage,
@@ -22,7 +23,7 @@ interface SessionContextType {
   extendSession: () => Promise<void>;
 
   // Data updates
-  setLanguage: (language: SupportedLanguage) => void;
+  setLanguage: (language: SupportedLanguage) => Promise<void>;
   setJourneyStage: (stage: JourneyStage) => void;
   addQuestionnaireAnswer: (answer: QuestionnaireAnswer) => void;
   addValueRating: (rating: ValueRating) => void;
@@ -146,7 +147,11 @@ export function SessionProvider({ children }: SessionProviderProps) {
   }, []);
 
   const setLanguage = useCallback(
-    (language: SupportedLanguage) => {
+    async (language: SupportedLanguage) => {
+      // Change i18n language and wait for translations to load
+      // This uses the robust changeLanguageAndWait with timeout and retry
+      await changeLanguageAndWait(language);
+      // Then update session state
       updateSession({ language });
     },
     [updateSession]

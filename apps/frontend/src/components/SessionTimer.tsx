@@ -54,19 +54,24 @@ export default function SessionTimer({ showExtendButton = true, className = '' }
         </span>
       </div>
 
-      {/* Warning Modal */}
+      {/* Warning Modal - Optimized for mobile with bottom sheet style */}
       {showModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50"
           role="dialog"
           aria-modal="true"
           aria-labelledby="session-warning-title"
         >
-          <div className="bg-white rounded-lg shadow-xl max-w-md mx-4 p-6">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-nhs-warm-yellow/20 flex items-center justify-center">
+          <div className="bg-white rounded-t-2xl sm:rounded-lg shadow-xl w-full sm:max-w-md sm:mx-4 p-4 sm:p-6">
+            {/* Mobile drag indicator */}
+            <div className="sm:hidden flex justify-center pb-3">
+              <div className="w-10 h-1 bg-nhs-mid-grey/30 rounded-full"></div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-nhs-warm-yellow/20 flex items-center justify-center">
                 <svg
-                  className="w-6 h-6 text-nhs-orange"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-orange"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -79,27 +84,28 @@ export default function SessionTimer({ showExtendButton = true, className = '' }
                   />
                 </svg>
               </div>
-              <div className="flex-1">
+              <div className="flex-1 w-full">
                 <h2
                   id="session-warning-title"
-                  className="text-lg font-semibold text-text-primary mb-2"
+                  className="text-base sm:text-lg font-semibold text-text-primary mb-2"
                 >
                   {t('session.sessionExpiring', 'Your session will expire soon')}
                 </h2>
-                <p className="text-text-secondary mb-4">
+                <p className="text-sm sm:text-base text-text-secondary mb-4">
                   {t(
                     'session.expiringMessage',
                     'Your session will expire in {{minutes}} minutes. Would you like to continue?',
                     { minutes }
                   )}
                 </p>
-                <div className="flex gap-3">
+                {/* Full-width buttons on mobile, inline on larger screens */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   {showExtendButton && (
-                    <Button variant="primary" onClick={handleExtend}>
+                    <Button variant="primary" onClick={handleExtend} className="w-full sm:w-auto">
                       {t('session.extendSession', 'Continue Session')}
                     </Button>
                   )}
-                  <Button variant="outline" onClick={() => setShowModal(false)}>
+                  <Button variant="outline" onClick={() => setShowModal(false)} className="w-full sm:w-auto">
                     {t('common.close', 'Close')}
                   </Button>
                 </div>

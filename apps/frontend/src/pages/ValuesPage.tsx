@@ -198,10 +198,10 @@ export default function ValuesPage() {
                   setViewMode('one-at-a-time');
                   setCurrentStatement(0);
                 }}
-                className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-nhs-pink to-[#8a2150] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+                className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-nhs-pink to-[#8a2150] text-white font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 min-h-[56px] touch-manipulation"
               >
                 {t('values.intro.beginButton', 'Begin Exercise')}
-                <svg className="w-6 h-6 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                 </svg>
               </button>
@@ -293,11 +293,11 @@ export default function ValuesPage() {
               </p>
             </div>
 
-            {/* Rating Scale - Enhanced with visual slider feel */}
-            <div className="py-10" role="radiogroup" aria-labelledby={`statement-${currentStatement}`}>
-              <div className="flex justify-between items-end gap-3 sm:gap-4 max-w-2xl mx-auto">
+            {/* Rating Scale - Enhanced with visual slider feel and larger touch targets */}
+            <div className="py-6 sm:py-10" role="radiogroup" aria-labelledby={`statement-${currentStatement}`}>
+              <div className="flex justify-between items-end gap-2 sm:gap-4 max-w-2xl mx-auto px-2">
                 {RATING_LABELS.map((option) => (
-                  <label key={option.value} className="flex flex-col items-center cursor-pointer group flex-1">
+                  <label key={option.value} className="flex flex-col items-center cursor-pointer group flex-1 touch-manipulation">
                     <input
                       type="radio"
                       name={`rating-${statement.id}`}
@@ -307,15 +307,15 @@ export default function ValuesPage() {
                       className="sr-only"
                     />
                     <span
-                      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-bold transition-all duration-300 mb-3 shadow-sm ${
+                      className={`w-14 h-14 sm:w-20 sm:h-20 min-w-[56px] min-h-[56px] rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl font-bold transition-all duration-300 mb-2 sm:mb-3 shadow-sm ${
                         currentRating === option.value
-                          ? 'bg-gradient-to-br from-nhs-pink to-[#8a2150] text-white scale-110 shadow-lg ring-4 ring-nhs-pink/30'
-                          : 'bg-nhs-pale-grey text-text-secondary group-hover:bg-nhs-pink/10 group-hover:text-nhs-pink group-hover:scale-105'
+                          ? 'bg-gradient-to-br from-nhs-pink to-[#8a2150] text-white scale-105 sm:scale-110 shadow-lg ring-2 sm:ring-4 ring-nhs-pink/30'
+                          : 'bg-nhs-pale-grey text-text-secondary active:bg-nhs-pink/20 active:scale-95 group-hover:bg-nhs-pink/10 group-hover:text-nhs-pink group-hover:scale-105'
                       }`}
                     >
                       {option.shortLabel}
                     </span>
-                    <span className={`text-xs sm:text-sm text-center max-w-[80px] leading-tight font-medium transition-colors ${
+                    <span className={`text-[10px] sm:text-sm text-center max-w-[60px] sm:max-w-[80px] leading-tight font-medium transition-colors ${
                       currentRating === option.value ? 'text-nhs-pink font-bold' : 'text-text-muted group-hover:text-nhs-pink'
                     }`}>
                       {option.label}
@@ -324,17 +324,17 @@ export default function ValuesPage() {
                 ))}
               </div>
               {/* Visual scale indicator */}
-              <div className="flex justify-between max-w-2xl mx-auto mt-6 px-8">
-                <span className="text-xs text-text-muted">{t('values.scale.lessImportant')}</span>
-                <span className="text-xs text-text-muted">{t('values.scale.moreImportant')}</span>
+              <div className="flex justify-between max-w-2xl mx-auto mt-4 sm:mt-6 px-4 sm:px-8">
+                <span className="text-[10px] sm:text-xs text-text-muted">{t('values.scale.lessImportant')}</span>
+                <span className="text-[10px] sm:text-xs text-text-muted">{t('values.scale.moreImportant')}</span>
               </div>
             </div>
 
-            {/* Navigation - Enhanced */}
-            <div className="flex justify-between items-center pt-8 mt-8 border-t border-nhs-pale-grey">
+            {/* Navigation - Enhanced with larger touch targets */}
+            <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-nhs-pale-grey">
               <button
                 onClick={goToPreviousStatement}
-                className="inline-flex items-center gap-2 px-5 py-3 text-nhs-blue font-medium hover:bg-nhs-blue/5 rounded-xl transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+                className="inline-flex items-center justify-center sm:justify-start gap-2 px-5 py-3 text-nhs-blue font-medium hover:bg-nhs-blue/5 rounded-xl transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
@@ -345,13 +345,13 @@ export default function ValuesPage() {
               <div className="flex gap-3">
                 <button
                   onClick={goToNextStatement}
-                  className="px-5 py-3 text-text-secondary hover:text-text-primary hover:bg-nhs-pale-grey/50 rounded-xl transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+                  className="flex-1 sm:flex-none px-5 py-3 text-text-secondary hover:text-text-primary hover:bg-nhs-pale-grey/50 rounded-xl transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
                 >
                   {t('values.nav.skip', 'Skip')}
                 </button>
                 <button
                   onClick={goToNextStatement}
-                  className="group inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-nhs-pink to-[#8a2150] text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+                  className="group flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-nhs-pink to-[#8a2150] text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
                 >
                   {currentStatement === VALUE_STATEMENTS.length - 1 ? t('values.nav.finish', 'Finish') : t('values.nav.next', 'Next')}
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
@@ -424,10 +424,10 @@ export default function ValuesPage() {
                     </button>
                   </div>
 
-                  {/* Mini Rating Scale */}
-                  <div className="flex justify-center gap-2" role="radiogroup" aria-label={statement.statement}>
+                  {/* Mini Rating Scale - with larger touch targets */}
+                  <div className="flex justify-center gap-2 sm:gap-3" role="radiogroup" aria-label={statement.statement}>
                     {RATING_LABELS.map((option) => (
-                      <label key={option.value} className="flex flex-col items-center cursor-pointer">
+                      <label key={option.value} className="flex flex-col items-center cursor-pointer touch-manipulation">
                         <input
                           type="radio"
                           name={`rating-all-${statement.id}`}
@@ -437,15 +437,15 @@ export default function ValuesPage() {
                           className="sr-only"
                         />
                         <span
-                          className={`w-12 h-12 rounded-full flex items-center justify-center text-xl border-2 transition-all ${
+                          className={`w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-lg sm:text-xl border-2 transition-all ${
                             currentRating === option.value
                               ? 'bg-nhs-blue border-nhs-blue text-white'
-                              : 'bg-nhs-pale-grey border-transparent hover:border-nhs-blue hover:bg-[#E6F0FA]'
+                              : 'bg-nhs-pale-grey border-transparent active:bg-nhs-blue/20 active:scale-95 hover:border-nhs-blue hover:bg-[#E6F0FA]'
                           }`}
                         >
                           {option.shortLabel}
                         </span>
-                        <span className="text-xs text-text-muted mt-1 hidden sm:block">{option.label.split(' ')[0]}</span>
+                        <span className="text-[10px] sm:text-xs text-text-muted mt-1 hidden sm:block">{option.label.split(' ')[0]}</span>
                       </label>
                     ))}
                   </div>
@@ -455,10 +455,10 @@ export default function ValuesPage() {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-nhs-pale-grey">
+          <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 pt-6 border-t border-nhs-pale-grey">
             <button
               onClick={() => setViewMode('intro')}
-              className="inline-flex items-center gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded"
+              className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded min-h-[48px] touch-manipulation"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="19" y1="12" x2="5" y2="12" />
@@ -469,7 +469,7 @@ export default function ValuesPage() {
             <button
               onClick={handleFinishAllAtOnce}
               disabled={getCompletedCount() === 0}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-nhs-green text-white font-bold rounded-md hover:bg-nhs-green-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-nhs-green text-white font-bold rounded-md hover:bg-nhs-green-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px] touch-manipulation"
             >
               {t('values.nav.seeResults', 'See My Results')}
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -563,24 +563,24 @@ export default function ValuesPage() {
           </section>
 
           {/* Actions */}
-          <div className="flex flex-wrap gap-4 justify-center pt-6 border-t border-nhs-pale-grey">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center pt-6 border-t border-nhs-pale-grey">
             <button
               onClick={() => {
                 setViewMode('all-at-once');
               }}
-              className="px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
             >
               {t('values.results.editValues', 'Edit Your Values')}
             </button>
             <Link
               to="/compare"
-              className="px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation text-center"
             >
               {t('values.results.compareLink', 'Compare Treatments')}
             </Link>
             <Link
               to="/summary"
-              className="px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation text-center"
             >
               {t('values.results.addToSummary', 'Add to My Summary')}
             </Link>

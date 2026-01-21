@@ -23,7 +23,8 @@
     "back": "Back",
     "edit": "Edit",
     "add": "Add",
-    "remove": "Remove"
+    "remove": "Remove",
+    "listenToPage": "Listen to this page"
   },
   "accessibility": {
     "skipToContent": "Skip to main content",
@@ -40,6 +41,7 @@
     "pageNavigation": "Page navigation",
     "faq": "Frequently asked questions",
     "frequentlyAskedQuestions": "Frequently asked questions",
+    "listenToPage": "Listen to this page being read aloud",
     "modal": {
       "title": "Accessibility Settings",
       "textSize": "Text Size",
@@ -71,6 +73,7 @@
     "learnMore": "Learn More About Kidney Disease",
     "heroAriaLabel": "Welcome section",
     "featuresHeading": "How This Tool Helps You",
+    "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
     "features": {
       "time": {
         "title": "Takes About 15 Minutes",
@@ -89,14 +92,27 @@
     "about": {
       "paragraph1": "This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
       "paragraph2": "You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
-      "paragraph3": "This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you."
+      "paragraph3": "This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you.",
+      "steps": {
+        "learn": {
+          "title": "Learn"
+        },
+        "explore": {
+          "title": "Explore"
+        },
+        "decide": {
+          "title": "Decide"
+        }
+      }
     },
     "trustAriaLabel": "Trust and safety information",
     "trust": {
       "evidenceBased": "Evidence-based information",
       "languages": "Available in 7 languages",
       "accessible": "Accessible for all users",
-      "noAccount": "No account required"
+      "noAccount": "No account required",
+      "time": "15 minutes",
+      "privateSecure": "Private & Secure"
     },
     "ctaHeading": "Ready to Begin?",
     "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
@@ -315,7 +331,8 @@
     "welcome": {
       "title": "Your Personalised Treatment Options",
       "message": "Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.",
-      "reminder": "Remember, your kidney team will help you make the final decision."
+      "reminder": "Remember, your kidney team will help you make the final decision.",
+      "badge": "Your personalised journey"
     },
     "session": {
       "timeRemaining": "Session time remaining:",
@@ -325,7 +342,8 @@
     },
     "alert": {
       "title": "Remember to save your summary",
-      "message": "Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration."
+      "message": "Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration.",
+      "saveNow": "Save Now"
     },
     "pathway": {
       "title": "How would you like to explore?",
@@ -342,7 +360,8 @@
       }
     },
     "content": {
-      "title": "Tools to Help You Decide"
+      "title": "Tools to Help You Decide",
+      "subtitle": "Explore each tool to make an informed decision"
     },
     "cards": {
       "treatments": {
@@ -379,7 +398,8 @@
     "summary": {
       "title": "Ready to Review Your Journey?",
       "description": "View everything you have explored and create a summary to share with your kidney team at your next appointment.",
-      "button": "View Your Summary"
+      "button": "View Your Summary",
+      "badge": "Final Step"
     },
     "quickAction": {
       "summary": "View Your Summary"
@@ -522,6 +542,20 @@
     "title": "Compare Treatment Options",
     "subtitle": "See how different treatments compare across the factors that matter to you.",
     "intro": "This comparison shows how each treatment option performs across different aspects of daily life and medical care.",
+    "description": "This tool helps you compare kidney treatment options side by side. You can focus on the things that matter most to you. Select the factors you want to compare below.",
+    "customise": "Customise Your Comparison",
+    "showTreatments": "Show treatments:",
+    "highlightForMe": "Highlight treatments for me",
+    "highlightHint": "Based on your values and priorities from the questionnaire",
+    "understandingIcons": "Understanding the Icons",
+    "scrollHint": "Scroll horizontally to see all treatments",
+    "tableHeading": "Treatment Comparison Table",
+    "tableLabel": "Comparison of kidney treatment options",
+    "criteria": "Criteria",
+    "recommended": "Recommended",
+    "remember": "Remember",
+    "guidance": "No treatment is perfect for everyone. The best choice depends on your personal situation, health, and values. This comparison is a starting point for discussions with your kidney team.",
+    "addToSummary": "Add to My Summary",
     "treatments": {
       "transplant": {
         "name": "Kidney Transplant",
@@ -715,6 +749,7 @@
     "subtitle": "Rate how important each factor is to you. This helps us personalise your information.",
     "instructions": "Move the slider to indicate importance (1 = Not important, 5 = Very important)",
     "sliderLabel": "Importance rating",
+    "startExercise": "Start Values Exercise",
     "lessImportant": "Less important",
     "moreImportant": "More important",
     "skipStatement": "Skip this statement",

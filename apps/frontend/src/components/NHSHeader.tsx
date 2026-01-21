@@ -52,17 +52,17 @@ export default function NHSHeader() {
       {/* Decorative top accent line */}
       <div className="h-1 bg-gradient-to-r from-nhs-blue via-nhs-aqua-green to-nhs-blue"></div>
 
-      <div className="w-full max-w-container-xl mx-auto px-3 sm:px-4 md:px-6 py-3 overflow-hidden box-border">
-        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-          {/* Logo Section */}
+      <div className="w-full max-w-container-xl mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-3 overflow-hidden box-border">
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0">
+          {/* Logo Section - Smaller on mobile */}
           <div className="flex-shrink-0">
             <Link
               to="/"
               aria-label={t('header.homeAriaLabel')}
-              className="block no-underline focus:outline-none focus:ring-[3px] focus:ring-focus rounded-xl flex items-center gap-4 group"
+              className="block no-underline focus:outline-none focus:ring-[3px] focus:ring-focus rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 group min-h-[44px] touch-manipulation"
             >
-              {/* 3D Rotating Kidney Logo with blue border */}
-              <div className="w-14 h-14 rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 shadow-lg ring-2 ring-nhs-blue ring-offset-1 group-hover:ring-nhs-aqua-green transition-all duration-300">
+              {/* 3D Rotating Kidney Logo with blue border - Responsive sizing */}
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 shadow-lg ring-2 ring-nhs-blue ring-offset-1 group-hover:ring-nhs-aqua-green transition-all duration-300 flex-shrink-0">
                 <Canvas
                   camera={{ position: [0, 0.2, 1.6], fov: 50 }}
                   gl={{ antialias: true, alpha: true }}
@@ -81,13 +81,13 @@ export default function NHSHeader() {
                 </Canvas>
               </div>
 
-              {/* NHS (Demo) Badge - Enhanced */}
-              <div className="flex flex-col gap-1">
-                <div className="bg-gradient-to-r from-nhs-blue to-nhs-aqua-green rounded-lg px-4 py-1.5 shadow-md inline-flex items-baseline group-hover:shadow-lg transition-shadow">
-                  <span className="text-white font-bold text-2xl tracking-wide">
+              {/* NHS (Demo) Badge - Responsive sizing */}
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <div className="bg-gradient-to-r from-nhs-blue to-nhs-aqua-green rounded-md sm:rounded-lg px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 shadow-md inline-flex items-baseline group-hover:shadow-lg transition-shadow">
+                  <span className="text-white font-bold text-lg sm:text-xl md:text-2xl tracking-wide">
                     {t('header.nhs')}
                   </span>
-                  <span className="text-white font-bold text-sm ml-2 bg-white/20 px-2 py-0.5 rounded">
+                  <span className="text-white font-bold text-[10px] sm:text-xs md:text-sm ml-1 sm:ml-2 bg-white/20 px-1.5 sm:px-2 py-0.5 rounded">
                     {t('header.demo')}
                   </span>
                 </div>
@@ -95,16 +95,16 @@ export default function NHSHeader() {
             </Link>
           </div>
 
-          {/* Decorative divider */}
-          <div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-nhs-mid-grey/30 to-transparent"></div>
+          {/* Decorative divider - Hidden on mobile */}
+          <div className="hidden md:block h-10 lg:h-12 w-px bg-gradient-to-b from-transparent via-nhs-mid-grey/30 to-transparent"></div>
 
-          {/* Service Name - Enhanced */}
-          <div className="flex flex-col gap-0.5 min-w-0 flex-1 sm:flex-none">
-            <span className="text-nhs-blue text-base sm:text-lg md:text-xl font-bold leading-tight tracking-tight truncate">
+          {/* Service Name - Hidden on xs, visible from sm up */}
+          <div className="hidden sm:flex flex-col gap-0.5 min-w-0 flex-1 md:flex-none">
+            <span className="text-nhs-blue text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-tight tracking-tight truncate">
               {t('header.serviceName')}
             </span>
-            <span className="text-text-secondary text-xs sm:text-sm flex items-center gap-2">
-              <span className="w-2 h-2 bg-nhs-green rounded-full animate-pulse flex-shrink-0"></span>
+            <span className="text-text-secondary text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-nhs-green rounded-full animate-pulse flex-shrink-0"></span>
               <span className="truncate">{t('header.tagline')}</span>
             </span>
           </div>
