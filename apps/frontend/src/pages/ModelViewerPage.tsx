@@ -245,17 +245,17 @@ export default function ModelViewerPage() {
         </div>
       </nav>
 
-      {/* Header - Enhanced */}
-      <header className="bg-gradient-to-r from-nhs-aqua-green to-[#008577] text-white py-6" role="banner">
+      {/* Header - Enhanced for mobile */}
+      <header className="bg-gradient-to-r from-nhs-aqua-green to-[#008577] text-white py-3 sm:py-6" role="banner">
         <div className="container-page">
           <div className="flex items-center justify-between">
             <Link
               to="/hub"
-              className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors bg-white/10 px-4 py-2 rounded-xl"
+              className="inline-flex items-center gap-1.5 sm:gap-2 text-white/90 hover:text-white transition-colors bg-white/10 px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl min-h-[44px] touch-manipulation"
               aria-label={t('modelViewer.backToHub', 'Back to hub')}
             >
-              <ArrowLeftIcon className="w-5 h-5" />
-              <span>{t('modelViewer.backToHub', 'Back to Hub')}</span>
+              <ArrowLeftIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-sm sm:text-base">{t('modelViewer.backToHub', 'Back to Hub')}</span>
             </Link>
             <div className="hidden sm:flex items-center gap-2 text-white/80 text-sm">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -268,21 +268,21 @@ export default function ModelViewerPage() {
       </header>
 
       <main className="container-page py-8" role="main" aria-labelledby="model-viewer-title">
-        {/* Title Section - Enhanced */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-aqua-green/10 rounded-full text-sm font-medium text-nhs-aqua-green mb-4">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        {/* Title Section - Enhanced for mobile */}
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-nhs-aqua-green/10 rounded-full text-xs sm:text-sm font-medium text-nhs-aqua-green mb-3 sm:mb-4">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
             </svg>
             {t('modelViewer.interactiveTool')}
           </div>
           <h1
             id="model-viewer-title"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-3 sm:mb-4"
           >
             {t('modelViewer.title', '3D Kidney Model Viewer')}
           </h1>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-sm sm:text-lg text-text-secondary max-w-2xl mx-auto px-2">
             {t('modelViewer.interactiveDescription',
               'Explore an interactive 3D model of human kidneys. Use your mouse or touch to rotate and zoom.'
             )}
@@ -291,23 +291,27 @@ export default function ModelViewerPage() {
 
         {/* 3D Viewer Container - Enhanced */}
         <div className="bg-white rounded-2xl shadow-xl border border-nhs-pale-grey overflow-hidden mb-8">
-          {/* Control Bar - Enhanced */}
-          <div className="bg-gradient-to-r from-slate-50 to-white border-b border-nhs-pale-grey px-4 md:px-6 py-4">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="flex items-center gap-4 text-sm text-text-secondary">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-nhs-blue/5 rounded-lg">
-                  <RotateIcon className="w-4 h-4 text-nhs-blue" />
-                  <span>{t('modelViewer.dragToRotate', 'Drag to rotate')}</span>
+          {/* Control Bar - Enhanced for mobile with larger touch targets */}
+          <div className="bg-gradient-to-r from-slate-50 to-white border-b border-nhs-pale-grey px-3 sm:px-4 md:px-6 py-3 sm:py-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
+              {/* Touch instructions - more prominent on mobile */}
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-text-secondary">
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 bg-nhs-blue/5 rounded-lg">
+                  <RotateIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-nhs-blue flex-shrink-0" />
+                  <span className="hidden sm:inline">{t('modelViewer.dragToRotate', 'Drag to rotate')}</span>
+                  <span className="sm:hidden">{t('modelViewer.swipeToRotate', 'Swipe')}</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-nhs-blue/5 rounded-lg">
-                  <ZoomInIcon className="w-4 h-4 text-nhs-blue" />
-                  <span>{t('modelViewer.scrollToZoom', 'Scroll to zoom')}</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 bg-nhs-blue/5 rounded-lg">
+                  <ZoomInIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-nhs-blue flex-shrink-0" />
+                  <span className="hidden sm:inline">{t('modelViewer.scrollToZoom', 'Scroll to zoom')}</span>
+                  <span className="sm:hidden">{t('modelViewer.pinchToZoom', 'Pinch')}</span>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              {/* Control buttons - stacked on mobile for larger touch targets */}
+              <div className="grid grid-cols-3 sm:flex sm:flex-wrap items-center gap-2 sm:gap-3">
                 <button
                   onClick={() => setShowLabels(!showLabels)}
-                  className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200 flex items-center gap-2 ${
+                  className={`px-3 sm:px-4 py-2.5 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-lg sm:rounded-xl transition-all duration-200 flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 min-h-[44px] touch-manipulation ${
                     showLabels
                       ? 'bg-nhs-green text-white shadow-md'
                       : 'bg-white text-text-primary border-2 border-nhs-pale-grey hover:border-nhs-green hover:bg-nhs-green/5'
@@ -315,11 +319,12 @@ export default function ModelViewerPage() {
                   aria-pressed={showLabels}
                 >
                   <TagIcon className="w-4 h-4" />
-                  {showLabels ? t('modelViewer.labelsOn', 'Labels: On') : t('modelViewer.labelsOff', 'Labels: Off')}
+                  <span className="hidden sm:inline">{showLabels ? t('modelViewer.labelsOn', 'Labels: On') : t('modelViewer.labelsOff', 'Labels: Off')}</span>
+                  <span className="sm:hidden">{t('modelViewer.labels', 'Labels')}</span>
                 </button>
                 <button
                   onClick={() => setAutoRotate(!autoRotate)}
-                  className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200 flex items-center gap-2 ${
+                  className={`px-3 sm:px-4 py-2.5 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-lg sm:rounded-xl transition-all duration-200 flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 min-h-[44px] touch-manipulation ${
                     autoRotate
                       ? 'bg-nhs-blue text-white shadow-md'
                       : 'bg-white text-text-primary border-2 border-nhs-pale-grey hover:border-nhs-blue hover:bg-nhs-blue/5'
@@ -327,25 +332,27 @@ export default function ModelViewerPage() {
                   aria-pressed={autoRotate}
                 >
                   <RotateIcon className="w-4 h-4" />
-                  {autoRotate ? t('modelViewer.autoRotateOn', 'Auto-Rotate: On') : t('modelViewer.autoRotateOff', 'Auto-Rotate: Off')}
+                  <span className="hidden sm:inline">{autoRotate ? t('modelViewer.autoRotateOn', 'Auto-Rotate: On') : t('modelViewer.autoRotateOff', 'Auto-Rotate: Off')}</span>
+                  <span className="sm:hidden">{t('modelViewer.rotate', 'Rotate')}</span>
                 </button>
                 <button
                   onClick={handleReset}
-                  className="px-4 py-2.5 text-sm font-semibold rounded-xl bg-white text-text-primary border-2 border-nhs-pale-grey hover:border-nhs-mid-grey hover:bg-nhs-pale-grey transition-all duration-200 flex items-center gap-2"
+                  className="px-3 sm:px-4 py-2.5 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-lg sm:rounded-xl bg-white text-text-primary border-2 border-nhs-pale-grey hover:border-nhs-mid-grey hover:bg-nhs-pale-grey transition-all duration-200 flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 min-h-[44px] touch-manipulation"
                   aria-label={t('modelViewer.resetView', 'Reset view')}
                 >
                   <ResetIcon className="w-4 h-4" />
-                  {t('modelViewer.reset', 'Reset')}
+                  <span>{t('modelViewer.reset', 'Reset')}</span>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* 3D Canvas */}
-          <div className="h-[500px] md:h-[600px] bg-gradient-to-b from-slate-100 to-slate-200">
+          {/* 3D Canvas - responsive height with touch gesture support */}
+          <div className="h-[350px] sm:h-[450px] md:h-[600px] bg-gradient-to-b from-slate-100 to-slate-200 touch-none">
             <Canvas
               camera={{ position: [0, 0, 5], fov: 45 }}
               gl={{ antialias: true, alpha: true }}
+              style={{ touchAction: 'none' }} // Ensures touch events work for 3D controls
             >
               <Suspense fallback={<LoadingSpinner t={t} />}>
                 {/* Lighting */}
@@ -378,7 +385,7 @@ export default function ModelViewerPage() {
                   />
                 ))}
 
-                {/* Controls */}
+                {/* Controls - with touch support for pinch zoom and swipe rotate */}
                 <OrbitControls
                   ref={controlsRef}
                   autoRotate={autoRotate}
@@ -390,56 +397,62 @@ export default function ModelViewerPage() {
                   maxDistance={20}
                   minPolarAngle={0}
                   maxPolarAngle={Math.PI}
+                  touches={{
+                    ONE: 2, // THREE.TOUCH.ROTATE - single finger rotates
+                    TWO: 1, // THREE.TOUCH.DOLLY_PAN - two fingers zoom/pan
+                  }}
+                  rotateSpeed={0.8}
+                  zoomSpeed={1.2}
                 />
               </Suspense>
             </Canvas>
           </div>
         </div>
 
-        {/* Information Cards - Enhanced */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="group bg-white rounded-2xl p-6 shadow-sm border border-nhs-pale-grey hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div className="w-14 h-14 bg-nhs-blue/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nhs-blue/20 transition-colors">
-              <svg className="w-7 h-7 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
+        {/* Information Cards - Enhanced for mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-nhs-pale-grey hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-nhs-blue/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-nhs-blue/20 transition-colors">
+              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
               </svg>
             </div>
-            <h3 className="font-bold text-lg text-text-primary mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-text-primary mb-2">
               {t('modelViewer.aboutKidneys', 'About Your Kidneys')}
             </h3>
-            <p className="text-sm text-text-secondary leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {t('modelViewer.kidneyInfo',
                 'Your kidneys are bean-shaped organs about the size of your fist. They filter about 200 litres of blood daily, removing waste and extra fluid.'
               )}
             </p>
           </div>
 
-          <div className="group bg-white rounded-2xl p-6 shadow-sm border border-nhs-pale-grey hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div className="w-14 h-14 bg-nhs-green/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nhs-green/20 transition-colors">
-              <svg className="w-7 h-7 text-nhs-green" viewBox="0 0 24 24" fill="currentColor">
+          <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-nhs-pale-grey hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-nhs-green/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-nhs-green/20 transition-colors">
+              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-nhs-green" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
               </svg>
             </div>
-            <h3 className="font-bold text-lg text-text-primary mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-text-primary mb-2">
               {t('modelViewer.kidneyFunction', 'What Kidneys Do')}
             </h3>
-            <p className="text-sm text-text-secondary leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {t('modelViewer.functionInfo',
                 'Kidneys regulate blood pressure, produce hormones, balance body fluids, and filter waste products into urine.'
               )}
             </p>
           </div>
 
-          <div className="group bg-white rounded-2xl p-6 shadow-sm border border-nhs-pale-grey hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div className="w-14 h-14 bg-nhs-warm-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nhs-warm-yellow/20 transition-colors">
-              <svg className="w-7 h-7 text-nhs-warm-yellow" viewBox="0 0 24 24" fill="currentColor">
+          <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-nhs-pale-grey hover:shadow-xl hover:-translate-y-1 transition-all duration-300 sm:col-span-2 md:col-span-1">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-nhs-warm-yellow/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-nhs-warm-yellow/20 transition-colors">
+              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-nhs-warm-yellow" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
               </svg>
             </div>
-            <h3 className="font-bold text-lg text-text-primary mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-text-primary mb-2">
               {t('modelViewer.whenKidneysFail', 'When Kidneys Fail')}
             </h3>
-            <p className="text-sm text-text-secondary leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {t('modelViewer.failureInfo',
                 'When kidneys lose function, treatments like dialysis or transplant can help do the work your kidneys can no longer do.'
               )}
@@ -447,21 +460,21 @@ export default function ModelViewerPage() {
           </div>
         </div>
 
-        {/* Navigation Links - Enhanced */}
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border border-nhs-pale-grey max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-text-primary mb-2">
+        {/* Navigation Links - Enhanced for mobile */}
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 md:p-10 shadow-lg border border-nhs-pale-grey max-w-3xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-2">
               {t('modelViewer.learnMore', 'Learn More About Treatment Options')}
             </h2>
-            <p className="text-text-secondary">{t('modelViewer.continueJourney')}</p>
+            <p className="text-sm sm:text-base text-text-secondary">{t('modelViewer.continueJourney')}</p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
             <Link
               to="/treatments"
-              className="group flex-1 text-center px-8 py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-bold rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+              className="group flex-1 text-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-bold rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
             >
               <span className="flex items-center justify-center gap-2">
-                {t('modelViewer.exploreTreatments', 'Explore Treatments')}
+                <span className="text-sm sm:text-base">{t('modelViewer.exploreTreatments', 'Explore Treatments')}</span>
                 <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
                 </svg>
@@ -469,15 +482,15 @@ export default function ModelViewerPage() {
             </Link>
             <Link
               to="/compare"
-              className="flex-1 text-center px-8 py-4 bg-white text-nhs-blue font-bold rounded-xl border-2 border-nhs-blue hover:bg-nhs-blue hover:text-white transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+              className="flex-1 text-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-nhs-blue font-bold rounded-xl border-2 border-nhs-blue hover:bg-nhs-blue hover:text-white transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation text-sm sm:text-base"
             >
               {t('modelViewer.compareTreatments', 'Compare Treatments')}
             </Link>
           </div>
-          <div className="text-center pt-6 border-t border-nhs-pale-grey">
+          <div className="text-center pt-4 sm:pt-6 border-t border-nhs-pale-grey">
             <Link
               to="/hub"
-              className="inline-flex items-center gap-2 text-nhs-blue font-medium hover:bg-nhs-blue/5 px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+              className="inline-flex items-center gap-2 text-nhs-blue font-medium hover:bg-nhs-blue/5 px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus min-h-[44px] touch-manipulation"
             >
               <ArrowLeftIcon className="w-4 h-4" />
               {t('nav.backToHub', 'Back to Your Hub')}

@@ -198,31 +198,31 @@ export default function HubPage() {
         </div>
 
         {/* Pathway Selection Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-2xl p-6 md:p-8 mb-10 shadow-sm" aria-labelledby="pathway-heading">
-          <h2 id="pathway-heading" className="text-xl font-bold text-center mb-6">
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-10 shadow-sm" aria-labelledby="pathway-heading">
+          <h2 id="pathway-heading" className="text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6">
             {t('hub.pathway.title', 'How would you like to explore?')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" role="list">
             {/* Recommended Journey */}
             <Link
               to="/treatments"
-              className="group block bg-nhs-blue/5 border-2 border-nhs-blue rounded-lg p-6 text-left transition-all hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="group block bg-nhs-blue/5 border-2 border-nhs-blue rounded-lg p-4 sm:p-6 text-left transition-all hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[120px]"
               role="listitem"
             >
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 bg-nhs-blue rounded-full flex items-center justify-center flex-shrink-0">
-                  <ArrowRightIcon className="w-6 h-6 text-white" />
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-blue rounded-full flex items-center justify-center flex-shrink-0">
+                  <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-text-primary">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base sm:text-lg font-bold text-text-primary">
                     {t('hub.pathway.guided.title', 'Your Recommended Journey')}
                   </h3>
                 </div>
-                <span className="px-2 py-1 bg-nhs-blue text-white text-xs font-semibold rounded uppercase">
+                <span className="px-2 py-1 bg-nhs-blue text-white text-[10px] sm:text-xs font-semibold rounded uppercase flex-shrink-0">
                   {t('hub.pathway.guided.badge', 'Recommended')}
                 </span>
               </div>
-              <p className="text-base text-text-secondary mb-3 leading-relaxed">
+              <p className="text-sm sm:text-base text-text-secondary mb-2 sm:mb-3 leading-relaxed">
                 {t('hub.pathway.guided.description', 'Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.')}
               </p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-nhs-blue group-hover:underline">
@@ -234,18 +234,18 @@ export default function HubPage() {
             {/* Explore Freely */}
             <a
               href="#content-grid"
-              className="group block bg-white border-2 border-nhs-pale-grey rounded-lg p-6 text-left transition-all hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+              className="group block bg-white border-2 border-nhs-pale-grey rounded-lg p-4 sm:p-6 text-left transition-all hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[120px]"
               role="listitem"
             >
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 bg-nhs-blue rounded-full flex items-center justify-center flex-shrink-0">
-                  <GridIcon className="w-6 h-6 text-white" />
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-blue rounded-full flex items-center justify-center flex-shrink-0">
+                  <GridIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-text-primary">
+                <h3 className="text-base sm:text-lg font-bold text-text-primary">
                   {t('hub.pathway.free.title', 'Explore Freely')}
                 </h3>
               </div>
-              <p className="text-base text-text-secondary mb-3 leading-relaxed">
+              <p className="text-sm sm:text-base text-text-secondary mb-2 sm:mb-3 leading-relaxed">
                 {t('hub.pathway.free.description', 'Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.')}
               </p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-nhs-blue group-hover:underline">
@@ -257,44 +257,44 @@ export default function HubPage() {
         </section>
 
         {/* Content Grid Section - Enhanced Cards */}
-        <section id="content-grid" className="mb-10" aria-labelledby="content-heading">
-          <div className="flex justify-between items-center mb-8">
+        <section id="content-grid" className="mb-6 sm:mb-10" aria-labelledby="content-heading">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-8 gap-2">
             <div>
-              <h2 id="content-heading" className="text-2xl md:text-3xl font-bold text-text-primary">
+              <h2 id="content-heading" className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary">
                 {t('hub.content.title', 'Tools to Help You Decide')}
               </h2>
-              <p className="text-text-secondary mt-1">{t('hub.content.subtitle', 'Explore each tool to make an informed decision')}</p>
+              <p className="text-sm sm:text-base text-text-secondary mt-1">{t('hub.content.subtitle', 'Explore each tool to make an informed decision')}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="list">
             {HUB_CARDS.map((card) => {
               const status = getCardStatus(card.id);
               return (
                 <article
                   key={card.id}
-                  className="group bg-white border border-nhs-pale-grey rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-transparent focus-within:ring-4 focus-within:ring-focus"
+                  className="group bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-transparent focus-within:ring-4 focus-within:ring-focus"
                   role="listitem"
                 >
                   {/* Card Image - Enhanced with overlay effect */}
-                  <div className={`h-40 ${card.gradient} flex items-center justify-center relative overflow-hidden`} aria-hidden="true">
+                  <div className={`h-28 sm:h-40 ${card.gradient} flex items-center justify-center relative overflow-hidden`} aria-hidden="true">
                     {/* Decorative circles */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full" />
-                    <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-white/5 rounded-full" />
+                    <div className="absolute -top-10 -right-10 w-24 sm:w-32 h-24 sm:h-32 bg-white/10 rounded-full" />
+                    <div className="absolute -bottom-10 -left-10 w-20 sm:w-24 h-20 sm:h-24 bg-white/5 rounded-full" />
 
-                    <div className="w-16 h-16 text-white opacity-95 transform transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 text-white opacity-95 transform transition-transform duration-300 group-hover:scale-110">
                       {card.icon}
                     </div>
                     {status && (
-                      <span className="absolute top-4 right-4">
+                      <span className="absolute top-2 right-2 sm:top-4 sm:right-4">
                         <StatusBadge status={status} />
                       </span>
                     )}
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6 flex flex-col h-[calc(100%-160px)]">
-                    <h3 className="text-xl font-bold mb-3">
+                  <div className="p-4 sm:p-6 flex flex-col min-h-[140px] sm:min-h-[180px]">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">
                       <Link
                         to={card.href}
                         className="text-text-primary hover:text-nhs-blue transition-colors focus:outline-none focus:ring-2 focus:ring-focus rounded"
@@ -308,7 +308,7 @@ export default function HubPage() {
                         )}
                       </Link>
                     </h3>
-                    <p className="text-sm text-text-secondary leading-relaxed mb-5 flex-1">
+                    <p className="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3 sm:mb-5 flex-1">
                       {t(card.descriptionKey,
                         card.id === 'treatments' ? 'Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.' :
                         card.id === 'model' ? 'Explore interactive 3D models showing how different treatments work in your body. See the process visually.' :
@@ -317,11 +317,11 @@ export default function HubPage() {
                         'Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.'
                       )}
                     </p>
-                    <div className="flex justify-between items-center mt-auto pt-4 border-t border-nhs-pale-grey">
+                    <div className="flex justify-between items-center mt-auto pt-3 sm:pt-4 border-t border-nhs-pale-grey">
                       {status ? <StatusBadge status={status} /> : <span />}
                       <Link
                         to={card.href}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue/10 text-nhs-blue text-sm font-semibold rounded-lg transition-all group-hover:bg-nhs-blue group-hover:text-white"
+                        className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 min-h-[40px] bg-nhs-blue/10 text-nhs-blue text-xs sm:text-sm font-semibold rounded-lg transition-all group-hover:bg-nhs-blue group-hover:text-white"
                       >
                         {t(card.actionKey,
                           card.id === 'treatments' ? 'Explore' :
@@ -341,32 +341,32 @@ export default function HubPage() {
         </section>
 
         {/* View Summary Section - Enhanced */}
-        <section className="relative bg-gradient-to-br from-nhs-green via-nhs-green to-[#006747] text-white p-8 md:p-12 rounded-2xl mb-10 overflow-hidden shadow-xl" aria-labelledby="summary-heading">
+        <section className="relative bg-gradient-to-br from-nhs-green via-nhs-green to-[#006747] text-white p-5 sm:p-8 md:p-12 rounded-xl sm:rounded-2xl mb-6 sm:mb-10 overflow-hidden shadow-xl" aria-labelledby="summary-heading">
           {/* Decorative background */}
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/5 rounded-full" />
-            <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-white/5 rounded-full" />
+            <div className="absolute -top-20 -right-20 w-48 sm:w-64 h-48 sm:h-64 bg-white/5 rounded-full" />
+            <div className="absolute -bottom-16 -left-16 w-36 sm:w-48 h-36 sm:h-48 bg-white/5 rounded-full" />
           </div>
 
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="relative flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-8">
             <div className="flex-1 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 bg-white/20 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
                 <CheckBadgeIcon />
                 <span>{t('hub.summary.badge', 'Final Step')}</span>
               </div>
-              <h2 id="summary-heading" className="text-2xl md:text-3xl font-bold mb-3 text-white">
+              <h2 id="summary-heading" className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white">
                 {t('hub.summary.title', 'Ready to Review Your Journey?')}
               </h2>
-              <p className="text-lg text-white/90 max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-lg">
                 {t('hub.summary.description', 'View everything you have explored and create a summary to share with your kidney team at your next appointment.')}
               </p>
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full md:w-auto">
               <Link
                 to="/summary"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-nhs-green font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 focus:ring-offset-nhs-green"
+                className="group inline-flex items-center justify-center gap-2 sm:gap-3 w-full md:w-auto px-5 sm:px-8 py-3 sm:py-4 min-h-[48px] bg-white text-nhs-green font-bold text-base sm:text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 focus:ring-offset-nhs-green"
               >
-                <SummaryIcon className="w-6 h-6" />
+                <SummaryIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 {t('hub.summary.button', 'View Your Summary')}
                 <ChevronRightIcon />
               </Link>
@@ -376,11 +376,11 @@ export default function HubPage() {
       </div>
 
       {/* Quick Actions Bar (Fixed) - Enhanced */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-nhs-pale-grey py-4 shadow-2xl z-50 print:hidden">
-        <div className="max-w-container-xl mx-auto px-4 flex justify-center">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-nhs-pale-grey py-3 sm:py-4 shadow-2xl z-50 print:hidden">
+        <div className="max-w-container-xl mx-auto px-3 sm:px-4 flex justify-center">
           <Link
             to="/summary"
-            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-bold rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+            className="group inline-flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-bold text-sm sm:text-base rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
           >
             <SummaryIcon className="w-5 h-5" />
             {t('hub.quickAction.summary', 'View Your Summary')}

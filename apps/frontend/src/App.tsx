@@ -5,6 +5,7 @@ import { SessionProvider } from './context/SessionContext';
 import Layout from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import { getLanguageDirection } from './config/i18n';
+import { loadAccessibilitySettings, applyAccessibilitySettings } from './components/AccessibilityModal';
 
 // Lazy load other pages for better performance
 const LanguageSelectionPage = lazy(() => import('./pages/LanguageSelectionPage'));
@@ -19,6 +20,11 @@ const ValuesPage = lazy(() => import('./pages/ValuesPage'));
 const ModelViewerPage = lazy(() => import('./pages/ModelViewerPage'));
 const ChatPage = lazy(() => import('./pages/ChatPage'));
 const SummaryPage = lazy(() => import('./pages/SummaryPage'));
+
+// Apply accessibility settings immediately on module load (before any render)
+// This prevents flash of un-styled content
+const initialSettings = loadAccessibilitySettings();
+applyAccessibilitySettings(initialSettings);
 
 // Loading fallback for app initialization (before translations are loaded)
 function AppLoader() {

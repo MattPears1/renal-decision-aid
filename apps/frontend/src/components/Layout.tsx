@@ -1,20 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import NHSHeader from './NHSHeader';
 import NHSFooter from './NHSFooter';
-import AccessibilityModal, { loadAccessibilitySettings, applyAccessibilitySettings } from './AccessibilityModal';
+import AccessibilityModal from './AccessibilityModal';
 
 export default function Layout() {
   const { t } = useTranslation();
   const location = useLocation();
   const [isAccessibilityModalOpen, setIsAccessibilityModalOpen] = useState(false);
 
-  // Apply saved accessibility settings on mount
-  useEffect(() => {
-    const settings = loadAccessibilitySettings();
-    applyAccessibilitySettings(settings);
-  }, []);
+  // Note: Accessibility settings are applied in App.tsx on module load
+  // to prevent flash of un-styled content
 
   // Handle skip link functionality
   const handleSkipToMain = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,7 +25,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]">
+    <div className="min-h-screen flex flex-col w-full max-w-[100vw] overflow-x-hidden">
       {/* Skip Link for Accessibility */}
       <a
         href="#main-content"
@@ -38,14 +35,14 @@ export default function Layout() {
         {t('accessibility.skipToContent')}
       </a>
 
-      {/* NHS Header */}
+      {/* NHS Header - sticky positioned, isolated from main content */}
       <NHSHeader />
 
-      {/* Main Content Area */}
+      {/* Main Content Area - isolated from header, no layout shift */}
       <main
         id="main-content"
         role="main"
-        className="flex-1 overflow-x-hidden w-full"
+        className="flex-1 w-full overflow-x-hidden isolate"
         key={location.pathname}
       >
         <Outlet />

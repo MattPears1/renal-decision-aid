@@ -48,14 +48,17 @@ export default function NHSHeader() {
   const { t } = useTranslation();
 
   return (
-    <header className="bg-gradient-to-r from-white via-white to-nhs-pale-grey border-b-4 border-nhs-blue shadow-md w-full overflow-x-hidden" role="banner">
+    <header
+      className="sticky top-0 z-[500] bg-gradient-to-r from-white via-white to-nhs-pale-grey border-b-4 border-nhs-blue shadow-md w-full"
+      role="banner"
+    >
       {/* Decorative top accent line */}
       <div className="h-1 bg-gradient-to-r from-nhs-blue via-nhs-aqua-green to-nhs-blue"></div>
 
-      <div className="w-full max-w-container-xl mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-3 overflow-hidden box-border">
-        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0">
+      <div className="w-full max-w-container-xl mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-3 box-border">
+        <div className="flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
           {/* Logo Section - Smaller on mobile */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 min-w-0">
             <Link
               to="/"
               aria-label={t('header.homeAriaLabel')}
@@ -96,10 +99,10 @@ export default function NHSHeader() {
           </div>
 
           {/* Decorative divider - Hidden on mobile */}
-          <div className="hidden md:block h-10 lg:h-12 w-px bg-gradient-to-b from-transparent via-nhs-mid-grey/30 to-transparent"></div>
+          <div className="hidden md:block h-10 lg:h-12 w-px bg-gradient-to-b from-transparent via-nhs-mid-grey/30 to-transparent flex-shrink-0"></div>
 
           {/* Service Name - Hidden on xs, visible from sm up */}
-          <div className="hidden sm:flex flex-col gap-0.5 min-w-0 flex-1 md:flex-none">
+          <div className="hidden sm:flex flex-col gap-0.5 min-w-0 flex-1 md:flex-none overflow-hidden">
             <span className="text-nhs-blue text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-tight tracking-tight truncate">
               {t('header.serviceName')}
             </span>
@@ -109,11 +112,8 @@ export default function NHSHeader() {
             </span>
           </div>
 
-          {/* Spacer to push language selector to the right */}
-          <div className="flex-grow" />
-
-          {/* Language Selector Dropdown */}
-          <LanguageSelector variant="dropdown" className="flex-shrink-0" />
+          {/* Language Selector Dropdown - Always visible, compact on mobile */}
+          <LanguageSelector variant="dropdown" className="flex-shrink-0 ml-auto" />
 
         </div>
       </div>

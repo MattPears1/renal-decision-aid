@@ -149,12 +149,12 @@ export default function LanguageSelector({
   }
 
   return (
-    <div ref={dropdownRef} className={clsx('relative', className)}>
+    <div ref={dropdownRef} className={clsx('relative inline-block', className)}>
       <button
         onClick={() => !isLoading && setIsOpen(!isOpen)}
         disabled={isLoading}
         className={clsx(
-          'flex items-center justify-center gap-1 sm:gap-2 p-2.5 sm:px-3 sm:py-2 rounded-md border border-nhs-pale-grey',
+          'flex items-center justify-center gap-1 sm:gap-2 p-2 sm:px-3 sm:py-2 rounded-md border border-nhs-pale-grey bg-white',
           'hover:border-nhs-blue transition-colors focus:outline-none focus:ring-2 focus:ring-focus',
           'min-w-[44px] min-h-[44px] touch-manipulation',
           isLoading && 'opacity-75 cursor-wait'
@@ -172,6 +172,7 @@ export default function LanguageSelector({
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -185,12 +186,13 @@ export default function LanguageSelector({
         <span className="hidden sm:inline text-sm font-medium whitespace-nowrap">{currentLangInfo.nativeName}</span>
         <svg
           className={clsx(
-            'w-4 h-4 text-text-secondary transition-transform flex-shrink-0',
+            'w-4 h-4 text-text-secondary transition-transform flex-shrink-0 hidden sm:block',
             isOpen && 'rotate-180'
           )}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -203,7 +205,7 @@ export default function LanguageSelector({
 
       {isOpen && !isLoading && (
         <div
-          className="absolute right-0 mt-2 w-48 sm:w-52 bg-white rounded-md shadow-lg border border-nhs-pale-grey z-50 max-h-[70vh] overflow-y-auto"
+          className="absolute right-0 top-full mt-1 w-48 sm:w-52 bg-white rounded-md shadow-lg border border-nhs-pale-grey z-[1000] max-h-[60vh] overflow-y-auto"
           role="listbox"
           aria-label={t('language.selectLanguage', 'Select language')}
         >

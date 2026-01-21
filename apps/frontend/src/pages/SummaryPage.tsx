@@ -74,35 +74,35 @@ export default function SummaryPage() {
         </div>
       </div>
 
-      <div className="max-w-container-lg mx-auto px-4 py-8 md:py-12 print:py-4">
+      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 print:py-4">
         {/* Screen Header - Enhanced */}
         <div className="print:hidden">
-          <header className="bg-white rounded-2xl p-8 shadow-lg border border-nhs-pale-grey mb-8">
-            <div className="flex flex-wrap justify-between items-start gap-6">
+          <header className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-nhs-pale-grey mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-4 sm:gap-6">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-nhs-green/10 rounded-full text-sm font-medium text-nhs-green mb-4">
-                  <CheckIcon className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 bg-nhs-green/10 rounded-full text-xs sm:text-sm font-medium text-nhs-green mb-3 sm:mb-4">
+                  <CheckIcon className="w-3 h-3 sm:w-4 sm:h-4" />
                   {t('summary.readyToReview')}
                 </div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-3">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-2 sm:mb-3">
                   {t('summary.title', 'Your Session Summary')}
                 </h1>
-                <p className="text-base text-text-secondary flex items-center gap-2">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <p className="text-sm sm:text-base text-text-secondary flex items-center gap-2">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
                   </svg>
                   {sessionDate}
                 </p>
-                <p className="text-xs text-text-muted font-mono mt-2 bg-nhs-pale-grey/50 px-3 py-1 rounded-full inline-block">
+                <p className="text-[10px] sm:text-xs text-text-muted font-mono mt-2 bg-nhs-pale-grey/50 px-2 sm:px-3 py-1 rounded-full inline-block">
                   {t('summary.sessionId', 'Session ID')}: {session?.id?.slice(0, 8) || 'N/A'}
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
                 <button
                   onClick={handlePrint}
-                  className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+                  className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 text-sm sm:text-base"
                 >
-                  <PrintIcon className="w-5 h-5" />
+                  <PrintIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   {t('summary.print', 'Print Summary')}
                 </button>
                 <button
@@ -111,9 +111,9 @@ export default function SummaryPage() {
                     text: t('summary.shareText'),
                     url: window.location.href,
                   }).catch(() => {})}
-                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-bold rounded-xl hover:bg-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] border-2 border-nhs-blue text-nhs-blue font-bold rounded-xl hover:bg-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 text-sm sm:text-base"
                 >
-                  <ShareIcon className="w-5 h-5" />
+                  <ShareIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   {t('summary.share', 'Share')}
                 </button>
               </div>
@@ -122,35 +122,35 @@ export default function SummaryPage() {
         </div>
 
         {/* Journey Stage Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-2xl mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-6 py-5 bg-gradient-to-r from-nhs-blue/5 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-xl font-bold text-text-primary flex items-center gap-3">
-              <div className="w-10 h-10 bg-nhs-blue/10 rounded-xl flex items-center justify-center">
-                <JourneyIcon className="w-6 h-6 text-nhs-blue" />
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-blue/5 to-transparent border-b border-nhs-pale-grey">
+            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-blue/10 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <JourneyIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-blue" />
               </div>
               {t('summary.sections.journey', 'Your Journey Stage')}
             </h2>
             <Link
               to="/journey"
-              className="text-sm text-nhs-blue hover:bg-nhs-blue/5 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors print:hidden"
+              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-2 sm:px-3 py-1.5 rounded-lg flex items-center gap-1 sm:gap-1.5 transition-colors print:hidden min-h-[36px]"
             >
-              <EditIcon className="w-4 h-4" />
+              <EditIcon className="w-3 h-3 sm:w-4 sm:h-4" />
               {t('common.edit', 'Edit')}
             </Link>
           </div>
-          <div className="p-6">
-            <div className="flex items-center gap-5 p-5 bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 rounded-xl border-l-4 border-nhs-blue">
-              <div className="w-14 h-14 bg-nhs-blue text-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                <StageIcon className="w-7 h-7" />
+          <div className="p-4 sm:p-6">
+            <div className="flex items-start sm:items-center gap-3 sm:gap-5 p-3 sm:p-5 bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 rounded-lg sm:rounded-xl border-l-4 border-nhs-blue">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-nhs-blue text-white rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <StageIcon className="w-5 h-5 sm:w-7 sm:h-7" />
               </div>
-              <div>
-                <p className="text-xl font-bold text-text-primary">
+              <div className="min-w-0">
+                <p className="text-base sm:text-xl font-bold text-text-primary">
                   {session?.journeyStage
                     ? getJourneyStageLabel(session.journeyStage)
                     : t('summary.notSpecified', 'Not specified')}
                 </p>
                 {session?.journeyStage && (
-                  <p className="text-sm text-text-secondary mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-text-secondary mt-1 sm:mt-2 leading-relaxed">
                     {getJourneyStageDescription(session.journeyStage)}
                   </p>
                 )}
@@ -160,35 +160,35 @@ export default function SummaryPage() {
         </section>
 
         {/* Your Priorities Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-2xl mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-6 py-5 bg-gradient-to-r from-nhs-pink/5 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-xl font-bold text-text-primary flex items-center gap-3">
-              <div className="w-10 h-10 bg-nhs-pink/10 rounded-xl flex items-center justify-center">
-                <HeartIcon className="w-6 h-6 text-nhs-pink" />
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-pink/5 to-transparent border-b border-nhs-pale-grey">
+            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-pink/10 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <HeartIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-pink" />
               </div>
               {t('summary.sections.priorities', 'Your Priorities')}
             </h2>
             <Link
               to="/values"
-              className="text-sm text-nhs-blue hover:bg-nhs-blue/5 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors print:hidden"
+              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-2 sm:px-3 py-1.5 rounded-lg flex items-center gap-1 sm:gap-1.5 transition-colors print:hidden min-h-[36px]"
             >
-              <EditIcon className="w-4 h-4" />
+              <EditIcon className="w-3 h-3 sm:w-4 sm:h-4" />
               {t('common.edit', 'Edit')}
             </Link>
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {session?.valueRatings && session.valueRatings.length > 0 ? (
               <ul className="space-y-2">
                 {[...session.valueRatings]
                   .filter(v => v.rating >= 4)
                   .slice(0, 5)
                   .map((value, index) => (
-                    <li key={value.statementId} className="flex items-center gap-4 p-4 bg-nhs-pale-grey/30 rounded-lg">
-                      <span className="w-8 h-8 bg-nhs-green text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                    <li key={value.statementId} className="flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-nhs-pale-grey/30 rounded-lg">
+                      <span className="w-6 h-6 sm:w-8 sm:h-8 bg-nhs-green text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                         {index + 1}
                       </span>
-                      <div className="flex-1">
-                        <span className="text-text-primary">
+                      <div className="flex-1 min-w-0">
+                        <span className="text-sm sm:text-base text-text-primary">
                           {t(`values.statements.${value.statementId}`, value.statementId)}
                         </span>
                         <div className="flex items-center gap-2 mt-1">
@@ -196,13 +196,13 @@ export default function SummaryPage() {
                             {[1, 2, 3, 4, 5].map((dot) => (
                               <span
                                 key={dot}
-                                className={`w-2 h-2 rounded-full ${
+                                className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
                                   dot <= value.rating ? 'bg-nhs-green' : 'bg-nhs-pale-grey'
                                 }`}
                               />
                             ))}
                           </div>
-                          <span className="text-xs text-text-secondary">
+                          <span className="text-[10px] sm:text-xs text-text-secondary">
                             {getValueLabel(value.rating)}
                           </span>
                         </div>
@@ -211,7 +211,7 @@ export default function SummaryPage() {
                   ))}
               </ul>
             ) : (
-              <p className="text-text-secondary">
+              <p className="text-sm sm:text-base text-text-secondary">
                 {t('summary.noValues', 'You have not completed the values exercise yet.')}
                 <Link to="/values" className="text-nhs-blue hover:underline ml-2 print:hidden">
                   {t('summary.completeValues', 'Complete now')}
@@ -222,43 +222,43 @@ export default function SummaryPage() {
         </section>
 
         {/* Treatments Explored Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-2xl mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-6 py-5 bg-gradient-to-r from-nhs-green/5 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-xl font-bold text-text-primary flex items-center gap-3">
-              <div className="w-10 h-10 bg-nhs-green/10 rounded-xl flex items-center justify-center">
-                <TreatmentIcon className="w-6 h-6 text-nhs-green" />
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-green/5 to-transparent border-b border-nhs-pale-grey">
+            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-green/10 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <TreatmentIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-green" />
               </div>
               {t('summary.sections.viewed', 'Treatments Explored')}
             </h2>
             <Link
               to="/treatments"
-              className="text-sm text-nhs-blue hover:bg-nhs-blue/5 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors print:hidden"
+              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-2 sm:px-3 py-1.5 rounded-lg flex items-center gap-1 sm:gap-1.5 transition-colors print:hidden min-h-[36px]"
             >
               {t('summary.seeAll', 'See all')}
             </Link>
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {session?.viewedTreatments && session.viewedTreatments.length > 0 ? (
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {session.viewedTreatments.map((treatment) => (
-                  <div key={treatment} className="flex justify-between items-center p-4 border border-nhs-pale-grey rounded-lg">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-nhs-pale-grey rounded-lg flex items-center justify-center">
-                        <TreatmentIcon className="w-5 h-5 text-nhs-blue" />
+                  <div key={treatment} className="flex justify-between items-center p-3 sm:p-4 border border-nhs-pale-grey rounded-lg gap-2">
+                    <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-pale-grey rounded-lg flex items-center justify-center flex-shrink-0">
+                        <TreatmentIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-blue" />
                       </div>
-                      <span className="font-semibold text-text-primary">
+                      <span className="font-semibold text-sm sm:text-base text-text-primary truncate">
                         {getTreatmentLabel(treatment)}
                       </span>
                     </div>
-                    <span className="px-3 py-1 bg-nhs-green/10 text-nhs-green text-xs font-semibold rounded-full flex items-center gap-1">
-                      <CheckIcon className="w-3 h-3" />
+                    <span className="px-2 sm:px-3 py-1 bg-nhs-green/10 text-nhs-green text-[10px] sm:text-xs font-semibold rounded-full flex items-center gap-1 flex-shrink-0">
+                      <CheckIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                       {t('summary.viewed', 'Viewed')}
                     </span>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-text-secondary">
+              <p className="text-sm sm:text-base text-text-secondary">
                 {t('summary.noTreatments', 'You have not explored any treatments yet.')}
                 <Link to="/treatments" className="text-nhs-blue hover:underline ml-2 print:hidden">
                   {t('summary.exploreTreatments', 'Explore treatments')}
@@ -269,52 +269,52 @@ export default function SummaryPage() {
         </section>
 
         {/* Questions for Your Team Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-2xl mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-6 py-5 bg-gradient-to-r from-nhs-warm-yellow/10 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-xl font-bold text-text-primary flex items-center gap-3">
-              <div className="w-10 h-10 bg-nhs-warm-yellow/20 rounded-xl flex items-center justify-center">
-                <QuestionIcon className="w-6 h-6 text-nhs-warm-yellow" />
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-warm-yellow/10 to-transparent border-b border-nhs-pale-grey">
+            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-warm-yellow/20 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <QuestionIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-warm-yellow" />
               </div>
               {t('summary.sections.questions', 'Questions for Your Team')}
             </h2>
           </div>
-          <div className="p-6">
-            <ul className="space-y-3 mb-6">
+          <div className="p-4 sm:p-6">
+            <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
               {/* Default suggested questions */}
-              <li className="flex items-start gap-4 p-4 border border-nhs-pale-grey rounded-lg">
-                <span className="w-6 h-6 text-[#ffb81c] flex-shrink-0">
+              <li className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg">
+                <span className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffb81c] flex-shrink-0">
                   <LightbulbIcon className="w-full h-full" />
                 </span>
-                <span className="text-text-primary">
+                <span className="text-sm sm:text-base text-text-primary">
                   {t('summary.question1', 'Which treatment options are suitable for my situation?')}
                 </span>
               </li>
-              <li className="flex items-start gap-4 p-4 border border-nhs-pale-grey rounded-lg">
-                <span className="w-6 h-6 text-[#ffb81c] flex-shrink-0">
+              <li className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg">
+                <span className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffb81c] flex-shrink-0">
                   <LightbulbIcon className="w-full h-full" />
                 </span>
-                <span className="text-text-primary">
+                <span className="text-sm sm:text-base text-text-primary">
                   {t('summary.question2', 'What would my daily life look like with each treatment?')}
                 </span>
               </li>
-              <li className="flex items-start gap-4 p-4 border border-nhs-pale-grey rounded-lg">
-                <span className="w-6 h-6 text-[#ffb81c] flex-shrink-0">
+              <li className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg">
+                <span className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffb81c] flex-shrink-0">
                   <LightbulbIcon className="w-full h-full" />
                 </span>
-                <span className="text-text-primary">
+                <span className="text-sm sm:text-base text-text-primary">
                   {t('summary.question3', 'How do I start the process for my preferred treatment?')}
                 </span>
               </li>
               {/* User added questions */}
               {userQuestions.map((question, index) => (
-                <li key={index} className="flex items-start gap-4 p-4 border border-nhs-pale-grey rounded-lg bg-nhs-blue/5">
-                  <span className="w-6 h-6 text-nhs-blue flex-shrink-0">
+                <li key={index} className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg bg-nhs-blue/5">
+                  <span className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue flex-shrink-0">
                     <QuestionIcon className="w-full h-full" />
                   </span>
-                  <span className="text-text-primary flex-1">{question}</span>
+                  <span className="text-sm sm:text-base text-text-primary flex-1">{question}</span>
                   <button
                     onClick={() => handleRemoveQuestion(index)}
-                    className="p-1 text-text-muted hover:text-[#d4351c] hover:bg-red-50 rounded transition-colors print:hidden"
+                    className="p-1.5 min-w-[36px] min-h-[36px] text-text-muted hover:text-[#d4351c] hover:bg-red-50 rounded transition-colors print:hidden flex items-center justify-center"
                     aria-label={t('common.remove', 'Remove')}
                   >
                     <CloseIcon className="w-4 h-4" />
@@ -324,19 +324,19 @@ export default function SummaryPage() {
             </ul>
 
             {/* Add question input - hidden when printing */}
-            <div className="flex gap-3 print:hidden">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 print:hidden">
               <input
                 type="text"
                 value={newQuestion}
                 onChange={(e) => setNewQuestion(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAddQuestion()}
                 placeholder={t('summary.addQuestionPlaceholder', 'Type your own question...')}
-                className="flex-1 px-4 py-2 border-2 border-nhs-pale-grey rounded-md focus:outline-none focus:border-nhs-blue focus:ring-2 focus:ring-nhs-blue/20"
+                className="flex-1 px-3 sm:px-4 py-2.5 sm:py-2 min-h-[48px] text-sm sm:text-base border-2 border-nhs-pale-grey rounded-md focus:outline-none focus:border-nhs-blue focus:ring-2 focus:ring-nhs-blue/20"
               />
               <button
                 onClick={handleAddQuestion}
                 disabled={!newQuestion.trim()}
-                className="px-4 py-2 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark disabled:bg-nhs-mid-grey disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+                className="px-4 py-2.5 min-h-[48px] bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark disabled:bg-nhs-mid-grey disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base"
               >
                 {t('common.add', 'Add')}
               </button>
@@ -345,52 +345,52 @@ export default function SummaryPage() {
         </section>
 
         {/* Next Steps Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-2xl mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="px-6 py-5 bg-gradient-to-r from-nhs-aqua-green/10 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-xl font-bold text-text-primary flex items-center gap-3">
-              <div className="w-10 h-10 bg-nhs-aqua-green/20 rounded-xl flex items-center justify-center">
-                <NextStepsIcon className="w-6 h-6 text-nhs-aqua-green" />
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
+          <div className="px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-aqua-green/10 to-transparent border-b border-nhs-pale-grey">
+            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-aqua-green/20 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <NextStepsIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-aqua-green" />
               </div>
               {t('summary.sections.nextSteps', 'Suggested Next Steps')}
             </h2>
           </div>
-          <div className="p-6">
-            <ul className="space-y-4">
-              <li className="flex items-start gap-4 pb-4 border-b border-nhs-pale-grey">
-                <span className="w-7 h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+          <div className="p-4 sm:p-6">
+            <ul className="space-y-3 sm:space-y-4">
+              <li className="flex items-start gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-nhs-pale-grey">
+                <span className="w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                   1
                 </span>
                 <div>
-                  <p className="font-semibold text-text-primary">
+                  <p className="font-semibold text-sm sm:text-base text-text-primary">
                     {t('summary.step1.title', 'Review this summary')}
                   </p>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-xs sm:text-sm text-text-secondary">
                     {t('summary.step1.description', 'Take time to look through what you have explored and think about any additional questions.')}
                   </p>
                 </div>
               </li>
-              <li className="flex items-start gap-4 pb-4 border-b border-nhs-pale-grey">
-                <span className="w-7 h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+              <li className="flex items-start gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-nhs-pale-grey">
+                <span className="w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                   2
                 </span>
                 <div>
-                  <p className="font-semibold text-text-primary">
+                  <p className="font-semibold text-sm sm:text-base text-text-primary">
                     {t('summary.step2.title', 'Share with family or carers')}
                   </p>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-xs sm:text-sm text-text-secondary">
                     {t('summary.step2.description', 'If you have support at home, discuss your thoughts with them.')}
                   </p>
                 </div>
               </li>
-              <li className="flex items-start gap-4">
-                <span className="w-7 h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+              <li className="flex items-start gap-3 sm:gap-4">
+                <span className="w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
                   3
                 </span>
                 <div>
-                  <p className="font-semibold text-text-primary">
+                  <p className="font-semibold text-sm sm:text-base text-text-primary">
                     {t('summary.step3.title', 'Discuss with your kidney care team')}
                   </p>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-xs sm:text-sm text-text-secondary">
                     {t('summary.step3.description', 'Bring this summary to your next appointment to discuss your options.')}
                   </p>
                 </div>
@@ -400,31 +400,31 @@ export default function SummaryPage() {
         </section>
 
         {/* Privacy Reminder - Enhanced */}
-        <div className="bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-2xl p-5 mb-6 flex items-start gap-4 print:bg-gray-100 print:rounded-lg">
-          <div className="w-12 h-12 bg-nhs-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-            <LockIcon className="w-6 h-6 text-nhs-blue" />
+        <div className="bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-4 sm:mb-6 flex items-start gap-3 sm:gap-4 print:bg-gray-100 print:rounded-lg">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-blue/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+            <LockIcon className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue" />
           </div>
           <div>
-            <p className="font-bold text-text-primary text-lg">
+            <p className="font-bold text-text-primary text-base sm:text-lg">
               {t('summary.privacy.title', 'Your Privacy')}
             </p>
-            <p className="text-sm text-text-secondary mt-1 leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed">
               {t('summary.privacy.text', 'This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server.')}
             </p>
           </div>
         </div>
 
         {/* Disclaimer - Enhanced */}
-        <div className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-orange/10 border-l-4 border-nhs-warm-yellow rounded-2xl p-5 mb-8 print:bg-gray-100 print:border-gray-400 print:rounded-lg">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-nhs-warm-yellow/20 rounded-xl flex items-center justify-center flex-shrink-0">
-              <WarningIcon className="w-6 h-6 text-nhs-orange print:text-gray-600" />
+        <div className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-orange/10 border-l-4 border-nhs-warm-yellow rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-6 sm:mb-8 print:bg-gray-100 print:border-gray-400 print:rounded-lg">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-warm-yellow/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+              <WarningIcon className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-orange print:text-gray-600" />
             </div>
             <div>
-              <p className="font-bold text-text-primary text-lg print:text-gray-700">
+              <p className="font-bold text-text-primary text-base sm:text-lg print:text-gray-700">
                 {t('summary.disclaimer.title', 'Important Reminder')}
               </p>
-              <p className="text-sm text-text-secondary mt-1 leading-relaxed print:text-gray-600">
+              <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed print:text-gray-600">
                 {t(
                   'summary.disclaimer.text',
                   'This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances.'
@@ -435,14 +435,14 @@ export default function SummaryPage() {
         </div>
 
         {/* Action Buttons - Enhanced */}
-        <div className="bg-gradient-to-r from-nhs-green/10 to-nhs-green/5 rounded-2xl p-8 mb-8 text-center print:hidden">
-          <h3 className="text-xl font-bold text-text-primary mb-2">{t('summary.readyForAppointment')}</h3>
-          <p className="text-text-secondary mb-6">{t('summary.printInstructions')}</p>
+        <div className="bg-gradient-to-r from-nhs-green/10 to-nhs-green/5 rounded-xl sm:rounded-2xl p-5 sm:p-8 mb-6 sm:mb-8 text-center print:hidden">
+          <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">{t('summary.readyForAppointment')}</h3>
+          <p className="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6">{t('summary.printInstructions')}</p>
           <button
             onClick={handlePrint}
-            className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+            className="group inline-flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
           >
-            <PrintIcon className="w-6 h-6" />
+            <PrintIcon className="w-5 h-5 sm:w-6 sm:h-6" />
             {t('summary.printForAppointment', 'Print for Your Appointment')}
           </button>
         </div>
@@ -451,22 +451,22 @@ export default function SummaryPage() {
         <div className="text-center print:hidden">
           <button
             onClick={handleStartOver}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-nhs-red hover:bg-nhs-red/5 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+            className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-red hover:bg-nhs-red/5 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base"
           >
-            <RefreshIcon className="w-5 h-5" />
+            <RefreshIcon className="w-4 h-4 sm:w-5 sm:h-5" />
             {t('summary.startOver', 'Start Over')}
           </button>
         </div>
 
         {/* Navigation - Enhanced */}
         <nav
-          className="bg-white rounded-2xl p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-center gap-4 print:hidden"
+          className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 print:hidden mt-6 sm:mt-0"
           aria-label={t('accessibility.pageNavigation')}
         >
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
             <button
               onClick={() => navigate('/hub')}
-              className="inline-flex items-center gap-2 text-nhs-blue hover:bg-nhs-blue/5 px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+              className="inline-flex items-center justify-center gap-2 text-nhs-blue hover:bg-nhs-blue/5 px-4 py-2 min-h-[44px] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base w-full sm:w-auto"
             >
               <BackIcon className="w-4 h-4" />
               {t('nav.backToHub', 'Back to Hub')}
@@ -474,7 +474,7 @@ export default function SummaryPage() {
             <span className="text-nhs-pale-grey hidden sm:inline">|</span>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-text-secondary hover:text-nhs-blue hover:bg-nhs-blue/5 px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+              className="inline-flex items-center justify-center gap-2 text-text-secondary hover:text-nhs-blue hover:bg-nhs-blue/5 px-4 py-2 min-h-[44px] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base w-full sm:w-auto"
             >
               <HomeIcon className="w-4 h-4" />
               {t('nav.returnToHome', 'Return to Home')}
@@ -482,7 +482,7 @@ export default function SummaryPage() {
           </div>
           <Link
             to="/chat"
-            className="group inline-flex items-center gap-2 text-nhs-blue hover:bg-nhs-blue/5 px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus font-medium"
+            className="group inline-flex items-center justify-center gap-2 text-nhs-blue hover:bg-nhs-blue/5 px-4 py-2 min-h-[44px] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus font-medium text-sm sm:text-base w-full sm:w-auto"
           >
             {t('summary.askMore', 'Have more questions?')}
             <ForwardIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />

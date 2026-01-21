@@ -78,6 +78,21 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
   const [settings, setSettings] = useState<AccessibilitySettings>(() => loadAccessibilitySettings());
+  const [initialSettings, setInitialSettings] = useState<AccessibilitySettings>(() => loadAccessibilitySettings());
+
+  // Apply settings immediately when they change (live preview)
+  useEffect(() => {
+    applyAccessibilitySettings(settings);
+  }, [settings]);
+
+  // Reset initial settings and reload current settings when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      const currentSettings = loadAccessibilitySettings();
+      setSettings(currentSettings);
+      setInitialSettings(currentSettings);
+    }
+  }, [isOpen]);
 
   // Store original focus and focus close button when modal opens
   useEffect(() => {
@@ -118,17 +133,39 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
     return () => modal.removeEventListener('keydown', handleTabKey);
   }, [isOpen]);
 
-  // Escape key handler
+  // Handlers defined before effects that use them
+  const handleSave = useCallback(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+      // Settings are already applied via the useEffect, just persist them
+    } catch (e) {
+      console.error('Failed to save accessibility settings:', e);
+    }
+    onClose();
+  }, [settings, onClose]);
+
+  // Handle cancel - revert to initial settings
+  const handleCancel = useCallback(() => {
+    setSettings(initialSettings);
+    applyAccessibilitySettings(initialSettings);
+    onClose();
+  }, [initialSettings, onClose]);
+
+  const handleReset = useCallback(() => {
+    setSettings(DEFAULT_SETTINGS);
+  }, []);
+
+  // Escape key handler - must be after handleCancel is defined
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
-        onClose();
+        handleCancel();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen, handleCancel]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -142,23 +179,9 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
     };
   }, [isOpen]);
 
-  const handleSave = useCallback(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
-      applyAccessibilitySettings(settings);
-    } catch (e) {
-      console.error('Failed to save accessibility settings:', e);
-    }
-    onClose();
-  }, [settings, onClose]);
-
-  const handleReset = useCallback(() => {
-    setSettings(DEFAULT_SETTINGS);
-  }, []);
-
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleCancel();
     }
   };
 
@@ -194,7 +217,7 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
           <button
             ref={closeButtonRef}
             type="button"
-            onClick={onClose}
+            onClick={handleCancel}
             className="p-2.5 sm:p-2 text-text-secondary hover:text-text-primary rounded-md
                        focus:outline-none focus:ring-2 focus:ring-focus focus:bg-focus
                        min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
@@ -334,7 +357,7 @@ export default function AccessibilityModal({ isOpen, onClose }: AccessibilityMod
           </Button>
           <Button
             variant="outline"
-            onClick={onClose}
+            onClick={handleCancel}
             className="order-2 w-full sm:w-auto"
           >
             {t('accessibility.modal.cancel')}

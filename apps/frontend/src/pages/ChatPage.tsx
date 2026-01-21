@@ -165,33 +165,33 @@ export default function ChatPage() {
         </div>
       )}
 
-      {/* Chat Header - Enhanced */}
-      <div className="flex items-center justify-between px-4 md:px-6 py-4 bg-white border-b border-nhs-pale-grey flex-shrink-0 shadow-sm">
-        <div className="flex items-center gap-4">
-          <div className="relative">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-nhs-blue to-nhs-blue-dark flex items-center justify-center flex-shrink-0 shadow-lg">
-              <BotIcon className="w-8 h-8 text-white" />
+      {/* Chat Header - Enhanced for mobile */}
+      <div className="flex items-center justify-between px-3 sm:px-4 md:px-6 py-3 sm:py-4 bg-white border-b border-nhs-pale-grey flex-shrink-0 shadow-sm">
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+          <div className="relative flex-shrink-0">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-nhs-blue to-nhs-blue-dark flex items-center justify-center flex-shrink-0 shadow-lg">
+              <BotIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
-            <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-nhs-green rounded-full border-2 border-white animate-pulse" />
+            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 sm:w-4 sm:h-4 bg-nhs-green rounded-full border-2 border-white animate-pulse" />
           </div>
-          <div>
-            <h1 className="text-xl font-bold text-text-primary">
+          <div className="min-w-0">
+            <h1 className="text-base sm:text-xl font-bold text-text-primary truncate">
               {t('chat.title', 'NHS Kidney Care Assistant')}
             </h1>
-            <div className="flex items-center gap-1.5 text-sm text-nhs-green font-medium">
-              <span className="w-2 h-2 rounded-full bg-nhs-green animate-pulse" />
-              {t('chat.status.online')}
-              <span className="text-text-muted font-normal">- {t('chat.readyToHelp')}</span>
+            <div className="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm text-nhs-green font-medium">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-nhs-green animate-pulse flex-shrink-0" />
+              <span>{t('chat.status.online')}</span>
+              <span className="text-text-muted font-normal hidden sm:inline">- {t('chat.readyToHelp')}</span>
             </div>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-shrink-0">
           <Link
             to="/hub"
-            className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-nhs-blue bg-nhs-blue/5 hover:bg-nhs-blue/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+            className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-nhs-blue bg-nhs-blue/5 hover:bg-nhs-blue/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-focus min-h-[40px] touch-manipulation"
           >
             <BackIcon className="w-4 h-4" />
-            {t('chat.backToHub', 'Back to Hub')}
+            <span className="hidden sm:inline">{t('chat.backToHub', 'Back to Hub')}</span>
           </Link>
         </div>
       </div>
@@ -208,44 +208,44 @@ export default function ChatPage() {
           {/* Welcome message if no chat history */}
           {messages.length === 0 && (
             <>
-              {/* Welcome Message - Enhanced */}
-              <div className="flex gap-4 max-w-[85%] self-start animate-fade-in">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-nhs-blue to-nhs-blue-dark flex items-center justify-center flex-shrink-0 shadow-md">
-                  <BotIcon className="w-6 h-6 text-white" />
+              {/* Welcome Message - Enhanced with mobile optimization */}
+              <div className="flex gap-2 sm:gap-4 max-w-[92%] sm:max-w-[85%] self-start animate-fade-in">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-nhs-blue to-nhs-blue-dark flex items-center justify-center flex-shrink-0 shadow-md">
+                  <BotIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <div className="bg-white border border-nhs-pale-grey rounded-2xl rounded-tl-md p-5 leading-relaxed shadow-sm">
-                    <p className="mb-4 text-text-primary">
+                <div className="flex flex-col gap-1 sm:gap-2 min-w-0 flex-1">
+                  <div className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl rounded-tl-md p-3 sm:p-5 leading-relaxed shadow-sm">
+                    <p className="mb-3 sm:mb-4 text-text-primary text-sm sm:text-base">
                       {t('chat.welcome.greeting', 'Hello! I am the NHS Kidney Care Assistant. I am here to help you understand kidney treatment options.')}
                     </p>
-                    <p className="text-text-secondary">
+                    <p className="text-text-secondary text-sm sm:text-base">
                       {t('chat.welcome.prompt', 'You can ask me questions about dialysis, transplants, conservative care, or anything else related to kidney treatment. How can I help you today?')}
                     </p>
                   </div>
-                  <span className="text-xs text-text-muted px-2">{formatTime(Date.now())}</span>
+                  <span className="text-[10px] sm:text-xs text-text-muted px-2">{formatTime(Date.now())}</span>
                 </div>
               </div>
 
-              {/* Suggested Questions - Enhanced */}
-              <div className="bg-gradient-to-br from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-2xl p-6 mt-4 shadow-sm">
-                <h2 className="text-base font-bold text-text-primary mb-4 flex items-center gap-2">
-                  <div className="w-8 h-8 bg-nhs-blue/20 rounded-lg flex items-center justify-center">
-                    <QuestionIcon className="w-5 h-5 text-nhs-blue" />
+              {/* Suggested Questions - Enhanced with better mobile wrapping */}
+              <div className="bg-gradient-to-br from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 mt-4 shadow-sm">
+                <h2 className="text-sm sm:text-base font-bold text-text-primary mb-3 sm:mb-4 flex items-center gap-2">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-nhs-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <QuestionIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-blue" />
                   </div>
                   {t('chat.suggestedQuestions', 'Suggested Questions')}
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
                   {SUGGESTED_QUESTION_KEYS.map((key, index) => {
                     const question = t(key);
                     return (
                       <button
                         key={index}
                         onClick={() => handleSend(question)}
-                        className="group text-left px-4 py-3 bg-white border border-nhs-pale-grey rounded-xl text-sm text-text-primary hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus"
+                        className="group text-left px-3 sm:px-4 py-3 bg-white border border-nhs-pale-grey rounded-xl text-xs sm:text-sm text-text-primary hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus min-h-[44px] touch-manipulation"
                       >
-                        <span className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 bg-nhs-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                          {question}
+                        <span className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 bg-nhs-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1.5" />
+                          <span className="break-words">{question}</span>
                         </span>
                       </button>
                     );
@@ -255,54 +255,54 @@ export default function ChatPage() {
             </>
           )}
 
-          {/* Chat Messages - Modern bubble design */}
+          {/* Chat Messages - Modern bubble design with mobile optimization */}
           {messages.map((message, index) => (
             <div
               key={message.id}
-              className={`flex gap-4 max-w-[85%] animate-fade-in ${
+              className={`flex gap-2 sm:gap-4 max-w-[92%] sm:max-w-[85%] animate-fade-in ${
                 message.role === 'assistant' ? 'self-start' : 'self-end flex-row-reverse'
               }`}
             >
               <div
-                className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md ${
+                className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 shadow-md ${
                   message.role === 'assistant'
                     ? 'bg-gradient-to-br from-nhs-blue to-nhs-blue-dark'
                     : 'bg-gradient-to-br from-nhs-aqua-green to-[#008577]'
                 }`}
               >
                 {message.role === 'assistant' ? (
-                  <BotIcon className="w-6 h-6 text-white" />
+                  <BotIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 ) : (
-                  <UserIcon className="w-6 h-6 text-white" />
+                  <UserIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 )}
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1 sm:gap-2 min-w-0 flex-1">
                 <div
-                  className={`p-5 rounded-2xl leading-relaxed shadow-sm ${
+                  className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl leading-relaxed shadow-sm ${
                     message.role === 'assistant'
                       ? 'bg-white border border-nhs-pale-grey rounded-tl-md'
                       : 'bg-gradient-to-br from-nhs-blue to-nhs-blue-dark text-white rounded-tr-md'
                   }`}
                 >
-                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  <p className="whitespace-pre-wrap text-sm sm:text-base break-words">{message.content}</p>
                 </div>
                 <span
-                  className={`text-xs text-text-muted px-2 ${
+                  className={`text-[10px] sm:text-xs text-text-muted px-2 ${
                     message.role === 'user' ? 'text-right' : ''
                   }`}
                 >
                   {formatTime(message.timestamp)}
                 </span>
-                {/* Quick Replies for last assistant message - Enhanced */}
+                {/* Quick Replies for last assistant message - Enhanced with mobile sizing */}
                 {message.role === 'assistant' && index === messages.length - 1 && !isLoading && (
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-2 mt-1 sm:mt-2">
                     {QUICK_REPLY_KEYS.map((key, idx) => {
                       const reply = t(key);
                       return (
                         <button
                           key={idx}
                           onClick={() => handleSend(reply)}
-                          className="px-4 py-2 bg-white border-2 border-nhs-blue/30 text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm"
+                          className="px-3 sm:px-4 py-2 bg-white border-2 border-nhs-blue/30 text-xs sm:text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm min-h-[36px] sm:min-h-[40px] touch-manipulation"
                         >
                           {reply}
                         </button>
@@ -331,16 +331,16 @@ export default function ChatPage() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area - Enhanced */}
-        <div className="flex-shrink-0 border-t border-nhs-pale-grey bg-white/95 backdrop-blur-sm p-4 shadow-lg">
+        {/* Input Area - Enhanced for mobile */}
+        <div className="flex-shrink-0 border-t border-nhs-pale-grey bg-white/95 backdrop-blur-sm p-3 sm:p-4 shadow-lg">
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSend();
             }}
-            className="flex gap-3 items-end max-w-3xl mx-auto"
+            className="flex gap-2 sm:gap-3 items-end max-w-3xl mx-auto"
           >
-            <div className="flex-1 relative">
+            <div className="flex-1 relative min-w-0">
               <textarea
                 ref={inputRef}
                 value={input}
@@ -348,13 +348,14 @@ export default function ChatPage() {
                 onKeyDown={handleKeyDown}
                 placeholder={t('chat.placeholder', 'Type your question here...')}
                 rows={1}
-                className="w-full px-5 py-4 pr-12 border-2 border-nhs-pale-grey rounded-2xl resize-none focus:outline-none focus:border-nhs-blue focus:ring-4 focus:ring-nhs-blue/20 transition-all shadow-sm"
+                className="w-full px-3 sm:px-5 py-3 sm:py-4 pr-10 sm:pr-12 border-2 border-nhs-pale-grey rounded-xl sm:rounded-2xl resize-none focus:outline-none focus:border-nhs-blue focus:ring-4 focus:ring-nhs-blue/20 transition-all shadow-sm text-sm sm:text-base"
                 aria-label={t('chat.inputLabel', 'Message input')}
                 disabled={isLoading}
+                style={{ fontSize: '16px' }} // Prevents iOS zoom on focus
               />
               <button
                 type="button"
-                className="absolute right-4 bottom-4 p-1.5 text-nhs-mid-grey hover:text-nhs-blue hover:bg-nhs-blue/10 rounded-lg transition-all"
+                className="absolute right-2 sm:right-4 bottom-2.5 sm:bottom-4 p-2 text-nhs-mid-grey hover:text-nhs-blue hover:bg-nhs-blue/10 rounded-lg transition-all min-w-[36px] min-h-[36px] touch-manipulation"
                 aria-label={t('chat.audioInput', 'Voice input')}
               >
                 <MicIcon className="w-5 h-5" />
@@ -363,18 +364,18 @@ export default function ChatPage() {
             <button
               type="submit"
               disabled={!input.trim() || isLoading}
-              className="px-6 py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-2xl flex items-center gap-2 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus"
+              className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus min-w-[48px] min-h-[48px] touch-manipulation"
               aria-label={t('chat.send', 'Send message')}
             >
               <SendIcon className="w-5 h-5" />
               <span className="hidden sm:inline">{t('chat.send', 'Send')}</span>
             </button>
           </form>
-          <p className="text-xs text-text-muted mt-3 text-center flex items-center justify-center gap-1">
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+          <p className="text-[10px] sm:text-xs text-text-muted mt-2 sm:mt-3 text-center flex items-center justify-center gap-1 px-2">
+            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
             </svg>
-            {t('chat.disclaimer', 'This assistant provides general information only and is not a substitute for medical advice from your kidney care team.')}
+            <span>{t('chat.disclaimer', 'This assistant provides general information only and is not a substitute for medical advice from your kidney care team.')}</span>
           </p>
         </div>
       </div>
