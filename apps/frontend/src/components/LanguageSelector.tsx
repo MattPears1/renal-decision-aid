@@ -1,3 +1,12 @@
+/**
+ * @fileoverview Language selector component for the NHS Renal Decision Aid.
+ * Provides dropdown and inline variants for switching between supported languages.
+ * @module components/LanguageSelector
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -8,11 +17,40 @@ import {
 } from '@/config/i18n';
 import clsx from 'clsx';
 
+/**
+ * Props for the LanguageSelector component.
+ * @interface LanguageSelectorProps
+ * @property {'dropdown' | 'inline'} [variant='dropdown'] - Display variant
+ * @property {string} [className=''] - Additional CSS classes
+ */
 interface LanguageSelectorProps {
   variant?: 'dropdown' | 'inline';
   className?: string;
 }
 
+/**
+ * Language selector component for switching interface language.
+ *
+ * Features:
+ * - Dropdown variant: Compact button with expandable list
+ * - Inline variant: Button group for direct selection
+ * - Loading states during language change
+ * - Automatic document direction (RTL/LTR) updates
+ * - Click outside to close dropdown
+ * - Native language names for accessibility
+ *
+ * @component
+ * @param {LanguageSelectorProps} props - Component props
+ * @returns {JSX.Element} The rendered language selector
+ *
+ * @example
+ * // Dropdown variant (default)
+ * <LanguageSelector variant="dropdown" />
+ *
+ * @example
+ * // Inline button group
+ * <LanguageSelector variant="inline" />
+ */
 export default function LanguageSelector({
   variant = 'dropdown',
   className = '',
@@ -23,8 +61,12 @@ export default function LanguageSelector({
   const [loadingLang, setLoadingLang] = useState<SupportedLanguage | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Track language in local state to ensure re-renders
-  // Handle language codes with region (e.g., 'en-GB' -> 'en')
+  /**
+   * Gets a valid supported language from a language code.
+   * Handles region suffixes (e.g., 'en-GB' -> 'en').
+   * @param {string} lang - The language code to validate
+   * @returns {SupportedLanguage} A valid supported language code
+   */
   const getValidLanguage = useCallback((lang: string): SupportedLanguage => {
     const baseLang = lang?.split('-')[0];
     if (isSupportedLanguage(baseLang)) {
@@ -76,6 +118,10 @@ export default function LanguageSelector({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  /**
+   * Handles language change with loading state and error recovery.
+   * @param {SupportedLanguage} langCode - The language code to switch to
+   */
   const handleLanguageChange = useCallback(
     async (langCode: SupportedLanguage) => {
       // Prevent multiple simultaneous language changes
@@ -110,7 +156,10 @@ export default function LanguageSelector({
     [isLoading]
   );
 
-  // Loading spinner component
+  /**
+   * Loading spinner component for language change state.
+   * @returns {JSX.Element} An animated spinner element
+   */
   const LoadingSpinner = () => (
     <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
   );

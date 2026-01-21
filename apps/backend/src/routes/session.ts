@@ -1,14 +1,58 @@
+/**
+ * @fileoverview Session management API endpoints for the NHS Renal Decision Aid.
+ * Handles creation, retrieval, updating, and deletion of user sessions
+ * for maintaining state across the decision support journey.
+ *
+ * @module routes/session
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires express
+ * @requires uuid
+ * @requires ../services/sessionStore
+ * @requires ../middleware/rateLimiter
+ * @requires ../services/logger
+ *
+ * @see {@link module:services/sessionStore} for session storage implementation
+ */
+
 import { Router, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { sessionStore, SessionData } from '../services/sessionStore.js';
 import { sessionCreateRateLimiter, sessionRateLimiter } from '../middleware/rateLimiter.js';
 import logger, { logError } from '../services/logger.js';
 
+/**
+ * Express router instance for session management endpoints.
+ * @type {Router}
+ */
 const router = Router();
 
 /**
+ * Create a new user session.
+ *
  * POST /api/session
- * Create a new session
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} JSON response with new session details
+ *
+ * @throws {429} Rate Limited - Too many session creation requests
+ * @throws {500} Session Creation Failed - Internal error
+ *
+ * @example
+ * // Request
+ * POST /api/session
+ *
+ * // Response (201 Created)
+ * {
+ *   "sessionId": "550e8400-e29b-41d4-a716-446655440000",
+ *   "expiresAt": "2026-01-21T10:45:00.000Z",
+ *   "message": "Session created successfully"
+ * }
  */
 router.post('/', sessionCreateRateLimiter, async (req: Request, res: Response) => {
   try {
@@ -35,8 +79,37 @@ router.post('/', sessionCreateRateLimiter, async (req: Request, res: Response) =
 });
 
 /**
+ * Retrieve session data by ID.
+ *
  * GET /api/session/:id
- * Get session data by ID
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {string} req.params.id - Session ID to retrieve
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} JSON response with session data
+ *
+ * @throws {404} Session Not Found - Session does not exist or has expired
+ * @throws {429} Rate Limited - Too many requests
+ * @throws {500} Session Retrieval Failed - Internal error
+ *
+ * @example
+ * // Request
+ * GET /api/session/550e8400-e29b-41d4-a716-446655440000
+ *
+ * // Response
+ * {
+ *   "sessionId": "550e8400-e29b-41d4-a716-446655440000",
+ *   "expiresAt": "2026-01-21T10:45:00.000Z",
+ *   "data": {
+ *     "preferences": { "language": "en" },
+ *     "questionnaireAnswers": [],
+ *     "values": {},
+ *     "chatHistory": [],
+ *     "currentStep": "welcome"
+ *   }
+ * }
  */
 router.get('/:id', sessionRateLimiter, async (req: Request, res: Response) => {
   try {
@@ -80,8 +153,38 @@ router.get('/:id', sessionRateLimiter, async (req: Request, res: Response) => {
 });
 
 /**
+ * Update session data.
+ *
  * PUT /api/session/:id
- * Update session data
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {string} req.params.id - Session ID to update
+ * @param {Partial<SessionData>} req.body - Session data to update
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} JSON response with updated session data
+ *
+ * @throws {400} Invalid Update - Request contains invalid fields
+ * @throws {404} Session Not Found - Session does not exist or has expired
+ * @throws {429} Rate Limited - Too many requests
+ * @throws {500} Session Update Failed - Internal error
+ *
+ * @example
+ * // Request
+ * PUT /api/session/550e8400-e29b-41d4-a716-446655440000
+ * {
+ *   "preferences": { "language": "hi" },
+ *   "currentStep": "treatment-overview"
+ * }
+ *
+ * // Response
+ * {
+ *   "sessionId": "550e8400-e29b-41d4-a716-446655440000",
+ *   "expiresAt": "2026-01-21T10:45:00.000Z",
+ *   "message": "Session updated successfully",
+ *   "data": { ... }
+ * }
  */
 router.put('/:id', sessionRateLimiter, async (req: Request, res: Response) => {
   try {
@@ -160,8 +263,29 @@ router.put('/:id', sessionRateLimiter, async (req: Request, res: Response) => {
 });
 
 /**
+ * Delete/end a session.
+ *
  * DELETE /api/session/:id
- * End/delete a session
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {string} req.params.id - Session ID to delete
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} JSON response confirming deletion
+ *
+ * @throws {404} Session Not Found - Session does not exist or already deleted
+ * @throws {429} Rate Limited - Too many requests
+ * @throws {500} Session Deletion Failed - Internal error
+ *
+ * @example
+ * // Request
+ * DELETE /api/session/550e8400-e29b-41d4-a716-446655440000
+ *
+ * // Response
+ * {
+ *   "message": "Session ended successfully"
+ * }
  */
 router.delete('/:id', sessionRateLimiter, async (req: Request, res: Response) => {
   try {

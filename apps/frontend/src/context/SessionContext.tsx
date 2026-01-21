@@ -1,3 +1,12 @@
+/**
+ * @fileoverview Session context provider for the NHS Renal Decision Aid.
+ * Manages user session state including progress, preferences, and timing.
+ * @module context/SessionContext
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import i18next from 'i18next';
 import { changeLanguageAndWait } from '@/config/i18n';
@@ -11,6 +20,23 @@ import type {
   ChatMessage,
 } from '@renal-decision-aid/shared-types';
 
+/**
+ * Session context value type.
+ * @interface SessionContextType
+ * @property {Session | null} session - Current session data
+ * @property {boolean} isLoading - Whether session is loading
+ * @property {string | null} error - Current error message
+ * @property {number | null} timeRemaining - Time remaining in ms
+ * @property {(language: SupportedLanguage) => Promise<void>} createSession - Create new session
+ * @property {() => Promise<void>} endSession - End current session
+ * @property {() => Promise<void>} extendSession - Extend session timeout
+ * @property {(language: SupportedLanguage) => Promise<void>} setLanguage - Change language
+ * @property {(stage: JourneyStage) => void} setJourneyStage - Update journey stage
+ * @property {(answer: QuestionnaireAnswer) => void} addQuestionnaireAnswer - Add questionnaire answer
+ * @property {(rating: ValueRating) => void} addValueRating - Add value rating
+ * @property {(treatment: TreatmentType) => void} markTreatmentViewed - Mark treatment as viewed
+ * @property {(message: ChatMessage) => void} addChatMessage - Add chat message
+ */
 interface SessionContextType {
   session: Session | null;
   isLoading: boolean;
@@ -31,15 +57,45 @@ interface SessionContextType {
   addChatMessage: (message: ChatMessage) => void;
 }
 
+/** Session context instance. */
 const SessionContext = createContext<SessionContextType | undefined>(undefined);
 
+/** Session duration in milliseconds (15 minutes). */
 const SESSION_DURATION_MS = 15 * 60 * 1000; // 15 minutes
+
+/** Warning threshold in milliseconds (5 minutes). */
 const WARNING_THRESHOLD_MS = 5 * 60 * 1000; // 5 minutes
 
+/**
+ * Props for the SessionProvider component.
+ * @interface SessionProviderProps
+ * @property {ReactNode} children - Child components to wrap
+ */
 interface SessionProviderProps {
   children: ReactNode;
 }
 
+/**
+ * Session context provider component.
+ *
+ * Features:
+ * - Session creation and management
+ * - Automatic session timeout with countdown
+ * - Language management with i18n integration
+ * - Journey progress tracking
+ * - Questionnaire and value rating storage
+ * - Treatment view tracking
+ * - Chat history management
+ *
+ * @component
+ * @param {SessionProviderProps} props - Component props
+ * @returns {JSX.Element} The provider wrapper
+ *
+ * @example
+ * <SessionProvider>
+ *   <App />
+ * </SessionProvider>
+ */
 export function SessionProvider({ children }: SessionProviderProps) {
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -249,6 +305,13 @@ export function SessionProvider({ children }: SessionProviderProps) {
   );
 }
 
+/**
+ * Hook to access session context.
+ * Must be used within a SessionProvider.
+ * @hook
+ * @returns {SessionContextType} Session context value
+ * @throws {Error} If used outside SessionProvider
+ */
 export function useSession() {
   const context = useContext(SessionContext);
   if (context === undefined) {
@@ -257,7 +320,17 @@ export function useSession() {
   return context;
 }
 
-// Helper hook for session timer display
+/**
+ * Helper hook for session timer display.
+ * Provides formatted time remaining and warning state.
+ * @hook
+ * @returns {Object} Timer state and controls
+ * @returns {number} minutes - Minutes remaining
+ * @returns {number} seconds - Seconds remaining
+ * @returns {boolean} isWarning - Whether in warning threshold
+ * @returns {string} formatted - Formatted time string (MM:SS)
+ * @returns {() => Promise<void>} extendSession - Extend session function
+ */
 export function useSessionTimer() {
   const { timeRemaining, extendSession } = useSession();
 

@@ -1,8 +1,38 @@
+/**
+ * @fileoverview Session summary page for the NHS Renal Decision Aid.
+ * Displays a comprehensive summary of the user's session including journey stage,
+ * value priorities, treatments explored, and questions for their healthcare team.
+ * Supports printing and sharing functionality.
+ *
+ * @module pages/SummaryPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-i18next
+ * @requires react-router-dom
+ * @requires @/context/SessionContext
+ */
+
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '@/context/SessionContext';
 
+/**
+ * Session summary page component.
+ * Provides a printable summary of the user's decision aid session including
+ * their journey stage, value priorities, viewed treatments, and questions
+ * for their healthcare team.
+ *
+ * @component
+ * @returns {JSX.Element} The summary page with print and share functionality
+ *
+ * @example
+ * // In router configuration
+ * <Route path="/summary" element={<SummaryPage />} />
+ */
 export default function SummaryPage() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -10,10 +40,16 @@ export default function SummaryPage() {
   const [userQuestions, setUserQuestions] = useState<string[]>([]);
   const [newQuestion, setNewQuestion] = useState('');
 
+  /**
+   * Triggers the browser print dialog.
+   */
   const handlePrint = () => {
     window.print();
   };
 
+  /**
+   * Handles starting over - confirms with user and resets session.
+   */
   const handleStartOver = () => {
     if (window.confirm(t('summary.confirmReset', 'Are you sure you want to start over? All your progress will be lost.'))) {
       endSession();
@@ -21,6 +57,9 @@ export default function SummaryPage() {
     }
   };
 
+  /**
+   * Adds a new question to the user's question list.
+   */
   const handleAddQuestion = () => {
     if (newQuestion.trim()) {
       setUserQuestions([...userQuestions, newQuestion.trim()]);
@@ -28,22 +67,46 @@ export default function SummaryPage() {
     }
   };
 
+  /**
+   * Removes a question from the list by index.
+   * @param {number} index - The index of the question to remove
+   */
   const handleRemoveQuestion = (index: number) => {
     setUserQuestions(userQuestions.filter((_, i) => i !== index));
   };
 
+  /**
+   * Gets the translated label for a journey stage.
+   * @param {string} stage - The journey stage identifier
+   * @returns {string} The translated stage label
+   */
   const getJourneyStageLabel = (stage: string): string => {
     return t(`summary.journeyStages.${stage}`, stage);
   };
 
+  /**
+   * Gets the translated description for a journey stage.
+   * @param {string} stage - The journey stage identifier
+   * @returns {string} The translated stage description
+   */
   const getJourneyStageDescription = (stage: string): string => {
     return t(`summary.journeyDescriptions.${stage}`, t('summary.journeyDescriptions.default'));
   };
 
+  /**
+   * Gets the translated label for a value rating.
+   * @param {number} value - The rating value (1-5)
+   * @returns {string} The translated rating label
+   */
   const getValueLabel = (value: number): string => {
     return t(`summary.valueLabels.${value}`, t('summary.valueLabels.default'));
   };
 
+  /**
+   * Gets the translated label for a treatment type.
+   * @param {string} treatment - The treatment identifier
+   * @returns {string} The translated treatment label
+   */
   const getTreatmentLabel = (treatment: string): string => {
     return t(`summary.treatmentLabels.${treatment}`, treatment);
   };
@@ -501,6 +564,8 @@ export default function SummaryPage() {
 }
 
 // Icon Components
+
+/** Print icon component. @component */
 function PrintIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -511,6 +576,7 @@ function PrintIcon({ className }: { className?: string }) {
   );
 }
 
+/** Share icon component. @component */
 function ShareIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -523,6 +589,7 @@ function ShareIcon({ className }: { className?: string }) {
   );
 }
 
+/** Edit/pencil icon component. @component */
 function EditIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -531,6 +598,7 @@ function EditIcon({ className }: { className?: string }) {
   );
 }
 
+/** Journey/globe icon component. @component */
 function JourneyIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -539,6 +607,7 @@ function JourneyIcon({ className }: { className?: string }) {
   );
 }
 
+/** Forward arrow icon component. @component */
 function StageIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -547,6 +616,7 @@ function StageIcon({ className }: { className?: string }) {
   );
 }
 
+/** Heart icon component. @component */
 function HeartIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -555,6 +625,7 @@ function HeartIcon({ className }: { className?: string }) {
   );
 }
 
+/** Treatment/document icon component. @component */
 function TreatmentIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -563,6 +634,7 @@ function TreatmentIcon({ className }: { className?: string }) {
   );
 }
 
+/** Checkmark icon component. @component */
 function CheckIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -571,6 +643,7 @@ function CheckIcon({ className }: { className?: string }) {
   );
 }
 
+/** Question mark icon component. @component */
 function QuestionIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -579,6 +652,7 @@ function QuestionIcon({ className }: { className?: string }) {
   );
 }
 
+/** Lightbulb/idea icon component. @component */
 function LightbulbIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -587,6 +661,7 @@ function LightbulbIcon({ className }: { className?: string }) {
   );
 }
 
+/** Close/X icon component. @component */
 function CloseIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -596,6 +671,7 @@ function CloseIcon({ className }: { className?: string }) {
   );
 }
 
+/** Next steps/clipboard icon component. @component */
 function NextStepsIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -604,6 +680,7 @@ function NextStepsIcon({ className }: { className?: string }) {
   );
 }
 
+/** Lock/privacy icon component. @component */
 function LockIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -612,6 +689,7 @@ function LockIcon({ className }: { className?: string }) {
   );
 }
 
+/** Warning triangle icon component. @component */
 function WarningIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -620,6 +698,7 @@ function WarningIcon({ className }: { className?: string }) {
   );
 }
 
+/** Refresh/restart icon component. @component */
 function RefreshIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -629,6 +708,7 @@ function RefreshIcon({ className }: { className?: string }) {
   );
 }
 
+/** Back arrow icon component. @component */
 function BackIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -638,6 +718,7 @@ function BackIcon({ className }: { className?: string }) {
   );
 }
 
+/** Forward arrow icon component. @component */
 function ForwardIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -647,6 +728,7 @@ function ForwardIcon({ className }: { className?: string }) {
   );
 }
 
+/** Home icon component. @component */
 function HomeIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">

@@ -1,18 +1,53 @@
+/**
+ * @fileoverview Voice recording hook for the NHS Renal Decision Aid.
+ * Handles microphone access, audio recording, and transcription via OpenAI Whisper.
+ * @module hooks/useVoiceRecording
+ * @version 2.5.0
+ * @since 2.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState, useCallback, useRef, useEffect } from 'react';
 
+/**
+ * Recording state machine states.
+ * @typedef {'idle' | 'requesting' | 'recording' | 'processing' | 'error'} RecordingState
+ */
 export type RecordingState = 'idle' | 'requesting' | 'recording' | 'processing' | 'error';
 
+/**
+ * Voice recording error structure.
+ * @interface VoiceRecordingError
+ * @property {'PERMISSION_DENIED' | 'NOT_SUPPORTED' | 'NO_AUDIO' | 'TRANSCRIPTION_FAILED' | 'UNKNOWN'} code - Error code
+ * @property {string} message - Human-readable error message
+ */
 export interface VoiceRecordingError {
   code: 'PERMISSION_DENIED' | 'NOT_SUPPORTED' | 'NO_AUDIO' | 'TRANSCRIPTION_FAILED' | 'UNKNOWN';
   message: string;
 }
 
+/**
+ * Successful transcription result.
+ * @interface TranscriptionResult
+ * @property {string} text - Transcribed text
+ * @property {string} [language] - Detected language code
+ * @property {number} [duration] - Audio duration in seconds
+ */
 export interface TranscriptionResult {
   text: string;
   language?: string;
   duration?: number;
 }
 
+/**
+ * Options for the useVoiceRecording hook.
+ * @interface UseVoiceRecordingOptions
+ * @property {string} [transcribeEndpoint] - API endpoint for transcription
+ * @property {string} [language] - Language hint for transcription
+ * @property {number} [maxDuration=120] - Maximum recording duration in seconds
+ * @property {(result: TranscriptionResult) => void} [onTranscription] - Success callback
+ * @property {(error: VoiceRecordingError) => void} [onError] - Error callback
+ */
 export interface UseVoiceRecordingOptions {
   /** API endpoint for transcription */
   transcribeEndpoint?: string;
@@ -26,6 +61,19 @@ export interface UseVoiceRecordingOptions {
   onError?: (error: VoiceRecordingError) => void;
 }
 
+/**
+ * Return value from the useVoiceRecording hook.
+ * @interface UseVoiceRecordingReturn
+ * @property {RecordingState} state - Current recording state
+ * @property {boolean} isSupported - Whether browser supports recording
+ * @property {boolean | null} hasPermission - Microphone permission status
+ * @property {() => Promise<void>} startRecording - Start recording function
+ * @property {() => Promise<TranscriptionResult | null>} stopRecording - Stop and transcribe
+ * @property {() => void} cancelRecording - Cancel without transcribing
+ * @property {VoiceRecordingError | null} error - Current error
+ * @property {number} audioLevel - Audio level (0-1) for visualization
+ * @property {number} duration - Recording duration in seconds
+ */
 export interface UseVoiceRecordingReturn {
   /** Current recording state */
   state: RecordingState;
@@ -47,17 +95,35 @@ export interface UseVoiceRecordingReturn {
   duration: number;
 }
 
+/** API base URL from environment or default. */
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5006';
 
 /**
- * Custom hook for voice recording and transcription
+ * Custom hook for voice recording and transcription.
  *
  * Features:
  * - MediaRecorder API for audio capture
  * - Audio level monitoring for visualization
  * - Automatic transcription via OpenAI Whisper
  * - Permission handling
- * - Error management
+ * - Error management with specific error codes
+ * - Maximum duration limit
+ * - Cleanup on unmount
+ *
+ * @hook
+ * @param {UseVoiceRecordingOptions} [options={}] - Hook options
+ * @returns {UseVoiceRecordingReturn} Recording controls and state
+ *
+ * @example
+ * const {
+ *   state,
+ *   startRecording,
+ *   stopRecording,
+ *   audioLevel
+ * } = useVoiceRecording({
+ *   onTranscription: (result) => console.log(result.text),
+ *   maxDuration: 60
+ * });
  */
 export function useVoiceRecording(options: UseVoiceRecordingOptions = {}): UseVoiceRecordingReturn {
   const {

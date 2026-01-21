@@ -1,5 +1,7 @@
 # Claude Code Instructions
 
+**Last Updated:** 21 January 2026
+
 Project-specific instructions for AI agents working on this codebase.
 
 ## Process Management - CRITICAL

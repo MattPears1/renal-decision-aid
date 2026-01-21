@@ -1,15 +1,45 @@
+/**
+ * @fileoverview Questionnaire page for the NHS Renal Decision Aid.
+ * Guides users through a series of questions to personalize their experience
+ * by understanding their knowledge level, goals, preferences, and priorities.
+ * @module pages/QuestionnairePage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
 import StickyProgressIndicator from '@/components/StickyProgressIndicator';
 
+/**
+ * Question option key structure for translation-based options.
+ * @interface QuestionOptionKey
+ * @property {string} value - The option value to store
+ * @property {string} labelKey - i18n key for the option label
+ * @property {string} [descriptionKey] - Optional i18n key for option description
+ */
 interface QuestionOptionKey {
   value: string;
   labelKey: string;
   descriptionKey?: string;
 }
 
+/**
+ * Question configuration structure for the questionnaire.
+ * @interface Question
+ * @property {string} id - Unique identifier for the question
+ * @property {'slider' | 'radio' | 'checkbox'} type - Type of input control
+ * @property {string} questionKey - i18n key for the question text
+ * @property {string} [hintKey] - Optional i18n key for hint text
+ * @property {QuestionOptionKey[]} [optionKeys] - Options for radio/checkbox types
+ * @property {string[]} [sliderLabelKeys] - Labels for slider positions
+ * @property {number} [min] - Minimum value for slider
+ * @property {number} [max] - Maximum value for slider
+ * @property {number} [maxSelections] - Max selections for checkbox type
+ */
 interface Question {
   id: string;
   type: 'slider' | 'radio' | 'checkbox';
@@ -22,6 +52,12 @@ interface Question {
   maxSelections?: number;
 }
 
+/**
+ * Array of questionnaire questions with their configurations.
+ * Includes questions about knowledge level, session goals, learning preferences,
+ * comfort level, home support, living situation, and priorities.
+ * @constant {Question[]}
+ */
 const QUESTIONS: Question[] = [
   {
     id: 'knowledge-level',
@@ -124,6 +160,24 @@ const QUESTIONS: Question[] = [
   },
 ];
 
+/**
+ * Questionnaire page component for collecting user preferences.
+ *
+ * Features:
+ * - Introduction screen with feature highlights
+ * - Multiple question types: slider, radio, checkbox
+ * - Progress tracking with visual progress bar
+ * - Sticky progress indicator on scroll
+ * - Skip functionality for individual questions or all
+ * - Audio support for accessibility
+ * - Saves answers to session context
+ *
+ * @component
+ * @returns {JSX.Element} The rendered questionnaire page
+ *
+ * @example
+ * <Route path="/questionnaire" element={<QuestionnairePage />} />
+ */
 export default function QuestionnairePage() {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -137,14 +191,28 @@ export default function QuestionnairePage() {
   const question = QUESTIONS[currentQuestion];
   const progress = ((currentQuestion + 1) / totalQuestions) * 100;
 
+  /**
+   * Handles slider value changes for slider-type questions.
+   * @param {number} value - The new slider value
+   */
   const handleSliderChange = (value: number) => {
     setAnswers(prev => ({ ...prev, [question.id]: value }));
   };
 
+  /**
+   * Handles radio button selection for radio-type questions.
+   * @param {string} value - The selected option value
+   */
   const handleRadioChange = (value: string) => {
     setAnswers(prev => ({ ...prev, [question.id]: value }));
   };
 
+  /**
+   * Handles checkbox toggle for checkbox-type questions.
+   * Enforces maxSelections limit if defined on the question.
+   * @param {string} value - The checkbox option value
+   * @param {boolean} checked - Whether the checkbox is being checked
+   */
   const handleCheckboxChange = (value: string, checked: boolean) => {
     const currentValues = (answers[question.id] as string[]) || [];
     let newValues: string[];
@@ -161,6 +229,10 @@ export default function QuestionnairePage() {
     setAnswers(prev => ({ ...prev, [question.id]: newValues }));
   };
 
+  /**
+   * Handles advancing to the next question or completing the questionnaire.
+   * Saves the current answer to session context before advancing.
+   */
   const handleNext = () => {
     // Save answer to session
     const answer = answers[question.id];
@@ -180,6 +252,9 @@ export default function QuestionnairePage() {
     }
   };
 
+  /**
+   * Handles navigating back to the previous question or intro screen.
+   */
   const handleBack = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(prev => prev - 1);
@@ -188,10 +263,16 @@ export default function QuestionnairePage() {
     }
   };
 
+  /**
+   * Skips the current question and advances to the next.
+   */
   const handleSkip = () => {
     handleNext();
   };
 
+  /**
+   * Skips all remaining questions and navigates to the hub.
+   */
   const handleSkipAll = () => {
     navigate('/hub');
   };
@@ -486,7 +567,15 @@ export default function QuestionnairePage() {
   );
 }
 
-// Slider Question Component
+/**
+ * Props for the SliderQuestion component.
+ * @interface SliderQuestionProps
+ * @property {number} value - Current slider value
+ * @property {(value: number) => void} onChange - Handler for value changes
+ * @property {string[]} labelKeys - i18n keys for slider position labels
+ * @property {number} min - Minimum slider value
+ * @property {number} max - Maximum slider value
+ */
 interface SliderQuestionProps {
   value: number;
   onChange: (value: number) => void;
@@ -495,6 +584,13 @@ interface SliderQuestionProps {
   max: number;
 }
 
+/**
+ * Slider question component for scale-type questions.
+ * Displays a range slider with labels and a value indicator.
+ * @component
+ * @param {SliderQuestionProps} props - Component props
+ * @returns {JSX.Element} The rendered slider question
+ */
 function SliderQuestion({ value, onChange, labelKeys, min, max }: SliderQuestionProps) {
   const { t } = useTranslation();
   const getValueText = (val: number) => {
@@ -549,12 +645,23 @@ function SliderQuestion({ value, onChange, labelKeys, min, max }: SliderQuestion
   );
 }
 
-// Feature Item Component
+/**
+ * Props for the FeatureItem component.
+ * @interface FeatureItemProps
+ * @property {React.ReactNode} icon - Icon element to display
+ * @property {string} text - Feature text description
+ */
 interface FeatureItemProps {
   icon: React.ReactNode;
   text: string;
 }
 
+/**
+ * Feature item component for displaying intro screen features.
+ * @component
+ * @param {FeatureItemProps} props - Component props
+ * @returns {JSX.Element} The rendered feature item
+ */
 function FeatureItem({ icon, text }: FeatureItemProps) {
   return (
     <div className="flex items-start gap-2 sm:gap-3">
@@ -566,7 +673,11 @@ function FeatureItem({ icon, text }: FeatureItemProps) {
   );
 }
 
+// ============================================================================
 // Icon Components
+// ============================================================================
+
+/** Right arrow icon for navigation buttons. */
 function ArrowRightIcon() {
   return (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -576,6 +687,7 @@ function ArrowRightIcon() {
   );
 }
 
+/** Left arrow icon for back navigation. */
 function ArrowLeftIcon() {
   return (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -585,6 +697,7 @@ function ArrowLeftIcon() {
   );
 }
 
+/** Checkmark icon for completion states. */
 function CheckIcon() {
   return (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -594,6 +707,7 @@ function CheckIcon() {
   );
 }
 
+/** Clock icon for time-related information. */
 function ClockIcon() {
   return (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -603,6 +717,7 @@ function ClockIcon() {
   );
 }
 
+/** Lock icon for privacy indicators. */
 function LockIcon() {
   return (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -612,6 +727,7 @@ function LockIcon() {
   );
 }
 
+/** Skip icon for skip functionality. */
 function SkipIcon() {
   return (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -623,6 +739,7 @@ function SkipIcon() {
   );
 }
 
+/** Audio/speaker icon for text-to-speech buttons. */
 function AudioIcon() {
   return (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -631,6 +748,7 @@ function AudioIcon() {
   );
 }
 
+/** Info circle icon for hints and tips. */
 function InfoIcon() {
   return (
     <svg className="w-5 h-5 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -641,6 +759,7 @@ function InfoIcon() {
   );
 }
 
+/** Home icon for navigation to hub. */
 function HomeIcon() {
   return (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

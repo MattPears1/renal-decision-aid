@@ -1,3 +1,14 @@
+/**
+ * @fileoverview Treatment detail page for the NHS Renal Decision Aid.
+ * Displays comprehensive information about each treatment option including
+ * overview, how it works, benefits, considerations, lifestyle impact, FAQs,
+ * and patient stories.
+ * @module pages/TreatmentDetailPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -5,6 +16,26 @@ import { useSession } from '@/context/SessionContext';
 import TreatmentTimeline from '@/components/TreatmentTimeline';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
+/**
+ * Treatment data structure containing all information about a treatment option.
+ * @interface TreatmentData
+ * @property {TreatmentType} id - Unique identifier for the treatment
+ * @property {string} title - Display title for the treatment
+ * @property {string} subtitle - Brief subtitle description
+ * @property {string} description - Full description of the treatment
+ * @property {Array<{icon: React.ReactNode; label: string}>} tags - Tag pills for quick info
+ * @property {string} bgGradient - Tailwind gradient classes for hero background
+ * @property {string} iconColor - Tailwind color class for the icon
+ * @property {React.ReactNode} icon - SVG icon component for the treatment
+ * @property {string[]} overview - Array of overview paragraph texts
+ * @property {Array<{title: string; content: string}>} howItWorks - How it works sections
+ * @property {Array<{icon: React.ReactNode; title: string}>} benefits - List of benefits
+ * @property {string[]} considerations - List of considerations/warnings
+ * @property {Array<{icon: React.ReactNode; title: string; content: string}>} lifestyle - Lifestyle impact info
+ * @property {Array<{title: string; description: string}>} steps - Getting started steps
+ * @property {Array<{question: string; answer: string}>} faqs - Frequently asked questions
+ * @property {Array<{quote: string; name: string; age: number; duration: string}>} patientStories - Patient testimonials
+ */
 interface TreatmentData {
   id: TreatmentType;
   title: string;
@@ -24,6 +55,12 @@ interface TreatmentData {
   patientStories: { quote: string; name: string; age: number; duration: string }[];
 }
 
+/**
+ * Comprehensive treatment data for all kidney treatment options.
+ * Contains detailed information for kidney transplant, hemodialysis,
+ * peritoneal dialysis, and conservative care.
+ * @constant {Record<TreatmentType, TreatmentData>}
+ */
 const TREATMENT_DATA: Record<TreatmentType, TreatmentData> = {
   'kidney-transplant': {
     id: 'kidney-transplant',
@@ -301,6 +338,28 @@ const TREATMENT_DATA: Record<TreatmentType, TreatmentData> = {
   },
 };
 
+/**
+ * Treatment detail page component displaying comprehensive information
+ * about a specific kidney treatment option.
+ *
+ * Features:
+ * - Hero section with treatment icon, title, and tags
+ * - Overview and how it works sections
+ * - Day in the life timeline
+ * - Benefits and considerations
+ * - Lifestyle impact information
+ * - Getting started steps
+ * - Expandable FAQ section
+ * - Patient stories/testimonials
+ * - Related treatment links
+ *
+ * @component
+ * @returns {JSX.Element} The rendered treatment detail page
+ *
+ * @example
+ * // Route: /treatments/kidney-transplant
+ * <Route path="/treatments/:type" element={<TreatmentDetailPage />} />
+ */
 export default function TreatmentDetailPage() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();

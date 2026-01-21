@@ -1,7 +1,34 @@
+/**
+ * @fileoverview Treatment overview page for the NHS Renal Decision Aid.
+ * Displays all available kidney treatment options with summary cards
+ * and links to detailed information for each treatment type.
+ *
+ * @module pages/TreatmentOverviewPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react-router-dom
+ * @requires react-i18next
+ * @requires @renal-decision-aid/shared-types
+ */
+
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
+/**
+ * Configuration data for a treatment card.
+ * @interface TreatmentCardData
+ * @property {TreatmentType} id - Unique treatment identifier
+ * @property {string} titleKey - i18n key for the treatment title
+ * @property {string} descriptionKey - i18n key for the description
+ * @property {string[]} factKeys - i18n keys for key facts
+ * @property {string} colorClass - CSS border color class
+ * @property {string} bgClass - CSS background color class
+ * @property {string} iconColorClass - CSS icon color class
+ * @property {React.ReactNode} icon - Treatment icon component
+ */
 interface TreatmentCardData {
   id: TreatmentType;
   titleKey: string;
@@ -106,6 +133,18 @@ const TREATMENTS: TreatmentCardData[] = [
   },
 ];
 
+/**
+ * Treatment overview page component.
+ * Displays a grid of treatment option cards with key facts and links
+ * to detailed information. Includes a comparison feature CTA.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered treatment overview page
+ *
+ * @example
+ * // Usage in router
+ * <Route path="/treatments" element={<TreatmentOverviewPage />} />
+ */
 export default function TreatmentOverviewPage() {
   const navigate = useNavigate();
   const { t } = useTranslation();

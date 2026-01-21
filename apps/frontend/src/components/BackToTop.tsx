@@ -1,7 +1,23 @@
+/**
+ * @fileoverview Back to top button component for the NHS Renal Decision Aid.
+ * Provides a floating button to scroll back to the top of the page.
+ * @module components/BackToTop
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 
+/**
+ * Props for the BackToTop component.
+ * @interface BackToTopProps
+ * @property {number} [threshold=300] - Scroll threshold in pixels before button appears
+ * @property {string} [className] - Additional CSS classes
+ * @property {boolean} [show=true] - Whether to show the button
+ */
 interface BackToTopProps {
   /** Scroll threshold in pixels before button appears */
   threshold?: number;
@@ -12,11 +28,22 @@ interface BackToTopProps {
 }
 
 /**
- * BackToTop Component
+ * Back to top floating button component.
  *
- * A floating button that appears when users scroll down the page,
- * allowing them to quickly return to the top. Designed for elderly users
- * with large touch targets and clear visual feedback.
+ * Features:
+ * - Appears after scrolling past threshold
+ * - Large touch targets for elderly/accessibility users
+ * - Smooth scroll animation (respects reduced motion)
+ * - Keyboard accessible
+ * - Focus moves to main content after scroll
+ * - Pulse animation during scroll
+ *
+ * @component
+ * @param {BackToTopProps} props - Component props
+ * @returns {JSX.Element | null} The rendered button or null
+ *
+ * @example
+ * <BackToTop threshold={400} />
  */
 export default function BackToTop({
   threshold = 300,

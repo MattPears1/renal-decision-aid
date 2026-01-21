@@ -1,9 +1,29 @@
+/**
+ * @fileoverview Learning progress component for the NHS Renal Decision Aid.
+ * Tracks and displays user progress through the learning journey.
+ * @module components/LearningProgress
+ * @version 2.5.0
+ * @since 1.5.0
+ * @lastModified 21 January 2026
+ */
+
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
+/**
+ * Progress section configuration.
+ * @interface ProgressSection
+ * @property {string} id - Section identifier
+ * @property {string} title - Display title
+ * @property {string} description - Section description
+ * @property {string} path - Navigation path
+ * @property {React.ReactNode} icon - Section icon
+ * @property {boolean} isCompleted - Whether section is complete
+ * @property {boolean} [isInProgress] - Whether section is in progress
+ */
 interface ProgressSection {
   id: string;
   title: string;
@@ -14,11 +34,18 @@ interface ProgressSection {
   isInProgress?: boolean;
 }
 
+/**
+ * Props for the LearningProgress component.
+ * @interface LearningProgressProps
+ * @property {'full' | 'compact' | 'mini'} [variant='full'] - Display variant
+ * @property {boolean} [showEncouragement=true] - Whether to show encouragement messages
+ */
 interface LearningProgressProps {
   variant?: 'full' | 'compact' | 'mini';
   showEncouragement?: boolean;
 }
 
+/** Array of treatment types for progress tracking. */
 const TREATMENT_TYPES: TreatmentType[] = [
   'kidney-transplant',
   'hemodialysis',
@@ -26,14 +53,23 @@ const TREATMENT_TYPES: TreatmentType[] = [
   'conservative-care',
 ];
 
-// Checkmark icon for completed items
+/** Checkmark icon for completed items. */
 const CheckIcon = ({ className = '' }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
     <polyline points="20 6 9 17 4 12" />
   </svg>
 );
 
-// Progress ring component
+/**
+ * Circular progress ring SVG component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {number} props.progress - Progress percentage (0-100)
+ * @param {number} [props.size=80] - Ring size in pixels
+ * @param {number} [props.strokeWidth=8] - Stroke width in pixels
+ * @param {string} [props.color='#005EB8'] - Progress color
+ * @returns {JSX.Element} The rendered progress ring
+ */
 const ProgressRing = ({
   progress,
   size = 80,
@@ -77,7 +113,16 @@ const ProgressRing = ({
   );
 };
 
-// Badge component for achievements
+/**
+ * Badge component for displaying earned achievements.
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.icon - Badge icon
+ * @param {string} props.label - Badge label
+ * @param {boolean} props.isEarned - Whether badge is earned
+ * @param {'sm' | 'md'} [props.size='md'] - Badge size
+ * @returns {JSX.Element} The rendered badge
+ */
 const Badge = ({
   icon,
   label,
@@ -114,6 +159,24 @@ const Badge = ({
   );
 };
 
+/**
+ * Learning progress component showing user journey completion.
+ *
+ * Features:
+ * - Three display variants: full, compact, mini
+ * - Circular progress ring visualization
+ * - Section-by-section progress tracking
+ * - Achievement badges
+ * - Encouragement messages based on progress
+ * - Links to summary when sufficient progress
+ *
+ * @component
+ * @param {LearningProgressProps} props - Component props
+ * @returns {JSX.Element} The rendered progress display
+ *
+ * @example
+ * <LearningProgress variant="full" showEncouragement={true} />
+ */
 export default function LearningProgress({
   variant = 'full',
   showEncouragement = true,

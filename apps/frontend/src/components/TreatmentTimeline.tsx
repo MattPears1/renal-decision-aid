@@ -1,7 +1,25 @@
+/**
+ * @fileoverview Treatment timeline component for the NHS Renal Decision Aid.
+ * Displays a "day in the life" view for each treatment option.
+ * @module components/TreatmentTimeline
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
+/**
+ * Activity entry for a timeline.
+ * @interface TimelineActivity
+ * @property {string} time - Time of the activity (e.g., "7:00")
+ * @property {string} activity - Description of the activity
+ * @property {string} [duration] - Optional duration string
+ * @property {string} icon - Icon type for the activity
+ * @property {boolean} [isTreatmentRelated] - Whether activity is treatment-related
+ */
 interface TimelineActivity {
   time: string;
   activity: string;
@@ -10,6 +28,14 @@ interface TimelineActivity {
   isTreatmentRelated?: boolean;
 }
 
+/**
+ * Full day schedule organized by time of day.
+ * @interface DaySchedule
+ * @property {TimelineActivity[]} morning - Morning activities
+ * @property {TimelineActivity[]} afternoon - Afternoon activities
+ * @property {TimelineActivity[]} evening - Evening activities
+ * @property {TimelineActivity[]} night - Night activities
+ */
 interface DaySchedule {
   morning: TimelineActivity[];
   afternoon: TimelineActivity[];
@@ -17,14 +43,28 @@ interface DaySchedule {
   night: TimelineActivity[];
 }
 
+/** @typedef {'morning' | 'afternoon' | 'evening' | 'night'} TimeOfDay */
 type TimeOfDay = 'morning' | 'afternoon' | 'evening' | 'night';
 
+/**
+ * Props for the TreatmentTimeline component.
+ * @interface TreatmentTimelineProps
+ * @property {TreatmentType} treatmentType - The treatment type to display
+ * @property {boolean} [compact=false] - Whether to use compact layout
+ */
 interface TreatmentTimelineProps {
   treatmentType: TreatmentType;
   compact?: boolean;
 }
 
-// Icon components for activities
+/**
+ * Activity icon component displaying different icons based on activity type.
+ * @component
+ * @param {Object} props - Component props
+ * @param {TimelineActivity['icon']} props.type - The icon type to display
+ * @param {string} [props.className=''] - Additional CSS classes
+ * @returns {JSX.Element} The rendered icon
+ */
 const ActivityIcon = ({ type, className = '' }: { type: TimelineActivity['icon']; className?: string }) => {
   const baseClass = `w-5 h-5 ${className}`;
 
@@ -121,7 +161,17 @@ const ActivityIcon = ({ type, className = '' }: { type: TimelineActivity['icon']
   }
 };
 
-// Time of day section component
+/**
+ * Time section component displaying activities for a specific time of day.
+ * @component
+ * @param {Object} props - Component props
+ * @param {TimeOfDay} props.timeOfDay - The time period (morning, afternoon, evening, night)
+ * @param {TimelineActivity[]} props.activities - Activities for this time period
+ * @param {string} props.label - Display label for the section
+ * @param {string} props.bgColor - Tailwind background color class
+ * @param {string} props.borderColor - Tailwind border color class
+ * @returns {JSX.Element | null} The rendered section or null if empty
+ */
 const TimeSection = ({
   timeOfDay,
   activities,
@@ -213,6 +263,25 @@ const TimeSection = ({
   );
 };
 
+/**
+ * Treatment timeline component showing a "day in the life" visualization.
+ *
+ * Features:
+ * - Full day schedule organized by time of day
+ * - Toggle between dialysis/regular days for applicable treatments
+ * - Treatment-related activities highlighted
+ * - Activity icons and durations
+ * - Responsive grid layout
+ * - Legend explaining color coding
+ * - Treatment hours count
+ *
+ * @component
+ * @param {TreatmentTimelineProps} props - Component props
+ * @returns {JSX.Element} The rendered timeline
+ *
+ * @example
+ * <TreatmentTimeline treatmentType="hemodialysis" compact={false} />
+ */
 export default function TreatmentTimeline({ treatmentType, compact = false }: TreatmentTimelineProps) {
   const { t } = useTranslation();
   const [selectedDay, setSelectedDay] = useState<'dialysis' | 'regular'>('dialysis');

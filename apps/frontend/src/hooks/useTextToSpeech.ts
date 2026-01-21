@@ -1,12 +1,43 @@
+/**
+ * @fileoverview Text-to-speech hook for the NHS Renal Decision Aid.
+ * Handles speech synthesis via OpenAI TTS API with playback controls.
+ * @module hooks/useTextToSpeech
+ * @version 2.5.0
+ * @since 2.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState, useCallback, useRef, useEffect } from 'react';
 
+/**
+ * Speech state machine states.
+ * @typedef {'idle' | 'loading' | 'playing' | 'paused' | 'error'} SpeechState
+ */
 export type SpeechState = 'idle' | 'loading' | 'playing' | 'paused' | 'error';
 
+/**
+ * Text-to-speech error structure.
+ * @interface TextToSpeechError
+ * @property {'SYNTHESIS_FAILED' | 'PLAYBACK_FAILED' | 'NETWORK_ERROR' | 'UNKNOWN'} code - Error code
+ * @property {string} message - Human-readable error message
+ */
 export interface TextToSpeechError {
   code: 'SYNTHESIS_FAILED' | 'PLAYBACK_FAILED' | 'NETWORK_ERROR' | 'UNKNOWN';
   message: string;
 }
 
+/**
+ * Options for the useTextToSpeech hook.
+ * @interface UseTextToSpeechOptions
+ * @property {string} [synthesizeEndpoint] - API endpoint for TTS
+ * @property {string} [language] - Target language code
+ * @property {string} [voice] - Voice to use (alloy, nova, shimmer, echo, fable, onyx)
+ * @property {'tts-1' | 'tts-1-hd'} [model='tts-1'] - TTS model to use
+ * @property {number} [speed=1.0] - Playback speed (0.25 to 4.0)
+ * @property {() => void} [onStart] - Callback when speech starts
+ * @property {() => void} [onEnd] - Callback when speech ends
+ * @property {(error: TextToSpeechError) => void} [onError] - Error callback
+ */
 export interface UseTextToSpeechOptions {
   /** API endpoint for text-to-speech */
   synthesizeEndpoint?: string;
@@ -26,6 +57,21 @@ export interface UseTextToSpeechOptions {
   onError?: (error: TextToSpeechError) => void;
 }
 
+/**
+ * Return value from the useTextToSpeech hook.
+ * @interface UseTextToSpeechReturn
+ * @property {SpeechState} state - Current speech state
+ * @property {(text: string) => Promise<void>} speak - Speak the provided text
+ * @property {() => void} pause - Pause playback
+ * @property {() => void} resume - Resume playback
+ * @property {() => void} stop - Stop playback
+ * @property {() => void} toggle - Toggle between playing and paused
+ * @property {TextToSpeechError | null} error - Current error
+ * @property {boolean} isPlaying - Whether audio is playing
+ * @property {number} progress - Playback progress (0-1)
+ * @property {number} currentTime - Current playback time in seconds
+ * @property {number} duration - Total duration in seconds
+ */
 export interface UseTextToSpeechReturn {
   /** Current speech state */
   state: SpeechState;
@@ -51,17 +97,34 @@ export interface UseTextToSpeechReturn {
   duration: number;
 }
 
+/** API base URL from environment or default. */
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5006';
 
 /**
- * Custom hook for text-to-speech synthesis and playback
+ * Custom hook for text-to-speech synthesis and playback.
  *
  * Features:
  * - OpenAI TTS API integration
- * - Multiple voice options
- * - Playback controls (play, pause, stop)
- * - Progress tracking
- * - Audio caching
+ * - Multiple voice options (alloy, nova, shimmer, echo, fable, onyx)
+ * - Playback controls (play, pause, stop, toggle)
+ * - Progress tracking with current time and duration
+ * - Speed control (0.25 to 4.0)
+ * - Error handling with specific error codes
+ * - Cleanup on unmount
+ *
+ * @hook
+ * @param {UseTextToSpeechOptions} [options={}] - Hook options
+ * @returns {UseTextToSpeechReturn} Speech controls and state
+ *
+ * @example
+ * const { state, speak, pause, resume, stop, progress } = useTextToSpeech({
+ *   voice: 'nova',
+ *   speed: 1.2,
+ *   onEnd: () => console.log('Done speaking')
+ * });
+ *
+ * // Start speaking
+ * await speak('Hello, how are you?');
  */
 export function useTextToSpeech(options: UseTextToSpeechOptions = {}): UseTextToSpeechReturn {
   const {

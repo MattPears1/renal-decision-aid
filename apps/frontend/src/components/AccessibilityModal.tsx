@@ -1,7 +1,24 @@
+/**
+ * @fileoverview Accessibility settings modal for the NHS Renal Decision Aid.
+ * Allows users to customize text size, contrast, motion, and line spacing.
+ * @module components/AccessibilityModal
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui';
 
+/**
+ * User accessibility settings configuration.
+ * @interface AccessibilitySettings
+ * @property {'small' | 'medium' | 'large' | 'extra-large'} textSize - Text size preference
+ * @property {boolean} highContrast - Whether high contrast mode is enabled
+ * @property {boolean} reducedMotion - Whether reduced motion is enabled
+ * @property {'normal' | 'relaxed' | 'loose'} lineSpacing - Line spacing preference
+ */
 export interface AccessibilitySettings {
   textSize: 'small' | 'medium' | 'large' | 'extra-large';
   highContrast: boolean;
@@ -9,6 +26,10 @@ export interface AccessibilitySettings {
   lineSpacing: 'normal' | 'relaxed' | 'loose';
 }
 
+/**
+ * Default accessibility settings configuration.
+ * @constant {AccessibilitySettings}
+ */
 const DEFAULT_SETTINGS: AccessibilitySettings = {
   textSize: 'medium',
   highContrast: false,
@@ -16,13 +37,25 @@ const DEFAULT_SETTINGS: AccessibilitySettings = {
   lineSpacing: 'normal',
 };
 
+/** Local storage key for persisting accessibility settings. */
 const STORAGE_KEY = 'accessibility-settings';
 
+/**
+ * Props for the AccessibilityModal component.
+ * @interface AccessibilityModalProps
+ * @property {boolean} isOpen - Whether the modal is currently visible
+ * @property {() => void} onClose - Handler to close the modal
+ */
 interface AccessibilityModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+/**
+ * Loads accessibility settings from localStorage.
+ * Falls back to defaults if loading fails or no settings exist.
+ * @returns {AccessibilitySettings} The loaded or default settings
+ */
 export function loadAccessibilitySettings(): AccessibilitySettings {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -35,6 +68,11 @@ export function loadAccessibilitySettings(): AccessibilitySettings {
   return DEFAULT_SETTINGS;
 }
 
+/**
+ * Applies accessibility settings to the document root element.
+ * Updates CSS custom properties, classes, and styles.
+ * @param {AccessibilitySettings} settings - The settings to apply
+ */
 export function applyAccessibilitySettings(settings: AccessibilitySettings): void {
   const root = document.documentElement;
 
@@ -71,6 +109,27 @@ export function applyAccessibilitySettings(settings: AccessibilitySettings): voi
   }
 }
 
+/**
+ * Accessibility settings modal component.
+ *
+ * Features:
+ * - Text size adjustment (4 levels)
+ * - High contrast mode toggle
+ * - Reduced motion toggle
+ * - Line spacing adjustment (3 levels)
+ * - Live preview of settings
+ * - Focus trap for accessibility
+ * - Save/cancel/reset functionality
+ * - Escape key to close
+ * - Mobile-optimized bottom sheet style
+ *
+ * @component
+ * @param {AccessibilityModalProps} props - Component props
+ * @returns {JSX.Element | null} The rendered modal or null if closed
+ *
+ * @example
+ * <AccessibilityModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+ */
 export default function AccessibilityModal({ isOpen, onClose }: AccessibilityModalProps) {
   const { t } = useTranslation();
   const modalRef = useRef<HTMLDivElement>(null);

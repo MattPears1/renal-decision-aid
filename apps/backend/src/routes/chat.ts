@@ -1,3 +1,24 @@
+/**
+ * @fileoverview Chat API endpoint for the NHS Renal Decision Aid.
+ * Provides AI-powered conversational support for patients learning about
+ * kidney disease treatment options using OpenAI's GPT models.
+ *
+ * @module routes/chat
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires express
+ * @requires openai
+ * @requires ../middleware/piiFilter
+ * @requires ../middleware/rateLimiter
+ * @requires ../services/sessionStore
+ * @requires ../services/logger
+ *
+ * @see {@link module:services/sessionStore} for session management
+ * @see {@link module:middleware/piiFilter} for PII protection
+ */
+
 import { Router, Request, Response } from 'express';
 import OpenAI from 'openai';
 import { piiFilter } from '../middleware/piiFilter.js';
@@ -5,14 +26,45 @@ import { chatRateLimiter } from '../middleware/rateLimiter.js';
 import { sessionStore, ChatMessage } from '../services/sessionStore.js';
 import logger, { apiLogger, logError } from '../services/logger.js';
 
+/**
+ * Express router instance for chat endpoints.
+ * @type {Router}
+ */
 const router = Router();
 
-// Initialize OpenAI client (only if API key is available)
+/**
+ * Supported languages for dynamic language detection.
+ * Maps language codes to their English and native names.
+ * @constant {Record<string, { name: string; nativeName: string }>}
+ */
+const SUPPORTED_LANGUAGES: Record<string, { name: string; nativeName: string }> = {
+  en: { name: 'English', nativeName: 'English' },
+  zh: { name: 'Chinese (Simplified)', nativeName: '简体中文' },
+  hi: { name: 'Hindi', nativeName: 'हिन्दी' },
+  pa: { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
+  bn: { name: 'Bengali', nativeName: 'বাংলা' },
+  ur: { name: 'Urdu', nativeName: 'اردو' },
+  gu: { name: 'Gujarati', nativeName: 'ગુજરાતી' },
+  ta: { name: 'Tamil', nativeName: 'தமிழ்' },
+  pl: { name: 'Polish', nativeName: 'Polski' },
+  ar: { name: 'Arabic', nativeName: 'العربية' },
+};
+
+/**
+ * OpenAI client instance for making API calls.
+ * Initialized only when OPENAI_API_KEY environment variable is set.
+ * @type {OpenAI | null}
+ */
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
-// System prompt for the AI assistant - Enhanced for multilingual kidney care expertise
+/**
+ * System prompt for the AI assistant.
+ * Enhanced for multilingual kidney care expertise across 10 languages.
+ * Defines the assistant's role, responsibilities, and communication guidelines.
+ * @constant {string}
+ */
 const SYSTEM_PROMPT = `You are a compassionate NHS healthcare assistant specializing in kidney disease and renal replacement therapy options. You support patients in 10 languages: English, Hindi (हिंदी), Punjabi (ਪੰਜਾਬੀ), Bengali (বাংলা), Urdu (اردو), Gujarati (ગુજરાતી), Tamil (தமிழ்), Chinese Simplified (简体中文), Polish (Polski), and Arabic (العربية).
 
 CORE RESPONSIBILITIES:
@@ -72,12 +124,40 @@ IMPORTANT GUIDELINES:
 - Be positive and supportive - this is a difficult time for patients`;
 
 /**
+ * Handle incoming chat messages and generate AI responses.
+ *
  * POST /api/chat
- * Send a message and receive an AI response
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {string} req.body.message - The user's message (required, max 2000 characters)
+ * @param {string} [req.body.sessionId] - Optional session ID for conversation context
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} JSON response with AI-generated reply
+ *
+ * @throws {400} Invalid Request - Message missing or too long
+ * @throws {404} Session Not Found - Invalid session ID provided
+ * @throws {429} Rate Limited - Too many requests
+ * @throws {500} Chat Error - Internal processing error
+ *
+ * @example
+ * // Request
+ * POST /api/chat
+ * {
+ *   "message": "What is peritoneal dialysis?",
+ *   "sessionId": "abc-123-def"
+ * }
+ *
+ * // Response
+ * {
+ *   "response": "Peritoneal dialysis is a treatment...",
+ *   "timestamp": "2026-01-21T10:30:00.000Z"
+ * }
  */
 router.post('/', chatRateLimiter, piiFilter, async (req: Request, res: Response) => {
   try {
-    const { message, sessionId } = req.body;
+    const { message, sessionId, language } = req.body;
 
     // Validate request
     if (!message || typeof message !== 'string') {
@@ -144,6 +224,14 @@ router.post('/', chatRateLimiter, piiFilter, async (req: Request, res: Response)
     let assistantResponse: string;
     let modelUsed: string = 'fallback';
 
+    // Build dynamic system prompt with language instruction if provided
+    let systemPrompt = SYSTEM_PROMPT;
+    if (language && typeof language === 'string' && SUPPORTED_LANGUAGES[language]) {
+      const langInfo = SUPPORTED_LANGUAGES[language];
+      // Append language instruction as the LAST sentence for maximum effect
+      systemPrompt += `\n\nIMPORTANT: The user's interface language is ${langInfo.name} (${langInfo.nativeName}). You MUST respond in ${langInfo.name}.`;
+    }
+
     if (openai) {
       // Use OpenAI API - GPT-4o for better multilingual support
       const model = process.env.OPENAI_MODEL || 'gpt-4o';
@@ -153,12 +241,13 @@ router.post('/', chatRateLimiter, piiFilter, async (req: Request, res: Response)
         requestId: req.requestId,
         model,
         historyLength: conversationHistory.length,
+        language: language || 'not specified',
       });
 
       const completion = await openai.chat.completions.create({
         model,
         messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'system', content: systemPrompt },
           ...conversationHistory,
         ],
         max_completion_tokens: 1000,
@@ -234,7 +323,17 @@ router.post('/', chatRateLimiter, piiFilter, async (req: Request, res: Response)
 });
 
 /**
- * Fallback responses when OpenAI API is not available
+ * Generate fallback responses when OpenAI API is not available.
+ * Provides basic informational responses about kidney treatment options
+ * based on keyword matching in the user's message.
+ *
+ * @function getFallbackResponse
+ * @param {string} message - The user's message to analyze
+ * @returns {string} A pre-defined response based on detected keywords
+ *
+ * @example
+ * const response = getFallbackResponse("Tell me about dialysis");
+ * // Returns information about dialysis options
  */
 function getFallbackResponse(message: string): string {
   const lowerMessage = message.toLowerCase();

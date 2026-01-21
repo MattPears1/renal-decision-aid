@@ -1,7 +1,24 @@
+/**
+ * @fileoverview PII (Personally Identifiable Information) filtering middleware.
+ * Detects and blocks messages containing sensitive personal information
+ * to protect user privacy in the NHS Renal Decision Aid.
+ *
+ * @module middleware/piiFilter
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires express
+ *
+ * @see {@link module:routes/chat} for chat endpoint using this middleware
+ */
+
 import { Request, Response, NextFunction } from 'express';
 
 /**
- * PII Detection patterns for UK healthcare context
+ * Regular expression patterns for detecting UK-specific PII.
+ * Includes patterns for NHS numbers, phone numbers, postcodes, and more.
+ * @constant {Record<string, RegExp>}
  */
 const PII_PATTERNS = {
   // NHS Number: 10 digits, often formatted as XXX XXX XXXX
@@ -33,7 +50,9 @@ const PII_PATTERNS = {
 };
 
 /**
- * Additional sensitive terms that might indicate PII context
+ * Phrases that indicate the user is about to share personal information.
+ * Used for context-aware PII detection.
+ * @constant {string[]}
  */
 const SENSITIVE_CONTEXT_TERMS = [
   'my address is',
@@ -49,6 +68,13 @@ const SENSITIVE_CONTEXT_TERMS = [
   'my sort code',
 ];
 
+/**
+ * Result of PII detection analysis.
+ * @interface PIIDetectionResult
+ * @property {boolean} detected - Whether PII was detected
+ * @property {string[]} types - Types of PII detected
+ * @property {string} message - User-friendly warning message
+ */
 interface PIIDetectionResult {
   detected: boolean;
   types: string[];
@@ -56,7 +82,17 @@ interface PIIDetectionResult {
 }
 
 /**
- * Detect PII in a text string
+ * Detect personally identifiable information in a text string.
+ * Uses pattern matching and context analysis to identify sensitive data.
+ *
+ * @function detectPII
+ * @param {string} text - Text to analyze for PII
+ * @returns {PIIDetectionResult} Detection result with types and warning message
+ *
+ * @example
+ * const result = detectPII("My NHS number is 123 456 7890");
+ * // result.detected === true
+ * // result.types === ['nhsNumber']
  */
 function detectPII(text: string): PIIDetectionResult {
   const detectedTypes: string[] = [];
@@ -108,7 +144,12 @@ function detectPII(text: string): PIIDetectionResult {
 }
 
 /**
- * Build a user-friendly warning message based on detected PII types
+ * Build a user-friendly warning message based on detected PII types.
+ * Generates grammatically correct messages for single or multiple types.
+ *
+ * @function buildWarningMessage
+ * @param {string[]} types - Array of detected PII type identifiers
+ * @returns {string} Human-readable warning message
  */
 function buildWarningMessage(types: string[]): string {
   const typeMessages: Record<string, string> = {
@@ -137,7 +178,18 @@ function buildWarningMessage(types: string[]): string {
 }
 
 /**
- * Express middleware to filter PII from incoming messages
+ * Express middleware to filter PII from incoming chat messages.
+ * Returns 400 error with warning if PII is detected.
+ *
+ * @function piiFilter
+ * @param {Request} req - Express request object
+ * @param {Response} res - Express response object
+ * @param {NextFunction} next - Express next middleware function
+ * @returns {void}
+ *
+ * @example
+ * // Usage in route
+ * router.post('/chat', piiFilter, async (req, res) => { ... });
  */
 export function piiFilter(req: Request, res: Response, next: NextFunction): void {
   const { message } = req.body;
@@ -162,5 +214,9 @@ export function piiFilter(req: Request, res: Response, next: NextFunction): void
   next();
 }
 
-// Export for testing
+/**
+ * Export detectPII function and PII_PATTERNS for testing.
+ * @see detectPII
+ * @see PII_PATTERNS
+ */
 export { detectPII, PII_PATTERNS };

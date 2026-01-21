@@ -1,5 +1,7 @@
 # Contributing to NHS Renal Decision Aid
 
+**Last Updated:** 21 January 2026
+
 This document outlines the development rules and best practices for this project.
 
 ## Code Rules
@@ -144,5 +146,6 @@ All UI components must:
 
 All user-facing text must:
 - Use i18next translation keys (never hardcode strings)
-- Support all 7 languages: English, Hindi, Punjabi, Bengali, Urdu, Gujarati, Tamil
+- Support all 10 languages: English, Hindi, Punjabi, Bengali, Urdu, Gujarati, Tamil, Chinese (Simplified), Polish, Arabic
 - Allow for 40% text expansion (translations may be longer)
+- Support RTL languages (Urdu, Arabic)

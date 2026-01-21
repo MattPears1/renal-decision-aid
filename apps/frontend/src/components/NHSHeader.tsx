@@ -1,3 +1,12 @@
+/**
+ * @fileoverview NHS-branded header component for the Renal Decision Aid.
+ * Features a rotating 3D kidney logo, service branding, and language selector.
+ * @module components/NHSHeader
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { Link } from 'react-router-dom';
 import { Suspense, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -6,7 +15,12 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import LanguageSelector from './LanguageSelector';
 
-// Mini 3D Kidney Model Component for Header
+/**
+ * Mini 3D kidney model component for the header logo.
+ * Renders a slowly rotating kidney model.
+ * @component
+ * @returns {JSX.Element} The rendered 3D model
+ */
 function MiniKidneyModel() {
   const { scene } = useGLTF('/models/kidney.glb');
   const modelRef = useRef<THREE.Group>(null);
@@ -31,10 +45,15 @@ function MiniKidneyModel() {
   );
 }
 
-// Preload the model
+/** Preload the 3D model for faster initial render. */
 useGLTF.preload('/models/kidney.glb');
 
-// Simple loading fallback
+/**
+ * Simple loading fallback for when the 3D model is loading.
+ * Displays a static sphere placeholder.
+ * @component
+ * @returns {JSX.Element} The rendered fallback mesh
+ */
 function LoadingFallback() {
   return (
     <mesh>
@@ -44,6 +63,23 @@ function LoadingFallback() {
   );
 }
 
+/**
+ * NHS-branded sticky header component.
+ *
+ * Features:
+ * - Sticky positioning with high z-index
+ * - NHS gradient branding with demo badge
+ * - Rotating 3D kidney logo
+ * - Service name and tagline
+ * - Language selector dropdown
+ * - Responsive design for mobile/desktop
+ *
+ * @component
+ * @returns {JSX.Element} The rendered header
+ *
+ * @example
+ * <NHSHeader />
+ */
 export default function NHSHeader() {
   const { t } = useTranslation();
 

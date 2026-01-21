@@ -1,12 +1,33 @@
+/**
+ * @fileoverview Voice control components for the NHS Renal Decision Aid.
+ * Provides microphone, speaker, and audio visualization components.
+ * @module components/VoiceControls
+ * @version 2.5.0
+ * @since 2.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useTranslation } from 'react-i18next';
 import { useCallback, useEffect, useState } from 'react';
 import type { RecordingState, VoiceRecordingError } from '@/hooks/useVoiceRecording';
 import type { SpeechState, TextToSpeechError } from '@/hooks/useTextToSpeech';
 
-// ============================================
+// ============================================================================
 // MICROPHONE BUTTON COMPONENT
-// ============================================
+// ============================================================================
 
+/**
+ * Props for the MicrophoneButton component.
+ * @interface MicrophoneButtonProps
+ * @property {RecordingState} recordingState - Current recording state
+ * @property {boolean} isSupported - Whether voice recording is supported
+ * @property {() => void} onClick - Click handler to toggle recording
+ * @property {number} [audioLevel] - Audio level for visualization (0-1)
+ * @property {number} [duration] - Recording duration in seconds
+ * @property {VoiceRecordingError | null} [error] - Current error
+ * @property {'sm' | 'md' | 'lg'} [size='md'] - Size variant
+ * @property {string} [className=''] - Additional CSS classes
+ */
 export interface MicrophoneButtonProps {
   /** Current recording state */
   recordingState: RecordingState;
@@ -26,6 +47,19 @@ export interface MicrophoneButtonProps {
   className?: string;
 }
 
+/**
+ * Microphone button component for voice recording.
+ *
+ * Features:
+ * - Visual states for recording, processing, error
+ * - Audio level ring visualization
+ * - Recording duration display
+ * - Accessible labels and ARIA attributes
+ *
+ * @component
+ * @param {MicrophoneButtonProps} props - Component props
+ * @returns {JSX.Element} The rendered microphone button
+ */
 export function MicrophoneButton({
   recordingState,
   isSupported,
@@ -123,10 +157,20 @@ export function MicrophoneButton({
   );
 }
 
-// ============================================
+// ============================================================================
 // SPEAKER BUTTON COMPONENT
-// ============================================
+// ============================================================================
 
+/**
+ * Props for the SpeakerButton component.
+ * @interface SpeakerButtonProps
+ * @property {SpeechState} speechState - Current speech state
+ * @property {() => void} onClick - Click handler for play/pause/stop
+ * @property {number} [progress] - Playback progress (0-1)
+ * @property {TextToSpeechError | null} [error] - Current error
+ * @property {'sm' | 'md' | 'lg'} [size='md'] - Size variant
+ * @property {string} [className=''] - Additional CSS classes
+ */
 export interface SpeakerButtonProps {
   /** Current speech state */
   speechState: SpeechState;
@@ -142,6 +186,18 @@ export interface SpeakerButtonProps {
   className?: string;
 }
 
+/**
+ * Speaker button component for text-to-speech playback.
+ *
+ * Features:
+ * - Visual states for playing, paused, loading, error
+ * - Progress ring visualization
+ * - Accessible labels and ARIA attributes
+ *
+ * @component
+ * @param {SpeakerButtonProps} props - Component props
+ * @returns {JSX.Element} The rendered speaker button
+ */
 export function SpeakerButton({
   speechState,
   onClick,
@@ -246,10 +302,17 @@ export function SpeakerButton({
   );
 }
 
-// ============================================
+// ============================================================================
 // VOICE STATUS INDICATOR
-// ============================================
+// ============================================================================
 
+/**
+ * Props for the VoiceStatusIndicator component.
+ * @interface VoiceStatusIndicatorProps
+ * @property {RecordingState} [recordingState] - Current recording state
+ * @property {SpeechState} [speechState] - Current speech state
+ * @property {string} [className=''] - Additional CSS classes
+ */
 export interface VoiceStatusIndicatorProps {
   /** Current recording state */
   recordingState?: RecordingState;
@@ -259,6 +322,14 @@ export interface VoiceStatusIndicatorProps {
   className?: string;
 }
 
+/**
+ * Voice status indicator showing current recording/speech state.
+ * Displays contextual text with optional pulse animation.
+ *
+ * @component
+ * @param {VoiceStatusIndicatorProps} props - Component props
+ * @returns {JSX.Element | null} The rendered indicator or null if inactive
+ */
 export function VoiceStatusIndicator({
   recordingState,
   speechState,
@@ -316,10 +387,20 @@ export function VoiceStatusIndicator({
   );
 }
 
-// ============================================
+// ============================================================================
 // AUDIO WAVEFORM VISUALIZER
-// ============================================
+// ============================================================================
 
+/**
+ * Props for the AudioWaveform component.
+ * @interface AudioWaveformProps
+ * @property {number} level - Audio level (0-1)
+ * @property {boolean} isActive - Whether actively recording/playing
+ * @property {number} [bars=5] - Number of bars to display
+ * @property {number} [height=24] - Height of the waveform
+ * @property {'recording' | 'playing' | 'idle'} [variant='idle'] - Color variant
+ * @property {string} [className=''] - Additional CSS classes
+ */
 export interface AudioWaveformProps {
   /** Audio level (0-1) */
   level: number;
@@ -335,6 +416,14 @@ export interface AudioWaveformProps {
   className?: string;
 }
 
+/**
+ * Audio waveform visualizer component.
+ * Displays animated bars based on audio level.
+ *
+ * @component
+ * @param {AudioWaveformProps} props - Component props
+ * @returns {JSX.Element} The rendered waveform visualization
+ */
 export function AudioWaveform({
   level,
   isActive,
@@ -392,10 +481,11 @@ export function AudioWaveform({
   );
 }
 
-// ============================================
+// ============================================================================
 // ICON COMPONENTS
-// ============================================
+// ============================================================================
 
+/** Microphone icon for recording buttons. */
 function MicIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -404,6 +494,7 @@ function MicIcon({ className }: { className?: string }) {
   );
 }
 
+/** Stop icon for stopping recording. */
 function StopIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -412,6 +503,7 @@ function StopIcon({ className }: { className?: string }) {
   );
 }
 
+/** Speaker icon for audio playback buttons. */
 function SpeakerIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -420,6 +512,7 @@ function SpeakerIcon({ className }: { className?: string }) {
   );
 }
 
+/** Play icon for resuming playback. */
 function PlayIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -428,6 +521,7 @@ function PlayIcon({ className }: { className?: string }) {
   );
 }
 
+/** Pause icon for pausing playback. */
 function PauseIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -436,6 +530,7 @@ function PauseIcon({ className }: { className?: string }) {
   );
 }
 
+/** Loading spinner for processing states. */
 function LoadingSpinner({ className }: { className?: string }) {
   return (
     <svg className={`animate-spin ${className}`} viewBox="0 0 24 24" fill="none">

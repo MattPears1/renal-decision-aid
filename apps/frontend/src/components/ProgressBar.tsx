@@ -1,6 +1,27 @@
+/**
+ * @fileoverview Progress bar component for the NHS Renal Decision Aid.
+ * Displays visual progress through multi-step flows.
+ * @module components/ProgressBar
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Props for the ProgressBar component.
+ * @interface ProgressBarProps
+ * @property {number} current - Current step/value
+ * @property {number} total - Total steps/maximum value
+ * @property {boolean} [showLabel=true] - Whether to show percentage label
+ * @property {boolean} [showSteps=false] - Whether to show step indicators
+ * @property {string} [className=''] - Additional CSS classes
+ * @property {'sm' | 'md' | 'lg'} [size='md'] - Size variant
+ * @property {'default' | 'gradient' | 'success'} [variant='default'] - Color variant
+ * @property {boolean} [animated=false] - Whether to show pulse animation
+ */
 interface ProgressBarProps {
   current: number;
   total: number;
@@ -14,6 +35,25 @@ interface ProgressBarProps {
   animated?: boolean;
 }
 
+/**
+ * Progress bar component for displaying completion status.
+ *
+ * Features:
+ * - Configurable size (sm, md, lg)
+ * - Multiple color variants
+ * - Optional percentage label
+ * - Optional step indicators (up to 10)
+ * - Animation support
+ * - ARIA progressbar role for accessibility
+ * - Responsive sizing for mobile
+ *
+ * @component
+ * @param {ProgressBarProps} props - Component props
+ * @returns {JSX.Element} The rendered progress bar
+ *
+ * @example
+ * <ProgressBar current={3} total={5} showSteps={true} variant="gradient" />
+ */
 export default function ProgressBar({
   current,
   total,

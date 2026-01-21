@@ -1,7 +1,25 @@
+/**
+ * @fileoverview Sticky progress indicator for the NHS Renal Decision Aid.
+ * Displays a fixed progress bar at the top of the screen during multi-step flows.
+ * @module components/StickyProgressIndicator
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 
+/**
+ * Props for the StickyProgressIndicator component.
+ * @interface StickyProgressIndicatorProps
+ * @property {number} current - Current step (1-indexed)
+ * @property {number} total - Total number of steps
+ * @property {string[]} [steps] - Optional array of step labels
+ * @property {boolean} [showStepCount=true] - Whether to show step count text
+ * @property {string} [className] - Additional CSS classes
+ */
 interface StickyProgressIndicatorProps {
   /** Current step (1-indexed) */
   current: number;
@@ -16,10 +34,23 @@ interface StickyProgressIndicatorProps {
 }
 
 /**
- * StickyProgressIndicator Component
+ * Sticky progress indicator component.
  *
- * A fixed progress bar at the top of the screen showing journey completion.
- * Designed for elderly users with clear visual feedback and accessible labels.
+ * Features:
+ * - Fixed positioning at top of viewport
+ * - Appears after slight scroll
+ * - Gradient progress bar fill
+ * - Step indicator dots (desktop only)
+ * - Current step label display
+ * - Percentage and step count display
+ * - Accessible progressbar role
+ *
+ * @component
+ * @param {StickyProgressIndicatorProps} props - Component props
+ * @returns {JSX.Element} The rendered sticky indicator
+ *
+ * @example
+ * <StickyProgressIndicator current={2} total={5} showStepCount={true} />
  */
 export default function StickyProgressIndicator({
   current,

@@ -1,13 +1,46 @@
+/**
+ * @fileoverview Session timer component for the NHS Renal Decision Aid.
+ * Displays remaining session time and warning modal when expiring.
+ * @module components/SessionTimer
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSessionTimer } from '@/context/SessionContext';
 import { Button } from '@/components/ui';
 
+/**
+ * Props for the SessionTimer component.
+ * @interface SessionTimerProps
+ * @property {boolean} [showExtendButton=true] - Whether to show the extend session button
+ * @property {string} [className=''] - Additional CSS classes
+ */
 interface SessionTimerProps {
   showExtendButton?: boolean;
   className?: string;
 }
 
+/**
+ * Session timer component displaying countdown and expiration warning.
+ *
+ * Features:
+ * - Displays formatted time remaining
+ * - Visual warning state when time is low
+ * - Modal popup at 2 minutes remaining
+ * - Session extension capability
+ * - ARIA live region for accessibility
+ * - Mobile-optimized modal layout
+ *
+ * @component
+ * @param {SessionTimerProps} props - Component props
+ * @returns {JSX.Element} The rendered timer display
+ *
+ * @example
+ * <SessionTimer showExtendButton={true} />
+ */
 export default function SessionTimer({ showExtendButton = true, className = '' }: SessionTimerProps) {
   const { t } = useTranslation();
   const { minutes, seconds, isWarning, formatted, extendSession } = useSessionTimer();

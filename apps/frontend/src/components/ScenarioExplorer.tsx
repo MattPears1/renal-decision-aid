@@ -1,8 +1,26 @@
+/**
+ * @fileoverview Scenario explorer component for the NHS Renal Decision Aid.
+ * Allows users to explore "what if" scenarios and see treatment impacts.
+ * @module components/ScenarioExplorer
+ * @version 2.5.0
+ * @since 1.5.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
+/**
+ * Impact of a scenario on a specific treatment.
+ * @interface ScenarioImpact
+ * @property {TreatmentType} treatment - The treatment type
+ * @property {string} treatmentName - Display name for the treatment
+ * @property {'excellent' | 'good' | 'moderate' | 'challenging'} rating - Impact rating
+ * @property {string} description - Description of the impact
+ * @property {string[]} [tips] - Optional tips for managing this scenario
+ */
 interface ScenarioImpact {
   treatment: TreatmentType;
   treatmentName: string;
@@ -11,6 +29,15 @@ interface ScenarioImpact {
   tips?: string[];
 }
 
+/**
+ * Scenario configuration with impacts on each treatment.
+ * @interface Scenario
+ * @property {string} id - Unique scenario identifier
+ * @property {string} title - Scenario title/question
+ * @property {string} description - Detailed description
+ * @property {React.ReactNode} icon - Scenario icon
+ * @property {ScenarioImpact[]} impacts - Treatment impacts
+ */
 interface Scenario {
   id: string;
   title: string;
@@ -19,12 +46,24 @@ interface Scenario {
   impacts: ScenarioImpact[];
 }
 
+/**
+ * Props for the ScenarioExplorer component.
+ * @interface ScenarioExplorerProps
+ * @property {string} [initialScenario] - Initial scenario to display
+ * @property {boolean} [compact=false] - Whether to use compact layout
+ */
 interface ScenarioExplorerProps {
   initialScenario?: string;
   compact?: boolean;
 }
 
-// Rating badge component
+/**
+ * Rating badge component displaying impact level.
+ * @component
+ * @param {Object} props - Component props
+ * @param {ScenarioImpact['rating']} props.rating - The rating to display
+ * @returns {JSX.Element} The rendered rating badge
+ */
 const RatingBadge = ({ rating }: { rating: ScenarioImpact['rating'] }) => {
   const { t } = useTranslation();
 
@@ -85,7 +124,15 @@ const RatingBadge = ({ rating }: { rating: ScenarioImpact['rating'] }) => {
   );
 };
 
-// Treatment comparison card
+/**
+ * Treatment impact card component with expandable details.
+ * @component
+ * @param {Object} props - Component props
+ * @param {ScenarioImpact} props.impact - The impact data to display
+ * @param {boolean} props.isExpanded - Whether the card is expanded
+ * @param {() => void} props.onToggle - Toggle handler
+ * @returns {JSX.Element} The rendered impact card
+ */
 const TreatmentImpactCard = ({
   impact,
   isExpanded,
@@ -168,6 +215,24 @@ const TreatmentImpactCard = ({
   );
 };
 
+/**
+ * Scenario explorer component for "what if" scenario exploration.
+ *
+ * Features:
+ * - Multiple predefined scenarios (travel, work, living alone, family)
+ * - Treatment impact ratings for each scenario
+ * - Expandable treatment cards with tips
+ * - Links to detailed treatment pages
+ * - Rating legend
+ * - Link to full treatment comparison
+ *
+ * @component
+ * @param {ScenarioExplorerProps} props - Component props
+ * @returns {JSX.Element} The rendered scenario explorer
+ *
+ * @example
+ * <ScenarioExplorer initialScenario="travel" compact={false} />
+ */
 export default function ScenarioExplorer({ initialScenario, compact = false }: ScenarioExplorerProps) {
   const { t } = useTranslation();
 

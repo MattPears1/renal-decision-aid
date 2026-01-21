@@ -1,13 +1,29 @@
 /**
- * Session store for the NHS Renal Decision Aid
+ * @fileoverview Session storage service for the NHS Renal Decision Aid.
+ * Provides persistent session management with multiple storage backend support
+ * including memory, file-based, SQLite, and Redis options.
  *
+ * @module services/sessionStore
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires fs
+ * @requires path
+ * @requires ./logger
+ * @requires ../db/database
+ * @requires better-sqlite3
+ *
+ * @see {@link module:routes/session} for session API endpoints
+ *
+ * @description
  * Supports multiple storage backends:
- * - Memory (default, for development)
+ * - Memory (default for development)
  * - File-based (for Heroku without Redis)
  * - SQLite (recommended for production, persistent)
  * - Redis (optional, for distributed systems)
  *
- * The storage backend is selected based on environment variables.
+ * Storage backend is selected based on SESSION_STORAGE environment variable.
  */
 
 import fs from 'fs';
@@ -16,6 +32,14 @@ import logger, { apiLogger } from './logger.js';
 import { getDatabase, closeDatabase } from '../db/database.js';
 import type Database from 'better-sqlite3';
 
+/**
+ * Represents a single message in the chat history.
+ * @interface ChatMessage
+ * @property {string} id - Unique message identifier
+ * @property {'user' | 'assistant'} role - Message sender role
+ * @property {string} content - Message text content
+ * @property {string} timestamp - ISO 8601 timestamp of when message was sent
+ */
 export interface ChatMessage {
   id: string;
   role: 'user' | 'assistant';
@@ -23,18 +47,43 @@ export interface ChatMessage {
   timestamp: string;
 }
 
+/**
+ * User accessibility and display preferences.
+ * @interface UserPreferences
+ * @property {'small' | 'medium' | 'large'} [textSize] - Display text size preference
+ * @property {boolean} [highContrast] - High contrast mode enabled
+ * @property {string} [language] - Preferred language code (e.g., 'en', 'hi')
+ */
 export interface UserPreferences {
   textSize?: 'small' | 'medium' | 'large';
   highContrast?: boolean;
   language?: string;
 }
 
+/**
+ * Recorded answer from the user questionnaire.
+ * @interface QuestionnaireAnswer
+ * @property {string} questionId - Unique identifier for the question
+ * @property {string | number | boolean | string[]} answer - User's answer value
+ * @property {string} answeredAt - ISO 8601 timestamp of when answered
+ */
 export interface QuestionnaireAnswer {
   questionId: string;
   answer: string | number | boolean | string[];
   answeredAt: string;
 }
 
+/**
+ * User's values and priorities for treatment decision-making.
+ * @interface UserValues
+ * @property {string[]} [priorityFactors] - User's top priority factors in treatment
+ * @property {string[]} [lifestylePreferences] - Lifestyle-related preferences
+ * @property {string[]} [concerns] - User's concerns about treatment
+ * @property {string} [supportNetwork] - Description of support network
+ * @property {string} [workSituation] - Employment and work considerations
+ * @property {string} [travelPreferences] - Travel-related preferences
+ * @property {string} [notes] - Additional user notes
+ */
 export interface UserValues {
   priorityFactors?: string[];
   lifestylePreferences?: string[];
@@ -45,6 +94,19 @@ export interface UserValues {
   notes?: string;
 }
 
+/**
+ * Complete session data structure containing all user state.
+ * @interface SessionData
+ * @property {string} id - Unique session identifier (UUID)
+ * @property {string} createdAt - ISO 8601 timestamp of session creation
+ * @property {string} expiresAt - ISO 8601 timestamp of session expiry
+ * @property {string} lastAccessedAt - ISO 8601 timestamp of last access
+ * @property {UserPreferences} preferences - User accessibility preferences
+ * @property {QuestionnaireAnswer[]} questionnaireAnswers - Completed questionnaire responses
+ * @property {UserValues} values - User's treatment values and priorities
+ * @property {ChatMessage[]} chatHistory - Conversation history with AI assistant
+ * @property {string} currentStep - Current step in the decision journey
+ */
 export interface SessionData {
   id: string;
   createdAt: string;
@@ -57,30 +119,80 @@ export interface SessionData {
   currentStep: string;
 }
 
-// Session expiry time in milliseconds (15 minutes)
+/**
+ * Session expiry time in milliseconds (15 minutes).
+ * @constant {number}
+ */
 const SESSION_EXPIRY_MS = 15 * 60 * 1000;
 
-// Cleanup interval (run every 5 minutes)
+/**
+ * Cleanup interval for expired sessions (5 minutes).
+ * @constant {number}
+ */
 const CLEANUP_INTERVAL_MS = 5 * 60 * 1000;
 
-// File persistence settings
+/**
+ * File path for file-based session persistence.
+ * @constant {string}
+ */
 const SESSION_FILE_PATH = process.env.SESSION_FILE_PATH || './sessions.json';
-const PERSIST_INTERVAL_MS = 30 * 1000; // Persist to file every 30 seconds
 
 /**
- * Storage backend interface
+ * Interval for persisting sessions to file (30 seconds).
+ * @constant {number}
+ */
+const PERSIST_INTERVAL_MS = 30 * 1000;
+
+/**
+ * Interface for session storage backends.
+ * Defines the contract that all storage implementations must follow.
+ * @interface StorageBackend
  */
 interface StorageBackend {
+  /**
+   * Retrieve session data by ID.
+   * @param {string} sessionId - Session identifier
+   * @returns {SessionData | undefined} Session data or undefined if not found
+   */
   get(sessionId: string): SessionData | undefined;
+
+  /**
+   * Store or update session data.
+   * @param {string} sessionId - Session identifier
+   * @param {SessionData} data - Session data to store
+   */
   set(sessionId: string, data: SessionData): void;
+
+  /**
+   * Delete a session.
+   * @param {string} sessionId - Session identifier
+   * @returns {boolean} True if session was deleted
+   */
   delete(sessionId: string): boolean;
+
+  /**
+   * Get iterator over all sessions.
+   * @returns {IterableIterator<[string, SessionData]>} Iterator of [id, data] pairs
+   */
   entries(): IterableIterator<[string, SessionData]>;
+
+  /**
+   * Number of stored sessions.
+   * @type {number}
+   */
   size: number;
+
+  /**
+   * Clear all sessions.
+   */
   clear(): void;
 }
 
 /**
- * In-memory storage backend
+ * In-memory storage backend using Map.
+ * Suitable for development and testing; data is lost on restart.
+ * @class MemoryBackend
+ * @implements {StorageBackend}
  */
 class MemoryBackend implements StorageBackend {
   private sessions: Map<string, SessionData> = new Map();
@@ -111,8 +223,11 @@ class MemoryBackend implements StorageBackend {
 }
 
 /**
- * File-based storage backend with in-memory cache
- * Suitable for Heroku ephemeral filesystem (sessions survive restarts within dyno lifecycle)
+ * File-based storage backend with in-memory cache.
+ * Suitable for Heroku ephemeral filesystem; sessions survive restarts within dyno lifecycle.
+ * Periodically persists to disk and on process shutdown.
+ * @class FileBackend
+ * @implements {StorageBackend}
  */
 class FileBackend implements StorageBackend {
   private sessions: Map<string, SessionData> = new Map();
@@ -233,8 +348,11 @@ class FileBackend implements StorageBackend {
 }
 
 /**
- * SQLite storage backend for persistent session storage
- * Sessions survive server restarts and are stored in a local database file
+ * SQLite storage backend for persistent session storage.
+ * Sessions survive server restarts and are stored in a local database file.
+ * Recommended for production deployments requiring persistence.
+ * @class SQLiteBackend
+ * @implements {StorageBackend}
  */
 class SQLiteBackend implements StorageBackend {
   private db: Database.Database;
@@ -399,8 +517,13 @@ class SQLiteBackend implements StorageBackend {
 }
 
 /**
- * Redis storage backend (optional, requires ioredis)
- * This is a stub that falls back to file storage if Redis is not available
+ * Create a Redis storage backend (optional, requires ioredis).
+ * Falls back to null if Redis is not available.
+ *
+ * @async
+ * @function createRedisBackend
+ * @param {string} redisUrl - Redis connection URL
+ * @returns {Promise<StorageBackend | null>} Redis backend or null if unavailable
  */
 async function createRedisBackend(redisUrl: string): Promise<StorageBackend | null> {
   try {
@@ -439,8 +562,11 @@ async function createRedisBackend(redisUrl: string): Promise<StorageBackend | nu
 }
 
 /**
- * Determine which storage backend to use
- * Priority: explicit SESSION_STORAGE > production default (sqlite) > development default (memory)
+ * Create and return the appropriate storage backend based on configuration.
+ * Priority: explicit SESSION_STORAGE > production default (sqlite) > development default (memory).
+ *
+ * @function createStorageBackend
+ * @returns {StorageBackend} Configured storage backend instance
  */
 function createStorageBackend(): StorageBackend {
   const sessionStorage = process.env.SESSION_STORAGE || '';
@@ -481,10 +607,21 @@ function createStorageBackend(): StorageBackend {
   return new MemoryBackend();
 }
 
+/**
+ * Session store manager providing a unified interface for session operations.
+ * Handles session CRUD, expiry management, and automatic cleanup.
+ * @class SessionStore
+ */
 class SessionStore {
+  /** @private */
   private storage: StorageBackend;
+  /** @private */
   private cleanupInterval: NodeJS.Timeout | null;
 
+  /**
+   * Create a new SessionStore instance.
+   * Initializes the storage backend and starts the cleanup task.
+   */
   constructor() {
     this.storage = createStorageBackend();
     this.cleanupInterval = null;
@@ -492,7 +629,9 @@ class SessionStore {
   }
 
   /**
-   * Create a new session
+   * Create a new session with default values.
+   * @param {string} sessionId - Unique session identifier (UUID)
+   * @returns {SessionData} Newly created session data
    */
   create(sessionId: string): SessionData {
     const now = new Date();
@@ -516,8 +655,10 @@ class SessionStore {
   }
 
   /**
-   * Get a session by ID
-   * Returns null if session doesn't exist or has expired
+   * Retrieve a session by ID.
+   * Returns null if session doesn't exist or has expired.
+   * @param {string} sessionId - Session identifier to retrieve
+   * @returns {SessionData | null} Session data or null if not found/expired
    */
   get(sessionId: string): SessionData | null {
     const session = this.storage.get(sessionId);
@@ -538,7 +679,11 @@ class SessionStore {
   }
 
   /**
-   * Update session data
+   * Update session data with partial updates.
+   * Performs deep merge for nested objects (preferences, values).
+   * @param {string} sessionId - Session identifier to update
+   * @param {Partial<SessionData>} updates - Partial session data to merge
+   * @returns {SessionData | null} Updated session data or null if not found
    */
   update(sessionId: string, updates: Partial<SessionData>): SessionData | null {
     const session = this.get(sessionId);
@@ -571,7 +716,9 @@ class SessionStore {
   }
 
   /**
-   * Refresh session expiry time
+   * Refresh session expiry time to extend the session.
+   * @param {string} sessionId - Session identifier to refresh
+   * @returns {boolean} True if session was refreshed, false if not found
    */
   touch(sessionId: string): boolean {
     const session = this.get(sessionId);
@@ -589,7 +736,9 @@ class SessionStore {
   }
 
   /**
-   * Delete a session
+   * Delete a session permanently.
+   * @param {string} sessionId - Session identifier to delete
+   * @returns {boolean} True if session was deleted, false if not found
    */
   delete(sessionId: string): boolean {
     const result = this.storage.delete(sessionId);
@@ -600,15 +749,17 @@ class SessionStore {
   }
 
   /**
-   * Get the number of active sessions
+   * Get the count of active sessions.
+   * @returns {number} Number of active sessions in storage
    */
   getActiveCount(): number {
     return this.storage.size;
   }
 
   /**
-   * Clean up expired sessions
-   * Uses optimized database query for SQLite backend
+   * Clean up expired sessions from storage.
+   * Uses optimized database query for SQLite backend.
+   * @returns {number} Number of sessions cleaned up
    */
   cleanup(): number {
     let cleaned = 0;
@@ -632,7 +783,8 @@ class SessionStore {
   }
 
   /**
-   * Start the automatic cleanup task
+   * Start the automatic cleanup task that runs periodically.
+   * @private
    */
   private startCleanupTask(): void {
     if (this.cleanupInterval) {
@@ -650,7 +802,8 @@ class SessionStore {
   }
 
   /**
-   * Stop the cleanup task (useful for testing)
+   * Stop the automatic cleanup task.
+   * Useful for testing or graceful shutdown.
    */
   stopCleanupTask(): void {
     if (this.cleanupInterval) {
@@ -660,18 +813,29 @@ class SessionStore {
   }
 
   /**
-   * Clear all sessions (useful for testing)
+   * Clear all sessions from storage.
+   * Useful for testing or reset operations.
    */
   clear(): void {
     this.storage.clear();
   }
 }
 
-// Export singleton instance
+/**
+ * Singleton session store instance.
+ * Use this for all session operations in the application.
+ * @constant {SessionStore}
+ */
 export const sessionStore = new SessionStore();
 
-// Export class for testing
+/**
+ * Export SessionStore class for testing purposes.
+ * @see SessionStore
+ */
 export { SessionStore };
 
-// Export for Redis backend creation (for future async implementation)
+/**
+ * Export Redis backend factory for future async implementation.
+ * @see createRedisBackend
+ */
 export { createRedisBackend };

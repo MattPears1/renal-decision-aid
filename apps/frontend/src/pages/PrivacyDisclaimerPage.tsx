@@ -1,8 +1,26 @@
+/**
+ * @fileoverview Privacy and disclaimer page for the NHS Renal Decision Aid.
+ * Informs users about data handling, AI limitations, and PII restrictions
+ * before they begin using the tool. Requires consent to proceed.
+ *
+ * @module pages/PrivacyDisclaimerPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-router-dom
+ * @requires react-i18next
+ */
+
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-// List of PII items that should not be shared
+/**
+ * List of personally identifiable information (PII) items users should not share.
+ * @constant {Array<{key: string, label: string}>}
+ */
 const PII_ITEMS = [
   { key: 'nhsNumber', label: 'Your NHS number' },
   { key: 'fullName', label: 'Your full name' },
@@ -12,6 +30,18 @@ const PII_ITEMS = [
   { key: 'email', label: 'Email addresses' },
 ];
 
+/**
+ * Privacy disclaimer page component.
+ * Displays privacy information, AI disclaimers, and PII warnings.
+ * Collects user consent before allowing progression to the journey.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered privacy disclaimer page
+ *
+ * @example
+ * // Usage in router
+ * <Route path="/disclaimer" element={<PrivacyDisclaimerPage />} />
+ */
 export default function PrivacyDisclaimerPage() {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -306,7 +336,14 @@ export default function PrivacyDisclaimerPage() {
   );
 }
 
-// Privacy Section Component
+/**
+ * Props for the PrivacySection component.
+ * @interface PrivacySectionProps
+ * @property {React.ReactNode} icon - Icon element to display
+ * @property {string} iconBg - CSS classes for icon background styling
+ * @property {string} title - Section title
+ * @property {React.ReactNode} children - Section content
+ */
 interface PrivacySectionProps {
   icon: React.ReactNode;
   iconBg: string;
@@ -314,6 +351,14 @@ interface PrivacySectionProps {
   children: React.ReactNode;
 }
 
+/**
+ * Privacy section component for displaying categorized privacy information.
+ * Used for privacy notice, AI limitations, and other informational sections.
+ *
+ * @component
+ * @param {PrivacySectionProps} props - Component props
+ * @returns {JSX.Element} Rendered privacy section
+ */
 function PrivacySection({ icon, iconBg, title, children }: PrivacySectionProps) {
   const headingId = `section-${title.replace(/\s+/g, '-').toLowerCase()}`;
 
@@ -337,11 +382,22 @@ function PrivacySection({ icon, iconBg, title, children }: PrivacySectionProps) 
   );
 }
 
-// Summary Item Component
+/**
+ * Props for the SummaryItem component.
+ * @interface SummaryItemProps
+ * @property {string} text - Summary item text
+ */
 interface SummaryItemProps {
   text: string;
 }
 
+/**
+ * Summary item component displaying a key point with checkmark icon.
+ *
+ * @component
+ * @param {SummaryItemProps} props - Component props
+ * @returns {JSX.Element} Rendered summary item
+ */
 function SummaryItem({ text }: SummaryItemProps) {
   return (
     <li className="flex items-center gap-2 text-nhs-green-dark font-medium text-sm sm:text-base">
@@ -351,7 +407,11 @@ function SummaryItem({ text }: SummaryItemProps) {
   );
 }
 
+// ============================================================================
 // Icon Components
+// ============================================================================
+
+/** Audio/speaker icon for text-to-speech controls. */
 function AudioIcon() {
   return (
     <svg

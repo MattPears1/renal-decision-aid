@@ -1,3 +1,13 @@
+/**
+ * @fileoverview Main layout component for the NHS Renal Decision Aid.
+ * Provides the overall page structure including header, footer, accessibility
+ * features, and main content outlet.
+ * @module components/Layout
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -6,6 +16,30 @@ import NHSFooter from './NHSFooter';
 import AccessibilityModal from './AccessibilityModal';
 import BackToTop from './BackToTop';
 
+/**
+ * Main layout component that wraps all pages.
+ *
+ * Features:
+ * - Skip link for keyboard accessibility
+ * - Sticky NHS header
+ * - Main content outlet with route-based keying
+ * - NHS footer
+ * - Back to top button
+ * - Floating accessibility settings button
+ * - Accessibility settings modal
+ *
+ * @component
+ * @returns {JSX.Element} The rendered layout wrapper
+ *
+ * @example
+ * <BrowserRouter>
+ *   <Routes>
+ *     <Route element={<Layout />}>
+ *       <Route path="/" element={<HomePage />} />
+ *     </Route>
+ *   </Routes>
+ * </BrowserRouter>
+ */
 export default function Layout() {
   const { t } = useTranslation();
   const location = useLocation();
@@ -14,7 +48,11 @@ export default function Layout() {
   // Note: Accessibility settings are applied in App.tsx on module load
   // to prevent flash of un-styled content
 
-  // Handle skip link functionality
+  /**
+   * Handles the skip link click to jump to main content.
+   * Temporarily makes main content focusable for screen readers.
+   * @param {React.MouseEvent<HTMLAnchorElement>} e - The click event
+   */
   const handleSkipToMain = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const mainContent = document.getElementById('main-content');
@@ -67,10 +105,22 @@ export default function Layout() {
   );
 }
 
+/**
+ * Props for the AccessibilityButton component.
+ * @interface AccessibilityButtonProps
+ * @property {() => void} onOpenModal - Handler to open the accessibility modal
+ */
 interface AccessibilityButtonProps {
   onOpenModal: () => void;
 }
 
+/**
+ * Floating accessibility settings button.
+ * Fixed to the bottom-right corner of the viewport.
+ * @component
+ * @param {AccessibilityButtonProps} props - Component props
+ * @returns {JSX.Element} The rendered accessibility button
+ */
 function AccessibilityButton({ onOpenModal }: AccessibilityButtonProps) {
   const { t } = useTranslation();
 

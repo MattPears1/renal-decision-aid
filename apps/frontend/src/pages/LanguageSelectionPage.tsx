@@ -1,3 +1,21 @@
+/**
+ * @fileoverview Language selection page for the NHS Renal Decision Aid.
+ * Allows users to choose their preferred language from supported options
+ * before starting their decision journey.
+ *
+ * @module pages/LanguageSelectionPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-router-dom
+ * @requires react-i18next
+ * @requires @/context/SessionContext
+ * @requires @renal-decision-aid/shared-types
+ * @requires @/config/i18n
+ */
+
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -5,6 +23,18 @@ import { useSession } from '@/context/SessionContext';
 import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '@renal-decision-aid/shared-types';
 import { changeLanguageAndWait } from '@/config/i18n';
 
+/**
+ * Language selection page component.
+ * Displays language options with audio preview capability and handles
+ * language selection, session creation, and navigation.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered language selection page
+ *
+ * @example
+ * // Usage in router
+ * <Route path="/language" element={<LanguageSelectionPage />} />
+ */
 export default function LanguageSelectionPage() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -211,7 +241,19 @@ export default function LanguageSelectionPage() {
   );
 }
 
-// Language Card Component
+/**
+ * Props for the LanguageCard component.
+ * @interface LanguageCardProps
+ * @property {string} code - Language code (e.g., 'en', 'hi')
+ * @property {string} nativeName - Language name in native script
+ * @property {string} englishName - Language name in English
+ * @property {'ltr' | 'rtl'} direction - Text direction
+ * @property {string} fontFamily - CSS font family for the language
+ * @property {boolean} isSelected - Whether this language is currently selected
+ * @property {boolean} isPlaying - Whether audio preview is playing
+ * @property {Function} onSelect - Callback when language is selected
+ * @property {Function} onPlayAudio - Callback to play audio preview
+ */
 interface LanguageCardProps {
   code: string;
   nativeName: string;
@@ -224,6 +266,14 @@ interface LanguageCardProps {
   onPlayAudio: (e: React.MouseEvent) => void;
 }
 
+/**
+ * Language card component displaying a single language option.
+ * Includes native name, English name, selection indicator, and audio preview button.
+ *
+ * @component
+ * @param {LanguageCardProps} props - Component props
+ * @returns {JSX.Element} Rendered language card
+ */
 function LanguageCard({
   code,
   nativeName,
@@ -314,7 +364,11 @@ function LanguageCard({
   );
 }
 
+// ============================================================================
 // Icon Components
+// ============================================================================
+
+/** Error icon component for displaying error states. */
 function ErrorIcon() {
   return (
     <svg

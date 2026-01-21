@@ -1,9 +1,34 @@
+/**
+ * @fileoverview Values clarification page for the NHS Renal Decision Aid.
+ * Helps users identify and prioritize what matters most to them when
+ * considering kidney treatment options through an interactive rating exercise.
+ *
+ * @module pages/ValuesPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-i18next
+ * @requires react-router-dom
+ * @requires @/context/SessionContext
+ * @requires @renal-decision-aid/shared-types
+ */
+
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
 import type { ValueRating } from '@renal-decision-aid/shared-types';
 
+/**
+ * Represents a value statement for users to rate.
+ * @interface ValueStatement
+ * @property {string} id - Unique identifier matching translation keys
+ * @property {string} statement - The translated statement text
+ * @property {string} [hint] - Optional hint text to help users understand the statement
+ * @property {'independence' | 'health' | 'lifestyle' | 'social' | 'practical'} category - Category grouping
+ */
 interface ValueStatement {
   id: string;
   statement: string;
@@ -11,14 +36,24 @@ interface ValueStatement {
   category: 'independence' | 'health' | 'lifestyle' | 'social' | 'practical';
 }
 
+/**
+ * Represents a rating option label.
+ * @interface RatingLabel
+ * @property {number} value - Numeric rating value (1-5)
+ * @property {string} label - Full translated label text
+ * @property {string} shortLabel - Short display label
+ */
 interface RatingLabel {
   value: number;
   label: string;
   shortLabel: string;
 }
 
-// Statement IDs and their categories (static data)
-// IDs match the keys in values.statements in common.json
+/**
+ * Statement configuration data with IDs and categories.
+ * IDs match the keys in values.statements in common.json translation files.
+ * @constant {Array<{id: string, category: string}>}
+ */
 const STATEMENT_CONFIGS = [
   { id: 'travel', category: 'lifestyle' as const },
   { id: 'hospitalTime', category: 'practical' as const },
@@ -32,10 +67,16 @@ const STATEMENT_CONFIGS = [
   { id: 'professionalCare', category: 'practical' as const },
 ];
 
-// Rating values (static data)
+/**
+ * Available rating values from 1 (not important) to 5 (very important).
+ * @constant {number[]}
+ */
 const RATING_VALUES = [1, 2, 3, 4, 5];
 
-// Mapping from numeric rating values to translation keys
+/**
+ * Maps numeric rating values to translation key suffixes.
+ * @constant {Record<number, string>}
+ */
 const RATING_LABEL_KEYS: Record<number, string> = {
   1: 'notImportant',
   2: 'slightlyImportant',
@@ -44,8 +85,24 @@ const RATING_LABEL_KEYS: Record<number, string> = {
   5: 'veryImportant',
 };
 
+/**
+ * View mode states for the values exercise.
+ * @typedef {'intro' | 'one-at-a-time' | 'all-at-once' | 'results'} ViewMode
+ */
 type ViewMode = 'intro' | 'one-at-a-time' | 'all-at-once' | 'results';
 
+/**
+ * Values clarification page component.
+ * Guides users through rating value statements to identify their priorities
+ * when considering kidney treatment options.
+ *
+ * @component
+ * @returns {JSX.Element} The values exercise page with intro, rating, and results views
+ *
+ * @example
+ * // In router configuration
+ * <Route path="/values" element={<ValuesPage />} />
+ */
 export default function ValuesPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -76,6 +133,12 @@ export default function ValuesPage() {
     [t]
   );
 
+  /**
+   * Handles user rating of a value statement.
+   * Updates local state and saves to session context.
+   * @param {string} statementId - The statement identifier
+   * @param {1 | 2 | 3 | 4 | 5} rating - The rating value (1-5)
+   */
   const handleRating = (statementId: string, rating: 1 | 2 | 3 | 4 | 5) => {
     setRatings((prev) => ({ ...prev, [statementId]: rating }));
 
@@ -87,6 +150,9 @@ export default function ValuesPage() {
     addValueRating(valueRating);
   };
 
+  /**
+   * Navigates to the next statement or results view if at the end.
+   */
   const goToNextStatement = () => {
     if (currentStatement < VALUE_STATEMENTS.length - 1) {
       setCurrentStatement((prev) => prev + 1);
@@ -95,6 +161,9 @@ export default function ValuesPage() {
     }
   };
 
+  /**
+   * Navigates to the previous statement or intro view if at the beginning.
+   */
   const goToPreviousStatement = () => {
     if (currentStatement > 0) {
       setCurrentStatement((prev) => prev - 1);
@@ -103,14 +172,26 @@ export default function ValuesPage() {
     }
   };
 
+  /**
+   * Calculates the current progress percentage.
+   * @returns {number} Progress percentage (0-100)
+   */
   const getProgress = () => {
     return Math.round(((currentStatement + 1) / VALUE_STATEMENTS.length) * 100);
   };
 
+  /**
+   * Gets the count of completed ratings.
+   * @returns {number} Number of statements rated
+   */
   const getCompletedCount = () => {
     return Object.keys(ratings).length;
   };
 
+  /**
+   * Gets the user's top 3 priorities (ratings of 4 or 5).
+   * @returns {Array<{id: string, rating: number, statement: string}>} Top priorities sorted by rating
+   */
   const getTopPriorities = () => {
     return Object.entries(ratings)
       .filter(([, rating]) => rating >= 4)
@@ -123,6 +204,9 @@ export default function ValuesPage() {
       }));
   };
 
+  /**
+   * Completes the all-at-once view and shows results.
+   */
   const handleFinishAllAtOnce = () => {
     setViewMode('results');
   };

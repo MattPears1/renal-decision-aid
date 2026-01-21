@@ -1,17 +1,53 @@
+/**
+ * @fileoverview Treatment comparison page for the NHS Renal Decision Aid.
+ * Provides a side-by-side comparison of kidney treatment options with
+ * filtering, highlighting based on user values, and detailed criteria ratings.
+ *
+ * @module pages/ComparePage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-router-dom
+ * @requires react-i18next
+ * @requires @renal-decision-aid/shared-types
+ * @requires @/context/SessionContext
+ */
+
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 import { useSession } from '../context/SessionContext';
 
+/**
+ * Rating level indicating how well a treatment performs for a given criterion.
+ * @typedef {'excellent' | 'good' | 'moderate' | 'challenging' | 'varies'} RatingLevel
+ */
 type RatingLevel = 'excellent' | 'good' | 'moderate' | 'challenging' | 'varies';
 
+/**
+ * Data for a single cell in the comparison table.
+ * @interface ComparisonCell
+ * @property {RatingLevel} level - The rating level for styling
+ * @property {string} text - Translation key for main text
+ * @property {string} [subtext] - Optional translation key for subtext
+ */
 interface ComparisonCell {
   level: RatingLevel;
   text: string;
   subtext?: string;
 }
 
+/**
+ * A row of comparison data for a specific criterion.
+ * @interface ComparisonRow
+ * @property {string} id - Unique row identifier
+ * @property {string} criteriaKey - Translation key for criterion name
+ * @property {string} hintKey - Translation key for criterion hint
+ * @property {Record<TreatmentType, ComparisonCell>} values - Cell data per treatment
+ */
 interface ComparisonRow {
   id: string;
   criteriaKey: string;
@@ -19,14 +55,29 @@ interface ComparisonRow {
   values: Record<TreatmentType, ComparisonCell>;
 }
 
+/**
+ * A category header row in the comparison table.
+ * @interface CategoryRow
+ * @property {'category'} type - Row type discriminator
+ * @property {string} id - Unique category identifier
+ * @property {string} titleKey - Translation key for category title
+ */
 interface CategoryRow {
   type: 'category';
   id: string;
   titleKey: string;
 }
 
+/**
+ * Union type for table rows (either data or category header).
+ * @typedef {ComparisonRow | CategoryRow} TableRow
+ */
 type TableRow = ComparisonRow | CategoryRow;
 
+/**
+ * Treatment header configuration for table columns.
+ * @constant {Array<{id: TreatmentType, nameKey: string, typeKey: string}>}
+ */
 const TREATMENT_HEADERS: { id: TreatmentType; nameKey: string; typeKey: string }[] = [
   { id: 'kidney-transplant', nameKey: 'compare.treatments.transplant.name', typeKey: 'compare.treatments.transplant.type' },
   { id: 'hemodialysis', nameKey: 'compare.treatments.hemodialysis.name', typeKey: 'compare.treatments.hemodialysis.type' },
@@ -34,6 +85,11 @@ const TREATMENT_HEADERS: { id: TreatmentType; nameKey: string; typeKey: string }
   { id: 'conservative-care', nameKey: 'compare.treatments.conservative.name', typeKey: 'compare.treatments.conservative.type' },
 ];
 
+/**
+ * Complete comparison data including categories and criteria rows.
+ * Contains all treatment comparison information organized by category.
+ * @constant {TableRow[]}
+ */
 const COMPARISON_DATA: TableRow[] = [
   // Daily Life Impact Category
   { type: 'category', id: 'daily-life', titleKey: 'compare.categories.dailyLife' },
@@ -166,6 +222,10 @@ const COMPARISON_DATA: TableRow[] = [
   },
 ];
 
+/**
+ * Legend items configuration for rating level explanations.
+ * @constant {Array<{level: RatingLevel, labelKey: string}>}
+ */
 const LEGEND_ITEMS: { level: RatingLevel; labelKey: string }[] = [
   { level: 'excellent', labelKey: 'compare.legend.excellentDesc' },
   { level: 'good', labelKey: 'compare.legend.goodDesc' },
@@ -174,6 +234,13 @@ const LEGEND_ITEMS: { level: RatingLevel; labelKey: string }[] = [
   { level: 'varies', labelKey: 'compare.legend.variesDesc' },
 ];
 
+/**
+ * Rating icon component displaying a visual indicator for rating levels.
+ * @component
+ * @param {Object} props - Component props
+ * @param {RatingLevel} props.level - The rating level to display
+ * @returns {JSX.Element} Colored icon representing the rating level
+ */
 function RatingIcon({ level }: { level: RatingLevel }) {
   const iconClasses: Record<RatingLevel, string> = {
     excellent: 'bg-[#E6F4EA] text-nhs-green',
@@ -218,6 +285,18 @@ function RatingIcon({ level }: { level: RatingLevel }) {
   );
 }
 
+/**
+ * Treatment comparison page component.
+ * Displays a comprehensive side-by-side comparison of kidney treatment options
+ * with filtering controls and value-based highlighting.
+ *
+ * @component
+ * @returns {JSX.Element} The comparison page with table, filters, and legend
+ *
+ * @example
+ * // In router configuration
+ * <Route path="/compare" element={<ComparePage />} />
+ */
 export default function ComparePage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -228,6 +307,11 @@ export default function ComparePage() {
   );
   const [highlightValues, setHighlightValues] = useState(false);
 
+  /**
+   * Toggles a treatment's visibility in the comparison table.
+   * Prevents deselecting if only one treatment remains selected.
+   * @param {TreatmentType} treatment - The treatment to toggle
+   */
   const toggleTreatment = (treatment: TreatmentType) => {
     setSelectedTreatments((prev) => {
       const next = new Set(prev);
@@ -243,9 +327,14 @@ export default function ComparePage() {
     });
   };
 
+  /** Filtered list of treatments to display based on user selection. */
   const visibleTreatments = TREATMENT_HEADERS.filter((t) => selectedTreatments.has(t.id));
 
-  // Determine recommended treatment based on user values (simplified logic)
+  /**
+   * Determines the recommended treatment based on user value ratings.
+   * Uses simplified logic based on travel and independence priorities.
+   * @returns {TreatmentType | null} The recommended treatment or null if no data
+   */
   const getRecommendedTreatment = (): TreatmentType | null => {
     if (!session?.valueRatings || session.valueRatings.length === 0) return null;
     // Simple recommendation logic - could be more sophisticated

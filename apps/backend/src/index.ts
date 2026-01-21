@@ -1,3 +1,31 @@
+/**
+ * @fileoverview Main server entry point for the NHS Renal Decision Aid backend.
+ * Configures and starts the Express server with all middleware and routes.
+ *
+ * @module index
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires express
+ * @requires cors
+ * @requires helmet
+ * @requires compression
+ * @requires dotenv
+ * @requires path
+ * @requires ./routes
+ * @requires ./services/logger
+ * @requires ./middleware/rateLimiter
+ *
+ * @description
+ * Main application entry point that:
+ * - Configures Express with security middleware (CORS, Helmet)
+ * - Sets up request logging and rate limiting
+ * - Mounts API routes
+ * - Serves static frontend files in production
+ * - Handles errors and graceful shutdown
+ */
+
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -8,20 +36,36 @@ import routes from './routes/index.js';
 import { requestLogger, appLogger, logError } from './services/logger.js';
 import { globalRateLimiter, burstRateLimiter } from './middleware/rateLimiter.js';
 
-// Load environment variables
+// Load environment variables from .env file
 dotenv.config();
 
+/**
+ * Express application instance.
+ * @type {express.Application}
+ */
 const app = express();
+
+/**
+ * Server port from environment or default.
+ * @constant {number | string}
+ */
 const PORT = process.env.PORT || 5006;
 
 // Trust proxy for Heroku (required for rate limiting and IP detection)
 app.set('trust proxy', 1);
 
-// CORS configuration
+/**
+ * Allowed CORS origins from environment or defaults.
+ * @constant {string[]}
+ */
 const corsOrigins = process.env.CORS_ORIGIN
   ? process.env.CORS_ORIGIN.split(',').map(s => s.trim())
   : ['http://localhost:3006', 'http://localhost:5173'];
 
+/**
+ * CORS configuration options.
+ * @constant {cors.CorsOptions}
+ */
 const corsOptions: cors.CorsOptions = {
   origin: corsOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -82,7 +126,10 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// 404 handler for API routes
+/**
+ * 404 handler for API routes.
+ * Returns JSON error response for non-existent endpoints.
+ */
 app.use((_req: Request, res: Response) => {
   res.status(404).json({
     error: 'Not Found',
@@ -90,12 +137,22 @@ app.use((_req: Request, res: Response) => {
   });
 });
 
-// Global error handler
+/**
+ * Extended Error interface with optional HTTP status code.
+ * @interface AppError
+ * @extends Error
+ * @property {number} [statusCode] - HTTP status code for the error
+ * @property {string} [code] - Error code identifier
+ */
 interface AppError extends Error {
   statusCode?: number;
   code?: string;
 }
 
+/**
+ * Global error handler middleware.
+ * Logs errors and returns appropriate JSON error responses.
+ */
 app.use((err: AppError, req: Request, res: Response, _next: NextFunction) => {
   logError(err, {
     requestId: req.requestId,

@@ -1,10 +1,21 @@
+/**
+ * @fileoverview i18n configuration for the NHS Renal Decision Aid.
+ * Handles internationalization with support for multiple languages including RTL.
+ * @module config/i18n
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend, { HttpBackendOptions } from 'i18next-http-backend';
 
 /**
- * Supported languages for the NHS Renal Decision Aid
- * Includes major South Asian languages commonly spoken in UK communities
+ * Supported languages for the NHS Renal Decision Aid.
+ * Includes major South Asian languages commonly spoken in UK communities.
+ * @constant
+ * @type {Object.<string, {name: string, nativeName: string, dir: 'ltr' | 'rtl'}>}
  */
 export const SUPPORTED_LANGUAGES = {
   en: { name: 'English', nativeName: 'English', dir: 'ltr' },
@@ -19,10 +30,17 @@ export const SUPPORTED_LANGUAGES = {
   ar: { name: 'Arabic', nativeName: 'العربية', dir: 'rtl' },
 } as const;
 
+/**
+ * Type representing supported language codes.
+ * @typedef {keyof typeof SUPPORTED_LANGUAGES} SupportedLanguage
+ */
 export type SupportedLanguage = keyof typeof SUPPORTED_LANGUAGES;
 
 /**
- * Font families optimized for each language script
+ * Font families optimized for each language script.
+ * Maps language codes to CSS font-family strings with appropriate fallbacks.
+ * @constant
+ * @type {Record<SupportedLanguage, string>}
  */
 export const LANGUAGE_FONTS: Record<SupportedLanguage, string> = {
   en: '"NHS Regular", "Frutiger", "Arial", sans-serif',
@@ -38,22 +56,33 @@ export const LANGUAGE_FONTS: Record<SupportedLanguage, string> = {
 };
 
 /**
- * Default namespace for translations
+ * Default namespace for translations.
+ * @constant
+ * @type {string}
  */
 export const DEFAULT_NS = 'common';
 
 /**
- * All available namespaces
+ * All available translation namespaces.
+ * @constant
+ * @type {readonly string[]}
  */
 export const NAMESPACES = ['common'] as const;
 
 /**
- * Storage key for language preference
+ * LocalStorage key for persisting language preference.
+ * @constant
+ * @type {string}
+ * @private
  */
 const LANGUAGE_STORAGE_KEY = 'nhs-renal-aid-language';
 
 /**
- * Get the initial language - defaults to English unless user has a saved preference
+ * Get the initial language from localStorage or default to English.
+ * Checks for saved preference first, falls back to English for new visitors.
+ * @function
+ * @returns {string} Language code to use for initialization
+ * @private
  */
 function getInitialLanguage(): string {
   // Check localStorage for saved preference
@@ -66,14 +95,17 @@ function getInitialLanguage(): string {
 }
 
 /**
- * i18next configuration for NHS Renal Decision Aid
+ * i18next configuration for NHS Renal Decision Aid.
  *
  * Features:
  * - English as default language for first-time visitors
  * - User language preference saved to localStorage
  * - Lazy loading of translation files via HTTP backend
- * - Support for 7 languages including RTL (Urdu)
+ * - Support for 10 languages including RTL (Urdu, Arabic)
  * - NHS-appropriate medical terminology
+ * - Mobile-optimized with timeout and retry logic
+ *
+ * @see https://www.i18next.com/overview/configuration-options
  */
 i18n
   // Load translations using HTTP backend (lazy loading)
@@ -187,9 +219,21 @@ i18n.on('languageChanged', (lng) => {
 });
 
 /**
- * Change language and ensure translations are fully loaded
- * This function waits for both the language change and the translation files to load
- * Includes error handling and timeout for mobile reliability
+ * Change language and ensure translations are fully loaded.
+ * Waits for both the language change and the translation files to load.
+ * Includes error handling and timeout for mobile reliability.
+ *
+ * @async
+ * @function
+ * @param {SupportedLanguage} lng - Target language code
+ * @returns {Promise<boolean>} True if successful, false if failed
+ * @throws Never throws - catches errors and returns false
+ *
+ * @example
+ * const success = await changeLanguageAndWait('hi');
+ * if (!success) {
+ *   console.log('Failed to change language');
+ * }
  */
 export async function changeLanguageAndWait(lng: SupportedLanguage): Promise<boolean> {
   try {
@@ -239,14 +283,33 @@ i18n.on('failedLoading', (lng, ns, msg) => {
 });
 
 /**
- * Check if a language code is supported
+ * Check if a language code is supported.
+ * Type guard function for SupportedLanguage type.
+ *
+ * @function
+ * @param {string} lang - Language code to check
+ * @returns {lang is SupportedLanguage} True if language is supported
+ *
+ * @example
+ * if (isSupportedLanguage('hi')) {
+ *   // TypeScript knows lang is SupportedLanguage here
+ * }
  */
 export function isSupportedLanguage(lang: string): lang is SupportedLanguage {
   return lang in SUPPORTED_LANGUAGES;
 }
 
 /**
- * Get language direction (ltr or rtl)
+ * Get text direction for a language.
+ * Returns 'rtl' for right-to-left languages (Urdu, Arabic), 'ltr' otherwise.
+ *
+ * @function
+ * @param {string} lang - Language code
+ * @returns {'ltr' | 'rtl'} Text direction for the language
+ *
+ * @example
+ * const dir = getLanguageDirection('ur'); // 'rtl'
+ * const dir = getLanguageDirection('en'); // 'ltr'
  */
 export function getLanguageDirection(lang: string): 'ltr' | 'rtl' {
   if (isSupportedLanguage(lang)) {
@@ -256,7 +319,15 @@ export function getLanguageDirection(lang: string): 'ltr' | 'rtl' {
 }
 
 /**
- * Get font family for a language
+ * Get the optimal font family for a language.
+ * Returns language-specific font stack with appropriate fallbacks.
+ *
+ * @function
+ * @param {string} lang - Language code
+ * @returns {string} CSS font-family value
+ *
+ * @example
+ * const font = getLanguageFont('hi'); // '"Noto Sans Devanagari", "Mangal", sans-serif'
  */
 export function getLanguageFont(lang: string): string {
   if (isSupportedLanguage(lang)) {
@@ -265,4 +336,8 @@ export function getLanguageFont(lang: string): string {
   return LANGUAGE_FONTS.en;
 }
 
+/**
+ * Configured i18next instance for the application.
+ * @default
+ */
 export default i18n;

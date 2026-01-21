@@ -26,6 +26,7 @@ out/
 # Environment variables
 # -----------------------------------------------------------------------------
 .env
+.env.txt
 .env.local
 .env.development
 .env.production
@@ -94,6 +95,8 @@ tmp/
 temp/
 *.tmp
 *.temp
+*.bak
+*.orig
 
 # -----------------------------------------------------------------------------
 # Package manager locks (use pnpm-lock.yaml only)

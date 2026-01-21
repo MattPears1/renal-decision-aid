@@ -1,3 +1,13 @@
+/**
+ * @fileoverview 3D Model Viewer page for the NHS Renal Decision Aid.
+ * Provides an interactive 3D kidney model using React Three Fiber
+ * with anatomical annotations and educational information.
+ * @module pages/ModelViewerPage
+ * @version 2.5.0
+ * @since 2.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Suspense, useState, useRef } from 'react';
@@ -5,7 +15,12 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Environment, Html, Line } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Anatomy annotation position data (labels come from translations)
+/**
+ * Anatomy annotation position data for labeling kidney structures.
+ * Each annotation includes position for the label, target position on the model,
+ * and translation keys for internationalization.
+ * @constant {Array<{id: string, labelKey: string, descriptionKey: string, position: [number, number, number], targetPosition: [number, number, number], color: string}>}
+ */
 const anatomyAnnotations = [
   {
     id: 'kidney',
@@ -49,32 +64,52 @@ const anatomyAnnotations = [
   },
 ];
 
-// Icon components
+// ============================================================================
+// Icon Components
+// ============================================================================
+
+/** Left arrow icon for back navigation. */
 const ArrowLeftIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
   </svg>
 );
 
+/** Rotate icon for auto-rotate toggle button. */
 const RotateIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
   </svg>
 );
 
+/** Zoom in icon for zoom control hints. */
 const ZoomInIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
   </svg>
 );
 
+/** Reset icon for view reset button. */
 const ResetIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
   </svg>
 );
 
-// Annotation component with line and label
+// ============================================================================
+// 3D Components
+// ============================================================================
+
+/**
+ * Props for the Annotation component.
+ * @interface AnnotationProps
+ * @property {typeof anatomyAnnotations[0]} annotation - The annotation data
+ * @property {boolean} isSelected - Whether this annotation is currently selected
+ * @property {() => void} onClick - Click handler for selection
+ * @property {boolean} showLabels - Whether labels are visible
+ * @property {[number, number, number]} modelOffset - Y-offset to center model
+ * @property {(key: string, options?: Record<string, unknown>) => string} t - Translation function
+ */
 interface AnnotationProps {
   annotation: typeof anatomyAnnotations[0];
   isSelected: boolean;
@@ -84,6 +119,13 @@ interface AnnotationProps {
   t: (key: string, options?: Record<string, unknown>) => string;
 }
 
+/**
+ * Annotation component displaying a label with connecting line to anatomy.
+ * Shows expandable description when selected.
+ * @component
+ * @param {AnnotationProps} props - Component props
+ * @returns {JSX.Element | null} The rendered annotation or null if hidden
+ */
 function Annotation({ annotation, isSelected, onClick, showLabels, modelOffset, t }: AnnotationProps) {
   // Adjust positions based on model offset
   const adjustedPosition: [number, number, number] = [
@@ -161,7 +203,13 @@ function Annotation({ annotation, isSelected, onClick, showLabels, modelOffset, 
   );
 }
 
-// 3D Kidney Model Component
+/**
+ * 3D Kidney Model component that loads and renders the GLB model.
+ * @component
+ * @param {Object} props - Component props
+ * @param {[number, number, number]} [props.position=[0, 0, 0]] - Position offset for the model
+ * @returns {JSX.Element} The rendered 3D model primitive
+ */
 function KidneyModel({ position = [0, 0, 0] }: { position?: [number, number, number] }) {
   const { scene } = useGLTF('/models/kidney.glb');
   const modelRef = useRef<THREE.Group>(null);
@@ -180,10 +228,16 @@ function KidneyModel({ position = [0, 0, 0] }: { position?: [number, number, num
   );
 }
 
-// Preload the model
+/** Preload the 3D model for faster initial render. */
 useGLTF.preload('/models/kidney.glb');
 
-// Loading component for Suspense
+/**
+ * Loading spinner component displayed while the 3D model loads.
+ * @component
+ * @param {Object} props - Component props
+ * @param {(key: string) => string} props.t - Translation function
+ * @returns {JSX.Element} The rendered loading spinner
+ */
 function LoadingSpinner({ t }: { t: (key: string) => string }) {
   return (
     <Html center>
@@ -195,7 +249,7 @@ function LoadingSpinner({ t }: { t: (key: string) => string }) {
   );
 }
 
-// Label icon
+/** Tag icon for label toggle button. */
 const TagIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
@@ -203,6 +257,29 @@ const TagIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   </svg>
 );
 
+// ============================================================================
+// Main Page Component
+// ============================================================================
+
+/**
+ * 3D Model Viewer page for exploring kidney anatomy.
+ *
+ * Features:
+ * - Interactive 3D kidney model with rotation and zoom
+ * - Anatomical annotations with expandable descriptions
+ * - Auto-rotate toggle for automated viewing
+ * - Label visibility toggle
+ * - Reset view functionality
+ * - Touch gesture support for mobile devices
+ * - Educational information cards
+ * - Navigation to treatments and comparisons
+ *
+ * @component
+ * @returns {JSX.Element} The rendered model viewer page
+ *
+ * @example
+ * <Route path="/model" element={<ModelViewerPage />} />
+ */
 export default function ModelViewerPage() {
   const { t } = useTranslation();
   const [autoRotate, setAutoRotate] = useState(true);
@@ -210,9 +287,12 @@ export default function ModelViewerPage() {
   const [selectedAnnotation, setSelectedAnnotation] = useState<string | null>(null);
   const controlsRef = useRef<any>(null);
 
-  // Model offset for annotation positioning
+  /** Model offset for centering in viewport. */
   const modelOffset: [number, number, number] = [0, -1.5, 0];
 
+  /**
+   * Resets the camera view to default position and clears selection.
+   */
   const handleReset = () => {
     if (controlsRef.current) {
       controlsRef.current.reset();

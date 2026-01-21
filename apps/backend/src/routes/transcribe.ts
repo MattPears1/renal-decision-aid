@@ -1,16 +1,46 @@
+/**
+ * @fileoverview Speech-to-text transcription endpoint for the NHS Renal Decision Aid.
+ * Converts audio recordings to text using OpenAI's Whisper API to enable
+ * voice-based interaction with the decision support tool.
+ *
+ * @module routes/transcribe
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires express
+ * @requires openai
+ * @requires multer
+ * @requires ../services/logger
+ *
+ * @see {@link module:routes/synthesize} for text-to-speech functionality
+ */
+
 import { Router, Request, Response } from 'express';
 import OpenAI from 'openai';
 import multer from 'multer';
 import logger, { logError } from '../services/logger.js';
 
+/**
+ * Express router instance for transcription endpoints.
+ * @type {Router}
+ */
 const router = Router();
 
-// Initialize OpenAI client
+/**
+ * OpenAI client instance for Whisper API calls.
+ * @type {OpenAI | null}
+ */
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
-// Configure multer for memory storage (audio files)
+/**
+ * Multer upload configuration for handling audio file uploads.
+ * Uses memory storage with a 25MB file size limit (Whisper API limit).
+ * Accepts common audio formats: webm, mp3, wav, m4a, ogg, flac, mp4.
+ * @type {multer.Multer}
+ */
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -39,7 +69,11 @@ const upload = multer({
   },
 });
 
-// Language code mapping for Whisper API
+/**
+ * Language code mapping for Whisper API.
+ * Maps application language codes to Whisper-supported language codes.
+ * @constant {Record<string, string>}
+ */
 const LANGUAGE_MAP: Record<string, string> = {
   en: 'en',
   hi: 'hi',
@@ -51,8 +85,37 @@ const LANGUAGE_MAP: Record<string, string> = {
 };
 
 /**
+ * Transcribe audio to text using OpenAI Whisper API.
+ *
  * POST /api/transcribe
- * Transcribe audio to text using OpenAI Whisper API
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {Express.Multer.File} req.file - Audio file uploaded via multipart form
+ * @param {string} [req.body.language] - Optional language hint for transcription
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} JSON response with transcribed text
+ *
+ * @throws {400} Bad Request - No audio file provided
+ * @throws {400} File Too Large - Audio exceeds 25MB limit
+ * @throws {429} Rate Limited - Too many requests
+ * @throws {500} Transcription Error - API or processing error
+ * @throws {503} Service Unavailable - OpenAI not configured
+ *
+ * @example
+ * // Request (multipart/form-data)
+ * POST /api/transcribe
+ * audio: [binary audio file]
+ * language: "en"
+ *
+ * // Response
+ * {
+ *   "text": "What is peritoneal dialysis?",
+ *   "language": "en",
+ *   "duration": 3.5,
+ *   "timestamp": "2026-01-21T10:30:00.000Z"
+ * }
  */
 router.post('/', upload.single('audio'), async (req: Request, res: Response) => {
   try {

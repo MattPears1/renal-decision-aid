@@ -1,3 +1,25 @@
+/**
+ * @fileoverview AI chat page for the NHS Renal Decision Aid.
+ * Provides an interactive chat interface where users can ask questions
+ * about kidney treatments and receive AI-generated responses.
+ *
+ * @module pages/ChatPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-i18next
+ * @requires react-router-dom
+ * @requires @/context/SessionContext
+ * @requires @/services/api
+ * @requires @/components/ui
+ * @requires @/hooks/useVoiceRecording
+ * @requires @/hooks/useTextToSpeech
+ * @requires @/components/VoiceControls
+ * @requires @renal-decision-aid/shared-types
+ */
+
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
@@ -14,7 +36,10 @@ import {
 } from '@/components/VoiceControls';
 import type { ChatMessage } from '@renal-decision-aid/shared-types';
 
-// These arrays use translation keys - the actual values are retrieved via t()
+/**
+ * Translation keys for suggested questions shown to users.
+ * @constant {string[]}
+ */
 const SUGGESTED_QUESTION_KEYS = [
   'chat.questions.q1',
   'chat.questions.q2',
@@ -24,12 +49,28 @@ const SUGGESTED_QUESTION_KEYS = [
   'chat.questions.q6',
 ];
 
+/**
+ * Translation keys for quick reply buttons shown after assistant responses.
+ * @constant {string[]}
+ */
 const QUICK_REPLY_KEYS = [
   'chat.quickReplies.tellMeMore',
   'chat.quickReplies.prosAndCons',
   'chat.quickReplies.dailyLife',
 ];
 
+/**
+ * AI chat page component for the NHS Renal Decision Aid.
+ * Provides an interactive chat interface for users to ask questions about
+ * kidney treatments with AI-generated responses, voice input, and text-to-speech.
+ *
+ * @component
+ * @returns {JSX.Element} The chat page with message history, input area, and voice controls
+ *
+ * @example
+ * // In router configuration
+ * <Route path="/chat" element={<ChatPage />} />
+ */
 export default function ChatPage() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -39,6 +80,10 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [showPiiWarning, setShowPiiWarning] = useState(true);
   const [lastAssistantMessage, setLastAssistantMessage] = useState<string | null>(null);
+
+  // Capture the language when the page loads (before user can change it on this page)
+  // This represents the language from the page they navigated from
+  const [initialLanguage] = useState(() => i18n.language);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -106,6 +151,11 @@ export default function ChatPage() {
     }
   }, [input]);
 
+  /**
+   * Formats a timestamp into a localized time string.
+   * @param {string | number} timestamp - Unix timestamp or ISO date string
+   * @returns {string} Formatted time string (e.g., "14:30")
+   */
   const formatTime = (timestamp: string | number) => {
     const date = typeof timestamp === 'string' ? new Date(timestamp) : new Date(timestamp);
     // Use current language locale for date formatting
@@ -116,6 +166,12 @@ export default function ChatPage() {
     });
   };
 
+  /**
+   * Sends a chat message to the AI assistant and handles the response.
+   * Adds user message to history, calls chat API, and updates with assistant response.
+   * @param {string} [messageText] - Optional message text, defaults to input field value
+   * @returns {Promise<void>}
+   */
   const handleSend = async (messageText?: string) => {
     const text = messageText || input.trim();
     if (!text || isLoading) return;
@@ -133,7 +189,8 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      const response = await chatApi.sendMessage(text, session?.id);
+      // Pass the initial language to tell the AI what language to respond in
+      const response = await chatApi.sendMessage(text, session?.id, initialLanguage);
 
       if (response.data) {
         const assistantMessage: ChatMessage = {
@@ -166,6 +223,11 @@ export default function ChatPage() {
     }
   };
 
+  /**
+   * Handles keyboard events for the input textarea.
+   * Sends message on Enter key (without Shift).
+   * @param {React.KeyboardEvent} e - Keyboard event
+   */
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -173,7 +235,11 @@ export default function ChatPage() {
     }
   };
 
-  // Handle voice recording toggle
+  /**
+   * Toggles voice recording on/off.
+   * Starts recording when idle, stops and transcribes when recording.
+   * @returns {Promise<void>}
+   */
   const handleVoiceToggle = useCallback(async () => {
     if (recordingState === 'recording') {
       // Stop recording and transcribe
@@ -184,7 +250,11 @@ export default function ChatPage() {
     }
   }, [recordingState, startRecording, stopRecording]);
 
-  // Handle playing AI response
+  /**
+   * Handles text-to-speech playback for assistant responses.
+   * Toggles playback if already playing/paused, otherwise starts speaking.
+   * @param {string} text - The text to speak
+   */
   const handlePlayResponse = useCallback((text: string) => {
     if (speechState === 'playing' || speechState === 'paused') {
       toggleSpeech();
@@ -535,7 +605,13 @@ export default function ChatPage() {
   );
 }
 
-// Mock response generator for development/fallback
+/**
+ * Generates a mock response for development and fallback scenarios.
+ * Provides contextual responses based on question keywords.
+ *
+ * @param {string} question - The user's question
+ * @returns {string} A mock AI response relevant to the question topic
+ */
 function generateMockResponse(question: string): string {
   const lowerQuestion = question.toLowerCase();
 
@@ -572,6 +648,14 @@ function generateMockResponse(question: string): string {
 }
 
 // Icon Components
+
+/**
+ * Warning triangle icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG warning icon
+ */
 function WarningIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -580,6 +664,13 @@ function WarningIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Close/X icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG close icon
+ */
 function CloseIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -589,6 +680,13 @@ function CloseIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Bot/AI avatar icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG bot icon
+ */
 function BotIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -597,6 +695,13 @@ function BotIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * User avatar icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG user icon
+ */
 function UserIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -605,6 +710,13 @@ function UserIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Back arrow icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG back arrow icon
+ */
 function BackIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -614,6 +726,13 @@ function BackIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Question mark icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG question mark icon
+ */
 function QuestionIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -622,6 +741,13 @@ function QuestionIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Microphone icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG microphone icon
+ */
 function MicIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -630,6 +756,13 @@ function MicIcon({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Send/paper plane icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - Optional CSS class name
+ * @returns {JSX.Element} SVG send icon
+ */
 function SendIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">

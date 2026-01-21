@@ -1,6 +1,32 @@
+/**
+ * @fileoverview NHS-branded footer component for the Renal Decision Aid.
+ * Contains navigation links, disclaimer, and contact information.
+ * @module components/NHSFooter
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * NHS-branded footer component.
+ *
+ * Features:
+ * - NHS logo and branding with demo badge
+ * - Navigation links (accessibility, privacy, contact)
+ * - Disclaimer section with demo notice
+ * - Contact email link
+ * - Copyright and version information
+ * - Responsive design for mobile/desktop
+ *
+ * @component
+ * @returns {JSX.Element} The rendered footer
+ *
+ * @example
+ * <NHSFooter />
+ */
 export default function NHSFooter() {
   const { t } = useTranslation();
 

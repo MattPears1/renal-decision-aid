@@ -1,9 +1,37 @@
+/**
+ * @fileoverview Hub page for the NHS Renal Decision Aid.
+ * Central navigation hub providing access to all features including
+ * treatment information, comparison tools, values exercise, and AI chat.
+ *
+ * @module pages/HubPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react-router-dom
+ * @requires react-i18next
+ * @requires @/context/SessionContext
+ * @requires @/components/LearningProgress
+ * @requires @/components/ScenarioExplorer
+ */
+
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession, useSessionTimer } from '@/context/SessionContext';
 import LearningProgress from '@/components/LearningProgress';
 import ScenarioExplorer from '@/components/ScenarioExplorer';
 
+/**
+ * Configuration for a hub navigation card.
+ * @interface HubCard
+ * @property {string} id - Unique card identifier
+ * @property {string} titleKey - i18n key for card title
+ * @property {string} descriptionKey - i18n key for card description
+ * @property {string} href - Navigation target URL
+ * @property {string} actionKey - i18n key for action button text
+ * @property {React.ReactNode} icon - Icon component
+ * @property {string} gradient - CSS gradient classes for card styling
+ */
 interface HubCard {
   id: string;
   titleKey: string;
@@ -62,6 +90,18 @@ const HUB_CARDS: HubCard[] = [
   },
 ];
 
+/**
+ * Hub page component serving as the central navigation point.
+ * Displays personalized content based on journey stage, session timer,
+ * learning progress, and quick access to all major features.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered hub page
+ *
+ * @example
+ * // Usage in router
+ * <Route path="/hub" element={<HubPage />} />
+ */
 export default function HubPage() {
   const { t } = useTranslation();
   const { session } = useSession();

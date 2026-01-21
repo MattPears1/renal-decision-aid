@@ -1,6 +1,32 @@
+/**
+ * @fileoverview Landing page for the NHS Renal Decision Aid.
+ * Introduces users to the kidney treatment decision support tool
+ * with key features, trust indicators, and call-to-action sections.
+ *
+ * @module pages/LandingPage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react-router-dom
+ * @requires react-i18next
+ */
+
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Landing page component displaying the welcome screen and tool introduction.
+ * Features a hero section, feature cards, about steps, trust indicators,
+ * and call-to-action buttons to begin the decision journey.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered landing page
+ *
+ * @example
+ * // Usage in router
+ * <Route path="/" element={<LandingPage />} />
+ */
 export default function LandingPage() {
   const { t } = useTranslation();
 
@@ -242,7 +268,14 @@ export default function LandingPage() {
   );
 }
 
-// Feature Card Component - Enhanced with colors and hover effects
+/**
+ * Props for the FeatureCard component.
+ * @interface FeatureCardProps
+ * @property {React.ReactNode} icon - Icon element to display
+ * @property {string} title - Feature title text
+ * @property {string} description - Feature description text
+ * @property {'blue' | 'green' | 'aqua'} [color] - Color theme for the card
+ */
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
@@ -250,6 +283,14 @@ interface FeatureCardProps {
   color?: 'blue' | 'green' | 'aqua';
 }
 
+/**
+ * Feature card component displaying a key feature of the decision aid.
+ * Includes icon, title, and description with hover effects.
+ *
+ * @component
+ * @param {FeatureCardProps} props - Component props
+ * @returns {JSX.Element} Rendered feature card
+ */
 function FeatureCard({ icon, title, description, color = 'blue' }: FeatureCardProps) {
   const colorClasses = {
     blue: 'bg-nhs-blue group-hover:bg-nhs-blue-dark',
@@ -284,13 +325,27 @@ function FeatureCard({ icon, title, description, color = 'blue' }: FeatureCardPr
   );
 }
 
-// About Step Component
+/**
+ * Props for the AboutStep component.
+ * @interface AboutStepProps
+ * @property {string} number - Step number to display
+ * @property {string} title - Step title
+ * @property {string} description - Step description text
+ */
 interface AboutStepProps {
   number: string;
   title: string;
   description: string;
 }
 
+/**
+ * About step component showing a numbered step in the process.
+ * Used in the "What This Tool Does" section.
+ *
+ * @component
+ * @param {AboutStepProps} props - Component props
+ * @returns {JSX.Element} Rendered about step
+ */
 function AboutStep({ number, title, description }: AboutStepProps) {
   return (
     <div className="relative p-6 bg-white rounded-xl shadow-sm border border-nhs-pale-grey hover:shadow-md transition-shadow">
@@ -307,12 +362,25 @@ function AboutStep({ number, title, description }: AboutStepProps) {
   );
 }
 
-// Trust Item Component - Enhanced with better visual design
+/**
+ * Props for the TrustItem component.
+ * @interface TrustItemProps
+ * @property {React.ReactNode} icon - Icon element to display
+ * @property {string} text - Trust indicator text
+ */
 interface TrustItemProps {
   icon: React.ReactNode;
   text: string;
 }
 
+/**
+ * Trust item component displaying a trust indicator with icon.
+ * Used in the trust indicators section at the bottom of the page.
+ *
+ * @component
+ * @param {TrustItemProps} props - Component props
+ * @returns {JSX.Element} Rendered trust item
+ */
 function TrustItem({ icon, text }: TrustItemProps) {
   return (
     <div className="flex flex-col items-center gap-3 p-4 bg-white rounded-xl shadow-sm text-center">
@@ -324,7 +392,17 @@ function TrustItem({ icon, text }: TrustItemProps) {
   );
 }
 
+// ============================================================================
 // Icon Components
+// ============================================================================
+
+/**
+ * Right arrow icon component.
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.className] - CSS class names
+ * @returns {JSX.Element} SVG icon
+ */
 function ArrowRightIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg

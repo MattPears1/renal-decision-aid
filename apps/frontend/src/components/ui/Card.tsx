@@ -1,11 +1,49 @@
+/**
+ * @fileoverview Card component for the NHS Renal Decision Aid.
+ * Provides a flexible container component with multiple variants.
+ * @module components/ui/Card
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { HTMLAttributes, forwardRef } from 'react';
 import clsx from 'clsx';
 
+/**
+ * Props for the Card component.
+ * @interface CardProps
+ * @extends HTMLAttributes<HTMLDivElement>
+ * @property {'default' | 'elevated' | 'bordered' | 'interactive'} [variant='default'] - Visual variant
+ * @property {'none' | 'sm' | 'md' | 'lg'} [padding='md'] - Padding size
+ */
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'elevated' | 'bordered' | 'interactive';
   padding?: 'none' | 'sm' | 'md' | 'lg';
 }
 
+/**
+ * Card container component with NHS styling.
+ *
+ * Features:
+ * - Multiple visual variants
+ * - Responsive padding options
+ * - Interactive variant for clickable cards
+ * - Rounded corners and border styling
+ *
+ * @component
+ * @param {CardProps} props - Component props
+ * @param {React.Ref<HTMLDivElement>} ref - Forwarded ref
+ * @returns {JSX.Element} The rendered card
+ *
+ * @example
+ * <Card variant="elevated" padding="lg">
+ *   <CardHeader>
+ *     <CardTitle>Title</CardTitle>
+ *   </CardHeader>
+ *   <CardContent>Content here</CardContent>
+ * </Card>
+ */
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', padding = 'md', children, ...props }, ref) => {
     const baseStyles = 'bg-white rounded-lg w-full';
@@ -40,8 +78,19 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
 
 Card.displayName = 'Card';
 
+/**
+ * Props for the CardHeader component.
+ * @interface CardHeaderProps
+ * @extends HTMLAttributes<HTMLDivElement>
+ */
 export interface CardHeaderProps extends HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * Card header section component.
+ * @component
+ * @param {CardHeaderProps} props - Component props
+ * @returns {JSX.Element} The rendered header
+ */
 export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
   ({ className, children, ...props }, ref) => (
     <div ref={ref} className={clsx('mb-4', className)} {...props}>
@@ -52,10 +101,22 @@ export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
 
 CardHeader.displayName = 'CardHeader';
 
+/**
+ * Props for the CardTitle component.
+ * @interface CardTitleProps
+ * @extends HTMLAttributes<HTMLHeadingElement>
+ * @property {'h1' | 'h2' | 'h3' | 'h4'} [as='h3'] - Heading level to render
+ */
 export interface CardTitleProps extends HTMLAttributes<HTMLHeadingElement> {
   as?: 'h1' | 'h2' | 'h3' | 'h4';
 }
 
+/**
+ * Card title component with configurable heading level.
+ * @component
+ * @param {CardTitleProps} props - Component props
+ * @returns {JSX.Element} The rendered title
+ */
 export const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
   ({ className, as: Component = 'h3', children, ...props }, ref) => (
     <Component
@@ -70,8 +131,19 @@ export const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
 
 CardTitle.displayName = 'CardTitle';
 
+/**
+ * Props for the CardContent component.
+ * @interface CardContentProps
+ * @extends HTMLAttributes<HTMLDivElement>
+ */
 export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * Card content section component.
+ * @component
+ * @param {CardContentProps} props - Component props
+ * @returns {JSX.Element} The rendered content
+ */
 export const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
   ({ className, children, ...props }, ref) => (
     <div ref={ref} className={clsx('text-text-secondary', className)} {...props}>
@@ -82,8 +154,19 @@ export const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
 
 CardContent.displayName = 'CardContent';
 
+/**
+ * Props for the CardFooter component.
+ * @interface CardFooterProps
+ * @extends HTMLAttributes<HTMLDivElement>
+ */
 export interface CardFooterProps extends HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * Card footer section component with top border.
+ * @component
+ * @param {CardFooterProps} props - Component props
+ * @returns {JSX.Element} The rendered footer
+ */
 export const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
   ({ className, children, ...props }, ref) => (
     <div ref={ref} className={clsx('mt-4 pt-4 border-t border-nhs-pale-grey', className)} {...props}>

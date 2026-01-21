@@ -1,10 +1,34 @@
+/**
+ * @fileoverview Journey stage selection page for the NHS Renal Decision Aid.
+ * Allows users to select their current stage in the kidney disease journey
+ * to receive personalized content and recommendations.
+ *
+ * @module pages/JourneyStagePage
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires react
+ * @requires react-router-dom
+ * @requires react-i18next
+ * @requires @/context/SessionContext
+ * @requires @renal-decision-aid/shared-types
+ */
+
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
 import type { JourneyStage } from '@renal-decision-aid/shared-types';
 
-// Journey stage options based on the HTML mock
+/**
+ * Configuration for a journey stage option.
+ * @interface JourneyOption
+ * @property {JourneyStage} id - Unique stage identifier
+ * @property {string} titleKey - i18n key for stage title
+ * @property {string} descriptionKey - i18n key for stage description
+ * @property {React.ReactNode} icon - Icon component for the stage
+ */
 interface JourneyOption {
   id: JourneyStage;
   titleKey: string;
@@ -57,6 +81,18 @@ const JOURNEY_OPTIONS: JourneyOption[] = [
   },
 ];
 
+/**
+ * Journey stage selection page component.
+ * Presents users with options to identify their current stage in the
+ * kidney disease journey. Selection personalizes subsequent content.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered journey stage selection page
+ *
+ * @example
+ * // Usage in router
+ * <Route path="/journey" element={<JourneyStagePage />} />
+ */
 export default function JourneyStagePage() {
   const navigate = useNavigate();
   const { t } = useTranslation();

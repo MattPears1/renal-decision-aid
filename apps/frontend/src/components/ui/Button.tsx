@@ -1,6 +1,24 @@
+/**
+ * @fileoverview Button component for the NHS Renal Decision Aid.
+ * Provides accessible, NHS-styled buttons with multiple variants.
+ * @module components/ui/Button
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ */
+
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 import clsx from 'clsx';
 
+/**
+ * Props for the Button component.
+ * @interface ButtonProps
+ * @extends ButtonHTMLAttributes<HTMLButtonElement>
+ * @property {'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'} [variant='primary'] - Visual variant
+ * @property {'sm' | 'md' | 'lg' | 'xl'} [size='md'] - Size variant
+ * @property {boolean} [fullWidth=false] - Whether button spans full width
+ * @property {boolean} [isLoading=false] - Whether to show loading state
+ */
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -8,6 +26,27 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
+/**
+ * Accessible button component with NHS styling.
+ *
+ * Features:
+ * - Multiple visual variants (primary, secondary, outline, ghost, danger)
+ * - Multiple size options with WCAG 2.2 compliant touch targets
+ * - Loading state with spinner
+ * - Focus ring for accessibility
+ * - Touch manipulation for instant response
+ * - Active scale transform for tactile feedback
+ *
+ * @component
+ * @param {ButtonProps} props - Component props
+ * @param {React.Ref<HTMLButtonElement>} ref - Forwarded ref
+ * @returns {JSX.Element} The rendered button
+ *
+ * @example
+ * <Button variant="primary" size="lg" onClick={handleClick}>
+ *   Click me
+ * </Button>
+ */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {

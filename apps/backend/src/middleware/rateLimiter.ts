@@ -1,8 +1,23 @@
 /**
- * Rate limiting middleware for NHS Renal Decision Aid
- *
+ * @fileoverview Rate limiting middleware for the NHS Renal Decision Aid.
  * Protects the API from abuse by limiting request rates per IP address.
- * Uses express-rate-limit for implementation.
+ *
+ * @module middleware/rateLimiter
+ * @version 2.5.0
+ * @since 1.0.0
+ * @lastModified 21 January 2026
+ *
+ * @requires express-rate-limit
+ * @requires express
+ * @requires ../services/logger
+ *
+ * @description
+ * Provides multiple rate limiters with different configurations:
+ * - chatRateLimiter: Strict limit for AI chat endpoints
+ * - sessionCreateRateLimiter: Prevents session creation abuse
+ * - sessionRateLimiter: General session operations
+ * - globalRateLimiter: Overall API protection
+ * - burstRateLimiter: Prevents rapid-fire requests
  */
 
 import rateLimit, { RateLimitRequestHandler, Options } from 'express-rate-limit';
@@ -10,7 +25,12 @@ import { Request, Response } from 'express';
 import { apiLogger } from '../services/logger.js';
 
 /**
- * Custom key generator that handles proxy headers
+ * Extract client IP address from request, handling proxy headers.
+ * Supports X-Forwarded-For header for clients behind proxies (e.g., Heroku).
+ *
+ * @function getClientIp
+ * @param {Request} req - Express request object
+ * @returns {string} Client IP address or 'unknown' if not determinable
  */
 function getClientIp(req: Request): string {
   // Trust X-Forwarded-For header when behind a proxy (like Heroku)
@@ -26,7 +46,12 @@ function getClientIp(req: Request): string {
 }
 
 /**
- * Custom handler for when rate limit is exceeded
+ * Create a custom handler for rate limit exceeded responses.
+ * Logs the event and returns a 429 response with retry information.
+ *
+ * @function createLimitHandler
+ * @param {string} endpoint - Endpoint identifier for logging
+ * @returns {Function} Express middleware handler for rate limit exceeded
  */
 function createLimitHandler(endpoint: string) {
   return (req: Request, res: Response): void => {
@@ -42,7 +67,8 @@ function createLimitHandler(endpoint: string) {
 }
 
 /**
- * Common rate limit options
+ * Common rate limit configuration options shared by all limiters.
+ * @constant {Partial<Options>}
  */
 const commonOptions: Partial<Options> = {
   standardHeaders: true, // Return rate limit info in headers
@@ -55,8 +81,11 @@ const commonOptions: Partial<Options> = {
 };
 
 /**
- * Rate limiter for chat endpoint
- * More restrictive: 20 requests per minute per IP
+ * Rate limiter for the chat endpoint.
+ * More restrictive: 20 requests per minute per IP.
+ * Protects the AI chat service from excessive usage.
+ *
+ * @constant {RateLimitRequestHandler}
  */
 export const chatRateLimiter: RateLimitRequestHandler = rateLimit({
   ...commonOptions,
@@ -67,8 +96,10 @@ export const chatRateLimiter: RateLimitRequestHandler = rateLimit({
 });
 
 /**
- * Rate limiter for session creation
- * Prevent abuse of session creation: 10 sessions per minute per IP
+ * Rate limiter for session creation endpoint.
+ * Prevents session creation abuse: 10 sessions per minute per IP.
+ *
+ * @constant {RateLimitRequestHandler}
  */
 export const sessionCreateRateLimiter: RateLimitRequestHandler = rateLimit({
   ...commonOptions,
@@ -79,8 +110,10 @@ export const sessionCreateRateLimiter: RateLimitRequestHandler = rateLimit({
 });
 
 /**
- * Rate limiter for general session operations
- * Less restrictive: 100 requests per minute per IP
+ * Rate limiter for general session operations (GET, PUT, DELETE).
+ * Less restrictive: 100 requests per minute per IP.
+ *
+ * @constant {RateLimitRequestHandler}
  */
 export const sessionRateLimiter: RateLimitRequestHandler = rateLimit({
   ...commonOptions,
@@ -91,9 +124,11 @@ export const sessionRateLimiter: RateLimitRequestHandler = rateLimit({
 });
 
 /**
- * Global rate limiter for all API endpoints
- * Very permissive: 200 requests per minute per IP
- * This is a safety net to prevent extreme abuse
+ * Global rate limiter for all API endpoints.
+ * Very permissive: 200 requests per minute per IP.
+ * Acts as a safety net to prevent extreme abuse.
+ *
+ * @constant {RateLimitRequestHandler}
  */
 export const globalRateLimiter: RateLimitRequestHandler = rateLimit({
   ...commonOptions,
@@ -104,8 +139,10 @@ export const globalRateLimiter: RateLimitRequestHandler = rateLimit({
 });
 
 /**
- * Stricter rate limiter for burst protection
- * Prevents rapid-fire requests: 5 requests per second per IP
+ * Stricter rate limiter for burst protection.
+ * Prevents rapid-fire requests: 5 requests per second per IP.
+ *
+ * @constant {RateLimitRequestHandler}
  */
 export const burstRateLimiter: RateLimitRequestHandler = rateLimit({
   ...commonOptions,
