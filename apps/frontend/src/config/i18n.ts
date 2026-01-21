@@ -8,12 +8,15 @@ import HttpBackend, { HttpBackendOptions } from 'i18next-http-backend';
  */
 export const SUPPORTED_LANGUAGES = {
   en: { name: 'English', nativeName: 'English', dir: 'ltr' },
+  zh: { name: 'Chinese (Simplified)', nativeName: '简体中文', dir: 'ltr' },
   hi: { name: 'Hindi', nativeName: 'हिन्दी', dir: 'ltr' },
   pa: { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', dir: 'ltr' },
   bn: { name: 'Bengali', nativeName: 'বাংলা', dir: 'ltr' },
   ur: { name: 'Urdu', nativeName: 'اردو', dir: 'rtl' },
   gu: { name: 'Gujarati', nativeName: 'ગુજરાતી', dir: 'ltr' },
   ta: { name: 'Tamil', nativeName: 'தமிழ்', dir: 'ltr' },
+  pl: { name: 'Polish', nativeName: 'Polski', dir: 'ltr' },
+  ar: { name: 'Arabic', nativeName: 'العربية', dir: 'rtl' },
 } as const;
 
 export type SupportedLanguage = keyof typeof SUPPORTED_LANGUAGES;
@@ -23,12 +26,15 @@ export type SupportedLanguage = keyof typeof SUPPORTED_LANGUAGES;
  */
 export const LANGUAGE_FONTS: Record<SupportedLanguage, string> = {
   en: '"NHS Regular", "Frutiger", "Arial", sans-serif',
+  zh: '"Noto Sans SC", "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif',
   hi: '"Noto Sans Devanagari", "Mangal", sans-serif',
   pa: '"Noto Sans Gurmukhi", "Raavi", sans-serif',
   bn: '"Noto Sans Bengali", "Vrinda", sans-serif',
   ur: '"Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", sans-serif',
   gu: '"Noto Sans Gujarati", "Shruti", sans-serif',
   ta: '"Noto Sans Tamil", "Latha", sans-serif',
+  pl: '"NHS Regular", "Frutiger", "Arial", sans-serif',
+  ar: '"Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", "Tahoma", sans-serif',
 };
 
 /**

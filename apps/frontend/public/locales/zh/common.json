@@ -1,0 +1,1430 @@
+{
+  "nav": {
+    "home": "首页",
+    "back": "返回",
+    "next": "下一步",
+    "skip": "跳过",
+    "returnToHub": "返回主页",
+    "backToHub": "返回主页",
+    "continueToQuestionnaire": "继续填写问卷"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "出了一些问题。请重试。",
+    "continue": "继续",
+    "cancel": "取消",
+    "save": "保存",
+    "print": "打印",
+    "yes": "是",
+    "no": "否",
+    "notSure": "不确定",
+    "moreInfo": "更多信息",
+    "close": "关闭",
+    "back": "返回",
+    "edit": "编辑",
+    "add": "添加",
+    "remove": "删除",
+    "listenToPage": "收听此页面"
+  },
+  "accessibility": {
+    "skipToContent": "跳转到主要内容",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "expandSection": "展开部分",
+    "collapseSection": "折叠部分",
+    "newWindow": "在新窗口中打开",
+    "externalLink": "外部链接",
+    "settings": "无障碍设置",
+    "settingsLabel": "无障碍选项 - 调整文字大小、对比度和其他无障碍设置",
+    "settingsTitle": "调整文字大小、对比度和其他无障碍设置",
+    "breadcrumb": "面包屑导航",
+    "pageNavigation": "页面导航",
+    "faq": "常见问题",
+    "frequentlyAskedQuestions": "常见问题",
+    "listenToPage": "收听此页面朗读",
+    "modal": {
+      "title": "无障碍设置",
+      "textSize": "文字大小",
+      "textSizeOptions": {
+        "small": "小",
+        "medium": "中（默认）",
+        "large": "大",
+        "extra-large": "特大"
+      },
+      "highContrast": "高对比度模式",
+      "reducedMotion": "减少动画",
+      "lineSpacing": "行间距",
+      "lineSpacingOptions": {
+        "normal": "正常",
+        "relaxed": "宽松",
+        "loose": "松散"
+      },
+      "save": "保存设置",
+      "cancel": "取消",
+      "reset": "恢复默认"
+    }
+  },
+  "landing": {
+    "title": "肾脏治疗决策辅助工具",
+    "subtitle": "NHS肾脏服务",
+    "description": "此工具将帮助您了解肾脏治疗方案，并思考对您最重要的事项。请慢慢来——没有对错之分。",
+    "startButton": "开始您的旅程",
+    "startButtonAriaLabel": "开始您的肾脏治疗决策之旅",
+    "learnMore": "了解更多关于肾病的信息",
+    "heroAriaLabel": "欢迎部分",
+    "featuresHeading": "此工具如何帮助您",
+    "featuresSubheading": "帮助您做出明智肾脏治疗决定所需的一切",
+    "features": {
+      "time": {
+        "title": "大约需要15分钟",
+        "description": "按您自己的节奏完成。您可以随时休息，然后返回继续。"
+      },
+      "privacy": {
+        "title": "您的隐私受到保护",
+        "description": "不存储任何个人信息。您的回答仅在此次会话期间用于个性化工具。"
+      },
+      "devices": {
+        "title": "适用于所有设备",
+        "description": "可在手机、平板电脑或电脑上使用。工具会自动适应您的屏幕大小。"
+      }
+    },
+    "aboutHeading": "此工具的功能",
+    "about": {
+      "paragraph1": "此决策辅助工具将帮助您探索肾衰竭的不同治疗方案。您可以按自己的节奏了解每种治疗方法，思考对您最重要的事项，并创建一份摘要与您的医生或护士分享。",
+      "paragraph2": "您将回答一些关于您情况的简单问题，然后探索可能适合您的治疗方案。您的信息将保持私密，关闭浏览器后不会保存。",
+      "paragraph3": "此工具不能替代您医疗团队的医学建议。它旨在帮助您在讨论选择时感到更有信息和信心。您的肾脏团队是您护理方面的专家，他们将帮助您做出适合您的正确决定。",
+      "steps": {
+        "learn": {
+          "title": "学习"
+        },
+        "explore": {
+          "title": "探索"
+        },
+        "decide": {
+          "title": "决定"
+        }
+      }
+    },
+    "trustAriaLabel": "信任和安全信息",
+    "trust": {
+      "evidenceBased": "基于循证的信息",
+      "languages": "提供7种语言版本",
+      "accessible": "对所有用户无障碍",
+      "noAccount": "无需注册账户",
+      "time": "15分钟",
+      "privateSecure": "私密且安全"
+    },
+    "ctaHeading": "准备开始了吗？",
+    "ctaDescription": "迈出了解肾脏治疗方案的第一步。您可以现在开始，如果需要休息可以稍后再回来。"
+  },
+  "language": {
+    "title": "选择您的语言",
+    "instruction": "请选择您偏好的语言。您可以随时更改。",
+    "selectLanguage": "选择语言",
+    "currentLanguage": "当前语言"
+  },
+  "privacy": {
+    "pageAriaLabel": "隐私信息",
+    "progressLabel": "设置进度：30%",
+    "progressText": "第2步，共4步：隐私信息",
+    "title": "您的隐私和信息",
+    "subtitle": "在您开始之前，我们希望您了解此工具如何处理您的信息。",
+    "listenToPage": "收听此页面",
+    "stopReading": "停止朗读",
+    "sections": {
+      "privacy": {
+        "title": "我们如何保护您的信息",
+        "content": "您的回复将被安全处理，不会永久存储。此工具不会收集可识别您身份的个人健康信息。当您关闭此工具时，您的会话数据将自动删除。",
+        "p1": "此工具仅使用会话存储。您输入的任何信息，包括您对问题的回答和治疗偏好，仅在您使用工具期间保留。",
+        "p2": "当您关闭浏览器或闲置15分钟后，所有信息将自动删除。我们不会保存任何关于您的信息。",
+        "p3": "我们收集有关人们如何使用此工具的匿名信息，以帮助我们改进它。这些信息无法识别您的个人身份。"
+      },
+      "ai": {
+        "title": "此工具的工作原理",
+        "content": "此决策辅助工具使用技术根据您的回复提供个性化信息。提供的信息来自NHS临床指南和循证研究。此工具支持但不能替代与您肾脏护理团队的讨论。",
+        "p1": "此工具包含一个人工智能助手，可以回答有关肾脏治疗的一般问题。人工智能仅提供信息——它不能针对您的具体情况提供医学建议。",
+        "p2": "人工智能有时可能会出错或提供不完整的信息。请始终与了解您完整病史的肾脏团队讨论重要决定。",
+        "p3": "此工具不能替代您医疗团队的建议。它旨在帮助您在与医生和护士讨论选择时感到更有信息。"
+      },
+      "medical": {
+        "title": "重要医学信息",
+        "content": "此工具提供有关肾脏治疗选项的一般信息。它不能替代专业医学建议、诊断或治疗。在做出任何治疗决定之前，请务必咨询您的肾脏专科医生或医疗团队。如果您有紧急健康问题，请联系您的全科医生或拨打NHS 111。"
+      },
+      "pii": {
+        "title": "请勿分享个人详细信息",
+        "intro": "为保护您的隐私，在使用此工具时请勿输入任何可识别您身份的个人信息，特别是在聊天功能中。",
+        "listLabel": "您不应分享的信息",
+        "items": {
+          "nhsNumber": "您的NHS号码",
+          "fullName": "您的全名",
+          "address": "您的家庭住址",
+          "dob": "您的出生日期",
+          "phone": "电话号码",
+          "email": "电子邮件地址"
+        },
+        "outro": "您仍然可以用一般性术语告诉我们您的情况——例如，您的居住情况或对您最重要的事项——而无需分享可识别身份的详细信息。"
+      }
+    },
+    "summaryAriaLabel": "要点摘要",
+    "summary": {
+      "title": "总结",
+      "notSaved": "您的回答不会被保存",
+      "noData": "不收集个人数据",
+      "leave": "您可以随时离开"
+    },
+    "consent": {
+      "title": "请确认以继续",
+      "understand": "我理解此会话结束后我的信息不会被保存，并且我不会分享可识别个人身份的信息",
+      "analytics": "我同意收集匿名分析数据以帮助改进此工具（可选）",
+      "error": "请在继续之前确认您理解隐私信息"
+    },
+    "continueButton": "我理解，继续",
+    "continueAriaLabel": "继续到旅程阶段选择",
+    "readFullPolicy": "阅读完整的NHS隐私政策"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "演示",
+    "serviceName": "肾脏治疗决策辅助工具",
+    "tagline": "帮助您做出明智选择",
+    "homeAriaLabel": "NHS肾脏治疗决策辅助工具 - 首页"
+  },
+  "progress": {
+    "language": "语言",
+    "privacy": "隐私",
+    "yourJourney": "您的旅程",
+    "aboutYou": "关于您",
+    "yourOptions": "您的选择",
+    "ariaLabel": "决策辅助工具进度",
+    "stepOfTotal": "第{{current}}步，共{{total}}步",
+    "percentComplete": "已完成{{percentage}}%",
+    "ariaProgressLabel": "进度：已完成{{total}}步中的{{current}}步"
+  },
+  "journey": {
+    "title": "您目前处于肾脏护理旅程的哪个阶段？",
+    "subtitle": "选择最能描述您情况的选项",
+    "instruction": "选择最能描述您当前情况的选项",
+    "intro": "每个人的肾脏旅程都不同。为了帮助我们向您展示最相关的信息，请告诉我们您目前的状况。没有对错之分。",
+    "error": "请选择一个描述您情况的选项。如果这些都不适合，请选择"我正在支持家人或朋友"以继续。",
+    "formLabel": "旅程阶段选项",
+    "legendLabel": "选择您在肾脏旅程中的位置",
+    "radioGroupLabel": "旅程阶段选项",
+    "listenToQuestion": "收听此问题",
+    "audioText": "您处于旅程的哪个阶段？选择最能描述您情况的选项。",
+    "reassurance": "如果您不确定哪个选项最适合，请不要担心。您以后仍然可以探索所有治疗方案，您的肾脏团队可以帮助澄清您的情况。您的选择有助于我们首先向您展示最相关的信息。",
+    "needHelp": "我需要帮助选择",
+    "stages": {
+      "suspected": {
+        "title": "我认为我可能患有肾病",
+        "description": "您担心您的肾脏健康，想了解更多关于肾病意味着什么的信息。"
+      },
+      "earlyDiagnosis": {
+        "title": "我刚被诊断 - 早期慢性肾病",
+        "description": "您最近了解到您的肾脏状况，想了解这对您意味着什么。"
+      },
+      "lateDiagnosis": {
+        "title": "我被诊断了 - 晚期慢性肾病",
+        "description": "您的肾功能已显著下降，您可能很快需要考虑治疗方案。"
+      },
+      "choosingTreatment": {
+        "title": "我很快需要选择治疗方案",
+        "description": "您的肾脏团队告诉您，您需要在未来几个月开始治疗，您想了解您的选择。"
+      },
+      "transplantPending": {
+        "title": "我即将进行移植 - 想了解更多",
+        "description": "您已在移植名单上或有活体捐献者，想了解更多关于会发生什么的信息。"
+      },
+      "dialysisPending": {
+        "title": "我即将开始透析 - 想了解更多",
+        "description": "您很快将开始透析治疗，想了解不同类型以及日常生活会是什么样的。"
+      },
+      "supporting": {
+        "title": "我正在支持家人或朋友",
+        "description": "您身边有人患有肾病，您想了解他们的选择以帮助支持他们。"
+      }
+    },
+    "helpModal": {
+      "title": "需要帮助选择吗？",
+      "intro": "如果您不确定哪个阶段最能描述您，这完全正常。以下是一些提示：",
+      "tip1Title": "回想您最近的预约",
+      "tip1Text": "您的肾脏团队告诉您关于您的肾功能和下一步的什么信息？",
+      "tip2Title": "考虑是什么让您来到这里",
+      "tip2Text": "是医生或护士给您的这个工具吗？他们可能已经建议了适用于您的阶段。",
+      "tip3Title": "如果您仍然不确定",
+      "tip3Text": "选择感觉最接近您情况的选项。无论您选择哪个选项，您仍然可以探索此工具中的所有信息。",
+      "note": "您的肾脏团队是您护理方面的专家。如果您对肾脏健康有疑问，请直接联系他们。",
+      "understand": "我理解了"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "告诉我们关于您自己",
+      "description": "这些问题帮助我们向您展示与您情况最相关的信息。您的回答是私密的，此会话结束后不会保存。",
+      "features": {
+        "questions": "7个快速问题",
+        "time": "需要3-5分钟",
+        "private": "完全私密",
+        "skip": "可跳过任何问题"
+      },
+      "beginButton": "开始问题",
+      "skipText": "如果您不想回答这些问题，可以跳过到一般治疗信息。",
+      "skipButton": "跳过所有问题",
+      "backToJourney": "返回旅程阶段"
+    },
+    "progress": {
+      "label": "问题进度",
+      "questionOf": "问题{{current}}/{{total}}",
+      "complete": "完成"
+    },
+    "types": {
+      "scale": "等级评分",
+      "single": "单选",
+      "multiple": "多选"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "您对肾病及其治疗了解多少？",
+        "hint": "这有助于我们根据您目前的理解定制信息。"
+      },
+      "goal": {
+        "title": "您希望从这次会话中获得什么？",
+        "hint": "选择最能描述您今天主要目标的选项。"
+      },
+      "learning": {
+        "title": "您更喜欢如何学习新信息？",
+        "hint": "这有助于我们以最适合您的方式呈现信息。"
+      },
+      "comfort": {
+        "title": "您对医疗程序的舒适程度如何？",
+        "hint": "这是一个敏感话题。如果您愿意，可以跳过此问题。"
+      },
+      "support": {
+        "title": "您在家有支持吗？",
+        "hint": "有些治疗在家人或护理人员的帮助下更容易进行。"
+      },
+      "living": {
+        "title": "您住在哪里？",
+        "hint": "这有助于我们了解哪些治疗可能最适合您的家庭环境。"
+      },
+      "priorities": {
+        "title": "在选择治疗时，什么对您最重要？",
+        "hint": "您的优先事项将帮助我们突出每个治疗选项中对您重要的内容。"
+      }
+    },
+    "hints": {
+      "selectUpTo": "选择最多{{max}}个对您最重要的优先事项。",
+      "selectAll": "选择所有适用的——您可以选择多个选项。"
+    },
+    "audio": {
+      "listen": "收听此问题"
+    },
+    "slider": {
+      "ariaLabel": "从{{min}}到{{max}}的值"
+    },
+    "skipQuestion": "跳过此问题",
+    "viewResults": "查看我的结果",
+    "nextQuestion": "下一个问题",
+    "knowledge": {
+      "levels": {
+        "1": "我知道的很少",
+        "2": "我知道一点",
+        "3": "我有一些了解",
+        "4": "我知道的相当多",
+        "5": "我非常了解"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "学习基础知识",
+          "description": "我想了解肾病意味着什么以及可用的治疗方案"
+        },
+        "compare": {
+          "label": "比较我的选择",
+          "description": "我已经了解基础知识，想比较不同的治疗方法"
+        },
+        "prepare": {
+          "label": "为讨论做准备",
+          "description": "我想为下次预约准备问题和想法"
+        },
+        "support": {
+          "label": "支持他人",
+          "description": "我正在帮助家人或朋友了解他们的选择"
+        },
+        "notSure": {
+          "label": "我还不确定",
+          "description": "我只是想探索看看有什么信息可用"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "视觉图表和图像",
+          "description": "图片、图表和图解帮助我理解"
+        },
+        "audio": {
+          "label": "听取信息",
+          "description": "我更喜欢听信息朗读"
+        },
+        "reading": {
+          "label": "阅读文字",
+          "description": "我喜欢阅读详细的书面信息"
+        },
+        "video": {
+          "label": "观看视频",
+          "description": "视频和动画对我最有效"
+        },
+        "interactive": {
+          "label": "互动工具",
+          "description": "我通过实践和探索来学习"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "非常不舒服",
+        "2": "有些不舒服",
+        "3": "中立",
+        "4": "相当舒服",
+        "5": "非常舒服"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "是的，我与可以帮助的家人或伴侣同住",
+        "carers": "是的，我有帮助我的专业护理人员",
+        "familyNearby": "是的，家人住在附近可以来访",
+        "limitedSupport": "我可获得的支持有限",
+        "preferNotSay": "我不想说"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "有足够空间的房子",
+        "homeLimited": "储物空间有限的房子",
+        "flat": "公寓",
+        "supported": "辅助或护理住所"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "与家人共度时光",
+        "independence": "保持独立性",
+        "minimiseHospital": "减少住院时间",
+        "routine": "保持规律的日常",
+        "control": "控制自己的治疗",
+        "longevity": "尽可能长寿",
+        "quality": "日常生活质量",
+        "travel": "能够旅行"
+      }
+    }
+  },
+  "hub": {
+    "title": "您的个性化信息",
+    "subtitle": "根据您的回答，以下是我们建议您探索的内容。",
+    "welcome": {
+      "title": "您的个性化治疗选择",
+      "message": "根据您告诉我们的信息，这些资源可帮助您了解您的肾脏状况并探索您的选择。",
+      "reminder": "请记住，您的肾脏团队将帮助您做出最终决定。",
+      "badge": "您的个性化旅程"
+    },
+    "session": {
+      "timeRemaining": "会话剩余时间：",
+      "extend": "延长会话",
+      "updateAnswers": "更新我的回答",
+      "startOver": "重新开始"
+    },
+    "alert": {
+      "title": "记得保存您的摘要",
+      "message": "此会话结束后，您的信息将不会被保存。离开之前创建一份摘要以保留您探索的记录。",
+      "saveNow": "立即保存"
+    },
+    "pathway": {
+      "title": "您想如何探索？",
+      "guided": {
+        "title": "您的推荐旅程",
+        "badge": "推荐",
+        "description": "遵循根据您情况定制的分步指导路径探索治疗选择。如果您想要明确的方向和支持，这是理想选择。",
+        "action": "开始引导旅程"
+      },
+      "free": {
+        "title": "自由探索",
+        "description": "按自己的节奏浏览所有选项。直接跳转到您感兴趣的话题。如果您已经知道在找什么，这是理想选择。",
+        "action": "浏览所有选项"
+      }
+    },
+    "content": {
+      "title": "帮助您决定的工具",
+      "subtitle": "探索每个工具以做出明智的决定"
+    },
+    "cards": {
+      "treatments": {
+        "title": "治疗选择",
+        "description": "了解所有可用的肾脏治疗选择，包括透析类型、移植和保守治疗。",
+        "action": "探索"
+      },
+      "model": {
+        "title": "3D肾脏模型",
+        "description": "探索交互式3D模型，展示不同治疗方法在您体内如何工作。直观地了解过程。",
+        "action": "查看模型"
+      },
+      "compare": {
+        "title": "比较治疗方案",
+        "description": "并排查看所有治疗方案。比较对您重要的内容——从每日时间到旅行灵活性。",
+        "action": "比较"
+      },
+      "values": {
+        "title": "价值观练习",
+        "description": "思考对您最重要的事情。此练习有助于明确您的优先事项以指导您的决定。",
+        "action": "开始"
+      },
+      "chat": {
+        "title": "提问",
+        "description": "与我们的AI助手聊天，了解肾脏治疗选择。以对话方式获得问题的答案。",
+        "action": "开始聊天"
+      }
+    },
+    "status": {
+      "new": "新",
+      "inProgress": "进行中",
+      "completed": "已完成"
+    },
+    "summary": {
+      "title": "准备好回顾您的旅程了吗？",
+      "description": "查看您探索过的所有内容，并创建一份摘要在下次预约时与您的肾脏团队分享。",
+      "button": "查看您的摘要",
+      "badge": "最后一步"
+    },
+    "quickAction": {
+      "summary": "查看您的摘要"
+    }
+  },
+  "treatments": {
+    "title": "了解您的治疗选择",
+    "subtitle": "治疗肾衰竭有不同的方法。每种方法都有其益处和注意事项。",
+    "detailedInfoAriaLabel": "{{treatment}}详细信息",
+    "facts": {
+      "transplant": {
+        "survival": "最佳长期生存结果",
+        "surgery": "需要手术和恢复时间",
+        "medication": "需要终身服药"
+      },
+      "hemodialysis": {
+        "frequency": "每周3-4次，每次4-5小时",
+        "professionalCare": "专业护理和监测",
+        "travel": "需要前往治疗中心"
+      },
+      "peritoneal": {
+        "dailyHome": "在家每日治疗",
+        "timingOptions": "夜间或白天选择",
+        "flexibility": "更大的灵活性和独立性"
+      },
+      "conservative": {
+        "comfort": "注重舒适和生活质量",
+        "noDialysis": "无需透析治疗",
+        "symptomManagement": "积极症状管理"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "肾移植",
+        "shortDescription": "从捐献者那里接受健康的肾脏",
+        "description": "肾移植涉及从活体捐献者（如家人或朋友）或已故捐献者那里接受健康的肾脏。成功的移植可以为许多肾衰竭患者提供最佳的生活质量和最长的生存期。",
+        "benefits": [
+          "通常提供最佳的生活质量",
+          "无需定期透析",
+          "较少的饮食限制",
+          "大多数人能量水平更好"
+        ],
+        "considerations": [
+          "需要大手术",
+          "需要终身服用免疫抑制剂",
+          "可能需要等待合适的肾脏",
+          "并非适合所有人"
+        ]
+      },
+      "hemodialysis": {
+        "title": "血液透析",
+        "shortDescription": "使用机器过滤血液",
+        "description": "血液透析使用机器在体外过滤您的血液。这通常在医院或社区中心的透析室进行，通常每周三次，每次约四小时。有些人在家进行血液透析。",
+        "benefits": [
+          "有效清除废物和多余液体",
+          "与医疗团队定期接触",
+          "部分人可选择家庭血液透析",
+          "治疗由专业人员完成"
+        ],
+        "considerations": [
+          "需要定期去医院或中心",
+          "需要血管通路（瘘管或导管）",
+          "治疗后可能感到疲劳",
+          "需遵守饮食和液体限制"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "腹膜透析",
+        "shortDescription": "利用腹膜在体内过滤血液",
+        "description": "腹膜透析使用您腹部的内膜（腹膜）作为天然过滤器。特殊液体通过小管进入您的腹部，吸收废物后排出。这可以在家进行，白天或晚上睡觉时都可以。",
+        "benefits": [
+          "在家完成，更独立",
+          "时间安排更灵活",
+          "对身体更温和，起伏更少",
+          "更容易旅行"
+        ],
+        "considerations": [
+          "需要每日治疗的承诺",
+          "腹部需要永久性导管",
+          "如果操作不当有感染风险",
+          "需要存放供应品的空间"
+        ]
+      },
+      "conservative": {
+        "title": "保守治疗",
+        "shortDescription": "不进行透析的症状管理",
+        "description": "保守治疗专注于维持生活质量和管理症状，而不进行透析或移植。这种方法可能适合某些人，特别是老年人、体弱者或有其他严重健康状况的人。它涉及仔细的症状管理、药物治疗和肾脏护理团队的支持。",
+        "benefits": [
+          "无需透析或手术",
+          "注重生活质量和舒适",
+          "可能适合某些老年或体弱患者",
+          "尽可能保持日常生活"
+        ],
+        "considerations": [
+          "肾功能将继续下降",
+          "症状需要积极管理",
+          "重要的是就期望进行坦诚对话",
+          "建议进行预先护理计划"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "比较治疗选择",
+    "subtitle": "查看不同治疗方案在关键因素上的比较。",
+    "categories": {
+      "lifestyle": "生活方式影响",
+      "medical": "医学考虑"
+    },
+    "items": {
+      "scheduleFlexibility": "时间灵活性",
+      "travelAbility": "旅行能力",
+      "dietRestrictions": "饮食限制",
+      "hospitalVisits": "医院就诊",
+      "surgeryRequired": "需要手术",
+      "medications": "药物"
+    },
+    "values": {
+      "high": "高",
+      "medium": "中",
+      "low": "低",
+      "limited": "有限",
+      "varies": "不定",
+      "fewer": "较少",
+      "more": "较多",
+      "moderate": "适中",
+      "periodic": "定期检查",
+      "threePerWeek": "每周3次",
+      "monthly": "每月",
+      "asNeeded": "按需",
+      "major": "大手术",
+      "minor": "小手术",
+      "none": "无",
+      "lifelong": "终身免疫抑制剂",
+      "several": "多种药物",
+      "symptomBased": "基于症状"
+    }
+  },
+  "compare": {
+    "title": "比较治疗选择",
+    "subtitle": "查看不同治疗方案在对您重要的因素上的比较。",
+    "intro": "此比较显示每种治疗选择在日常生活和医疗护理的不同方面的表现。",
+    "description": "此工具帮助您并排比较肾脏治疗选择。您可以专注于对您最重要的事情。在下方选择您想比较的因素。",
+    "customise": "自定义您的比较",
+    "showTreatments": "显示治疗方案：",
+    "highlightForMe": "为我突出显示治疗方案",
+    "highlightHint": "基于您在问卷中的价值观和优先事项",
+    "understandingIcons": "了解图标",
+    "scrollHint": "水平滚动查看所有治疗方案",
+    "tableHeading": "治疗方案比较表",
+    "tableLabel": "肾脏治疗选择比较",
+    "criteria": "标准",
+    "recommended": "推荐",
+    "remember": "请记住",
+    "guidance": "没有完美适合所有人的治疗方案。最佳选择取决于您的个人情况、健康状况和价值观。此比较是与您的肾脏团队讨论的起点。",
+    "addToSummary": "添加到我的摘要",
+    "treatments": {
+      "transplant": {
+        "name": "肾移植",
+        "type": "手术"
+      },
+      "hemodialysis": {
+        "name": "血液透析",
+        "type": "中心透析"
+      },
+      "peritoneal": {
+        "name": "腹膜透析",
+        "type": "家庭透析"
+      },
+      "conservative": {
+        "name": "保守治疗",
+        "type": "支持性护理"
+      }
+    },
+    "categories": {
+      "dailyLife": "日常生活影响",
+      "practical": "实际考虑",
+      "medical": "医学因素",
+      "support": "支持需求",
+      "health": "健康结果"
+    },
+    "criteria": {
+      "timeCommitment": "每周时间投入",
+      "timeCommitmentHint": "用于治疗的小时数",
+      "location": "治疗地点",
+      "locationHint": "治疗进行的地点",
+      "travel": "对旅行的影响",
+      "travelHint": "旅行和度假的能力",
+      "diet": "饮食限制",
+      "dietHint": "食物和饮料的限制",
+      "surgery": "需要手术",
+      "surgeryHint": "所需的初始程序",
+      "supportNeeded": "所需支持",
+      "supportNeededHint": "来自家人或护理人员的帮助",
+      "recoveryTime": "恢复时间",
+      "recoveryTimeHint": "适应治疗的时间",
+      "longTermOutlook": "长期前景",
+      "longTermOutlookHint": "随时间的预期结果",
+      "scheduleFlexibility": "时间灵活性",
+      "scheduleFlexibilityHint": "对时间安排的控制",
+      "trainingRequired": "所需培训",
+      "trainingRequiredHint": "所需学习时间",
+      "survivalRates": "生存率",
+      "survivalRatesHint": "总体结果（因人而异）",
+      "qualityOfLife": "生活质量",
+      "qualityOfLifeHint": "整体健康状况",
+      "energyLevels": "能量水平",
+      "energyLevelsHint": "典型的能量和疲劳"
+    },
+    "values": {
+      "minimalAfterRecovery": "恢复后很少",
+      "regularCheckupsOnly": "仅定期检查",
+      "12to15HrsWeekly": "每周12-15小时",
+      "plusTravelTime": "加上出行时间",
+      "dailyExchanges": "每日换液",
+      "canBeDoneOvernight": "可在夜间进行",
+      "minimal": "很少",
+      "clinicVisitsAsNeeded": "按需门诊就诊",
+      "noRestrictions": "无限制",
+      "afterRecovery": "恢复后",
+      "hospitalClinic": "医院/诊所",
+      "dialysisUnit": "透析室",
+      "home": "家中",
+      "anyCleanSpace": "任何清洁空间",
+      "noEquipmentNeeded": "无需设备",
+      "veryFlexible": "非常灵活",
+      "takeMedicationsOnly": "仅服药",
+      "difficult": "困难",
+      "mustArrangeHolidayDialysis": "必须安排假期透析",
+      "goodFlexibility": "良好的灵活性",
+      "suppliesCanBeSentAhead": "供应品可提前送达",
+      "fewRestrictions": "限制较少",
+      "nearNormalDiet": "接近正常饮食",
+      "moderateRestrictions": "适度限制",
+      "fluidAndPotassiumLimits": "液体和钾限制",
+      "lessStrict": "不太严格",
+      "moreFlexibility": "更灵活",
+      "managedDiet": "管理饮食",
+      "tailoredToSymptoms": "根据症状调整",
+      "majorSurgery": "大手术",
+      "transplantOperationRequired": "需要移植手术",
+      "minorSurgery": "小手术",
+      "fistulaOrGraftCreation": "建立瘘管或移植物",
+      "minorProcedure": "小程序",
+      "pdCatheterInsertion": "腹透导管插入",
+      "noneRequired": "不需要",
+      "noSurgicalProcedures": "无需手术",
+      "initialSupport": "初始支持",
+      "duringRecoveryPeriod": "恢复期间",
+      "noneNeeded": "不需要",
+      "professionalStaffProvideCare": "专业人员提供护理",
+      "canDoIndependently": "可独立完成",
+      "varies": "不定",
+      "dependsOnSymptoms": "取决于症状",
+      "high": "高",
+      "normalDailyLifePossible": "可能正常日常生活",
+      "low": "低",
+      "fixedHospitalSlots": "固定医院时段",
+      "chooseYourSchedule": "选择您的时间",
+      "noFixedSchedule": "无固定时间表",
+      "medicationTraining": "药物培训",
+      "learningYourNewRoutine": "学习新的日常",
+      "staffDoEverything": "工作人员完成所有操作",
+      "oneToTwoWeeksTraining": "1-2周培训",
+      "learnTheTechnique": "学习技术",
+      "symptomManagement": "症状管理",
+      "medicationGuidance": "药物指导",
+      "bestOutcomes": "最佳结果",
+      "forSuitableCandidates": "适合的候选人",
+      "good": "良好",
+      "wellEstablishedTreatment": "成熟的治疗方法",
+      "similarToHaemodialysis": "与血液透析相似",
+      "qualityFocused": "注重质量",
+      "comfortOverLongevity": "舒适优于长寿",
+      "excellent": "优秀",
+      "nearNormalLifePossible": "可能接近正常生活",
+      "moderate": "适中",
+      "treatmentAffectsDailyRoutine": "治疗影响日常",
+      "moreIndependence": "更独立",
+      "focusOnComfort": "注重舒适",
+      "symptomManagementPriority": "症状管理优先",
+      "oftenExcellent": "通常优秀",
+      "energyRestored": "能量恢复",
+      "variable": "不定",
+      "fatigueAfterSessions": "治疗后疲劳",
+      "generallyGood": "通常良好",
+      "steadyEnergyLevels": "稳定的能量水平",
+      "managedWithSupport": "通过支持管理"
+    },
+    "legend": {
+      "title": "评级指南",
+      "excellent": "优秀",
+      "good": "良好",
+      "moderate": "适中",
+      "challenging": "具有挑战性",
+      "varies": "不定",
+      "excellentDesc": "优秀 - 总体非常有利",
+      "goodDesc": "良好 - 总体有利",
+      "moderateDesc": "适中 - 需考虑一些限制",
+      "challengingDesc": "具有挑战性 - 需重大考虑",
+      "variesDesc": "不定 - 取决于个人情况"
+    },
+    "viewDetails": "查看详情",
+    "backToHub": "返回主页",
+    "printComparison": "打印比较"
+  },
+  "chat": {
+    "title": "提问",
+    "subtitle": "我们的AI助手可以回答有关肾脏治疗的一般问题。",
+    "placeholder": "在此输入您的问题...",
+    "send": "发送",
+    "disclaimer": "此助手仅提供一般信息，不能替代您肾脏护理团队的医学建议。",
+    "welcomeMessage": "您好！我在这里帮助回答您关于肾病和治疗选择的问题。今天我能帮您什么？",
+    "errorMessage": "抱歉，我无法处理您的消息。请重试。",
+    "thinking": "思考中...",
+    "backToHub": "返回主页",
+    "privacyReminder": "隐私提醒：",
+    "readyToHelp": "准备好帮助您",
+    "status": {
+      "online": "在线"
+    },
+    "messagesLabel": "聊天消息",
+    "inputLabel": "消息输入",
+    "audioInput": "语音输入",
+    "piiWarning": "请勿分享个人信息，如您的姓名、NHS号码或地址。此聊天不会被保存。",
+    "welcome": {
+      "greeting": "您好！我是NHS肾脏护理助手。我在这里帮助您了解肾脏治疗选择。",
+      "prompt": "您可以询问我关于透析、移植、保守治疗或任何与肾脏治疗相关的问题。今天我能帮您什么？"
+    },
+    "suggestedQuestions": "建议问题",
+    "questions": {
+      "q1": "血液透析和腹膜透析有什么区别？",
+      "q2": "肾移植手术需要多长时间？",
+      "q3": "我在透析期间可以旅行吗？",
+      "q4": "透析治疗有什么副作用？",
+      "q5": "我如何知道自己是否适合移植？",
+      "q6": "什么是保守治疗，谁可能会选择它？"
+    },
+    "quickReplies": {
+      "tellMeMore": "告诉我更多",
+      "prosAndCons": "有什么优缺点？",
+      "dailyLife": "这如何影响日常生活？"
+    },
+    "voice": {
+      "startRecording": "开始语音输入",
+      "stopRecording": "停止录音",
+      "listening": "正在听...",
+      "processing": "处理中...",
+      "speaking": "朗读中...",
+      "paused": "已暂停",
+      "playResponse": "收听回复",
+      "pauseResponse": "暂停",
+      "resumeResponse": "继续",
+      "stopResponse": "停止",
+      "loading": "加载音频中...",
+      "loadingAudio": "加载音频中...",
+      "requesting": "请求权限中...",
+      "notSupported": "不支持语音输入",
+      "error": "发生错误",
+      "micPermissionDenied": "麦克风权限被拒绝。请允许访问以使用语音输入。",
+      "noAudioDetected": "未检测到音频。请重试。",
+      "transcriptionFailed": "转录音频失败。请重试。",
+      "synthesisFailed": "播放音频失败。请重试。"
+    }
+  },
+  "values": {
+    "title": "什么对您重要",
+    "subtitle": "评价每个因素对您的重要程度。这有助于我们为您个性化信息。",
+    "instructions": "移动滑块表示重要程度（1 = 不重要，5 = 非常重要）",
+    "sliderLabel": "重要程度评级",
+    "startExercise": "开始价值观练习",
+    "lessImportant": "不太重要",
+    "moreImportant": "更重要",
+    "skipStatement": "跳过此陈述",
+    "viewResults": "查看我的结果",
+    "statementsRemaining_one": "还剩{{count}}个陈述",
+    "statementsRemaining_other": "还剩{{count}}个陈述",
+    "completed": "已完成",
+    "intro": {
+      "title": "什么对您最重要？",
+      "description": "选择肾脏治疗是一个个人决定。此练习帮助您思考您的价值观和优先事项，以便您与肾脏团队讨论。",
+      "feature1": "10个价值观陈述需要评级",
+      "feature2": "大约需要5分钟",
+      "feature3": "没有对错之分",
+      "feature4": "查看您的优先事项摘要",
+      "beginButton": "开始练习",
+      "allAtOnce": "更喜欢一次看到所有陈述？",
+      "viewAll": "查看所有陈述"
+    },
+    "progress": {
+      "statement": "陈述",
+      "of": "/"
+    },
+    "defaultHint": "评价这对您的重要程度，从1（不重要）到5（非常重要）",
+    "listenStatement": "收听此陈述",
+    "nav": {
+      "back": "返回",
+      "skip": "跳过",
+      "next": "下一个",
+      "finish": "完成",
+      "backToIntro": "返回介绍",
+      "seeResults": "查看我的结果"
+    },
+    "allAtOnce": {
+      "title": "评价所有陈述",
+      "description": "将每个陈述从1（不重要）评价到5（非常重要）。",
+      "progress": "已完成"
+    },
+    "results": {
+      "title": "您的价值观摘要",
+      "description": "根据您的回答，以下是对您最重要的内容。",
+      "topPriorities": "您的首要优先事项",
+      "allValues": "您的所有价值观",
+      "editValues": "编辑您的价值观",
+      "compareLink": "比较治疗方案",
+      "addToSummary": "添加到我的摘要",
+      "viewTreatments": "查看符合您价值观的治疗方案",
+      "backToHub": "返回主页"
+    },
+    "ratingLabels": {
+      "1": "不重要",
+      "2": "略微重要",
+      "3": "适度重要",
+      "4": "重要",
+      "5": "非常重要"
+    },
+    "ratings": {
+      "1": "不重要",
+      "2": "略微重要",
+      "3": "适度重要",
+      "4": "非常重要",
+      "5": "极其重要"
+    },
+    "statements": {
+      "travel": {
+        "statement": "能够旅行对我很重要",
+        "hint": "评价这对您的重要程度"
+      },
+      "hospital-time": {
+        "statement": "我想减少在医院的时间",
+        "hint": "评价这对您的重要程度"
+      },
+      "needles": {
+        "statement": "我对针头和医疗程序感到舒适",
+        "hint": "评价您对此陈述的同意程度"
+      },
+      "independence": {
+        "statement": "保持独立对我非常重要",
+        "hint": "评价这对您的重要程度"
+      },
+      "family-burden": {
+        "statement": "我想避免成为家人的负担",
+        "hint": "评价这对您的重要程度"
+      },
+      "longevity": {
+        "statement": "尽可能长寿是我的优先事项",
+        "hint": "评价这对您的重要程度"
+      },
+      "quality-of-life": {
+        "statement": "生活质量比寿命长度更重要",
+        "hint": "评价您对此陈述的同意程度"
+      },
+      "home-treatment": {
+        "statement": "我更愿意在家接受治疗",
+        "hint": "评价这对您的重要程度"
+      },
+      "work-activities": {
+        "statement": "继续工作或从事我的日常活动很重要",
+        "hint": "评价这对您的重要程度"
+      },
+      "professional-care": {
+        "statement": "我更愿意让专业人员照顾我的治疗",
+        "hint": "评价您对此陈述的同意程度"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "保持独立和自我照顾能力",
+        "hint": "能够进行日常活动而不过度依赖他人"
+      },
+      "schedule": {
+        "text": "时间安排灵活，能够旅行",
+        "hint": "能够在不受严格治疗时间限制的情况下计划活动和旅行"
+      },
+      "hospitalTime": {
+        "text": "减少在医院或诊所的时间",
+        "hint": "最小化医院就诊的次数和时长"
+      },
+      "homeComfort": {
+        "text": "在家中舒适地接受治疗",
+        "hint": "能够在家而不是在医疗机构管理治疗"
+      },
+      "familyBurden": {
+        "text": "不成为家人的负担",
+        "hint": "最小化治疗对家庭成员和护理人员的影响"
+      },
+      "longevity": {
+        "text": "尽可能长寿",
+        "hint": "优先选择可能延长预期寿命的治疗"
+      },
+      "qualityOfLife": {
+        "text": "生活质量优于寿命长度",
+        "hint": "优先考虑日常健康和舒适而不是最长寿命"
+      },
+      "energyLevels": {
+        "text": "拥有良好的能量水平和感觉良好",
+        "hint": "最小化疲劳并保持正常的活动能量"
+      },
+      "dietRestrictions": {
+        "text": "对食物和饮料的限制更少",
+        "hint": "能够以最少的限制进食和饮水"
+      },
+      "naturalApproach": {
+        "text": "采取更自然的方法，减少干预",
+        "hint": "偏好感觉不那么侵入性或医疗化的治疗选择"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "3D肾脏模型",
+    "backToHub": "返回主页",
+    "title": "3D肾脏模型查看器",
+    "interactiveDescription": "探索人体肾脏的交互式3D模型。使用鼠标或触摸来旋转和缩放。",
+    "dragToRotate": "拖动旋转",
+    "scrollToZoom": "滚动缩放",
+    "labelsOn": "标签：开",
+    "labelsOff": "标签：关",
+    "autoRotateOn": "自动旋转：开",
+    "autoRotateOff": "自动旋转：关",
+    "reset": "重置",
+    "resetView": "重置视图",
+    "aboutKidneys": "关于您的肾脏",
+    "kidneyInfo": "您的肾脏是拳头大小的豆形器官。它们每天过滤约200升血液，清除废物和多余液体。",
+    "kidneyFunction": "肾脏的功能",
+    "functionInfo": "肾脏调节血压、产生激素、平衡体液，并将废物过滤成尿液。",
+    "whenKidneysFail": "当肾脏衰竭时",
+    "failureInfo": "当肾脏失去功能时，透析或移植等治疗可以帮助完成肾脏不再能做的工作。",
+    "learnMore": "了解更多治疗选择",
+    "exploreTreatments": "探索治疗方案",
+    "compareTreatments": "比较治疗方案",
+    "continueJourney": "通过探索治疗选择继续您的旅程",
+    "loading": "加载3D模型中...",
+    "interactiveTool": "互动学习工具",
+    "interactive3DModel": "交互式3D模型",
+    "anatomy": {
+      "kidney": {
+        "label": "肾脏",
+        "description": "主要过滤器官，从血液中清除废物并产生尿液。"
+      },
+      "renalArtery": {
+        "label": "肾动脉",
+        "description": "将血液从心脏输送到肾脏进行过滤。"
+      },
+      "renalVein": {
+        "label": "肾静脉",
+        "description": "将过滤后的血液从肾脏输送回心脏。"
+      },
+      "ureter": {
+        "label": "输尿管",
+        "description": "将尿液从肾脏输送到膀胱的管道。"
+      },
+      "adrenalGland": {
+        "label": "肾上腺",
+        "description": "位于肾脏顶部的小腺体，产生重要的激素。"
+      }
+    }
+  },
+  "summary": {
+    "title": "您的会话摘要",
+    "subtitle": "以下是您今天探索内容的摘要。",
+    "sections": {
+      "journey": "您的旅程阶段",
+      "values": "什么对您重要",
+      "viewed": "探索过的治疗方案",
+      "questions": "给您团队的问题",
+      "priorities": "您的优先事项",
+      "nextSteps": "建议的下一步"
+    },
+    "print": "打印摘要",
+    "email": "发送摘要",
+    "startOver": "重新开始",
+    "share": "分享",
+    "sessionId": "会话ID",
+    "notSpecified": "未指定",
+    "readyToReview": "准备审核",
+    "viewed": "已查看",
+    "noValues": "您尚未完成价值观练习。",
+    "completeValues": "现在完成",
+    "noTreatments": "您尚未探索任何治疗方案。",
+    "exploreTreatments": "探索治疗方案",
+    "seeAll": "查看全部",
+    "confirmReset": "您确定要重新开始吗？您的所有进度将丢失。",
+    "addQuestionPlaceholder": "输入您自己的问题...",
+    "question1": "哪些治疗方案适合我的情况？",
+    "question2": "每种治疗方案下我的日常生活会是什么样的？",
+    "question3": "如何开始我偏好的治疗方案？",
+    "step1": {
+      "title": "审核此摘要",
+      "description": "花时间查看您探索过的内容，并思考任何其他问题。"
+    },
+    "step2": {
+      "title": "与家人或护理人员分享",
+      "description": "如果您在家有支持，请与他们讨论您的想法。"
+    },
+    "step3": {
+      "title": "与您的肾脏护理团队讨论",
+      "description": "将此摘要带到您的下次预约中讨论您的选择。"
+    },
+    "privacy": {
+      "title": "您的隐私",
+      "text": "此信息仅存储在您的浏览器中，当您结束会话时将被清除。没有个人数据保存在任何服务器上。"
+    },
+    "disclaimer": {
+      "title": "重要提醒",
+      "text": "此摘要仅供参考，不构成医学建议。请始终与了解您个人情况的肾脏护理团队讨论您的治疗选择。"
+    },
+    "printForAppointment": "打印用于预约",
+    "askMore": "有更多问题吗？",
+    "printHeader": {
+      "title": "NHS肾脏治疗决策辅助工具",
+      "subtitle": "您的个人会话摘要",
+      "dateLabel": "日期：{{date}}",
+      "footer": "由NHS肾脏治疗决策辅助工具生成 - {{date}} - 此文档仅供与您的医疗团队讨论"
+    },
+    "shareTitle": "NHS肾脏治疗摘要",
+    "shareText": "我的肾脏治疗决策摘要",
+    "readyForAppointment": "准备好参加下次预约了吗？",
+    "printInstructions": "打印此摘要带给您的肾脏护理团队",
+    "journeyStages": {
+      "newly-diagnosed": "新诊断",
+      "monitoring": "正在监测",
+      "preparing": "准备治疗",
+      "on-dialysis": "目前在透析中",
+      "transplant-waiting": "在移植等待名单上",
+      "post-transplant": "移植后",
+      "supporting-someone": "支持他人"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "您正在了解您的肾脏状况，想了解您的选择。",
+      "monitoring": "您的肾脏正在被监测，您正在为未来做准备。",
+      "preparing": "您很快需要开始治疗，想了解您的选择。",
+      "on-dialysis": "您正在接受透析，正在探索其他选择。",
+      "transplant-waiting": "您在移植等待名单上。",
+      "post-transplant": "您已经进行了肾移植，需要持续支持。",
+      "supporting-someone": "您正在支持患有肾病的亲人。",
+      "default": "您在肾脏护理旅程中的当前阶段。"
+    },
+    "treatmentLabels": {
+      "haemodialysis": "血液透析",
+      "peritoneal-dialysis": "腹膜透析",
+      "home-haemodialysis": "家庭血液透析",
+      "kidney-transplant": "肾移植",
+      "conservative-care": "保守治疗"
+    },
+    "valueLabels": {
+      "1": "不重要",
+      "2": "略微重要",
+      "3": "适度重要",
+      "4": "重要",
+      "5": "非常重要",
+      "default": "重要"
+    }
+  },
+  "session": {
+    "timeRemaining": "剩余时间：{{minutes}}",
+    "sessionExpiring": "您的会话即将过期",
+    "expiringMessage": "您的会话将在{{minutes}}分钟后过期。您想继续吗？",
+    "extendSession": "继续会话",
+    "sessionExpired": "您的会话已过期。请重新开始。",
+    "startNewSession": "开始新会话",
+    "createError": "创建会话失败。请重试。"
+  },
+  "footer": {
+    "nhsInfo": "NHS肾脏护理",
+    "accessibility": "无障碍",
+    "privacyPolicy": "隐私政策",
+    "termsOfUse": "使用条款",
+    "contact": "联系",
+    "contactUs": "联系我们",
+    "navigationLabel": "页脚导航",
+    "supportingDecisions": "支持知情医疗决策",
+    "copyright": "Pears Research Services。保留所有权利。",
+    "demoVersion": "演示版本 1.0",
+    "disclaimer": {
+      "title": "重要免责声明",
+      "text1": "此应用程序是",
+      "mockDesign": "模拟设计",
+      "text2": "由",
+      "company": "Pears Research Services",
+      "text3": "创建，仅用于演示目的。它与NHS无关联或得到其认可。"
+    }
+  },
+  "timeline": {
+    "title": "一天的生活",
+    "subtitle": "看看接受此治疗的典型一天是什么样的",
+    "morning": "早上",
+    "afternoon": "下午",
+    "evening": "傍晚",
+    "night": "夜间",
+    "treatmentActivities": "{{count}}项与治疗相关的活动",
+    "legend": {
+      "treatment": "与治疗相关",
+      "regular": "日常活动"
+    },
+    "dayType": {
+      "dialysisDay": "透析日（周一/周三/周五）",
+      "restDay": "休息日（周二/周四/周六/周日）",
+      "apdNight": "APD（自动夜间透析）",
+      "capd": "CAPD（手动换液）",
+      "typical": "典型的一天"
+    },
+    "toggle": {
+      "dialysisDay": "透析日",
+      "restDay": "休息日",
+      "apd": "APD",
+      "capd": "CAPD"
+    },
+    "duration": {
+      "15min": "15分钟",
+      "20min": "20分钟",
+      "30min": "30-60分钟",
+      "4hrs": "4-5小时",
+      "8hrs": "8-10小时"
+    },
+    "transplant": {
+      "wakeUp": "起床和早晨例行程序",
+      "medication": "服用免疫抑制药物",
+      "breakfast": "早餐 - 健康均衡的饮食",
+      "work": "工作、爱好或活动",
+      "lunch": "午餐 - 饮食限制较少",
+      "activities": "继续日常活动",
+      "exercise": "轻度运动或散步",
+      "dinner": "与家人共进晚餐",
+      "eveningMeds": "晚间药物",
+      "relax": "放松和休闲时间",
+      "sleep": "正常睡眠模式"
+    },
+    "hemo": {
+      "wakeEarly": "早起",
+      "lightBreakfast": "有液体限制的清淡早餐",
+      "travelTo": "前往透析中心",
+      "session": "透析治疗",
+      "travelHome": "从透析中心回家",
+      "rest": "休息和恢复 - 可能感到疲劳",
+      "lightMeal": "有饮食限制的清淡餐食",
+      "quietEvening": "安静的晚间活动",
+      "earlyBed": "治疗日早睡",
+      "regularWake": "起床",
+      "breakfast": "遵循饮食指导的早餐",
+      "normalDay": "工作或日常活动",
+      "lunch": "午餐 - 注意液体和钾",
+      "continue": "继续日常活动",
+      "dinner": "与家人共进晚餐",
+      "leisure": "休闲时间",
+      "sleep": "正常就寝"
+    },
+    "pd": {
+      "disconnect": "断开APD机器连接",
+      "morning": "早晨例行程序和淋浴",
+      "breakfast": "早餐 - 更多饮食自由",
+      "work": "工作或活动 - 白天自由",
+      "lunch": "午餐 - 比血透限制更少",
+      "activities": "继续活动、爱好",
+      "exercise": "运动或户外活动",
+      "dinner": "与家人共进晚餐",
+      "leisure": "晚间休闲时间",
+      "setup": "设置APD机器",
+      "overnight": "APD工作时睡觉",
+      "capdWake": "起床",
+      "exchange1": "当天第一次换液",
+      "capdBreakfast": "早餐",
+      "capdWork": "工作或活动",
+      "exchange2": "第二次换液",
+      "capdLunch": "午餐",
+      "capdActivities": "下午活动",
+      "exchange3": "第三次换液",
+      "capdDinner": "晚餐",
+      "capdLeisure": "晚间放松",
+      "exchange4": "睡前最后一次换液",
+      "capdSleep": "睡觉"
+    },
+    "conservative": {
+      "wake": "准备好时起床",
+      "meds": "服用症状管理药物",
+      "breakfast": "可耐受的早餐",
+      "morning": "根据精力进行早晨活动",
+      "lunch": "午餐 - 吃您喜欢的",
+      "rest": "休息或轻度活动",
+      "visitors": "与家人或访客共度时光",
+      "eveningMeds": "晚间药物",
+      "dinner": "与亲人共进晚餐",
+      "relax": "在家安静的夜晚",
+      "sleep": "感到疲倦时休息"
+    }
+  },
+  "progress": {
+    "title": "您的学习旅程",
+    "yourProgress": "您的进度",
+    "complete": "完成",
+    "treatments": "治疗方案",
+    "sections": {
+      "title": "要探索的部分",
+      "questionnaire": "关于您",
+      "questionnaireDesc": "分享您的情况",
+      "treatments": "治疗选择",
+      "treatmentsDesc": "已探索{{viewed}}/{{total}}",
+      "values": "价值观练习",
+      "valuesDesc": "明确您的优先事项",
+      "chat": "提问",
+      "chatDesc": "获得答案"
+    },
+    "status": {
+      "completed": "已完成",
+      "inProgress": "进行中"
+    },
+    "badges": {
+      "title": "您的徽章",
+      "explorer": "探索者",
+      "allTreatments": "全部治疗方案",
+      "values": "价值观明确",
+      "curious": "好奇心",
+      "complete": "旅程完成"
+    },
+    "encouragement": {
+      "start": "通过探索治疗选择开始您的旅程",
+      "beginning": "良好的开始！继续探索以了解更多",
+      "making": "您进展良好！",
+      "halfway": "超过一半了 - 做得好！",
+      "almost": "几乎完成！只剩几个部分",
+      "complete": "太棒了！您已探索完所有内容"
+    },
+    "viewSummary": "查看您的摘要"
+  },
+  "scenario": {
+    "title": "如果？场景探索器",
+    "subtitle": "看看不同的生活情况如何与每种治疗选择配合",
+    "tips": "提示",
+    "learnMore": "了解更多关于{{treatment}}的信息",
+    "compareAll": "比较所有治疗方案",
+    "legend": {
+      "title": "评级指南"
+    },
+    "rating": {
+      "excellent": "优秀",
+      "good": "良好",
+      "moderate": "适中",
+      "challenging": "具有挑战性"
+    },
+    "travel": {
+      "title": "如果我想旅行怎么办？",
+      "description": "探索每种治疗方案如何影响您的假期或探访旅行能力",
+      "transplant": "恢复后，您可以自由旅行。随身携带药物，了解在需要时在哪里寻求医疗帮助。",
+      "transplantTip1": "携带移植团队的信函",
+      "transplantTip2": "研究目的地的医疗设施",
+      "transplantTip3": "在手提行李中多带备用药物",
+      "hemodialysis": "旅行需要提前计划，在目的地安排透析。假期透析中心存在，但可用性各不相同。",
+      "hemodialysisTip1": "提前6-8周预订假期透析",
+      "hemodialysisTip2": "您的透析团队可以帮助安排",
+      "hemodialysisTip3": "英国国内旅行比国际旅行更容易",
+      "peritoneal": "旅行自由度更高。供应品可以送到目的地或随身携带。",
+      "peritonealTip1": "提前4-6周安排供应品配送",
+      "peritonealTip2": "航空公司通常允许额外的供应品行李",
+      "peritonealTip3": "需要干净的换液空间",
+      "conservative": "没有透析限制，但旅行取决于您的感觉。短途旅行可能更容易管理。",
+      "conservativeTip1": "与护理团队讨论旅行计划",
+      "conservativeTip2": "仔细考虑旅行保险",
+      "conservativeTip3": "在旅途中计划休息时间"
+    },
+    "work": {
+      "title": "如果我想全职工作怎么办？",
+      "description": "看看不同的治疗方案如何与保持工作相适应",
+      "transplant": "恢复2-3个月后，大多数人可以恢复全职工作，能量水平接近正常。",
+      "transplantTip1": "计划分阶段重返工作",
+      "transplantTip2": "您可能需要请假参加门诊预约",
+      "transplantTip3": "许多雇主提供灵活安排",
+      "hemodialysis": "可能但有挑战。每周三次治疗需要4-5小时，加上恢复时间。晚间/早班可能有帮助。",
+      "hemodialysisTip1": "与雇主讨论弹性工作时间",
+      "hemodialysisTip2": "晚间或清晨透析时段",
+      "hemodialysisTip3": "家庭血透提供更多灵活性",
+      "peritoneal": "夜间APD意味着白天可以工作。CAPD需要换液休息时间，但许多人继续工作。",
+      "peritonealTip1": "APD非常适合全职工作者",
+      "peritonealTip2": "您可以在工作时进行CAPD换液",
+      "peritonealTip3": "能量水平通常比血透更好",
+      "conservative": "取决于症状和能量。许多人继续兼职或减少工作时间。重点是生活质量。",
+      "conservativeTip1": "考虑逐渐减少工作时间",
+      "conservativeTip2": "与职业健康部门讨论调整",
+      "conservativeTip3": "优先考虑最重要的活动"
+    },
+    "liveAlone": {
+      "title": "如果我独居怎么办？",
+      "description": "了解哪些治疗方案适合独立生活的人",
+      "transplant": "恢复期间您需要支持（2-4周），但之后可以独立生活。",
+      "transplantTip1": "安排术后头几周的帮助",
+      "transplantTip2": "准备好紧急联系人",
+      "transplantTip3": "设置服药提醒",
+      "hemodialysis": "治疗在中心由专业人员完成。无需家庭设置。与医疗团队定期接触。",
+      "hemodialysisTip1": "可能有医院交通服务",
+      "hemodialysisTip2": "工作人员在治疗期间监护您",
+      "hemodialysisTip3": "来自其他患者的社交支持",
+      "peritoneal": "许多人成功独自进行腹透。培训会让您准备充分。24/7电话支持可用。",
+      "peritonealTip1": "开始前进行充分培训",
+      "peritonealTip2": "腹透护士定期家访",
+      "peritonealTip3": "24小时紧急热线",
+      "conservative": "最初可以独自管理。随着症状进展，您可能需要更多支持。社区服务可以提供帮助。",
+      "conservativeTip1": "与护理团队定期联系",
+      "conservativeTip2": "可用的社区支持服务",
+      "conservativeTip3": "提前计划未来的护理需求"
+    },
+    "family": {
+      "title": "如果我有年幼的孩子怎么办？",
+      "description": "考虑治疗方案如何影响照顾孩子和家庭时间",
+      "transplant": "恢复后，您可以完全参与家庭生活。对于积极育儿来说，这是最佳的生活质量。",
+      "transplantTip1": "恢复期间安排托儿服务",
+      "transplantTip2": "可以恢复正常的育儿活动",
+      "transplantTip3": "有良好的能量进行家庭活动",
+      "hemodialysis": "治疗期间需要定期离家。治疗后的疲劳可能影响家庭活动。治疗期间需要托儿服务。",
+      "hemodialysisTip1": "围绕上学时间安排治疗",
+      "hemodialysisTip2": "适当地让孩子参与",
+      "hemodialysisTip3": "在非透析日计划家庭时间",
+      "peritoneal": "家庭治疗意味着更多与家人在一起的时间。夜间APD留出白天照顾孩子的时间。",
+      "peritonealTip1": "APD在孩子睡觉时进行",
+      "peritonealTip2": "白天可以接送孩子上学",
+      "peritonealTip3": "孩子可以安全地参与",
+      "conservative": "没有治疗时间表，但能量水平各不相同。重点是与家人共度有质量的时光。",
+      "conservativeTip1": "优先考虑特别的家庭时刻",
+      "conservativeTip2": "需要时接受托儿帮助",
+      "conservativeTip3": "与孩子进行坦诚的对话"
+    }
+  },
+  "treatment": {
+    "dayInLife": "一天的生活"
+  }
+}

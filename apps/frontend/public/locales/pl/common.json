@@ -1,0 +1,1430 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "skip": "Pomiń",
+    "returnToHub": "Powrót do centrum",
+    "backToHub": "Powrót do centrum",
+    "continueToQuestionnaire": "Przejdź do kwestionariusza"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Coś poszło nie tak. Spróbuj ponownie.",
+    "continue": "Kontynuuj",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "print": "Drukuj",
+    "yes": "Tak",
+    "no": "Nie",
+    "notSure": "Nie jestem pewien",
+    "moreInfo": "Więcej informacji",
+    "close": "Zamknij",
+    "back": "Wstecz",
+    "edit": "Edytuj",
+    "add": "Dodaj",
+    "remove": "Usuń",
+    "listenToPage": "Posłuchaj tej strony"
+  },
+  "accessibility": {
+    "skipToContent": "Przejdź do głównej treści",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "expandSection": "Rozwiń sekcję",
+    "collapseSection": "Zwiń sekcję",
+    "newWindow": "Otwiera się w nowym oknie",
+    "externalLink": "Link zewnętrzny",
+    "settings": "Dostępność",
+    "settingsLabel": "Opcje dostępności - Dostosuj rozmiar tekstu, kontrast i inne ustawienia dostępności",
+    "settingsTitle": "Dostosuj rozmiar tekstu, kontrast i inne ustawienia dostępności",
+    "breadcrumb": "Nawigacja okruszkowa",
+    "pageNavigation": "Nawigacja strony",
+    "faq": "Często zadawane pytania",
+    "frequentlyAskedQuestions": "Często zadawane pytania",
+    "listenToPage": "Posłuchaj tej strony odczytywanej na głos",
+    "modal": {
+      "title": "Ustawienia dostępności",
+      "textSize": "Rozmiar tekstu",
+      "textSizeOptions": {
+        "small": "Mały",
+        "medium": "Średni (Domyślny)",
+        "large": "Duży",
+        "extra-large": "Bardzo duży"
+      },
+      "highContrast": "Tryb wysokiego kontrastu",
+      "reducedMotion": "Ograniczone animacje",
+      "lineSpacing": "Odstęp między wierszami",
+      "lineSpacingOptions": {
+        "normal": "Normalny",
+        "relaxed": "Rozluźniony",
+        "loose": "Luźny"
+      },
+      "save": "Zapisz ustawienia",
+      "cancel": "Anuluj",
+      "reset": "Przywróć domyślne"
+    }
+  },
+  "landing": {
+    "title": "Narzędzie wspomagające decyzje o leczeniu nerek",
+    "subtitle": "Usługi nerkowe NHS",
+    "description": "To narzędzie pomoże Ci zrozumieć opcje leczenia nerek i zastanowić się, co jest dla Ciebie najważniejsze. Nie spiesz się - nie ma dobrych ani złych odpowiedzi.",
+    "startButton": "Rozpocznij swoją podróż",
+    "startButtonAriaLabel": "Rozpocznij swoją podróż w podejmowaniu decyzji o leczeniu nerek",
+    "learnMore": "Dowiedz się więcej o chorobach nerek",
+    "heroAriaLabel": "Sekcja powitalna",
+    "featuresHeading": "Jak to narzędzie Ci pomoże",
+    "featuresSubheading": "Wszystko, czego potrzebujesz, aby podjąć świadomą decyzję o leczeniu nerek",
+    "features": {
+      "time": {
+        "title": "Zajmuje około 15 minut",
+        "description": "Wypełniaj we własnym tempie. Możesz robić przerwy, kiedy potrzebujesz i wrócić do miejsca, w którym skończyłeś."
+      },
+      "privacy": {
+        "title": "Twoja prywatność jest chroniona",
+        "description": "Żadne dane osobowe nie są przechowywane. Twoje odpowiedzi pomagają personalizować narzędzie tylko podczas tej sesji."
+      },
+      "devices": {
+        "title": "Działa na wszystkich urządzeniach",
+        "description": "Używaj na telefonie, tablecie lub komputerze. Narzędzie automatycznie dostosowuje się do rozmiaru ekranu."
+      }
+    },
+    "aboutHeading": "Co robi to narzędzie",
+    "about": {
+      "paragraph1": "To narzędzie wspomagające decyzje pomoże Ci poznać różne opcje leczenia dostępne w przypadku niewydolności nerek. Możesz dowiedzieć się o każdym leczeniu we własnym tempie, zastanowić się, co jest dla Ciebie najważniejsze, i stworzyć podsumowanie do podzielenia się z lekarzem lub pielęgniarką.",
+      "paragraph2": "Odpowiesz na kilka prostych pytań dotyczących Twojej sytuacji, a następnie poznasz zabiegi, które mogą być dla Ciebie odpowiednie. Twoje informacje pozostają prywatne i nie są zapisywane po zamknięciu przeglądarki.",
+      "paragraph3": "To narzędzie nie zastępuje porad medycznych od Twojego zespołu opieki zdrowotnej. Jest zaprojektowane, aby pomóc Ci czuć się bardziej poinformowanym i pewnym podczas omawiania opcji. Twój zespół nefrologiczny to eksperci w Twojej opiece i pomogą Ci podjąć właściwą decyzję.",
+      "steps": {
+        "learn": {
+          "title": "Poznaj"
+        },
+        "explore": {
+          "title": "Odkryj"
+        },
+        "decide": {
+          "title": "Zdecyduj"
+        }
+      }
+    },
+    "trustAriaLabel": "Informacje o zaufaniu i bezpieczeństwie",
+    "trust": {
+      "evidenceBased": "Informacje oparte na dowodach",
+      "languages": "Dostępne w 9 językach",
+      "accessible": "Dostępne dla wszystkich użytkowników",
+      "noAccount": "Nie wymaga konta",
+      "time": "15 minut",
+      "privateSecure": "Prywatne i bezpieczne"
+    },
+    "ctaHeading": "Gotowy, aby rozpocząć?",
+    "ctaDescription": "Zrób pierwszy krok w kierunku zrozumienia opcji leczenia nerek. Możesz zacząć teraz i wrócić później, jeśli potrzebujesz przerwy."
+  },
+  "language": {
+    "title": "Wybierz swój język",
+    "instruction": "Wybierz preferowany język. Możesz go zmienić w dowolnym momencie.",
+    "selectLanguage": "Wybierz język",
+    "currentLanguage": "Aktualny język"
+  },
+  "privacy": {
+    "pageAriaLabel": "Informacje o prywatności",
+    "progressLabel": "Postęp konfiguracji: 30%",
+    "progressText": "Krok 2 z 4: Informacje o prywatności",
+    "title": "Twoja prywatność i informacje",
+    "subtitle": "Zanim zaczniesz, chcemy, abyś zrozumiał, jak to narzędzie obsługuje Twoje informacje.",
+    "listenToPage": "Posłuchaj tej strony",
+    "stopReading": "Zatrzymaj czytanie",
+    "sections": {
+      "privacy": {
+        "title": "Jak chronimy Twoje informacje",
+        "content": "Twoje odpowiedzi są przetwarzane bezpiecznie i nie są przechowywane na stałe. To narzędzie nie zbiera danych zdrowotnych, które mogłyby Cię zidentyfikować. Dane sesji są automatycznie usuwane po zamknięciu narzędzia.",
+        "p1": "To narzędzie używa tylko pamięci sesji. Wszelkie wprowadzone informacje, w tym odpowiedzi na pytania i preferencje leczenia, są przechowywane tylko podczas korzystania z narzędzia.",
+        "p2": "Po zamknięciu przeglądarki lub po 15 minutach nieaktywności wszystkie Twoje informacje są automatycznie usuwane. Nie zapisujemy niczego o Tobie.",
+        "p3": "Zbieramy anonimowe informacje o tym, jak ludzie korzystają z tego narzędzia, aby pomóc je ulepszyć. Nie można Cię osobiście zidentyfikować."
+      },
+      "ai": {
+        "title": "Jak działa to narzędzie",
+        "content": "To narzędzie wspomagające decyzje wykorzystuje technologię do dostarczania spersonalizowanych informacji na podstawie Twoich odpowiedzi. Informacje pochodzą z wytycznych klinicznych NHS i badań opartych na dowodach. To narzędzie wspiera, ale nie zastępuje rozmów z Twoim zespołem opieki nerkowej.",
+        "p1": "To narzędzie zawiera asystenta AI, który może odpowiadać na ogólne pytania dotyczące leczenia nerek. AI dostarcza tylko informacje - nie może udzielać porad medycznych specyficznych dla Twojej sytuacji.",
+        "p2": "AI może czasami popełniać błędy lub dostarczać niekompletne informacje. Zawsze omawiaj ważne decyzje z zespołem nefrologicznym, który zna Twoją pełną historię medyczną.",
+        "p3": "To narzędzie nie zastępuje porad od Twojego zespołu opieki zdrowotnej. Jest zaprojektowane, aby pomóc Ci czuć się bardziej poinformowanym podczas omawiania opcji z lekarzami i pielęgniarkami."
+      },
+      "medical": {
+        "title": "Ważne informacje medyczne",
+        "content": "To narzędzie dostarcza ogólnych informacji o opcjach leczenia nerek. Nie zastępuje profesjonalnej porady medycznej, diagnozy ani leczenia. Zawsze konsultuj się ze specjalistą nefrologiem lub zespołem opieki zdrowotnej przed podjęciem jakichkolwiek decyzji dotyczących leczenia. W nagłych przypadkach skontaktuj się z lekarzem pierwszego kontaktu lub zadzwoń na NHS 111."
+      },
+      "pii": {
+        "title": "Proszę nie udostępniać danych osobowych",
+        "intro": "Aby chronić Twoją prywatność, nie wprowadzaj żadnych informacji osobowych, które mogłyby Cię zidentyfikować podczas korzystania z tego narzędzia, szczególnie w funkcji czatu.",
+        "listLabel": "Informacje, których nie powinieneś udostępniać",
+        "items": {
+          "nhsNumber": "Twój numer NHS",
+          "fullName": "Twoje pełne imię i nazwisko",
+          "address": "Twój adres domowy",
+          "dob": "Twoja data urodzenia",
+          "phone": "Numery telefonów",
+          "email": "Adresy e-mail"
+        },
+        "outro": "Nadal możesz opowiedzieć o swojej sytuacji w ogólnych słowach - na przykład o warunkach mieszkaniowych lub tym, co jest dla Ciebie najważniejsze - bez udostępniania danych identyfikujących."
+      }
+    },
+    "summaryAriaLabel": "Podsumowanie kluczowych punktów",
+    "summary": {
+      "title": "Podsumowując",
+      "notSaved": "Twoje odpowiedzi nie są zapisywane",
+      "noData": "Żadne dane osobowe nie są zbierane",
+      "leave": "Możesz wyjść w dowolnym momencie"
+    },
+    "consent": {
+      "title": "Proszę potwierdzić, aby kontynuować",
+      "understand": "Rozumiem, że moje informacje nie są zapisywane po tej sesji i nie będę udostępniać danych osobowych umożliwiających identyfikację",
+      "analytics": "Wyrażam zgodę na zbieranie anonimowych analiz w celu ulepszenia tego narzędzia (opcjonalne)",
+      "error": "Proszę potwierdzić, że rozumiesz informacje o prywatności przed kontynuowaniem"
+    },
+    "continueButton": "Rozumiem, kontynuuj",
+    "continueAriaLabel": "Przejdź do wyboru etapu podróży",
+    "readFullPolicy": "Przeczytaj pełną Politykę prywatności NHS"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Demo",
+    "serviceName": "Narzędzie wspomagające decyzje o leczeniu nerek",
+    "tagline": "Pomagamy w podejmowaniu świadomych decyzji",
+    "homeAriaLabel": "NHS Narzędzie wspomagające decyzje o leczeniu nerek - Strona główna"
+  },
+  "progress": {
+    "language": "Język",
+    "privacy": "Prywatność",
+    "yourJourney": "Twoja podróż",
+    "aboutYou": "O Tobie",
+    "yourOptions": "Twoje opcje",
+    "ariaLabel": "Postęp w narzędziu wspomagającym decyzje",
+    "stepOfTotal": "Krok {{current}} z {{total}}",
+    "percentComplete": "{{percentage}}% ukończone",
+    "ariaProgressLabel": "Postęp: {{current}} z {{total}} kroków ukończonych",
+    "title": "Twoja podróż edukacyjna",
+    "yourProgress": "Twój postęp",
+    "complete": "ukończone",
+    "treatments": "zabiegi",
+    "sections": {
+      "title": "Sekcje do odkrycia",
+      "questionnaire": "O Tobie",
+      "questionnaireDesc": "Podziel się swoją sytuacją",
+      "treatments": "Opcje leczenia",
+      "treatmentsDesc": "{{viewed}} z {{total}} odkrytych",
+      "values": "Ćwiczenie wartości",
+      "valuesDesc": "Wyjaśnij swoje priorytety",
+      "chat": "Zadaj pytania",
+      "chatDesc": "Uzyskaj odpowiedzi"
+    },
+    "status": {
+      "completed": "Ukończone",
+      "inProgress": "W trakcie"
+    },
+    "badges": {
+      "title": "Twoje odznaki",
+      "explorer": "Odkrywca",
+      "allTreatments": "Wszystkie zabiegi",
+      "values": "Jasne wartości",
+      "curious": "Ciekawski umysł",
+      "complete": "Podróż ukończona"
+    },
+    "encouragement": {
+      "start": "Rozpocznij swoją podróż od poznania opcji leczenia",
+      "beginning": "Świetny początek! Kontynuuj odkrywanie, aby dowiedzieć się więcej",
+      "making": "Robisz świetne postępy!",
+      "halfway": "Ponad połowa drogi - świetnie!",
+      "almost": "Prawie koniec! Jeszcze tylko kilka sekcji",
+      "complete": "Doskonale! Odkryłeś wszystko"
+    },
+    "viewSummary": "Zobacz swoje podsumowanie"
+  },
+  "journey": {
+    "title": "Na jakim etapie jesteś w swojej podróży z opieką nerkową?",
+    "subtitle": "Wybierz opcję, która najlepiej opisuje Twoją sytuację",
+    "instruction": "Wybierz opcję, która najlepiej opisuje Twoją obecną sytuację",
+    "intro": "Podróż każdego z neframi jest inna. Aby pomóc nam pokazać Ci najbardziej odpowiednie informacje, powiedz nam, gdzie teraz jesteś. Nie ma dobrych ani złych odpowiedzi.",
+    "error": "Proszę wybrać opcję opisującą Twoją sytuację. Jeśli żadna nie pasuje, wybierz \"Wspieram członka rodziny lub przyjaciela\", aby kontynuować.",
+    "formLabel": "Opcje etapu podróży",
+    "legendLabel": "Wybierz, na jakim etapie jesteś w swojej podróży z nerkami",
+    "radioGroupLabel": "Opcje etapu podróży",
+    "listenToQuestion": "Posłuchaj tego pytania",
+    "audioText": "Na jakim etapie jesteś w swojej podróży? Wybierz opcję, która najlepiej opisuje Twoją sytuację.",
+    "reassurance": "Nie martw się, jeśli nie jesteś pewien, która opcja najlepiej pasuje. Zawsze możesz później poznać wszystkie opcje leczenia, a Twój zespół nefrologiczny może pomóc wyjaśnić Twoją sytuację. Twój wybór pomaga nam pokazać najpierw najbardziej odpowiednie informacje.",
+    "needHelp": "Potrzebuję pomocy w wyborze",
+    "stages": {
+      "suspected": {
+        "title": "Myślę, że mogę mieć chorobę nerek",
+        "description": "Martwisz się o zdrowie swoich nerek i chcesz dowiedzieć się więcej o tym, co oznacza choroba nerek."
+      },
+      "earlyDiagnosis": {
+        "title": "Właśnie otrzymałem diagnozę - wczesne stadium PChN",
+        "description": "Niedawno dowiedziałeś się o swojej chorobie nerek i chcesz zrozumieć, co to dla Ciebie oznacza."
+      },
+      "lateDiagnosis": {
+        "title": "Mam diagnozę - późne stadium PChN",
+        "description": "Funkcja Twoich nerek znacznie się pogorszyła i wkrótce możesz musieć pomyśleć o opcjach leczenia."
+      },
+      "choosingTreatment": {
+        "title": "Muszę wkrótce wybrać leczenie",
+        "description": "Twój zespół nefrologiczny powiedział Ci, że będziesz musiał rozpocząć leczenie w nadchodzących miesiącach i chcesz poznać swoje opcje."
+      },
+      "transplantPending": {
+        "title": "Czeka mnie przeszczep - chcę dowiedzieć się więcej",
+        "description": "Jesteś na liście przeszczepów lub masz żywego dawcę i chcesz wiedzieć, czego się spodziewać."
+      },
+      "dialysisPending": {
+        "title": "Zaczynam dializę - chcę dowiedzieć się więcej",
+        "description": "Wkrótce rozpoczniesz leczenie dializami i chcesz zrozumieć różne rodzaje oraz jak będzie wyglądać codzienne życie."
+      },
+      "supporting": {
+        "title": "Wspieram członka rodziny lub przyjaciela",
+        "description": "Ktoś bliski ma chorobę nerek i chcesz zrozumieć ich opcje, aby móc ich wspierać."
+      }
+    },
+    "helpModal": {
+      "title": "Potrzebujesz pomocy w wyborze?",
+      "intro": "To zupełnie normalne, że nie jesteś pewien, który etap najlepiej Cię opisuje. Oto kilka wskazówek:",
+      "tip1Title": "Pomyśl o swojej ostatniej wizycie",
+      "tip1Text": "Co powiedział Ci zespół nefrologiczny o funkcji Twoich nerek i kolejnych krokach?",
+      "tip2Title": "Zastanów się, co Cię tu sprowadziło",
+      "tip2Text": "Czy to narzędzie dał Ci lekarz lub pielęgniarka? Mogli zasugerować, który etap dotyczy Ciebie.",
+      "tip3Title": "Jeśli nadal nie jesteś pewien",
+      "tip3Text": "Wybierz opcję, która wydaje się najbliższa Twojej sytuacji. Nadal będziesz mógł poznać wszystkie informacje w tym narzędziu, niezależnie od tego, którą opcję wybierzesz.",
+      "note": "Twój zespół nefrologiczny to eksperci w Twojej opiece. Jeśli masz pytania dotyczące zdrowia nerek, skontaktuj się bezpośrednio z nimi.",
+      "understand": "Rozumiem"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Opowiedz nam o sobie",
+      "description": "Te pytania pomagają nam pokazać informacje najbardziej odpowiednie dla Twojej sytuacji. Twoje odpowiedzi są prywatne i nie zostaną zapisane po tej sesji.",
+      "features": {
+        "questions": "7 szybkich pytań",
+        "time": "Zajmuje 3-5 minut",
+        "private": "Całkowicie prywatne",
+        "skip": "Możesz pominąć każde pytanie"
+      },
+      "beginButton": "Rozpocznij pytania",
+      "skipText": "Jeśli wolisz nie odpowiadać na te pytania, możesz przejść do ogólnych informacji o leczeniu.",
+      "skipButton": "Pomiń wszystkie pytania",
+      "backToJourney": "Wróć do etapu podróży"
+    },
+    "progress": {
+      "label": "Postęp pytań",
+      "questionOf": "Pytanie {{current}} z {{total}}",
+      "complete": "ukończone"
+    },
+    "types": {
+      "scale": "Ocena na skali",
+      "single": "Pojedynczy wybór",
+      "multiple": "Wielokrotny wybór"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "Ile wiesz o chorobie nerek i jej leczeniu?",
+        "hint": "To pomaga nam dostosować informacje do Twojego obecnego poziomu wiedzy."
+      },
+      "goal": {
+        "title": "Co chciałbyś uzyskać z tej sesji?",
+        "hint": "Wybierz opcję, która najlepiej opisuje Twój główny cel na dziś."
+      },
+      "learning": {
+        "title": "Jak wolisz uczyć się nowych informacji?",
+        "hint": "To pomaga nam przedstawiać informacje w sposób, który najlepiej dla Ciebie działa."
+      },
+      "comfort": {
+        "title": "Jak komfortowo czujesz się z procedurami medycznymi?",
+        "hint": "To delikatny temat. Możesz pominąć to pytanie, jeśli wolisz."
+      },
+      "support": {
+        "title": "Czy masz wsparcie w domu?",
+        "hint": "Niektóre zabiegi są łatwiejsze z pomocą rodziny lub opiekunów."
+      },
+      "living": {
+        "title": "Gdzie mieszkasz?",
+        "hint": "To pomaga nam zrozumieć, które zabiegi mogą najlepiej działać w Twoim środowisku domowym."
+      },
+      "priorities": {
+        "title": "Co jest dla Ciebie najważniejsze przy wyborze leczenia?",
+        "hint": "Twoje priorytety pomogą nam podkreślić to, co dla Ciebie ważne w każdej opcji leczenia."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Wybierz do {{max}} priorytetów, które są dla Ciebie najważniejsze.",
+      "selectAll": "Wybierz wszystkie, które pasują - możesz wybrać więcej niż jedną opcję."
+    },
+    "audio": {
+      "listen": "Posłuchaj tego pytania"
+    },
+    "slider": {
+      "ariaLabel": "Wartość od {{min}} do {{max}}"
+    },
+    "skipQuestion": "Pomiń to pytanie",
+    "viewResults": "Zobacz moje wyniki",
+    "nextQuestion": "Następne pytanie",
+    "knowledge": {
+      "levels": {
+        "1": "Wiem bardzo mało",
+        "2": "Wiem trochę",
+        "3": "Mam pewną wiedzę",
+        "4": "Wiem dość dużo",
+        "5": "Jestem bardzo dobrze poinformowany"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Poznać podstawy",
+          "description": "Chcę zrozumieć, co oznacza choroba nerek i jakie są dostępne opcje leczenia"
+        },
+        "compare": {
+          "label": "Porównać moje opcje",
+          "description": "Znam już podstawy i chcę porównać różne zabiegi"
+        },
+        "prepare": {
+          "label": "Przygotować się do rozmowy",
+          "description": "Chcę przygotować pytania i przemyślenia na następną wizytę"
+        },
+        "support": {
+          "label": "Wesprzeć kogoś innego",
+          "description": "Pomagam członkowi rodziny lub przyjacielowi zrozumieć ich opcje"
+        },
+        "notSure": {
+          "label": "Nie jestem jeszcze pewien",
+          "description": "Chcę tylko poeksplorować i zobaczyć, jakie informacje są dostępne"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Wizualne diagramy i obrazy",
+          "description": "Obrazy, wykresy i diagramy pomagają mi zrozumieć"
+        },
+        "audio": {
+          "label": "Słuchanie informacji",
+          "description": "Wolę słuchać informacji czytanych na głos"
+        },
+        "reading": {
+          "label": "Czytanie tekstu",
+          "description": "Lubię czytać szczegółowe pisemne informacje"
+        },
+        "video": {
+          "label": "Oglądanie filmów",
+          "description": "Filmy i animacje działają dla mnie najlepiej"
+        },
+        "interactive": {
+          "label": "Interaktywne narzędzia",
+          "description": "Uczę się poprzez działanie i odkrywanie"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Bardzo niekomfortowo",
+        "2": "Dość niekomfortowo",
+        "3": "Neutralnie",
+        "4": "Dość komfortowo",
+        "5": "Bardzo komfortowo"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Tak, mieszkam z rodziną lub partnerem, który może pomóc",
+        "carers": "Tak, mam profesjonalnych opiekunów, którzy mi pomagają",
+        "familyNearby": "Tak, rodzina mieszka w pobliżu i może odwiedzać",
+        "limitedSupport": "Mam ograniczone wsparcie",
+        "preferNotSay": "Wolę nie mówić"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "Dom z dużą ilością miejsca",
+        "homeLimited": "Dom z ograniczoną przestrzenią do przechowywania",
+        "flat": "Mieszkanie lub apartament",
+        "supported": "Zakwaterowanie z opieką lub wsparciem"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Spędzanie czasu z rodziną",
+        "independence": "Utrzymanie niezależności",
+        "minimiseHospital": "Minimalizowanie czasu w szpitalu",
+        "routine": "Utrzymanie regularnej rutyny",
+        "control": "Kontrola nad leczeniem",
+        "longevity": "Życie jak najdłużej",
+        "quality": "Jakość życia na co dzień",
+        "travel": "Możliwość podróżowania"
+      }
+    }
+  },
+  "hub": {
+    "title": "Twoje spersonalizowane informacje",
+    "subtitle": "Na podstawie Twoich odpowiedzi, oto co zalecamy do eksploracji.",
+    "welcome": {
+      "title": "Twoje spersonalizowane opcje leczenia",
+      "message": "Na podstawie tego, co nam powiedziałeś, oto zasoby, które pomogą Ci zrozumieć Twoją chorobę nerek i poznać opcje.",
+      "reminder": "Pamiętaj, Twój zespół nefrologiczny pomoże Ci podjąć ostateczną decyzję.",
+      "badge": "Twoja spersonalizowana podróż"
+    },
+    "session": {
+      "timeRemaining": "Pozostały czas sesji:",
+      "extend": "Przedłuż sesję",
+      "updateAnswers": "Zaktualizuj moje odpowiedzi",
+      "startOver": "Zacznij od nowa"
+    },
+    "alert": {
+      "title": "Pamiętaj, aby zapisać podsumowanie",
+      "message": "Twoje informacje nie zostaną zapisane po tej sesji. Utwórz podsumowanie przed wyjściem, aby zachować zapis swojej eksploracji.",
+      "saveNow": "Zapisz teraz"
+    },
+    "pathway": {
+      "title": "Jak chciałbyś eksplorować?",
+      "guided": {
+        "title": "Twoja zalecana podróż",
+        "badge": "Zalecane",
+        "description": "Podążaj za przewodnikiem krok po kroku przez opcje leczenia dostosowane do Twojej sytuacji. Idealne, jeśli chcesz jasnych wskazówek i wsparcia.",
+        "action": "Rozpocznij przewodnikową podróż"
+      },
+      "free": {
+        "title": "Eksploruj swobodnie",
+        "description": "Przeglądaj wszystkie opcje we własnym tempie. Przejdź bezpośrednio do tematów, które Cię interesują. Idealne, jeśli już wiesz, czego szukasz.",
+        "action": "Przeglądaj wszystkie opcje"
+      }
+    },
+    "content": {
+      "title": "Narzędzia pomocne w decyzji",
+      "subtitle": "Poznaj każde narzędzie, aby podjąć świadomą decyzję"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Opcje leczenia",
+        "description": "Dowiedz się o wszystkich dostępnych opcjach leczenia nerek, w tym rodzajach dializy, przeszczepie i opiece zachowawczej.",
+        "action": "Odkryj"
+      },
+      "model": {
+        "title": "Model 3D nerki",
+        "description": "Odkryj interaktywne modele 3D pokazujące, jak różne zabiegi działają w Twoim ciele. Zobacz proces wizualnie.",
+        "action": "Zobacz model"
+      },
+      "compare": {
+        "title": "Porównaj zabiegi",
+        "description": "Zobacz wszystkie zabiegi obok siebie. Porównaj to, co dla Ciebie ważne - od codziennego czasu po elastyczność podróży.",
+        "action": "Porównaj"
+      },
+      "values": {
+        "title": "Ćwiczenie wartości",
+        "description": "Pomyśl o tym, co jest dla Ciebie najważniejsze. To ćwiczenie pomaga wyjaśnić Twoje priorytety, aby kierować Twoją decyzją.",
+        "action": "Rozpocznij"
+      },
+      "chat": {
+        "title": "Zadaj pytania",
+        "description": "Porozmawiaj z naszym asystentem AI o opcjach leczenia nerek. Uzyskaj odpowiedzi na pytania w formie rozmowy.",
+        "action": "Rozpocznij czat"
+      }
+    },
+    "status": {
+      "new": "Nowe",
+      "inProgress": "W trakcie",
+      "completed": "Ukończone"
+    },
+    "summary": {
+      "title": "Gotowy do przeglądu swojej podróży?",
+      "description": "Zobacz wszystko, co odkryłeś i utwórz podsumowanie do podzielenia się z zespołem nefrologicznym na następnej wizycie.",
+      "button": "Zobacz swoje podsumowanie",
+      "badge": "Ostatni krok"
+    },
+    "quickAction": {
+      "summary": "Zobacz swoje podsumowanie"
+    }
+  },
+  "treatments": {
+    "title": "Zrozumienie opcji leczenia",
+    "subtitle": "Istnieją różne sposoby leczenia niewydolności nerek. Każdy ma swoje korzyści i kwestie do rozważenia.",
+    "detailedInfoAriaLabel": "{{treatment}} szczegółowe informacje",
+    "facts": {
+      "transplant": {
+        "survival": "Najlepsze długoterminowe wyniki przeżycia",
+        "surgery": "Wymaga operacji i czasu rekonwalescencji",
+        "medication": "Wymagane leki przez całe życie"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 razy w tygodniu, 4-5 godzin za każdym razem",
+        "professionalCare": "Profesjonalna opieka i monitorowanie",
+        "travel": "Wymagane dojazdy do ośrodka"
+      },
+      "peritoneal": {
+        "dailyHome": "Codzienny zabieg w domu",
+        "timingOptions": "Opcje nocne lub dzienne",
+        "flexibility": "Większa elastyczność i niezależność"
+      },
+      "conservative": {
+        "comfort": "Skupienie na komforcie i jakości życia",
+        "noDialysis": "Brak wymaganego leczenia dializami",
+        "symptomManagement": "Aktywne zarządzanie objawami"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "Przeszczep nerki",
+        "shortDescription": "Otrzymanie zdrowej nerki od dawcy",
+        "description": "Przeszczep nerki polega na otrzymaniu zdrowej nerki od żywego dawcy (takiego jak członek rodziny lub przyjaciel) lub zmarłego dawcy. Udany przeszczep może zapewnić najlepszą jakość życia i najdłuższe przeżycie dla wielu osób z niewydolnością nerek.",
+        "benefits": [
+          "Często zapewnia najlepszą jakość życia",
+          "Brak regularnych sesji dializy",
+          "Mniej ograniczeń dietetycznych",
+          "Lepszy poziom energii dla większości ludzi"
+        ],
+        "considerations": [
+          "Wymaga poważnej operacji",
+          "Konieczność przyjmowania leków immunosupresyjnych przez całe życie",
+          "Może wymagać oczekiwania na odpowiednią nerkę",
+          "Nie jest odpowiedni dla wszystkich"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Hemodializa",
+        "shortDescription": "Filtrowanie krwi za pomocą aparatu",
+        "description": "Hemodializa wykorzystuje aparat do filtrowania krwi poza ciałem. Zazwyczaj odbywa się w oddziale dializy w szpitalu lub centrum społeczności, zwykle trzy razy w tygodniu przez około cztery godziny każdorazowo. Niektórzy wykonują hemodializę w domu.",
+        "benefits": [
+          "Skuteczne usuwanie odpadów i nadmiaru płynów",
+          "Regularny kontakt z zespołem medycznym",
+          "Dostępna opcja hemodializy domowej dla niektórych",
+          "Zabieg jest wykonywany za Ciebie"
+        ],
+        "considerations": [
+          "Wymaga regularnych wizyt w szpitalu lub ośrodku",
+          "Wymaga dostępu naczyniowego (przetoki lub linii)",
+          "Możliwe zmęczenie po zabiegu",
+          "Obowiązują ograniczenia dietetyczne i płynowe"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Dializa otrzewnowa",
+        "shortDescription": "Filtrowanie krwi wewnątrz ciała za pomocą wyściółki brzucha",
+        "description": "Dializa otrzewnowa wykorzystuje wyściółkę brzucha (otrzewną) jako naturalny filtr. Specjalny płyn jest wprowadzany do brzucha przez mały cewnik, absorbuje produkty przemiany materii, a następnie jest odprowadzany. Można to robić w domu, w ciągu dnia lub w nocy podczas snu.",
+        "benefits": [
+          "Wykonywana w domu, większa niezależność",
+          "Bardziej elastyczny harmonogram",
+          "Łagodniejsza dla organizmu, mniej wahań",
+          "Łatwiejsze podróżowanie"
+        ],
+        "considerations": [
+          "Wymaga codziennego zaangażowania w zabieg",
+          "Potrzebny stały cewnik w brzuchu",
+          "Ryzyko infekcji przy niewłaściwej technice",
+          "Wymaga miejsca do przechowywania materiałów"
+        ]
+      },
+      "conservative": {
+        "title": "Leczenie zachowawcze",
+        "shortDescription": "Zarządzanie objawami bez dializy",
+        "description": "Leczenie zachowawcze koncentruje się na utrzymaniu jakości życia i zarządzaniu objawami bez dializy lub przeszczepu. To podejście może być odpowiednie dla niektórych osób, szczególnie starszych, osłabionych lub z innymi poważnymi schorzeniami. Obejmuje staranne zarządzanie objawami, leki i wsparcie zespołu opieki nerkowej.",
+        "benefits": [
+          "Brak sesji dializy ani operacji",
+          "Skupienie na jakości życia i komforcie",
+          "Może być odpowiednie dla niektórych starszych lub osłabionych pacjentów",
+          "Utrzymanie zwykłej rutyny w miarę możliwości"
+        ],
+        "considerations": [
+          "Funkcja nerek będzie nadal się pogarszać",
+          "Objawy będą wymagać aktywnego zarządzania",
+          "Ważne szczere rozmowy o oczekiwaniach",
+          "Zalecane planowanie opieki z wyprzedzeniem"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "Porównaj opcje leczenia",
+    "subtitle": "Zobacz, jak różne zabiegi porównują się w kluczowych aspektach.",
+    "categories": {
+      "lifestyle": "Wpływ na styl życia",
+      "medical": "Kwestie medyczne"
+    },
+    "items": {
+      "scheduleFlexibility": "Elastyczność harmonogramu",
+      "travelAbility": "Możliwość podróżowania",
+      "dietRestrictions": "Ograniczenia dietetyczne",
+      "hospitalVisits": "Wizyty w szpitalu",
+      "surgeryRequired": "Wymagana operacja",
+      "medications": "Leki"
+    },
+    "values": {
+      "high": "Wysoka",
+      "medium": "Średnia",
+      "low": "Niska",
+      "limited": "Ograniczona",
+      "varies": "Zmienna",
+      "fewer": "Mniej",
+      "more": "Więcej",
+      "moderate": "Umiarkowana",
+      "periodic": "Okresowe kontrole",
+      "threePerWeek": "3 razy w tygodniu",
+      "monthly": "Miesięcznie",
+      "asNeeded": "W razie potrzeby",
+      "major": "Duża operacja",
+      "minor": "Mały zabieg",
+      "none": "Brak",
+      "lifelong": "Dożywotnie leki immunosupresyjne",
+      "several": "Kilka leków",
+      "symptomBased": "Oparte na objawach"
+    }
+  },
+  "compare": {
+    "title": "Porównaj opcje leczenia",
+    "subtitle": "Zobacz, jak różne zabiegi porównują się w aspektach, które są dla Ciebie ważne.",
+    "intro": "To porównanie pokazuje, jak każda opcja leczenia wypada w różnych aspektach codziennego życia i opieki medycznej.",
+    "description": "To narzędzie pomaga porównać opcje leczenia nerek obok siebie. Możesz skupić się na rzeczach, które są dla Ciebie najważniejsze. Wybierz poniżej czynniki, które chcesz porównać.",
+    "customise": "Dostosuj swoje porównanie",
+    "showTreatments": "Pokaż zabiegi:",
+    "highlightForMe": "Wyróżnij zabiegi dla mnie",
+    "highlightHint": "Na podstawie Twoich wartości i priorytetów z kwestionariusza",
+    "understandingIcons": "Zrozumienie ikon",
+    "scrollHint": "Przewiń poziomo, aby zobaczyć wszystkie zabiegi",
+    "tableHeading": "Tabela porównania zabiegów",
+    "tableLabel": "Porównanie opcji leczenia nerek",
+    "criteria": "Kryteria",
+    "recommended": "Zalecane",
+    "remember": "Pamiętaj",
+    "guidance": "Żaden zabieg nie jest idealny dla wszystkich. Najlepszy wybór zależy od Twojej osobistej sytuacji, zdrowia i wartości. To porównanie jest punktem wyjścia do rozmów z zespołem nefrologicznym.",
+    "addToSummary": "Dodaj do mojego podsumowania",
+    "treatments": {
+      "transplant": {
+        "name": "Przeszczep nerki",
+        "type": "Operacja"
+      },
+      "hemodialysis": {
+        "name": "Hemodializa",
+        "type": "Dializa w ośrodku"
+      },
+      "peritoneal": {
+        "name": "Dializa otrzewnowa",
+        "type": "Dializa domowa"
+      },
+      "conservative": {
+        "name": "Opieka zachowawcza",
+        "type": "Opieka wspomagająca"
+      }
+    },
+    "categories": {
+      "dailyLife": "Wpływ na codzienne życie",
+      "practical": "Praktyczne kwestie",
+      "medical": "Czynniki medyczne",
+      "support": "Wymagania wsparcia",
+      "health": "Wyniki zdrowotne"
+    },
+    "criteria": {
+      "timeCommitment": "Czas poświęcony tygodniowo",
+      "timeCommitmentHint": "Godziny spędzone na zabiegu",
+      "location": "Miejsce zabiegu",
+      "locationHint": "Gdzie odbywa się zabieg",
+      "travel": "Wpływ na podróże",
+      "travelHint": "Możliwość podróżowania i wakacji",
+      "diet": "Ograniczenia dietetyczne",
+      "dietHint": "Ograniczenia w jedzeniu i piciu",
+      "surgery": "Wymagana operacja",
+      "surgeryHint": "Potrzebne początkowe procedury",
+      "supportNeeded": "Potrzebne wsparcie",
+      "supportNeededHint": "Pomoc od rodziny lub opiekunów",
+      "recoveryTime": "Czas rekonwalescencji",
+      "recoveryTimeHint": "Czas na przystosowanie się do zabiegu",
+      "longTermOutlook": "Perspektywa długoterminowa",
+      "longTermOutlookHint": "Oczekiwane wyniki w czasie",
+      "scheduleFlexibility": "Elastyczność harmonogramu",
+      "scheduleFlexibilityHint": "Kontrola nad harmonogramem",
+      "trainingRequired": "Wymagane szkolenie",
+      "trainingRequiredHint": "Potrzebny czas nauki",
+      "survivalRates": "Wskaźniki przeżycia",
+      "survivalRatesHint": "Ogólne wyniki (różnią się w zależności od osoby)",
+      "qualityOfLife": "Jakość życia",
+      "qualityOfLifeHint": "Ogólne samopoczucie",
+      "energyLevels": "Poziom energii",
+      "energyLevelsHint": "Typowa energia i zmęczenie"
+    },
+    "values": {
+      "minimalAfterRecovery": "Minimalne po rekonwalescencji",
+      "regularCheckupsOnly": "Tylko regularne kontrole",
+      "12to15HrsWeekly": "12-15 godzin tygodniowo",
+      "plusTravelTime": "Plus czas dojazdu",
+      "dailyExchanges": "Codzienne wymiany",
+      "canBeDoneOvernight": "Można robić w nocy",
+      "minimal": "Minimalne",
+      "clinicVisitsAsNeeded": "Wizyty w klinice w razie potrzeby",
+      "noRestrictions": "Brak ograniczeń",
+      "afterRecovery": "Po rekonwalescencji",
+      "hospitalClinic": "Szpital/klinika",
+      "dialysisUnit": "Oddział dializ",
+      "home": "Dom",
+      "anyCleanSpace": "Dowolna czysta przestrzeń",
+      "noEquipmentNeeded": "Nie potrzeba sprzętu",
+      "veryFlexible": "Bardzo elastyczne",
+      "takeMedicationsOnly": "Tylko przyjmowanie leków",
+      "difficult": "Trudne",
+      "mustArrangeHolidayDialysis": "Trzeba zorganizować dializę wakacyjną",
+      "goodFlexibility": "Dobra elastyczność",
+      "suppliesCanBeSentAhead": "Materiały można wysłać wcześniej",
+      "fewRestrictions": "Mało ograniczeń",
+      "nearNormalDiet": "Prawie normalna dieta",
+      "moderateRestrictions": "Umiarkowane ograniczenia",
+      "fluidAndPotassiumLimits": "Limity płynów i potasu",
+      "lessStrict": "Mniej rygorystyczne",
+      "moreFlexibility": "Większa elastyczność",
+      "managedDiet": "Kontrolowana dieta",
+      "tailoredToSymptoms": "Dostosowana do objawów",
+      "majorSurgery": "Duża operacja",
+      "transplantOperationRequired": "Wymagana operacja przeszczepu",
+      "minorSurgery": "Mała operacja",
+      "fistulaOrGraftCreation": "Tworzenie przetoki lub graftu",
+      "minorProcedure": "Mały zabieg",
+      "pdCatheterInsertion": "Wprowadzenie cewnika PD",
+      "noneRequired": "Nie wymagane",
+      "noSurgicalProcedures": "Brak procedur chirurgicznych",
+      "initialSupport": "Początkowe wsparcie",
+      "duringRecoveryPeriod": "W okresie rekonwalescencji",
+      "noneNeeded": "Nie potrzebne",
+      "professionalStaffProvideCare": "Profesjonalny personel zapewnia opiekę",
+      "canDoIndependently": "Można robić samodzielnie",
+      "varies": "Zmienna",
+      "dependsOnSymptoms": "Zależy od objawów",
+      "high": "Wysoka",
+      "normalDailyLifePossible": "Możliwe normalne codzienne życie",
+      "low": "Niska",
+      "fixedHospitalSlots": "Stałe terminy szpitalne",
+      "chooseYourSchedule": "Wybierz swój harmonogram",
+      "noFixedSchedule": "Brak stałego harmonogramu",
+      "medicationTraining": "Szkolenie z leków",
+      "learningYourNewRoutine": "Nauka nowej rutyny",
+      "staffDoEverything": "Personel robi wszystko",
+      "oneToTwoWeeksTraining": "1-2 tygodnie szkolenia",
+      "learnTheTechnique": "Nauka techniki",
+      "symptomManagement": "Zarządzanie objawami",
+      "medicationGuidance": "Wskazówki dotyczące leków",
+      "bestOutcomes": "Najlepsze wyniki",
+      "forSuitableCandidates": "Dla odpowiednich kandydatów",
+      "good": "Dobre",
+      "wellEstablishedTreatment": "Ugruntowany zabieg",
+      "similarToHaemodialysis": "Podobne do hemodializy",
+      "qualityFocused": "Skupienie na jakości",
+      "comfortOverLongevity": "Komfort nad długowiecznością",
+      "excellent": "Doskonałe",
+      "nearNormalLifePossible": "Możliwe prawie normalne życie",
+      "moderate": "Umiarkowane",
+      "treatmentAffectsDailyRoutine": "Zabieg wpływa na codzienną rutynę",
+      "moreIndependence": "Większa niezależność",
+      "focusOnComfort": "Skupienie na komforcie",
+      "symptomManagementPriority": "Priorytet zarządzania objawami",
+      "oftenExcellent": "Często doskonałe",
+      "energyRestored": "Energia przywrócona",
+      "variable": "Zmienne",
+      "fatigueAfterSessions": "Zmęczenie po sesjach",
+      "generallyGood": "Ogólnie dobre",
+      "steadyEnergyLevels": "Stabilny poziom energii",
+      "managedWithSupport": "Zarządzane ze wsparciem"
+    },
+    "legend": {
+      "title": "Przewodnik po ocenach",
+      "excellent": "Doskonałe",
+      "good": "Dobre",
+      "moderate": "Umiarkowane",
+      "challenging": "Wymagające",
+      "varies": "Zmienna",
+      "excellentDesc": "Doskonałe - Ogólnie bardzo korzystne",
+      "goodDesc": "Dobre - Ogólnie korzystne",
+      "moderateDesc": "Umiarkowane - Pewne ograniczenia do rozważenia",
+      "challengingDesc": "Wymagające - Istotne kwestie do rozważenia",
+      "variesDesc": "Zmienna - Zależy od indywidualnych okoliczności"
+    },
+    "viewDetails": "Zobacz szczegóły",
+    "backToHub": "Powrót do centrum",
+    "printComparison": "Drukuj porównanie"
+  },
+  "chat": {
+    "title": "Zadaj pytania",
+    "subtitle": "Nasz asystent AI może odpowiadać na ogólne pytania dotyczące leczenia nerek.",
+    "placeholder": "Wpisz tutaj swoje pytanie...",
+    "send": "Wyślij",
+    "disclaimer": "Ten asystent dostarcza tylko ogólnych informacji i nie zastępuje porady medycznej od Twojego zespołu opieki nerkowej.",
+    "welcomeMessage": "Witaj! Jestem tutaj, aby pomóc odpowiedzieć na Twoje pytania dotyczące choroby nerek i opcji leczenia. Jak mogę Ci dziś pomóc?",
+    "errorMessage": "Przepraszam, nie mogłem przetworzyć Twojej wiadomości. Spróbuj ponownie.",
+    "thinking": "Myślę...",
+    "backToHub": "Powrót do centrum",
+    "privacyReminder": "Przypomnienie o prywatności:",
+    "readyToHelp": "Gotowy do pomocy",
+    "status": {
+      "online": "Online"
+    },
+    "messagesLabel": "Wiadomości czatu",
+    "inputLabel": "Pole wiadomości",
+    "audioInput": "Wprowadzanie głosowe",
+    "piiWarning": "Proszę nie udostępniać danych osobowych, takich jak imię, numer NHS czy adres. Ten czat nie jest zapisywany.",
+    "welcome": {
+      "greeting": "Witaj! Jestem Asystentem Opieki Nerkowej NHS. Jestem tutaj, aby pomóc Ci zrozumieć opcje leczenia nerek.",
+      "prompt": "Możesz zadawać mi pytania o dializę, przeszczepy, opiekę zachowawczą lub cokolwiek innego związanego z leczeniem nerek. Jak mogę Ci dziś pomóc?"
+    },
+    "suggestedQuestions": "Sugerowane pytania",
+    "questions": {
+      "q1": "Jaka jest różnica między hemodializą a dializą otrzewnową?",
+      "q2": "Jak długo trwa operacja przeszczepu nerki?",
+      "q3": "Czy mogę podróżować podczas dializy?",
+      "q4": "Jakie są skutki uboczne leczenia dializą?",
+      "q5": "Skąd mam wiedzieć, czy nadaję się do przeszczepu?",
+      "q6": "Czym jest opieka zachowawcza i kto może ją wybrać?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Powiedz mi więcej",
+      "prosAndCons": "Jakie są plusy i minusy?",
+      "dailyLife": "Jak to wpływa na codzienne życie?"
+    },
+    "voice": {
+      "startRecording": "Rozpocznij wprowadzanie głosowe",
+      "stopRecording": "Zatrzymaj nagrywanie",
+      "listening": "Słucham...",
+      "processing": "Przetwarzam...",
+      "speaking": "Mówię...",
+      "paused": "Wstrzymano",
+      "playResponse": "Posłuchaj odpowiedzi",
+      "pauseResponse": "Wstrzymaj",
+      "resumeResponse": "Wznów",
+      "stopResponse": "Zatrzymaj",
+      "loading": "Ładowanie audio...",
+      "loadingAudio": "Ładowanie audio...",
+      "requesting": "Proszę o pozwolenie...",
+      "notSupported": "Wprowadzanie głosowe nie jest obsługiwane",
+      "error": "Wystąpił błąd",
+      "micPermissionDenied": "Odmówiono dostępu do mikrofonu. Proszę zezwolić na dostęp, aby używać wprowadzania głosowego.",
+      "noAudioDetected": "Nie wykryto dźwięku. Spróbuj ponownie.",
+      "transcriptionFailed": "Nie udało się transkrybować audio. Spróbuj ponownie.",
+      "synthesisFailed": "Nie udało się odtworzyć audio. Spróbuj ponownie."
+    }
+  },
+  "values": {
+    "title": "Co jest dla Ciebie ważne",
+    "subtitle": "Oceń, jak ważny jest dla Ciebie każdy czynnik. To pomaga nam personalizować informacje.",
+    "instructions": "Przesuń suwak, aby wskazać ważność (1 = Nieważne, 5 = Bardzo ważne)",
+    "sliderLabel": "Ocena ważności",
+    "startExercise": "Rozpocznij ćwiczenie wartości",
+    "lessImportant": "Mniej ważne",
+    "moreImportant": "Bardziej ważne",
+    "skipStatement": "Pomiń to stwierdzenie",
+    "viewResults": "Zobacz moje wyniki",
+    "statementsRemaining_one": "{{count}} stwierdzenie pozostało",
+    "statementsRemaining_few": "{{count}} stwierdzenia pozostały",
+    "statementsRemaining_many": "{{count}} stwierdzeń pozostało",
+    "statementsRemaining_other": "{{count}} stwierdzeń pozostało",
+    "completed": "Ukończone",
+    "intro": {
+      "title": "Co jest dla Ciebie najważniejsze?",
+      "description": "Wybór leczenia nerek to osobista decyzja. To ćwiczenie pomaga przemyśleć Twoje wartości i priorytety, abyś mógł je omówić z zespołem nefrologicznym.",
+      "feature1": "10 stwierdzeń do oceny",
+      "feature2": "Zajmuje około 5 minut",
+      "feature3": "Brak dobrych ani złych odpowiedzi",
+      "feature4": "Zobacz podsumowanie swoich priorytetów",
+      "beginButton": "Rozpocznij ćwiczenie",
+      "allAtOnce": "Wolisz zobaczyć wszystkie stwierdzenia naraz?",
+      "viewAll": "Zobacz wszystkie stwierdzenia"
+    },
+    "progress": {
+      "statement": "Stwierdzenie",
+      "of": "z"
+    },
+    "defaultHint": "Oceń, jak ważne jest to dla Ciebie od 1 (Nieważne) do 5 (Bardzo ważne)",
+    "listenStatement": "Posłuchaj tego stwierdzenia",
+    "nav": {
+      "back": "Wstecz",
+      "skip": "Pomiń",
+      "next": "Dalej",
+      "finish": "Zakończ",
+      "backToIntro": "Wróć do wprowadzenia",
+      "seeResults": "Zobacz moje wyniki"
+    },
+    "allAtOnce": {
+      "title": "Oceń wszystkie stwierdzenia",
+      "description": "Oceń każde stwierdzenie od 1 (Nieważne) do 5 (Bardzo ważne).",
+      "progress": "Ukończone"
+    },
+    "results": {
+      "title": "Podsumowanie Twoich wartości",
+      "description": "Na podstawie Twoich odpowiedzi, oto co jest dla Ciebie najważniejsze.",
+      "topPriorities": "Twoje najważniejsze priorytety",
+      "allValues": "Wszystkie Twoje wartości",
+      "editValues": "Edytuj swoje wartości",
+      "compareLink": "Porównaj zabiegi",
+      "addToSummary": "Dodaj do mojego podsumowania",
+      "viewTreatments": "Zobacz zabiegi pasujące do Twoich wartości",
+      "backToHub": "Powrót do centrum"
+    },
+    "ratingLabels": {
+      "1": "Nieważne",
+      "2": "Trochę ważne",
+      "3": "Umiarkowanie ważne",
+      "4": "Ważne",
+      "5": "Bardzo ważne"
+    },
+    "ratings": {
+      "1": "Nieważne",
+      "2": "Trochę ważne",
+      "3": "Umiarkowanie ważne",
+      "4": "Bardzo ważne",
+      "5": "Niezwykle ważne"
+    },
+    "statements": {
+      "travel": {
+        "statement": "Możliwość podróżowania jest dla mnie ważna",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "hospital-time": {
+        "statement": "Chcę minimalizować czas spędzany w szpitalu",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "needles": {
+        "statement": "Nie mam problemu z igłami i procedurami medycznymi",
+        "hint": "Oceń, jak bardzo zgadzasz się z tym stwierdzeniem"
+      },
+      "independence": {
+        "statement": "Utrzymanie niezależności jest dla mnie bardzo ważne",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "family-burden": {
+        "statement": "Chcę unikać bycia ciężarem dla rodziny",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "longevity": {
+        "statement": "Życie jak najdłużej jest moim priorytetem",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "quality-of-life": {
+        "statement": "Jakość życia jest ważniejsza niż długość życia",
+        "hint": "Oceń, jak bardzo zgadzasz się z tym stwierdzeniem"
+      },
+      "home-treatment": {
+        "statement": "Wolałbym mieć leczenie w domu",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "work-activities": {
+        "statement": "Kontynuowanie pracy lub zwykłych zajęć jest ważne",
+        "hint": "Oceń, jak ważne jest to dla Ciebie"
+      },
+      "professional-care": {
+        "statement": "Wolałbym, żeby profesjonaliści zajmowali się moim leczeniem",
+        "hint": "Oceń, jak bardzo zgadzasz się z tym stwierdzeniem"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Utrzymanie niezależności i możliwości samodzielnej opieki",
+        "hint": "Możliwość wykonywania codziennych czynności bez dużego polegania na innych"
+      },
+      "schedule": {
+        "text": "Elastyczność harmonogramu i możliwość podróżowania",
+        "hint": "Możliwość planowania aktywności i wyjazdów bez ścisłych godzin zabiegów"
+      },
+      "hospitalTime": {
+        "text": "Spędzanie mniej czasu w szpitalu lub klinice",
+        "hint": "Minimalizowanie liczby i długości wizyt szpitalnych"
+      },
+      "homeComfort": {
+        "text": "Otrzymywanie leczenia w komforcie własnego domu",
+        "hint": "Możliwość zarządzania leczeniem w domu zamiast w placówce medycznej"
+      },
+      "familyBurden": {
+        "text": "Niebycie ciężarem dla rodziny",
+        "hint": "Minimalizowanie wpływu leczenia na członków rodziny i opiekunów"
+      },
+      "longevity": {
+        "text": "Życie jak najdłużej",
+        "hint": "Priorytetowe traktowanie zabiegów mogących wydłużyć oczekiwaną długość życia"
+      },
+      "qualityOfLife": {
+        "text": "Jakość życia nad długością życia",
+        "hint": "Priorytetowe traktowanie codziennego samopoczucia i komfortu nad maksymalną długością życia"
+      },
+      "energyLevels": {
+        "text": "Dobry poziom energii i dobre samopoczucie",
+        "hint": "Minimalizowanie zmęczenia i utrzymanie normalnej energii do aktywności"
+      },
+      "dietRestrictions": {
+        "text": "Mniej ograniczeń w jedzeniu i piciu",
+        "hint": "Możliwość jedzenia i picia z minimalnymi ograniczeniami"
+      },
+      "naturalApproach": {
+        "text": "Bardziej naturalne podejście z mniejszą liczbą interwencji",
+        "hint": "Preferowanie opcji leczenia, które wydają się mniej inwazyjne lub medyczne"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "Model 3D nerki",
+    "backToHub": "Powrót do centrum",
+    "title": "Przeglądarka modelu 3D nerki",
+    "interactiveDescription": "Odkryj interaktywny model 3D ludzkich nerek. Użyj myszy lub dotyku, aby obracać i powiększać.",
+    "dragToRotate": "Przeciągnij, aby obrócić",
+    "scrollToZoom": "Przewiń, aby powiększyć",
+    "labelsOn": "Etykiety: Włączone",
+    "labelsOff": "Etykiety: Wyłączone",
+    "autoRotateOn": "Auto-obrót: Włączony",
+    "autoRotateOff": "Auto-obrót: Wyłączony",
+    "reset": "Resetuj",
+    "resetView": "Resetuj widok",
+    "aboutKidneys": "O Twoich nerkach",
+    "kidneyInfo": "Twoje nerki to narządy w kształcie fasoli wielkości pięści. Filtrują około 200 litrów krwi dziennie, usuwając odpady i nadmiar płynów.",
+    "kidneyFunction": "Co robią nerki",
+    "functionInfo": "Nerki regulują ciśnienie krwi, produkują hormony, równoważą płyny ustrojowe i filtrują produkty przemiany materii do moczu.",
+    "whenKidneysFail": "Kiedy nerki zawodzą",
+    "failureInfo": "Kiedy nerki tracą funkcję, zabiegi takie jak dializa lub przeszczep mogą pomóc wykonać pracę, której Twoje nerki już nie mogą wykonać.",
+    "learnMore": "Dowiedz się więcej o opcjach leczenia",
+    "exploreTreatments": "Odkryj zabiegi",
+    "compareTreatments": "Porównaj zabiegi",
+    "continueJourney": "Kontynuuj swoją podróż, poznając opcje leczenia",
+    "loading": "Ładowanie modelu 3D...",
+    "interactiveTool": "Interaktywne narzędzie edukacyjne",
+    "interactive3DModel": "Interaktywny model 3D",
+    "anatomy": {
+      "kidney": {
+        "label": "Nerka",
+        "description": "Główny narząd filtrujący, który usuwa odpady z krwi i produkuje mocz."
+      },
+      "renalArtery": {
+        "label": "Tętnica nerkowa",
+        "description": "Przenosi krew z serca do nerki w celu filtracji."
+      },
+      "renalVein": {
+        "label": "Żyła nerkowa",
+        "description": "Przenosi przefiltrowaną krew z nerki z powrotem do serca."
+      },
+      "ureter": {
+        "label": "Moczowód",
+        "description": "Przewód przenoszący mocz z nerki do pęcherza."
+      },
+      "adrenalGland": {
+        "label": "Nadnercze",
+        "description": "Mały gruczoł na szczycie nerki, który produkuje ważne hormony."
+      }
+    }
+  },
+  "summary": {
+    "title": "Podsumowanie Twojej sesji",
+    "subtitle": "Oto podsumowanie tego, co dziś odkryłeś.",
+    "sections": {
+      "journey": "Twój etap podróży",
+      "values": "Co jest dla Ciebie ważne",
+      "viewed": "Poznane zabiegi",
+      "questions": "Pytania dla Twojego zespołu",
+      "priorities": "Twoje priorytety",
+      "nextSteps": "Sugerowane następne kroki"
+    },
+    "print": "Drukuj podsumowanie",
+    "email": "Wyślij podsumowanie e-mailem",
+    "startOver": "Zacznij od nowa",
+    "share": "Udostępnij",
+    "sessionId": "ID sesji",
+    "notSpecified": "Nie określono",
+    "readyToReview": "Gotowy do przeglądu",
+    "viewed": "Obejrzane",
+    "noValues": "Nie ukończyłeś jeszcze ćwiczenia wartości.",
+    "completeValues": "Ukończ teraz",
+    "noTreatments": "Nie poznałeś jeszcze żadnych zabiegów.",
+    "exploreTreatments": "Poznaj zabiegi",
+    "seeAll": "Zobacz wszystkie",
+    "confirmReset": "Czy na pewno chcesz zacząć od nowa? Cały Twój postęp zostanie utracony.",
+    "addQuestionPlaceholder": "Wpisz własne pytanie...",
+    "question1": "Które opcje leczenia są odpowiednie dla mojej sytuacji?",
+    "question2": "Jak wyglądałoby moje codzienne życie przy każdym leczeniu?",
+    "question3": "Jak rozpocząć proces preferowanego leczenia?",
+    "step1": {
+      "title": "Przejrzyj to podsumowanie",
+      "description": "Poświęć czas na przejrzenie tego, co odkryłeś i przemyśl dodatkowe pytania."
+    },
+    "step2": {
+      "title": "Podziel się z rodziną lub opiekunami",
+      "description": "Jeśli masz wsparcie w domu, omów z nimi swoje przemyślenia."
+    },
+    "step3": {
+      "title": "Omów z zespołem opieki nerkowej",
+      "description": "Zabierz to podsumowanie na następną wizytę, aby omówić opcje."
+    },
+    "privacy": {
+      "title": "Twoja prywatność",
+      "text": "Te informacje są przechowywane tylko w Twojej przeglądarce i zostaną usunięte po zakończeniu sesji. Żadne dane osobowe nie zostały zapisane na żadnym serwerze."
+    },
+    "disclaimer": {
+      "title": "Ważne przypomnienie",
+      "text": "To podsumowanie służy tylko celom informacyjnym i nie stanowi porady medycznej. Zawsze omawiaj opcje leczenia z zespołem opieki nerkowej, który zna Twoje indywidualne okoliczności."
+    },
+    "printForAppointment": "Drukuj na wizytę",
+    "askMore": "Masz więcej pytań?",
+    "printHeader": {
+      "title": "NHS Narzędzie wspomagające decyzje o leczeniu nerek",
+      "subtitle": "Twoje osobiste podsumowanie sesji",
+      "dateLabel": "Data: {{date}}",
+      "footer": "Wygenerowane przez NHS Narzędzie wspomagające decyzje o leczeniu nerek - {{date}} - Ten dokument służy tylko do dyskusji z zespołem opieki zdrowotnej"
+    },
+    "shareTitle": "Podsumowanie leczenia nerek NHS",
+    "shareText": "Moje podsumowanie decyzji o leczeniu nerek",
+    "readyForAppointment": "Gotowy na następną wizytę?",
+    "printInstructions": "Wydrukuj to podsumowanie, aby zabrać je do zespołu opieki nerkowej",
+    "journeyStages": {
+      "newly-diagnosed": "Nowo zdiagnozowany",
+      "monitoring": "Pod obserwacją",
+      "preparing": "Przygotowanie do leczenia",
+      "on-dialysis": "Obecnie na dializie",
+      "transplant-waiting": "Na liście oczekujących na przeszczep",
+      "post-transplant": "Po przeszczepie",
+      "supporting-someone": "Wspieranie kogoś"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "Poznajesz swoją chorobę nerek i chcesz zrozumieć opcje.",
+      "monitoring": "Twoje nerki są monitorowane i przygotowujesz się na przyszłość.",
+      "preparing": "Wkrótce musisz rozpocząć leczenie i chcesz zrozumieć swoje wybory.",
+      "on-dialysis": "Jesteś na dializie i poznajesz inne opcje.",
+      "transplant-waiting": "Jesteś na liście oczekujących na przeszczep.",
+      "post-transplant": "Miałeś przeszczep nerki i szukasz wsparcia.",
+      "supporting-someone": "Wspierasz bliską osobę z chorobą nerek.",
+      "default": "Twój obecny etap w podróży z opieką nerkową."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Hemodializa",
+      "peritoneal-dialysis": "Dializa otrzewnowa",
+      "home-haemodialysis": "Hemodializa domowa",
+      "kidney-transplant": "Przeszczep nerki",
+      "conservative-care": "Opieka zachowawcza"
+    },
+    "valueLabels": {
+      "1": "Nieważne",
+      "2": "Trochę ważne",
+      "3": "Umiarkowanie ważne",
+      "4": "Ważne",
+      "5": "Bardzo ważne",
+      "default": "Ważne"
+    }
+  },
+  "session": {
+    "timeRemaining": "Pozostały czas: {{minutes}}",
+    "sessionExpiring": "Twoja sesja wkrótce wygaśnie",
+    "expiringMessage": "Twoja sesja wygaśnie za {{minutes}} minut. Czy chcesz kontynuować?",
+    "extendSession": "Kontynuuj sesję",
+    "sessionExpired": "Twoja sesja wygasła. Rozpocznij ponownie.",
+    "startNewSession": "Rozpocznij nową sesję",
+    "createError": "Nie udało się utworzyć sesji. Spróbuj ponownie."
+  },
+  "footer": {
+    "nhsInfo": "NHS Opieka Nerkowa",
+    "accessibility": "Dostępność",
+    "privacyPolicy": "Polityka prywatności",
+    "termsOfUse": "Warunki użytkowania",
+    "contact": "Kontakt",
+    "contactUs": "Skontaktuj się z nami",
+    "navigationLabel": "Nawigacja stopki",
+    "supportingDecisions": "Wspieranie świadomych decyzji zdrowotnych",
+    "copyright": "Pears Research Services. Wszelkie prawa zastrzeżone.",
+    "demoVersion": "Wersja demonstracyjna 1.0",
+    "disclaimer": {
+      "title": "Ważne zastrzeżenie",
+      "text1": "Ta aplikacja jest",
+      "mockDesign": "projektem demonstracyjnym",
+      "text2": "stworzonym przez",
+      "company": "Pears Research Services",
+      "text3": "wyłącznie w celach demonstracyjnych. Nie jest powiązana z NHS ani przez niego zatwierdzona."
+    }
+  },
+  "timeline": {
+    "title": "Dzień z życia",
+    "subtitle": "Zobacz, jak wygląda typowy dzień z tym leczeniem",
+    "morning": "Rano",
+    "afternoon": "Po południu",
+    "evening": "Wieczorem",
+    "night": "W nocy",
+    "treatmentActivities": "{{count}} aktywności związanych z leczeniem",
+    "legend": {
+      "treatment": "Związane z leczeniem",
+      "regular": "Zwykłe aktywności"
+    },
+    "dayType": {
+      "dialysisDay": "Dzień dializy (Pon/Śr/Pt)",
+      "restDay": "Dzień odpoczynku (Wt/Czw/Sob/Niedz)",
+      "apdNight": "APD (Automatyczna nocna)",
+      "capd": "CAPD (Ręczne wymiany)",
+      "typical": "Typowy dzień"
+    },
+    "toggle": {
+      "dialysisDay": "Dzień dializy",
+      "restDay": "Dzień odpoczynku",
+      "apd": "APD",
+      "capd": "CAPD"
+    },
+    "duration": {
+      "15min": "15 min",
+      "20min": "20 min",
+      "30min": "30-60 min",
+      "4hrs": "4-5 godzin",
+      "8hrs": "8-10 godzin"
+    },
+    "transplant": {
+      "wakeUp": "Pobudka i poranna rutyna",
+      "medication": "Przyjęcie leków immunosupresyjnych",
+      "breakfast": "Śniadanie - zdrowy, zbilansowany posiłek",
+      "work": "Praca, hobby lub zajęcia",
+      "lunch": "Lunch - mało ograniczeń dietetycznych",
+      "activities": "Kontynuacja codziennych zajęć",
+      "exercise": "Lekkie ćwiczenia lub spacer",
+      "dinner": "Kolacja z rodziną",
+      "eveningMeds": "Wieczorne leki",
+      "relax": "Relaks i czas wolny",
+      "sleep": "Normalny wzorzec snu"
+    },
+    "hemo": {
+      "wakeEarly": "Wczesna pobudka",
+      "lightBreakfast": "Lekkie śniadanie z limitami płynów",
+      "travelTo": "Dojazd do centrum dializy",
+      "session": "Sesja dializy",
+      "travelHome": "Powrót do domu z dializy",
+      "rest": "Odpoczynek i regeneracja - możliwe zmęczenie",
+      "lightMeal": "Lekki posiłek z ograniczeniami dietetycznymi",
+      "quietEvening": "Spokojny wieczór",
+      "earlyBed": "Wczesne kładzenie się po dniu dializy",
+      "regularWake": "Pobudka",
+      "breakfast": "Śniadanie zgodne z zaleceniami dietetycznymi",
+      "normalDay": "Praca lub zwykłe zajęcia",
+      "lunch": "Lunch - uwaga na płyny i potas",
+      "continue": "Kontynuacja codziennych zajęć",
+      "dinner": "Kolacja z rodziną",
+      "leisure": "Czas wolny",
+      "sleep": "Normalna pora snu"
+    },
+    "pd": {
+      "disconnect": "Odłączenie od aparatu APD",
+      "morning": "Poranna rutyna i prysznic",
+      "breakfast": "Śniadanie - większa swoboda dietetyczna",
+      "work": "Praca lub zajęcia - dzień wolny",
+      "lunch": "Lunch - mniej ograniczeń niż HD",
+      "activities": "Kontynuacja zajęć, hobby",
+      "exercise": "Ćwiczenia lub aktywności na świeżym powietrzu",
+      "dinner": "Kolacja z rodziną",
+      "leisure": "Wieczorny czas wolny",
+      "setup": "Przygotowanie aparatu APD",
+      "overnight": "Sen podczas pracy APD przez noc",
+      "capdWake": "Pobudka",
+      "exchange1": "Pierwsza wymiana dnia",
+      "capdBreakfast": "Śniadanie",
+      "capdWork": "Praca lub zajęcia",
+      "exchange2": "Druga wymiana",
+      "capdLunch": "Lunch",
+      "capdActivities": "Popołudniowe zajęcia",
+      "exchange3": "Trzecia wymiana",
+      "capdDinner": "Kolacja",
+      "capdLeisure": "Wieczorny relaks",
+      "exchange4": "Ostatnia wymiana przed snem",
+      "capdSleep": "Sen"
+    },
+    "conservative": {
+      "wake": "Pobudka, gdy jesteś gotowy",
+      "meds": "Przyjęcie leków na objawy",
+      "breakfast": "Śniadanie według tolerancji",
+      "morning": "Poranne zajęcia w miarę energii",
+      "lunch": "Lunch - jedz to, co lubisz",
+      "rest": "Odpoczynek lub łagodne zajęcia",
+      "visitors": "Czas z rodziną lub gośćmi",
+      "eveningMeds": "Wieczorne leki",
+      "dinner": "Kolacja z bliskimi",
+      "relax": "Spokojny wieczór w domu",
+      "sleep": "Odpoczynek, gdy jesteś zmęczony"
+    }
+  },
+  "scenario": {
+    "title": "Co jeśli? Eksplorator scenariuszy",
+    "subtitle": "Zobacz, jak różne sytuacje życiowe współgrają z każdą opcją leczenia",
+    "tips": "Wskazówki",
+    "learnMore": "Dowiedz się więcej o {{treatment}}",
+    "compareAll": "Porównaj wszystkie zabiegi",
+    "legend": {
+      "title": "Przewodnik po ocenach"
+    },
+    "rating": {
+      "excellent": "Doskonałe",
+      "good": "Dobre",
+      "moderate": "Umiarkowane",
+      "challenging": "Wymagające"
+    },
+    "travel": {
+      "title": "Co jeśli chcę podróżować?",
+      "description": "Odkryj, jak każde leczenie wpływa na możliwość podróżowania na wakacje lub odwiedziny",
+      "transplant": "Po rekonwalescencji możesz podróżować swobodnie. Zabierz leki ze sobą i wiedz, gdzie szukać pomocy w razie potrzeby.",
+      "transplantTip1": "Noś list od zespołu transplantacyjnego",
+      "transplantTip2": "Sprawdź placówki medyczne w miejscu docelowym",
+      "transplantTip3": "Zapakuj dodatkowe leki w bagaż podręczny",
+      "hemodialysis": "Podróż wymaga planowania z wyprzedzeniem, aby zorganizować dializę w miejscu docelowym. Istnieją ośrodki dializy wakacyjnej, ale dostępność jest różna.",
+      "hemodialysisTip1": "Zarezerwuj dializę wakacyjną 6-8 tygodni wcześniej",
+      "hemodialysisTip2": "Twój zespół dializy może pomóc w organizacji",
+      "hemodialysisTip3": "Podróże po UK są łatwiejsze niż międzynarodowe",
+      "peritoneal": "Większa swoboda podróżowania. Materiały mogą być dostarczone do miejsca docelowego lub możesz je zabrać ze sobą.",
+      "peritonealTip1": "Zorganizuj dostawę materiałów 4-6 tygodni wcześniej",
+      "peritonealTip2": "Linie lotnicze zwykle pozwalają na dodatkowy bagaż na materiały",
+      "peritonealTip3": "Potrzebujesz czystego miejsca na wymiany",
+      "conservative": "Brak ograniczeń dializy, ale podróż zależy od samopoczucia. Krótsze wycieczki mogą być łatwiejsze do zarządzania.",
+      "conservativeTip1": "Omów plany podróży z zespołem opieki",
+      "conservativeTip2": "Rozważ starannie ubezpieczenie podróżne",
+      "conservativeTip3": "Zaplanuj okresy odpoczynku podczas podróży"
+    },
+    "work": {
+      "title": "Co jeśli chcę pracować na pełen etat?",
+      "description": "Zobacz, jak różne zabiegi pasują do utrzymania zatrudnienia",
+      "transplant": "Po 2-3 miesiącach rekonwalescencji większość ludzi może wrócić do pełnoetatowej pracy z prawie normalnym poziomem energii.",
+      "transplantTip1": "Zaplanuj stopniowy powrót do pracy",
+      "transplantTip2": "Możesz potrzebować wolnego na wizyty kontrolne",
+      "transplantTip3": "Wielu pracodawców oferuje elastyczne rozwiązania",
+      "hemodialysis": "Możliwe, ale wymagające. Sesje trwają 4-5 godzin trzy razy w tygodniu, plus czas regeneracji. Wieczorne/wczesne zmiany mogą pomóc.",
+      "hemodialysisTip1": "Omów elastyczne godziny z pracodawcą",
+      "hemodialysisTip2": "Wieczorne lub poranne terminy dializy",
+      "hemodialysisTip3": "Hemodializa domowa oferuje większą elastyczność",
+      "peritoneal": "APD w nocy oznacza, że dni są wolne na pracę. CAPD wymaga przerw na wymiany, ale wielu kontynuuje pracę.",
+      "peritonealTip1": "APD jest idealne dla pracowników pełnoetatowych",
+      "peritonealTip2": "Możesz robić wymiany CAPD w pracy",
+      "peritonealTip3": "Poziom energii często lepszy niż przy HD",
+      "conservative": "Zależy od objawów i energii. Wielu kontynuuje pracę w niepełnym wymiarze lub ze zmniejszonymi godzinami. Skupienie na jakości życia.",
+      "conservativeTip1": "Rozważ stopniowe zmniejszanie godzin",
+      "conservativeTip2": "Omów dostosowania z medycyną pracy",
+      "conservativeTip3": "Priorytetyzuj zajęcia, które mają największe znaczenie"
+    },
+    "liveAlone": {
+      "title": "Co jeśli mieszkam sam?",
+      "description": "Zrozum, które zabiegi dobrze działają dla osób żyjących samodzielnie",
+      "transplant": "Będziesz potrzebować wsparcia podczas rekonwalescencji (2-4 tygodnie), ale potem możesz żyć samodzielnie.",
+      "transplantTip1": "Zorganizuj pomoc na pierwsze tygodnie po operacji",
+      "transplantTip2": "Miej dostępne kontakty awaryjne",
+      "transplantTip3": "Ustaw przypomnienia o lekach",
+      "hemodialysis": "Zabieg odbywa się w ośrodku z profesjonalnym personelem. Nie wymaga domowej konfiguracji. Regularny kontakt z zespołem medycznym.",
+      "hemodialysisTip1": "Transport szpitalny może być dostępny",
+      "hemodialysisTip2": "Personel monitoruje Cię podczas zabiegu",
+      "hemodialysisTip3": "Wsparcie społeczne od innych pacjentów",
+      "peritoneal": "Wiele osób robi PD samodzielnie z powodzeniem. Szkolenie dobrze przygotowuje. Dostępna całodobowa pomoc telefoniczna.",
+      "peritonealTip1": "Dokładne szkolenie przed rozpoczęciem",
+      "peritonealTip2": "Regularne wizyty domowe pielęgniarek PD",
+      "peritonealTip3": "Całodobowa linia pomocy na nagłe przypadki",
+      "conservative": "Początkowo wykonalne samodzielnie. W miarę nasilania objawów możesz potrzebować większego wsparcia. Dostępne służby społeczne.",
+      "conservativeTip1": "Regularne kontakty z zespołem opieki",
+      "conservativeTip2": "Dostępne usługi wsparcia społecznego",
+      "conservativeTip3": "Zaplanuj z wyprzedzeniem przyszłe potrzeby opieki"
+    },
+    "family": {
+      "title": "Co jeśli mam małe dzieci?",
+      "description": "Rozważ, jak zabiegi wpływają na opiekę nad dziećmi i czas z rodziną",
+      "transplant": "Po rekonwalescencji możesz być w pełni zaangażowany w życie rodzinne. Najlepsza jakość życia dla aktywnego rodzicielstwa.",
+      "transplantTip1": "Zorganizuj opiekę nad dziećmi podczas rekonwalescencji",
+      "transplantTip2": "Możesz wrócić do normalnych zajęć rodzicielskich",
+      "transplantTip3": "Dobra energia na zajęcia rodzinne",
+      "hemodialysis": "Regularny czas poza domem na zabiegi. Zmęczenie po sesjach może wpływać na zajęcia rodzinne. Potrzebna opieka nad dziećmi podczas sesji.",
+      "hemodialysisTip1": "Zaplanuj sesje wokół godzin szkolnych",
+      "hemodialysisTip2": "Angażuj dzieci odpowiednio do wieku",
+      "hemodialysisTip3": "Zaplanuj czas rodzinny w dni bez dializy",
+      "peritoneal": "Zabieg domowy oznacza więcej czasu z rodziną. APD w nocy pozostawia dni wolne na opiekę nad dziećmi.",
+      "peritonealTip1": "APD odbywa się, gdy dzieci śpią",
+      "peritonealTip2": "Dni są wolne na wożenie do szkoły",
+      "peritonealTip3": "Dzieci mogą być bezpiecznie zaangażowane",
+      "conservative": "Brak harmonogramu zabiegów, ale poziom energii jest zmienny. Skupienie na jakościowym czasie z rodziną.",
+      "conservativeTip1": "Priorytetyzuj wyjątkowe chwile rodzinne",
+      "conservativeTip2": "Akceptuj pomoc w opiece nad dziećmi, gdy potrzebna",
+      "conservativeTip3": "Prowadź szczere rozmowy z dziećmi"
+    }
+  },
+  "treatment": {
+    "dayInLife": "Dzień z życia"
+  }
+}

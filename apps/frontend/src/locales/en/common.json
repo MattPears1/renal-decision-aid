@@ -323,7 +323,102 @@
     },
     "skipQuestion": "Skip this question",
     "viewResults": "View My Results",
-    "nextQuestion": "Next Question"
+    "nextQuestion": "Next Question",
+    "knowledge": {
+      "levels": {
+        "1": "I know very little",
+        "2": "I know a bit",
+        "3": "I have some knowledge",
+        "4": "I know quite a lot",
+        "5": "I am very well informed"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Learn the basics",
+          "description": "I want to understand what kidney disease means and the treatment options available"
+        },
+        "compare": {
+          "label": "Compare my options",
+          "description": "I already know the basics and want to compare different treatments"
+        },
+        "prepare": {
+          "label": "Prepare for a discussion",
+          "description": "I want to prepare questions and thoughts for my next appointment"
+        },
+        "support": {
+          "label": "Support someone else",
+          "description": "I am helping a family member or friend understand their options"
+        },
+        "notSure": {
+          "label": "I am not sure yet",
+          "description": "I just want to explore and see what information is available"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Visual diagrams and images",
+          "description": "Pictures, charts and diagrams help me understand"
+        },
+        "audio": {
+          "label": "Listening to information",
+          "description": "I prefer to hear information read aloud"
+        },
+        "reading": {
+          "label": "Reading text",
+          "description": "I like to read detailed written information"
+        },
+        "video": {
+          "label": "Watching videos",
+          "description": "Videos and animations work best for me"
+        },
+        "interactive": {
+          "label": "Interactive tools",
+          "description": "I learn by doing and exploring"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Very uncomfortable",
+        "2": "Somewhat uncomfortable",
+        "3": "Neutral",
+        "4": "Fairly comfortable",
+        "5": "Very comfortable"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Yes, I live with family or a partner who can help",
+        "carers": "Yes, I have professional carers who help me",
+        "familyNearby": "Yes, family live nearby and can visit",
+        "limitedSupport": "I have limited support available",
+        "preferNotSay": "I prefer not to say"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "House with plenty of space",
+        "homeLimited": "House with limited storage space",
+        "flat": "Flat or apartment",
+        "supported": "Supported or care accommodation"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Spending time with family",
+        "independence": "Maintaining my independence",
+        "minimiseHospital": "Minimising time in hospital",
+        "routine": "Keeping a regular routine",
+        "control": "Having control over my treatment",
+        "longevity": "Living as long as possible",
+        "quality": "Quality of life day to day",
+        "travel": "Being able to travel"
+      }
+    }
   },
   "hub": {
     "title": "Your Personalised Information",

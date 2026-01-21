@@ -348,11 +348,13 @@ export default function ModelViewerPage() {
           </div>
 
           {/* 3D Canvas - responsive height with touch gesture support */}
-          <div className="h-[350px] sm:h-[450px] md:h-[600px] bg-gradient-to-b from-slate-100 to-slate-200 touch-none">
+          <div
+            className="h-[350px] sm:h-[450px] md:h-[600px] bg-gradient-to-b from-slate-100 to-slate-200"
+            style={{ touchAction: 'none' }}
+          >
             <Canvas
               camera={{ position: [0, 0, 5], fov: 45 }}
               gl={{ antialias: true, alpha: true }}
-              style={{ touchAction: 'none' }} // Ensures touch events work for 3D controls
             >
               <Suspense fallback={<LoadingSpinner t={t} />}>
                 {/* Lighting */}
@@ -398,11 +400,14 @@ export default function ModelViewerPage() {
                   minPolarAngle={0}
                   maxPolarAngle={Math.PI}
                   touches={{
-                    ONE: 2, // THREE.TOUCH.ROTATE - single finger rotates
-                    TWO: 1, // THREE.TOUCH.DOLLY_PAN - two fingers zoom/pan
+                    ONE: THREE.TOUCH.ROTATE, // Single finger rotates the model
+                    TWO: THREE.TOUCH.DOLLY_PAN, // Two fingers zoom and pan
                   }}
-                  rotateSpeed={0.8}
+                  rotateSpeed={1.0}
                   zoomSpeed={1.2}
+                  panSpeed={0.8}
+                  enableDamping={true}
+                  dampingFactor={0.05}
                 />
               </Suspense>
             </Canvas>
