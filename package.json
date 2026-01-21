@@ -28,7 +28,7 @@
     "build:frontend": "npm run build --workspace=@renal-decision-aid/frontend",
     "build:backend": "npm run build --workspace=@nhs-renal-decision-aid/backend",
     "start": "npm run start --workspace=@nhs-renal-decision-aid/backend",
-    "heroku-postbuild": "npm run build:backend",
+    "heroku-postbuild": "npm run build:frontend && npm run build:backend",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
