@@ -321,7 +321,141 @@
    ========================================================================== */
 
 @layer utilities {
-  /* Prevent horizontal overflow utility */
+  /* ==========================================================================
+     Touch Target & Tap Feedback Utilities (WCAG 2.2 AA / AAA)
+     ========================================================================== */
+
+  /* Minimum touch target size (WCAG 2.2 AA: 44x44px) */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Enhanced touch target size for elderly users (preferred: 48x48px) */
+  .touch-target-lg {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  /* Maximum touch target for critical actions (56x56px) */
+  .touch-target-xl {
+    min-width: 56px;
+    min-height: 56px;
+  }
+
+  /* Touch manipulation - removes 300ms delay on mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Touch feedback - visual tap response */
+  .tap-highlight {
+    -webkit-tap-highlight-color: rgba(0, 94, 184, 0.2);
+  }
+
+  .tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Active state for instant touch feedback */
+  .active-scale {
+    @apply active:scale-[0.98] transition-transform duration-75;
+  }
+
+  .active-opacity {
+    @apply active:opacity-80 transition-opacity duration-75;
+  }
+
+  /* ==========================================================================
+     Skeleton Loading Animations
+     ========================================================================== */
+
+  @keyframes skeleton-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes skeleton-wave {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .skeleton {
+    @apply bg-nhs-pale-grey rounded animate-pulse;
+  }
+
+  .skeleton-text {
+    @apply bg-nhs-pale-grey rounded h-4 animate-pulse;
+  }
+
+  .skeleton-text-lg {
+    @apply bg-nhs-pale-grey rounded h-6 animate-pulse;
+  }
+
+  .skeleton-text-xl {
+    @apply bg-nhs-pale-grey rounded h-8 animate-pulse;
+  }
+
+  .skeleton-avatar {
+    @apply bg-nhs-pale-grey rounded-full w-10 h-10 animate-pulse;
+  }
+
+  .skeleton-card {
+    @apply bg-nhs-pale-grey rounded-lg animate-pulse;
+  }
+
+  .skeleton-wave {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-wave::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: skeleton-wave 1.5s ease-in-out infinite;
+  }
+
+  /* ==========================================================================
+     Focus Visible Styles (Enhanced for Accessibility)
+     ========================================================================== */
+
+  /* Strong focus indicator for keyboard users */
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-focus focus-visible:ring-offset-2;
+  }
+
+  /* NHS-style focus with yellow background */
+  .focus-visible-nhs {
+    @apply focus-visible:outline-none focus-visible:bg-focus focus-visible:text-text-primary focus-visible:ring-[3px] focus-visible:ring-focus;
+  }
+
+  /* Focus for dark backgrounds */
+  .focus-visible-dark {
+    @apply focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-nhs-blue;
+  }
+
+  /* ==========================================================================
+     Prevent horizontal overflow utility
+     ========================================================================== */
+
   .no-overflow-x {
     overflow-x: hidden;
     max-width: 100vw;
@@ -852,15 +986,181 @@ body {
    ========================================================================== */
 
 @media print {
+  /* Base print styles */
   body {
     @apply bg-white text-black;
+    font-size: 12pt;
+    line-height: 1.5;
   }
 
-  .no-print {
+  /* Hide non-essential elements */
+  .no-print,
+  .print\\:hidden,
+  header,
+  footer,
+  nav,
+  .skip-link,
+  button:not([type="submit"]),
+  [role="banner"],
+  [role="contentinfo"],
+  .fixed,
+  .sticky {
     display: none !important;
   }
 
+  /* Show elements only for print */
+  .print\\:block {
+    display: block !important;
+  }
+
+  /* Ensure content is visible */
+  main {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Link URLs */
   a[href]::after {
     content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
   }
+
+  /* Don't show URLs for internal links */
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Page breaks */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  img, figure, table {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure colors print correctly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Borders for cards */
+  .card,
+  [class*="rounded"],
+  [class*="border"] {
+    border: 1px solid #ccc !important;
+  }
+
+  /* Remove shadows */
+  [class*="shadow"] {
+    box-shadow: none !important;
+  }
+
+  /* Print header/footer margins */
+  @page {
+    margin: 2cm 1.5cm;
+  }
+
+  @page :first {
+    margin-top: 1cm;
+  }
+}
+
+/* ==========================================================================
+   Back to Top Button Styles
+   ========================================================================== */
+
+.back-to-top {
+  @apply fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-[250]
+         flex items-center justify-center
+         w-12 h-12 sm:w-14 sm:h-14
+         bg-nhs-blue text-white
+         rounded-full shadow-lg
+         transition-all duration-300 ease-out
+         hover:bg-nhs-blue-dark hover:shadow-xl hover:scale-110
+         focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2
+         touch-manipulation;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   Sticky Progress Indicator
+   ========================================================================== */
+
+.sticky-progress {
+  @apply fixed top-0 left-0 right-0 z-[450]
+         h-1 sm:h-1.5
+         bg-nhs-pale-grey;
+}
+
+.sticky-progress-fill {
+  @apply h-full bg-gradient-to-r from-nhs-blue to-nhs-aqua-green
+         transition-all duration-300 ease-out;
+}
+
+/* ==========================================================================
+   Enhanced Typography for Elderly Users
+   ========================================================================== */
+
+/* Larger base text for better readability */
+.text-elderly {
+  font-size: 1.125rem; /* 18px base */
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.text-elderly-lg {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.6;
+}
+
+/* High contrast text */
+.text-high-contrast {
+  color: #000000;
+  text-shadow: none;
+}
+
+/* ==========================================================================
+   Enhanced Interactive States
+   ========================================================================== */
+
+/* Button hover/active states with better feedback */
+.btn-interactive {
+  @apply relative overflow-hidden transition-all duration-200;
+}
+
+.btn-interactive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-interactive:hover::after {
+  opacity: 0.1;
+}
+
+.btn-interactive:active::after {
+  opacity: 0.2;
 }

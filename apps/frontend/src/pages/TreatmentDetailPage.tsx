@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
+import TreatmentTimeline from '@/components/TreatmentTimeline';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
 interface TreatmentData {
@@ -430,6 +431,20 @@ export default function TreatmentDetailPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Day in the Life Timeline */}
+        <section className="mb-12" aria-labelledby="timeline-heading">
+          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
+            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <h2 id="timeline-heading" className="text-2xl font-bold text-text-primary">
+              {t('treatment.dayInLife', 'A Day in the Life')}
+            </h2>
+          </header>
+          <TreatmentTimeline treatmentType={treatment.id} />
         </section>
 
         {/* Benefits Section */}

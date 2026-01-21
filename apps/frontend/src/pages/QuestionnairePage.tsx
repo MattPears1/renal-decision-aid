@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
+import StickyProgressIndicator from '@/components/StickyProgressIndicator';
 
 interface QuestionOptionKey {
   value: string;
@@ -277,6 +278,13 @@ export default function QuestionnairePage() {
   // Question Screen
   return (
     <main className="min-h-screen bg-bg-page">
+      {/* Sticky Progress Indicator - shows on scroll */}
+      <StickyProgressIndicator
+        current={currentQuestion + 1}
+        total={totalQuestions}
+        showStepCount={true}
+      />
+
       <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 flex flex-col min-h-[calc(100vh-200px)]">
 
         {/* Progress Bar */}

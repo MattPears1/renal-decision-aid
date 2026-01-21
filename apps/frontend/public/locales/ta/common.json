@@ -67,39 +67,39 @@
     "subtitle": "NHS சிறுநீரக சேவைகள்",
     "description": "இந்த கருவி உங்கள் சிறுநீரக சிகிச்சை விருப்பங்களைப் புரிந்துகொள்ளவும், உங்களுக்கு மிக முக்கியமானது என்ன என்பதைப் பற்றி சிந்திக்கவும் உதவும். உங்கள் நேரத்தை எடுத்துக்கொள்ளுங்கள் - சரியான அல்லது தவறான பதில்கள் இல்லை.",
     "startButton": "உங்கள் பயணத்தைத் தொடங்குங்கள்",
-    "startButtonAriaLabel": "[EN] Start your kidney treatment decision journey",
+    "startButtonAriaLabel": "உங்கள் சிறுநீரக சிகிச்சை முடிவு பயணத்தைத் தொடங்குங்கள்",
     "learnMore": "இந்த கருவியைப் பற்றி மேலும் அறியுங்கள்",
-    "heroAriaLabel": "[EN] Welcome section",
-    "featuresHeading": "[EN] How This Tool Helps You",
+    "heroAriaLabel": "வரவேற்புப் பகுதி",
+    "featuresHeading": "இந்த கருவி உங்களுக்கு எவ்வாறு உதவுகிறது",
     "features": {
       "time": {
-        "title": "[EN] Takes About 15 Minutes",
-        "description": "[EN] Complete at your own pace. You can take breaks whenever you need and return to where you left off."
+        "title": "சுமார் 15 நிமிடங்கள் ஆகும்",
+        "description": "உங்கள் வேகத்தில் முடிக்கவும். உங்களுக்கு தேவைப்படும்போது இடைவெளி எடுத்து, நிறுத்திய இடத்திலிருந்து தொடரலாம்."
       },
       "privacy": {
-        "title": "[EN] Your Privacy Protected",
-        "description": "[EN] No personal information is stored. Your answers help personalise the tool during this session only."
+        "title": "உங்கள் தனியுரிமை பாதுகாக்கப்படுகிறது",
+        "description": "தனிப்பட்ட தகவல்கள் சேமிக்கப்படுவதில்லை. உங்கள் பதில்கள் இந்த அமர்வில் மட்டுமே கருவியை தனிப்பயனாக்க உதவுகின்றன."
       },
       "devices": {
-        "title": "[EN] Works on All Devices",
-        "description": "[EN] Use on your phone, tablet, or computer. The tool adapts to your screen size automatically."
+        "title": "எல்லா சாதனங்களிலும் செயல்படுகிறது",
+        "description": "உங்கள் தொலைபேசி, டேப்லெட் அல்லது கணினியில் பயன்படுத்துங்கள். கருவி உங்கள் திரை அளவுக்கு தானாக மாறுகிறது."
       }
     },
-    "aboutHeading": "[EN] What This Tool Does",
+    "aboutHeading": "இந்த கருவி என்ன செய்கிறது",
     "about": {
-      "paragraph1": "[EN] This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
-      "paragraph2": "[EN] You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
-      "paragraph3": "[EN] This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you."
+      "paragraph1": "இந்த முடிவெடுக்கும் உதவிக்கருவி சிறுநீரக செயலிழப்புக்கான வெவ்வேறு சிகிச்சை விருப்பங்களை ஆராய உதவும். ஒவ்வொரு சிகிச்சையையும் உங்கள் வேகத்தில் கற்றுக்கொள்ளலாம், உங்களுக்கு மிக முக்கியமானது என்ன என்பதைப் பற்றி சிந்திக்கலாம், உங்கள் மருத்துவர் அல்லது செவிலியருடன் பகிர்வதற்கான சுருக்கத்தை உருவாக்கலாம்.",
+      "paragraph2": "உங்கள் நிலை பற்றி சில எளிய கேள்விகளுக்கு பதிலளிப்பீர்கள், பின்னர் உங்களுக்கு பொருத்தமான சிகிச்சைகளை ஆராயலாம். உங்கள் தகவல் தனிப்பட்டதாக இருக்கும், உலாவியை மூடிய பிறகு சேமிக்கப்படாது.",
+      "paragraph3": "இந்த கருவி உங்கள் சுகாதார குழுவின் மருத்துவ ஆலோசனைக்கு மாற்றாக இல்லை. உங்கள் விருப்பங்களை விவாதிக்கும்போது அதிக தகவலறிந்தவராகவும் நம்பிக்கையாகவும் உணர உதவும் வகையில் வடிவமைக்கப்பட்டுள்ளது. உங்கள் சிறுநீரக குழு உங்கள் பராமரிப்பில் நிபுணர்கள், உங்களுக்கு சரியான முடிவை எடுக்க உதவுவார்கள்."
     },
-    "trustAriaLabel": "[EN] Trust and safety information",
+    "trustAriaLabel": "நம்பகத்தன்மை மற்றும் பாதுகாப்பு தகவல்",
     "trust": {
-      "evidenceBased": "[EN] Evidence-based information",
-      "languages": "[EN] Available in 7 languages",
-      "accessible": "[EN] Accessible for all users",
-      "noAccount": "[EN] No account required"
+      "evidenceBased": "ஆதாரம் அடிப்படையிலான தகவல்",
+      "languages": "7 மொழிகளில் கிடைக்கிறது",
+      "accessible": "எல்லா பயனர்களுக்கும் அணுகக்கூடியது",
+      "noAccount": "கணக்கு தேவையில்லை"
     },
-    "ctaHeading": "[EN] Ready to Begin?",
-    "ctaDescription": "[EN] Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
+    "ctaHeading": "தொடங்க தயாரா?",
+    "ctaDescription": "உங்கள் சிறுநீரக சிகிச்சை விருப்பங்களைப் புரிந்துகொள்வதில் முதல் அடியை எடுங்கள். இப்போது தொடங்கலாம், இடைவெளி தேவைப்பட்டால் பின்னர் திரும்பி வரலாம்."
   },
   "language": {
     "title": "உங்கள் மொழியைத் தேர்வுசெய்யுங்கள்",
@@ -108,191 +108,191 @@
     "currentLanguage": "தற்போதைய மொழி"
   },
   "privacy": {
-    "pageAriaLabel": "[EN] Privacy information",
-    "progressLabel": "[EN] Setup progress: 30%",
-    "progressText": "[EN] Step 2 of 4: Privacy Information",
+    "pageAriaLabel": "தனியுரிமை தகவல்",
+    "progressLabel": "அமைப்பு முன்னேற்றம்: 30%",
+    "progressText": "படி 2 இல் 4: தனியுரிமை தகவல்",
     "title": "உங்கள் தனியுரிமை & தகவல்",
-    "subtitle": "[EN] Before you begin, we want you to understand how this tool handles your information.",
-    "listenToPage": "[EN] Listen to this page",
-    "stopReading": "[EN] Stop reading",
+    "subtitle": "தொடங்குவதற்கு முன், இந்த கருவி உங்கள் தகவலை எவ்வாறு கையாளுகிறது என்பதை புரிந்துகொள்ள வேண்டும்.",
+    "listenToPage": "இந்த பக்கத்தைக் கேளுங்கள்",
+    "stopReading": "படிப்பதை நிறுத்து",
     "sections": {
       "privacy": {
         "title": "உங்கள் தகவலை நாங்கள் எவ்வாறு பாதுகாக்கிறோம்",
         "content": "உங்கள் பதில்கள் பாதுகாப்பாக செயலாக்கப்படுகின்றன, நிரந்தரமாக சேமிக்கப்படுவதில்லை. இந்த கருவி உங்களை அடையாளம் காணக்கூடிய தனிப்பட்ட சுகாதார தகவல்களை சேகரிக்காது. இந்த கருவியை மூடும்போது உங்கள் அமர்வு தரவு தானாகவே நீக்கப்படும்.",
-        "p1": "[EN] This tool uses session-only storage. Any information you enter, including your answers to questions and treatment preferences, is only kept while you are using the tool.",
-        "p2": "[EN] When you close your browser or after 15 minutes of inactivity, all your information is automatically deleted. We do not save anything about you.",
-        "p3": "[EN] We collect anonymous information about how people use this tool to help us improve it. This cannot identify you personally."
+        "p1": "இந்த கருவி அமர்வு-மட்டும் சேமிப்பைப் பயன்படுத்துகிறது. கேள்விகளுக்கான உங்கள் பதில்கள் மற்றும் சிகிச்சை விருப்பங்கள் உட்பட நீங்கள் உள்ளிடும் எந்த தகவலும், கருவியைப் பயன்படுத்தும்போது மட்டுமே வைத்திருக்கப்படும்.",
+        "p2": "உங்கள் உலாவியை மூடும்போது அல்லது 15 நிமிட செயலற்ற நிலைக்குப் பிறகு, உங்கள் எல்லா தகவல்களும் தானாகவே நீக்கப்படும். உங்களைப் பற்றி எதையும் சேமிப்பதில்லை.",
+        "p3": "இந்த கருவியை மேம்படுத்த மக்கள் எவ்வாறு பயன்படுத்துகிறார்கள் என்பதைப் பற்றிய அநாமதேய தகவல்களை சேகரிக்கிறோம். இது உங்களை தனிப்பட்ட முறையில் அடையாளம் காண முடியாது."
       },
       "ai": {
         "title": "இந்த கருவி எவ்வாறு செயல்படுகிறது",
         "content": "இந்த முடிவெடுக்கும் உதவிக்கருவி உங்கள் பதில்களின் அடிப்படையில் தனிப்பயனாக்கப்பட்ட தகவல்களை வழங்க தொழில்நுட்பத்தைப் பயன்படுத்துகிறது. வழங்கப்படும் தகவல்கள் NHS மருத்துவ வழிகாட்டுதல்கள் மற்றும் சான்று அடிப்படையிலான ஆராய்ச்சியிலிருந்து பெறப்பட்டவை. இந்த கருவி உங்கள் சிறுநீரக பராமரிப்பு குழுவுடனான உரையாடல்களை ஆதரிக்கிறது ஆனால் அதற்கு மாற்றாக இல்லை.",
-        "p1": "[EN] This tool includes an AI assistant that can answer general questions about kidney treatments. The AI provides information only - it cannot give you medical advice specific to your situation.",
-        "p2": "[EN] The AI may sometimes make mistakes or provide incomplete information. Always discuss important decisions with your kidney team who know your full medical history.",
-        "p3": "[EN] This tool does not replace advice from your healthcare team. It is designed to help you feel more informed when discussing your options with your doctors and nurses."
+        "p1": "இந்த கருவியில் சிறுநீரக சிகிச்சைகளைப் பற்றிய பொதுவான கேள்விகளுக்கு பதிலளிக்கக்கூடிய AI உதவியாளர் உள்ளது. AI தகவல்களை மட்டுமே வழங்குகிறது - உங்கள் நிலைமைக்கு குறிப்பிட்ட மருத்துவ ஆலோசனை வழங்க முடியாது.",
+        "p2": "AI சில நேரங்களில் தவறுகள் செய்யலாம் அல்லது முழுமையற்ற தகவல்களை வழங்கலாம். உங்கள் முழு மருத்துவ வரலாற்றை அறிந்த உங்கள் சிறுநீரக குழுவுடன் முக்கியமான முடிவுகளை எப்போதும் விவாதிக்கவும்.",
+        "p3": "இந்த கருவி உங்கள் சுகாதார குழுவின் ஆலோசனைக்கு மாற்றாக இல்லை. உங்கள் மருத்துவர்கள் மற்றும் செவிலியர்களுடன் உங்கள் விருப்பங்களை விவாதிக்கும்போது அதிக தகவலறிந்தவராக உணர உதவும் வகையில் வடிவமைக்கப்பட்டுள்ளது."
       },
       "medical": {
         "title": "முக்கியமான மருத்துவ தகவல்",
         "content": "இந்த கருவி சிறுநீரக சிகிச்சை விருப்பங்களைப் பற்றிய பொதுவான தகவல்களை வழங்குகிறது. இது தொழில்முறை மருத்துவ ஆலோசனை, நோயறிதல் அல்லது சிகிச்சைக்கு மாற்றாக இல்லை. உங்கள் சிகிச்சையைப் பற்றிய எந்த முடிவுகளையும் எடுப்பதற்கு முன், எப்போதும் உங்கள் சிறுநீரக நிபுணர் அல்லது சுகாதார குழுவை கலந்தாலோசிக்கவும். உடனடி சுகாதார கவலைகள் இருந்தால், உங்கள் GP-ஐ தொடர்பு கொள்ளவும் அல்லது NHS 111-ஐ அழைக்கவும்."
       },
       "pii": {
-        "title": "[EN] Please Do Not Share Personal Details",
-        "intro": "[EN] To protect your privacy, please do not enter any personal information that could identify you when using this tool, especially in the chat feature.",
-        "listLabel": "[EN] Information you should not share",
+        "title": "தயவுசெய்து தனிப்பட்ட விவரங்களைப் பகிர வேண்டாம்",
+        "intro": "உங்கள் தனியுரிமையைப் பாதுகாக்க, இந்த கருவியைப் பயன்படுத்தும்போது, குறிப்பாக அரட்டை அம்சத்தில், உங்களை அடையாளம் காணக்கூடிய தனிப்பட்ட தகவல்களை உள்ளிட வேண்டாம்.",
+        "listLabel": "நீங்கள் பகிரக்கூடாத தகவல்கள்",
         "items": {
-          "nhsNumber": "[EN] Your NHS number",
-          "fullName": "[EN] Your full name",
-          "address": "[EN] Your home address",
-          "dob": "[EN] Your date of birth",
-          "phone": "[EN] Phone numbers",
-          "email": "[EN] Email addresses"
+          "nhsNumber": "உங்கள் NHS எண்",
+          "fullName": "உங்கள் முழு பெயர்",
+          "address": "உங்கள் வீட்டு முகவரி",
+          "dob": "உங்கள் பிறந்த தேதி",
+          "phone": "தொலைபேசி எண்கள்",
+          "email": "மின்னஞ்சல் முகவரிகள்"
         },
-        "outro": "[EN] You can still tell us about your situation in general terms - for example, your living situation or what matters most to you - without sharing identifying details."
+        "outro": "அடையாளம் காணும் விவரங்களைப் பகிராமல், உங்கள் நிலையைப் பற்றி பொதுவான வார்த்தைகளில் சொல்லலாம் - உதாரணமாக, உங்கள் வாழ்க்கை நிலை அல்லது உங்களுக்கு மிக முக்கியமானது என்ன."
       }
     },
-    "summaryAriaLabel": "[EN] Key points summary",
+    "summaryAriaLabel": "முக்கிய புள்ளிகள் சுருக்கம்",
     "summary": {
-      "title": "[EN] In Summary",
-      "notSaved": "[EN] Your answers are not saved",
-      "noData": "[EN] No personal data is collected",
-      "leave": "[EN] You can leave at any time"
+      "title": "சுருக்கமாக",
+      "notSaved": "உங்கள் பதில்கள் சேமிக்கப்படுவதில்லை",
+      "noData": "தனிப்பட்ட தரவு சேகரிக்கப்படுவதில்லை",
+      "leave": "எந்த நேரத்திலும் வெளியேறலாம்"
     },
     "consent": {
-      "title": "[EN] Please confirm to continue",
-      "understand": "[EN] I understand that my information is not saved after this session and I will not share personal identifying information",
-      "analytics": "[EN] I agree to anonymous analytics being collected to help improve this tool (optional)",
-      "error": "[EN] Please confirm you understand the privacy information before continuing"
+      "title": "தொடர உறுதிப்படுத்துங்கள்",
+      "understand": "இந்த அமர்வுக்குப் பிறகு என் தகவல் சேமிக்கப்படாது என்பதையும், தனிப்பட்ட அடையாளத் தகவல்களைப் பகிர மாட்டேன் என்பதையும் புரிந்துகொள்கிறேன்",
+      "analytics": "இந்த கருவியை மேம்படுத்த அநாமதேய பகுப்பாய்வுகள் சேகரிக்க ஒப்புக்கொள்கிறேன் (விருப்பமானது)",
+      "error": "தொடர்வதற்கு முன் தனியுரிமை தகவலைப் புரிந்துகொண்டதை உறுதிப்படுத்துங்கள்"
     },
-    "continueButton": "[EN] I Understand, Continue",
-    "continueAriaLabel": "[EN] Continue to journey stage selection",
-    "readFullPolicy": "[EN] Read the full NHS Privacy Policy"
+    "continueButton": "புரிந்தது, தொடர்க",
+    "continueAriaLabel": "பயண நிலை தேர்வுக்குத் தொடர்க",
+    "readFullPolicy": "முழு NHS தனியுரிமைக் கொள்கையைப் படியுங்கள்"
   },
   "header": {
-    "nhs": "[EN] NHS",
-    "demo": "[EN] Demo",
-    "serviceName": "[EN] Kidney Treatment Decision Aid",
-    "tagline": "[EN] Helping you make informed choices",
-    "homeAriaLabel": "[EN] NHS Kidney Treatment Decision Aid - Home"
+    "nhs": "NHS",
+    "demo": "டெமோ",
+    "serviceName": "சிறுநீரக சிகிச்சை முடிவு உதவி",
+    "tagline": "தகவலறிந்த தேர்வுகள் செய்ய உதவுகிறது",
+    "homeAriaLabel": "NHS சிறுநீரக சிகிச்சை முடிவு உதவி - முகப்பு"
   },
   "progress": {
-    "language": "[EN] Language",
-    "privacy": "[EN] Privacy",
-    "yourJourney": "[EN] Your Journey",
-    "aboutYou": "[EN] About You",
-    "yourOptions": "[EN] Your Options",
-    "ariaLabel": "[EN] Progress through decision aid",
-    "stepOfTotal": "[EN] Step {{current}} of {{total}}",
-    "percentComplete": "[EN] {{percentage}}% complete",
-    "ariaProgressLabel": "[EN] Progress: {{current}} of {{total}} steps completed"
+    "language": "மொழி",
+    "privacy": "தனியுரிமை",
+    "yourJourney": "உங்கள் பயணம்",
+    "aboutYou": "உங்களைப் பற்றி",
+    "yourOptions": "உங்கள் விருப்பங்கள்",
+    "ariaLabel": "முடிவு உதவி மூலம் முன்னேற்றம்",
+    "stepOfTotal": "படி {{current}} இல் {{total}}",
+    "percentComplete": "{{percentage}}% முடிந்தது",
+    "ariaProgressLabel": "முன்னேற்றம்: {{total}} படிகளில் {{current}} முடிந்தது"
   },
   "journey": {
     "title": "உங்கள் சிறுநீரக பராமரிப்பு பயணத்தில் நீங்கள் எங்கே இருக்கிறீர்கள்?",
-    "subtitle": "[EN] Select the option that best describes your situation",
+    "subtitle": "உங்கள் நிலையை சிறப்பாக விவரிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
     "instruction": "உங்கள் தற்போதைய நிலையை சிறப்பாக விவரிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
-    "intro": "[EN] Everyone's kidney journey is different. To help us show you the most relevant information, please tell us where you are right now. There are no right or wrong answers.",
-    "error": "[EN] Please select an option that describes your situation. If none of these fit, select \"I am supporting a family member or friend\" to continue.",
-    "formLabel": "[EN] Journey stage options",
-    "legendLabel": "[EN] Select where you are in your kidney journey",
-    "radioGroupLabel": "[EN] Journey stage options",
-    "listenToQuestion": "[EN] Listen to this question",
-    "audioText": "[EN] Where are you in your journey? Select the option that best describes your situation.",
-    "reassurance": "[EN] Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.",
-    "needHelp": "[EN] I need help choosing",
+    "intro": "ஒவ்வொருவரின் சிறுநீரக பயணமும் வேறுபட்டது. மிகவும் பொருத்தமான தகவலைக் காட்ட, நீங்கள் இப்போது எங்கே இருக்கிறீர்கள் என்று சொல்லுங்கள். சரியான அல்லது தவறான பதில்கள் இல்லை.",
+    "error": "உங்கள் நிலையை விவரிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும். இவை எதுவும் பொருந்தவில்லை என்றால், தொடர \"குடும்பத்தினர் அல்லது நண்பருக்கு ஆதரவளிக்கிறேன்\" என்பதைத் தேர்ந்தெடுக்கவும்.",
+    "formLabel": "பயண நிலை விருப்பங்கள்",
+    "legendLabel": "உங்கள் சிறுநீரக பயணத்தில் எங்கே இருக்கிறீர்கள் என்பதைத் தேர்ந்தெடுக்கவும்",
+    "radioGroupLabel": "பயண நிலை விருப்பங்கள்",
+    "listenToQuestion": "இந்த கேள்வியைக் கேளுங்கள்",
+    "audioText": "உங்கள் பயணத்தில் எங்கே இருக்கிறீர்கள்? உங்கள் நிலையை சிறப்பாக விவரிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும்.",
+    "reassurance": "எந்த விருப்பம் சிறந்தது என்று உறுதியாகத் தெரியவில்லை என்றால் கவலை வேண்டாம். எல்லா சிகிச்சை விருப்பங்களையும் பின்னர் ஆராயலாம், உங்கள் சிறுநீரக குழு உங்கள் நிலையை தெளிவுபடுத்த உதவும். உங்கள் தேர்வு மிகவும் பொருத்தமான தகவலை முதலில் காட்ட உதவுகிறது.",
+    "needHelp": "தேர்வு செய்ய உதவி தேவை",
     "stages": {
       "suspected": {
-        "title": "[EN] I think I may have kidney disease",
-        "description": "[EN] You are concerned about your kidney health and want to learn more about what kidney disease means."
+        "title": "எனக்கு சிறுநீரக நோய் இருக்கலாம் என்று நினைக்கிறேன்",
+        "description": "உங்கள் சிறுநீரக ஆரோக்கியம் பற்றி கவலைப்படுகிறீர்கள், சிறுநீரக நோய் என்றால் என்ன என்பதைப் பற்றி மேலும் அறிய விரும்புகிறீர்கள்."
       },
       "earlyDiagnosis": {
-        "title": "[EN] I've just been diagnosed - early stage CKD",
-        "description": "[EN] You have recently learned about your kidney condition and want to understand what this means for you."
+        "title": "சமீபத்தில் கண்டறியப்பட்டேன் - ஆரம்ப நிலை CKD",
+        "description": "உங்கள் சிறுநீரக நிலையைப் பற்றி சமீபத்தில் அறிந்தீர்கள், இது உங்களுக்கு என்ன அர்த்தம் என்பதைப் புரிந்துகொள்ள விரும்புகிறீர்கள்."
       },
       "lateDiagnosis": {
-        "title": "[EN] I've been diagnosed - late stage CKD",
-        "description": "[EN] Your kidney function has declined significantly and you may need to think about treatment options soon."
+        "title": "கண்டறியப்பட்டேன் - தாமதமான நிலை CKD",
+        "description": "உங்கள் சிறுநீரக செயல்பாடு கணிசமாக குறைந்துள்ளது, விரைவில் சிகிச்சை விருப்பங்களைப் பற்றி சிந்திக்க வேண்டியிருக்கலாம்."
       },
       "choosingTreatment": {
-        "title": "[EN] I need to choose a treatment soon",
-        "description": "[EN] Your kidney team has told you that you will need to start treatment in the coming months and you want to learn about your options."
+        "title": "விரைவில் சிகிச்சையைத் தேர்வு செய்ய வேண்டும்",
+        "description": "வரும் மாதங்களில் சிகிச்சையைத் தொடங்க வேண்டும் என்று உங்கள் சிறுநீரக குழு சொன்னது, உங்கள் விருப்பங்களைப் பற்றி அறிய விரும்புகிறீர்கள்."
       },
       "transplantPending": {
-        "title": "[EN] I'm due to have a transplant - want to learn more",
-        "description": "[EN] You are on the transplant list or have a living donor lined up and want to know more about what to expect."
+        "title": "மாற்று அறுவை சிகிச்சை செய்யப்போகிறேன் - மேலும் அறிய விரும்புகிறேன்",
+        "description": "மாற்று அறுவை சிகிச்சை பட்டியலில் உள்ளீர்கள் அல்லது உயிருள்ள நன்கொடையாளர் இருக்கிறார், என்ன எதிர்பார்க்கலாம் என்பதைப் பற்றி மேலும் அறிய விரும்புகிறீர்கள்."
       },
       "dialysisPending": {
-        "title": "[EN] I'm due to start dialysis - want to learn more",
-        "description": "[EN] You will be starting dialysis treatment soon and want to understand the different types and what daily life will be like."
+        "title": "டயாலிசிஸ் தொடங்கப்போகிறேன் - மேலும் அறிய விரும்புகிறேன்",
+        "description": "விரைவில் டயாலிசிஸ் சிகிச்சையைத் தொடங்குவீர்கள், வெவ்வேறு வகைகள் மற்றும் தினசரி வாழ்க்கை எப்படி இருக்கும் என்பதைப் புரிந்துகொள்ள விரும்புகிறீர்கள்."
       },
       "supporting": {
-        "title": "[EN] I'm supporting a family member or friend",
-        "description": "[EN] Someone close to you has kidney disease and you want to understand their options to help support them."
+        "title": "குடும்பத்தினர் அல்லது நண்பருக்கு ஆதரவளிக்கிறேன்",
+        "description": "உங்களுக்கு நெருக்கமான ஒருவருக்கு சிறுநீரக நோய் உள்ளது, அவர்களுக்கு ஆதரவளிக்க அவர்களின் விருப்பங்களைப் புரிந்துகொள்ள விரும்புகிறீர்கள்."
       }
     },
     "helpModal": {
-      "title": "[EN] Need Help Choosing?",
-      "intro": "[EN] It is perfectly normal to feel unsure about which stage describes you best. Here are some tips:",
-      "tip1Title": "[EN] Think about your most recent appointment",
-      "tip1Text": "[EN] What did your kidney team tell you about your kidney function and any next steps?",
-      "tip2Title": "[EN] Consider what brought you here",
-      "tip2Text": "[EN] Were you given this tool by a doctor or nurse? They may have suggested which stage applies to you.",
-      "tip3Title": "[EN] If you are still unsure",
-      "tip3Text": "[EN] Choose the option that feels closest to your situation. You will still be able to explore all the information in this tool, regardless of which option you select.",
-      "note": "[EN] Your kidney team are the experts in your care. If you have questions about your kidney health, please contact them directly.",
-      "understand": "[EN] I understand"
+      "title": "தேர்வு செய்ய உதவி தேவையா?",
+      "intro": "எந்த நிலை உங்களை சிறப்பாக விவரிக்கிறது என்று உறுதியாகத் தெரியாமல் இருப்பது முற்றிலும் இயல்பானது. சில குறிப்புகள் இங்கே:",
+      "tip1Title": "உங்கள் சமீபத்திய சந்திப்பைப் பற்றி சிந்தியுங்கள்",
+      "tip1Text": "உங்கள் சிறுநீரக குழு உங்கள் சிறுநீரக செயல்பாடு மற்றும் அடுத்த படிகளைப் பற்றி என்ன சொன்னார்கள்?",
+      "tip2Title": "இங்கு வந்ததை பற்றி யோசியுங்கள்",
+      "tip2Text": "மருத்துவர் அல்லது செவிலியர் இந்த கருவியை கொடுத்தார்களா? எந்த நிலை உங்களுக்கு பொருந்தும் என்று அவர்கள் பரிந்துரைத்திருக்கலாம்.",
+      "tip3Title": "இன்னும் உறுதியாகத் தெரியவில்லை என்றால்",
+      "tip3Text": "உங்கள் நிலைக்கு நெருக்கமாக உணரும் விருப்பத்தைத் தேர்ந்தெடுக்கவும். எந்த விருப்பத்தைத் தேர்ந்தெடுத்தாலும், இந்த கருவியில் உள்ள எல்லா தகவல்களையும் ஆராயலாம்.",
+      "note": "உங்கள் சிறுநீரக குழு உங்கள் பராமரிப்பில் நிபுணர்கள். உங்கள் சிறுநீரக ஆரோக்கியம் பற்றி கேள்விகள் இருந்தால், அவர்களை நேரடியாக தொடர்பு கொள்ளுங்கள்.",
+      "understand": "புரிந்தது"
     }
   },
   "questionnaire": {
     "intro": {
-      "title": "[EN] Tell Us About Yourself",
-      "description": "[EN] These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "title": "உங்களைப் பற்றி சொல்லுங்கள்",
+      "description": "இந்த கேள்விகள் உங்கள் நிலைக்கு மிகவும் பொருத்தமான தகவலைக் காட்ட உதவுகின்றன. உங்கள் பதில்கள் தனிப்பட்டவை, இந்த அமர்வுக்குப் பிறகு சேமிக்கப்படாது.",
       "features": {
-        "questions": "[EN] 7 quick questions",
-        "time": "[EN] Takes 3-5 minutes",
-        "private": "[EN] Completely private",
-        "skip": "[EN] Skip any question"
+        "questions": "7 விரைவான கேள்விகள்",
+        "time": "3-5 நிமிடங்கள் ஆகும்",
+        "private": "முற்றிலும் தனிப்பட்டது",
+        "skip": "எந்த கேள்வியையும் தவிர்க்கலாம்"
       },
-      "beginButton": "[EN] Begin Questions",
-      "skipText": "[EN] If you prefer not to answer these questions, you can skip to general treatment information.",
-      "skipButton": "[EN] Skip All Questions",
-      "backToJourney": "[EN] Back to Journey Stage"
+      "beginButton": "கேள்விகளைத் தொடங்கு",
+      "skipText": "இந்த கேள்விகளுக்கு பதிலளிக்க விரும்பவில்லை என்றால், பொதுவான சிகிச்சை தகவலுக்கு தவிர்க்கலாம்.",
+      "skipButton": "எல்லா கேள்விகளையும் தவிர்",
+      "backToJourney": "பயண நிலைக்குத் திரும்பு"
     },
     "progress": {
-      "label": "[EN] Question progress",
-      "questionOf": "[EN] Question {{current}} of {{total}}",
-      "complete": "[EN] complete"
+      "label": "கேள்வி முன்னேற்றம்",
+      "questionOf": "கேள்வி {{current}} இல் {{total}}",
+      "complete": "முடிந்தது"
     },
     "types": {
-      "scale": "[EN] Scale Rating",
-      "single": "[EN] Single Choice",
-      "multiple": "[EN] Multiple Choice"
+      "scale": "அளவீடு மதிப்பீடு",
+      "single": "ஒற்றை தேர்வு",
+      "multiple": "பல தேர்வு"
     },
     "questions": {
       "knowledge": {
-        "title": "[EN] How much do you know about kidney disease and its treatments?",
-        "hint": "[EN] This helps us tailor information to your current understanding."
+        "title": "சிறுநீரக நோய் மற்றும் அதன் சிகிச்சைகளைப் பற்றி எவ்வளவு அறிவீர்கள்?",
+        "hint": "உங்கள் தற்போதைய புரிதலுக்கு ஏற்ப தகவல்களை வழங்க இது உதவுகிறது."
       },
       "goal": {
-        "title": "[EN] What would you like to get from this session?",
-        "hint": "[EN] Select the option that best describes your main goal today."
+        "title": "இந்த அமர்விலிருந்து என்ன பெற விரும்புகிறீர்கள்?",
+        "hint": "இன்றைய உங்கள் முக்கிய குறிக்கோளை சிறப்பாக விவரிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும்."
       },
       "learning": {
-        "title": "[EN] How do you prefer to learn new information?",
-        "hint": "[EN] This helps us present information in ways that work best for you."
+        "title": "புதிய தகவல்களை எவ்வாறு கற்றுக்கொள்ள விரும்புகிறீர்கள்?",
+        "hint": "உங்களுக்கு சிறந்த முறையில் தகவல்களை வழங்க இது உதவுகிறது."
       },
       "comfort": {
-        "title": "[EN] How comfortable are you with medical procedures?",
-        "hint": "[EN] This is a sensitive topic. You can skip this question if you prefer."
+        "title": "மருத்துவ செயல்முறைகளில் எவ்வளவு வசதியாக உணர்கிறீர்கள்?",
+        "hint": "இது ஒரு உணர்ச்சிகரமான தலைப்பு. விரும்பினால் இந்த கேள்வியைத் தவிர்க்கலாம்."
       },
       "support": {
-        "title": "[EN] Do you have support at home?",
-        "hint": "[EN] Some treatments are easier with help from family or carers."
+        "title": "வீட்டில் ஆதரவு உள்ளதா?",
+        "hint": "சில சிகிச்சைகள் குடும்பத்தினர் அல்லது பராமரிப்பாளர்களின் உதவியுடன் எளிதாக இருக்கும்."
       },
       "living": {
-        "title": "[EN] Where do you live?",
-        "hint": "[EN] This helps us understand which treatments might work best in your home environment."
+        "title": "நீங்கள் எங்கே வசிக்கிறீர்கள்?",
+        "hint": "உங்கள் வீட்டு சூழலில் எந்த சிகிச்சைகள் சிறப்பாக செயல்படும் என்பதைப் புரிந்துகொள்ள இது உதவுகிறது."
       },
       "priorities": {
-        "title": "[EN] What matters most to you in choosing a treatment?",
-        "hint": "[EN] Your priorities will help us highlight what matters to you in each treatment option."
+        "title": "சிகிச்சையைத் தேர்ந்தெடுப்பதில் உங்களுக்கு மிக முக்கியமானது எது?",
+        "hint": "ஒவ்வொரு சிகிச்சை விருப்பத்திலும் உங்களுக்கு முக்கியமானதை முன்னிலைப்படுத்த உங்கள் முன்னுரிமைகள் உதவும்."
       },
       "ageRange": {
         "title": "உங்கள் வயது வரம்பு என்ன?",
@@ -360,18 +360,18 @@
       }
     },
     "hints": {
-      "selectUpTo": "[EN] Select up to {{max}} priorities that are most important to you.",
-      "selectAll": "[EN] Select all that apply - you can choose more than one option."
+      "selectUpTo": "உங்களுக்கு மிக முக்கியமான {{max}} முன்னுரிமைகள் வரை தேர்ந்தெடுக்கவும்.",
+      "selectAll": "பொருந்தும் அனைத்தையும் தேர்ந்தெடுக்கவும் - ஒன்றுக்கு மேற்பட்ட விருப்பங்களைத் தேர்வு செய்யலாம்."
     },
     "audio": {
-      "listen": "[EN] Listen to this question"
+      "listen": "இந்த கேள்வியைக் கேளுங்கள்"
     },
     "slider": {
       "ariaLabel": "{{min}} முதல் {{max}} வரை மதிப்பு"
     },
-    "skipQuestion": "[EN] Skip this question",
-    "viewResults": "[EN] View My Results",
-    "nextQuestion": "[EN] Next Question",
+    "skipQuestion": "இந்த கேள்வியைத் தவிர்",
+    "viewResults": "என் முடிவுகளைப் பார்க்க",
+    "nextQuestion": "அடுத்த கேள்வி",
     "title": "உங்களைப் பற்றி சொல்லுங்கள்",
     "subtitle": "உங்கள் பதில்கள் மிகவும் பொருத்தமான தகவல்களைக் காட்ட உதவுகின்றன. இது ரகசியமானது."
   },
@@ -379,76 +379,76 @@
     "title": "உங்கள் தனிப்பயனாக்கப்பட்ட தகவல்",
     "subtitle": "உங்கள் பதில்களின் அடிப்படையில், இங்கே ஆராய பரிந்துரைக்கிறோம்.",
     "welcome": {
-      "title": "[EN] Your Personalised Treatment Options",
-      "message": "[EN] Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.",
-      "reminder": "[EN] Remember, your kidney team will help you make the final decision."
+      "title": "உங்கள் தனிப்பயனாக்கப்பட்ட சிகிச்சை விருப்பங்கள்",
+      "message": "நீங்கள் சொன்னதன் அடிப்படையில், உங்கள் சிறுநீரக நிலையைப் புரிந்துகொள்ளவும் உங்கள் விருப்பங்களை ஆராயவும் ஆதாரங்கள் இங்கே உள்ளன.",
+      "reminder": "நினைவில் வைத்துக்கொள்ளுங்கள், உங்கள் சிறுநீரக குழு இறுதி முடிவை எடுக்க உதவும்."
     },
     "session": {
-      "timeRemaining": "[EN] Session time remaining:",
-      "extend": "[EN] Extend session",
-      "updateAnswers": "[EN] Update My Answers",
-      "startOver": "[EN] Start Over"
+      "timeRemaining": "அமர்வு நேரம் மீதமுள்ளது:",
+      "extend": "அமர்வை நீட்டிக்கவும்",
+      "updateAnswers": "என் பதில்களைப் புதுப்பிக்கவும்",
+      "startOver": "மீண்டும் தொடங்கு"
     },
     "alert": {
-      "title": "[EN] Remember to save your summary",
-      "message": "[EN] Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration."
+      "title": "உங்கள் சுருக்கத்தைச் சேமிக்க நினைவில் வைக்கவும்",
+      "message": "இந்த அமர்வுக்குப் பிறகு உங்கள் தகவல் சேமிக்கப்படாது. உங்கள் ஆய்வின் பதிவை வைத்திருக்க வெளியேறும் முன் சுருக்கத்தை உருவாக்குங்கள்."
     },
     "pathway": {
-      "title": "[EN] How would you like to explore?",
+      "title": "எவ்வாறு ஆராய விரும்புகிறீர்கள்?",
       "guided": {
-        "title": "[EN] Your Recommended Journey",
-        "badge": "[EN] Recommended",
-        "description": "[EN] Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.",
-        "action": "[EN] Start guided journey"
+        "title": "உங்கள் பரிந்துரைக்கப்பட்ட பயணம்",
+        "badge": "பரிந்துரைக்கப்பட்டது",
+        "description": "உங்கள் நிலைக்கு ஏற்ற சிகிச்சை விருப்பங்கள் வழியாக படிப்படியான வழிகாட்டுதலைப் பின்பற்றுங்கள். தெளிவான திசை மற்றும் ஆதரவு தேவைப்பட்டால் சரியானது.",
+        "action": "வழிகாட்டுதல் பயணத்தைத் தொடங்கு"
       },
       "free": {
-        "title": "[EN] Explore Freely",
-        "description": "[EN] Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.",
-        "action": "[EN] Browse all options"
+        "title": "சுதந்திரமாக ஆராயுங்கள்",
+        "description": "உங்கள் வேகத்தில் எல்லா விருப்பங்களையும் உலாவுங்கள். உங்களுக்கு ஆர்வமுள்ள தலைப்புகளுக்கு நேரடியாகச் செல்லுங்கள். என்ன தேடுகிறீர்கள் என்று ஏற்கனவே தெரிந்தால் சிறந்தது.",
+        "action": "எல்லா விருப்பங்களையும் உலாவு"
       }
     },
     "content": {
-      "title": "[EN] Tools to Help You Decide"
+      "title": "முடிவெடுக்க உதவும் கருவிகள்"
     },
     "cards": {
       "treatments": {
-        "title": "[EN] Treatment Options",
-        "description": "[EN] Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.",
-        "action": "[EN] Explore"
+        "title": "சிகிச்சை விருப்பங்கள்",
+        "description": "டயாலிசிஸ் வகைகள், மாற்று அறுவை சிகிச்சை மற்றும் பழமைவாத பராமரிப்பு உட்பட எல்லா சிறுநீரக சிகிச்சை விருப்பங்களையும் அறியுங்கள்.",
+        "action": "ஆராயுங்கள்"
       },
       "model": {
-        "title": "[EN] 3D Kidney Model",
-        "description": "[EN] Explore interactive 3D models showing how different treatments work in your body. See the process visually.",
-        "action": "[EN] View Model"
+        "title": "3D சிறுநீரக மாதிரி",
+        "description": "வெவ்வேறு சிகிச்சைகள் உங்கள் உடலில் எவ்வாறு செயல்படுகின்றன என்பதைக் காட்டும் ஊடாடும் 3D மாதிரிகளை ஆராயுங்கள். செயல்முறையை பார்வையில் காணுங்கள்.",
+        "action": "மாதிரியைப் பார்க்க"
       },
       "compare": {
-        "title": "[EN] Compare Treatments",
-        "description": "[EN] See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.",
-        "action": "[EN] Compare"
+        "title": "சிகிச்சைகளை ஒப்பிடுங்கள்",
+        "description": "எல்லா சிகிச்சைகளையும் அருகருகே பாருங்கள். தினசரி நேரம் முதல் பயண நெகிழ்வுத்தன்மை வரை உங்களுக்கு முக்கியமானதை ஒப்பிடுங்கள்.",
+        "action": "ஒப்பிடு"
       },
       "values": {
-        "title": "[EN] Values Exercise",
-        "description": "[EN] Think about what matters most to you. This exercise helps clarify your priorities to guide your decision.",
-        "action": "[EN] Start"
+        "title": "மதிப்புகள் பயிற்சி",
+        "description": "உங்களுக்கு மிக முக்கியமானது என்ன என்று சிந்தியுங்கள். உங்கள் முடிவை வழிநடத்த உங்கள் முன்னுரிமைகளைத் தெளிவுபடுத்த இந்த பயிற்சி உதவுகிறது.",
+        "action": "தொடங்கு"
       },
       "chat": {
-        "title": "[EN] Ask Questions",
-        "description": "[EN] Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.",
-        "action": "[EN] Start Chat"
+        "title": "கேள்விகள் கேளுங்கள்",
+        "description": "சிறுநீரக சிகிச்சை விருப்பங்களைப் பற்றி எங்கள் AI உதவியாளருடன் அரட்டையடியுங்கள். உங்கள் கேள்விகளுக்கு உரையாடல் முறையில் பதில்களைப் பெறுங்கள்.",
+        "action": "அரட்டையைத் தொடங்கு"
       }
     },
     "status": {
-      "new": "[EN] New",
-      "inProgress": "[EN] In Progress",
-      "completed": "[EN] Completed"
+      "new": "புதியது",
+      "inProgress": "நடந்துகொண்டிருக்கிறது",
+      "completed": "முடிந்தது"
     },
     "summary": {
-      "title": "[EN] Ready to Review Your Journey?",
-      "description": "[EN] View everything you have explored and create a summary to share with your kidney team at your next appointment.",
-      "button": "[EN] View Your Summary"
+      "title": "உங்கள் பயணத்தை மதிப்பாய்வு செய்ய தயாரா?",
+      "description": "நீங்கள் ஆராய்ந்த அனைத்தையும் பாருங்கள், உங்கள் அடுத்த சந்திப்பில் உங்கள் சிறுநீரக குழுவுடன் பகிர்வதற்கான சுருக்கத்தை உருவாக்குங்கள்.",
+      "button": "உங்கள் சுருக்கத்தைப் பார்க்க"
     },
     "quickAction": {
-      "summary": "[EN] View Your Summary"
+      "summary": "உங்கள் சுருக்கத்தைப் பார்க்க"
     },
     "sections": {
       "recommended": "உங்களுக்கு பரிந்துரைக்கப்படுபவை",
@@ -591,61 +591,61 @@
     }
   },
   "compare": {
-    "title": "[EN] Compare Treatment Options",
-    "subtitle": "[EN] See how different treatments compare across the factors that matter to you.",
-    "intro": "[EN] This comparison shows how each treatment option performs across different aspects of daily life and medical care.",
+    "title": "சிகிச்சை விருப்பங்களை ஒப்பிடுங்கள்",
+    "subtitle": "உங்களுக்கு முக்கியமான காரணிகளில் வெவ்வேறு சிகிச்சைகள் எவ்வாறு ஒப்பிடுகின்றன என்பதைப் பாருங்கள்.",
+    "intro": "இந்த ஒப்பீடு தினசரி வாழ்க்கை மற்றும் மருத்துவ பராமரிப்பின் வெவ்வேறு அம்சங்களில் ஒவ்வொரு சிகிச்சை விருப்பமும் எவ்வாறு செயல்படுகிறது என்பதைக் காட்டுகிறது.",
     "treatments": {
       "transplant": {
-        "name": "[EN] Kidney Transplant",
-        "type": "[EN] Surgery"
+        "name": "சிறுநீரக மாற்று அறுவை சிகிச்சை",
+        "type": "அறுவை சிகிச்சை"
       },
       "hemodialysis": {
-        "name": "[EN] Haemodialysis",
-        "type": "[EN] In-centre dialysis"
+        "name": "ஹீமோடயாலிசிஸ்",
+        "type": "மைய டயாலிசிஸ்"
       },
       "peritoneal": {
-        "name": "[EN] Peritoneal Dialysis",
-        "type": "[EN] Home dialysis"
+        "name": "பெரிட்டோனியல் டயாலிசிஸ்",
+        "type": "வீட்டு டயாலிசிஸ்"
       },
       "conservative": {
-        "name": "[EN] Conservative Care",
-        "type": "[EN] Supportive care"
+        "name": "பழமைவாத பராமரிப்பு",
+        "type": "ஆதரவு பராமரிப்பு"
       }
     },
     "categories": {
-      "dailyLife": "[EN] Daily Life Impact",
-      "practical": "[EN] Practical Considerations",
-      "medical": "[EN] Medical Factors",
-      "support": "[EN] Support Requirements",
-      "health": "[EN] Health Outcomes"
+      "dailyLife": "தினசரி வாழ்க்கை தாக்கம்",
+      "practical": "நடைமுறை கருத்தில் கொள்ளுதல்கள்",
+      "medical": "மருத்துவ காரணிகள்",
+      "support": "ஆதரவு தேவைகள்",
+      "health": "ஆரோக்கிய முடிவுகள்"
     },
     "criteria": {
-      "timeCommitment": "[EN] Time commitment per week",
-      "timeCommitmentHint": "[EN] Hours spent on treatment",
-      "location": "[EN] Treatment location",
-      "locationHint": "[EN] Where treatment takes place",
-      "travel": "[EN] Impact on travel",
-      "travelHint": "[EN] Ability to travel and holiday",
-      "diet": "[EN] Diet restrictions",
-      "dietHint": "[EN] Limitations on food and drink",
-      "surgery": "[EN] Surgery required",
-      "surgeryHint": "[EN] Initial procedures needed",
-      "supportNeeded": "[EN] Support needed",
-      "supportNeededHint": "[EN] Help from family or carers",
-      "recoveryTime": "[EN] Recovery time",
-      "recoveryTimeHint": "[EN] Time to adjust to treatment",
-      "longTermOutlook": "[EN] Long-term outlook",
-      "longTermOutlookHint": "[EN] Expected outcomes over time",
-      "scheduleFlexibility": "[EN] Schedule flexibility",
-      "scheduleFlexibilityHint": "[EN] Control over your schedule",
-      "trainingRequired": "[EN] Training required",
-      "trainingRequiredHint": "[EN] Learning time needed",
-      "survivalRates": "[EN] Survival rates",
-      "survivalRatesHint": "[EN] General outcomes (varies by person)",
-      "qualityOfLife": "[EN] Quality of life",
-      "qualityOfLifeHint": "[EN] Overall wellbeing",
-      "energyLevels": "[EN] Energy levels",
-      "energyLevelsHint": "[EN] Typical energy and fatigue"
+      "timeCommitment": "வாரத்திற்கு நேர அர்ப்பணிப்பு",
+      "timeCommitmentHint": "சிகிச்சையில் செலவழித்த மணி நேரங்கள்",
+      "location": "சிகிச்சை இடம்",
+      "locationHint": "சிகிச்சை எங்கு நடைபெறுகிறது",
+      "travel": "பயணத்தில் தாக்கம்",
+      "travelHint": "பயணம் மற்றும் விடுமுறை செல்லும் திறன்",
+      "diet": "உணவு கட்டுப்பாடுகள்",
+      "dietHint": "உணவு மற்றும் பானங்களில் வரம்புகள்",
+      "surgery": "அறுவை சிகிச்சை தேவை",
+      "surgeryHint": "ஆரம்ப செயல்முறைகள் தேவை",
+      "supportNeeded": "ஆதரவு தேவை",
+      "supportNeededHint": "குடும்பம் அல்லது பராமரிப்பாளர்களின் உதவி",
+      "recoveryTime": "குணமாகும் நேரம்",
+      "recoveryTimeHint": "சிகிச்சைக்கு ஏற்றுக்கொள்ள நேரம்",
+      "longTermOutlook": "நீண்டகால பார்வை",
+      "longTermOutlookHint": "காலப்போக்கில் எதிர்பார்க்கப்படும் முடிவுகள்",
+      "scheduleFlexibility": "அட்டவணை நெகிழ்வுத்தன்மை",
+      "scheduleFlexibilityHint": "உங்கள் அட்டவணையின் மீது கட்டுப்பாடு",
+      "trainingRequired": "பயிற்சி தேவை",
+      "trainingRequiredHint": "கற்றுக்கொள்ள தேவையான நேரம்",
+      "survivalRates": "உயிர்வாழ்வு விகிதங்கள்",
+      "survivalRatesHint": "பொதுவான முடிவுகள் (நபருக்கு நபர் மாறுபடும்)",
+      "qualityOfLife": "வாழ்க்கைத் தரம்",
+      "qualityOfLifeHint": "ஒட்டுமொத்த நல்வாழ்வு",
+      "energyLevels": "ஆற்றல் நிலைகள்",
+      "energyLevelsHint": "வழக்கமான ஆற்றல் மற்றும் சோர்வு"
     },
     "values": {
       "minimalAfterRecovery": "[EN] Minimal after recovery",
@@ -780,6 +780,27 @@
       "tellMeMore": "மேலும் சொல்லுங்கள்",
       "prosAndCons": "நன்மைகள் மற்றும் தீமைகள் என்ன?",
       "dailyLife": "இது தினசரி வாழ்க்கையை எவ்வாறு பாதிக்கிறது?"
+    },
+    "voice": {
+      "startRecording": "குரல் உள்ளீட்டைத் தொடங்கு",
+      "stopRecording": "பதிவை நிறுத்து",
+      "listening": "கேட்கிறேன்...",
+      "processing": "செயலாக்கம் செய்கிறேன்...",
+      "speaking": "பேசுகிறேன்...",
+      "paused": "இடைநிறுத்தப்பட்டது",
+      "playResponse": "பதிலைக் கேளுங்கள்",
+      "pauseResponse": "இடைநிறுத்து",
+      "resumeResponse": "தொடரவும்",
+      "stopResponse": "நிறுத்து",
+      "loading": "ஆடியோ ஏற்றப்படுகிறது...",
+      "loadingAudio": "ஆடியோ ஏற்றப்படுகிறது...",
+      "requesting": "அனுமதி கோருகிறேன்...",
+      "notSupported": "குரல் உள்ளீடு ஆதரிக்கப்படவில்லை",
+      "error": "பிழை ஏற்பட்டது",
+      "micPermissionDenied": "மைக்ரோஃபோன் அனுமதி மறுக்கப்பட்டது. குரல் உள்ளீட்டைப் பயன்படுத்த அணுகலை அனுமதிக்கவும்.",
+      "noAudioDetected": "ஆடியோ கண்டறியப்படவில்லை. மீண்டும் முயற்சிக்கவும்.",
+      "transcriptionFailed": "ஆடியோவை உரையாக மாற்ற முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+      "synthesisFailed": "ஆடியோவை இயக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
     }
   },
   "values": {

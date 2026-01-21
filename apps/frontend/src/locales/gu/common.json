@@ -67,39 +67,39 @@
     "subtitle": "NHS કિડની સેવાઓ",
     "description": "આ ટૂલ તમને તમારી કિડની સારવારના વિકલ્પોને સમજવામાં અને તમારા માટે શું સૌથી મહત્વપૂર્ણ છે તે વિચારવામાં મદદ કરશે. તમારો સમય લો - અહીં કોઈ સાચા કે ખોટા જવાબો નથી.",
     "startButton": "તમારી યાત્રા શરૂ કરો",
-    "startButtonAriaLabel": "[EN] Start your kidney treatment decision journey",
+    "startButtonAriaLabel": "તમારી કિડની સારવાર નિર્ણય યાત્રા શરૂ કરો",
     "learnMore": "આ ટૂલ વિશે વધુ જાણો",
-    "heroAriaLabel": "[EN] Welcome section",
-    "featuresHeading": "[EN] How This Tool Helps You",
+    "heroAriaLabel": "સ્વાગત વિભાગ",
+    "featuresHeading": "આ ટૂલ તમને કેવી રીતે મદદ કરે છે",
     "features": {
       "time": {
-        "title": "[EN] Takes About 15 Minutes",
-        "description": "[EN] Complete at your own pace. You can take breaks whenever you need and return to where you left off."
+        "title": "લગભગ 15 મિનિટ લાગે છે",
+        "description": "તમારી ગતિએ પૂર્ણ કરો. જ્યારે જરૂર હોય ત્યારે વિરામ લઈ શકો છો અને જ્યાં છોડ્યું હતું ત્યાંથી પાછા આવી શકો છો."
       },
       "privacy": {
-        "title": "[EN] Your Privacy Protected",
-        "description": "[EN] No personal information is stored. Your answers help personalise the tool during this session only."
+        "title": "તમારી ગોપનીયતા સુરક્ષિત છે",
+        "description": "કોઈ વ્યક્તિગત માહિતી સંગ્રહિત થતી નથી. તમારા જવાબો માત્ર આ સત્ર દરમિયાન ટૂલને વ્યક્તિગત બનાવવામાં મદદ કરે છે."
       },
       "devices": {
-        "title": "[EN] Works on All Devices",
-        "description": "[EN] Use on your phone, tablet, or computer. The tool adapts to your screen size automatically."
+        "title": "બધા ઉપકરણો પર કામ કરે છે",
+        "description": "તમારા ફોન, ટેબલેટ અથવા કમ્પ્યુટર પર ઉપયોગ કરો. ટૂલ તમારી સ્ક્રીન સાઇઝ પ્રમાણે આપોઆપ અનુકૂળ થાય છે."
       }
     },
-    "aboutHeading": "[EN] What This Tool Does",
+    "aboutHeading": "આ ટૂલ શું કરે છે",
     "about": {
-      "paragraph1": "[EN] This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
-      "paragraph2": "[EN] You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
-      "paragraph3": "[EN] This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you."
+      "paragraph1": "આ નિર્ણય સહાયક તમને કિડની નિષ્ફળતા માટે ઉપલબ્ધ વિવિધ સારવાર વિકલ્પો શોધવામાં મદદ કરશે. તમે તમારી ગતિએ દરેક સારવાર વિશે શીખી શકો છો, તમારા માટે શું સૌથી મહત્વપૂર્ણ છે તે વિચારી શકો છો, અને તમારા ડૉક્ટર અથવા નર્સ સાથે શેર કરવા માટે સારાંશ બનાવી શકો છો.",
+      "paragraph2": "તમે તમારી પરિસ્થિતિ વિશે કેટલાક સરળ પ્રશ્નોના જવાબ આપશો, પછી તમારા માટે યોગ્ય હોઈ શકે તેવી સારવારો શોધશો. તમારી માહિતી ખાનગી રહે છે અને બ્રાઉઝર બંધ કર્યા પછી સાચવવામાં આવતી નથી.",
+      "paragraph3": "આ ટૂલ તમારી હેલ્થકેર ટીમની તબીબી સલાહનું સ્થાન લેતું નથી. તે તમને તમારા વિકલ્પોની ચર્ચા કરતી વખતે વધુ માહિતગાર અને આત્મવિશ્વાસુ અનુભવવામાં મદદ કરવા માટે રચાયેલ છે. તમારી કિડની ટીમ તમારી સંભાળના નિષ્ણાતો છે અને તમારા માટે યોગ્ય નિર્ણય લેવામાં મદદ કરશે."
     },
-    "trustAriaLabel": "[EN] Trust and safety information",
+    "trustAriaLabel": "વિશ્વાસ અને સલામતી માહિતી",
     "trust": {
-      "evidenceBased": "[EN] Evidence-based information",
-      "languages": "[EN] Available in 7 languages",
-      "accessible": "[EN] Accessible for all users",
-      "noAccount": "[EN] No account required"
+      "evidenceBased": "પુરાવા-આધારિત માહિતી",
+      "languages": "7 ભાષાઓમાં ઉપલબ્ધ",
+      "accessible": "બધા વપરાશકર્તાઓ માટે સુલભ",
+      "noAccount": "કોઈ એકાઉન્ટ જરૂરી નથી"
     },
-    "ctaHeading": "[EN] Ready to Begin?",
-    "ctaDescription": "[EN] Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
+    "ctaHeading": "શરૂ કરવા તૈયાર છો?",
+    "ctaDescription": "તમારા કિડની સારવાર વિકલ્પોને સમજવા તરફ પ્રથમ પગલું ભરો. તમે હમણાં શરૂ કરી શકો છો અને જો વિરામની જરૂર હોય તો પછી પાછા આવી શકો છો."
   },
   "language": {
     "title": "તમારી ભાષા પસંદ કરો",
@@ -108,281 +108,281 @@
     "currentLanguage": "વર્તમાન ભાષા"
   },
   "privacy": {
-    "pageAriaLabel": "[EN] Privacy information",
-    "progressLabel": "[EN] Setup progress: 30%",
-    "progressText": "[EN] Step 2 of 4: Privacy Information",
+    "pageAriaLabel": "ગોપનીયતા માહિતી",
+    "progressLabel": "સેટઅપ પ્રગતિ: 30%",
+    "progressText": "પગલું 2 માંથી 4: ગોપનીયતા માહિતી",
     "title": "તમારી ગોપનીયતા અને માહિતી",
-    "subtitle": "[EN] Before you begin, we want you to understand how this tool handles your information.",
-    "listenToPage": "[EN] Listen to this page",
-    "stopReading": "[EN] Stop reading",
+    "subtitle": "શરૂ કરતા પહેલા, અમે ઇચ્છીએ છીએ કે તમે સમજો કે આ ટૂલ તમારી માહિતીને કેવી રીતે સંભાળે છે.",
+    "listenToPage": "આ પેજ સાંભળો",
+    "stopReading": "વાંચવાનું બંધ કરો",
     "sections": {
       "privacy": {
         "title": "અમે તમારી માહિતીને કેવી રીતે સુરક્ષિત રાખીએ છીએ",
         "content": "તમારા જવાબો સુરક્ષિત રીતે પ્રક્રિયા કરવામાં આવે છે અને કાયમી રૂપે સંગ્રહિત થતા નથી. આ ટૂલ એવી કોઈ વ્યક્તિગત આરોગ્ય માહિતી એકત્ર કરતું નથી જે તમને ઓળખી શકે. જ્યારે તમે આ ટૂલ બંધ કરો છો ત્યારે તમારો સેશન ડેટા આપોઆપ કાઢી નાખવામાં આવે છે.",
-        "p1": "[EN] This tool uses session-only storage. Any information you enter, including your answers to questions and treatment preferences, is only kept while you are using the tool.",
-        "p2": "[EN] When you close your browser or after 15 minutes of inactivity, all your information is automatically deleted. We do not save anything about you.",
-        "p3": "[EN] We collect anonymous information about how people use this tool to help us improve it. This cannot identify you personally."
+        "p1": "આ ટૂલ ફક્ત સેશન-આધારિત સ્ટોરેજનો ઉપયોગ કરે છે. તમે દાખલ કરેલી કોઈપણ માહિતી, તમારા પ્રશ્નોના જવાબો અને સારવારની પસંદગીઓ સહિત, ફક્ત તમે ટૂલનો ઉપયોગ કરી રહ્યા છો ત્યારે જ રાખવામાં આવે છે.",
+        "p2": "જ્યારે તમે તમારું બ્રાઉઝર બંધ કરો છો અથવા 15 મિનિટની નિષ્ક્રિયતા પછી, તમારી બધી માહિતી આપોઆપ કાઢી નાખવામાં આવે છે. અમે તમારા વિશે કંઈ સાચવતા નથી.",
+        "p3": "અમે આ ટૂલને સુધારવામાં મદદ કરવા માટે લોકો તેનો ઉપયોગ કેવી રીતે કરે છે તે વિશે અનામ માહિતી એકત્ર કરીએ છીએ. આ તમને વ્યક્તિગત રીતે ઓળખી શકતું નથી."
       },
       "ai": {
         "title": "આ ટૂલ કેવી રીતે કામ કરે છે",
         "content": "આ નિર્ણય સહાયક તમારા જવાબોના આધારે વ્યક્તિગત માહિતી પ્રદાન કરવા માટે ટેકનોલોજીનો ઉપયોગ કરે છે. પ્રદાન કરવામાં આવેલી માહિતી NHS ક્લિનિકલ માર્ગદર્શિકાઓ અને પુરાવા-આધારિત સંશોધનમાંથી લેવામાં આવી છે. આ ટૂલ તમારી કિડની કેર ટીમ સાથેની ચર્ચાઓને સમર્થન આપે છે પણ તેનું સ્થાન લેતું નથી.",
-        "p1": "[EN] This tool includes an AI assistant that can answer general questions about kidney treatments. The AI provides information only - it cannot give you medical advice specific to your situation.",
-        "p2": "[EN] The AI may sometimes make mistakes or provide incomplete information. Always discuss important decisions with your kidney team who know your full medical history.",
-        "p3": "[EN] This tool does not replace advice from your healthcare team. It is designed to help you feel more informed when discussing your options with your doctors and nurses."
+        "p1": "આ ટૂલમાં એક AI સહાયક છે જે કિડની સારવાર વિશે સામાન્ય પ્રશ્નોના જવાબ આપી શકે છે. AI ફક્ત માહિતી પ્રદાન કરે છે - તે તમારી પરિસ્થિતિ માટે ચોક્કસ તબીબી સલાહ આપી શકતું નથી.",
+        "p2": "AI ક્યારેક ભૂલો કરી શકે છે અથવા અપૂર્ણ માહિતી પ્રદાન કરી શકે છે. હંમેશા મહત્વપૂર્ણ નિર્ણયો તમારી કિડની ટીમ સાથે ચર્ચા કરો જે તમારો સંપૂર્ણ તબીબી ઇતિહાસ જાણે છે.",
+        "p3": "આ ટૂલ તમારી હેલ્થકેર ટીમની સલાહનું સ્થાન લેતું નથી. તે તમારા ડૉક્ટરો અને નર્સો સાથે તમારા વિકલ્પોની ચર્ચા કરતી વખતે વધુ માહિતગાર અનુભવવામાં મદદ કરવા માટે રચાયેલ છે."
       },
       "medical": {
         "title": "મહત્વપૂર્ણ તબીબી માહિતી",
         "content": "આ ટૂલ કિડની સારવારના વિકલ્પો વિશે સામાન્ય માહિતી પ્રદાન કરે છે. આ વ્યાવસાયિક તબીબી સલાહ, નિદાન અથવા સારવારનો વિકલ્પ નથી. તમારી સારવાર વિશે કોઈપણ નિર્ણય લેતા પહેલા હંમેશા તમારા કિડની નિષ્ણાત અથવા આરોગ્ય સંભાળ ટીમની સલાહ લો. જો તમને તાત્કાલિક આરોગ્ય ચિંતાઓ હોય, તો કૃપા કરીને તમારા GP નો સંપર્ક કરો અથવા NHS 111 પર કૉલ કરો."
       },
       "pii": {
-        "title": "[EN] Please Do Not Share Personal Details",
-        "intro": "[EN] To protect your privacy, please do not enter any personal information that could identify you when using this tool, especially in the chat feature.",
-        "listLabel": "[EN] Information you should not share",
+        "title": "કૃપા કરીને વ્યક્તિગત વિગતો શેર કરશો નહીં",
+        "intro": "તમારી ગોપનીયતાની સુરક્ષા માટે, કૃપા કરીને આ ટૂલનો ઉપયોગ કરતી વખતે, ખાસ કરીને ચેટ ફીચરમાં, કોઈપણ વ્યક્તિગત માહિતી દાખલ કરશો નહીં જે તમને ઓળખી શકે.",
+        "listLabel": "તમારે શેર ન કરવી જોઈએ તેવી માહિતી",
         "items": {
-          "nhsNumber": "[EN] Your NHS number",
-          "fullName": "[EN] Your full name",
-          "address": "[EN] Your home address",
-          "dob": "[EN] Your date of birth",
-          "phone": "[EN] Phone numbers",
-          "email": "[EN] Email addresses"
+          "nhsNumber": "તમારો NHS નંબર",
+          "fullName": "તમારું પૂરું નામ",
+          "address": "તમારું ઘરનું સરનામું",
+          "dob": "તમારી જન્મ તારીખ",
+          "phone": "ફોન નંબરો",
+          "email": "ઇમેઇલ સરનામાં"
         },
-        "outro": "[EN] You can still tell us about your situation in general terms - for example, your living situation or what matters most to you - without sharing identifying details."
+        "outro": "તમે હજુ પણ અમને તમારી પરિસ્થિતિ વિશે સામાન્ય શબ્દોમાં જણાવી શકો છો - ઉદાહરણ તરીકે, તમારી રહેવાની પરિસ્થિતિ અથવા તમારા માટે શું સૌથી મહત્વપૂર્ણ છે - ઓળખાણ વિગતો શેર કર્યા વિના."
       }
     },
-    "summaryAriaLabel": "[EN] Key points summary",
+    "summaryAriaLabel": "મુખ્ય મુદ્દાઓનો સારાંશ",
     "summary": {
-      "title": "[EN] In Summary",
-      "notSaved": "[EN] Your answers are not saved",
-      "noData": "[EN] No personal data is collected",
-      "leave": "[EN] You can leave at any time"
+      "title": "સારાંશમાં",
+      "notSaved": "તમારા જવાબો સાચવવામાં આવતા નથી",
+      "noData": "કોઈ વ્યક્તિગત ડેટા એકત્ર કરવામાં આવતો નથી",
+      "leave": "તમે ગમે ત્યારે છોડી શકો છો"
     },
     "consent": {
-      "title": "[EN] Please confirm to continue",
-      "understand": "[EN] I understand that my information is not saved after this session and I will not share personal identifying information",
-      "analytics": "[EN] I agree to anonymous analytics being collected to help improve this tool (optional)",
-      "error": "[EN] Please confirm you understand the privacy information before continuing"
+      "title": "ચાલુ રાખવા માટે કૃપા કરીને પુષ્ટિ કરો",
+      "understand": "હું સમજું છું કે આ સત્ર પછી મારી માહિતી સાચવવામાં આવતી નથી અને હું વ્યક્તિગત ઓળખાણ માહિતી શેર કરીશ નહીં",
+      "analytics": "હું આ ટૂલને સુધારવામાં મદદ કરવા માટે અનામ એનાલિટિક્સ એકત્ર કરવા માટે સંમત છું (વૈકલ્પિક)",
+      "error": "ચાલુ રાખતા પહેલા કૃપા કરીને પુષ્ટિ કરો કે તમે ગોપનીયતા માહિતી સમજો છો"
     },
-    "continueButton": "[EN] I Understand, Continue",
-    "continueAriaLabel": "[EN] Continue to journey stage selection",
-    "readFullPolicy": "[EN] Read the full NHS Privacy Policy"
+    "continueButton": "હું સમજું છું, ચાલુ રાખો",
+    "continueAriaLabel": "યાત્રા તબક્કા પસંદગી પર ચાલુ રાખો",
+    "readFullPolicy": "સંપૂર્ણ NHS ગોપનીયતા નીતિ વાંચો"
   },
   "header": {
-    "nhs": "[EN] NHS",
-    "demo": "[EN] Demo",
-    "serviceName": "[EN] Kidney Treatment Decision Aid",
-    "tagline": "[EN] Helping you make informed choices",
-    "homeAriaLabel": "[EN] NHS Kidney Treatment Decision Aid - Home"
+    "nhs": "NHS",
+    "demo": "ડેમો",
+    "serviceName": "કિડની સારવાર નિર્ણય સહાયક",
+    "tagline": "તમને માહિતગાર પસંદગીઓ કરવામાં મદદ કરે છે",
+    "homeAriaLabel": "NHS કિડની સારવાર નિર્ણય સહાયક - હોમ"
   },
   "progress": {
-    "language": "[EN] Language",
-    "privacy": "[EN] Privacy",
-    "yourJourney": "[EN] Your Journey",
-    "aboutYou": "[EN] About You",
-    "yourOptions": "[EN] Your Options",
-    "ariaLabel": "[EN] Progress through decision aid",
-    "stepOfTotal": "[EN] Step {{current}} of {{total}}",
-    "percentComplete": "[EN] {{percentage}}% complete",
-    "ariaProgressLabel": "[EN] Progress: {{current}} of {{total}} steps completed"
+    "language": "ભાષા",
+    "privacy": "ગોપનીયતા",
+    "yourJourney": "તમારી યાત્રા",
+    "aboutYou": "તમારા વિશે",
+    "yourOptions": "તમારા વિકલ્પો",
+    "ariaLabel": "નિર્ણય સહાયકમાં પ્રગતિ",
+    "stepOfTotal": "પગલું {{current}} માંથી {{total}}",
+    "percentComplete": "{{percentage}}% પૂર્ણ",
+    "ariaProgressLabel": "પ્રગતિ: {{total}} પગલાં માંથી {{current}} પૂર્ણ"
   },
   "journey": {
     "title": "તમે તમારી કિડની કેર યાત્રામાં ક્યાં છો?",
-    "subtitle": "[EN] Select the option that best describes your situation",
+    "subtitle": "તમારી પરિસ્થિતિને શ્રેષ્ઠ રીતે વર્ણવતો વિકલ્પ પસંદ કરો",
     "instruction": "તમારી વર્તમાન પરિસ્થિતિને શ્રેષ્ઠ રીતે વર્ણવતો વિકલ્પ પસંદ કરો",
-    "intro": "[EN] Everyone's kidney journey is different. To help us show you the most relevant information, please tell us where you are right now. There are no right or wrong answers.",
-    "error": "[EN] Please select an option that describes your situation. If none of these fit, select \"I am supporting a family member or friend\" to continue.",
-    "formLabel": "[EN] Journey stage options",
-    "legendLabel": "[EN] Select where you are in your kidney journey",
-    "radioGroupLabel": "[EN] Journey stage options",
-    "listenToQuestion": "[EN] Listen to this question",
-    "audioText": "[EN] Where are you in your journey? Select the option that best describes your situation.",
-    "reassurance": "[EN] Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.",
-    "needHelp": "[EN] I need help choosing",
+    "intro": "દરેકની કિડની યાત્રા અલગ હોય છે. તમને સૌથી સંબંધિત માહિતી બતાવવામાં અમને મદદ કરવા માટે, કૃપા કરીને અમને જણાવો કે તમે હમણાં ક્યાં છો. અહીં કોઈ સાચા કે ખોટા જવાબો નથી.",
+    "error": "કૃપા કરીને તમારી પરિસ્થિતિ વર્ણવતો વિકલ્પ પસંદ કરો. જો આમાંથી કોઈ બંધબેસતું ન હોય, તો ચાલુ રાખવા માટે \"હું પરિવારના સભ્ય અથવા મિત્રને સમર્થન આપી રહ્યો/રહી છું\" પસંદ કરો.",
+    "formLabel": "યાત્રા તબક્કા વિકલ્પો",
+    "legendLabel": "તમે તમારી કિડની યાત્રામાં ક્યાં છો તે પસંદ કરો",
+    "radioGroupLabel": "યાત્રા તબક્કા વિકલ્પો",
+    "listenToQuestion": "આ પ્રશ્ન સાંભળો",
+    "audioText": "તમે તમારી યાત્રામાં ક્યાં છો? તમારી પરિસ્થિતિને શ્રેષ્ઠ રીતે વર્ણવતો વિકલ્પ પસંદ કરો.",
+    "reassurance": "જો તમને ખાતરી ન હોય કે કયો વિકલ્પ શ્રેષ્ઠ બંધબેસે છે તો ચિંતા કરશો નહીં. તમે હંમેશા પછીથી બધા સારવાર વિકલ્પો શોધી શકો છો, અને તમારી કિડની ટીમ તમારી પરિસ્થિતિ સ્પષ્ટ કરવામાં મદદ કરી શકે છે. તમારી પસંદગી અમને પ્રથમ સૌથી સંબંધિત માહિતી બતાવવામાં મદદ કરે છે.",
+    "needHelp": "મને પસંદ કરવામાં મદદ જોઈએ છે",
     "stages": {
       "suspected": {
-        "title": "[EN] I think I may have kidney disease",
-        "description": "[EN] You are concerned about your kidney health and want to learn more about what kidney disease means."
+        "title": "મને લાગે છે કે મને કિડનીની બીમારી હોઈ શકે છે",
+        "description": "તમે તમારી કિડનીના સ્વાસ્થ્ય વિશે ચિંતિત છો અને કિડનીની બીમારી શું છે તે વિશે વધુ જાણવા માંગો છો."
       },
       "earlyDiagnosis": {
-        "title": "[EN] I've just been diagnosed - early stage CKD",
-        "description": "[EN] You have recently learned about your kidney condition and want to understand what this means for you."
+        "title": "મને હમણાં જ નિદાન થયું છે - પ્રારંભિક તબક્કાનું CKD",
+        "description": "તમે તાજેતરમાં તમારી કિડનીની સ્થિતિ વિશે જાણ્યું છે અને તમારા માટે આનો શું અર્થ છે તે સમજવા માંગો છો."
       },
       "lateDiagnosis": {
-        "title": "[EN] I've been diagnosed - late stage CKD",
-        "description": "[EN] Your kidney function has declined significantly and you may need to think about treatment options soon."
+        "title": "મને નિદાન થયું છે - અંતિમ તબક્કાનું CKD",
+        "description": "તમારી કિડનીની કાર્યક્ષમતા નોંધપાત્ર રીતે ઘટી ગઈ છે અને તમારે જલ્દી સારવાર વિકલ્પો વિશે વિચારવાની જરૂર પડી શકે છે."
       },
       "choosingTreatment": {
-        "title": "[EN] I need to choose a treatment soon",
-        "description": "[EN] Your kidney team has told you that you will need to start treatment in the coming months and you want to learn about your options."
+        "title": "મારે જલ્દી સારવાર પસંદ કરવાની જરૂર છે",
+        "description": "તમારી કિડની ટીમે તમને કહ્યું છે કે આવનારા મહિનાઓમાં તમારે સારવાર શરૂ કરવાની જરૂર પડશે અને તમે તમારા વિકલ્પો વિશે જાણવા માંગો છો."
       },
       "transplantPending": {
-        "title": "[EN] I'm due to have a transplant - want to learn more",
-        "description": "[EN] You are on the transplant list or have a living donor lined up and want to know more about what to expect."
+        "title": "મારું ટ્રાન્સપ્લાન્ટ થવાનું છે - વધુ જાણવા માંગું છું",
+        "description": "તમે ટ્રાન્સપ્લાન્ટ યાદીમાં છો અથવા તમારી પાસે જીવંત દાતા તૈયાર છે અને શું અપેક્ષા રાખવી તે વિશે વધુ જાણવા માંગો છો."
       },
       "dialysisPending": {
-        "title": "[EN] I'm due to start dialysis - want to learn more",
-        "description": "[EN] You will be starting dialysis treatment soon and want to understand the different types and what daily life will be like."
+        "title": "મારે ડાયાલિસિસ શરૂ કરવાનું છે - વધુ જાણવા માંગું છું",
+        "description": "તમે જલ્દી ડાયાલિસિસ સારવાર શરૂ કરશો અને વિવિધ પ્રકારો અને દૈનિક જીવન કેવું હશે તે સમજવા માંગો છો."
       },
       "supporting": {
-        "title": "[EN] I'm supporting a family member or friend",
-        "description": "[EN] Someone close to you has kidney disease and you want to understand their options to help support them."
+        "title": "હું પરિવારના સભ્ય અથવા મિત્રને સમર્થન આપી રહ્યો/રહી છું",
+        "description": "તમારી નજીકની કોઈ વ્યક્તિને કિડનીની બીમારી છે અને તમે તેમને સમર્થન આપવા માટે તેમના વિકલ્પો સમજવા માંગો છો."
       }
     },
     "helpModal": {
-      "title": "[EN] Need Help Choosing?",
-      "intro": "[EN] It is perfectly normal to feel unsure about which stage describes you best. Here are some tips:",
-      "tip1Title": "[EN] Think about your most recent appointment",
-      "tip1Text": "[EN] What did your kidney team tell you about your kidney function and any next steps?",
-      "tip2Title": "[EN] Consider what brought you here",
-      "tip2Text": "[EN] Were you given this tool by a doctor or nurse? They may have suggested which stage applies to you.",
-      "tip3Title": "[EN] If you are still unsure",
-      "tip3Text": "[EN] Choose the option that feels closest to your situation. You will still be able to explore all the information in this tool, regardless of which option you select.",
-      "note": "[EN] Your kidney team are the experts in your care. If you have questions about your kidney health, please contact them directly.",
-      "understand": "[EN] I understand"
+      "title": "પસંદ કરવામાં મદદ જોઈએ છે?",
+      "intro": "તમને ક્યો તબક્કો શ્રેષ્ઠ વર્ણવે છે તે વિશે અનિશ્ચિત અનુભવવું એકદમ સામાન્ય છે. અહીં કેટલીક ટિપ્સ છે:",
+      "tip1Title": "તમારી સૌથી તાજેતરની એપોઇન્ટમેન્ટ વિશે વિચારો",
+      "tip1Text": "તમારી કિડની ટીમે તમને તમારી કિડનીની કાર્યક્ષમતા અને આગળના કોઈપણ પગલાં વિશે શું કહ્યું?",
+      "tip2Title": "તમને અહીં શું લાવ્યું તે વિચારો",
+      "tip2Text": "શું તમને આ ટૂલ ડૉક્ટર અથવા નર્સે આપ્યું હતું? તેઓએ સૂચવ્યું હોઈ શકે છે કે કયો તબક્કો તમને લાગુ પડે છે.",
+      "tip3Title": "જો તમે હજુ પણ અનિશ્ચિત છો",
+      "tip3Text": "તમારી પરિસ્થિતિની સૌથી નજીક લાગતો વિકલ્પ પસંદ કરો. તમે કયો વિકલ્પ પસંદ કરો છો તેના પર ધ્યાન આપ્યા વિના, તમે હજુ પણ આ ટૂલમાં બધી માહિતી શોધી શકશો.",
+      "note": "તમારી કિડની ટીમ તમારી સંભાળના નિષ્ણાતો છે. જો તમને તમારી કિડનીના સ્વાસ્થ્ય વિશે પ્રશ્નો હોય, તો કૃપા કરીને તેમનો સીધો સંપર્ક કરો.",
+      "understand": "હું સમજું છું"
     }
   },
   "questionnaire": {
     "intro": {
-      "title": "[EN] Tell Us About Yourself",
-      "description": "[EN] These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "title": "અમને તમારા વિશે જણાવો",
+      "description": "આ પ્રશ્નો અમને તમારી પરિસ્થિતિ માટે સૌથી સંબંધિત માહિતી બતાવવામાં મદદ કરે છે. તમારા જવાબો ખાનગી છે અને આ સત્ર પછી સાચવવામાં આવશે નહીં.",
       "features": {
-        "questions": "[EN] 7 quick questions",
-        "time": "[EN] Takes 3-5 minutes",
-        "private": "[EN] Completely private",
-        "skip": "[EN] Skip any question"
+        "questions": "7 ઝડપી પ્રશ્નો",
+        "time": "3-5 મિનિટ લાગે છે",
+        "private": "સંપૂર્ણપણે ખાનગી",
+        "skip": "કોઈપણ પ્રશ્ન છોડો"
       },
-      "beginButton": "[EN] Begin Questions",
-      "skipText": "[EN] If you prefer not to answer these questions, you can skip to general treatment information.",
-      "skipButton": "[EN] Skip All Questions",
-      "backToJourney": "[EN] Back to Journey Stage"
+      "beginButton": "પ્રશ્નો શરૂ કરો",
+      "skipText": "જો તમે આ પ્રશ્નોના જવાબ આપવા ન ઇચ્છો, તો તમે સામાન્ય સારવાર માહિતી પર જઈ શકો છો.",
+      "skipButton": "બધા પ્રશ્નો છોડો",
+      "backToJourney": "યાત્રા તબક્કા પર પાછા જાઓ"
     },
     "progress": {
-      "label": "[EN] Question progress",
-      "questionOf": "[EN] Question {{current}} of {{total}}",
-      "complete": "[EN] complete"
+      "label": "પ્રશ્ન પ્રગતિ",
+      "questionOf": "પ્રશ્ન {{current}} માંથી {{total}}",
+      "complete": "પૂર્ણ"
     },
     "types": {
-      "scale": "[EN] Scale Rating",
-      "single": "[EN] Single Choice",
-      "multiple": "[EN] Multiple Choice"
+      "scale": "સ્કેલ રેટિંગ",
+      "single": "એક પસંદગી",
+      "multiple": "બહુવિધ પસંદગી"
     },
     "questions": {
       "knowledge": {
-        "title": "[EN] How much do you know about kidney disease and its treatments?",
-        "hint": "[EN] This helps us tailor information to your current understanding."
+        "title": "તમે કિડનીની બીમારી અને તેની સારવાર વિશે કેટલું જાણો છો?",
+        "hint": "આ અમને તમારી વર્તમાન સમજણ અનુસાર માહિતી અનુરૂપ કરવામાં મદદ કરે છે."
       },
       "goal": {
-        "title": "[EN] What would you like to get from this session?",
-        "hint": "[EN] Select the option that best describes your main goal today."
+        "title": "તમે આ સત્રમાંથી શું મેળવવા માંગો છો?",
+        "hint": "આજે તમારા મુખ્ય ધ્યેયને શ્રેષ્ઠ રીતે વર્ણવતો વિકલ્પ પસંદ કરો."
       },
       "learning": {
-        "title": "[EN] How do you prefer to learn new information?",
-        "hint": "[EN] This helps us present information in ways that work best for you."
+        "title": "તમે નવી માહિતી શીખવાનું કેવી રીતે પસંદ કરો છો?",
+        "hint": "આ અમને તમારા માટે શ્રેષ્ઠ કામ કરે તે રીતે માહિતી પ્રસ્તુત કરવામાં મદદ કરે છે."
       },
       "comfort": {
-        "title": "[EN] How comfortable are you with medical procedures?",
-        "hint": "[EN] This is a sensitive topic. You can skip this question if you prefer."
+        "title": "તમે તબીબી પ્રક્રિયાઓ સાથે કેટલા આરામદાયક છો?",
+        "hint": "આ એક સંવેદનશીલ વિષય છે. જો તમે પસંદ કરો તો આ પ્રશ્ન છોડી શકો છો."
       },
       "support": {
-        "title": "[EN] Do you have support at home?",
-        "hint": "[EN] Some treatments are easier with help from family or carers."
+        "title": "શું તમને ઘરે સમર્થન મળે છે?",
+        "hint": "કેટલીક સારવાર પરિવાર અથવા સંભાળ કરનારાઓની મદદથી સરળ હોય છે."
       },
       "living": {
-        "title": "[EN] Where do you live?",
-        "hint": "[EN] This helps us understand which treatments might work best in your home environment."
+        "title": "તમે ક્યાં રહો છો?",
+        "hint": "આ અમને સમજવામાં મદદ કરે છે કે તમારા ઘરના વાતાવરણમાં કઈ સારવાર શ્રેષ્ઠ કામ કરી શકે."
       },
       "priorities": {
-        "title": "[EN] What matters most to you in choosing a treatment?",
-        "hint": "[EN] Your priorities will help us highlight what matters to you in each treatment option."
+        "title": "સારવાર પસંદ કરવામાં તમારા માટે સૌથી વધુ શું મહત્વપૂર્ણ છે?",
+        "hint": "તમારી પ્રાથમિકતાઓ અમને દરેક સારવાર વિકલ્પમાં તમારા માટે શું મહત્વપૂર્ણ છે તે હાઇલાઇટ કરવામાં મદદ કરશે."
       }
     },
     "hints": {
-      "selectUpTo": "[EN] Select up to {{max}} priorities that are most important to you.",
-      "selectAll": "[EN] Select all that apply - you can choose more than one option."
+      "selectUpTo": "તમારા માટે સૌથી મહત્વપૂર્ણ {{max}} સુધીની પ્રાથમિકતાઓ પસંદ કરો.",
+      "selectAll": "લાગુ પડતા બધા પસંદ કરો - તમે એક કરતાં વધુ વિકલ્પ પસંદ કરી શકો છો."
     },
     "audio": {
-      "listen": "[EN] Listen to this question"
+      "listen": "આ પ્રશ્ન સાંભળો"
     },
     "slider": {
       "ariaLabel": "{{min}} થી {{max}} સુધીનું મૂલ્ય"
     },
-    "skipQuestion": "[EN] Skip this question",
-    "viewResults": "[EN] View My Results",
-    "nextQuestion": "[EN] Next Question"
+    "skipQuestion": "આ પ્રશ્ન છોડો",
+    "viewResults": "મારા પરિણામો જુઓ",
+    "nextQuestion": "આગળનો પ્રશ્ન"
   },
   "hub": {
     "title": "તમારી વ્યક્તિગત માહિતી",
     "subtitle": "તમારા જવાબોના આધારે, અહીં અમે શોધખોળ કરવાની ભલામણ કરીએ છીએ.",
     "welcome": {
-      "title": "[EN] Your Personalised Treatment Options",
-      "message": "[EN] Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.",
-      "reminder": "[EN] Remember, your kidney team will help you make the final decision."
+      "title": "તમારા વ્યક્તિગત સારવાર વિકલ્પો",
+      "message": "તમે અમને જે જણાવ્યું છે તેના આધારે, અહીં તમારી કિડનીની સ્થિતિ સમજવામાં અને તમારા વિકલ્પો શોધવામાં મદદ કરવા માટે સંસાધનો છે.",
+      "reminder": "યાદ રાખો, તમારી કિડની ટીમ તમને અંતિમ નિર્ણય લેવામાં મદદ કરશે."
     },
     "session": {
-      "timeRemaining": "[EN] Session time remaining:",
-      "extend": "[EN] Extend session",
-      "updateAnswers": "[EN] Update My Answers",
-      "startOver": "[EN] Start Over"
+      "timeRemaining": "સત્રનો બાકી સમય:",
+      "extend": "સત્ર વધારો",
+      "updateAnswers": "મારા જવાબો અપડેટ કરો",
+      "startOver": "ફરીથી શરૂ કરો"
     },
     "alert": {
-      "title": "[EN] Remember to save your summary",
-      "message": "[EN] Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration."
+      "title": "તમારો સારાંશ સાચવવાનું યાદ રાખો",
+      "message": "આ સત્ર પછી તમારી માહિતી સાચવવામાં આવશે નહીં. તમારી શોધખોળનો રેકોર્ડ રાખવા માટે જતા પહેલા સારાંશ બનાવો."
     },
     "pathway": {
-      "title": "[EN] How would you like to explore?",
+      "title": "તમે કેવી રીતે શોધખોળ કરવા માંગો છો?",
       "guided": {
-        "title": "[EN] Your Recommended Journey",
-        "badge": "[EN] Recommended",
-        "description": "[EN] Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.",
-        "action": "[EN] Start guided journey"
+        "title": "તમારી ભલામણ કરેલ યાત્રા",
+        "badge": "ભલામણ કરેલ",
+        "description": "તમારી પરિસ્થિતિ અનુસાર સારવાર વિકલ્પો દ્વારા માર્ગદર્શિત પગલું-દર-પગલું માર્ગને અનુસરો. જો તમને સ્પષ્ટ દિશા અને સમર્થન જોઈએ તો યોગ્ય.",
+        "action": "માર્ગદર્શિત યાત્રા શરૂ કરો"
       },
       "free": {
-        "title": "[EN] Explore Freely",
-        "description": "[EN] Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.",
-        "action": "[EN] Browse all options"
+        "title": "મુક્તપણે શોધખોળ કરો",
+        "description": "તમારી ગતિએ બધા વિકલ્પો બ્રાઉઝ કરો. તમને રસ હોય તેવા વિષયો પર સીધા જાઓ. જો તમે પહેલેથી જ જાણો છો કે તમે શું શોધી રહ્યા છો તો આદર્શ.",
+        "action": "બધા વિકલ્પો બ્રાઉઝ કરો"
       }
     },
     "content": {
-      "title": "[EN] Tools to Help You Decide"
+      "title": "નિર્ણય લેવામાં મદદ કરવાના સાધનો"
     },
     "cards": {
       "treatments": {
-        "title": "[EN] Treatment Options",
-        "description": "[EN] Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.",
-        "action": "[EN] Explore"
+        "title": "સારવાર વિકલ્પો",
+        "description": "ડાયાલિસિસ પ્રકારો, ટ્રાન્સપ્લાન્ટ અને રૂઢિચુસ્ત સંભાળ સહિત બધા ઉપલબ્ધ કિડની સારવાર વિકલ્પો વિશે જાણો.",
+        "action": "શોધખોળ કરો"
       },
       "model": {
-        "title": "[EN] 3D Kidney Model",
-        "description": "[EN] Explore interactive 3D models showing how different treatments work in your body. See the process visually.",
-        "action": "[EN] View Model"
+        "title": "3D કિડની મોડેલ",
+        "description": "તમારા શરીરમાં વિવિધ સારવાર કેવી રીતે કામ કરે છે તે બતાવતા ઇન્ટરેક્ટિવ 3D મોડેલ્સ શોધો. પ્રક્રિયા દૃશ્યમાન જુઓ.",
+        "action": "મોડેલ જુઓ"
       },
       "compare": {
-        "title": "[EN] Compare Treatments",
-        "description": "[EN] See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.",
-        "action": "[EN] Compare"
+        "title": "સારવારની તુલના કરો",
+        "description": "બધી સારવાર બાજુબાજુમાં જુઓ. તમારા માટે શું મહત્વપૂર્ણ છે તેની તુલના કરો - દૈનિક સમયથી મુસાફરી સુગમતા સુધી.",
+        "action": "તુલના કરો"
       },
       "values": {
-        "title": "[EN] Values Exercise",
-        "description": "[EN] Think about what matters most to you. This exercise helps clarify your priorities to guide your decision.",
-        "action": "[EN] Start"
+        "title": "મૂલ્યોની કસરત",
+        "description": "તમારા માટે સૌથી વધુ શું મહત્વપૂર્ણ છે તે વિશે વિચારો. આ કસરત તમારા નિર્ણયને માર્ગદર્શન આપવા માટે તમારી પ્રાથમિકતાઓ સ્પષ્ટ કરવામાં મદદ કરે છે.",
+        "action": "શરૂ કરો"
       },
       "chat": {
-        "title": "[EN] Ask Questions",
-        "description": "[EN] Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.",
-        "action": "[EN] Start Chat"
+        "title": "પ્રશ્નો પૂછો",
+        "description": "કિડની સારવાર વિકલ્પો વિશે અમારા AI સહાયક સાથે ચેટ કરો. વાતચીતની રીતે તમારા પ્રશ્નોના જવાબો મેળવો.",
+        "action": "ચેટ શરૂ કરો"
       }
     },
     "status": {
-      "new": "[EN] New",
-      "inProgress": "[EN] In Progress",
-      "completed": "[EN] Completed"
+      "new": "નવું",
+      "inProgress": "પ્રગતિમાં",
+      "completed": "પૂર્ણ"
     },
     "summary": {
-      "title": "[EN] Ready to Review Your Journey?",
-      "description": "[EN] View everything you have explored and create a summary to share with your kidney team at your next appointment.",
-      "button": "[EN] View Your Summary"
+      "title": "તમારી યાત્રાની સમીક્ષા કરવા તૈયાર છો?",
+      "description": "તમે જે શોધખોળ કરી છે તે બધું જુઓ અને તમારી આગલી એપોઇન્ટમેન્ટમાં તમારી કિડની ટીમ સાથે શેર કરવા માટે સારાંશ બનાવો.",
+      "button": "તમારો સારાંશ જુઓ"
     },
     "quickAction": {
-      "summary": "[EN] View Your Summary"
+      "summary": "તમારો સારાંશ જુઓ"
     },
     "sections": {
       "recommended": "તમારા માટે ભલામણ કરેલ",
@@ -525,61 +525,61 @@
     }
   },
   "compare": {
-    "title": "[EN] Compare Treatment Options",
-    "subtitle": "[EN] See how different treatments compare across the factors that matter to you.",
-    "intro": "[EN] This comparison shows how each treatment option performs across different aspects of daily life and medical care.",
+    "title": "સારવાર વિકલ્પોની તુલના કરો",
+    "subtitle": "જુઓ કે તમારા માટે મહત્વપૂર્ણ પરિબળોમાં વિવિધ સારવાર કેવી રીતે તુલના કરે છે.",
+    "intro": "આ તુલના બતાવે છે કે દૈનિક જીવન અને તબીબી સંભાળના વિવિધ પાસાઓમાં દરેક સારવાર વિકલ્પ કેવી રીતે કાર્ય કરે છે.",
     "treatments": {
       "transplant": {
-        "name": "[EN] Kidney Transplant",
-        "type": "[EN] Surgery"
+        "name": "કિડની ટ્રાન્સપ્લાન્ટ",
+        "type": "શસ્ત્રક્રિયા"
       },
       "hemodialysis": {
-        "name": "[EN] Haemodialysis",
-        "type": "[EN] In-centre dialysis"
+        "name": "હેમોડાયાલિસિસ",
+        "type": "કેન્દ્ર-આધારિત ડાયાલિસિસ"
       },
       "peritoneal": {
-        "name": "[EN] Peritoneal Dialysis",
-        "type": "[EN] Home dialysis"
+        "name": "પેરીટોનિયલ ડાયાલિસિસ",
+        "type": "ઘરેલુ ડાયાલિસિસ"
       },
       "conservative": {
-        "name": "[EN] Conservative Care",
-        "type": "[EN] Supportive care"
+        "name": "રૂઢિચુસ્ત સંભાળ",
+        "type": "સહાયક સંભાળ"
       }
     },
     "categories": {
-      "dailyLife": "[EN] Daily Life Impact",
-      "practical": "[EN] Practical Considerations",
-      "medical": "[EN] Medical Factors",
-      "support": "[EN] Support Requirements",
-      "health": "[EN] Health Outcomes"
+      "dailyLife": "દૈનિક જીવન પર અસર",
+      "practical": "વ્યવહારિક વિચારણાઓ",
+      "medical": "તબીબી પરિબળો",
+      "support": "સહાય જરૂરિયાતો",
+      "health": "આરોગ્ય પરિણામો"
     },
     "criteria": {
-      "timeCommitment": "[EN] Time commitment per week",
-      "timeCommitmentHint": "[EN] Hours spent on treatment",
-      "location": "[EN] Treatment location",
-      "locationHint": "[EN] Where treatment takes place",
-      "travel": "[EN] Impact on travel",
-      "travelHint": "[EN] Ability to travel and holiday",
-      "diet": "[EN] Diet restrictions",
-      "dietHint": "[EN] Limitations on food and drink",
-      "surgery": "[EN] Surgery required",
-      "surgeryHint": "[EN] Initial procedures needed",
-      "supportNeeded": "[EN] Support needed",
-      "supportNeededHint": "[EN] Help from family or carers",
-      "recoveryTime": "[EN] Recovery time",
-      "recoveryTimeHint": "[EN] Time to adjust to treatment",
-      "longTermOutlook": "[EN] Long-term outlook",
-      "longTermOutlookHint": "[EN] Expected outcomes over time",
-      "scheduleFlexibility": "[EN] Schedule flexibility",
-      "scheduleFlexibilityHint": "[EN] Control over your schedule",
-      "trainingRequired": "[EN] Training required",
-      "trainingRequiredHint": "[EN] Learning time needed",
-      "survivalRates": "[EN] Survival rates",
-      "survivalRatesHint": "[EN] General outcomes (varies by person)",
-      "qualityOfLife": "[EN] Quality of life",
-      "qualityOfLifeHint": "[EN] Overall wellbeing",
-      "energyLevels": "[EN] Energy levels",
-      "energyLevelsHint": "[EN] Typical energy and fatigue"
+      "timeCommitment": "દર અઠવાડિયે સમયની પ્રતિબદ્ધતા",
+      "timeCommitmentHint": "સારવાર પર ખર્ચાયેલા કલાકો",
+      "location": "સારવાર સ્થાન",
+      "locationHint": "સારવાર ક્યાં થાય છે",
+      "travel": "મુસાફરી પર અસર",
+      "travelHint": "મુસાફરી અને રજાની ક્ષમતા",
+      "diet": "આહાર પ્રતિબંધો",
+      "dietHint": "ખોરાક અને પીણા પર મર્યાદાઓ",
+      "surgery": "શસ્ત્રક્રિયા જરૂરી",
+      "surgeryHint": "પ્રારંભિક પ્રક્રિયાઓ જરૂરી",
+      "supportNeeded": "સહાય જરૂરી",
+      "supportNeededHint": "પરિવાર અથવા સંભાળ કરનારાઓની મદદ",
+      "recoveryTime": "સ્વસ્થતાનો સમય",
+      "recoveryTimeHint": "સારવારમાં સમાયોજિત થવાનો સમય",
+      "longTermOutlook": "લાંબા ગાળાનો દૃષ્ટિકોણ",
+      "longTermOutlookHint": "સમય જતાં અપેક્ષિત પરિણામો",
+      "scheduleFlexibility": "શેડ્યૂલ સુગમતા",
+      "scheduleFlexibilityHint": "તમારા શેડ્યૂલ પર નિયંત્રણ",
+      "trainingRequired": "તાલીમ જરૂરી",
+      "trainingRequiredHint": "શીખવાનો સમય જરૂરી",
+      "survivalRates": "જીવિત રહેવાના દરો",
+      "survivalRatesHint": "સામાન્ય પરિણામો (વ્યક્તિ પ્રમાણે બદલાય)",
+      "qualityOfLife": "જીવનની ગુણવત્તા",
+      "qualityOfLifeHint": "એકંદર સુખાકારી",
+      "energyLevels": "ઊર્જા સ્તર",
+      "energyLevelsHint": "સામાન્ય ઊર્જા અને થાક"
     },
     "values": {
       "minimalAfterRecovery": "[EN] Minimal after recovery",
@@ -714,6 +714,27 @@
       "tellMeMore": "મને વધુ જણાવો",
       "prosAndCons": "ફાયદા અને ગેરફાયદા શું છે?",
       "dailyLife": "આ દૈનિક જીવનને કેવી રીતે અસર કરે છે?"
+    },
+    "voice": {
+      "startRecording": "અવાજ ઇનપુટ શરૂ કરો",
+      "stopRecording": "રેકોર્ડિંગ બંધ કરો",
+      "listening": "સાંભળી રહ્યું છે...",
+      "processing": "પ્રક્રિયા થઈ રહી છે...",
+      "speaking": "બોલી રહ્યું છે...",
+      "paused": "રોકાયેલ",
+      "playResponse": "જવાબ સાંભળો",
+      "pauseResponse": "રોકો",
+      "resumeResponse": "ફરી શરૂ કરો",
+      "stopResponse": "બંધ કરો",
+      "loading": "ઓડિયો લોડ થઈ રહ્યું છે...",
+      "loadingAudio": "ઓડિયો લોડ થઈ રહ્યું છે...",
+      "requesting": "પરવાનગી માંગી રહ્યું છે...",
+      "notSupported": "અવાજ ઇનપુટ સમર્થિત નથી",
+      "error": "ભૂલ આવી",
+      "micPermissionDenied": "માઇક્રોફોનની પરવાનગી નકારવામાં આવી. કૃપા કરીને અવાજ ઇનપુટ માટે એક્સેસ આપો.",
+      "noAudioDetected": "કોઈ ઓડિયો મળ્યું નથી. કૃપા કરીને ફરી પ્રયાસ કરો.",
+      "transcriptionFailed": "ઓડિયોને ટેક્સ્ટમાં બદલવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો.",
+      "synthesisFailed": "ઓડિયો ચલાવવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો."
     }
   },
   "values": {
@@ -1041,5 +1062,76 @@
       "company": "[EN] Pears Research Services",
       "text3": "[EN] for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
     }
+  },
+  "timeline": {
+    "title": "જીવનનો એક દિવસ",
+    "subtitle": "જુઓ કે આ સારવાર સાથે સામાન્ય દિવસ કેવો દેખાય છે",
+    "morning": "સવાર",
+    "afternoon": "બપોર",
+    "evening": "સાંજ",
+    "night": "રાત",
+    "treatmentActivities": "{{count}} સારવાર-સંબંધિત પ્રવૃત્તિઓ",
+    "legend": {
+      "treatment": "સારવાર-સંબંધિત",
+      "regular": "નિયમિત પ્રવૃત્તિઓ"
+    }
+  },
+  "progress": {
+    "title": "તમારી શીખવાની યાત્રા",
+    "yourProgress": "તમારી પ્રગતિ",
+    "complete": "પૂર્ણ",
+    "treatments": "સારવાર",
+    "sections": {
+      "title": "અન્વેષણ કરવાના વિભાગો",
+      "questionnaire": "તમારા વિશે",
+      "questionnaireDesc": "તમારી પરિસ્થિતિ શેર કરો",
+      "treatments": "સારવાર વિકલ્પો",
+      "treatmentsDesc": "{{total}} માંથી {{viewed}} અન્વેષિત",
+      "values": "મૂલ્યો અભ્યાસ",
+      "valuesDesc": "તમારી પ્રાથમિકતાઓ સ્પષ્ટ કરો",
+      "chat": "પ્રશ્નો પૂછો",
+      "chatDesc": "જવાબો મેળવો"
+    },
+    "status": {
+      "completed": "પૂર્ણ",
+      "inProgress": "પ્રગતિમાં"
+    },
+    "badges": {
+      "title": "તમારા બેજ",
+      "explorer": "અન્વેષક",
+      "allTreatments": "બધી સારવાર",
+      "values": "મૂલ્યો સ્પષ્ટ",
+      "curious": "જિજ્ઞાસુ મન",
+      "complete": "યાત્રા પૂર્ણ"
+    },
+    "viewSummary": "તમારો સારાંશ જુઓ"
+  },
+  "scenario": {
+    "title": "જો થાય તો? પરિદૃશ્ય અન્વેષક",
+    "subtitle": "જુઓ કે વિવિધ જીવન પરિસ્થિતિઓ દરેક સારવાર વિકલ્પ સાથે કેવી રીતે કામ કરે છે",
+    "tips": "સૂચનો",
+    "learnMore": "{{treatment}} વિશે વધુ જાણો",
+    "compareAll": "બધી સારવારની તુલના કરો",
+    "rating": {
+      "excellent": "ઉત્તમ",
+      "good": "સારું",
+      "moderate": "મધ્યમ",
+      "challenging": "પડકારજનક"
+    },
+    "travel": {
+      "title": "જો હું મુસાફરી કરવા માંગુ?"
+    },
+    "work": {
+      "title": "જો હું પૂર્ણ-સમય કામ કરવા માંગુ?"
+    },
+    "liveAlone": {
+      "title": "જો હું એકલો રહું?"
+    },
+    "family": {
+      "title": "જો મારા નાના બાળકો હોય?"
+    }
+  },
+  "treatment": {
+    "dayInLife": "જીવનનો એક દિવસ"
   }
 }

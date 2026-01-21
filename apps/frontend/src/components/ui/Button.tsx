@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;
   isLoading?: boolean;
 }
@@ -22,28 +22,57 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    // Base styles with min-h-[44px] for WCAG 2.2 touch target compliance
-    const baseStyles =
-      'inline-flex items-center justify-center font-semibold rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-focus disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] touch-manipulation';
+    // Base styles with min-h-[48px] for enhanced WCAG 2.2 touch target compliance (elderly users)
+    // Includes touch-manipulation for instant tap response
+    const baseStyles = clsx(
+      'inline-flex items-center justify-center gap-2',
+      'font-semibold rounded-md',
+      'transition-all duration-200 ease-out',
+      'focus:outline-none focus:ring-[3px] focus:ring-offset-2 focus:ring-focus',
+      'focus-visible:bg-focus focus-visible:text-text-primary',
+      'disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none',
+      'min-h-[48px] touch-manipulation',
+      'active:scale-[0.98] active:transition-transform active:duration-75'
+    );
 
     const variants = {
-      primary:
-        'bg-nhs-blue text-white hover:bg-nhs-dark-blue active:bg-nhs-dark-blue',
-      secondary:
-        'bg-nhs-green text-white hover:bg-nhs-green-dark active:bg-nhs-green-dark',
-      outline:
-        'border-2 border-nhs-blue text-nhs-blue bg-transparent hover:bg-nhs-blue hover:text-white',
-      ghost:
-        'text-nhs-blue bg-transparent hover:bg-nhs-pale-grey',
-      danger:
-        'bg-nhs-red text-white hover:bg-red-700 active:bg-red-800',
+      primary: clsx(
+        'bg-nhs-blue text-white',
+        'hover:bg-nhs-blue-dark',
+        'active:bg-nhs-blue-dark'
+      ),
+      secondary: clsx(
+        'bg-nhs-green text-white',
+        'hover:bg-nhs-green-dark',
+        'active:bg-nhs-green-dark'
+      ),
+      outline: clsx(
+        'border-2 border-nhs-blue text-nhs-blue bg-transparent',
+        'hover:bg-nhs-blue hover:text-white',
+        'active:bg-nhs-blue-dark active:text-white'
+      ),
+      ghost: clsx(
+        'text-nhs-blue bg-transparent',
+        'hover:bg-nhs-blue/10',
+        'active:bg-nhs-blue/20'
+      ),
+      danger: clsx(
+        'bg-nhs-red text-white',
+        'hover:bg-nhs-red-dark',
+        'active:bg-nhs-red-dark'
+      ),
     };
 
-    // Sizes with minimum touch target dimensions (44px) on mobile
+    // Sizes with enhanced touch target dimensions
+    // sm: 44px minimum (WCAG AA)
+    // md: 48px (enhanced for elderly users)
+    // lg: 52px (prominent actions)
+    // xl: 56px (critical CTAs)
     const sizes = {
-      sm: 'px-3 py-2 text-sm min-w-[44px]',
-      md: 'px-4 py-2.5 text-base min-w-[44px]',
-      lg: 'px-6 py-3 text-lg min-w-[44px]',
+      sm: 'px-4 py-2 text-sm min-w-[44px] min-h-[44px]',
+      md: 'px-5 py-2.5 text-base min-w-[48px] min-h-[48px]',
+      lg: 'px-6 py-3 text-lg min-w-[52px] min-h-[52px]',
+      xl: 'px-8 py-4 text-lg min-w-[56px] min-h-[56px]',
     };
 
     return (
@@ -61,10 +90,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {isLoading && (
           <svg
-            className="animate-spin -ml-1 mr-2 h-4 w-4"
+            className="animate-spin h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
           >
             <circle
               className="opacity-25"
@@ -81,6 +112,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             />
           </svg>
         )}
+        {isLoading && <span className="sr-only">Loading...</span>}
         {children}
       </button>
     );

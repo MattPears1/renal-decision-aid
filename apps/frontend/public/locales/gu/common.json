@@ -714,6 +714,27 @@
       "tellMeMore": "મને વધુ જણાવો",
       "prosAndCons": "ફાયદા અને ગેરફાયદા શું છે?",
       "dailyLife": "આ દૈનિક જીવનને કેવી રીતે અસર કરે છે?"
+    },
+    "voice": {
+      "startRecording": "અવાજ ઇનપુટ શરૂ કરો",
+      "stopRecording": "રેકોર્ડિંગ બંધ કરો",
+      "listening": "સાંભળી રહ્યું છે...",
+      "processing": "પ્રક્રિયા થઈ રહી છે...",
+      "speaking": "બોલી રહ્યું છે...",
+      "paused": "રોકાયેલ",
+      "playResponse": "જવાબ સાંભળો",
+      "pauseResponse": "રોકો",
+      "resumeResponse": "ફરી શરૂ કરો",
+      "stopResponse": "બંધ કરો",
+      "loading": "ઓડિયો લોડ થઈ રહ્યું છે...",
+      "loadingAudio": "ઓડિયો લોડ થઈ રહ્યું છે...",
+      "requesting": "પરવાનગી માંગી રહ્યું છે...",
+      "notSupported": "અવાજ ઇનપુટ સમર્થિત નથી",
+      "error": "ભૂલ આવી",
+      "micPermissionDenied": "માઇક્રોફોનની પરવાનગી નકારવામાં આવી. કૃપા કરીને અવાજ ઇનપુટ માટે એક્સેસ આપો.",
+      "noAudioDetected": "કોઈ ઓડિયો મળ્યું નથી. કૃપા કરીને ફરી પ્રયાસ કરો.",
+      "transcriptionFailed": "ઓડિયોને ટેક્સ્ટમાં બદલવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો.",
+      "synthesisFailed": "ઓડિયો ચલાવવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો."
     }
   },
   "values": {
@@ -1041,5 +1062,76 @@
       "company": "[EN] Pears Research Services",
       "text3": "[EN] for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
     }
+  },
+  "timeline": {
+    "title": "જીવનનો એક દિવસ",
+    "subtitle": "જુઓ કે આ સારવાર સાથે સામાન્ય દિવસ કેવો દેખાય છે",
+    "morning": "સવાર",
+    "afternoon": "બપોર",
+    "evening": "સાંજ",
+    "night": "રાત",
+    "treatmentActivities": "{{count}} સારવાર-સંબંધિત પ્રવૃત્તિઓ",
+    "legend": {
+      "treatment": "સારવાર-સંબંધિત",
+      "regular": "નિયમિત પ્રવૃત્તિઓ"
+    }
+  },
+  "progress": {
+    "title": "તમારી શીખવાની યાત્રા",
+    "yourProgress": "તમારી પ્રગતિ",
+    "complete": "પૂર્ણ",
+    "treatments": "સારવાર",
+    "sections": {
+      "title": "અન્વેષણ કરવાના વિભાગો",
+      "questionnaire": "તમારા વિશે",
+      "questionnaireDesc": "તમારી પરિસ્થિતિ શેર કરો",
+      "treatments": "સારવાર વિકલ્પો",
+      "treatmentsDesc": "{{total}} માંથી {{viewed}} અન્વેષિત",
+      "values": "મૂલ્યો અભ્યાસ",
+      "valuesDesc": "તમારી પ્રાથમિકતાઓ સ્પષ્ટ કરો",
+      "chat": "પ્રશ્નો પૂછો",
+      "chatDesc": "જવાબો મેળવો"
+    },
+    "status": {
+      "completed": "પૂર્ણ",
+      "inProgress": "પ્રગતિમાં"
+    },
+    "badges": {
+      "title": "તમારા બેજ",
+      "explorer": "અન્વેષક",
+      "allTreatments": "બધી સારવાર",
+      "values": "મૂલ્યો સ્પષ્ટ",
+      "curious": "જિજ્ઞાસુ મન",
+      "complete": "યાત્રા પૂર્ણ"
+    },
+    "viewSummary": "તમારો સારાંશ જુઓ"
+  },
+  "scenario": {
+    "title": "જો થાય તો? પરિદૃશ્ય અન્વેષક",
+    "subtitle": "જુઓ કે વિવિધ જીવન પરિસ્થિતિઓ દરેક સારવાર વિકલ્પ સાથે કેવી રીતે કામ કરે છે",
+    "tips": "સૂચનો",
+    "learnMore": "{{treatment}} વિશે વધુ જાણો",
+    "compareAll": "બધી સારવારની તુલના કરો",
+    "rating": {
+      "excellent": "ઉત્તમ",
+      "good": "સારું",
+      "moderate": "મધ્યમ",
+      "challenging": "પડકારજનક"
+    },
+    "travel": {
+      "title": "જો હું મુસાફરી કરવા માંગુ?"
+    },
+    "work": {
+      "title": "જો હું પૂર્ણ-સમય કામ કરવા માંગુ?"
+    },
+    "liveAlone": {
+      "title": "જો હું એકલો રહું?"
+    },
+    "family": {
+      "title": "જો મારા નાના બાળકો હોય?"
+    }
+  },
+  "treatment": {
+    "dayInLife": "જીવનનો એક દિવસ"
   }
 }

@@ -1,9 +1,17 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSession } from '@/context/SessionContext';
 import { chatApi } from '@/services/api';
 import { Button } from '@/components/ui';
+import { useVoiceRecording } from '@/hooks/useVoiceRecording';
+import { useTextToSpeech } from '@/hooks/useTextToSpeech';
+import {
+  MicrophoneButton,
+  SpeakerButton,
+  VoiceStatusIndicator,
+  AudioWaveform,
+} from '@/components/VoiceControls';
 import type { ChatMessage } from '@renal-decision-aid/shared-types';
 
 // These arrays use translation keys - the actual values are retrieved via t()
@@ -30,8 +38,53 @@ export default function ChatPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [showPiiWarning, setShowPiiWarning] = useState(true);
+  const [lastAssistantMessage, setLastAssistantMessage] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Voice recording hook
+  const {
+    state: recordingState,
+    isSupported: isVoiceSupported,
+    startRecording,
+    stopRecording,
+    cancelRecording,
+    error: recordingError,
+    audioLevel,
+    duration: recordingDuration,
+  } = useVoiceRecording({
+    language: i18n.language,
+    onTranscription: (result) => {
+      // When we get a transcription, send it as a message
+      if (result.text && result.text.trim()) {
+        handleSend(result.text.trim());
+      }
+    },
+    onError: (error) => {
+      console.error('Voice recording error:', error);
+    },
+  });
+
+  // Text-to-speech hook
+  const {
+    state: speechState,
+    speak,
+    pause,
+    resume,
+    stop: stopSpeech,
+    toggle: toggleSpeech,
+    error: speechError,
+    isPlaying,
+    progress: speechProgress,
+  } = useTextToSpeech({
+    language: i18n.language,
+    onEnd: () => {
+      // Speech finished
+    },
+    onError: (error) => {
+      console.error('Text-to-speech error:', error);
+    },
+  });
 
   // Initialize with welcome message
   useEffect(() => {
@@ -119,6 +172,34 @@ export default function ChatPage() {
       handleSend();
     }
   };
+
+  // Handle voice recording toggle
+  const handleVoiceToggle = useCallback(async () => {
+    if (recordingState === 'recording') {
+      // Stop recording and transcribe
+      await stopRecording();
+    } else if (recordingState === 'idle' || recordingState === 'error') {
+      // Start recording
+      await startRecording();
+    }
+  }, [recordingState, startRecording, stopRecording]);
+
+  // Handle playing AI response
+  const handlePlayResponse = useCallback((text: string) => {
+    if (speechState === 'playing' || speechState === 'paused') {
+      toggleSpeech();
+    } else {
+      speak(text);
+    }
+  }, [speechState, speak, toggleSpeech]);
+
+  // Track last assistant message for TTS
+  useEffect(() => {
+    const lastMessage = messages[messages.length - 1];
+    if (lastMessage?.role === 'assistant') {
+      setLastAssistantMessage(lastMessage.content);
+    }
+  }, [messages]);
 
   return (
     <main className="flex flex-col h-[calc(100vh-64px)] max-h-[calc(100vh-64px)] bg-gradient-to-b from-bg-page to-nhs-pale-grey/30">
@@ -285,6 +366,25 @@ export default function ChatPage() {
                   }`}
                 >
                   <p className="whitespace-pre-wrap text-sm sm:text-base break-words">{message.content}</p>
+                  {/* Speaker button for assistant messages */}
+                  {message.role === 'assistant' && (
+                    <div className="flex items-center gap-2 mt-3 pt-3 border-t border-nhs-pale-grey">
+                      <SpeakerButton
+                        speechState={lastAssistantMessage === message.content ? speechState : 'idle'}
+                        onClick={() => handlePlayResponse(message.content)}
+                        progress={lastAssistantMessage === message.content ? speechProgress : 0}
+                        error={speechError}
+                        size="sm"
+                      />
+                      <span className="text-xs text-text-muted">
+                        {lastAssistantMessage === message.content && speechState === 'playing'
+                          ? t('chat.voice.speaking', 'Speaking...')
+                          : lastAssistantMessage === message.content && speechState === 'paused'
+                            ? t('chat.voice.paused', 'Paused')
+                            : t('chat.voice.playResponse', 'Listen to response')}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <span
                   className={`text-[10px] sm:text-xs text-text-muted px-2 ${
@@ -331,8 +431,36 @@ export default function ChatPage() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area - Enhanced for mobile */}
+        {/* Input Area - Enhanced for mobile with voice controls */}
         <div className="flex-shrink-0 border-t border-nhs-pale-grey bg-white/95 backdrop-blur-sm p-3 sm:p-4 shadow-lg">
+          {/* Voice Status Indicator */}
+          {(recordingState !== 'idle' || speechState === 'playing' || speechState === 'loading') && (
+            <div className="max-w-3xl mx-auto mb-3">
+              <div className="flex items-center justify-center gap-3 py-2 px-4 bg-nhs-pale-grey/50 rounded-lg">
+                <VoiceStatusIndicator
+                  recordingState={recordingState}
+                  speechState={speechState}
+                />
+                {recordingState === 'recording' && (
+                  <AudioWaveform
+                    level={audioLevel}
+                    isActive={true}
+                    variant="recording"
+                    className="flex-shrink-0"
+                  />
+                )}
+                {speechState === 'playing' && (
+                  <AudioWaveform
+                    level={0.5}
+                    isActive={true}
+                    variant="playing"
+                    className="flex-shrink-0"
+                  />
+                )}
+              </div>
+            </div>
+          )}
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -340,30 +468,54 @@ export default function ChatPage() {
             }}
             className="flex gap-2 sm:gap-3 items-end max-w-3xl mx-auto"
           >
+            {/* Microphone button - standalone on mobile, inline on desktop */}
+            <div className="hidden sm:block">
+              <MicrophoneButton
+                recordingState={recordingState}
+                isSupported={isVoiceSupported}
+                onClick={handleVoiceToggle}
+                audioLevel={audioLevel}
+                duration={recordingDuration}
+                error={recordingError}
+                size="md"
+              />
+            </div>
+
             <div className="flex-1 relative min-w-0">
               <textarea
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder={t('chat.placeholder', 'Type your question here...')}
+                placeholder={
+                  recordingState === 'recording'
+                    ? t('chat.voice.listening', 'Listening...')
+                    : recordingState === 'processing'
+                      ? t('chat.voice.processing', 'Processing...')
+                      : t('chat.placeholder', 'Type your question here...')
+                }
                 rows={1}
-                className="w-full px-3 sm:px-5 py-3 sm:py-4 pr-10 sm:pr-12 border-2 border-nhs-pale-grey rounded-xl sm:rounded-2xl resize-none focus:outline-none focus:border-nhs-blue focus:ring-4 focus:ring-nhs-blue/20 transition-all shadow-sm text-sm sm:text-base"
+                className="w-full px-3 sm:px-5 py-3 sm:py-4 pr-24 sm:pr-12 border-2 border-nhs-pale-grey rounded-xl sm:rounded-2xl resize-none focus:outline-none focus:border-nhs-blue focus:ring-4 focus:ring-nhs-blue/20 transition-all shadow-sm text-sm sm:text-base"
                 aria-label={t('chat.inputLabel', 'Message input')}
-                disabled={isLoading}
+                disabled={isLoading || recordingState === 'recording' || recordingState === 'processing'}
                 style={{ fontSize: '16px' }} // Prevents iOS zoom on focus
               />
-              <button
-                type="button"
-                className="absolute right-2 sm:right-4 bottom-2.5 sm:bottom-4 p-2 text-nhs-mid-grey hover:text-nhs-blue hover:bg-nhs-blue/10 rounded-lg transition-all min-w-[36px] min-h-[36px] touch-manipulation"
-                aria-label={t('chat.audioInput', 'Voice input')}
-              >
-                <MicIcon className="w-5 h-5" />
-              </button>
+              {/* Mobile-only inline voice button */}
+              <div className="absolute right-2 bottom-2 sm:hidden flex items-center gap-1">
+                <MicrophoneButton
+                  recordingState={recordingState}
+                  isSupported={isVoiceSupported}
+                  onClick={handleVoiceToggle}
+                  audioLevel={audioLevel}
+                  duration={recordingDuration}
+                  error={recordingError}
+                  size="sm"
+                />
+              </div>
             </div>
             <button
               type="submit"
-              disabled={!input.trim() || isLoading}
+              disabled={!input.trim() || isLoading || recordingState === 'recording'}
               className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus min-w-[48px] min-h-[48px] touch-manipulation"
               aria-label={t('chat.send', 'Send message')}
             >

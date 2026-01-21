@@ -115,44 +115,44 @@ This project is an NHS Multilingual Renal Patient Decision Support Tool with a R
 
 ---
 
-### 3. Zero Test Coverage (CRITICAL)
+### 3. Test Coverage - ✅ SPRINT 2 COMPLETE
 
-**Finding:** No test files exist in the project. All `.test.` files found are in `node_modules/`.
+**Status:** Testing infrastructure established with 65 tests passing.
 
-**Required tests:**
-- Unit tests for all components (12 pages, 8 reusable components)
-- Integration tests for API endpoints
-- E2E tests for user flows (questionnaire, chat, summary)
-- Accessibility tests for WCAG 2.2 AA compliance
+**Test files implemented:**
+- `apps/frontend/src/context/SessionContext.test.tsx` - 15 tests
+- `apps/frontend/src/components/Layout.test.tsx` - 16 tests
+- `apps/frontend/src/pages/LanguageSelectionPage.test.tsx` - 21 tests
+- `apps/frontend/src/test/accessibility.test.tsx` - 7 tests
+- `apps/frontend/src/components/ui/Button.test.tsx` - 2 tests
+- `apps/backend/src/routes/session.test.ts` - 4 tests
 
-**Setup needed:**
-- Vitest/Jest configuration for frontend
-- React Testing Library
-- Cypress/Playwright for E2E
-- Axe-core for accessibility testing
-- Supertest for backend API testing
+**Total: 65 tests passing**
+
+**Infrastructure:**
+- ✅ Vitest configured for frontend and backend
+- ✅ React Testing Library
+- ✅ Accessibility testing with axe-core
+- ✅ Supertest for backend API testing
 
 ---
 
 ## High Priority Gaps
 
-### 4. Backend Limitations
+### 4. Backend - ✅ SPRINT 4 COMPLETE
 
-#### No Persistent Database
-- `apps/backend/src/services/sessionStore.ts` uses in-memory `Map<string, Session>`
-- Sessions lost on server restart
-- No user data persistence
-- 15-minute session expiration with 5-minute cleanup interval
+#### Database Persistence - ✅ IMPLEMENTED
+- `apps/backend/src/services/sessionStore.ts` supports multiple backends:
+  - MemoryBackend (development)
+  - FileBackend (Heroku ephemeral storage)
+  - **SQLiteBackend** (production default - persistent)
+  - Redis support (optional)
+- Sessions persist across server restarts in production
+- 15-minute session expiration with automatic cleanup
 
-**Current state:**
-```typescript
-// apps/backend/src/services/sessionStore.ts - In-memory only
-private sessions = new Map<string, SessionData>();
-```
+**Production uses SQLite by default** - sessions are stored in a local database file.
 
-**Required:** Implement PostgreSQL, MongoDB, or Redis for session persistence.
-
-#### Limited API Endpoints
+#### API Endpoints
 
 | Endpoint | Status | Notes |
 |----------|--------|-------|
@@ -162,38 +162,38 @@ private sessions = new Map<string, SessionData>();
 | `PUT /api/session/:id` | ✅ Implemented | Update session |
 | `DELETE /api/session/:id` | ✅ Implemented | End session |
 | `POST /api/chat` | ✅ Implemented | With PII filter, OpenAI integration |
-| `/api/analytics` | ❌ Missing | No anonymous analytics endpoint |
-| `/api/feedback` | ❌ Missing | No user feedback collection |
-| `/api/export` | ❌ Missing | No PDF/summary export functionality |
-| `/api/treatments` | ❌ Missing | Treatment data served from frontend only |
+| `/api/analytics` | ⏳ Nice-to-have | No anonymous analytics endpoint |
+| `/api/feedback` | ⏳ Nice-to-have | No user feedback collection |
+| `/api/export` | ⏳ Nice-to-have | No PDF/summary export functionality |
+| `/api/treatments` | ⏳ Nice-to-have | Treatment data served from frontend only |
 
 ---
 
-### 5. Accessibility Gaps (WCAG 2.2 AA)
+### 5. Accessibility - ✅ SPRINT 3 COMPLETE
 
-| Issue | Location | WCAG Criterion | Severity |
-|-------|----------|----------------|----------|
-| Hardcoded `aria-label="Breadcrumb"` | Multiple pages (ComparePage:264, ChatPage:123, ModelViewerPage:226, TreatmentDetailPage:340, TreatmentOverviewPage:116) | 1.3.1 Info and Relationships | Medium |
-| Hardcoded `aria-label="Page navigation"` | ComparePage:544, TreatmentDetailPage:663, TreatmentOverviewPage:286 | 1.3.1 | Medium |
-| Hardcoded `aria-label="Frequently asked questions"` | TreatmentDetailPage:540 | 1.3.1 | Medium |
-| Accessibility settings modal not implemented | Layout.tsx:69-70 | 1.4.4 Resize Text, 1.4.3 Contrast | High |
-| Console.log instead of actual functionality | Layout.tsx:70 | N/A | High |
-| Date format hardcoded to 'en-GB' | SummaryPage.tsx:80 | 3.1.1 Language of Page | Low |
+**Accessibility Modal - ✅ IMPLEMENTED**
+- Full implementation in `apps/frontend/src/components/AccessibilityModal.tsx` (377 lines)
+- Features:
+  - Text size adjustment (small, medium, large, extra-large)
+  - High contrast mode toggle
+  - Reduced motion toggle
+  - Line spacing options (normal, relaxed, loose)
+- Proper focus trap and keyboard navigation
+- Settings stored in localStorage
+- Mobile-optimized UI
 
-**Accessibility features already present (234 occurrences across 19 files):**
-- ARIA roles, labels, and attributes
-- Skip to content link
-- Keyboard navigation support
-- Focus management
-- Screen reader support
+**WCAG 2.2 AA Compliance:**
+- ✅ All aria-labels use i18n translation keys (verified via grep)
+- ✅ Skip to content link
+- ✅ Focus management and keyboard navigation
+- ✅ Screen reader support (234+ ARIA attributes)
+- ✅ Date formatting uses locale-aware methods
 
 ---
 
-### 6. Unimplemented Features / TODOs
+### 6. TODOs - ✅ ALL RESOLVED
 
-| Location | TODO/Issue |
-|----------|------------|
-| `apps/frontend/src/components/Layout.tsx:69` | `// TODO: Implement accessibility settings modal` |
+No unimplemented TODOs remain. The accessibility modal (previously at Layout.tsx:69) is now fully implemented.
 
 ---
 
@@ -234,13 +234,20 @@ private sessions = new Map<string, SessionData>();
 | Deployment guide | ❌ Missing |
 | User documentation | ❌ Missing |
 
-### 10. DevOps/CI Gaps
+### 10. DevOps/CI - ✅ SPRINT 5 COMPLETE
 
-- No GitHub Actions workflow for CI/CD
-- No pre-commit hooks configured (no husky/lint-staged)
-- No automated linting on PR
-- No deployment pipeline
-- Heroku `Procfile` exists but no other deployment configs
+**GitHub Actions CI/CD - ✅ IMPLEMENTED**
+- `.github/workflows/ci.yml` configured with:
+  - Lint job (ESLint)
+  - Frontend test job (Vitest)
+  - Backend test job (Vitest + Supertest)
+  - Build job with artifact upload
+- Runs on push and PR to main/master branches
+
+**Still nice-to-have:**
+- Pre-commit hooks (husky/lint-staged)
+- Deployment pipeline automation
+- Docker configuration
 
 ### 11. Missing Environment Configuration
 
@@ -332,17 +339,20 @@ private sessions = new Map<string, SessionData>();
 
 ## Summary Statistics
 
-| Category | Before Sprint 1 | After Sprint 1 |
-|----------|-----------------|----------------|
+| Category | Before Sprints | After All Sprints |
+|----------|----------------|-------------------|
 | Hardcoded strings in source | ~40+ | 0 (all internationalized) |
 | Missing translation keys (per language) | ~24 | 0 |
-| Hardcoded aria-labels | 10 | 10 (Phase 3 task) |
-| TODO comments | 1 | 1 (accessibility modal) |
-| Console statements in code | 4 | 4 (info only) |
-| Test files | 0 | 0 (Phase 2 task) |
+| Hardcoded aria-labels | 10 | 0 (all use i18n keys) |
+| TODO comments | 1 | 0 (accessibility modal implemented) |
+| Console statements in code | 4 | 13 (error handling only - acceptable) |
+| Test files | 0 | 6 (65 tests passing) |
 | Files exceeding 900 line limit | 0 | 0 |
-| API endpoints implemented | 5 | 5 |
-| API endpoints missing | 3 | 3 |
+| API endpoints implemented | 5 | 6 |
+| API endpoints nice-to-have | 3 | 4 |
+| CI/CD pipeline | ❌ | ✅ GitHub Actions |
+| Database persistence | ❌ | ✅ SQLite |
+| Accessibility modal | ❌ | ✅ Fully implemented |
 
 ---
 

@@ -719,6 +719,27 @@
       "tellMeMore": "ਮੈਨੂੰ ਹੋਰ ਦੱਸੋ",
       "prosAndCons": "ਇਸਦੇ ਫਾਇਦੇ ਅਤੇ ਨੁਕਸਾਨ ਕੀ ਹਨ?",
       "dailyLife": "ਇਹ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਨੂੰ ਕਿਵੇਂ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ?"
+    },
+    "voice": {
+      "startRecording": "ਆਵਾਜ਼ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰੋ",
+      "stopRecording": "ਰਿਕਾਰਡਿੰਗ ਬੰਦ ਕਰੋ",
+      "listening": "ਸੁਣ ਰਿਹਾ ਹਾਂ...",
+      "processing": "ਪ੍ਰੋਸੈਸ ਕਰ ਰਿਹਾ ਹਾਂ...",
+      "speaking": "ਬੋਲ ਰਿਹਾ ਹਾਂ...",
+      "paused": "ਰੁਕਿਆ ਹੋਇਆ",
+      "playResponse": "ਜਵਾਬ ਸੁਣੋ",
+      "pauseResponse": "ਰੋਕੋ",
+      "resumeResponse": "ਜਾਰੀ ਰੱਖੋ",
+      "stopResponse": "ਬੰਦ ਕਰੋ",
+      "loading": "ਆਡੀਓ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+      "loadingAudio": "ਆਡੀਓ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+      "requesting": "ਇਜਾਜ਼ਤ ਮੰਗ ਰਿਹਾ ਹਾਂ...",
+      "notSupported": "ਆਵਾਜ਼ ਇਨਪੁੱਟ ਸਹਾਇਕ ਨਹੀਂ ਹੈ",
+      "error": "ਗਲਤੀ ਹੋਈ",
+      "micPermissionDenied": "ਮਾਈਕ੍ਰੋਫੋਨ ਦੀ ਇਜਾਜ਼ਤ ਰੱਦ ਕੀਤੀ ਗਈ। ਕਿਰਪਾ ਕਰਕੇ ਆਵਾਜ਼ ਇਨਪੁੱਟ ਲਈ ਪਹੁੰਚ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ।",
+      "noAudioDetected": "ਕੋਈ ਆਡੀਓ ਨਹੀਂ ਮਿਲਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+      "transcriptionFailed": "ਆਡੀਓ ਨੂੰ ਟੈਕਸਟ ਵਿੱਚ ਬਦਲਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+      "synthesisFailed": "ਆਡੀਓ ਚਲਾਉਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
     }
   },
   "hub": {
@@ -1063,5 +1084,76 @@
       "5": "ਬਹੁਤ ਮਹੱਤਵਪੂਰਨ",
       "default": "ਮਹੱਤਵਪੂਰਨ"
     }
+  },
+  "timeline": {
+    "title": "ਜੀਵਨ ਦਾ ਇੱਕ ਦਿਨ",
+    "subtitle": "ਦੇਖੋ ਕਿ ਇਸ ਇਲਾਜ ਨਾਲ ਇੱਕ ਆਮ ਦਿਨ ਕਿਵੇਂ ਦਿਖਦਾ ਹੈ",
+    "morning": "ਸਵੇਰ",
+    "afternoon": "ਦੁਪਹਿਰ",
+    "evening": "ਸ਼ਾਮ",
+    "night": "ਰਾਤ",
+    "treatmentActivities": "{{count}} ਇਲਾਜ-ਸੰਬੰਧਿਤ ਗਤੀਵਿਧੀਆਂ",
+    "legend": {
+      "treatment": "ਇਲਾਜ-ਸੰਬੰਧਿਤ",
+      "regular": "ਨਿਯਮਤ ਗਤੀਵਿਧੀਆਂ"
+    }
+  },
+  "progress": {
+    "title": "ਤੁਹਾਡੀ ਸਿੱਖਣ ਦੀ ਯਾਤਰਾ",
+    "yourProgress": "ਤੁਹਾਡੀ ਤਰੱਕੀ",
+    "complete": "ਪੂਰਾ",
+    "treatments": "ਇਲਾਜ",
+    "sections": {
+      "title": "ਖੋਜਣ ਲਈ ਭਾਗ",
+      "questionnaire": "ਤੁਹਾਡੇ ਬਾਰੇ",
+      "questionnaireDesc": "ਆਪਣੀ ਸਥਿਤੀ ਸਾਂਝੀ ਕਰੋ",
+      "treatments": "ਇਲਾਜ ਵਿਕਲਪ",
+      "treatmentsDesc": "{{total}} ਵਿੱਚੋਂ {{viewed}} ਖੋਜੇ",
+      "values": "ਮੁੱਲ ਅਭਿਆਸ",
+      "valuesDesc": "ਆਪਣੀਆਂ ਤਰਜੀਹਾਂ ਸਪੱਸ਼ਟ ਕਰੋ",
+      "chat": "ਸਵਾਲ ਪੁੱਛੋ",
+      "chatDesc": "ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰੋ"
+    },
+    "status": {
+      "completed": "ਪੂਰਾ",
+      "inProgress": "ਪ੍ਰਗਤੀ ਵਿੱਚ"
+    },
+    "badges": {
+      "title": "ਤੁਹਾਡੇ ਬੈਜ",
+      "explorer": "ਖੋਜੀ",
+      "allTreatments": "ਸਾਰੇ ਇਲਾਜ",
+      "values": "ਮੁੱਲ ਸਪੱਸ਼ਟ",
+      "curious": "ਉਤਸੁਕ ਮਨ",
+      "complete": "ਯਾਤਰਾ ਪੂਰੀ"
+    },
+    "viewSummary": "ਆਪਣਾ ਸਾਰ ਦੇਖੋ"
+  },
+  "scenario": {
+    "title": "ਜੇ ਹੋਵੇ ਤਾਂ? ਦ੍ਰਿਸ਼ ਖੋਜੀ",
+    "subtitle": "ਦੇਖੋ ਕਿ ਵੱਖ-ਵੱਖ ਜੀਵਨ ਸਥਿਤੀਆਂ ਹਰੇਕ ਇਲਾਜ ਵਿਕਲਪ ਨਾਲ ਕਿਵੇਂ ਕੰਮ ਕਰਦੀਆਂ ਹਨ",
+    "tips": "ਸੁਝਾਅ",
+    "learnMore": "{{treatment}} ਬਾਰੇ ਹੋਰ ਜਾਣੋ",
+    "compareAll": "ਸਾਰੇ ਇਲਾਜਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ",
+    "rating": {
+      "excellent": "ਸ਼ਾਨਦਾਰ",
+      "good": "ਚੰਗਾ",
+      "moderate": "ਦਰਮਿਆਨਾ",
+      "challenging": "ਚੁਣੌਤੀਪੂਰਨ"
+    },
+    "travel": {
+      "title": "ਜੇ ਮੈਂ ਯਾਤਰਾ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ?"
+    },
+    "work": {
+      "title": "ਜੇ ਮੈਂ ਪੂਰੇ ਸਮੇਂ ਕੰਮ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ?"
+    },
+    "liveAlone": {
+      "title": "ਜੇ ਮੈਂ ਇਕੱਲਾ/ਇਕੱਲੀ ਰਹਿੰਦਾ/ਰਹਿੰਦੀ ਹਾਂ?"
+    },
+    "family": {
+      "title": "ਜੇ ਮੇਰੇ ਛੋਟੇ ਬੱਚੇ ਹਨ?"
+    }
+  },
+  "treatment": {
+    "dayInLife": "ਜੀਵਨ ਦਾ ਇੱਕ ਦਿਨ"
   }
 }

@@ -742,6 +742,27 @@
       "tellMeMore": "Tell me more",
       "prosAndCons": "What are the pros and cons?",
       "dailyLife": "How does this affect daily life?"
+    },
+    "voice": {
+      "startRecording": "Start voice input",
+      "stopRecording": "Stop recording",
+      "listening": "Listening...",
+      "processing": "Processing...",
+      "speaking": "Speaking...",
+      "paused": "Paused",
+      "playResponse": "Listen to response",
+      "pauseResponse": "Pause",
+      "resumeResponse": "Resume",
+      "stopResponse": "Stop",
+      "loading": "Loading audio...",
+      "loadingAudio": "Loading audio...",
+      "requesting": "Requesting permission...",
+      "notSupported": "Voice input not supported",
+      "error": "Error occurred",
+      "micPermissionDenied": "Microphone permission was denied. Please allow access to use voice input.",
+      "noAudioDetected": "No audio was detected. Please try again.",
+      "transcriptionFailed": "Failed to transcribe audio. Please try again.",
+      "synthesisFailed": "Failed to play audio. Please try again."
     }
   },
   "values": {
@@ -1070,5 +1091,245 @@
       "company": "Pears Research Services",
       "text3": "for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
     }
+  },
+  "timeline": {
+    "title": "A Day in the Life",
+    "subtitle": "See what a typical day looks like with this treatment",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "night": "Night",
+    "treatmentActivities": "{{count}} treatment-related activities",
+    "legend": {
+      "treatment": "Treatment-related",
+      "regular": "Regular activities"
+    },
+    "dayType": {
+      "dialysisDay": "Dialysis Day (Mon/Wed/Fri)",
+      "restDay": "Rest Day (Tue/Thu/Sat/Sun)",
+      "apdNight": "APD (Automated Overnight)",
+      "capd": "CAPD (Manual Exchanges)",
+      "typical": "Typical Day"
+    },
+    "toggle": {
+      "dialysisDay": "Dialysis Day",
+      "restDay": "Rest Day",
+      "apd": "APD",
+      "capd": "CAPD"
+    },
+    "duration": {
+      "15min": "15 min",
+      "20min": "20 min",
+      "30min": "30-60 min",
+      "4hrs": "4-5 hours",
+      "8hrs": "8-10 hours"
+    },
+    "transplant": {
+      "wakeUp": "Wake up and morning routine",
+      "medication": "Take immunosuppressant medications",
+      "breakfast": "Breakfast - healthy, balanced meal",
+      "work": "Work, hobbies, or activities",
+      "lunch": "Lunch - few dietary restrictions",
+      "activities": "Continue daily activities",
+      "exercise": "Light exercise or walk",
+      "dinner": "Dinner with family",
+      "eveningMeds": "Evening medications",
+      "relax": "Relaxation and leisure time",
+      "sleep": "Normal sleep pattern"
+    },
+    "hemo": {
+      "wakeEarly": "Wake up early",
+      "lightBreakfast": "Light breakfast with fluid limits",
+      "travelTo": "Travel to dialysis centre",
+      "session": "Dialysis session",
+      "travelHome": "Travel home from dialysis",
+      "rest": "Rest and recovery - may feel tired",
+      "lightMeal": "Light meal with dietary restrictions",
+      "quietEvening": "Quiet evening activities",
+      "earlyBed": "Early bedtime after treatment day",
+      "regularWake": "Wake up",
+      "breakfast": "Breakfast with dietary guidelines",
+      "normalDay": "Work or regular activities",
+      "lunch": "Lunch - watching fluid and potassium",
+      "continue": "Continue daily activities",
+      "dinner": "Dinner with family",
+      "leisure": "Leisure time",
+      "sleep": "Normal bedtime"
+    },
+    "pd": {
+      "disconnect": "Disconnect from APD machine",
+      "morning": "Morning routine and shower",
+      "breakfast": "Breakfast - more dietary freedom",
+      "work": "Work or activities - free during day",
+      "lunch": "Lunch - fewer restrictions than HD",
+      "activities": "Continue activities, hobbies",
+      "exercise": "Exercise or outdoor activities",
+      "dinner": "Dinner with family",
+      "leisure": "Evening leisure time",
+      "setup": "Set up APD machine",
+      "overnight": "Sleep while APD works overnight",
+      "capdWake": "Wake up",
+      "exchange1": "First exchange of the day",
+      "capdBreakfast": "Breakfast",
+      "capdWork": "Work or activities",
+      "exchange2": "Second exchange",
+      "capdLunch": "Lunch",
+      "capdActivities": "Afternoon activities",
+      "exchange3": "Third exchange",
+      "capdDinner": "Dinner",
+      "capdLeisure": "Evening relaxation",
+      "exchange4": "Final exchange before bed",
+      "capdSleep": "Sleep"
+    },
+    "conservative": {
+      "wake": "Wake up when ready",
+      "meds": "Take symptom management medications",
+      "breakfast": "Breakfast as tolerated",
+      "morning": "Morning activities as energy allows",
+      "lunch": "Lunch - eat what you enjoy",
+      "rest": "Rest or gentle activities",
+      "visitors": "Time with family or visitors",
+      "eveningMeds": "Evening medications",
+      "dinner": "Dinner with loved ones",
+      "relax": "Quiet evening at home",
+      "sleep": "Rest when tired"
+    }
+  },
+  "progress": {
+    "title": "Your Learning Journey",
+    "yourProgress": "Your Progress",
+    "complete": "complete",
+    "treatments": "treatments",
+    "sections": {
+      "title": "Sections to Explore",
+      "questionnaire": "About You",
+      "questionnaireDesc": "Share your situation",
+      "treatments": "Treatment Options",
+      "treatmentsDesc": "{{viewed}} of {{total}} explored",
+      "values": "Values Exercise",
+      "valuesDesc": "Clarify your priorities",
+      "chat": "Ask Questions",
+      "chatDesc": "Get answers"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress"
+    },
+    "badges": {
+      "title": "Your Badges",
+      "explorer": "Explorer",
+      "allTreatments": "All Treatments",
+      "values": "Values Clear",
+      "curious": "Curious Mind",
+      "complete": "Journey Complete"
+    },
+    "encouragement": {
+      "start": "Start your journey by exploring treatment options",
+      "beginning": "Great start! Keep exploring to learn more",
+      "making": "You are making good progress!",
+      "halfway": "More than halfway there - well done!",
+      "almost": "Almost complete! Just a few more sections",
+      "complete": "Excellent! You have explored everything"
+    },
+    "viewSummary": "View Your Summary"
+  },
+  "scenario": {
+    "title": "What If? Scenario Explorer",
+    "subtitle": "See how different life situations work with each treatment option",
+    "tips": "Tips",
+    "learnMore": "Learn more about {{treatment}}",
+    "compareAll": "Compare All Treatments",
+    "legend": {
+      "title": "Rating Guide"
+    },
+    "rating": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "moderate": "Moderate",
+      "challenging": "Challenging"
+    },
+    "travel": {
+      "title": "What if I want to travel?",
+      "description": "Explore how each treatment affects your ability to travel for holidays or visits",
+      "transplant": "After recovery, you can travel freely. Take medications with you and know where to seek care if needed.",
+      "transplantTip1": "Carry a letter from your transplant team",
+      "transplantTip2": "Research medical facilities at your destination",
+      "transplantTip3": "Pack extra medication in hand luggage",
+      "hemodialysis": "Travel requires advance planning to arrange dialysis at your destination. Holiday dialysis units exist but availability varies.",
+      "hemodialysisTip1": "Book holiday dialysis 6-8 weeks ahead",
+      "hemodialysisTip2": "Your dialysis team can help with arrangements",
+      "hemodialysisTip3": "UK travel is easier than international",
+      "peritoneal": "More freedom to travel. Supplies can be delivered to your destination or you can take them with you.",
+      "peritonealTip1": "Arrange supply delivery 4-6 weeks ahead",
+      "peritonealTip2": "Airlines usually allow extra luggage for supplies",
+      "peritonealTip3": "Need a clean space for exchanges",
+      "conservative": "No dialysis restrictions, but travel depends on how you feel. Short trips may be easier to manage.",
+      "conservativeTip1": "Discuss travel plans with your care team",
+      "conservativeTip2": "Consider travel insurance carefully",
+      "conservativeTip3": "Plan for rest periods during trips"
+    },
+    "work": {
+      "title": "What if I want to work full-time?",
+      "description": "See how different treatments fit with maintaining employment",
+      "transplant": "After 2-3 months recovery, most people can return to full-time work with near-normal energy levels.",
+      "transplantTip1": "Plan a phased return to work",
+      "transplantTip2": "You may need time off for clinic appointments",
+      "transplantTip3": "Many employers offer flexible arrangements",
+      "hemodialysis": "Possible but challenging. Sessions take 4-5 hours three times weekly, plus recovery time. Evening/early shifts may help.",
+      "hemodialysisTip1": "Discuss flexible hours with employer",
+      "hemodialysisTip2": "Evening or early morning dialysis slots",
+      "hemodialysisTip3": "Home hemodialysis offers more flexibility",
+      "peritoneal": "APD overnight means days are free for work. CAPD requires breaks for exchanges but many continue working.",
+      "peritonealTip1": "APD is ideal for full-time workers",
+      "peritonealTip2": "You can do CAPD exchanges at work",
+      "peritonealTip3": "Energy levels often better than HD",
+      "conservative": "Depends on symptoms and energy. Many continue part-time or reduced hours. Focus is on quality of life.",
+      "conservativeTip1": "Consider reducing hours gradually",
+      "conservativeTip2": "Discuss adjustments with occupational health",
+      "conservativeTip3": "Prioritise activities that matter most"
+    },
+    "liveAlone": {
+      "title": "What if I live alone?",
+      "description": "Understand which treatments work well for people living independently",
+      "transplant": "You will need support during recovery (2-4 weeks), but afterwards can live independently.",
+      "transplantTip1": "Arrange help for first few weeks post-surgery",
+      "transplantTip2": "Have emergency contacts available",
+      "transplantTip3": "Set up medication reminders",
+      "hemodialysis": "Treatment is done at a centre with professional staff. No home setup required. Regular contact with healthcare team.",
+      "hemodialysisTip1": "Hospital transport may be available",
+      "hemodialysisTip2": "Staff monitor you during treatment",
+      "hemodialysisTip3": "Social support from other patients",
+      "peritoneal": "Many people do PD alone successfully. Training prepares you well. 24/7 phone support available.",
+      "peritonealTip1": "Thorough training before starting",
+      "peritonealTip2": "Regular home visits from PD nurses",
+      "peritonealTip3": "24-hour helpline for emergencies",
+      "conservative": "Initially manageable alone. As symptoms progress, you may need increasing support. Community services can help.",
+      "conservativeTip1": "Regular check-ins with care team",
+      "conservativeTip2": "Community support services available",
+      "conservativeTip3": "Plan ahead for future care needs"
+    },
+    "family": {
+      "title": "What if I have young children?",
+      "description": "Consider how treatments affect caring for children and family time",
+      "transplant": "After recovery, you can be fully involved in family life. Best quality of life for active parenting.",
+      "transplantTip1": "Arrange childcare during recovery",
+      "transplantTip2": "Can return to normal parenting activities",
+      "transplantTip3": "Good energy for family activities",
+      "hemodialysis": "Regular time away from home for treatment. Tiredness after sessions may affect family activities. Childcare needed during sessions.",
+      "hemodialysisTip1": "Schedule sessions around school hours",
+      "hemodialysisTip2": "Involve children age-appropriately",
+      "hemodialysisTip3": "Plan family time on non-dialysis days",
+      "peritoneal": "Home-based treatment means more time with family. APD overnight leaves days free for childcare.",
+      "peritonealTip1": "APD happens while children sleep",
+      "peritonealTip2": "Days are free for school runs",
+      "peritonealTip3": "Children can be involved safely",
+      "conservative": "No treatment schedule, but energy levels vary. Focus on quality time with family.",
+      "conservativeTip1": "Prioritise special family moments",
+      "conservativeTip2": "Accept help with childcare when needed",
+      "conservativeTip3": "Have honest conversations with children"
+    }
+  },
+  "treatment": {
+    "dayInLife": "A Day in the Life"
   }
 }

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import NHSHeader from './NHSHeader';
 import NHSFooter from './NHSFooter';
 import AccessibilityModal from './AccessibilityModal';
+import BackToTop from './BackToTop';
 
 export default function Layout() {
   const { t } = useTranslation();
@@ -50,6 +51,9 @@ export default function Layout() {
 
       {/* NHS Footer */}
       <NHSFooter />
+
+      {/* Back to Top Button */}
+      <BackToTop threshold={400} />
 
       {/* Accessibility Settings Button (Fixed Position) */}
       <AccessibilityButton onOpenModal={() => setIsAccessibilityModalOpen(true)} />

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession, useSessionTimer } from '@/context/SessionContext';
+import LearningProgress from '@/components/LearningProgress';
+import ScenarioExplorer from '@/components/ScenarioExplorer';
 
 interface HubCard {
   id: string;
@@ -253,6 +255,19 @@ export default function HubPage() {
                 <ChevronRightIcon />
               </span>
             </a>
+          </div>
+        </section>
+
+        {/* Learning Progress and Scenario Explorer - New Features */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-10">
+          {/* Learning Progress */}
+          <div>
+            <LearningProgress variant="full" showEncouragement />
+          </div>
+
+          {/* Scenario Explorer */}
+          <div>
+            <ScenarioExplorer compact />
           </div>
         </section>
 
