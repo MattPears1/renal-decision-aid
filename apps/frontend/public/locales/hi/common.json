@@ -1,1451 +1,1039 @@
 {
   "nav": {
-    "home": "Home",
-    "back": "Go Back",
-    "next": "Next",
-    "skip": "Skip",
-    "backToHub": "Back to Hub",
-    "returnToHome": "Return to Home"
+    "home": "होम",
+    "back": "वापस",
+    "next": "आगे",
+    "skip": "छोड़ें",
+    "returnToHub": "हब पर वापस जाएं",
+    "backToHub": "हब पर वापस जाएं",
+    "continueToQuestionnaire": "प्रश्नावली पर जाएं"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
+    "continue": "जारी रखें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "print": "प्रिंट करें",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "notSure": "निश्चित नहीं",
+    "moreInfo": "अधिक जानकारी",
+    "close": "बंद करें",
+    "back": "वापस",
+    "edit": "संपादित करें",
+    "add": "जोड़ें",
+    "remove": "हटाएं"
+  },
+  "accessibility": {
+    "skipToContent": "मुख्य सामग्री पर जाएं",
+    "openMenu": "मेनू खोलें",
+    "closeMenu": "मेनू बंद करें",
+    "expandSection": "अनुभाग विस्तृत करें",
+    "collapseSection": "अनुभाग संक्षिप्त करें",
+    "newWindow": "नई विंडो में खुलता है",
+    "externalLink": "बाहरी लिंक",
+    "settings": "सुगमता",
+    "settingsLabel": "सुगमता विकल्प - टेक्स्ट का आकार, कंट्रास्ट और अन्य सुगमता सेटिंग्स समायोजित करें",
+    "settingsTitle": "टेक्स्ट का आकार, कंट्रास्ट और अन्य सुगमता सेटिंग्स समायोजित करें",
+    "breadcrumb": "ब्रेडक्रंब नेविगेशन",
+    "pageNavigation": "पृष्ठ नेविगेशन",
+    "faq": "अक्सर पूछे जाने वाले प्रश्न",
+    "frequentlyAskedQuestions": "अक्सर पूछे जाने वाले प्रश्न",
+    "modal": {
+      "title": "सुगमता सेटिंग्स",
+      "textSize": "टेक्स्ट का आकार",
+      "textSizeOptions": {
+        "small": "छोटा",
+        "medium": "मध्यम (डिफ़ॉल्ट)",
+        "large": "बड़ा",
+        "extra-large": "अतिरिक्त बड़ा"
+      },
+      "highContrast": "उच्च कंट्रास्ट मोड",
+      "reducedMotion": "कम गति",
+      "lineSpacing": "पंक्ति अंतराल",
+      "lineSpacingOptions": {
+        "normal": "सामान्य",
+        "relaxed": "आरामदायक",
+        "loose": "ढीला"
+      },
+      "save": "सेटिंग्स सहेजें",
+      "cancel": "रद्द करें",
+      "reset": "डिफ़ॉल्ट पर रीसेट करें"
+    }
   },
   "landing": {
-    "title": "Kidney Treatment Decision Aid",
-    "subtitle": "NHS Renal Services",
-    "description": "This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.",
-    "startButton": "Start Your Journey",
-    "startButtonAriaLabel": "Start your kidney treatment decision journey",
-    "learnMore": "Learn More About Kidney Disease",
-    "heroAriaLabel": "Welcome section",
-    "featuresHeading": "How This Tool Helps You",
-    "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
-    "featuresSubtitle": "Everything you need to make an informed decision about your kidney treatment",
+    "title": "गुर्दा उपचार निर्णय सहायता",
+    "subtitle": "NHS गुर्दा सेवाएं",
+    "description": "यह उपकरण आपको अपने गुर्दा उपचार विकल्पों को समझने और यह सोचने में मदद करेगा कि आपके लिए सबसे महत्वपूर्ण क्या है। अपना समय लें - कोई सही या गलत उत्तर नहीं है।",
+    "startButton": "अपनी यात्रा शुरू करें",
+    "startButtonAriaLabel": "अपनी गुर्दा उपचार निर्णय यात्रा शुरू करें",
+    "learnMore": "गुर्दा रोग के बारे में और जानें",
+    "heroAriaLabel": "स्वागत अनुभाग",
+    "featuresHeading": "यह उपकरण आपकी कैसे मदद करता है",
     "features": {
       "time": {
-        "title": "Takes About 15 Minutes",
-        "description": "Complete at your own pace. You can take breaks whenever you need and return to where you left off."
+        "title": "लगभग 15 मिनट लगते हैं",
+        "description": "अपनी गति से पूरा करें। जब चाहें ब्रेक ले सकते हैं और वापस आ सकते हैं।"
       },
       "privacy": {
-        "title": "Your Privacy Protected",
-        "description": "No personal information is stored. Your answers help personalise the tool during this session only."
+        "title": "आपकी गोपनीयता सुरक्षित",
+        "description": "कोई व्यक्तिगत जानकारी संग्रहीत नहीं होती। आपके उत्तर केवल इस सत्र के दौरान उपकरण को व्यक्तिगत बनाने में मदद करते हैं।"
       },
       "devices": {
-        "title": "Works on All Devices",
-        "description": "Use on your phone, tablet, or computer. The tool adapts to your screen size automatically."
+        "title": "सभी उपकरणों पर काम करता है",
+        "description": "फोन, टैबलेट या कंप्यूटर पर उपयोग करें। उपकरण स्वचालित रूप से आपकी स्क्रीन के आकार के अनुसार समायोजित होता है।"
       }
     },
-    "aboutHeading": "What This Tool Does",
+    "aboutHeading": "यह उपकरण क्या करता है",
     "about": {
-      "steps": {
-        "learn": {
-          "title": "Learn",
-          "description": "This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse."
-        },
-        "explore": {
-          "title": "Explore",
-          "description": "You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser."
-        },
-        "decide": {
-          "title": "Decide",
-          "description": "This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you."
-        }
-      },
-      "paragraph1": "This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
-      "paragraph2": "You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
-      "paragraph3": "This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you."
+      "paragraph1": "यह निर्णय सहायता आपको गुर्दा विफलता के लिए उपलब्ध विभिन्न उपचार विकल्पों का पता लगाने में मदद करेगी। आप अपनी गति से प्रत्येक उपचार के बारे में जान सकते हैं, सोच सकते हैं कि आपके लिए सबसे महत्वपूर्ण क्या है, और अपने डॉक्टर या नर्स के साथ साझा करने के लिए सारांश बना सकते हैं।",
+      "paragraph2": "आप अपनी स्थिति के बारे में कुछ सरल प्रश्नों के उत्तर देंगे, फिर उन उपचारों का पता लगाएंगे जो आपके लिए उपयुक्त हो सकते हैं। आपकी जानकारी गोपनीय रहती है और ब्राउज़र बंद करने के बाद सहेजी नहीं जाती।",
+      "paragraph3": "यह उपकरण आपकी स्वास्थ्य सेवा टीम की चिकित्सा सलाह का स्थान नहीं लेता। यह आपको अपने विकल्पों पर चर्चा करते समय अधिक जानकारीपूर्ण और आत्मविश्वासी महसूस करने में मदद करने के लिए डिज़ाइन किया गया है। आपकी गुर्दा टीम आपकी देखभाल में विशेषज्ञ है और आपको सही निर्णय लेने में मदद करेगी।"
     },
-    "trustAriaLabel": "Trust and safety information",
+    "trustAriaLabel": "विश्वास और सुरक्षा जानकारी",
     "trust": {
-      "evidenceBased": "Evidence-based information",
-      "languages": "Available in 7 languages",
-      "accessible": "Accessible for all users",
-      "noAccount": "No account required",
-      "time": "15 minutes",
-      "privateSecure": "Private & Secure"
+      "evidenceBased": "साक्ष्य-आधारित जानकारी",
+      "languages": "7 भाषाओं में उपलब्ध",
+      "accessible": "सभी उपयोगकर्ताओं के लिए सुलभ",
+      "noAccount": "कोई खाता आवश्यक नहीं"
     },
-    "ctaHeading": "Ready to Begin?",
-    "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
+    "ctaHeading": "शुरू करने के लिए तैयार हैं?",
+    "ctaDescription": "अपने गुर्दा उपचार विकल्पों को समझने की दिशा में पहला कदम उठाएं। आप अभी शुरू कर सकते हैं और बाद में वापस आ सकते हैं यदि आपको ब्रेक की आवश्यकता हो।"
   },
   "language": {
-    "title": "Choose Your Language",
-    "instruction": "Please select your preferred language. You can change this at any time.",
-    "selectLanguage": "Select language",
-    "currentLanguage": "Current language",
-    "fallbackAudioText": "Hello"
+    "title": "अपनी भाषा चुनें",
+    "instruction": "कृपया अपनी पसंदीदा भाषा चुनें। आप इसे कभी भी बदल सकते हैं।",
+    "selectLanguage": "भाषा चुनें",
+    "currentLanguage": "वर्तमान भाषा"
   },
   "privacy": {
-    "title": "Your Privacy Matters",
-    "subtitle": "Before you begin, we want you to understand how this tool handles your information.",
-    "pageAriaLabel": "Privacy information",
-    "progressLabel": "Setup progress: 30%",
-    "progressText": "Step 2 of 4: Privacy Information",
-    "listenToPage": "Listen to this page",
-    "stopReading": "Stop reading",
+    "pageAriaLabel": "गोपनीयता जानकारी",
+    "progressLabel": "सेटअप प्रगति: 30%",
+    "progressText": "चरण 2 का 4: गोपनीयता जानकारी",
+    "title": "आपकी गोपनीयता और जानकारी",
+    "subtitle": "शुरू करने से पहले, हम चाहते हैं कि आप समझें कि यह उपकरण आपकी जानकारी को कैसे संभालता है।",
+    "listenToPage": "इस पृष्ठ को सुनें",
+    "stopReading": "पढ़ना बंद करें",
     "sections": {
       "privacy": {
-        "title": "How We Handle Your Information",
-        "content": "Your responses are processed securely and are not stored permanently. This tool does not collect personal health information that can identify you. Your session data is automatically deleted when you close this tool.",
-        "p1": "This tool uses session-only storage. Any information you enter, including your answers to questions and treatment preferences, is only kept while you are using the tool.",
-        "p2": "When you close your browser or after 15 minutes of inactivity, all your information is automatically deleted. We do not save anything about you.",
-        "p3": "We collect anonymous information about how people use this tool to help us improve it. This cannot identify you personally."
+        "title": "हम आपकी जानकारी की सुरक्षा कैसे करते हैं",
+        "content": "आपकी प्रतिक्रियाएं सुरक्षित रूप से संसाधित की जाती हैं और स्थायी रूप से संग्रहीत नहीं की जाती हैं। यह उपकरण व्यक्तिगत स्वास्थ्य जानकारी एकत्र नहीं करता है जो आपकी पहचान कर सके। जब आप इस उपकरण को बंद करते हैं तो आपका सत्र डेटा स्वचालित रूप से हटा दिया जाता है।",
+        "p1": "यह उपकरण केवल सत्र भंडारण का उपयोग करता है। आपके द्वारा दर्ज की गई कोई भी जानकारी, जिसमें प्रश्नों के उत्तर और उपचार प्राथमिकताएं शामिल हैं, केवल उपकरण का उपयोग करते समय रखी जाती है।",
+        "p2": "जब आप अपना ब्राउज़र बंद करते हैं या 15 मिनट की निष्क्रियता के बाद, आपकी सारी जानकारी स्वचालित रूप से हटा दी जाती है। हम आपके बारे में कुछ भी नहीं सहेजते।",
+        "p3": "हम इस उपकरण को बेहतर बनाने में मदद के लिए लोगों के इसे उपयोग करने के तरीके के बारे में अनाम जानकारी एकत्र करते हैं। यह व्यक्तिगत रूप से आपकी पहचान नहीं कर सकता।"
       },
       "ai": {
-        "title": "About the AI Assistant",
-        "content": "This decision aid uses technology to provide personalised information based on your responses. The information provided is drawn from NHS clinical guidelines and evidence-based research. This tool supports but does not replace discussions with your kidney care team.",
-        "p1": "This tool includes an AI assistant that can answer general questions about kidney treatments. The AI provides information only - it cannot give you medical advice specific to your situation.",
-        "p2": "The AI may sometimes make mistakes or provide incomplete information. Always discuss important decisions with your kidney team who know your full medical history.",
-        "p3": "This tool does not replace advice from your healthcare team. It is designed to help you feel more informed when discussing your options with your doctors and nurses."
+        "title": "यह उपकरण कैसे काम करता है",
+        "content": "यह निर्णय सहायता आपकी प्रतिक्रियाओं के आधार पर व्यक्तिगत जानकारी प्रदान करने के लिए प्रौद्योगिकी का उपयोग करती है। प्रदान की गई जानकारी NHS नैदानिक दिशानिर्देशों और साक्ष्य-आधारित शोध से ली गई है। यह उपकरण आपकी गुर्दा देखभाल टीम के साथ चर्चाओं का समर्थन करता है, लेकिन उनका स्थान नहीं लेता।",
+        "p1": "इस उपकरण में एक AI सहायक शामिल है जो गुर्दा उपचार के बारे में सामान्य प्रश्नों का उत्तर दे सकता है। AI केवल जानकारी प्रदान करता है - यह आपकी स्थिति के लिए विशिष्ट चिकित्सा सलाह नहीं दे सकता।",
+        "p2": "AI कभी-कभी गलतियां कर सकता है या अधूरी जानकारी प्रदान कर सकता है। महत्वपूर्ण निर्णयों पर हमेशा अपनी गुर्दा टीम से चर्चा करें जो आपके पूर्ण चिकित्सा इतिहास को जानती है।",
+        "p3": "यह उपकरण आपकी स्वास्थ्य सेवा टीम की सलाह का स्थान नहीं लेता। यह आपको अपने डॉक्टरों और नर्सों के साथ अपने विकल्पों पर चर्चा करते समय अधिक जानकारीपूर्ण महसूस करने में मदद करने के लिए डिज़ाइन किया गया है।"
       },
       "medical": {
-        "title": "Important Medical Information",
-        "content": "This tool provides general information about kidney treatment options. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with your kidney specialist or healthcare team before making any decisions about your treatment. If you have urgent health concerns, please contact your GP or call NHS 111."
+        "title": "महत्वपूर्ण चिकित्सा जानकारी",
+        "content": "यह उपकरण गुर्दा उपचार विकल्पों के बारे में सामान्य जानकारी प्रदान करता है। यह पेशेवर चिकित्सा सलाह, निदान या उपचार का विकल्प नहीं है। अपने उपचार के बारे में कोई भी निर्णय लेने से पहले हमेशा अपने गुर्दा विशेषज्ञ या स्वास्थ्य देखभाल टीम से परामर्श करें। यदि आपको तत्काल स्वास्थ्य संबंधी चिंताएं हैं, तो कृपया अपने GP से संपर्क करें या NHS 111 पर कॉल करें।"
       },
       "pii": {
-        "title": "Please Do Not Share Personal Details",
-        "intro": "To protect your privacy, please do not enter any personal information that could identify you when using this tool, especially in the chat feature.",
-        "listLabel": "Information you should not share",
-        "outro": "You can still tell us about your situation in general terms - for example, your living situation or what matters most to you - without sharing identifying details.",
+        "title": "कृपया व्यक्तिगत विवरण साझा न करें",
+        "intro": "आपकी गोपनीयता की सुरक्षा के लिए, कृपया इस उपकरण का उपयोग करते समय, विशेष रूप से चैट सुविधा में, कोई भी व्यक्तिगत जानकारी दर्ज न करें जो आपकी पहचान कर सके।",
+        "listLabel": "जो जानकारी आपको साझा नहीं करनी चाहिए",
         "items": {
-          "nhsNumber": "Your NHS number",
-          "fullName": "Your full name",
-          "address": "Your home address",
-          "dob": "Your date of birth",
-          "phone": "Phone numbers",
-          "email": "Email addresses"
-        }
+          "nhsNumber": "आपका NHS नंबर",
+          "fullName": "आपका पूरा नाम",
+          "address": "आपका घर का पता",
+          "dob": "आपकी जन्म तिथि",
+          "phone": "फोन नंबर",
+          "email": "ईमेल पते"
+        },
+        "outro": "आप अभी भी सामान्य शब्दों में अपनी स्थिति के बारे में बता सकते हैं - उदाहरण के लिए, आपकी रहने की स्थिति या आपके लिए सबसे महत्वपूर्ण क्या है - पहचान विवरण साझा किए बिना।"
       }
     },
+    "summaryAriaLabel": "मुख्य बिंदु सारांश",
     "summary": {
-      "title": "In Summary",
-      "notSaved": "Your answers are not saved",
-      "noData": "No personal data is collected",
-      "leave": "You can leave at any time"
+      "title": "संक्षेप में",
+      "notSaved": "आपके उत्तर सहेजे नहीं जाते",
+      "noData": "कोई व्यक्तिगत डेटा एकत्र नहीं किया जाता",
+      "leave": "आप कभी भी जा सकते हैं"
     },
-    "summaryAriaLabel": "Key points summary",
     "consent": {
-      "title": "Please confirm to continue",
-      "understand": "I understand that my information is not saved after this session and I will not share personal identifying information",
-      "analytics": "I agree to anonymous analytics being collected to help improve this tool (optional)",
-      "error": "Please confirm you understand the privacy information before continuing"
+      "title": "जारी रखने के लिए कृपया पुष्टि करें",
+      "understand": "मैं समझता/समझती हूं कि इस सत्र के बाद मेरी जानकारी सहेजी नहीं जाती और मैं व्यक्तिगत पहचान जानकारी साझा नहीं करूंगा/करूंगी",
+      "analytics": "मैं इस उपकरण को बेहतर बनाने में मदद के लिए अनाम विश्लेषण एकत्र करने के लिए सहमत हूं (वैकल्पिक)",
+      "error": "जारी रखने से पहले कृपया पुष्टि करें कि आप गोपनीयता जानकारी समझते हैं"
     },
-    "continueButton": "I Understand, Continue",
-    "continueAriaLabel": "Continue to journey stage selection",
-    "readFullPolicy": "Read the full NHS Privacy Policy"
+    "continueButton": "मैं समझता/समझती हूं, जारी रखें",
+    "continueAriaLabel": "यात्रा चरण चयन पर जाएं",
+    "readFullPolicy": "पूर्ण NHS गोपनीयता नीति पढ़ें"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "डेमो",
+    "serviceName": "गुर्दा उपचार निर्णय सहायता",
+    "tagline": "सूचित विकल्प बनाने में आपकी मदद",
+    "homeAriaLabel": "NHS गुर्दा उपचार निर्णय सहायता - होम"
+  },
+  "progress": {
+    "language": "भाषा",
+    "privacy": "गोपनीयता",
+    "yourJourney": "आपकी यात्रा",
+    "aboutYou": "आपके बारे में",
+    "yourOptions": "आपके विकल्प",
+    "ariaLabel": "निर्णय सहायता में प्रगति",
+    "stepOfTotal": "चरण {{current}} का {{total}}",
+    "percentComplete": "{{percentage}}% पूर्ण",
+    "ariaProgressLabel": "प्रगति: {{current}} का {{total}} चरण पूर्ण"
   },
   "journey": {
-    "title": "Where Are You in Your Kidney Care Journey?",
-    "instruction": "Select the option that best describes your current situation",
+    "title": "आप अपनी गुर्दा देखभाल यात्रा में कहां हैं?",
+    "subtitle": "अपनी स्थिति का सबसे अच्छा वर्णन करने वाला विकल्प चुनें",
+    "instruction": "वह विकल्प चुनें जो आपकी वर्तमान स्थिति का सबसे अच्छा वर्णन करता है",
+    "intro": "हर किसी की गुर्दा यात्रा अलग होती है। आपको सबसे प्रासंगिक जानकारी दिखाने में मदद के लिए, कृपया हमें बताएं कि आप अभी कहां हैं। कोई सही या गलत उत्तर नहीं है।",
+    "error": "कृपया एक विकल्प चुनें जो आपकी स्थिति का वर्णन करता है। यदि इनमें से कोई भी फिट नहीं बैठता, तो जारी रखने के लिए \"मैं परिवार के सदस्य या मित्र का समर्थन कर रहा/रही हूं\" चुनें।",
+    "formLabel": "यात्रा चरण विकल्प",
+    "legendLabel": "अपनी गुर्दा यात्रा में आप कहां हैं चुनें",
+    "radioGroupLabel": "यात्रा चरण विकल्प",
+    "listenToQuestion": "इस प्रश्न को सुनें",
+    "audioText": "आप अपनी यात्रा में कहां हैं? वह विकल्प चुनें जो आपकी स्थिति का सबसे अच्छा वर्णन करता है।",
+    "reassurance": "चिंता न करें यदि आप सुनिश्चित नहीं हैं कि कौन सा विकल्प सबसे उपयुक्त है। आप बाद में सभी उपचार विकल्पों का पता लगा सकते हैं, और आपकी गुर्दा टीम आपकी स्थिति को स्पष्ट करने में मदद कर सकती है। आपका चयन हमें पहले सबसे प्रासंगिक जानकारी दिखाने में मदद करता है।",
+    "needHelp": "मुझे चुनने में मदद चाहिए",
     "stages": {
-      "newlyDiagnosed": {
-        "title": "I think I may have kidney disease",
-        "description": "You are concerned about your kidney health and want to learn more about what this might mean."
+      "suspected": {
+        "title": "मुझे लगता है कि मुझे गुर्दा रोग हो सकता है",
+        "description": "आप अपने गुर्दे के स्वास्थ्य के बारे में चिंतित हैं और गुर्दा रोग का क्या मतलब है इसके बारे में और जानना चाहते हैं।"
       },
-      "monitoring": {
-        "title": "I've just been diagnosed - early stage CKD",
-        "description": "You have recently learned about your kidney condition and are being monitored."
+      "earlyDiagnosis": {
+        "title": "मुझे अभी पता चला है - प्रारंभिक चरण CKD",
+        "description": "आपने हाल ही में अपनी गुर्दा स्थिति के बारे में जाना है और समझना चाहते हैं कि इसका आपके लिए क्या मतलब है।"
       },
-      "preparing": {
-        "title": "I've been diagnosed - late stage CKD",
-        "description": "Your kidney function has declined significantly and you are learning about treatment options."
+      "lateDiagnosis": {
+        "title": "मुझे पता चला है - अंतिम चरण CKD",
+        "description": "आपके गुर्दे की कार्यक्षमता काफी कम हो गई है और आपको जल्द ही उपचार विकल्पों के बारे में सोचना पड़ सकता है।"
       },
-      "onDialysis": {
-        "title": "I need to choose a treatment soon",
-        "description": "Your kidney team has told you that you will need to make a treatment decision soon."
+      "choosingTreatment": {
+        "title": "मुझे जल्द ही उपचार चुनना है",
+        "description": "आपकी गुर्दा टीम ने आपको बताया है कि आने वाले महीनों में आपको उपचार शुरू करना होगा और आप अपने विकल्पों के बारे में जानना चाहते हैं।"
       },
-      "transplantWaiting": {
-        "title": "I'm due to have a transplant - want to learn more",
-        "description": "You are on the transplant list or have a living donor arranged."
+      "transplantPending": {
+        "title": "मेरा प्रत्यारोपण होने वाला है - और जानना चाहता/चाहती हूं",
+        "description": "आप प्रत्यारोपण सूची में हैं या आपके पास जीवित दाता है और आप जानना चाहते हैं कि क्या उम्मीद करें।"
       },
-      "postTransplant": {
-        "title": "I'm due to start dialysis - want to learn more",
-        "description": "You will be starting dialysis treatment soon and want to understand what to expect."
+      "dialysisPending": {
+        "title": "मेरा डायलिसिस शुरू होने वाला है - और जानना चाहता/चाहती हूं",
+        "description": "आप जल्द ही डायलिसिस उपचार शुरू करेंगे और विभिन्न प्रकारों और दैनिक जीवन कैसा होगा इसे समझना चाहते हैं।"
       },
       "supporting": {
-        "title": "I'm supporting a family member or friend",
-        "description": "Someone close to you has kidney disease and you want to help them understand their options."
+        "title": "मैं परिवार के सदस्य या मित्र का समर्थन कर रहा/रही हूं",
+        "description": "आपके किसी करीबी को गुर्दा रोग है और आप उनका समर्थन करने के लिए उनके विकल्पों को समझना चाहते हैं।"
       }
+    },
+    "helpModal": {
+      "title": "चुनने में मदद चाहिए?",
+      "intro": "यदि आप सुनिश्चित नहीं हैं कि कौन सा चरण आपका सबसे अच्छा वर्णन करता है, तो यह बिल्कुल सामान्य है। यहां कुछ सुझाव हैं:",
+      "tip1Title": "अपनी सबसे हाल की नियुक्ति के बारे में सोचें",
+      "tip1Text": "आपकी गुर्दा टीम ने आपको आपके गुर्दे की कार्यक्षमता और अगले कदमों के बारे में क्या बताया?",
+      "tip2Title": "विचार करें कि आप यहां क्यों आए",
+      "tip2Text": "क्या आपको यह उपकरण किसी डॉक्टर या नर्स ने दिया? उन्होंने सुझाव दिया होगा कि कौन सा चरण आप पर लागू होता है।",
+      "tip3Title": "यदि आप अभी भी सुनिश्चित नहीं हैं",
+      "tip3Text": "वह विकल्प चुनें जो आपकी स्थिति के सबसे करीब लगता है। आप अभी भी इस उपकरण में सभी जानकारी का पता लगा सकते हैं, चाहे आप कोई भी विकल्प चुनें।",
+      "note": "आपकी गुर्दा टीम आपकी देखभाल में विशेषज्ञ है। यदि आपके गुर्दे के स्वास्थ्य के बारे में प्रश्न हैं, तो कृपया उनसे सीधे संपर्क करें।",
+      "understand": "मैं समझता/समझती हूं"
     }
   },
   "questionnaire": {
     "intro": {
-      "title": "Tell Us About Yourself",
-      "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "title": "हमें अपने बारे में बताएं",
+      "description": "ये प्रश्न हमें आपकी स्थिति के लिए सबसे प्रासंगिक जानकारी दिखाने में मदद करते हैं। आपके उत्तर गोपनीय हैं और इस सत्र के बाद सहेजे नहीं जाएंगे।",
       "features": {
-        "questions": "7 quick questions",
-        "time": "Takes 3-5 minutes",
-        "private": "Completely private",
-        "skip": "Skip any question"
+        "questions": "7 त्वरित प्रश्न",
+        "time": "3-5 मिनट लगते हैं",
+        "private": "पूरी तरह से गोपनीय",
+        "skip": "कोई भी प्रश्न छोड़ें"
       },
-      "beginButton": "Begin Questions",
-      "skipText": "If you prefer not to answer these questions, you can skip to general treatment information.",
-      "skipButton": "Skip All Questions",
-      "backToJourney": "Back to Journey Stage"
+      "beginButton": "प्रश्न शुरू करें",
+      "skipText": "यदि आप इन प्रश्नों का उत्तर नहीं देना चाहते, तो आप सामान्य उपचार जानकारी पर जा सकते हैं।",
+      "skipButton": "सभी प्रश्न छोड़ें",
+      "backToJourney": "यात्रा चरण पर वापस जाएं"
     },
     "progress": {
-      "label": "Question progress",
-      "questionOf": "Question {{current}} of {{total}}",
-      "complete": "complete"
+      "label": "प्रश्न प्रगति",
+      "questionOf": "प्रश्न {{current}} का {{total}}",
+      "complete": "पूर्ण"
     },
     "types": {
-      "scale": "Scale Rating",
-      "single": "Single Choice",
-      "multiple": "Multiple Choice"
+      "scale": "स्केल रेटिंग",
+      "single": "एकल विकल्प",
+      "multiple": "बहुविकल्प"
     },
-    "hints": {
-      "selectUpTo": "Select up to {{max}} priorities that are most important to you.",
-      "selectAll": "Select all that apply - you can choose more than one option."
-    },
-    "audio": {
-      "listen": "Listen to this question"
-    },
-    "skipQuestion": "Skip this question",
-    "viewResults": "View My Results",
-    "nextQuestion": "Next Question",
     "questions": {
       "knowledge": {
-        "title": "How much do you know about kidney disease and its treatments?",
-        "hint": "This helps us tailor information to your current understanding."
+        "title": "आप गुर्दा रोग और इसके उपचारों के बारे में कितना जानते हैं?",
+        "hint": "यह हमें आपकी वर्तमान समझ के अनुसार जानकारी तैयार करने में मदद करता है।"
       },
       "goal": {
-        "title": "What would you like to get from this session?",
-        "hint": "Select the option that best describes your main goal today."
+        "title": "आप इस सत्र से क्या प्राप्त करना चाहेंगे?",
+        "hint": "वह विकल्प चुनें जो आज आपके मुख्य लक्ष्य का सबसे अच्छा वर्णन करता है।"
       },
       "learning": {
-        "title": "How do you prefer to learn new information?",
-        "hint": "This helps us present information in ways that work best for you."
+        "title": "आप नई जानकारी कैसे सीखना पसंद करते हैं?",
+        "hint": "यह हमें जानकारी को उन तरीकों से प्रस्तुत करने में मदद करता है जो आपके लिए सबसे अच्छा काम करते हैं।"
       },
       "comfort": {
-        "title": "How comfortable are you with medical procedures?",
-        "hint": "This is a sensitive topic. You can skip this question if you prefer."
+        "title": "आप चिकित्सा प्रक्रियाओं के साथ कितने सहज हैं?",
+        "hint": "यह एक संवेदनशील विषय है। यदि आप चाहें तो इस प्रश्न को छोड़ सकते हैं।"
       },
       "support": {
-        "title": "Do you have support at home?",
-        "hint": "Some treatments are easier with help from family or carers."
+        "title": "क्या आपको घर पर सहायता मिलती है?",
+        "hint": "कुछ उपचार परिवार या देखभालकर्ताओं की मदद से आसान होते हैं।"
       },
       "living": {
-        "title": "Where do you live?",
-        "hint": "This helps us understand which treatments might work best in your home environment."
+        "title": "आप कहां रहते हैं?",
+        "hint": "यह हमें समझने में मदद करता है कि कौन से उपचार आपके घरेलू वातावरण में सबसे अच्छा काम कर सकते हैं।"
       },
       "priorities": {
-        "title": "What matters most to you in choosing a treatment?",
-        "hint": "Your priorities will help us highlight what matters to you in each treatment option."
-      },
-      "ageRange": {
-        "title": "What is your age range?",
-        "description": "This helps us provide relevant information about treatment options"
-      },
-      "livingSituation": {
-        "title": "What is your current living situation?",
-        "description": "Your living situation can affect which treatments work best for you"
-      },
-      "workStatus": {
-        "title": "What is your current work status?",
-        "description": "This helps us understand how treatment might fit into your daily life"
-      },
-      "supportAvailable": {
-        "title": "Do you have someone who can help support you with your care?",
-        "description": "Having support can influence which treatment options might work best for you"
-      },
-      "importantFactors": {
-        "title": "What is most important to you?",
-        "description": "Select all that apply. This helps us understand your priorities",
-        "helpText": "You can select more than one option"
-      },
-      "healthConcerns": {
-        "title": "Do you have any of these health conditions?",
-        "description": "This is optional but can help provide more relevant information"
+        "title": "उपचार चुनने में आपके लिए सबसे महत्वपूर्ण क्या है?",
+        "hint": "आपकी प्राथमिकताएं हमें प्रत्येक उपचार विकल्प में आपके लिए महत्वपूर्ण बातों को उजागर करने में मदद करेंगी।"
       }
     },
-    "knowledge": {
-      "levels": {
-        "1": "I know very little",
-        "2": "I know a little",
-        "3": "I know some things",
-        "4": "I know quite a lot",
-        "5": "I am well informed"
-      }
+    "hints": {
+      "selectUpTo": "आपके लिए सबसे महत्वपूर्ण {{max}} प्राथमिकताएं चुनें।",
+      "selectAll": "सभी लागू चुनें - आप एक से अधिक विकल्प चुन सकते हैं।"
     },
-    "comfort": {
-      "levels": {
-        "1": "Very anxious",
-        "2": "Somewhat anxious",
-        "3": "Neutral",
-        "4": "Fairly comfortable",
-        "5": "Very comfortable"
-      }
+    "audio": {
+      "listen": "इस प्रश्न को सुनें"
     },
-    "goal": {
-      "options": {
-        "learnBasics": {
-          "label": "Learn the basics about kidney treatment",
-          "description": "I want a general understanding of what my options are"
-        },
-        "compare": {
-          "label": "Compare different treatment options",
-          "description": "I want to understand how treatments differ from each other"
-        },
-        "prepare": {
-          "label": "Prepare for a discussion with my kidney team",
-          "description": "I want to be ready with questions and understand what to ask"
-        },
-        "support": {
-          "label": "Support a family member or friend",
-          "description": "I want to help someone I care about understand their options"
-        },
-        "notSure": {
-          "label": "I am not sure yet",
-          "description": "I would like to explore and see what might be helpful"
-        }
-      }
+    "slider": {
+      "ariaLabel": "{{min}} से {{max}} तक का मान"
     },
-    "learning": {
-      "options": {
-        "visual": {
-          "label": "Pictures and diagrams",
-          "description": "I understand things better when I can see them illustrated"
-        },
-        "audio": {
-          "label": "Listening to explanations",
-          "description": "I prefer to hear information spoken aloud"
-        },
-        "reading": {
-          "label": "Reading text at my own pace",
-          "description": "I like to read and re-read information carefully"
-        },
-        "video": {
-          "label": "Watching videos",
-          "description": "I learn well from video demonstrations and stories"
-        },
-        "interactive": {
-          "label": "Interactive activities",
-          "description": "I learn by doing, exploring, and trying things out"
-        }
-      }
-    },
-    "support": {
-      "options": {
-        "familyPartner": "Yes, I live with family or a partner who can help",
-        "carers": "Yes, I have carers who visit regularly",
-        "familyNearby": "I live alone but have family nearby",
-        "limitedSupport": "I live alone with limited support",
-        "preferNotSay": "Prefer not to say"
-      }
-    },
-    "living": {
-      "options": {
-        "homeSpace": "In my own home with space for equipment",
-        "homeLimited": "In my own home with limited space",
-        "flat": "In a flat or apartment",
-        "supported": "In supported housing or care home"
-      }
-    },
-    "priorities": {
-      "options": {
-        "familyTime": "Spending time with family",
-        "independence": "Maintaining independence",
-        "minimiseHospital": "Minimising time in hospital",
-        "routine": "Keeping my daily routine",
-        "control": "Feeling in control of my treatment",
-        "longevity": "Having the longest possible life",
-        "quality": "Quality of life over quantity",
-        "travel": "Being able to travel"
-      }
-    },
-    "ageRange": {
-      "options": {
-        "under50": "Under 50",
-        "50to65": "50 to 65",
-        "65to75": "65 to 75",
-        "over75": "Over 75"
-      }
-    },
-    "livingSituation": {
-      "options": {
-        "alone": "I live alone",
-        "withPartner": "I live with a partner",
-        "withFamily": "I live with family members",
-        "careFacility": "I live in a care facility"
-      }
-    },
-    "workStatus": {
-      "options": {
-        "workingFull": "Working full-time",
-        "workingPart": "Working part-time",
-        "retired": "Retired",
-        "unable": "Unable to work"
-      }
-    },
-    "supportAvailable": {
-      "options": {
-        "yesRegular": "Yes, I have regular support available",
-        "yesSometimes": "Yes, I have some support available",
-        "limited": "I have limited support",
-        "no": "No, I do not have support available"
-      }
-    },
-    "importantFactors": {
-      "options": {
-        "independence": "Maintaining my independence",
-        "travel": "Being able to travel",
-        "familyTime": "Spending time with family",
-        "workLife": "Continuing to work",
-        "minimalHospital": "Minimising hospital visits",
-        "bestOutcomes": "Best long-term health outcomes"
-      }
-    },
-    "healthConcerns": {
-      "options": {
-        "diabetes": "Diabetes",
-        "heartDisease": "Heart disease",
-        "mobility": "Mobility issues",
-        "vision": "Vision problems",
-        "none": "None of these"
-      }
-    }
-  },
-  "treatments": {
-    "title": "Understanding Your Treatment Options",
-    "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
-    "types": {
-      "transplant": {
-        "title": "Kidney Transplant",
-        "shortDescription": "Receiving a healthy kidney from a donor",
-        "description": "A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor. A successful transplant can provide the best quality of life and longest survival for many people with kidney failure.",
-        "benefits": [
-          "Often provides the best quality of life",
-          "No regular dialysis sessions needed",
-          "Fewer dietary restrictions",
-          "Better energy levels for most people"
-        ],
-        "considerations": [
-          "Requires major surgery",
-          "Need to take immunosuppressant medications for life",
-          "May need to wait for a suitable kidney",
-          "Not suitable for everyone"
-        ],
-        "facts": {
-          "survival": "Best long-term survival outcomes",
-          "surgery": "Requires surgery and recovery time",
-          "medication": "Lifelong medication needed"
-        }
-      },
-      "haemodialysis": {
-        "title": "Haemodialysis",
-        "shortDescription": "Filtering blood using a machine"
-      },
-      "hemodialysis": {
-        "title": "Haemodialysis",
-        "shortDescription": "Filtering blood using a machine",
-        "description": "Haemodialysis uses a machine to filter your blood outside your body. This is usually done at a dialysis unit in hospital or a community centre, typically three times a week for about four hours each session. Some people do haemodialysis at home.",
-        "benefits": [
-          "Effective at removing waste and excess fluid",
-          "Regular contact with healthcare team",
-          "Home haemodialysis option available for some",
-          "Treatment is done for you"
-        ],
-        "considerations": [
-          "Requires regular hospital or centre visits",
-          "Needs vascular access (fistula or line)",
-          "May feel tired after treatment",
-          "Dietary and fluid restrictions apply"
-        ],
-        "facts": {
-          "frequency": "3-4 times per week, 4-5 hours each",
-          "care": "Professional care and monitoring",
-          "travel": "Travel to centre required"
-        }
-      },
-      "peritonealDialysis": {
-        "title": "Peritoneal Dialysis",
-        "shortDescription": "Filtering blood inside the body using the abdomen lining",
-        "description": "Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter. A special fluid is put into your abdomen through a small tube, absorbs waste products, and is then drained out. This can be done at home, either during the day or overnight while you sleep.",
-        "benefits": [
-          "Done at home, more independence",
-          "More flexible schedule",
-          "Gentler on the body, fewer ups and downs",
-          "Easier to travel"
-        ],
-        "considerations": [
-          "Requires daily treatment commitment",
-          "Need a permanent tube in your abdomen",
-          "Risk of infection if technique is not maintained",
-          "Requires storage space for supplies"
-        ],
-        "facts": {
-          "daily": "Daily treatment at home",
-          "options": "Overnight or daytime options",
-          "flexibility": "Greater flexibility and independence"
-        }
-      },
-      "conservative": {
-        "title": "Conservative Management",
-        "shortDescription": "Managing symptoms without dialysis",
-        "description": "Conservative management focuses on maintaining quality of life and managing symptoms without dialysis or transplant. This approach may be right for some people, particularly those who are elderly, frail, or have other serious health conditions. It involves careful symptom management, medications, and support from the kidney care team.",
-        "benefits": [
-          "No dialysis sessions or surgery needed",
-          "Focus on quality of life and comfort",
-          "May be appropriate for some elderly or frail patients",
-          "Maintain usual routine as much as possible"
-        ],
-        "considerations": [
-          "Kidney function will continue to decline",
-          "Symptoms will need active management",
-          "Important to have honest conversations about expectations",
-          "Advance care planning is recommended"
-        ],
-        "facts": {
-          "comfort": "Focus on comfort and quality of life",
-          "noDialysis": "No dialysis treatment required",
-          "symptomManagement": "Active symptom management"
-        }
-      }
-    },
-    "facts": {
-      "transplant": {
-        "survival": "Best long-term survival outcomes",
-        "surgery": "Requires surgery and recovery time",
-        "medication": "Lifelong medication needed"
-      },
-      "hemodialysis": {
-        "frequency": "3-4 times per week, 4-5 hours each",
-        "professionalCare": "Professional care and monitoring",
-        "travel": "Travel to centre required"
-      },
-      "peritoneal": {
-        "dailyHome": "Daily treatment at home",
-        "timingOptions": "Overnight or daytime options",
-        "flexibility": "Greater flexibility and independence"
-      },
-      "conservative": {
-        "comfort": "Focus on comfort and quality of life",
-        "noDialysis": "No dialysis treatment required",
-        "symptomManagement": "Active symptom management"
-      }
-    },
-    "infoBox": {
-      "title": "Your kidney team will guide you",
-      "text": "This information is to help you understand your options. Your kidney team are the experts in your care and will help you decide which treatment is most suitable for your individual situation."
-    },
-    "mainChoices": "Your Main Treatment Choices",
-    "detail": {
-      "transplant": {
-        "title": "Kidney Transplant",
-        "subtitle": "Receiving a healthy kidney from a donor",
-        "description": "A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor. A successful transplant can provide the best quality of life and longest survival for many people with kidney failure.",
-        "tags": {
-          "donor": "Living or deceased donor",
-          "surgery": "Major surgery",
-          "outcomes": "Best long-term outcomes"
-        },
-        "overview": {
-          "p1": "A kidney transplant is often considered the best treatment option for kidney failure because it can restore nearly normal kidney function and provide the best quality of life.",
-          "p2": "You can receive a kidney from a living donor (family member, friend, or altruistic donor) or from someone who has died (deceased donor). Living donor transplants often work better and last longer."
-        },
-        "howItWorks": {
-          "assessment": {
-            "title": "Assessment",
-            "content": "Your kidney team will assess whether you are suitable for a transplant. This includes checking your overall health and doing various tests."
-          },
-          "donor": {
-            "title": "Finding a donor",
-            "content": "If you have a willing living donor, they will be tested for compatibility. Otherwise, you will be placed on the national waiting list for a deceased donor kidney."
-          },
-          "operation": {
-            "title": "The operation",
-            "content": "Transplant surgery takes 2-4 hours. The new kidney is placed in your lower abdomen and connected to your blood vessels and bladder."
-          },
-          "recovery": {
-            "title": "Recovery",
-            "content": "Most people stay in hospital for 5-7 days after the operation. Full recovery takes about 3 months, though you may feel much better within weeks."
-          }
-        },
-        "benefits": {
-          "quality": "Best quality of life",
-          "noDialysis": "No dialysis sessions",
-          "diet": "Fewer diet restrictions",
-          "energy": "Better energy levels"
-        },
-        "considerations": {
-          "surgery": "Requires major surgery with associated risks",
-          "medication": "Need to take immunosuppressant medications for life",
-          "waitingList": "May need to wait years for a suitable kidney from the waiting list",
-          "suitability": "Not suitable for everyone - depends on overall health",
-          "rejection": "Risk of rejection - the new kidney may stop working over time",
-          "infections": "Increased risk of infections due to immunosuppression"
-        },
-        "lifestyle": {
-          "travel": {
-            "title": "Travel",
-            "content": "After recovery, most transplant patients can travel freely. You will need to carry your medications and may need to plan access to medical care at your destination."
-          },
-          "work": {
-            "title": "Work",
-            "content": "Most people can return to work 2-3 months after transplant surgery, though this varies depending on your job and recovery."
-          },
-          "diet": {
-            "title": "Diet",
-            "content": "Dietary restrictions are usually much less strict than with dialysis. However, you should maintain a healthy diet and be careful about food hygiene due to immunosuppression."
-          }
-        },
-        "steps": {
-          "referral": {
-            "title": "Referral and assessment",
-            "description": "Your kidney team will refer you for transplant assessment if they think you may be suitable."
-          },
-          "findingDonor": {
-            "title": "Finding a donor",
-            "description": "Explore living donation options with family and friends, or join the waiting list for a deceased donor kidney."
-          },
-          "preparation": {
-            "title": "Preparation",
-            "description": "Stay as healthy as possible while waiting. Complete any required tests and keep your contact details up to date."
-          },
-          "transplant": {
-            "title": "The transplant",
-            "description": "When a suitable kidney becomes available, you will be called to hospital for the operation."
-          },
-          "followup": {
-            "title": "Recovery and follow-up",
-            "description": "After surgery, you will have regular clinic visits to monitor your new kidney and adjust medications."
-          }
-        },
-        "faqs": {
-          "q1": {
-            "question": "How long does a transplanted kidney last?",
-            "answer": "On average, a kidney from a living donor lasts 15-20 years, and a kidney from a deceased donor lasts 10-15 years. Some transplants last much longer."
-          },
-          "q2": {
-            "question": "Can I still have a transplant if I am on dialysis?",
-            "answer": "Yes. Many people receive a transplant while on dialysis. However, transplant outcomes are generally better if you can have a transplant before needing dialysis."
-          },
-          "q3": {
-            "question": "What are the risks of surgery?",
-            "answer": "Like any major surgery, there are risks including bleeding, infection, blood clots, and reactions to anaesthesia. Your surgical team will explain these risks in detail."
-          },
-          "q4": {
-            "question": "Will I feel the new kidney?",
-            "answer": "No. The new kidney is placed in your lower abdomen and you will not feel it working. Your old kidneys are usually left in place."
-          }
-        },
-        "stories": {
-          "james": {
-            "quote": "Getting my transplant was life-changing. I went from feeling exhausted on dialysis to having energy to play with my grandchildren again.",
-            "name": "James",
-            "duration": "5 years post-transplant"
-          },
-          "sarah": {
-            "quote": "My husband donated his kidney to me. It was a big decision but we went through the process together and our bond is even stronger now.",
-            "name": "Sarah",
-            "duration": "3 years post-transplant"
-          }
-        }
-      },
-      "hemodialysis": {
-        "title": "Hospital Haemodialysis",
-        "subtitle": "Dialysis at a hospital or dialysis centre",
-        "description": "Haemodialysis uses a machine to filter your blood outside your body. Treatment is typically done at a hospital or dialysis centre.",
-        "tags": {
-          "location": "Hospital or centre",
-          "frequency": "3-4 times weekly",
-          "care": "Professional care"
-        },
-        "overview": {
-          "p1": "Haemodialysis is the most common form of dialysis. Blood is taken from your body, cleaned through a special filter called a dialyser, and returned to your body.",
-          "p2": "Most people have haemodialysis at a hospital or dialysis centre 3 times a week, with each session lasting about 4 hours. Some people choose to do haemodialysis at home."
-        },
-        "howItWorks": {
-          "access": {
-            "title": "Vascular access",
-            "content": "Before starting haemodialysis, you will need a permanent access point created in your arm (fistula) or a catheter in your neck or chest."
-          },
-          "session": {
-            "title": "During a session",
-            "content": "You will be connected to the dialysis machine, which draws your blood through tubes, cleans it, and returns it to your body."
-          },
-          "monitoring": {
-            "title": "Monitoring",
-            "content": "Trained staff will monitor you throughout each session and check your blood pressure, weight, and other vital signs."
-          }
-        },
-        "benefits": {
-          "effective": "Effective at removing waste",
-          "professional": "Professional care and monitoring",
-          "regular": "Regular contact with healthcare team",
-          "doneForYou": "Treatment is done for you"
-        },
-        "considerations": {
-          "travel": "Regular travel to dialysis centre required",
-          "time": "Significant time commitment each week",
-          "fatigue": "May feel tired after treatment",
-          "diet": "Strict dietary and fluid restrictions"
-        },
-        "lifestyle": {
-          "work": {
-            "title": "Work",
-            "content": "Many people continue to work while on haemodialysis. You may be able to arrange sessions around your work schedule."
-          },
-          "travel": {
-            "title": "Travel",
-            "content": "Holidays require planning in advance to arrange dialysis at your destination. Holiday dialysis can be arranged in many locations worldwide."
-          }
-        }
-      },
-      "pd": {
-        "title": "Peritoneal Dialysis (PD)",
-        "subtitle": "A home-based treatment that uses your abdomen as a natural filter",
-        "description": "Peritoneal dialysis uses the lining of your abdomen to filter waste from your blood. It can be done at home, giving you more flexibility.",
-        "tags": {
-          "location": "Home-based",
-          "frequency": "Daily exchanges",
-          "flexibility": "More flexible"
-        },
-        "overview": {
-          "p1": "Peritoneal dialysis uses the natural lining of your abdomen (peritoneum) as a filter. A sterile fluid is placed into your abdomen through a permanent tube.",
-          "p2": "The fluid absorbs waste products from your blood, and after a period of time (dwell time), the fluid is drained out and replaced with fresh fluid."
-        },
-        "howItWorks": {
-          "catheter": {
-            "title": "PD catheter",
-            "content": "A soft tube (catheter) is surgically placed in your abdomen. This remains in place permanently and is used for all exchanges."
-          },
-          "capd": {
-            "title": "Manual exchanges (CAPD)",
-            "content": "You drain and replace the fluid yourself 4-5 times during the day. Each exchange takes about 30-40 minutes."
-          },
-          "apd": {
-            "title": "Automated PD (APD)",
-            "content": "A machine does the exchanges automatically while you sleep. You connect to the machine at night and it does multiple exchanges overnight."
-          }
-        },
-        "benefits": {
-          "home": "Done at home - more independence",
-          "gentle": "Gentler on the body",
-          "flexible": "More flexible schedule",
-          "travel": "Easier to travel"
-        },
-        "considerations": {
-          "daily": "Requires daily commitment",
-          "catheter": "Permanent catheter in abdomen",
-          "infection": "Risk of infection (peritonitis)",
-          "storage": "Requires storage space for supplies"
-        }
-      },
-      "conservative": {
-        "title": "Conservative Management",
-        "subtitle": "Medical care focused on quality of life without dialysis",
-        "description": "Conservative management focuses on managing symptoms and maintaining quality of life without dialysis or transplant.",
-        "tags": {
-          "focus": "Quality of life",
-          "noDialysis": "No dialysis",
-          "support": "Full medical support"
-        },
-        "overview": {
-          "p1": "Conservative management means choosing not to have dialysis or a transplant. Instead, your care focuses on managing symptoms and maintaining your quality of life for as long as possible.",
-          "p2": "This choice may be right for some people, particularly those who are elderly, have other serious health conditions, or who decide that the burden of dialysis outweighs the potential benefits."
-        },
-        "benefits": {
-          "noDialysis": "No dialysis sessions or surgery",
-          "quality": "Focus on quality of life",
-          "routine": "Maintain usual routine",
-          "support": "Full medical support available"
-        },
-        "considerations": {
-          "decline": "Kidney function will continue to decline",
-          "symptoms": "Symptoms will need active management",
-          "planning": "Advance care planning is recommended",
-          "conversations": "Important to have honest conversations with family"
-        }
-      }
-    }
+    "skipQuestion": "इस प्रश्न को छोड़ें",
+    "viewResults": "मेरे परिणाम देखें",
+    "nextQuestion": "अगला प्रश्न"
   },
   "hub": {
-    "session": {
-      "timeRemaining": "Session time remaining:",
-      "extend": "Extend session",
-      "updateAnswers": "Update My Answers",
-      "startOver": "Start Over"
-    },
+    "title": "आपकी व्यक्तिगत जानकारी",
+    "subtitle": "आपकी प्रतिक्रियाओं के आधार पर, यहां वह है जो हम खोजने की सलाह देते हैं।",
     "welcome": {
-      "badge": "Your personalised journey",
-      "title": "Your Personalised Treatment Options",
-      "message": "Based on what you have told us, here are resources to help you explore your kidney treatment options.",
-      "messages": {
-        "newlyDiagnosed": "Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.",
-        "monitoring": "As your kidneys are being monitored, these resources will help you prepare for potential future treatments.",
-        "preparing": "Since you are preparing for treatment soon, here are tools to help you understand and compare your options.",
-        "onDialysis": "As someone already on dialysis, you may want to explore other treatment options that could work for you.",
-        "transplantWaiting": "While you wait for a transplant, these resources can help you stay informed and prepared.",
-        "postTransplant": "These resources will help you maintain your health and understand your ongoing care after transplant.",
-        "supporting": "Here are resources to help you support your loved one through their kidney treatment journey."
-      },
-      "reminder": "Remember, your kidney team will help you make the final decision."
+      "title": "आपके व्यक्तिगत उपचार विकल्प",
+      "message": "आपने हमें जो बताया है उसके आधार पर, यहां संसाधन हैं जो आपकी गुर्दा स्थिति को समझने और अपने विकल्पों का पता लगाने में मदद करते हैं।",
+      "reminder": "याद रखें, आपकी गुर्दा टीम अंतिम निर्णय लेने में आपकी मदद करेगी।"
+    },
+    "session": {
+      "timeRemaining": "सत्र का शेष समय:",
+      "extend": "सत्र बढ़ाएं",
+      "updateAnswers": "मेरे उत्तर अपडेट करें",
+      "startOver": "फिर से शुरू करें"
     },
     "alert": {
-      "title": "Remember to save your summary",
-      "message": "Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration.",
-      "saveNow": "Save Now"
+      "title": "अपना सारांश सहेजना याद रखें",
+      "message": "इस सत्र के बाद आपकी जानकारी सहेजी नहीं जाएगी। अपनी खोज का रिकॉर्ड रखने के लिए जाने से पहले सारांश बनाएं।"
     },
     "pathway": {
-      "title": "How would you like to explore?",
+      "title": "आप कैसे खोजना चाहेंगे?",
       "guided": {
-        "title": "Your Recommended Journey",
-        "badge": "Recommended",
-        "description": "Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.",
-        "action": "Start guided journey"
+        "title": "आपकी अनुशंसित यात्रा",
+        "badge": "अनुशंसित",
+        "description": "आपकी स्थिति के अनुरूप उपचार विकल्पों के माध्यम से मार्गदर्शित चरण-दर-चरण पथ का पालन करें। यदि आप स्पष्ट दिशा और समर्थन चाहते हैं तो यह उत्तम है।",
+        "action": "मार्गदर्शित यात्रा शुरू करें"
       },
       "free": {
-        "title": "Explore Freely",
-        "description": "Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.",
-        "action": "Browse all options"
+        "title": "स्वतंत्र रूप से खोजें",
+        "description": "अपनी गति से सभी विकल्प ब्राउज़ करें। जो विषय आपकी रुचि के हैं उन पर सीधे जाएं। यदि आप पहले से जानते हैं कि आप क्या खोज रहे हैं तो यह आदर्श है।",
+        "action": "सभी विकल्प ब्राउज़ करें"
       }
     },
     "content": {
-      "title": "Tools to Help You Decide",
-      "subtitle": "Explore each tool to make an informed decision"
+      "title": "निर्णय लेने में मदद करने वाले उपकरण"
     },
     "cards": {
       "treatments": {
-        "title": "Treatment Options",
-        "description": "Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.",
-        "action": "Explore"
+        "title": "उपचार विकल्प",
+        "description": "डायलिसिस प्रकार, प्रत्यारोपण और रूढ़िवादी देखभाल सहित सभी उपलब्ध गुर्दा उपचार विकल्पों के बारे में जानें।",
+        "action": "खोजें"
       },
       "model": {
-        "title": "3D Kidney Model",
-        "description": "Explore interactive 3D models showing how different treatments work in your body. See the process visually.",
-        "action": "View Model"
+        "title": "3D गुर्दा मॉडल",
+        "description": "इंटरैक्टिव 3D मॉडल देखें जो दिखाते हैं कि आपके शरीर में विभिन्न उपचार कैसे काम करते हैं। प्रक्रिया को दृश्य रूप से देखें।",
+        "action": "मॉडल देखें"
       },
       "compare": {
-        "title": "Compare Treatments",
-        "description": "See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.",
-        "action": "Compare"
+        "title": "उपचारों की तुलना करें",
+        "description": "सभी उपचारों को साथ-साथ देखें। जो आपके लिए मायने रखता है उसकी तुलना करें - दैनिक समय से लेकर यात्रा की लचीलापन तक।",
+        "action": "तुलना करें"
       },
       "values": {
-        "title": "Values Exercise",
-        "description": "Think about what matters most to you. This exercise helps clarify your priorities to guide your decision.",
-        "action": "Start",
-        "actionContinue": "Continue"
+        "title": "मूल्य अभ्यास",
+        "description": "सोचें कि आपके लिए सबसे महत्वपूर्ण क्या है। यह अभ्यास आपके निर्णय का मार्गदर्शन करने के लिए आपकी प्राथमिकताओं को स्पष्ट करने में मदद करता है।",
+        "action": "शुरू करें"
       },
       "chat": {
-        "title": "Ask Questions",
-        "description": "Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.",
-        "action": "Start Chat"
+        "title": "प्रश्न पूछें",
+        "description": "गुर्दा उपचार विकल्पों के बारे में हमारे AI सहायक से चैट करें। बातचीत के तरीके से अपने प्रश्नों के उत्तर प्राप्त करें।",
+        "action": "चैट शुरू करें"
       }
     },
     "status": {
-      "new": "New",
-      "inProgress": "In Progress",
-      "completed": "Completed"
+      "new": "नया",
+      "inProgress": "प्रगति में",
+      "completed": "पूर्ण"
     },
     "summary": {
-      "badge": "Final Step",
-      "title": "Ready to Review Your Journey?",
-      "description": "View everything you have explored and create a summary to share with your kidney team at your next appointment.",
-      "button": "View Your Summary"
+      "title": "अपनी यात्रा की समीक्षा करने के लिए तैयार हैं?",
+      "description": "आपने जो कुछ भी खोजा है उसे देखें और अपनी अगली नियुक्ति में अपनी गुर्दा टीम के साथ साझा करने के लिए सारांश बनाएं।",
+      "button": "अपना सारांश देखें"
     },
     "quickAction": {
-      "summary": "View Your Summary"
+      "summary": "अपना सारांश देखें"
+    }
+  },
+  "treatments": {
+    "title": "अपने उपचार विकल्पों को समझना",
+    "subtitle": "गुर्दे की विफलता के उपचार के विभिन्न तरीके हैं। प्रत्येक के लाभ और विचारणीय बातें हैं।",
+    "detailedInfoAriaLabel": "{{treatment}} विस्तृत जानकारी",
+    "facts": {
+      "transplant": {
+        "survival": "सर्वोत्तम दीर्घकालिक जीवित रहने के परिणाम",
+        "surgery": "सर्जरी और रिकवरी का समय आवश्यक",
+        "medication": "आजीवन दवाई की आवश्यकता"
+      },
+      "hemodialysis": {
+        "frequency": "सप्ताह में 3-4 बार, प्रत्येक 4-5 घंटे",
+        "professionalCare": "पेशेवर देखभाल और निगरानी",
+        "travel": "केंद्र तक यात्रा आवश्यक"
+      },
+      "peritoneal": {
+        "dailyHome": "घर पर दैनिक उपचार",
+        "timingOptions": "रात भर या दिन के समय के विकल्प",
+        "flexibility": "अधिक लचीलापन और स्वतंत्रता"
+      },
+      "conservative": {
+        "comfort": "आराम और जीवन की गुणवत्ता पर ध्यान",
+        "noDialysis": "डायलिसिस उपचार की आवश्यकता नहीं",
+        "symptomManagement": "सक्रिय लक्षण प्रबंधन"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "गुर्दा प्रत्यारोपण",
+        "shortDescription": "एक दाता से स्वस्थ गुर्दा प्राप्त करना",
+        "description": "गुर्दा प्रत्यारोपण में या तो जीवित दाता (जैसे परिवार का सदस्य या मित्र) या मृतक दाता से स्वस्थ गुर्दा प्राप्त करना शामिल है। एक सफल प्रत्यारोपण गुर्दे की विफलता वाले कई लोगों के लिए सबसे अच्छी जीवन गुणवत्ता और सबसे लंबा जीवन प्रदान कर सकता है।",
+        "benefits": [
+          "अक्सर सबसे अच्छी जीवन गुणवत्ता प्रदान करता है",
+          "नियमित डायलिसिस सत्रों की आवश्यकता नहीं",
+          "कम आहार प्रतिबंध",
+          "अधिकांश लोगों के लिए बेहतर ऊर्जा स्तर"
+        ],
+        "considerations": [
+          "बड़ी सर्जरी की आवश्यकता होती है",
+          "जीवन भर इम्यूनोसप्रेसेंट दवाइयां लेनी पड़ती हैं",
+          "उपयुक्त गुर्दे के लिए प्रतीक्षा करनी पड़ सकती है",
+          "सभी के लिए उपयुक्त नहीं"
+        ]
+      },
+      "hemodialysis": {
+        "title": "हीमोडायलिसिस",
+        "shortDescription": "मशीन का उपयोग करके रक्त को छानना",
+        "description": "हीमोडायलिसिस आपके शरीर के बाहर आपके रक्त को छानने के लिए एक मशीन का उपयोग करता है। यह आमतौर पर अस्पताल या सामुदायिक केंद्र में डायलिसिस इकाई में किया जाता है, आमतौर पर सप्ताह में तीन बार लगभग चार घंटे प्रत्येक सत्र के लिए। कुछ लोग घर पर हीमोडायलिसिस करते हैं।",
+        "benefits": [
+          "अपशिष्ट और अतिरिक्त तरल पदार्थ को हटाने में प्रभावी",
+          "स्वास्थ्य देखभाल टीम के साथ नियमित संपर्क",
+          "कुछ के लिए घरेलू हीमोडायलिसिस विकल्प उपलब्ध",
+          "उपचार आपके लिए किया जाता है"
+        ],
+        "considerations": [
+          "नियमित अस्पताल या केंद्र जाने की आवश्यकता",
+          "संवहनी पहुंच (फिस्टुला या लाइन) की आवश्यकता",
+          "उपचार के बाद थकान महसूस हो सकती है",
+          "आहार और तरल पदार्थ प्रतिबंध लागू होते हैं"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "पेरिटोनियल डायलिसिस",
+        "shortDescription": "पेट की परत का उपयोग करके शरीर के अंदर रक्त को छानना",
+        "description": "पेरिटोनियल डायलिसिस आपके पेट की परत (पेरिटोनियम) को प्राकृतिक फिल्टर के रूप में उपयोग करता है। एक विशेष तरल पदार्थ एक छोटी ट्यूब के माध्यम से आपके पेट में डाला जाता है, अपशिष्ट उत्पादों को अवशोषित करता है, और फिर निकाल दिया जाता है। यह घर पर किया जा सकता है, या तो दिन के दौरान या रात भर जब आप सोते हैं।",
+        "benefits": [
+          "घर पर किया जाता है, अधिक स्वतंत्रता",
+          "अधिक लचीला समय",
+          "शरीर पर हल्का, कम उतार-चढ़ाव",
+          "यात्रा करना आसान"
+        ],
+        "considerations": [
+          "दैनिक उपचार प्रतिबद्धता की आवश्यकता",
+          "आपके पेट में स्थायी ट्यूब की आवश्यकता",
+          "तकनीक बनाए न रखने पर संक्रमण का खतरा",
+          "आपूर्ति के लिए भंडारण स्थान की आवश्यकता"
+        ]
+      },
+      "conservative": {
+        "title": "रूढ़िवादी प्रबंधन",
+        "shortDescription": "डायलिसिस के बिना लक्षणों का प्रबंधन",
+        "description": "रूढ़िवादी प्रबंधन डायलिसिस या प्रत्यारोपण के बिना जीवन की गुणवत्ता बनाए रखने और लक्षणों के प्रबंधन पर केंद्रित है। यह दृष्टिकोण कुछ लोगों के लिए सही हो सकता है, विशेष रूप से जो बुजुर्ग, कमजोर हैं, या अन्य गंभीर स्वास्थ्य स्थितियां हैं। इसमें सावधानीपूर्ण लक्षण प्रबंधन, दवाइयां और गुर्दा देखभाल टीम से सहायता शामिल है।",
+        "benefits": [
+          "कोई डायलिसिस सत्र या सर्जरी की आवश्यकता नहीं",
+          "जीवन की गुणवत्ता और आराम पर ध्यान",
+          "कुछ बुजुर्ग या कमजोर रोगियों के लिए उपयुक्त हो सकता है",
+          "जितना संभव हो सामान्य दिनचर्या बनाए रखें"
+        ],
+        "considerations": [
+          "गुर्दा कार्य घटता रहेगा",
+          "लक्षणों को सक्रिय प्रबंधन की आवश्यकता होगी",
+          "अपेक्षाओं के बारे में ईमानदार बातचीत महत्वपूर्ण है",
+          "अग्रिम देखभाल योजना की सिफारिश की जाती है"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "उपचार विकल्पों की तुलना करें",
+    "subtitle": "देखें कि विभिन्न उपचार प्रमुख कारकों में कैसे तुलना करते हैं।",
+    "categories": {
+      "lifestyle": "जीवनशैली प्रभाव",
+      "medical": "चिकित्सा विचार"
+    },
+    "items": {
+      "scheduleFlexibility": "समय सारणी लचीलापन",
+      "travelAbility": "यात्रा करने की क्षमता",
+      "dietRestrictions": "आहार प्रतिबंध",
+      "hospitalVisits": "अस्पताल जाना",
+      "surgeryRequired": "सर्जरी आवश्यक",
+      "medications": "दवाएं"
+    },
+    "values": {
+      "high": "उच्च",
+      "medium": "मध्यम",
+      "low": "कम",
+      "limited": "सीमित",
+      "varies": "भिन्न होता है",
+      "fewer": "कम",
+      "more": "अधिक",
+      "moderate": "मध्यम",
+      "periodic": "नियमित जांच",
+      "threePerWeek": "सप्ताह में 3 बार",
+      "monthly": "मासिक",
+      "asNeeded": "आवश्यकतानुसार",
+      "major": "बड़ी सर्जरी",
+      "minor": "छोटी प्रक्रिया",
+      "none": "कोई नहीं",
+      "lifelong": "जीवन भर प्रतिरक्षा-दमनकारी दवाएं",
+      "several": "कई दवाएं",
+      "symptomBased": "लक्षण-आधारित"
     }
   },
   "compare": {
-    "title": "Compare Treatment Options",
-    "subtitle": "See how different treatments compare across key factors",
+    "title": "उपचार विकल्पों की तुलना करें",
+    "subtitle": "देखें कि विभिन्न उपचार आपके लिए महत्वपूर्ण कारकों में कैसे तुलना करते हैं।",
+    "intro": "यह तुलना दिखाती है कि प्रत्येक उपचार विकल्प दैनिक जीवन और चिकित्सा देखभाल के विभिन्न पहलुओं में कैसा प्रदर्शन करता है।",
     "treatments": {
       "transplant": {
-        "name": "Kidney Transplant",
-        "type": "Surgical option"
+        "name": "गुर्दा प्रत्यारोपण",
+        "type": "सर्जरी"
       },
       "hemodialysis": {
-        "name": "Haemodialysis",
-        "type": "Hospital dialysis"
+        "name": "हीमोडायलिसिस",
+        "type": "केंद्र में डायलिसिस"
       },
-      "pd": {
-        "name": "Peritoneal Dialysis",
-        "type": "Home dialysis"
+      "peritoneal": {
+        "name": "पेरिटोनियल डायलिसिस",
+        "type": "घरेलू डायलिसिस"
       },
       "conservative": {
-        "name": "Conservative Care",
-        "type": "Supportive treatment"
+        "name": "रूढ़िवादी देखभाल",
+        "type": "सहायक देखभाल"
       }
     },
     "categories": {
-      "dailyLife": "Daily Life Impact",
-      "practical": "Practical Considerations",
-      "health": "Health Outcomes",
-      "lifestyle": "Lifestyle Impact",
-      "medical": "Medical Requirements"
+      "dailyLife": "दैनिक जीवन पर प्रभाव",
+      "practical": "व्यावहारिक विचार",
+      "medical": "चिकित्सा कारक",
+      "support": "सहायता आवश्यकताएं",
+      "health": "[EN] Health Outcomes"
     },
     "criteria": {
-      "timeCommitment": {
-        "label": "Time commitment per week",
-        "hint": "Hours spent on treatment"
-      },
-      "location": {
-        "label": "Treatment location",
-        "hint": "Where treatment takes place"
-      },
-      "travel": {
-        "label": "Impact on travel",
-        "hint": "Ability to travel and holiday"
-      },
-      "diet": {
-        "label": "Diet restrictions",
-        "hint": "Limitations on food and drink"
-      },
-      "surgery": {
-        "label": "Surgery required",
-        "hint": "Initial procedures needed"
-      },
-      "support": {
-        "label": "Support needed",
-        "hint": "Help from family or carers"
-      },
-      "flexibility": {
-        "label": "Schedule flexibility",
-        "hint": "Control over your schedule"
-      },
-      "training": {
-        "label": "Training required",
-        "hint": "Learning time needed"
-      },
-      "survival": {
-        "label": "Survival rates",
-        "hint": "General outcomes (varies by person)"
-      },
-      "qualityOfLife": {
-        "label": "Quality of life",
-        "hint": "Overall wellbeing"
-      },
-      "energy": {
-        "label": "Energy levels",
-        "hint": "Typical energy and fatigue"
-      },
-      "scheduleFlexibility": "Schedule Flexibility",
-      "travelAbility": "Travel Ability",
-      "dietRestrictions": "Dietary Restrictions",
-      "hospitalVisits": "Hospital Visits",
-      "surgeryRequired": "Surgery Required",
-      "medications": "Medications"
+      "timeCommitment": "साप्ताहिक समय प्रतिबद्धता",
+      "timeCommitmentHint": "उपचार पर बिताए गए घंटे",
+      "location": "उपचार स्थान",
+      "locationHint": "जहां उपचार होता है",
+      "travel": "यात्रा पर प्रभाव",
+      "travelHint": "यात्रा और छुट्टियों की क्षमता",
+      "diet": "आहार प्रतिबंध",
+      "dietHint": "खान-पान पर सीमाएं",
+      "surgery": "सर्जरी आवश्यक",
+      "surgeryHint": "प्रारंभिक प्रक्रियाएं",
+      "supportNeeded": "आवश्यक सहायता",
+      "supportNeededHint": "परिवार या देखभालकर्ताओं से मदद",
+      "recoveryTime": "ठीक होने का समय",
+      "recoveryTimeHint": "उपचार के अनुकूल होने का समय",
+      "longTermOutlook": "दीर्घकालिक दृष्टिकोण",
+      "longTermOutlookHint": "समय के साथ अपेक्षित परिणाम",
+      "scheduleFlexibility": "[EN] Schedule flexibility",
+      "scheduleFlexibilityHint": "[EN] Control over your schedule",
+      "trainingRequired": "[EN] Training required",
+      "trainingRequiredHint": "[EN] Learning time needed",
+      "survivalRates": "[EN] Survival rates",
+      "survivalRatesHint": "[EN] General outcomes (varies by person)",
+      "qualityOfLife": "[EN] Quality of life",
+      "qualityOfLifeHint": "[EN] Overall wellbeing",
+      "energyLevels": "[EN] Energy levels",
+      "energyLevelsHint": "[EN] Typical energy and fatigue"
     },
     "values": {
-      "transplant": {
-        "timeCommitment": {
-          "text": "Minimal after recovery",
-          "subtext": "Regular checkups only"
-        },
-        "location": {
-          "text": "Home-based",
-          "subtext": "Occasional clinic visits"
-        },
-        "travel": {
-          "text": "Minimal restrictions",
-          "subtext": "Can travel freely"
-        },
-        "diet": {
-          "text": "Few restrictions",
-          "subtext": "Normal healthy diet"
-        }
-      },
-      "hemodialysis": {
-        "timeCommitment": {
-          "text": "12-15 hrs weekly",
-          "subtext": "Plus travel time"
-        },
-        "location": {
-          "text": "Hospital/centre",
-          "subtext": "3 times per week"
-        },
-        "travel": {
-          "text": "Requires planning",
-          "subtext": "Need to arrange dialysis"
-        },
-        "diet": {
-          "text": "Strict restrictions",
-          "subtext": "Limited fluids and certain foods"
-        }
-      },
-      "pd": {
-        "timeCommitment": {
-          "text": "Daily exchanges",
-          "subtext": "30-40 mins each or overnight"
-        },
-        "location": {
-          "text": "At home",
-          "subtext": "Monthly clinic visits"
-        },
-        "travel": {
-          "text": "More flexible",
-          "subtext": "Can arrange supplies ahead"
-        },
-        "diet": {
-          "text": "Some restrictions",
-          "subtext": "Less strict than haemodialysis"
-        }
-      },
-      "conservative": {
-        "timeCommitment": {
-          "text": "Clinic visits only",
-          "subtext": "As symptoms require"
-        },
-        "location": {
-          "text": "Home-based",
-          "subtext": "With clinic support"
-        },
-        "travel": {
-          "text": "As health allows",
-          "subtext": "Depends on symptoms"
-        },
-        "diet": {
-          "text": "As tolerated",
-          "subtext": "Focus on comfort"
-        }
-      },
-      "high": "High",
-      "medium": "Medium",
-      "low": "Low",
-      "limited": "Limited",
-      "varies": "Varies",
-      "fewer": "Fewer",
-      "more": "More",
-      "moderate": "Moderate",
-      "periodic": "Periodic check-ups",
-      "threePerWeek": "3 times per week",
-      "monthly": "Monthly",
-      "asNeeded": "As needed",
-      "major": "Major surgery",
-      "minor": "Minor procedure",
-      "none": "None",
-      "lifelong": "Lifelong immunosuppressants",
-      "several": "Several daily",
-      "symptomBased": "Symptom-based"
+      "minimalAfterRecovery": "ठीक होने के बाद न्यूनतम",
+      "regularCheckupsOnly": "केवल नियमित जांच",
+      "12to15HrsWeekly": "साप्ताहिक 12-15 घंटे",
+      "plusTravelTime": "यात्रा समय के साथ",
+      "dailyExchanges": "दैनिक विनिमय",
+      "canBeDoneOvernight": "रात भर किया जा सकता है",
+      "minimal": "न्यूनतम",
+      "clinicVisitsAsNeeded": "आवश्यकतानुसार क्लिनिक",
+      "noRestrictions": "कोई प्रतिबंध नहीं",
+      "afterRecovery": "ठीक होने के बाद",
+      "hospitalClinic": "अस्पताल/क्लिनिक",
+      "dialysisUnit": "डायलिसिस इकाई",
+      "home": "घर",
+      "anyCleanSpace": "कोई भी साफ जगह",
+      "noEquipmentNeeded": "उपकरण की आवश्यकता नहीं",
+      "veryFlexible": "बहुत लचीला",
+      "takeMedicationsOnly": "केवल दवाइयां लें",
+      "difficult": "कठिन",
+      "mustArrangeHolidayDialysis": "छुट्टी डायलिसिस व्यवस्थित करना होगा",
+      "goodFlexibility": "अच्छी लचीलापन",
+      "suppliesCanBeSentAhead": "आपूर्ति पहले भेजी जा सकती है",
+      "fewRestrictions": "कुछ प्रतिबंध",
+      "nearNormalDiet": "लगभग सामान्य आहार",
+      "moderateRestrictions": "मध्यम प्रतिबंध",
+      "fluidAndPotassiumLimits": "तरल और पोटेशियम सीमाएं",
+      "lessStrict": "कम सख्त",
+      "moreFlexibility": "अधिक लचीलापन",
+      "managedDiet": "प्रबंधित आहार",
+      "tailoredToSymptoms": "लक्षणों के अनुसार",
+      "majorSurgery": "बड़ी सर्जरी",
+      "transplantOperationRequired": "प्रत्यारोपण ऑपरेशन आवश्यक",
+      "minorSurgery": "छोटी सर्जरी",
+      "fistulaOrGraftCreation": "फिस्टुला या ग्राफ्ट निर्माण",
+      "minorProcedure": "छोटी प्रक्रिया",
+      "pdCatheterInsertion": "पीडी कैथेटर डालना",
+      "noneRequired": "आवश्यकता नहीं",
+      "noSurgicalProcedures": "कोई सर्जिकल प्रक्रिया नहीं",
+      "initialSupport": "[EN] Initial support",
+      "duringRecoveryPeriod": "[EN] During recovery period",
+      "noneNeeded": "[EN] None needed",
+      "professionalStaffProvideCare": "[EN] Professional staff provide care",
+      "canDoIndependently": "[EN] Can do independently",
+      "varies": "[EN] Varies",
+      "dependsOnSymptoms": "[EN] Depends on symptoms",
+      "high": "[EN] High",
+      "normalDailyLifePossible": "[EN] Normal daily life possible",
+      "low": "[EN] Low",
+      "fixedHospitalSlots": "[EN] Fixed hospital slots",
+      "chooseYourSchedule": "[EN] Choose your schedule",
+      "noFixedSchedule": "[EN] No fixed schedule",
+      "medicationTraining": "[EN] Medication training",
+      "learningYourNewRoutine": "[EN] Learning your new routine",
+      "staffDoEverything": "[EN] Staff do everything",
+      "oneToTwoWeeksTraining": "[EN] 1-2 weeks training",
+      "learnTheTechnique": "[EN] Learn the technique",
+      "symptomManagement": "[EN] Symptom management",
+      "medicationGuidance": "[EN] Medication guidance",
+      "bestOutcomes": "[EN] Best outcomes",
+      "forSuitableCandidates": "[EN] For suitable candidates",
+      "good": "[EN] Good",
+      "wellEstablishedTreatment": "[EN] Well-established treatment",
+      "similarToHaemodialysis": "[EN] Similar to haemodialysis",
+      "qualityFocused": "[EN] Quality focused",
+      "comfortOverLongevity": "[EN] Comfort over longevity",
+      "excellent": "[EN] Excellent",
+      "nearNormalLifePossible": "[EN] Near-normal life possible",
+      "moderate": "[EN] Moderate",
+      "treatmentAffectsDailyRoutine": "[EN] Treatment affects daily routine",
+      "moreIndependence": "[EN] More independence",
+      "focusOnComfort": "[EN] Focus on comfort",
+      "symptomManagementPriority": "[EN] Symptom management priority",
+      "oftenExcellent": "[EN] Often excellent",
+      "energyRestored": "[EN] Energy restored",
+      "variable": "[EN] Variable",
+      "fatigueAfterSessions": "[EN] Fatigue after sessions",
+      "generallyGood": "[EN] Generally good",
+      "steadyEnergyLevels": "[EN] Steady energy levels",
+      "managedWithSupport": "[EN] Managed with support"
     },
     "legend": {
-      "excellent": "Excellent - Generally very favourable",
-      "good": "Good - Generally favourable",
-      "moderate": "Moderate - Some limitations to consider",
-      "challenging": "Challenging - Significant considerations",
-      "varies": "Varies - Depends on individual circumstances"
+      "title": "रेटिंग गाइड",
+      "excellent": "उत्कृष्ट",
+      "good": "अच्छा",
+      "moderate": "मध्यम",
+      "challenging": "चुनौतीपूर्ण",
+      "varies": "भिन्न होता है",
+      "excellentDesc": "[EN] Excellent - Generally very favourable",
+      "goodDesc": "[EN] Good - Generally favourable",
+      "moderateDesc": "[EN] Moderate - Some limitations to consider",
+      "challengingDesc": "[EN] Challenging - Significant considerations",
+      "variesDesc": "[EN] Varies - Depends on individual circumstances"
     },
-    "cta": {
-      "title": "Compare All Treatments",
-      "description": "See all treatment options side by side to understand how they differ on the factors that matter most to you.",
-      "button": "Compare All Treatments"
+    "viewDetails": "विवरण देखें",
+    "backToHub": "हब पर वापस",
+    "printComparison": "तुलना प्रिंट करें"
+  },
+  "chat": {
+    "title": "प्रश्न पूछें",
+    "subtitle": "हमारा AI सहायक गुर्दे के उपचार के बारे में सामान्य प्रश्नों का उत्तर दे सकता है।",
+    "placeholder": "अपना प्रश्न यहां लिखें...",
+    "send": "भेजें",
+    "disclaimer": "यह सहायक केवल सामान्य जानकारी प्रदान करता है और आपकी गुर्दा देखभाल टीम की चिकित्सा सलाह का स्थान नहीं लेता।",
+    "welcomeMessage": "नमस्ते! मैं गुर्दे की बीमारी और उपचार विकल्पों के बारे में आपके प्रश्नों का उत्तर देने के लिए यहां हूं। आज मैं आपकी कैसे मदद कर सकता/सकती हूं?",
+    "errorMessage": "क्षमा करें, मैं आपके संदेश को संसाधित नहीं कर सका। कृपया पुनः प्रयास करें।",
+    "thinking": "सोच रहा/रही हूं...",
+    "backToHub": "हब पर वापस जाएं",
+    "privacyReminder": "गोपनीयता अनुस्मारक:",
+    "readyToHelp": "मदद के लिए तैयार",
+    "status": {
+      "online": "ऑनलाइन"
+    },
+    "messagesLabel": "चैट संदेश",
+    "inputLabel": "संदेश इनपुट",
+    "audioInput": "वॉइस इनपुट",
+    "piiWarning": "कृपया अपना नाम, NHS नंबर या पता जैसी व्यक्तिगत जानकारी साझा न करें। यह चैट सहेजी नहीं जाती।",
+    "welcome": {
+      "greeting": "नमस्ते! मैं NHS गुर्दा देखभाल सहायक हूं। मैं आपको गुर्दा उपचार विकल्पों को समझने में मदद करने के लिए यहां हूं।",
+      "prompt": "आप मुझसे डायलिसिस, प्रत्यारोपण, रूढ़िवादी देखभाल या गुर्दा उपचार से संबंधित कुछ भी पूछ सकते हैं। आज मैं आपकी कैसे मदद कर सकता/सकती हूं?"
+    },
+    "suggestedQuestions": "सुझाए गए प्रश्न",
+    "questions": {
+      "q1": "हीमोडायलिसिस और पेरिटोनियल डायलिसिस में क्या अंतर है?",
+      "q2": "गुर्दा प्रत्यारोपण सर्जरी में कितना समय लगता है?",
+      "q3": "क्या मैं डायलिसिस पर रहते हुए यात्रा कर सकता/सकती हूं?",
+      "q4": "डायलिसिस उपचार के दुष्प्रभाव क्या हैं?",
+      "q5": "मुझे कैसे पता चलेगा कि मैं प्रत्यारोपण के लिए उपयुक्त हूं?",
+      "q6": "रूढ़िवादी देखभाल क्या है और इसे कौन चुन सकता है?"
+    },
+    "quickReplies": {
+      "tellMeMore": "मुझे और बताएं",
+      "prosAndCons": "फायदे और नुकसान क्या हैं?",
+      "dailyLife": "यह दैनिक जीवन को कैसे प्रभावित करता है?"
     }
   },
   "values": {
-    "title": "What Matters Most to You?",
-    "subtitle": "Rate how important each of these factors is in your treatment decision",
-    "instructions": "Move the slider to indicate how important each statement is to you",
+    "title": "आपके लिए क्या महत्वपूर्ण है",
+    "subtitle": "प्रत्येक कारक आपके लिए कितना महत्वपूर्ण है इसे रेट करें। यह हमें आपकी जानकारी को व्यक्तिगत बनाने में मदद करता है।",
+    "instructions": "महत्व इंगित करने के लिए स्लाइडर को हिलाएं (1 = महत्वपूर्ण नहीं, 5 = बहुत महत्वपूर्ण)",
+    "sliderLabel": "महत्व रेटिंग",
+    "lessImportant": "कम महत्वपूर्ण",
+    "moreImportant": "अधिक महत्वपूर्ण",
+    "skipStatement": "इस कथन को छोड़ें",
+    "viewResults": "मेरे परिणाम देखें",
+    "statementsRemaining_one": "{{count}} कथन शेष",
+    "statementsRemaining_other": "{{count}} कथन शेष",
+    "completed": "पूर्ण",
+    "defaultHint": "इसे 1 (महत्वपूर्ण नहीं) से 5 (बहुत महत्वपूर्ण) तक रेट करें",
+    "listenStatement": "यह कथन सुनें",
     "intro": {
-      "title": "What Matters Most to You?",
-      "description": "Choosing a kidney treatment is a personal decision. This exercise helps you think about your values and priorities so you can discuss them with your kidney team.",
-      "feature1": "10 value statements to rate",
-      "feature2": "Takes about 5 minutes",
-      "feature3": "No right or wrong answers",
-      "feature4": "See your priorities summarised",
-      "beginButton": "Begin Exercise",
-      "allAtOnce": "Prefer to see all statements at once?",
-      "viewAll": "View All Statements"
+      "title": "आपके लिए सबसे महत्वपूर्ण क्या है?",
+      "description": "गुर्दा उपचार चुनना एक व्यक्तिगत निर्णय है। यह अभ्यास आपको अपने मूल्यों और प्राथमिकताओं के बारे में सोचने में मदद करता है ताकि आप अपनी गुर्दा टीम के साथ उन पर चर्चा कर सकें।",
+      "feature1": "10 मूल्य कथन रेट करें",
+      "feature2": "लगभग 5 मिनट लगते हैं",
+      "feature3": "कोई सही या गलत उत्तर नहीं",
+      "feature4": "अपनी प्राथमिकताओं का सारांश देखें",
+      "beginButton": "अभ्यास शुरू करें",
+      "allAtOnce": "सभी कथन एक साथ देखना चाहते हैं?",
+      "viewAll": "सभी कथन देखें"
     },
     "progress": {
-      "statement": "Statement",
-      "of": "of"
+      "statement": "कथन",
+      "of": "का"
     },
     "nav": {
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Finish",
-      "next": "Next",
-      "backToIntro": "Back to Introduction",
-      "seeResults": "See My Results"
+      "back": "वापस",
+      "skip": "छोड़ें",
+      "next": "आगे",
+      "finish": "समाप्त",
+      "backToIntro": "परिचय पर वापस",
+      "seeResults": "मेरे परिणाम देखें"
     },
     "allAtOnce": {
-      "title": "Rate All Statements",
-      "description": "Rate each statement from 1 (Not important) to 5 (Very important).",
-      "progress": "Completed"
+      "title": "सभी कथन रेट करें",
+      "description": "प्रत्येक कथन को 1 (महत्वपूर्ण नहीं) से 5 (बहुत महत्वपूर्ण) तक रेट करें।",
+      "progress": "पूर्ण"
     },
     "results": {
-      "title": "Your Values Summary",
-      "description": "Based on your responses, here is what matters most to you.",
-      "topPriorities": "Your Top Priorities",
-      "allValues": "All Your Values",
-      "editValues": "Edit Your Values",
-      "compareLink": "Compare Treatments",
-      "addToSummary": "Add to My Summary"
-    },
-    "listenStatement": "Listen to this statement",
-    "defaultHint": "Rate how important this is to you from 1 (Not important) to 5 (Very important)",
-    "statements": {
-      "travel": {
-        "text": "Being able to travel is important to me",
-        "hint": "Rate how important this is to you"
-      },
-      "hospitalTime": {
-        "text": "I want to minimise time spent in hospital",
-        "hint": "Rate how important this is to you"
-      },
-      "needles": {
-        "text": "I am comfortable with needles and medical procedures",
-        "hint": "Rate how much you agree with this statement"
-      },
-      "independence": {
-        "text": "Maintaining my independence is very important to me",
-        "hint": "Rate how important this is to you"
-      },
-      "familyBurden": {
-        "text": "I want to avoid being a burden on my family",
-        "hint": "Rate how important this is to you"
-      },
-      "longevity": {
-        "text": "Living as long as possible is my priority",
-        "hint": "Rate how important this is to you"
-      },
-      "qualityOfLife": {
-        "text": "Quality of life matters more than length of life",
-        "hint": "Rate how much you agree with this statement"
-      },
-      "homeTreatment": {
-        "text": "I would prefer to have treatment at home",
-        "hint": "Rate how important this is to you"
-      },
-      "workActivities": {
-        "text": "Continuing to work or do my usual activities is important",
-        "hint": "Rate how important this is to you"
-      },
-      "professionalCare": {
-        "text": "I would rather have professionals take care of my treatment",
-        "hint": "Rate how much you agree with this statement"
-      }
+      "title": "आपका मूल्य सारांश",
+      "description": "आपकी प्रतिक्रियाओं के आधार पर, यह है जो आपके लिए सबसे महत्वपूर्ण है।",
+      "topPriorities": "आपकी शीर्ष प्राथमिकताएं",
+      "allValues": "आपके सभी मूल्य",
+      "editValues": "अपने मूल्य संपादित करें",
+      "compareLink": "उपचारों की तुलना करें",
+      "addToSummary": "मेरे सारांश में जोड़ें",
+      "viewTreatments": "आपके मूल्यों से मेल खाने वाले उपचार देखें",
+      "backToHub": "हब पर वापस"
     },
     "ratingLabels": {
-      "notImportant": "Not important",
-      "slightlyImportant": "Slightly important",
-      "moderatelyImportant": "Moderately important",
-      "important": "Important",
-      "veryImportant": "Very important"
+      "1": "महत्वपूर्ण नहीं",
+      "2": "थोड़ा महत्वपूर्ण",
+      "3": "मध्यम महत्वपूर्ण",
+      "4": "महत्वपूर्ण",
+      "5": "बहुत महत्वपूर्ण"
     },
-    "scale": {
-      "lessImportant": "Less important",
-      "moreImportant": "More important"
+    "ratings": {
+      "1": "महत्वपूर्ण नहीं",
+      "2": "थोड़ा महत्वपूर्ण",
+      "3": "मध्यम महत्वपूर्ण",
+      "4": "बहुत महत्वपूर्ण",
+      "5": "अत्यंत महत्वपूर्ण"
     },
-    "cta": "What Matters to You?"
-  },
-  "chat": {
-    "title": "Ask Questions",
-    "subtitle": "Chat with our AI assistant about kidney treatment options",
-    "status": {
-      "online": "Online",
-      "readyToHelp": "- Ready to help"
+    "statementsList": {
+      "independence": {
+        "text": "मेरी स्वतंत्रता बनाए रखना और खुद की देखभाल करने में सक्षम होना",
+        "hint": "दूसरों पर अधिक निर्भर हुए बिना दैनिक गतिविधियां करने में सक्षम होना"
+      },
+      "schedule": {
+        "text": "अपने समय में लचीलापन रखना और यात्रा करने में सक्षम होना",
+        "hint": "सख्त उपचार समय के बिना गतिविधियों और यात्राओं की योजना बनाने में सक्षम होना"
+      },
+      "hospitalTime": {
+        "text": "अस्पताल या क्लिनिक में कम समय बिताना",
+        "hint": "अस्पताल जाने की संख्या और अवधि को कम करना"
+      },
+      "homeComfort": {
+        "text": "अपने घर के आराम में उपचार प्राप्त करना",
+        "hint": "चिकित्सा सुविधा के बजाय घर पर उपचार का प्रबंधन करने में सक्षम होना"
+      },
+      "familyBurden": {
+        "text": "अपने परिवार पर बोझ नहीं बनना",
+        "hint": "परिवार के सदस्यों और देखभालकर्ताओं पर मेरे उपचार के प्रभाव को कम करना"
+      },
+      "longevity": {
+        "text": "जितना संभव हो उतना लंबा जीना",
+        "hint": "जीवन प्रत्याशा बढ़ाने वाले उपचारों को प्राथमिकता देना"
+      },
+      "qualityOfLife": {
+        "text": "जीवन की लंबाई से अधिक जीवन की गुणवत्ता",
+        "hint": "अधिकतम जीवनकाल से अधिक दैनिक कल्याण और आराम को प्राथमिकता देना"
+      },
+      "energyLevels": {
+        "text": "अच्छा ऊर्जा स्तर होना और अच्छा महसूस करना",
+        "hint": "थकान को कम करना और गतिविधियों के लिए सामान्य ऊर्जा बनाए रखना"
+      },
+      "dietRestrictions": {
+        "text": "खाने-पीने पर कम प्रतिबंध होना",
+        "hint": "न्यूनतम सीमाओं के साथ खाने-पीने में सक्षम होना"
+      },
+      "naturalApproach": {
+        "text": "कम हस्तक्षेप के साथ अधिक प्राकृतिक दृष्टिकोण अपनाना",
+        "hint": "कम आक्रामक या चिकित्सीय महसूस होने वाले उपचार विकल्पों को प्राथमिकता देना"
+      }
     },
-    "suggestedQuestions": {
-      "dialysisTypes": "What is the difference between haemodialysis and peritoneal dialysis?",
-      "transplantDuration": "How long does a kidney transplant surgery take?",
-      "travel": "Can I travel while on dialysis?",
-      "sideEffects": "What are the side effects of dialysis treatment?",
-      "suitability": "How do I know if I am suitable for a transplant?",
-      "conservativeCare": "What is conservative care and who might choose it?"
-    },
-    "quickReplies": {
-      "tellMeMore": "Tell me more",
-      "prosAndCons": "What are the pros and cons?",
-      "dailyLife": "How does this affect daily life?"
-    },
-    "privacyReminder": {
-      "label": "Privacy reminder:",
-      "text": "Please do not share personal identifying information in this chat"
-    },
-    "placeholder": "Type your question here...",
-    "send": "Send",
-    "mockResponses": {
-      "dialysisTypes": "Haemodialysis and peritoneal dialysis are both ways to filter waste from your blood when your kidneys can no longer do it effectively. Haemodialysis uses a machine outside your body, typically done at a hospital 3 times a week. Peritoneal dialysis uses the lining of your abdomen as a natural filter and is done at home daily.",
-      "transplantSurgery": "Kidney transplant surgery typically takes 2-4 hours. You would stay in hospital for about 5-7 days afterwards, and full recovery takes around 3 months.",
-      "travelDialysis": "Yes, you can travel while on dialysis, but it requires planning. For haemodialysis, you need to arrange sessions at a dialysis centre at your destination. Peritoneal dialysis can be more flexible as you can arrange supplies to be delivered ahead of time.",
-      "conservativeCare": "Conservative care focuses on managing symptoms and maintaining quality of life without dialysis or transplant. It may be appropriate for some people, particularly those who are elderly, have other serious health conditions, or who decide that dialysis would not significantly improve their quality of life.",
-      "sideEffects": "Common side effects of dialysis include fatigue, low blood pressure, muscle cramps, and itching. These vary between people and can often be managed with adjustments to your treatment.",
-      "suitability": "Transplant suitability depends on your overall health, other medical conditions, and lifestyle factors. Your kidney team will assess you through tests and examinations. Age alone does not disqualify you - many people in their 70s and 80s receive transplants.",
-      "tellMeMore": "I would be happy to provide more details. What specific aspect would you like to know more about?",
-      "default": "Thank you for your question. Based on NHS guidelines, I can provide information about kidney treatment options. Is there a specific aspect you would like to explore further?"
+    "statements": {
+      "travel": {
+        "statement": "[EN] Being able to travel is important to me",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "hospital-time": {
+        "statement": "[EN] I want to minimise time spent in hospital",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "needles": {
+        "statement": "[EN] I am comfortable with needles and medical procedures",
+        "hint": "[EN] Rate how much you agree with this statement"
+      },
+      "independence": {
+        "statement": "[EN] Maintaining my independence is very important to me",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "family-burden": {
+        "statement": "[EN] I want to avoid being a burden on my family",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "longevity": {
+        "statement": "[EN] Living as long as possible is my priority",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "quality-of-life": {
+        "statement": "[EN] Quality of life matters more than length of life",
+        "hint": "[EN] Rate how much you agree with this statement"
+      },
+      "home-treatment": {
+        "statement": "[EN] I would prefer to have treatment at home",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "work-activities": {
+        "statement": "[EN] Continuing to work or do my usual activities is important",
+        "hint": "[EN] Rate how important this is to you"
+      },
+      "professional-care": {
+        "statement": "[EN] I would rather have professionals take care of my treatment",
+        "hint": "[EN] Rate how much you agree with this statement"
+      }
     }
   },
   "modelViewer": {
-    "title": "3D Kidney Model Viewer",
-    "subtitle": "Explore how different treatments work",
-    "loading": "Loading 3D Model...",
-    "headerBadge": "Interactive 3D Model",
-    "badge": "Interactive Learning Tool",
-    "breadcrumb": "3D Kidney Model",
-    "backToHub": "Back to Hub",
-    "interactive3DModel": "Interactive 3D Model",
-    "interactiveTool": "Interactive Learning Tool",
-    "interactiveDescription": "Explore an interactive 3D model of human kidneys. Use your mouse or touch to rotate and zoom.",
-    "dragToRotate": "Drag to rotate",
-    "scrollToZoom": "Scroll to zoom",
-    "labelsOn": "Labels: On",
-    "labelsOff": "Labels: Off",
-    "autoRotateOn": "Auto-Rotate: On",
-    "autoRotateOff": "Auto-Rotate: Off",
-    "resetView": "Reset view",
-    "reset": "Reset",
-    "aboutKidneys": "About Your Kidneys",
-    "kidneyInfo": "Your kidneys are bean-shaped organs about the size of your fist. They filter about 200 litres of blood daily, removing waste and extra fluid.",
-    "kidneyFunction": "What Kidneys Do",
-    "functionInfo": "Kidneys regulate blood pressure, produce hormones, balance body fluids, and filter waste products into urine.",
-    "whenKidneysFail": "When Kidneys Fail",
-    "failureInfo": "When kidneys lose function, treatments like dialysis or transplant can help do the work your kidneys can no longer do.",
-    "learnMore": "Learn More About Treatment Options",
-    "continueJourney": "Continue your kidney care journey by exploring your treatment options.",
-    "exploreTreatments": "Explore Treatments",
-    "compareTreatments": "Compare Treatments",
-    "controls": {
-      "rotate": "Click and drag to rotate",
-      "zoom": "Scroll to zoom",
-      "reset": "Double-click to reset"
-    },
-    "navigation": {
-      "subtitle": "Continue your journey by exploring treatment options"
-    },
+    "breadcrumb": "3D गुर्दा मॉडल",
+    "backToHub": "हब पर वापस जाएं",
+    "title": "3D गुर्दा मॉडल व्यूअर",
+    "interactiveDescription": "मानव गुर्दे का एक इंटरैक्टिव 3D मॉडल देखें। घुमाने और ज़ूम करने के लिए माउस या टच का उपयोग करें।",
+    "dragToRotate": "घुमाने के लिए खींचें",
+    "scrollToZoom": "ज़ूम करने के लिए स्क्रॉल करें",
+    "labelsOn": "लेबल: चालू",
+    "labelsOff": "लेबल: बंद",
+    "autoRotateOn": "स्वतः घूमना: चालू",
+    "autoRotateOff": "स्वतः घूमना: बंद",
+    "reset": "रीसेट",
+    "resetView": "दृश्य रीसेट करें",
+    "aboutKidneys": "आपके गुर्दों के बारे में",
+    "kidneyInfo": "आपके गुर्दे आपकी मुट्ठी के आकार के बीन जैसे अंग हैं। वे प्रतिदिन लगभग 200 लीटर रक्त को छानते हैं, अपशिष्ट और अतिरिक्त तरल पदार्थ को हटाते हैं।",
+    "kidneyFunction": "गुर्दे क्या करते हैं",
+    "functionInfo": "गुर्दे रक्तचाप को नियंत्रित करते हैं, हार्मोन का उत्पादन करते हैं, शरीर के तरल पदार्थों को संतुलित करते हैं और अपशिष्ट उत्पादों को मूत्र में छानते हैं।",
+    "whenKidneysFail": "जब गुर्दे विफल होते हैं",
+    "failureInfo": "जब गुर्दे काम करना बंद कर देते हैं, तो डायलिसिस या प्रत्यारोपण जैसे उपचार वह काम कर सकते हैं जो आपके गुर्दे अब नहीं कर सकते।",
+    "learnMore": "उपचार विकल्पों के बारे में और जानें",
+    "exploreTreatments": "उपचारों का अन्वेषण करें",
+    "compareTreatments": "उपचारों की तुलना करें",
+    "continueJourney": "उपचार विकल्पों की खोज करके अपनी यात्रा जारी रखें",
+    "loading": "3D मॉडल लोड हो रहा है...",
+    "interactiveTool": "इंटरैक्टिव शिक्षण उपकरण",
+    "interactive3DModel": "इंटरैक्टिव 3D मॉडल",
     "anatomy": {
       "kidney": {
-        "label": "Kidney",
-        "description": "The kidney filters waste and excess fluid from your blood. Each kidney is about the size of your fist."
+        "label": "गुर्दा",
+        "description": "मुख्य छानने वाला अंग जो आपके रक्त से अपशिष्ट को हटाता है और मूत्र का उत्पादन करता है।"
       },
       "renalArtery": {
-        "label": "Renal Artery",
-        "description": "The renal artery carries blood from your heart to your kidney for filtering."
+        "label": "गुर्दा धमनी",
+        "description": "छानने के लिए हृदय से गुर्दे तक रक्त ले जाती है।"
       },
       "renalVein": {
-        "label": "Renal Vein",
-        "description": "The renal vein carries filtered blood from your kidney back to your heart."
+        "label": "गुर्दा शिरा",
+        "description": "छाना हुआ रक्त गुर्दे से वापस हृदय तक ले जाती है।"
       },
       "ureter": {
-        "label": "Ureter",
-        "description": "The ureter is a tube that carries urine from your kidney to your bladder."
+        "label": "मूत्रवाहिनी",
+        "description": "वह नली जो गुर्दे से मूत्राशय तक मूत्र ले जाती है।"
       },
       "adrenalGland": {
-        "label": "Adrenal Gland",
-        "description": "The adrenal gland sits on top of each kidney and produces hormones."
+        "label": "अधिवृक्क ग्रंथि",
+        "description": "गुर्दे के ऊपर एक छोटी ग्रंथि जो महत्वपूर्ण हार्मोन का उत्पादन करती है।"
       }
     }
   },
   "summary": {
-    "title": "Your Session Summary",
-    "subtitle": "Review what you have explored and create a summary for your kidney team",
-    "confirmReset": "Are you sure you want to start over? All your progress will be lost.",
-    "printHeader": {
-      "title": "NHS Kidney Treatment Decision Aid",
-      "subtitle": "Your Personal Session Summary",
-      "dateLabel": "{{date}}",
-      "footer": "Generated on {{date}} by NHS Kidney Treatment Decision Aid. This summary is for discussion with your healthcare team only."
-    },
-    "sessionId": "Session ID",
-    "readyToReview": "Ready to review",
-    "shareTitle": "NHS Kidney Treatment Summary",
-    "shareText": "My kidney treatment decision summary",
-    "notSpecified": "Not specified",
-    "journeyStages": {
-      "newlyDiagnosed": "Newly Diagnosed",
-      "monitoring": "Being Monitored",
-      "preparing": "Preparing for Treatment",
-      "onDialysis": "Currently on Dialysis",
-      "transplantWaiting": "On Transplant Waiting List",
-      "postTransplant": "After Transplant",
-      "supporting": "Supporting Someone"
-    },
-    "journeyDescriptions": {
-      "newlyDiagnosed": "You are at the beginning of your kidney care journey and learning about your condition.",
-      "monitoring": "Your kidney function is being monitored regularly by your healthcare team.",
-      "preparing": "You are preparing to start treatment and exploring your options.",
-      "onDialysis": "You are currently receiving dialysis treatment.",
-      "transplantWaiting": "You are on the waiting list for a kidney transplant.",
-      "postTransplant": "You have received a kidney transplant and are in recovery or ongoing care.",
-      "supporting": "You are supporting a family member or friend with kidney disease.",
-      "default": "Your current stage in the kidney care journey."
-    },
-    "valueLabels": {
-      "1": "Not important",
-      "2": "Slightly important",
-      "3": "Moderately important",
-      "4": "Important",
-      "5": "Very important",
-      "default": "Not rated"
-    },
-    "treatmentLabels": {
-      "haemodialysis": "Haemodialysis",
-      "peritonealDialysis": "Peritoneal Dialysis",
-      "homeHaemodialysis": "Home Haemodialysis",
-      "kidneyTransplant": "Kidney Transplant",
-      "conservativeCare": "Conservative Care",
-      "transplant": "Kidney Transplant",
-      "hemodialysis": "Haemodialysis",
-      "pd": "Peritoneal Dialysis",
-      "conservative": "Conservative Care"
-    },
+    "title": "आपका सत्र सारांश",
+    "subtitle": "यहां आज आपने जो अन्वेषण किया उसका सारांश है।",
     "sections": {
-      "journey": "Your Journey Stage",
-      "priorities": "Your Priorities",
-      "viewed": "Treatments Explored",
-      "questions": "Questions for Your Team",
-      "nextSteps": "Suggested Next Steps"
+      "journey": "आपकी यात्रा का चरण",
+      "values": "आपके लिए क्या महत्वपूर्ण है",
+      "viewed": "अन्वेषित उपचार",
+      "questions": "आपकी टीम के लिए प्रश्न",
+      "priorities": "आपकी प्राथमिकताएं",
+      "nextSteps": "सुझाए गए अगले कदम"
     },
-    "print": "Print Summary",
-    "share": "Share",
-    "seeAll": "See all",
-    "viewed": "Viewed",
-    "noValues": "You have not completed the values exercise yet.",
-    "completeValues": "Complete now",
-    "noTreatments": "You have not explored any treatments yet.",
-    "exploreTreatments": "Explore treatments",
-    "question1": "Which treatment options are suitable for my situation?",
-    "question2": "What would my daily life look like with each treatment?",
-    "question3": "How do I start the process for my preferred treatment?",
-    "addQuestionPlaceholder": "Type your own question...",
+    "print": "सारांश प्रिंट करें",
+    "email": "सारांश ईमेल करें",
+    "startOver": "फिर से शुरू करें",
+    "share": "साझा करें",
+    "sessionId": "सत्र आईडी",
+    "notSpecified": "निर्दिष्ट नहीं",
+    "readyToReview": "समीक्षा के लिए तैयार",
+    "viewed": "देखा गया",
+    "noValues": "आपने अभी तक मूल्य अभ्यास पूरा नहीं किया है।",
+    "completeValues": "अभी पूरा करें",
+    "noTreatments": "आपने अभी तक किसी उपचार का पता नहीं लगाया है।",
+    "exploreTreatments": "उपचार देखें",
+    "seeAll": "सभी देखें",
+    "confirmReset": "क्या आप वाकई फिर से शुरू करना चाहते हैं? आपकी सारी प्रगति खो जाएगी।",
+    "addQuestionPlaceholder": "अपना प्रश्न लिखें...",
+    "question1": "मेरी स्थिति के लिए कौन से उपचार विकल्प उपयुक्त हैं?",
+    "question2": "प्रत्येक उपचार के साथ मेरा दैनिक जीवन कैसा होगा?",
+    "question3": "मैं अपने पसंदीदा उपचार की प्रक्रिया कैसे शुरू करूं?",
     "step1": {
-      "title": "Review this summary",
-      "description": "Take time to look through what you have explored and think about any additional questions."
+      "title": "इस सारांश की समीक्षा करें",
+      "description": "आपने जो खोजा है उसे देखने का समय लें और किसी भी अतिरिक्त प्रश्नों के बारे में सोचें।"
     },
     "step2": {
-      "title": "Share with family or carers",
-      "description": "If you have support at home, discuss your thoughts with them."
+      "title": "परिवार या देखभालकर्ताओं के साथ साझा करें",
+      "description": "यदि आपको घर पर सहायता मिलती है, तो उनके साथ अपने विचारों पर चर्चा करें।"
     },
     "step3": {
-      "title": "Discuss with your kidney care team",
-      "description": "Bring this summary to your next appointment to discuss your options."
+      "title": "अपनी गुर्दा देखभाल टीम के साथ चर्चा करें",
+      "description": "अपने विकल्पों पर चर्चा करने के लिए इस सारांश को अपनी अगली नियुक्ति में लाएं।"
     },
     "privacy": {
-      "title": "Your Privacy",
-      "text": "This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server."
+      "title": "आपकी गोपनीयता",
+      "text": "यह जानकारी केवल आपके ब्राउज़र में संग्रहीत है और जब आप अपना सत्र समाप्त करेंगे तो साफ हो जाएगी। किसी भी सर्वर पर कोई व्यक्तिगत डेटा सहेजा नहीं गया है।"
     },
     "disclaimer": {
-      "title": "Important Reminder",
-      "text": "This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances."
+      "title": "महत्वपूर्ण अनुस्मारक",
+      "text": "यह सारांश केवल सूचना के उद्देश्य से है और चिकित्सा सलाह नहीं है। अपनी गुर्दा देखभाल टीम के साथ हमेशा अपने उपचार विकल्पों पर चर्चा करें जो आपकी व्यक्तिगत परिस्थितियों को जानते हैं।"
     },
-    "readyForAppointment": "Ready for your next appointment?",
-    "printInstructions": "Print this summary to take with you to your kidney care team.",
-    "printForAppointment": "Print for Your Appointment",
-    "startOver": "Start Over",
-    "askMore": "Have more questions?",
-    "cta": {
-      "title": "Ready for your next appointment?",
-      "subtitle": "Print this summary to take with you to your kidney care team"
+    "printForAppointment": "अपनी नियुक्ति के लिए प्रिंट करें",
+    "askMore": "और प्रश्न हैं?",
+    "printHeader": {
+      "title": "NHS गुर्दा उपचार निर्णय सहायता",
+      "subtitle": "आपका व्यक्तिगत सत्र सारांश",
+      "dateLabel": "दिनांक: {{date}}",
+      "footer": "NHS गुर्दा उपचार निर्णय सहायता द्वारा उत्पन्न - {{date}} - यह दस्तावेज़ केवल आपकी स्वास्थ्य देखभाल टीम के साथ चर्चा के लिए है"
     },
-    "printFooter": "Generated by NHS Kidney Treatment Decision Aid. This summary is for discussion with your healthcare team only."
-  },
-  "layout": {
-    "skipToMainContent": "Skip to main content",
-    "accessibilityAriaLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
-    "accessibilityTitle": "Adjust text size, contrast, and other accessibility settings",
-    "accessibility": "Accessibility"
-  },
-  "header": {
-    "homeAriaLabel": "NHS Kidney Treatment Decision Aid - Home",
-    "nhs": "NHS",
-    "demo": "Demo",
-    "serviceName": "Kidney Treatment Decision Aid",
-    "tagline": "Helping you make informed choices"
-  },
-  "footer": {
-    "nhs": "NHS",
-    "demo": "Demo",
-    "serviceName": "Kidney Treatment Decision Aid",
-    "subtitle": "Supporting informed healthcare decisions",
-    "supportingDecisions": "Supporting informed healthcare decisions",
-    "navigationLabel": "Footer navigation",
-    "navAriaLabel": "Footer navigation",
-    "accessibilityLink": "Accessibility",
-    "privacyPolicyLink": "Privacy Policy",
-    "contactLink": "Contact",
-    "disclaimerTitle": "Important Disclaimer",
-    "disclaimerText": "This application is a mock design created by Pears Research Services for demonstration purposes only. It is not affiliated with or endorsed by the NHS.",
-    "mockDesign": "mock design",
-    "companyName": "Pears Research Services",
-    "contactUs": "Contact Us",
-    "copyright": "Pears Research Services. All rights reserved.",
-    "versionText": "Demo Version 1.0",
-    "demoVersion": "Demo Version 1.0",
-    "nhsInfo": "NHS Kidney Care",
-    "accessibility": "Accessibility",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfUse": "Terms of Use",
-    "contact": "Contact",
-    "disclaimer": {
-      "title": "Important Disclaimer",
-      "text1": "This application is a",
-      "mockDesign": "mock design",
-      "text2": "created by",
-      "company": "Pears Research Services",
-      "text3": "for demonstration purposes only. It is not affiliated with or endorsed by the NHS."
+    "shareTitle": "NHS गुर्दा उपचार सारांश",
+    "shareText": "मेरा गुर्दा उपचार निर्णय सारांश",
+    "readyForAppointment": "अपनी अगली नियुक्ति के लिए तैयार हैं?",
+    "printInstructions": "अपनी गुर्दा देखभाल टीम के पास ले जाने के लिए इस सारांश को प्रिंट करें",
+    "journeyStages": {
+      "newly-diagnosed": "नव निदान",
+      "monitoring": "निगरानी में",
+      "preparing": "उपचार की तैयारी",
+      "on-dialysis": "वर्तमान में डायलिसिस पर",
+      "transplant-waiting": "प्रत्यारोपण प्रतीक्षा सूची में",
+      "post-transplant": "प्रत्यारोपण के बाद",
+      "supporting-someone": "किसी का समर्थन कर रहे हैं"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "आप अपनी गुर्दा स्थिति के बारे में सीख रहे हैं और अपने विकल्पों को समझना चाहते हैं।",
+      "monitoring": "आपके गुर्दों की निगरानी की जा रही है और आप भविष्य के लिए तैयारी कर रहे हैं।",
+      "preparing": "आपको जल्द ही उपचार शुरू करना होगा और आप अपनी पसंद को समझना चाहते हैं।",
+      "on-dialysis": "आप डायलिसिस प्राप्त कर रहे हैं और अन्य विकल्पों की खोज कर रहे हैं।",
+      "transplant-waiting": "आप प्रत्यारोपण प्रतीक्षा सूची में हैं।",
+      "post-transplant": "आपका गुर्दा प्रत्यारोपण हो चुका है और आप निरंतर सहायता चाहते हैं।",
+      "supporting-someone": "आप गुर्दा रोग से पीड़ित किसी प्रियजन का समर्थन कर रहे हैं।",
+      "default": "गुर्दा देखभाल यात्रा में आपका वर्तमान चरण।"
+    },
+    "treatmentLabels": {
+      "haemodialysis": "हीमोडायलिसिस",
+      "peritoneal-dialysis": "पेरिटोनियल डायलिसिस",
+      "home-haemodialysis": "घरेलू हीमोडायलिसिस",
+      "kidney-transplant": "गुर्दा प्रत्यारोपण",
+      "conservative-care": "रूढ़िवादी देखभाल"
+    },
+    "valueLabels": {
+      "1": "महत्वपूर्ण नहीं",
+      "2": "थोड़ा महत्वपूर्ण",
+      "3": "मध्यम महत्वपूर्ण",
+      "4": "महत्वपूर्ण",
+      "5": "बहुत महत्वपूर्ण",
+      "default": "महत्वपूर्ण"
     }
   },
-  "progressBar": {
-    "stepOfTotal": "Step {{current}} of {{total}}",
-    "percentComplete": "{{percentage}}% complete",
-    "ariaLabel": "Progress: {{current}} of {{total}} steps completed"
-  },
-  "progress": {
-    "stepOfTotal": "Step {{current}} of {{total}}",
-    "percentComplete": "{{percentage}}% complete",
-    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed"
-  },
   "session": {
-    "timeRemaining": "Time remaining: {{minutes}}",
-    "sessionExpiring": "Your session will expire soon",
-    "expiringMessage": "Your session will expire in {{minutes}} minutes. Would you like to continue?",
-    "extendSession": "Continue Session",
-    "sessionExpired": "Your session has expired. Please start again.",
-    "expiredMessage": "Your session has expired. Please start again.",
-    "createError": "Failed to create session. Please try again.",
-    "startNewSession": "Start New Session"
+    "timeRemaining": "शेष समय: {{minutes}}",
+    "sessionExpiring": "आपका सत्र जल्द ही समाप्त हो जाएगा",
+    "expiringMessage": "आपका सत्र {{minutes}} मिनट में समाप्त हो जाएगा। क्या आप जारी रखना चाहेंगे?",
+    "extendSession": "सत्र जारी रखें",
+    "sessionExpired": "आपका सत्र समाप्त हो गया है। कृपया फिर से शुरू करें।",
+    "startNewSession": "नया सत्र शुरू करें",
+    "createError": "सत्र बनाने में विफल। कृपया पुनः प्रयास करें।"
   },
-  "common": {
-    "loading": "Loading...",
-    "error": "Something went wrong. Please try again.",
-    "continue": "Continue",
-    "cancel": "Cancel",
-    "save": "Save",
-    "print": "Print",
-    "yes": "Yes",
-    "no": "No",
-    "notSure": "Not sure",
-    "moreInfo": "More information",
-    "close": "Close",
-    "edit": "Edit",
-    "remove": "Remove",
-    "add": "Add",
-    "back": "Back",
-    "learnMore": "Learn More",
-    "listenToPage": "Listen to this page"
-  },
-  "accessibility": {
-    "skipToContent": "Skip to main content",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "expandSection": "Expand section",
-    "collapseSection": "Collapse section",
-    "newWindow": "opens in new tab",
-    "externalLink": "External link",
-    "settings": "Accessibility",
-    "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
-    "settingsTitle": "Adjust text size, contrast, and other accessibility settings",
-    "breadcrumb": "Breadcrumb navigation",
-    "pageNavigation": "Page navigation",
-    "listenToPage": "Listen to this page being read aloud",
-    "modal": {
-      "title": "Accessibility Settings",
-      "textSize": "Text Size",
-      "textSizeOptions": {
-        "small": "Small",
-        "medium": "Medium",
-        "large": "Large",
-        "extra-large": "Extra Large"
-      },
-      "highContrast": "High Contrast Mode",
-      "reducedMotion": "Reduce Motion",
-      "lineSpacing": "Line Spacing",
-      "lineSpacingOptions": {
-        "normal": "Normal",
-        "relaxed": "Relaxed",
-        "loose": "Loose"
-      },
-      "reset": "Reset to Defaults",
-      "cancel": "Cancel",
-      "save": "Save Changes"
+  "footer": {
+    "nhsInfo": "NHS गुर्दा देखभाल",
+    "accessibility": "सुगमता",
+    "privacyPolicy": "गोपनीयता नीति",
+    "termsOfUse": "उपयोग की शर्तें",
+    "contact": "संपर्क",
+    "contactUs": "संपर्क करें",
+    "navigationLabel": "फुटर नेविगेशन",
+    "supportingDecisions": "सूचित स्वास्थ्य निर्णयों का समर्थन",
+    "copyright": "Pears Research Services. सर्वाधिकार सुरक्षित।",
+    "demoVersion": "डेमो संस्करण 1.0",
+    "disclaimer": {
+      "title": "महत्वपूर्ण अस्वीकरण",
+      "text1": "यह एप्लिकेशन एक",
+      "mockDesign": "मॉक डिज़ाइन",
+      "text2": "है जो",
+      "company": "Pears Research Services",
+      "text3": "द्वारा केवल प्रदर्शन उद्देश्यों के लिए बनाया गया है। यह NHS से संबद्ध या समर्थित नहीं है।"
     }
   }
 }
