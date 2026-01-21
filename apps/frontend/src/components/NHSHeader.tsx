@@ -48,12 +48,12 @@ export default function NHSHeader() {
   const { t } = useTranslation();
 
   return (
-    <header className="bg-gradient-to-r from-white via-white to-nhs-pale-grey border-b-4 border-nhs-blue shadow-md" role="banner">
+    <header className="bg-gradient-to-r from-white via-white to-nhs-pale-grey border-b-4 border-nhs-blue shadow-md w-full overflow-x-hidden" role="banner">
       {/* Decorative top accent line */}
       <div className="h-1 bg-gradient-to-r from-nhs-blue via-nhs-aqua-green to-nhs-blue"></div>
 
-      <div className="max-w-container-xl mx-auto px-4 md:px-6 py-3">
-        <div className="flex items-center gap-4">
+      <div className="w-full max-w-container-xl mx-auto px-3 sm:px-4 md:px-6 py-3 overflow-hidden box-border">
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Link
@@ -99,13 +99,13 @@ export default function NHSHeader() {
           <div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-nhs-mid-grey/30 to-transparent"></div>
 
           {/* Service Name - Enhanced */}
-          <div className="flex flex-col gap-0.5">
-            <span className="text-nhs-blue text-lg md:text-xl font-bold leading-tight tracking-tight">
+          <div className="flex flex-col gap-0.5 min-w-0 flex-1 sm:flex-none">
+            <span className="text-nhs-blue text-base sm:text-lg md:text-xl font-bold leading-tight tracking-tight truncate">
               {t('header.serviceName')}
             </span>
-            <span className="text-text-secondary text-sm flex items-center gap-2">
-              <span className="w-2 h-2 bg-nhs-green rounded-full animate-pulse"></span>
-              {t('header.tagline')}
+            <span className="text-text-secondary text-xs sm:text-sm flex items-center gap-2">
+              <span className="w-2 h-2 bg-nhs-green rounded-full animate-pulse flex-shrink-0"></span>
+              <span className="truncate">{t('header.tagline')}</span>
             </span>
           </div>
 

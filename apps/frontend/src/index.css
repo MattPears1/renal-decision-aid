@@ -91,6 +91,7 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -98,6 +99,9 @@
     font-family: var(--font-family-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   /* Focus styles for accessibility */
@@ -176,7 +180,7 @@
 
   /* Container utility */
   .container-page {
-    @apply max-w-container-xl mx-auto px-4 md:px-6;
+    @apply w-full max-w-container-xl mx-auto px-4 md:px-6 box-border;
   }
 
   /* NHS Primary Button */
@@ -317,6 +321,19 @@
    ========================================================================== */
 
 @layer utilities {
+  /* Prevent horizontal overflow utility */
+  .no-overflow-x {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Safe container for mobile */
+  .mobile-safe {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   /* NHS color text utilities */
   .text-nhs-blue {
     color: var(--nhs-blue);

@@ -28,7 +28,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]">
       {/* Skip Link for Accessibility */}
       <a
         href="#main-content"
@@ -45,7 +45,7 @@ export default function Layout() {
       <main
         id="main-content"
         role="main"
-        className="flex-1"
+        className="flex-1 overflow-x-hidden w-full"
         key={location.pathname}
       >
         <Outlet />
@@ -76,7 +76,7 @@ function AccessibilityButton({ onOpenModal }: AccessibilityButtonProps) {
   return (
     <button
       type="button"
-      className="fixed bottom-6 right-6 flex items-center gap-2 px-4 py-2
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-2 px-3 py-2 sm:px-4
                  bg-bg-surface border-2 border-nhs-blue rounded-md
                  text-sm font-semibold text-nhs-blue shadow-md
                  transition-colors duration-fast z-[300]

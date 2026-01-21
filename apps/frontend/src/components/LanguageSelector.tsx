@@ -71,13 +71,13 @@ export default function LanguageSelector({
     <div ref={dropdownRef} className={clsx('relative', className)}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-md border border-nhs-pale-grey hover:border-nhs-blue transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
+        className="flex items-center gap-1 sm:gap-2 p-2 sm:px-3 sm:py-2 rounded-md border border-nhs-pale-grey hover:border-nhs-blue transition-colors focus:outline-none focus:ring-2 focus:ring-focus"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={t('language.selectLanguage', 'Select language')}
       >
         <svg
-          className="w-5 h-5 text-text-secondary"
+          className="w-5 h-5 text-text-secondary flex-shrink-0"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -89,10 +89,11 @@ export default function LanguageSelector({
             d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
           />
         </svg>
-        <span className="text-sm font-medium">{currentLangInfo.nativeName}</span>
+        {/* Show language name only on sm screens and up */}
+        <span className="hidden sm:inline text-sm font-medium whitespace-nowrap">{currentLangInfo.nativeName}</span>
         <svg
           className={clsx(
-            'w-4 h-4 text-text-secondary transition-transform',
+            'w-4 h-4 text-text-secondary transition-transform flex-shrink-0',
             isOpen && 'rotate-180'
           )}
           fill="none"
@@ -110,7 +111,7 @@ export default function LanguageSelector({
 
       {isOpen && (
         <div
-          className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-nhs-pale-grey z-50"
+          className="absolute right-0 mt-2 w-44 sm:w-48 bg-white rounded-md shadow-lg border border-nhs-pale-grey z-50 max-h-[70vh] overflow-y-auto"
           role="listbox"
           aria-label={t('language.selectLanguage', 'Select language')}
         >
