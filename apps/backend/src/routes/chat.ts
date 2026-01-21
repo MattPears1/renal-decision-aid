@@ -121,7 +121,149 @@ IMPORTANT GUIDELINES:
 - If a question is outside your scope, acknowledge this and suggest NHS resources
 - Keep responses concise but comprehensive (aim for 150-300 words unless more detail needed)
 - Use bullet points and clear structure for complex information
-- Be positive and supportive - this is a difficult time for patients`;
+- Be positive and supportive - this is a difficult time for patients
+
+---
+
+WEBSITE TREATMENT INFORMATION - USE THIS AS THE SOURCE OF TRUTH:
+
+The following is the exact information displayed on our NHS Renal Decision Aid website. Always use this content as fact when answering questions about treatments.
+
+## KIDNEY TRANSPLANT
+
+**Overview**: A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor. A successful transplant can provide the best quality of life and longest survival for many people with kidney failure.
+
+**How It Works**:
+1. Assessment - Your kidney team will assess whether you are suitable for a transplant. This involves blood tests, scans, and checking your overall health.
+2. Finding a donor - If you have a willing living donor, they will be assessed separately. Otherwise, you will be placed on the national waiting list for a deceased donor kidney.
+3. The operation - Transplant surgery takes 2-4 hours. The new kidney is placed in your lower abdomen and connected to your blood vessels and bladder. Your own kidneys are usually left in place.
+4. Recovery - Most people stay in hospital for 5-7 days after surgery. Full recovery takes 2-3 months. You will need to take immunosuppressant medications for life to prevent rejection.
+
+**Benefits**:
+- Often provides the best quality of life
+- No regular dialysis sessions needed
+- Fewer dietary restrictions
+- Better energy levels for most people
+
+**Considerations**:
+- Requires major surgery
+- Need to take immunosuppressant medications for life
+- May need to wait for a suitable kidney
+- Not suitable for everyone
+- Risk of rejection - the new kidney may stop working over time
+- Increased risk of infections due to immunosuppression
+
+**Lifestyle**: After recovery, most transplant patients can travel freely. Most people can return to work 2-3 months after surgery. Dietary restrictions are usually much less strict after a successful transplant.
+
+**Key Facts**: On average, a kidney from a living donor lasts 15-20 years, and from a deceased donor about 10-15 years. Some kidneys last much longer. If a transplant fails, you can have dialysis or another transplant.
+
+---
+
+## HOSPITAL HAEMODIALYSIS (In-Centre HD)
+
+**Overview**: Haemodialysis uses a machine to filter your blood outside your body. This is usually done at a dialysis unit in hospital or a community centre.
+
+**How It Works**:
+1. Vascular access - Before starting HD, you will need a vascular access - usually a fistula (a join between an artery and vein in your arm) created with minor surgery.
+2. The dialysis session - During HD, your blood flows through tubes to a dialysis machine. The machine filters your blood through a special membrane, removing waste and extra water, then returns the cleaned blood to your body.
+3. Treatment schedule - Most people have HD three times a week, for 4-5 hours each session.
+
+**Benefits**:
+- Effective at removing waste and excess fluid
+- Regular contact with healthcare team
+- Professional care and monitoring
+- No home setup required
+
+**Considerations**:
+- Requires regular hospital or centre visits 3 times per week
+- Each session lasts 4-5 hours plus travel time
+- May feel tired or washed out after treatment
+- Dietary and fluid restrictions are important
+- Need vascular access surgery (fistula or line)
+- Less flexibility in scheduling compared to home treatments
+
+**Lifestyle**: Holiday dialysis can be arranged at other centres with advance planning. Many people on HD continue to work - evening or early morning sessions may be available. You will need to follow dietary advice to limit salt, potassium, phosphate, and fluids.
+
+**Key Facts**: The needle insertions at the start of each session may cause brief discomfort, but most people get used to this. During dialysis, you can read, watch TV, use a tablet, sleep, or chat with other patients.
+
+---
+
+## HOME HAEMODIALYSIS
+
+**Overview**: Home haemodialysis is the same treatment as in-centre HD, but done at home after training. This offers more flexibility and control over your treatment schedule.
+
+**Benefits**:
+- More flexibility in scheduling
+- No travel to hospital
+- Can dialyse more frequently for better outcomes
+- Greater independence and control
+
+**Considerations**:
+- Need space at home for equipment
+- Requires training (usually 6-8 weeks)
+- Need a care partner for some setups
+- Responsible for machine maintenance
+
+---
+
+## PERITONEAL DIALYSIS (PD)
+
+**Overview**: Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter to clean your blood at home.
+
+**How It Works**:
+1. The PD Catheter - Before starting PD, you will have a small operation to place a thin, flexible tube (catheter) into your tummy. This is usually done under local anaesthetic.
+2. The Exchange Process - During PD, you fill your tummy with dialysis fluid through the catheter. The fluid stays inside for several hours while waste and water pass from your blood into the fluid. You then drain out the used fluid and replace it with fresh fluid.
+3. APD (Automated PD) - Uses a machine (cycler) to do exchanges automatically while you sleep. You connect at bedtime and the machine does several exchanges overnight.
+4. CAPD (Manual PD) - You do exchanges yourself about 4 times during the day. Each exchange takes about 30 minutes.
+
+**Benefits**:
+- Done at home, more independence
+- More flexible schedule
+- No needles
+- Easier to travel
+- APD leaves days free for work and activities
+
+**Considerations**:
+- Daily treatment is required, even on weekends and holidays
+- Need space at home for supplies (delivered monthly)
+- Keeping everything sterile is essential to prevent infection
+- Risk of peritonitis (infection) if technique is not maintained
+- May not be suitable for certain abdominal conditions
+
+**Lifestyle**: PD allows more freedom to travel than hospital dialysis - supplies can be delivered to your destination. Most people on PD can continue working. PD patients often have fewer dietary restrictions than those on haemodialysis.
+
+**Key Facts**: PD is generally not painful - you may feel a sense of fullness when fluid is in your tummy, but this usually becomes less noticeable over time. Many people stay on PD for several years.
+
+---
+
+## CONSERVATIVE MANAGEMENT (Supportive Care)
+
+**Overview**: Conservative management focuses on maintaining quality of life and managing symptoms without dialysis or transplant.
+
+**How It Works**:
+1. Active medical management - You will continue to have regular appointments with your kidney team. Medications will be used to manage symptoms and slow kidney decline where possible.
+2. Symptom control - The focus is on keeping you comfortable. This includes managing symptoms like tiredness, nausea, itching, and breathlessness.
+3. Supportive care - You will have access to dietitians, social workers, and other specialists. Palliative care teams may also be involved.
+4. Advance care planning - Your team will help you think about and document your wishes for future care.
+
+**Benefits**:
+- No dialysis sessions or surgery needed
+- Focus on quality of life and comfort
+- More time at home
+- More time with loved ones
+
+**Considerations**:
+- Kidney function will continue to decline over time
+- Symptoms will need active management and may change
+- Life expectancy may be shorter than with dialysis
+- Important to have honest conversations about expectations
+- May change your mind and start dialysis later if suitable
+
+**Key Facts**: Conservative care is an active treatment choice - not "giving up". You will still receive medical care and support. How long someone lives with conservative care varies greatly depending on individual circumstances.
+
+---
+
+END OF WEBSITE TREATMENT INFORMATION`;
 
 /**
  * Handle incoming chat messages and generate AI responses.
