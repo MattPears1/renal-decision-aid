@@ -36,13 +36,14 @@ function MiniKidneyModel() {
   });
 
   return (
-    // eslint-disable-next-line react/no-unknown-property
+    /* eslint-disable react/no-unknown-property */
     <primitive
       ref={modelRef}
       object={clonedScene}
       position={[0, -0.8, 0]}
       scale={[1.2, 1.2, 1.2]}
     />
+    /* eslint-enable react/no-unknown-property */
   );
 }
 

@@ -8,7 +8,7 @@
  */
 
 import { useTranslation } from 'react-i18next';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { RecordingState, VoiceRecordingError } from '@/hooks/useVoiceRecording';
 import type { SpeechState, TextToSpeechError } from '@/hooks/useTextToSpeech';
 
