@@ -29,6 +29,10 @@ export const SUPPORTED_LANGUAGES = {
   pl: { name: 'Polish', nativeName: 'Polski', dir: 'ltr' },
   ar: { name: 'Arabic', nativeName: 'العربية', dir: 'rtl' },
   pt: { name: 'Portuguese', nativeName: 'Português', dir: 'ltr' },
+  fr: { name: 'French', nativeName: 'Français', dir: 'ltr' },
+  so: { name: 'Somali', nativeName: 'Soomaali', dir: 'ltr' },
+  tr: { name: 'Turkish', nativeName: 'Türkçe', dir: 'ltr' },
+  vi: { name: 'Vietnamese', nativeName: 'Tiếng Việt', dir: 'ltr' },
 } as const;
 
 /**
@@ -55,6 +59,10 @@ export const LANGUAGE_FONTS: Record<SupportedLanguage, string> = {
   pl: '"NHS Regular", "Frutiger", "Arial", sans-serif',
   ar: '"Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", "Tahoma", sans-serif',
   pt: '"NHS Regular", "Frutiger", "Arial", sans-serif',
+  fr: '"NHS Regular", "Frutiger", "Arial", sans-serif',
+  so: '"NHS Regular", "Frutiger", "Arial", sans-serif',
+  tr: '"NHS Regular", "Frutiger", "Arial", sans-serif',
+  vi: '"NHS Regular", "Frutiger", "Arial", sans-serif',
 };
 
 /**

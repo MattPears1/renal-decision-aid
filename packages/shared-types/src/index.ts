@@ -3,7 +3,9 @@
 // =============================================================================
 
 // Language Support
-export type SupportedLanguage = 'en' | 'hi' | 'pa' | 'bn' | 'ur' | 'gu' | 'ta';
+export type SupportedLanguage =
+  | 'en' | 'zh' | 'hi' | 'pa' | 'bn' | 'ur' | 'gu' | 'ta'
+  | 'pl' | 'ar' | 'pt' | 'fr' | 'so' | 'tr' | 'vi';
 
 export interface LanguageConfig {
   code: SupportedLanguage;
@@ -15,12 +17,20 @@ export interface LanguageConfig {
 
 export const SUPPORTED_LANGUAGES: LanguageConfig[] = [
   { code: 'en', name: 'English', nativeName: 'English', direction: 'ltr', fontFamily: 'Noto Sans' },
+  { code: 'zh', name: 'Chinese (Simplified)', nativeName: '简体中文', direction: 'ltr', fontFamily: 'Noto Sans SC' },
   { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', direction: 'ltr', fontFamily: 'Noto Sans Devanagari' },
   { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', direction: 'ltr', fontFamily: 'Noto Sans Gurmukhi' },
   { code: 'bn', name: 'Bengali', nativeName: 'বাংলা', direction: 'ltr', fontFamily: 'Noto Sans Bengali' },
   { code: 'ur', name: 'Urdu', nativeName: 'اردو', direction: 'rtl', fontFamily: 'Noto Nastaliq Urdu' },
   { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી', direction: 'ltr', fontFamily: 'Noto Sans Gujarati' },
   { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', direction: 'ltr', fontFamily: 'Noto Sans Tamil' },
+  { code: 'pl', name: 'Polish', nativeName: 'Polski', direction: 'ltr', fontFamily: 'Noto Sans' },
+  { code: 'ar', name: 'Arabic', nativeName: 'العربية', direction: 'rtl', fontFamily: 'Noto Naskh Arabic' },
+  { code: 'pt', name: 'Portuguese', nativeName: 'Português', direction: 'ltr', fontFamily: 'Noto Sans' },
+  { code: 'fr', name: 'French', nativeName: 'Français', direction: 'ltr', fontFamily: 'Noto Sans' },
+  { code: 'so', name: 'Somali', nativeName: 'Soomaali', direction: 'ltr', fontFamily: 'Noto Sans' },
+  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', direction: 'ltr', fontFamily: 'Noto Sans' },
+  { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', direction: 'ltr', fontFamily: 'Noto Sans' },
 ];
 
 // Journey Stages

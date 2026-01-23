@@ -7,7 +7,7 @@
  * @lastModified 21 January 2026
  */
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   SUPPORTED_LANGUAGES,
@@ -59,7 +59,9 @@ export default function LanguageSelector({
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingLang, setLoadingLang] = useState<SupportedLanguage | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   /**
    * Gets a valid supported language from a language code.
@@ -111,12 +113,36 @@ export default function LanguageSelector({
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
+        setSearchQuery('');
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Focus search input when dropdown opens
+  useEffect(() => {
+    if (isOpen && searchInputRef.current) {
+      setTimeout(() => searchInputRef.current?.focus(), 50);
+    }
+  }, [isOpen]);
+
+  // Filter languages based on search query
+  const filteredLanguages = useMemo(() => {
+    const allLangs = Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguage[];
+    if (!searchQuery.trim()) return allLangs;
+
+    const query = searchQuery.toLowerCase();
+    return allLangs.filter((code) => {
+      const lang = SUPPORTED_LANGUAGES[code];
+      return (
+        lang.name.toLowerCase().includes(query) ||
+        lang.nativeName.toLowerCase().includes(query) ||
+        code.toLowerCase().includes(query)
+      );
+    });
+  }, [searchQuery]);
 
   /**
    * Handles language change with loading state and error recovery.
@@ -254,34 +280,78 @@ export default function LanguageSelector({
 
       {isOpen && !isLoading && (
         <div
-          className="absolute right-0 top-full mt-1 w-48 sm:w-52 bg-white rounded-md shadow-lg border border-nhs-pale-grey z-[1000] max-h-[60vh] overflow-y-auto"
+          className="absolute right-0 top-full mt-1 w-56 sm:w-64 bg-white rounded-lg shadow-xl border border-nhs-pale-grey z-[1000] max-h-[70vh] flex flex-col"
           role="listbox"
           aria-label={t('language.selectLanguage', 'Select language')}
         >
-          <div className="py-1">
-            {(Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguage[]).map((langCode) => {
-              const lang = SUPPORTED_LANGUAGES[langCode];
-              const isActive = langCode === currentLang;
+          {/* Search input */}
+          <div className="p-2 border-b border-nhs-pale-grey sticky top-0 bg-white rounded-t-lg">
+            <div className="relative">
+              <svg
+                className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={t('language.searchLanguages', 'Search languages...')}
+                className="w-full pl-8 pr-3 py-2 text-sm border border-nhs-pale-grey rounded-md focus:outline-none focus:ring-2 focus:ring-nhs-blue focus:border-nhs-blue"
+                aria-label={t('language.searchLanguages', 'Search languages')}
+              />
+            </div>
+            <div className="mt-1.5 text-xs text-text-muted text-center">
+              {filteredLanguages.length} {t('language.languagesAvailable', 'languages available')}
+            </div>
+          </div>
 
-              return (
-                <button
-                  key={langCode}
-                  onClick={() => handleLanguageChange(langCode)}
-                  className={clsx(
-                    'w-full px-4 py-3 sm:py-2.5 text-left text-sm transition-colors min-h-[44px] touch-manipulation',
-                    isActive
-                      ? 'bg-nhs-blue/10 text-nhs-blue font-medium'
-                      : 'text-text-primary hover:bg-nhs-pale-grey active:bg-nhs-pale-grey'
-                  )}
-                  role="option"
-                  aria-selected={isActive}
-                  dir={lang.dir}
-                >
-                  <span className="block">{lang.nativeName}</span>
-                  <span className="block text-xs text-text-muted">{lang.name}</span>
-                </button>
-              );
-            })}
+          {/* Language list */}
+          <div className="overflow-y-auto flex-1 py-1">
+            {filteredLanguages.length === 0 ? (
+              <div className="px-4 py-3 text-sm text-text-muted text-center">
+                {t('language.noResults', 'No languages found')}
+              </div>
+            ) : (
+              filteredLanguages.map((langCode) => {
+                const lang = SUPPORTED_LANGUAGES[langCode];
+                const isActive = langCode === currentLang;
+
+                return (
+                  <button
+                    key={langCode}
+                    onClick={() => {
+                      handleLanguageChange(langCode);
+                      setSearchQuery('');
+                    }}
+                    className={clsx(
+                      'w-full px-4 py-2.5 text-left text-sm transition-colors min-h-[44px] touch-manipulation flex items-center gap-3',
+                      isActive
+                        ? 'bg-nhs-blue/10 text-nhs-blue font-medium'
+                        : 'text-text-primary hover:bg-nhs-pale-grey active:bg-nhs-pale-grey'
+                    )}
+                    role="option"
+                    aria-selected={isActive}
+                    dir={lang.dir}
+                  >
+                    {isActive && (
+                      <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                    <div className={clsx(!isActive && 'ml-7')}>
+                      <span className="block font-medium">{lang.nativeName}</span>
+                      <span className="block text-xs text-text-muted">{lang.name}</span>
+                    </div>
+                  </button>
+                );
+              })
+            )}
           </div>
         </div>
       )}

@@ -75,12 +75,20 @@ export default function LanguageSelectionPage() {
       // Map language codes to speech synthesis language codes
       const langMap: Record<string, string> = {
         en: 'en-GB',
+        zh: 'zh-CN',
         hi: 'hi-IN',
         pa: 'pa-IN',
         bn: 'bn-IN',
         ur: 'ur-PK',
         gu: 'gu-IN',
         ta: 'ta-IN',
+        pl: 'pl-PL',
+        ar: 'ar-SA',
+        pt: 'pt-PT',
+        fr: 'fr-FR',
+        so: 'so-SO',
+        tr: 'tr-TR',
+        vi: 'vi-VN',
       };
 
       utterance.lang = langMap[langCode] || 'en-GB';
