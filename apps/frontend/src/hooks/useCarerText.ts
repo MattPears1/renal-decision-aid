@@ -99,13 +99,13 @@ export function useCarerText(): CarerTextResult {
       return t('carerRelationship.thePerson', 'the person you\'re supporting');
     }
 
-    // Return "your [relationship]" format for preset relationships
-    const relationshipName = t(
-      `carerRelationship.${carerRelationship}`,
-      carerRelationship
-    );
-    return `${t('pronouns.your', 'your')} ${relationshipName}`;
-  }, [isCarer, carerRelationship, customCarerLabel, t]);
+    // Use sentence-appropriate label if available (e.g., "professional" → "patient")
+    const sentenceKey = `carerRelationship.${carerRelationship}_inSentence`;
+    const relationshipName = i18n.exists(sentenceKey)
+      ? t(sentenceKey)
+      : t(`carerRelationship.${carerRelationship}`, carerRelationship);
+    return `${t('pronouns.your', 'your')} ${relationshipName.toLowerCase()}`;
+  }, [isCarer, carerRelationship, customCarerLabel, t, i18n]);
 
   // Possessive form of relationship (e.g., "your spouse's", "Mum's")
   const possessiveLabel = useMemo(() => {

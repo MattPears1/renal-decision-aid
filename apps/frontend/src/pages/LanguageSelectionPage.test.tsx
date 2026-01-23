@@ -3,8 +3,6 @@ import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import LanguageSelectionPage from './LanguageSelectionPage';
 
-// Mock the useSession hook to track createSession calls
-const mockCreateSession = vi.fn().mockResolvedValue(undefined);
 const mockNavigate = vi.fn();
 const mockChangeLanguage = vi.fn().mockResolvedValue(undefined);
 
@@ -37,15 +35,6 @@ vi.mock('react-i18next', () => ({
   Trans: ({ children }: { children: React.ReactNode }) => children,
 }));
 
-vi.mock('@/context/SessionContext', () => ({
-  useSession: () => ({
-    createSession: mockCreateSession,
-    session: null,
-    isLoading: false,
-    error: null,
-  }),
-  SessionProvider: ({ children }: { children: React.ReactNode }) => children,
-}));
 
 // Mock the i18n config module
 vi.mock('@/config/i18n', () => ({
@@ -204,7 +193,7 @@ describe('LanguageSelectionPage', () => {
       expect(mockNavigate).toHaveBeenCalledWith('/');
     });
 
-    it('creates session and navigates to disclaimer on continue', async () => {
+    it('changes language and navigates to who-is-this-for on continue', async () => {
       const user = userEvent.setup();
       render(<LanguageSelectionPage />);
 
@@ -218,9 +207,7 @@ describe('LanguageSelectionPage', () => {
 
       await waitFor(() => {
         expect(mockChangeLanguageAndWait).toHaveBeenCalledWith('en');
-        // createSession is now called with (language, userRole, carerRelationship, customLabel)
-        expect(mockCreateSession).toHaveBeenCalledWith('en', 'patient', undefined, undefined);
-        expect(mockNavigate).toHaveBeenCalledWith('/disclaimer');
+        expect(mockNavigate).toHaveBeenCalledWith('/who-is-this-for', { state: { language: 'en' } });
       });
     });
   });

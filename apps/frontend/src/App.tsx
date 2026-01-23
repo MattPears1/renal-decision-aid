@@ -9,6 +9,7 @@ import { loadAccessibilitySettings, applyAccessibilitySettings } from './compone
 
 // Lazy load other pages for better performance
 const LanguageSelectionPage = lazy(() => import('./pages/LanguageSelectionPage'));
+const CompanionModePage = lazy(() => import('./pages/CompanionModePage'));
 const PrivacyDisclaimerPage = lazy(() => import('./pages/PrivacyDisclaimerPage'));
 const JourneyStagePage = lazy(() => import('./pages/JourneyStagePage'));
 const QuestionnairePage = lazy(() => import('./pages/QuestionnairePage'));
@@ -106,6 +107,14 @@ function App() {
                 element={
                   <Suspense fallback={<PageLoader />}>
                     <LanguageSelectionPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="who-is-this-for"
+                element={
+                  <Suspense fallback={<PageLoader />}>
+                    <CompanionModePage />
                   </Suspense>
                 }
               />

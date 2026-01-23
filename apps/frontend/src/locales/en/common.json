@@ -2310,11 +2310,11 @@
     "currentMode": "You're in {{mode}} mode"
   },
   "companionBanner": {
-    "text": "Companion mode — this session is about {{relationship}}. Complete this resource as if you were them."
+    "text": "Companion mode — you are helping {{relationship}}. Answer as though you were them."
   },
   "carerRelationship": {
     "title": "Your relationship",
-    "subtitle": "How are you connected to the person you're supporting?",
+    "subtitle": "How are you connected to the person you are supporting?",
     "spouse": "Spouse/Partner",
     "mum": "Mum",
     "dad": "Dad",
@@ -2322,11 +2322,12 @@
     "sibling": "Sibling",
     "friend": "Friend",
     "professional": "Professional carer",
+    "professional_inSentence": "patient",
     "other": "Other",
     "thePerson": "the person you're supporting",
-    "customLabel": "How would you like us to refer to them?",
+    "customLabel": "What should we call them? (optional)",
     "customLabelPlaceholder": "e.g., Mum, Dad, my friend John",
-    "preview": "Preview: \"Where is {{label}} in their kidney care journey?\""
+    "preview": "The banner will show: \"You are helping {{label}}\""
   },
   "pronouns": {
     "you": "you",

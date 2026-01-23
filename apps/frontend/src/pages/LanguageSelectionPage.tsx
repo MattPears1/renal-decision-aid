@@ -19,21 +19,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useSession } from '@/context/SessionContext';
-import { SUPPORTED_LANGUAGES, type SupportedLanguage, type UserRole, type CarerRelationship } from '@renal-decision-aid/shared-types';
+import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '@renal-decision-aid/shared-types';
 import { changeLanguageAndWait } from '@/config/i18n';
-
-/** Carer relationship options for selection. */
-const CARER_RELATIONSHIPS: { value: CarerRelationship; labelKey: string }[] = [
-  { value: 'spouse', labelKey: 'carerRelationship.spouse' },
-  { value: 'mum', labelKey: 'carerRelationship.mum' },
-  { value: 'dad', labelKey: 'carerRelationship.dad' },
-  { value: 'child', labelKey: 'carerRelationship.child' },
-  { value: 'sibling', labelKey: 'carerRelationship.sibling' },
-  { value: 'friend', labelKey: 'carerRelationship.friend' },
-  { value: 'professional', labelKey: 'carerRelationship.professional' },
-  { value: 'other', labelKey: 'carerRelationship.other' },
-];
 
 /**
  * Language selection page component.
@@ -49,19 +36,12 @@ const CARER_RELATIONSHIPS: { value: CarerRelationship; labelKey: string }[] = [
  */
 export default function LanguageSelectionPage() {
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
-  const { createSession } = useSession();
+  const { t } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage | null>(null);
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-
-  // Companion mode state
-  const [showCompanionMode, setShowCompanionMode] = useState(false);
-  const [userRoleSelection, setUserRoleSelection] = useState<UserRole>('patient');
-  const [carerRelationshipSelection, setCarerRelationshipSelection] = useState<CarerRelationship | null>(null);
-  const [customCarerLabel, setCustomCarerLabel] = useState<string>('');
 
   useEffect(() => {
     // Trigger entrance animations
@@ -136,31 +116,19 @@ export default function LanguageSelectionPage() {
       return;
     }
 
-    // Prevent double submission
     if (isLoading) return;
 
     setIsLoading(true);
     setError(null);
 
     try {
-      // Change i18n language and wait for translations to load
       const success = await changeLanguageAndWait(selectedLanguage);
 
       if (!success) {
-        // If language change failed but didn't throw, show a warning but continue
         console.warn(`Language change to ${selectedLanguage} may not have fully loaded`);
       }
 
-      // Create session with all parameters at once (fixes timing issue)
-      await createSession(
-        selectedLanguage,
-        userRoleSelection,
-        carerRelationshipSelection || undefined,
-        customCarerLabel.trim() || undefined
-      );
-
-      // Navigate to disclaimer
-      navigate('/disclaimer');
+      navigate('/who-is-this-for', { state: { language: selectedLanguage } });
     } catch (err) {
       console.error('Failed to set language:', err);
       setError(t('common.error', 'Something went wrong. Please try again.'));
@@ -262,212 +230,7 @@ export default function LanguageSelectionPage() {
             <span>{t('language.sessionNote', 'Your language choice will be remembered for this session')}</span>
           </div>
 
-          {/* Companion Mode Toggle */}
-          <div
-            className={`max-w-[700px] mx-auto mb-6 sm:mb-8 transform transition-all duration-500 delay-250
-                       ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-          >
-            {!showCompanionMode ? (
-              // Toggle button to show companion mode options
-              <button
-                type="button"
-                onClick={() => setShowCompanionMode(true)}
-                className="w-full p-4 bg-gradient-to-r from-nhs-purple/5 to-nhs-blue/5 border-2 border-dashed border-nhs-purple/30
-                           rounded-xl hover:border-nhs-purple/50 hover:bg-nhs-purple/10 transition-all duration-200
-                           focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2"
-              >
-                <div className="flex items-center justify-center gap-3">
-                  <div className="w-10 h-10 bg-nhs-purple/10 rounded-full flex items-center justify-center">
-                    <HeartHandIcon className="w-5 h-5 text-nhs-purple" />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-nhs-purple">
-                      {t('userRole.toggle', 'Are you a carer or family member?')}
-                    </p>
-                    <p className="text-sm text-text-secondary">
-                      {t('userRole.switchMode', 'Switch to Companion Mode')}
-                    </p>
-                  </div>
-                  <ChevronRightIcon className="w-5 h-5 text-nhs-purple ml-auto" />
-                </div>
-              </button>
-            ) : (
-              // Expanded companion mode selection
-              <div className="bg-white border-2 border-nhs-purple/20 rounded-xl overflow-hidden">
-                <div className="bg-gradient-to-r from-nhs-purple/10 to-nhs-blue/10 p-4 border-b border-nhs-purple/20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-nhs-purple rounded-full flex items-center justify-center">
-                        <HeartHandIcon className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-text-primary">
-                          {t('userRole.title', 'Who are you?')}
-                        </h3>
-                        <p className="text-sm text-text-secondary">
-                          {t('userRole.subtitle', 'This helps us personalise your experience')}
-                        </p>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setShowCompanionMode(false);
-                        setUserRoleSelection('patient');
-                        setCarerRelationshipSelection(null);
-                        setCustomCarerLabel('');
-                      }}
-                      className="p-2 text-text-secondary hover:text-text-primary hover:bg-nhs-pale-grey rounded-full transition-colors"
-                      aria-label={t('common.close', 'Close')}
-                    >
-                      <CloseIcon className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="p-4 space-y-4">
-                  {/* Role Selection Cards */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {/* Patient Option */}
-                    <label
-                      className={`relative flex flex-col p-4 rounded-lg border-2 cursor-pointer transition-all duration-200
-                                 ${userRoleSelection === 'patient'
-                                   ? 'border-nhs-blue bg-nhs-blue/5'
-                                   : 'border-nhs-pale-grey hover:border-nhs-blue/50'
-                                 }`}
-                    >
-                      <input
-                        type="radio"
-                        name="userRole"
-                        value="patient"
-                        checked={userRoleSelection === 'patient'}
-                        onChange={() => {
-                          setUserRoleSelection('patient');
-                          setCarerRelationshipSelection(null);
-                        }}
-                        className="sr-only"
-                      />
-                      <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0
-                                       ${userRoleSelection === 'patient' ? 'bg-nhs-blue' : 'bg-nhs-pale-grey'}`}>
-                          <UserIcon className={`w-4 h-4 ${userRoleSelection === 'patient' ? 'text-white' : 'text-nhs-blue'}`} />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-text-primary">
-                            {t('userRole.patient.title', "I'm making my own treatment decision")}
-                          </p>
-                          <p className="text-sm text-text-secondary mt-1">
-                            {t('userRole.patient.description', 'I have kidney disease and want to learn about my treatment options')}
-                          </p>
-                        </div>
-                      </div>
-                      {userRoleSelection === 'patient' && (
-                        <div className="absolute top-2 right-2 w-6 h-6 bg-nhs-blue rounded-full flex items-center justify-center">
-                          <CheckIcon />
-                        </div>
-                      )}
-                    </label>
-
-                    {/* Carer Option */}
-                    <label
-                      className={`relative flex flex-col p-4 rounded-lg border-2 cursor-pointer transition-all duration-200
-                                 ${userRoleSelection === 'carer'
-                                   ? 'border-nhs-purple bg-nhs-purple/5'
-                                   : 'border-nhs-pale-grey hover:border-nhs-purple/50'
-                                 }`}
-                    >
-                      <input
-                        type="radio"
-                        name="userRole"
-                        value="carer"
-                        checked={userRoleSelection === 'carer'}
-                        onChange={() => setUserRoleSelection('carer')}
-                        className="sr-only"
-                      />
-                      <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0
-                                       ${userRoleSelection === 'carer' ? 'bg-nhs-purple' : 'bg-nhs-pale-grey'}`}>
-                          <HeartHandIcon className={`w-4 h-4 ${userRoleSelection === 'carer' ? 'text-white' : 'text-nhs-purple'}`} />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-text-primary">
-                            {t('userRole.carer.title', "I'm supporting someone")}
-                          </p>
-                          <p className="text-sm text-text-secondary mt-1">
-                            {t('userRole.carer.description', "I'm a carer, family member, or friend helping someone with kidney disease")}
-                          </p>
-                        </div>
-                      </div>
-                      {userRoleSelection === 'carer' && (
-                        <div className="absolute top-2 right-2 w-6 h-6 bg-nhs-purple rounded-full flex items-center justify-center">
-                          <CheckIcon />
-                        </div>
-                      )}
-                    </label>
-                  </div>
-
-                  {/* Carer Relationship Selection (shown when carer selected) */}
-                  {userRoleSelection === 'carer' && (
-                    <div className="pt-4 border-t border-nhs-pale-grey animate-fade-in">
-                      <p className="font-medium text-text-primary mb-3">
-                        {t('carerRelationship.title', 'Your relationship')}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {CARER_RELATIONSHIPS.map((rel) => (
-                          <button
-                            key={rel.value}
-                            type="button"
-                            onClick={() => {
-                              setCarerRelationshipSelection(rel.value);
-                              // Clear custom label when selecting a preset option (except 'other')
-                              if (rel.value !== 'other') {
-                                setCustomCarerLabel('');
-                              }
-                            }}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
-                                       ${carerRelationshipSelection === rel.value
-                                         ? 'bg-nhs-purple text-white'
-                                         : 'bg-nhs-pale-grey text-text-primary hover:bg-nhs-purple/10 hover:text-nhs-purple'
-                                       }`}
-                          >
-                            {t(rel.labelKey)}
-                          </button>
-                        ))}
-                      </div>
-
-                      {/* Custom label input (shown when 'other' selected or any relationship) */}
-                      {carerRelationshipSelection && (
-                        <div className="mt-4 animate-fade-in">
-                          <label className="block text-sm font-medium text-text-secondary mb-2">
-                            {t('carerRelationship.customLabel', 'How would you like us to refer to them?')}
-                          </label>
-                          <input
-                            type="text"
-                            value={customCarerLabel}
-                            onChange={(e) => setCustomCarerLabel(e.target.value)}
-                            placeholder={t('carerRelationship.customLabelPlaceholder', 'e.g., Mum, Dad, my friend John')}
-                            className="w-full px-4 py-3 border-2 border-nhs-pale-grey rounded-lg text-sm
-                                       focus:outline-none focus:ring-2 focus:ring-nhs-purple focus:border-nhs-purple
-                                       placeholder:text-text-muted"
-                            maxLength={50}
-                          />
-                          {customCarerLabel && (
-                            <p className="mt-2 text-sm text-nhs-purple">
-                              {t('carerRelationship.preview', 'Preview: "Where is {{label}} in their kidney care journey?"', {
-                                label: customCarerLabel
-                              })}
-                            </p>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Navigation Buttons - Enhanced */}
+          {/* Navigation Buttons */}
           <div
             className={`flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-6 border-t border-nhs-pale-grey max-w-[700px] mx-auto
                        transform transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
@@ -765,58 +528,3 @@ function AudioIcon() {
   );
 }
 
-/** Heart with hand icon for carer/companion mode. */
-function HeartHandIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-    </svg>
-  );
-}
-
-/** Chevron right icon for expandable sections. */
-function ChevronRightIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-    </svg>
-  );
-}
-
-/** Close icon for dismissing sections. */
-function CloseIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-    </svg>
-  );
-}
-
-/** User icon for patient mode. */
-function UserIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-    </svg>
-  );
-}
