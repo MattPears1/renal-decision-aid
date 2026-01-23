@@ -162,8 +162,10 @@ export function useCarerText(): CarerTextResult {
       options?: Record<string, unknown>
     ): string => {
       const key = getKey(baseKey);
+      const capitalizedRelationship = relationshipLabel.charAt(0).toUpperCase() + relationshipLabel.slice(1);
       const interpolationOptions = {
         relationship: relationshipLabel,
+        Relationship: capitalizedRelationship,
         they: subjectPronoun,
         They: subjectPronoun.charAt(0).toUpperCase() + subjectPronoun.slice(1),
         them: objectPronoun,

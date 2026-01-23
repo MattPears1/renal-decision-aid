@@ -215,7 +215,7 @@
   },
   "journey": {
     "title": "Where Are You in Your Kidney Care Journey?",
-    "title_carer": "Where is {{relationship}} in Their Kidney Care Journey?",
+    "title_carer": "Where is {{Relationship}} in Their Kidney Care Journey?",
     "subtitle": "Select the option that best describes your situation",
     "subtitle_carer": "Select the option that best describes their situation",
     "instruction": "Select the option that best describes your current situation",
@@ -237,39 +237,39 @@
     "stages": {
       "suspected": {
         "title": "I think I may have kidney disease",
-        "title_carer": "They may have kidney disease",
+        "title_carer": "{{Relationship}} may have kidney disease",
         "description": "You are concerned about your kidney health and want to learn more about what kidney disease means.",
-        "description_carer": "They are concerned about their kidney health and want to learn more about what kidney disease means."
+        "description_carer": "{{Relationship}} is concerned about {{their}} kidney health and wants to learn more about what kidney disease means."
       },
       "earlyDiagnosis": {
         "title": "I've just been diagnosed - early stage CKD",
-        "title_carer": "Recently diagnosed - early stage CKD",
+        "title_carer": "{{Relationship}} has just been diagnosed - early stage CKD",
         "description": "You have recently learned about your kidney condition and want to understand what this means for you.",
-        "description_carer": "They have recently learned about their kidney condition and want to understand what this means for them."
+        "description_carer": "{{Relationship}} has recently learned about {{their}} kidney condition and wants to understand what this means."
       },
       "lateDiagnosis": {
         "title": "I've been diagnosed - late stage CKD",
-        "title_carer": "Diagnosed - late stage CKD",
+        "title_carer": "{{Relationship}} has been diagnosed - late stage CKD",
         "description": "Your kidney function has declined significantly and you may need to think about treatment options soon.",
-        "description_carer": "Their kidney function has declined significantly and they may need to think about treatment options soon."
+        "description_carer": "{{Relationship}}'s kidney function has declined significantly and {{they}} may need to think about treatment options soon."
       },
       "choosingTreatment": {
         "title": "I need to choose a treatment soon",
-        "title_carer": "They need to choose a treatment soon",
+        "title_carer": "{{Relationship}} needs to choose a treatment soon",
         "description": "Your kidney team has told you that you will need to start treatment in the coming months and you want to learn about your options.",
-        "description_carer": "Their kidney team has told them that they will need to start treatment in the coming months."
+        "description_carer": "{{Relationship}}'s kidney team has told {{them}} that {{they}} will need to start treatment in the coming months."
       },
       "transplantPending": {
         "title": "I'm due to have a transplant - want to learn more",
-        "title_carer": "They're due to have a transplant",
+        "title_carer": "{{Relationship}} is due to have a transplant",
         "description": "You are on the transplant list or have a living donor lined up and want to know more about what to expect.",
-        "description_carer": "They are on the transplant list or have a living donor lined up."
+        "description_carer": "{{Relationship}} is on the transplant list or has a living donor lined up."
       },
       "dialysisPending": {
         "title": "I'm due to start dialysis - want to learn more",
-        "title_carer": "They're due to start dialysis",
+        "title_carer": "{{Relationship}} is due to start dialysis",
         "description": "You will be starting dialysis treatment soon and want to understand the different types and what daily life will be like.",
-        "description_carer": "They will be starting dialysis treatment soon."
+        "description_carer": "{{Relationship}} will be starting dialysis treatment soon."
       },
       "supporting": {
         "title": "I'm supporting a family member or friend",
@@ -292,7 +292,7 @@
   "questionnaire": {
     "intro": {
       "title": "Tell Us About Yourself",
-      "title_carer": "Tell Us About {{relationship}}",
+      "title_carer": "Tell Us About {{Relationship}}",
       "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
       "description_carer": "These questions help us show information most relevant to their situation. Your answers are private and will not be saved.",
       "features": {
@@ -2308,6 +2308,9 @@
     "switchMode": "Switch to Companion Mode",
     "patientMode": "Switch to Patient Mode",
     "currentMode": "You're in {{mode}} mode"
+  },
+  "companionBanner": {
+    "text": "Companion mode — this session is about {{relationship}}"
   },
   "carerRelationship": {
     "title": "Your relationship",
