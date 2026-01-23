@@ -196,15 +196,46 @@
     "homeAriaLabel": "Aide à la décision pour le traitement rénal NHS - Accueil"
   },
   "progress": {
-    "language": "Langue",
-    "privacy": "Confidentialité",
-    "yourJourney": "Votre parcours",
-    "aboutYou": "À propos de vous",
-    "yourOptions": "Vos options",
-    "ariaLabel": "Progression dans l'outil d'aide à la décision",
-    "stepOfTotal": "Étape {{current}} sur {{total}}",
-    "percentComplete": "{{percentage}}% terminé",
-    "ariaProgressLabel": "Progression : {{current}} sur {{total}} étapes terminées"
+    "title": "Votre parcours d'apprentissage",
+    "yourProgress": "Votre progression",
+    "complete": "terminé",
+    "treatments": "traitements",
+    "sections": {
+      "title": "Sections à explorer",
+      "questionnaire": "À propos de vous",
+      "questionnaireDesc": "Partagez votre situation",
+      "treatments": "Options de traitement",
+      "treatmentsDesc": "{{viewed}} sur {{total}} explorées",
+      "values": "Exercice sur les valeurs",
+      "valuesDesc": "Clarifiez vos priorités",
+      "chat": "Poser des questions",
+      "chatDesc": "Obtenir des réponses",
+      "lifeGoals": "Objectifs de vie",
+      "lifeGoalsDesc": "Associer traitements et objectifs",
+      "statistics": "Ce que d'autres ont choisi",
+      "statisticsDesc": "Voir les choix des patients"
+    },
+    "status": {
+      "completed": "Terminé",
+      "inProgress": "En cours"
+    },
+    "badges": {
+      "title": "Vos badges",
+      "explorer": "Explorateur",
+      "allTreatments": "Tous les traitements",
+      "values": "Valeurs claires",
+      "curious": "Esprit curieux",
+      "complete": "Parcours terminé"
+    },
+    "encouragement": {
+      "start": "Commencez votre parcours en explorant les options de traitement",
+      "beginning": "Bon début ! Continuez à explorer pour en savoir plus",
+      "making": "Vous progressez bien !",
+      "halfway": "Plus de la moitié terminée - bravo !",
+      "almost": "Presque terminé ! Encore quelques sections",
+      "complete": "Excellent ! Vous avez tout exploré"
+    },
+    "viewSummary": "Voir votre résumé"
   },
   "journey": {
     "title": "Où en êtes-vous dans votre parcours de soins rénaux ?",
@@ -489,6 +520,16 @@
         "title": "Poser des questions",
         "description": "Discutez avec notre assistant IA sur les options de traitement rénal. Obtenez des réponses à vos questions de manière conversationnelle.",
         "action": "Démarrer le chat"
+      },
+      "lifeGoals": {
+        "title": "Compatibilite objectifs de vie",
+        "description": "Decouvrez comment les traitements s'alignent avec vos objectifs",
+        "action": "Explorer les objectifs"
+      },
+      "statistics": {
+        "title": "Ce que d'autres ont choisi",
+        "description": "Decouvrez ce que des personnes similaires ont decide",
+        "action": "Voir les statistiques"
       }
     },
     "status": {
@@ -652,7 +693,34 @@
     "scrollHint": "Faites défiler horizontalement pour voir tous les traitements",
     "tableHeading": "Tableau de comparaison des traitements",
     "tableLabel": "Comparaison des options de traitement rénal",
-    "criteria": "Critères",
+    "criteria": {
+      "timeCommitment": "Temps requis par semaine",
+      "timeCommitmentHint": "Heures consacrées au traitement",
+      "location": "Lieu du traitement",
+      "locationHint": "Où le traitement a lieu",
+      "travel": "Impact sur les voyages",
+      "travelHint": "Capacité à voyager et partir en vacances",
+      "diet": "Restrictions alimentaires",
+      "dietHint": "Limitations sur la nourriture et les boissons",
+      "surgery": "Chirurgie requise",
+      "surgeryHint": "Procédures initiales nécessaires",
+      "supportNeeded": "Soutien nécessaire",
+      "supportNeededHint": "Aide de la famille ou des aidants",
+      "recoveryTime": "Temps de récupération",
+      "recoveryTimeHint": "Temps pour s'adapter au traitement",
+      "longTermOutlook": "Perspectives à long terme",
+      "longTermOutlookHint": "Résultats attendus au fil du temps",
+      "scheduleFlexibility": "Flexibilité de l'emploi du temps",
+      "scheduleFlexibilityHint": "Contrôle sur votre emploi du temps",
+      "trainingRequired": "Formation requise",
+      "trainingRequiredHint": "Temps d'apprentissage nécessaire",
+      "survivalRates": "Taux de survie",
+      "survivalRatesHint": "Résultats généraux (varient selon la personne)",
+      "qualityOfLife": "Qualité de vie",
+      "qualityOfLifeHint": "Bien-être général",
+      "energyLevels": "Niveaux d'énergie",
+      "energyLevelsHint": "Énergie et fatigue typiques"
+    },
     "recommended": "Recommandé",
     "remember": "N'oubliez pas",
     "guidance": "Aucun traitement n'est parfait pour tout le monde. Le meilleur choix dépend de votre situation personnelle, de votre santé et de vos valeurs. Cette comparaison est un point de départ pour les discussions avec votre équipe néphrologique.",
@@ -681,34 +749,6 @@
       "medical": "Facteurs médicaux",
       "support": "Besoins de soutien",
       "health": "Résultats de santé"
-    },
-    "criteria": {
-      "timeCommitment": "Temps requis par semaine",
-      "timeCommitmentHint": "Heures consacrées au traitement",
-      "location": "Lieu du traitement",
-      "locationHint": "Où le traitement a lieu",
-      "travel": "Impact sur les voyages",
-      "travelHint": "Capacité à voyager et partir en vacances",
-      "diet": "Restrictions alimentaires",
-      "dietHint": "Limitations sur la nourriture et les boissons",
-      "surgery": "Chirurgie requise",
-      "surgeryHint": "Procédures initiales nécessaires",
-      "supportNeeded": "Soutien nécessaire",
-      "supportNeededHint": "Aide de la famille ou des aidants",
-      "recoveryTime": "Temps de récupération",
-      "recoveryTimeHint": "Temps pour s'adapter au traitement",
-      "longTermOutlook": "Perspectives à long terme",
-      "longTermOutlookHint": "Résultats attendus au fil du temps",
-      "scheduleFlexibility": "Flexibilité de l'emploi du temps",
-      "scheduleFlexibilityHint": "Contrôle sur votre emploi du temps",
-      "trainingRequired": "Formation requise",
-      "trainingRequiredHint": "Temps d'apprentissage nécessaire",
-      "survivalRates": "Taux de survie",
-      "survivalRatesHint": "Résultats généraux (varient selon la personne)",
-      "qualityOfLife": "Qualité de vie",
-      "qualityOfLifeHint": "Bien-être général",
-      "energyLevels": "Niveaux d'énergie",
-      "energyLevelsHint": "Énergie et fatigue typiques"
     },
     "values": {
       "minimalAfterRecovery": "Minimal après récupération",
@@ -1077,7 +1117,19 @@
       "viewed": "Traitements explorés",
       "questions": "Questions pour votre équipe",
       "priorities": "Vos priorités",
-      "nextSteps": "Prochaines étapes suggérées"
+      "nextSteps": "Prochaines étapes suggérées",
+      "lifeGoals": "Compatibilite objectifs de vie",
+      "statistics": "Ce que d'autres ont choisi"
+    },
+    "lifeGoals": {
+      "selectedGoals": "Vos objectifs selectionnes",
+      "topCompatible": "Traitements les plus compatibles",
+      "reviewGoals": "Revoir vos objectifs de vie"
+    },
+    "statistics": {
+      "description": "Vous avez consulte les statistiques sur les choix d'autres patients.",
+      "disclaimer": "Les statistiques sont basees sur des donnees anonymisees du NHS.",
+      "reviewStats": "Revoir les statistiques"
     },
     "print": "Imprimer le résumé",
     "email": "Envoyer le résumé par e-mail",
@@ -1327,44 +1379,6 @@
       "sleep": "Repos quand vous êtes fatigué(e)"
     }
   },
-  "progress": {
-    "title": "Votre parcours d'apprentissage",
-    "yourProgress": "Votre progression",
-    "complete": "terminé",
-    "treatments": "traitements",
-    "sections": {
-      "title": "Sections à explorer",
-      "questionnaire": "À propos de vous",
-      "questionnaireDesc": "Partagez votre situation",
-      "treatments": "Options de traitement",
-      "treatmentsDesc": "{{viewed}} sur {{total}} explorées",
-      "values": "Exercice sur les valeurs",
-      "valuesDesc": "Clarifiez vos priorités",
-      "chat": "Poser des questions",
-      "chatDesc": "Obtenir des réponses"
-    },
-    "status": {
-      "completed": "Terminé",
-      "inProgress": "En cours"
-    },
-    "badges": {
-      "title": "Vos badges",
-      "explorer": "Explorateur",
-      "allTreatments": "Tous les traitements",
-      "values": "Valeurs claires",
-      "curious": "Esprit curieux",
-      "complete": "Parcours terminé"
-    },
-    "encouragement": {
-      "start": "Commencez votre parcours en explorant les options de traitement",
-      "beginning": "Bon début ! Continuez à explorer pour en savoir plus",
-      "making": "Vous progressez bien !",
-      "halfway": "Plus de la moitié terminée - bravo !",
-      "almost": "Presque terminé ! Encore quelques sections",
-      "complete": "Excellent ! Vous avez tout exploré"
-    },
-    "viewSummary": "Voir votre résumé"
-  },
   "scenario": {
     "title": "Et si ? Explorateur de scénarios",
     "subtitle": "Voyez comment différentes situations de vie fonctionnent avec chaque option de traitement",
@@ -1578,6 +1592,82 @@
         "title": "Phosphate",
         "definition": "Un minéral présent dans de nombreux aliments qui aide à construire des os solides. Lorsque les reins ne fonctionnent pas bien, le phosphate peut s'accumuler dans votre sang et affaiblir vos os."
       }
+    }
+  },
+  "lifeGoals": {
+    "title": "Compatibilite avec vos objectifs de vie",
+    "subtitle": "Decouvrez comment les traitements s'alignent avec vos objectifs personnels",
+    "introduction": "Comprendre comment chaque traitement s'adapte a ce qui compte le plus dans votre vie peut vous aider a prendre une decision eclairee.",
+    "categories": {
+      "work": {
+        "name": "Travail et Carriere",
+        "description": "Objectifs lies a votre emploi et votre vie professionnelle"
+      },
+      "family": {
+        "name": "Famille et Relations",
+        "description": "Objectifs lies au temps en famille et aux soins des proches"
+      },
+      "travel": {
+        "name": "Voyages et Vacances",
+        "description": "Objectifs lies aux voyages et a la decouverte"
+      },
+      "hobbies": {
+        "name": "Loisirs et Activites",
+        "description": "Objectifs lies aux sports et aux loisirs"
+      },
+      "independence": {
+        "name": "Independance",
+        "description": "Objectifs lies au maintien de votre autonomie"
+      },
+      "religious": {
+        "name": "Foi et Spiritualite",
+        "description": "Objectifs lies a la pratique religieuse"
+      }
+    },
+    "goals": {
+      "fullTimeWork": "Continuer a travailler a temps plein",
+      "partTimeWork": "Travailler a temps partiel",
+      "retirement": "Profiter de la retraite",
+      "childcare": "S'occuper des enfants ou petits-enfants",
+      "familyEvents": "Participer aux evenements familiaux",
+      "socialLife": "Maintenir une vie sociale active",
+      "shortTrips": "Faire des sorties courtes",
+      "longHolidays": "Partir en vacances a l'etranger",
+      "pilgrimages": "Effectuer des pelerinages",
+      "exercise": "Rester physiquement actif",
+      "gardening": "Continuer le jardinage",
+      "sports": "Participer a des sports",
+      "liveAlone": "Vivre de maniere independante",
+      "driveCar": "Continuer a conduire",
+      "cookMeals": "Preparer mes propres repas",
+      "prayRegularly": "Maintenir les heures de priere",
+      "attendWorship": "Assister aux services religieux",
+      "fastingPractice": "Observer le jeune religieux"
+    },
+    "results": {
+      "title": "Vos resultats de compatibilite",
+      "description": "Base sur vos objectifs selectionnes",
+      "bestMatch": "Meilleure correspondance",
+      "noGoalsSelected": "Selectionnez au moins un objectif"
+    },
+    "compatibility": {
+      "high": "Haute compatibilite",
+      "medium": "Compatibilite moderee",
+      "low": "Compatibilite plus faible"
+    },
+    "discussionPrompts": {
+      "title": "Questions a discuter",
+      "prompt1": "Comment ce traitement affectera-t-il ma routine quotidienne?",
+      "prompt2": "Puis-je atteindre mes objectifs avec ce traitement?",
+      "prompt3": "Quels ajustements devrai-je faire?"
+    }
+  },
+  "statistics": {
+    "page": {
+      "title": "Ce que d'autres dans des situations similaires ont choisi",
+      "introduction": "Comprendre ce que d'autres ont choisi peut vous aider. Ce sont des statistiques reelles de patients renaux au Royaume-Uni.",
+      "personalized": "Personnalise pour votre profil",
+      "compareTreatments": "Comparer les traitements"
     }
   }
 }

@@ -490,6 +490,16 @@
         "title": "Ask Questions",
         "description": "Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.",
         "action": "Start Chat"
+      },
+      "lifeGoals": {
+        "title": "Life Goals Compatibility",
+        "description": "See how treatments align with your personal goals for work, family, travel, and more.",
+        "action": "Explore Goals"
+      },
+      "statistics": {
+        "title": "What Others Chose",
+        "description": "See what people in similar situations decided and their outcomes.",
+        "action": "View Statistics"
       }
     },
     "status": {
@@ -1173,7 +1183,19 @@
       "viewed": "Treatments Explored",
       "questions": "Questions for Your Team",
       "priorities": "Your Priorities",
-      "nextSteps": "Suggested Next Steps"
+      "nextSteps": "Suggested Next Steps",
+      "lifeGoals": "Life Goals Compatibility",
+      "statistics": "What Others Chose"
+    },
+    "lifeGoals": {
+      "selectedGoals": "Your Selected Goals",
+      "topCompatible": "Most Compatible Treatments",
+      "reviewGoals": "Review your life goals"
+    },
+    "statistics": {
+      "description": "You reviewed statistics about what other patients in similar situations chose. This information can provide helpful context for your decision.",
+      "disclaimer": "Statistics are based on anonymised NHS data and are shown for informational purposes only. Every person is different and your kidney team will help you make the best decision for your individual circumstances.",
+      "reviewStats": "Review statistics"
     },
     "print": "Print Summary",
     "email": "Email Summary",
@@ -1437,7 +1459,11 @@
       "values": "Values Exercise",
       "valuesDesc": "Clarify your priorities",
       "chat": "Ask Questions",
-      "chatDesc": "Get answers"
+      "chatDesc": "Get answers",
+      "lifeGoals": "Life Goals",
+      "lifeGoalsDesc": "Match treatments to goals",
+      "statistics": "What Others Chose",
+      "statisticsDesc": "View patient choices"
     },
     "status": {
       "completed": "Completed",
@@ -1783,6 +1809,443 @@
       "phosphate": {
         "title": "Phosphate",
         "definition": "A mineral found in many foods that helps build strong bones. When kidneys are not working well, phosphate can build up in your blood and weaken your bones. You may need to take tablets called phosphate binders with meals and limit certain foods."
+      }
+    }
+  },
+  "lifeGoals": {
+    "title": "Life Goals and Treatment Fit",
+    "introduction": "Everyone has different things that matter to them in life. By telling us about your goals, we can show you which kidney treatments might work best for the life you want to live.",
+    "howItWorks": {
+      "title": "How This Works",
+      "step1": "Choose the life goals that matter most to you from the categories below",
+      "step2": "We will show you how each treatment fits with your goals",
+      "step3": "Use the results to start a conversation with your kidney team"
+    },
+    "feature": {
+      "time": "Takes about 5 minutes",
+      "noRightWrong": "No right or wrong answers"
+    },
+    "selectCategories": "Choose Your Life Goals",
+    "selectGoals": "Select the goals that matter to you",
+    "selectGoalsPrompt": "Tick the goals that are important to you. You can choose as many as you like.",
+    "noGoalsSelected": "Select at least one goal to see results",
+    "goalsSelected": "{{count}} goals selected",
+    "goalsSelected_one": "1 goal selected",
+    "seeResults": "See My Results",
+    "categories": {
+      "work": {
+        "title": "Work and Career",
+        "description": "Getting back to work, career plans, and managing your working hours"
+      },
+      "family": {
+        "title": "Family and Relationships",
+        "description": "Looking after children, spending time with family, and being there for important moments"
+      },
+      "travel": {
+        "title": "Travel and Holidays",
+        "description": "Being free to travel, planning holidays, and being spontaneous"
+      },
+      "hobbies": {
+        "title": "Hobbies and Activities",
+        "description": "Sports, creative hobbies, social activities, and spending time outdoors"
+      },
+      "independence": {
+        "title": "Independence",
+        "description": "Looking after yourself, driving, living alone, and managing your home"
+      },
+      "religious": {
+        "title": "Religious and Cultural Needs",
+        "description": "Following dietary rules, prayer times, community events, and fasting"
+      }
+    },
+    "goals": {
+      "returnToWork": "Getting back to work or staying in work",
+      "careerProgression": "Progressing in my career or education",
+      "flexibleHours": "Having flexible working hours",
+      "physicalJob": "Doing a physically active job",
+      "childcare": "Looking after my children or grandchildren",
+      "familyTime": "Spending quality time with my family",
+      "milestones": "Being there for family milestones and events",
+      "intimacy": "Maintaining close relationships and intimacy",
+      "travelFreedom": "Being free to travel where I want",
+      "holidayPlanning": "Planning holidays without too much worry",
+      "spontaneousTrips": "Being able to take spontaneous trips",
+      "sports": "Playing sports or doing physical exercise",
+      "creativeActivities": "Doing creative hobbies like art, music, or crafts",
+      "socialActivities": "Going out with friends and socialising",
+      "gardeningOutdoors": "Gardening or outdoor activities",
+      "selfCare": "Being able to look after myself day to day",
+      "driving": "Being able to drive",
+      "livingAlone": "Living on my own if I want to",
+      "managingHome": "Managing my household and daily tasks",
+      "dietaryNeeds": "Following my cultural or religious diet",
+      "prayerTimes": "Being able to pray at the right times",
+      "communityParticipation": "Taking part in community or religious events",
+      "fasting": "Being able to fast when required"
+    },
+    "treatments": {
+      "transplantLiving": "Transplant (Living Donor)",
+      "transplantDeceased": "Transplant (Deceased Donor)",
+      "homeHd": "Home Haemodialysis",
+      "unitHd": "Hospital/Unit Haemodialysis",
+      "apd": "Automated Peritoneal Dialysis (APD)",
+      "capd": "Continuous Peritoneal Dialysis (CAPD)",
+      "conservative": "Conservative Management",
+      "transplantLivingShort": "Living Transplant",
+      "transplantDeceasedShort": "Deceased Transplant",
+      "homeHdShort": "Home HD",
+      "unitHdShort": "Unit HD",
+      "apdShort": "APD",
+      "capdShort": "CAPD",
+      "conservativeShort": "Conservative"
+    },
+    "compatibility": {
+      "high": "High compatibility",
+      "good": "Good compatibility",
+      "moderate": "Moderate compatibility",
+      "low": "Lower compatibility",
+      "compatible": "compatible",
+      "bestMatch": "Best Match",
+      "tapToExpand": "Tap to see more details",
+      "strengths": "Works well because",
+      "challenges": "Things to consider"
+    },
+    "results": {
+      "title": "Your Treatment Compatibility",
+      "description": "Based on your {{count}} selected goals, here is how each treatment fits with the life you want to live.",
+      "goalsSelected": "Goals chosen",
+      "bestMatchScore": "Best match",
+      "treatmentScores": "Treatment Compatibility Scores",
+      "note": "Important",
+      "disclaimer": "These scores are a guide based on your goals, not medical advice. Your kidney team will help you find the best treatment for your situation. Some treatments may not be suitable for everyone.",
+      "discussTitle": "Things to Discuss with Your Team",
+      "discussIntro": "Based on your goals, here are some questions you might want to ask your kidney team:",
+      "nextSteps": "What Would You Like to Do Next?",
+      "editGoals": "Change My Goals",
+      "compareTreatments": "Compare Treatments",
+      "viewSummary": "View My Summary"
+    },
+    "discussion": {
+      "work": "How soon after starting treatment could I get back to work, and will I need time off for appointments?",
+      "family": "How will treatment affect my energy levels for looking after my family, and can treatment times be flexible around family needs?",
+      "travel": "What are the options for travelling while on treatment, and how much advance planning would I need?",
+      "hobbies": "Are there any activities I would need to avoid, and how will my energy levels be for hobbies?",
+      "independence": "How much help will I need day to day, and will I still be able to drive and live independently?",
+      "religious": "Can treatment be scheduled around prayer times and religious events, and are there dietary considerations I should know about?",
+      "general": "What support is available to help me maintain the lifestyle that matters to me?"
+    },
+    "explanations": {
+      "returnToWork": {
+        "transplant": "After recovery, most transplant patients return to full-time work with few restrictions.",
+        "homeHd": "You can schedule treatment around work, but sessions take several hours and you may feel tired after.",
+        "unitHd": "Fixed session times 3 days a week can make full-time work challenging. Some employers offer flexible arrangements.",
+        "apd": "Treatment happens overnight while you sleep, leaving your days free for work.",
+        "capd": "You need to do exchanges during the day, which requires breaks from work. Many employers can accommodate this.",
+        "conservative": "Your ability to work may change over time as kidney function declines."
+      },
+      "careerProgression": {
+        "transplant": "A working transplant gives you the most freedom to pursue career goals with regular clinic visits.",
+        "homeHd": "Career progression is possible but treatment hours need to be factored into your schedule.",
+        "unitHd": "Fixed hospital appointments can limit availability for meetings, travel, and training.",
+        "apd": "Overnight treatment leaves days free for work and career development.",
+        "capd": "Daytime exchanges may require workplace adjustments but career progression is still possible.",
+        "conservative": "Energy levels may reduce over time, which could affect work capacity."
+      },
+      "flexibleHours": {
+        "transplant": "After recovery, you have full flexibility with only periodic clinic appointments.",
+        "homeHd": "You can choose when to do your treatment, giving reasonable flexibility.",
+        "unitHd": "Sessions are at fixed times set by the hospital, which limits flexibility.",
+        "apd": "Treatment runs overnight automatically, giving you full daytime flexibility.",
+        "capd": "Exchanges need to happen at regular intervals during the day, which can limit spontaneity.",
+        "conservative": "You have good flexibility as there is no treatment schedule, but energy may vary."
+      },
+      "physicalJob": {
+        "transplant": "Most physical jobs are possible after recovery, though heavy lifting near the transplant site needs care.",
+        "homeHd": "Physical work is possible on non-treatment days, but you may feel tired after sessions.",
+        "unitHd": "Physical jobs can be difficult with treatment fatigue and fixed hospital times.",
+        "apd": "Physical work is possible but you need to protect your catheter and avoid very heavy lifting.",
+        "capd": "Heavy physical work can be challenging with a catheter in place.",
+        "conservative": "Physical capacity may reduce gradually as kidney function declines."
+      },
+      "childcare": {
+        "transplant": "After recovery, you can fully participate in childcare with good energy levels.",
+        "homeHd": "Childcare is possible but treatment hours require another carer to be available.",
+        "unitHd": "Being away from home for hospital sessions means you need childcare cover 3 days a week.",
+        "apd": "Overnight treatment means you are free during the day for childcare.",
+        "capd": "You can care for children between exchanges, but you need clean breaks for each one.",
+        "conservative": "You can care for children but energy levels may decline over time."
+      },
+      "familyTime": {
+        "transplant": "A working transplant gives you the most freedom for family time with good energy.",
+        "homeHd": "Treatment at home means family is nearby, but sessions take several hours.",
+        "unitHd": "Hospital visits take time away from family, typically 3 times a week plus travel.",
+        "apd": "Overnight treatment leaves your days and evenings free for family.",
+        "capd": "Exchanges take about 30 minutes each, but you are home and available between them.",
+        "conservative": "No treatment time away from family, but energy levels may reduce over time."
+      },
+      "milestones": {
+        "transplantLiving": "A living donor transplant can be planned to fit around important events.",
+        "transplantDeceased": "After transplant you are free to attend events, but waiting time is unpredictable.",
+        "homeHd": "You can adjust treatment timing for special occasions with some planning.",
+        "unitHd": "Attending events may require swapping hospital sessions, which needs advance planning.",
+        "apd": "You can skip or adjust one night's treatment for special events after checking with your team.",
+        "capd": "You need to continue exchanges but can plan them around events.",
+        "conservative": "No treatment restrictions for events, but energy levels may limit participation."
+      },
+      "intimacy": {
+        "transplant": "Relationships and intimacy generally improve after a successful transplant.",
+        "homeHd": "Intimacy is possible but body image and energy levels can be affected.",
+        "unitHd": "Fatigue and body image concerns may affect intimacy, but support is available.",
+        "apd": "The catheter may affect body image, but most couples adapt with time.",
+        "capd": "Similar to APD, the catheter can affect confidence but couples find ways to adapt.",
+        "conservative": "Intimacy is possible but may be affected by tiredness and changing health."
+      },
+      "travelFreedom": {
+        "transplant": "You can travel freely with just your medications. Travel insurance is needed.",
+        "homeHd": "Travel requires arranging dialysis at your destination, which limits options.",
+        "unitHd": "You need to book holiday dialysis sessions at a unit near your destination well in advance.",
+        "apd": "You can travel with your machine and supplies, but need to organise delivery of fluids.",
+        "capd": "You can travel by arranging fluid delivery to your destination in advance.",
+        "conservative": "Travel is possible based on how you are feeling, with no equipment needed."
+      },
+      "holidayPlanning": {
+        "transplant": "Holiday planning is straightforward with just medications and insurance to organise.",
+        "homeHd": "Holidays need significant advance planning to arrange treatment at your destination.",
+        "unitHd": "You need to book holiday dialysis weeks or months ahead, which limits choice.",
+        "apd": "Holidays are possible with planning for machine and supply delivery.",
+        "capd": "Holidays need advance planning for fluid delivery to your destination.",
+        "conservative": "Holiday planning is flexible but depends on how well you are feeling."
+      },
+      "spontaneousTrips": {
+        "transplant": "Spontaneous trips are easy with just your medications to bring along.",
+        "homeHd": "Last-minute trips are very difficult as treatment arrangements take time.",
+        "unitHd": "Spontaneous travel is very challenging due to fixed hospital session requirements.",
+        "apd": "Spontaneous trips are difficult as you need your machine and supply delivery arranged.",
+        "capd": "Spur-of-the-moment trips are hard as you need fluid supplies wherever you go.",
+        "conservative": "Short spontaneous trips are possible depending on your energy levels."
+      },
+      "sports": {
+        "transplant": "Most sports are possible after recovery. Contact sports may need protective gear.",
+        "homeHd": "Exercise is encouraged on non-treatment days. You may feel less energetic after sessions.",
+        "unitHd": "Sports are possible but energy levels and fixed schedules can be limiting.",
+        "apd": "Many sports are possible but you need to protect the catheter from impact.",
+        "capd": "Swimming and contact sports may be restricted due to the catheter. Walking and light exercise are fine.",
+        "conservative": "Light exercise is beneficial but stamina may decrease over time."
+      },
+      "creativeActivities": {
+        "transplant": "Creative hobbies are fully possible with good energy levels.",
+        "homeHd": "You can do creative activities during treatment or between sessions.",
+        "unitHd": "Many units allow reading, crafts, or laptop use during sessions.",
+        "apd": "Full freedom for creative hobbies during the day.",
+        "capd": "Creative activities are fully possible between exchanges.",
+        "conservative": "Creative hobbies can continue as long as you have the energy."
+      },
+      "socialActivities": {
+        "transplant": "Social life can return to normal after recovery.",
+        "homeHd": "Social activities need to be planned around treatment hours.",
+        "unitHd": "Fixed hospital sessions can limit evening and weekend social plans.",
+        "apd": "Days and early evenings are free for socialising. Late nights need planning.",
+        "capd": "You can socialise between exchanges, but need to plan around them.",
+        "conservative": "Social activities are possible but may be limited by energy levels."
+      },
+      "gardeningOutdoors": {
+        "transplant": "Gardening is fine but wear gloves and sun protection due to immunosuppression.",
+        "homeHd": "Gardening and outdoor activities are possible on non-treatment days.",
+        "unitHd": "Outdoor hobbies are possible but limited by treatment schedule and energy.",
+        "apd": "Days are free for gardening and outdoor activities.",
+        "capd": "Gardening is possible between exchanges. Keep the catheter site protected.",
+        "conservative": "Outdoor activities can continue as energy allows."
+      },
+      "selfCare": {
+        "transplant": "Full self-care independence is normal after transplant recovery.",
+        "homeHd": "You manage your own treatment at home after training, building independence.",
+        "unitHd": "Others provide your treatment, but daily self-care remains independent.",
+        "apd": "You manage the machine setup yourself. Daily self-care is independent.",
+        "capd": "You do your own exchanges, maintaining good independence.",
+        "conservative": "Self-care may need more support as kidney function declines over time."
+      },
+      "driving": {
+        "transplant": "Driving can resume a few weeks after surgery once you are comfortable.",
+        "homeHd": "Driving is possible, though you should avoid it immediately after treatment if tired.",
+        "unitHd": "Driving to and from the unit is possible but some people feel tired after sessions.",
+        "apd": "Driving is not affected by overnight treatment.",
+        "capd": "Driving is generally fine between exchanges.",
+        "conservative": "Driving depends on your overall fitness and any symptoms you have."
+      },
+      "livingAlone": {
+        "transplant": "Living alone is fully possible with a working transplant.",
+        "homeHd": "Home HD usually requires a care partner to be present during treatment.",
+        "unitHd": "Living alone is manageable as treatment happens at the hospital.",
+        "apd": "Many people on APD live alone successfully after training.",
+        "capd": "Living alone is possible with good training and support.",
+        "conservative": "Living alone may become more difficult as health changes over time."
+      },
+      "managingHome": {
+        "transplant": "Full household management is possible after recovery.",
+        "homeHd": "Managing a home is possible but treatment equipment needs space and time.",
+        "unitHd": "Household tasks may build up on treatment days when you are away.",
+        "apd": "Daytime freedom allows normal household management.",
+        "capd": "Household tasks can be managed between exchanges throughout the day.",
+        "conservative": "Household management may need more help as energy levels change."
+      },
+      "dietaryNeeds": {
+        "transplant": "Fewer dietary restrictions than dialysis, though some foods may interact with medications.",
+        "homeHd": "Dietary restrictions on potassium, phosphate, and fluid may conflict with some cultural diets.",
+        "unitHd": "Same dietary restrictions as home HD. Your dietitian can help adapt cultural recipes.",
+        "apd": "PD has some dietary flexibility but fluid and phosphate limits still apply.",
+        "capd": "Similar to APD, some dietary restrictions apply but they may be less strict than HD.",
+        "conservative": "Dietary guidelines apply but may be less strict. Cultural needs can often be accommodated."
+      },
+      "prayerTimes": {
+        "transplant": "No treatment schedule means full freedom to pray at required times.",
+        "homeHd": "You can schedule treatment sessions to avoid prayer times.",
+        "unitHd": "Hospital session times may conflict with prayer schedules. Speak to your team about options.",
+        "apd": "Treatment happens overnight so prayer times during the day are unaffected.",
+        "capd": "Exchanges can usually be timed to avoid conflicting with prayer times.",
+        "conservative": "No treatment appointments to work around prayer schedules."
+      },
+      "communityParticipation": {
+        "transplant": "Full participation in community and religious events is possible.",
+        "homeHd": "Community events can be attended by planning treatment around them.",
+        "unitHd": "Fixed hospital sessions may clash with regular community events.",
+        "apd": "Days and evenings are free for community participation.",
+        "capd": "Community events are possible with planning exchanges around them.",
+        "conservative": "Participation is possible based on energy levels and wellbeing."
+      },
+      "fasting": {
+        "transplant": "Fasting may be possible with medical advice, as medications need to be taken.",
+        "homeHd": "Fasting during dialysis is very challenging due to fluid needs. Medical advice is essential.",
+        "unitHd": "Fasting on treatment days is generally not recommended without medical guidance.",
+        "apd": "Fasting may be possible on non-treatment nights with careful medical guidance.",
+        "capd": "Fasting with PD exchanges is challenging. Discuss modified fasting with your team.",
+        "conservative": "Fasting may be possible depending on your health, with medical guidance."
+      }
+    }
+  },
+  "statistics": {
+    "page": {
+      "title": "What others in similar situations chose",
+      "introduction": "Understanding what others have chosen can help you feel less alone in your decision. These are real statistics from UK kidney patients.",
+      "personalized": "Personalised to your profile",
+      "compareTreatments": "Compare treatments"
+    },
+    "disclaimer": {
+      "title": "Important: These are general statistics",
+      "body": "The statistics shown here are based on data from thousands of patients across the UK. They show general patterns and trends, not predictions about your individual situation.",
+      "advice": "Your kidney team will help you understand what these numbers mean for you personally. Many individual factors affect outcomes that statistics cannot capture.",
+      "inline": "These are population-level statistics. Your individual situation and outcomes may differ."
+    },
+    "modalities": {
+      "transplant": "Kidney Transplant",
+      "haemodialysis": "Haemodialysis",
+      "peritonealDialysis": "Peritoneal Dialysis",
+      "conservative": "Conservative Management"
+    },
+    "chart": {
+      "title": "Treatment choices",
+      "overallBasis": "Based on all UK kidney patients on treatment",
+      "ariaLabel": "Treatment choice percentages",
+      "inTenPeople": "About {{number}} in every 10 people",
+      "note": "These percentages show the current treatment choices of all patients receiving kidney replacement therapy in the UK. New patients starting treatment may have a different pattern."
+    },
+    "basis": {
+      "overall": "Based on all UK kidney patients receiving treatment",
+      "ageGroup": "Based on people in your age group",
+      "ethnicity": "Based on people with a similar ethnic background",
+      "disease": "Based on people with a similar kidney condition",
+      "diabetes": "Based on people with diabetes-related kidney disease"
+    },
+    "insights": {
+      "title": "Personalised insights",
+      "ethnicityTransplant": {
+        "title": "Transplant rates and ethnicity",
+        "lowerRate": "People from your ethnic background currently have somewhat lower transplant rates. This may be due to biological matching factors or access differences. Your kidney team can discuss transplant suitability with you regardless of background.",
+        "higherRate": "People from your ethnic background have similar or higher transplant rates compared to the overall population."
+      },
+      "diabetes": {
+        "title": "Diabetes and kidney treatment",
+        "description": "Diabetes is the most common cause of kidney failure in the UK. Treatment choices for people with diabetes are roughly evenly split between transplant and haemodialysis, with about 1 in 10 choosing peritoneal dialysis."
+      },
+      "livingDonor": {
+        "title": "Living donor available",
+        "description": "Having a potential living donor is a significant advantage. Living donor transplants generally have better long-term outcomes and can often be planned ahead, reducing or eliminating time on the waiting list."
+      },
+      "ageConservative": {
+        "title": "Conservative management",
+        "description": "For older patients with other health conditions, conservative management (supportive care without dialysis) is a valid choice that some patients prefer. Your kidney team can discuss whether this might be appropriate for your situation."
+      },
+      "ageTransplant": {
+        "title": "Transplant in younger patients",
+        "description": "Younger patients tend to benefit most from transplantation, with the highest success rates and longest graft survival. About 3 in 4 younger kidney patients currently have a transplant."
+      }
+    },
+    "qol": {
+      "title": "Quality of life comparison",
+      "subtitle": "How patients rate their quality of life on different treatments",
+      "metricSelector": "Select quality of life metric",
+      "metrics": {
+        "overall": "Overall quality of life",
+        "autonomy": "Independence and flexibility",
+        "burden": "Treatment burden"
+      },
+      "transplant": "Transplant recipients generally report the highest quality of life, with the most freedom from treatment routines.",
+      "peritonealDialysis": "Peritoneal dialysis patients often report good autonomy and flexibility, as treatment can be done at home.",
+      "haemodialysis": "Haemodialysis patients may experience more treatment burden due to regular hospital or clinic visits.",
+      "conservative": "Conservative management patients avoid dialysis burden but may have increasing symptoms over time.",
+      "burdenNote": "Treatment burden reflects the time and effort required for treatment. A lower score means less burden on daily life.",
+      "scoreNote": "Scores are based on patient-reported outcomes from published UK studies. Higher scores indicate better quality of life. Individual experiences may vary significantly."
+    },
+    "waitingList": {
+      "title": "Transplant waiting list",
+      "subtitle": "Key facts about the kidney transplant waiting list in England",
+      "onList": "Patients currently on the kidney waiting list",
+      "onListValue": "~{{number}}",
+      "perYear": "Kidney transplants performed each year",
+      "perYearValue": "~{{number}}",
+      "medianWait": "Typical waiting time (varies by match)",
+      "waitTimeValue": "{{years}} years",
+      "livingDonor": "Living donor transplants per year",
+      "livingDonorValue": "~{{number}}",
+      "graftSurvival": "Transplant success rates (5-year graft survival)",
+      "livingDonorSurvival": "Living donor: ~{{rate}}%",
+      "deceasedDonorSurvival": "Deceased donor: ~{{rate}}%",
+      "livingDonorAvailable": "You may have a living donor",
+      "livingDonorAdvantage": "Living donor transplants generally have better outcomes and shorter waiting times. About 30% of kidney transplants in the UK are from living donors.",
+      "note": "Wait times vary by blood group, tissue type, and other matching factors. Your kidney team can give you more specific information about likely waiting times in your area."
+    },
+    "survival": {
+      "title": "Survival information",
+      "subtitle": "Contains sensitive statistical information",
+      "warning": "The following information contains survival statistics. These are population averages and vary greatly based on age, overall health, and many other individual factors. They should not be interpreted as predictions about your personal outlook.",
+      "fiveYear": "5-year: {{rate}}%",
+      "median": "Median: {{time}}",
+      "transplantContext": "Transplant offers the best long-term survival rates. Living donor transplants have slightly better outcomes than deceased donor transplants.",
+      "hdContext": "Survival on haemodialysis varies significantly by age and other health conditions. Many patients do well for many years on dialysis.",
+      "pdContext": "Peritoneal dialysis survival is broadly similar to haemodialysis. The best choice depends on individual lifestyle and medical factors.",
+      "conservativeContext": "Conservative management is typically chosen by older patients with significant other health conditions. It focuses on quality of life and symptom management.",
+      "note": "Survival rates have improved significantly over recent decades and continue to improve with advances in treatment. Your kidney team can discuss what these figures mean in the context of your individual health."
+    },
+    "team": {
+      "title": "Discuss with your kidney team",
+      "description": "These statistics provide general context, but your kidney team knows your individual situation best. They can help you understand what these numbers mean for you and answer any questions you have.",
+      "point1": "Ask about your individual risk factors and expected outcomes",
+      "point2": "Discuss which treatments are realistic options for you",
+      "point3": "Explore how your lifestyle and preferences fit with each option"
+    },
+    "sources": {
+      "title": "Data sources",
+      "disclaimer": "Statistics are derived from published reports and may be subject to rounding. They represent population-level data and should not be used for individual clinical decisions without professional guidance.",
+      "ukrr": {
+        "name": "UK Renal Registry (UKRR)",
+        "description": "Annual report providing comprehensive data on kidney replacement therapy across the UK."
+      },
+      "nhsbt": {
+        "name": "NHS Blood and Transplant (NHSBT)",
+        "description": "Activity reports on organ donation and transplantation in the UK."
+      },
+      "nice": {
+        "name": "National Institute for Health and Care Excellence (NICE)",
+        "description": "Clinical guidelines for the management of chronic kidney disease."
       }
     }
   }

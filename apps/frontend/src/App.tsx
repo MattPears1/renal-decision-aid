@@ -21,6 +21,8 @@ const ModelViewerPage = lazy(() => import('./pages/ModelViewerPage'));
 const ChatPage = lazy(() => import('./pages/ChatPage'));
 const SummaryPage = lazy(() => import('./pages/SummaryPage'));
 const GlossaryPage = lazy(() => import('./pages/GlossaryPage'));
+const LifeGoalsPage = lazy(() => import('./pages/LifeGoalsPage'));
+const StatisticsPage = lazy(() => import('./pages/StatisticsPage'));
 
 // Apply accessibility settings immediately on module load (before any render)
 // This prevents flash of un-styled content
@@ -199,6 +201,22 @@ function App() {
                 element={
                   <Suspense fallback={<PageLoader />}>
                     <GlossaryPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="life-goals"
+                element={
+                  <Suspense fallback={<PageLoader />}>
+                    <LifeGoalsPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="statistics"
+                element={
+                  <Suspense fallback={<PageLoader />}>
+                    <StatisticsPage />
                   </Suspense>
                 }
               />

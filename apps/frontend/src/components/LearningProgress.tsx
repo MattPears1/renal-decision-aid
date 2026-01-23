@@ -225,6 +225,8 @@ export default function LearningProgress({
         valuesCompleted: false,
         questionnaireCompleted: false,
         chatUsed: false,
+        lifeGoalsCompleted: false,
+        statisticsViewed: false,
         overallProgress: 0,
       };
     }
@@ -234,13 +236,17 @@ export default function LearningProgress({
     const valuesCompleted = (session.valueRatings?.length || 0) >= 5;
     const questionnaireCompleted = (session.questionnaireAnswers?.length || 0) >= 5;
     const chatUsed = (session.chatHistory?.length || 0) > 0;
+    const lifeGoalsCompleted = !!(session as unknown as Record<string, unknown>).lifeGoals;
+    const statisticsViewed = !!(session as unknown as Record<string, unknown>).statisticsViewed;
 
     // Calculate overall progress (weighted)
-    const treatmentScore = (treatmentsViewed / totalTreatments) * 40;
-    const valuesScore = valuesCompleted ? 25 : 0;
-    const questionnaireScore = questionnaireCompleted ? 20 : 0;
-    const chatScore = chatUsed ? 15 : 0;
-    const overallProgress = Math.round(treatmentScore + valuesScore + questionnaireScore + chatScore);
+    const treatmentScore = (treatmentsViewed / totalTreatments) * 30;
+    const valuesScore = valuesCompleted ? 20 : 0;
+    const questionnaireScore = questionnaireCompleted ? 15 : 0;
+    const chatScore = chatUsed ? 10 : 0;
+    const lifeGoalsScore = lifeGoalsCompleted ? 15 : 0;
+    const statisticsScore = statisticsViewed ? 10 : 0;
+    const overallProgress = Math.round(treatmentScore + valuesScore + questionnaireScore + chatScore + lifeGoalsScore + statisticsScore);
 
     return {
       treatmentsViewed,
@@ -248,6 +254,8 @@ export default function LearningProgress({
       valuesCompleted,
       questionnaireCompleted,
       chatUsed,
+      lifeGoalsCompleted,
+      statisticsViewed,
       overallProgress,
     };
   }, [session]);
@@ -307,6 +315,33 @@ export default function LearningProgress({
           </svg>
         ),
         isCompleted: progress.chatUsed,
+      },
+      {
+        id: 'life-goals',
+        title: t('progress.sections.lifeGoals', 'Life Goals'),
+        description: t('progress.sections.lifeGoalsDesc', 'Match treatments to goals'),
+        path: '/life-goals',
+        icon: (
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+          </svg>
+        ),
+        isCompleted: progress.lifeGoalsCompleted,
+      },
+      {
+        id: 'statistics',
+        title: t('progress.sections.statistics', 'What Others Chose'),
+        description: t('progress.sections.statisticsDesc', 'View patient choices'),
+        path: '/statistics',
+        icon: (
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M7 17V10M12 17V7M17 17V13" />
+          </svg>
+        ),
+        isCompleted: progress.statisticsViewed,
       },
     ],
     [t, progress]

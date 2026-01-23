@@ -196,15 +196,46 @@
     "homeAriaLabel": "NHS肾脏治疗决策辅助工具 - 首页"
   },
   "progress": {
-    "language": "语言",
-    "privacy": "隐私",
-    "yourJourney": "您的旅程",
-    "aboutYou": "关于您",
-    "yourOptions": "您的选择",
-    "ariaLabel": "决策辅助工具进度",
-    "stepOfTotal": "第{{current}}步，共{{total}}步",
-    "percentComplete": "已完成{{percentage}}%",
-    "ariaProgressLabel": "进度：已完成{{total}}步中的{{current}}步"
+    "title": "您的学习旅程",
+    "yourProgress": "您的进度",
+    "complete": "完成",
+    "treatments": "治疗方案",
+    "sections": {
+      "title": "要探索的部分",
+      "questionnaire": "关于您",
+      "questionnaireDesc": "分享您的情况",
+      "treatments": "治疗选择",
+      "treatmentsDesc": "已探索{{viewed}}/{{total}}",
+      "values": "价值观练习",
+      "valuesDesc": "明确您的优先事项",
+      "chat": "提问",
+      "chatDesc": "获得答案",
+      "lifeGoals": "生活目标",
+      "lifeGoalsDesc": "匹配治疗与目标",
+      "statistics": "其他人选择了什么",
+      "statisticsDesc": "查看患者选择"
+    },
+    "status": {
+      "completed": "已完成",
+      "inProgress": "进行中"
+    },
+    "badges": {
+      "title": "您的徽章",
+      "explorer": "探索者",
+      "allTreatments": "全部治疗方案",
+      "values": "价值观明确",
+      "curious": "好奇心",
+      "complete": "旅程完成"
+    },
+    "encouragement": {
+      "start": "通过探索治疗选择开始您的旅程",
+      "beginning": "良好的开始！继续探索以了解更多",
+      "making": "您进展良好！",
+      "halfway": "超过一半了 - 做得好！",
+      "almost": "几乎完成！只剩几个部分",
+      "complete": "太棒了！您已探索完所有内容"
+    },
+    "viewSummary": "查看您的摘要"
   },
   "journey": {
     "title": "您目前处于肾脏护理旅程的哪个阶段？",
@@ -489,6 +520,16 @@
         "title": "提问",
         "description": "与我们的AI助手聊天，了解肾脏治疗选择。以对话方式获得问题的答案。",
         "action": "开始聊天"
+      },
+      "lifeGoals": {
+        "title": "生活目标兼容性",
+        "description": "了解治疗方案如何符合您的目标",
+        "action": "探索目标"
+      },
+      "statistics": {
+        "title": "其他人选择了什么",
+        "description": "了解类似情况的人做了什么决定",
+        "action": "查看统计"
       }
     },
     "status": {
@@ -652,7 +693,34 @@
     "scrollHint": "水平滚动查看所有治疗方案",
     "tableHeading": "治疗方案比较表",
     "tableLabel": "肾脏治疗选择比较",
-    "criteria": "标准",
+    "criteria": {
+      "timeCommitment": "每周时间投入",
+      "timeCommitmentHint": "用于治疗的小时数",
+      "location": "治疗地点",
+      "locationHint": "治疗进行的地点",
+      "travel": "对旅行的影响",
+      "travelHint": "旅行和度假的能力",
+      "diet": "饮食限制",
+      "dietHint": "食物和饮料的限制",
+      "surgery": "需要手术",
+      "surgeryHint": "所需的初始程序",
+      "supportNeeded": "所需支持",
+      "supportNeededHint": "来自家人或护理人员的帮助",
+      "recoveryTime": "恢复时间",
+      "recoveryTimeHint": "适应治疗的时间",
+      "longTermOutlook": "长期前景",
+      "longTermOutlookHint": "随时间的预期结果",
+      "scheduleFlexibility": "时间灵活性",
+      "scheduleFlexibilityHint": "对时间安排的控制",
+      "trainingRequired": "所需培训",
+      "trainingRequiredHint": "所需学习时间",
+      "survivalRates": "生存率",
+      "survivalRatesHint": "总体结果（因人而异）",
+      "qualityOfLife": "生活质量",
+      "qualityOfLifeHint": "整体健康状况",
+      "energyLevels": "能量水平",
+      "energyLevelsHint": "典型的能量和疲劳"
+    },
     "recommended": "推荐",
     "remember": "请记住",
     "guidance": "没有完美适合所有人的治疗方案。最佳选择取决于您的个人情况、健康状况和价值观。此比较是与您的肾脏团队讨论的起点。",
@@ -681,34 +749,6 @@
       "medical": "医学因素",
       "support": "支持需求",
       "health": "健康结果"
-    },
-    "criteria": {
-      "timeCommitment": "每周时间投入",
-      "timeCommitmentHint": "用于治疗的小时数",
-      "location": "治疗地点",
-      "locationHint": "治疗进行的地点",
-      "travel": "对旅行的影响",
-      "travelHint": "旅行和度假的能力",
-      "diet": "饮食限制",
-      "dietHint": "食物和饮料的限制",
-      "surgery": "需要手术",
-      "surgeryHint": "所需的初始程序",
-      "supportNeeded": "所需支持",
-      "supportNeededHint": "来自家人或护理人员的帮助",
-      "recoveryTime": "恢复时间",
-      "recoveryTimeHint": "适应治疗的时间",
-      "longTermOutlook": "长期前景",
-      "longTermOutlookHint": "随时间的预期结果",
-      "scheduleFlexibility": "时间灵活性",
-      "scheduleFlexibilityHint": "对时间安排的控制",
-      "trainingRequired": "所需培训",
-      "trainingRequiredHint": "所需学习时间",
-      "survivalRates": "生存率",
-      "survivalRatesHint": "总体结果（因人而异）",
-      "qualityOfLife": "生活质量",
-      "qualityOfLifeHint": "整体健康状况",
-      "energyLevels": "能量水平",
-      "energyLevelsHint": "典型的能量和疲劳"
     },
     "values": {
       "minimalAfterRecovery": "恢复后很少",
@@ -1077,7 +1117,9 @@
       "viewed": "探索过的治疗方案",
       "questions": "给您团队的问题",
       "priorities": "您的优先事项",
-      "nextSteps": "建议的下一步"
+      "nextSteps": "建议的下一步",
+      "lifeGoals": "生活目标兼容性",
+      "statistics": "其他人选择了什么"
     },
     "print": "打印摘要",
     "email": "发送摘要",
@@ -1162,6 +1204,16 @@
       "4": "重要",
       "5": "非常重要",
       "default": "重要"
+    },
+    "lifeGoals": {
+      "selectedGoals": "您选择的目标",
+      "topCompatible": "最兼容的治疗",
+      "reviewGoals": "查看您的目标"
+    },
+    "statistics": {
+      "description": "您已查看了其他患者选择的统计数据。",
+      "disclaimer": "统计数据基于NHS的匿名数据。",
+      "reviewStats": "查看统计"
     }
   },
   "session": {
@@ -1295,44 +1347,6 @@
       "relax": "在家安静的夜晚",
       "sleep": "感到疲倦时休息"
     }
-  },
-  "progress": {
-    "title": "您的学习旅程",
-    "yourProgress": "您的进度",
-    "complete": "完成",
-    "treatments": "治疗方案",
-    "sections": {
-      "title": "要探索的部分",
-      "questionnaire": "关于您",
-      "questionnaireDesc": "分享您的情况",
-      "treatments": "治疗选择",
-      "treatmentsDesc": "已探索{{viewed}}/{{total}}",
-      "values": "价值观练习",
-      "valuesDesc": "明确您的优先事项",
-      "chat": "提问",
-      "chatDesc": "获得答案"
-    },
-    "status": {
-      "completed": "已完成",
-      "inProgress": "进行中"
-    },
-    "badges": {
-      "title": "您的徽章",
-      "explorer": "探索者",
-      "allTreatments": "全部治疗方案",
-      "values": "价值观明确",
-      "curious": "好奇心",
-      "complete": "旅程完成"
-    },
-    "encouragement": {
-      "start": "通过探索治疗选择开始您的旅程",
-      "beginning": "良好的开始！继续探索以了解更多",
-      "making": "您进展良好！",
-      "halfway": "超过一半了 - 做得好！",
-      "almost": "几乎完成！只剩几个部分",
-      "complete": "太棒了！您已探索完所有内容"
-    },
-    "viewSummary": "查看您的摘要"
   },
   "scenario": {
     "title": "如果？场景探索器",
@@ -1547,6 +1561,82 @@
         "title": "磷酸盐",
         "definition": "许多食物中的矿物质，帮助建立强壮的骨骼。当肾脏功能不好时，磷酸盐可能在血液中积累并削弱骨骼。可能需要在进餐时服用磷酸盐结合剂并限制某些食物。"
       }
+    }
+  },
+  "lifeGoals": {
+    "title": "生活目标兼容性",
+    "subtitle": "了解各种治疗方案如何符合您的个人目标",
+    "introduction": "了解每种治疗方案如何适合您生活中最重要的事情，可以帮助您做出决定。",
+    "categories": {
+      "work": {
+        "name": "工作与职业",
+        "description": "与您的工作和职业生活相关的目标"
+      },
+      "family": {
+        "name": "家庭与关系",
+        "description": "与家庭时间和照顾他人相关的目标"
+      },
+      "travel": {
+        "name": "旅行与假期",
+        "description": "与旅行和探索新地方相关的目标"
+      },
+      "hobbies": {
+        "name": "爱好与活动",
+        "description": "与运动和爱好相关的目标"
+      },
+      "independence": {
+        "name": "独立性",
+        "description": "与保持独立相关的目标"
+      },
+      "religious": {
+        "name": "信仰与灵性",
+        "description": "与宗教实践相关的目标"
+      }
+    },
+    "goals": {
+      "fullTimeWork": "继续全职工作",
+      "partTimeWork": "兼职或灵活工作",
+      "retirement": "享受退休生活",
+      "childcare": "照顾孩子或孙辈",
+      "familyEvents": "参加家庭活动",
+      "socialLife": "保持活跃的社交生活",
+      "shortTrips": "进行短途旅行",
+      "longHolidays": "出国长假",
+      "pilgrimages": "进行宗教朝圣",
+      "exercise": "保持身体活跃",
+      "gardening": "继续园艺",
+      "sports": "参加体育运动",
+      "liveAlone": "独立生活",
+      "driveCar": "继续开车",
+      "cookMeals": "自己做饭",
+      "prayRegularly": "保持定时祈祷",
+      "attendWorship": "参加宗教礼拜",
+      "fastingPractice": "遵守宗教斋戒"
+    },
+    "results": {
+      "title": "您的兼容性结果",
+      "description": "根据您选择的目标",
+      "bestMatch": "最佳匹配",
+      "noGoalsSelected": "请至少选择一个目标"
+    },
+    "compatibility": {
+      "high": "高度兼容",
+      "medium": "中等兼容",
+      "low": "较低兼容"
+    },
+    "discussionPrompts": {
+      "title": "讨论问题",
+      "prompt1": "这种治疗会如何影响我的日常生活？",
+      "prompt2": "这种治疗能帮我实现目标吗？",
+      "prompt3": "我需要做什么调整？"
+    }
+  },
+  "statistics": {
+    "page": {
+      "title": "类似情况的人选择了什么",
+      "introduction": "了解他人的选择可以帮助您。这些是英国肾病患者的真实统计数据。",
+      "personalized": "根据您的情况个性化",
+      "compareTreatments": "比较治疗方案"
     }
   }
 }

@@ -36,9 +36,10 @@ import type {
  * @property {(rating: ValueRating) => void} addValueRating - Add value rating
  * @property {(treatment: TreatmentType) => void} markTreatmentViewed - Mark treatment as viewed
  * @property {(message: ChatMessage) => void} addChatMessage - Add chat message
+ * @property {(goals: string[]) => void} updateLifeGoals - Update life goals
  */
 interface SessionContextType {
-  session: Session | null;
+  session: (Session & { lifeGoals?: string[] }) | null;
   isLoading: boolean;
   error: string | null;
   timeRemaining: number | null;
@@ -55,6 +56,7 @@ interface SessionContextType {
   addValueRating: (rating: ValueRating) => void;
   markTreatmentViewed: (treatment: TreatmentType) => void;
   addChatMessage: (message: ChatMessage) => void;
+  updateLifeGoals: (goals: string[]) => void;
 }
 
 /** Session context instance. */
@@ -97,7 +99,7 @@ interface SessionProviderProps {
  * </SessionProvider>
  */
 export function SessionProvider({ children }: SessionProviderProps) {
-  const [session, setSession] = useState<Session | null>(null);
+  const [session, setSession] = useState<(Session & { lifeGoals?: string[] }) | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
@@ -284,6 +286,17 @@ export function SessionProvider({ children }: SessionProviderProps) {
     });
   }, []);
 
+  const updateLifeGoals = useCallback((goals: string[]) => {
+    setSession((prev) => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        lifeGoals: goals,
+        lastActivityAt: Date.now(),
+      };
+    });
+  }, []);
+
   const value: SessionContextType = {
     session,
     isLoading,
@@ -298,6 +311,7 @@ export function SessionProvider({ children }: SessionProviderProps) {
     addValueRating,
     markTreatmentViewed,
     addChatMessage,
+    updateLifeGoals,
   };
 
   return (

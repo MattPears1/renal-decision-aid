@@ -423,6 +423,18 @@ export default function SummaryPage() {
           </div>
         </section>
 
+        {/* Life Goals Compatibility Section - Conditional */}
+        {session?.lifeGoals && session.lifeGoals.length > 0 && (
+          <LifeGoalsSummarySection
+            lifeGoalsData={{ selectedGoals: session.lifeGoals }}
+          />
+        )}
+
+        {/* Statistics Section - Conditional */}
+        {!!(session as unknown as Record<string, unknown>)?.statisticsViewed && (
+          <StatisticsSummarySection />
+        )}
+
         {/* Questions Generator - Enhanced decision support component */}
         <div className="mb-4 sm:mb-6 print:mb-4">
           <QuestionsGenerator variant="full" />
@@ -794,6 +806,156 @@ function QRCodeSVG({ url, size = 120 }: { url: string; size?: number }) {
         )
       )}
     </svg>
+  );
+}
+
+/**
+ * Life Goals summary section component.
+ * Shows the user's selected life goals and top compatible treatments.
+ */
+function LifeGoalsSummarySection({ lifeGoalsData }: { lifeGoalsData: { selectedGoals?: string[]; topTreatments?: Array<{ treatment: string; compatibility: string }> } }) {
+  const { t } = useTranslation();
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  return (
+    <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="life-goals-heading">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-[#78BE20]/10 to-transparent border-b border-nhs-pale-grey summary-section-header text-left focus:outline-none focus:ring-2 focus:ring-focus focus:ring-inset min-h-[48px]"
+        aria-expanded={isExpanded}
+        aria-controls="life-goals-content"
+      >
+        <h2 id="life-goals-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#78BE20]/10 rounded-lg sm:rounded-xl flex items-center justify-center">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#78BE20]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+          </div>
+          {t('summary.sections.lifeGoals', 'Life Goals Compatibility')}
+        </h2>
+        <svg
+          className={`w-5 h-5 text-text-muted transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isExpanded && (
+        <div id="life-goals-content" className="p-4 sm:p-6">
+          {lifeGoalsData.selectedGoals && lifeGoalsData.selectedGoals.length > 0 && (
+            <div className="mb-4">
+              <h3 className="text-sm font-semibold text-text-primary mb-2">
+                {t('summary.lifeGoals.selectedGoals', 'Your Selected Goals')}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {lifeGoalsData.selectedGoals.map((goal) => (
+                  <span key={goal} className="inline-flex items-center px-3 py-1.5 bg-[#78BE20]/10 text-[#3D6E0E] text-xs sm:text-sm font-medium rounded-full">
+                    {t(`lifeGoals.goals.${goal}`, goal)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {lifeGoalsData.topTreatments && lifeGoalsData.topTreatments.length > 0 && (
+            <div>
+              <h3 className="text-sm font-semibold text-text-primary mb-2">
+                {t('summary.lifeGoals.topCompatible', 'Most Compatible Treatments')}
+              </h3>
+              <div className="space-y-2">
+                {lifeGoalsData.topTreatments.map((item, index) => (
+                  <div key={item.treatment} className="flex items-center gap-3 p-3 border border-nhs-pale-grey rounded-lg">
+                    <span className="w-7 h-7 bg-[#78BE20] text-white rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      {index + 1}
+                    </span>
+                    <span className="flex-1 text-sm font-medium text-text-primary">
+                      {t(`summary.treatmentLabels.${item.treatment}`, item.treatment)}
+                    </span>
+                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                      item.compatibility === 'high' ? 'bg-nhs-green/10 text-nhs-green' :
+                      item.compatibility === 'medium' ? 'bg-nhs-warm-yellow/10 text-amber-700' :
+                      'bg-nhs-pale-grey text-text-muted'
+                    }`}>
+                      {t(`lifeGoals.compatibility.${item.compatibility}`, item.compatibility)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="mt-4 pt-3 border-t border-nhs-pale-grey print:hidden">
+            <Link
+              to="/life-goals"
+              className="inline-flex items-center gap-2 text-nhs-blue hover:underline text-sm font-medium"
+            >
+              {t('summary.lifeGoals.reviewGoals', 'Review your life goals')}
+              <ForwardIcon className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/**
+ * Statistics summary section component.
+ * Shows key statistics relevant to the user.
+ */
+function StatisticsSummarySection() {
+  const { t } = useTranslation();
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  return (
+    <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="statistics-heading">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-[#41B6E6]/10 to-transparent border-b border-nhs-pale-grey summary-section-header text-left focus:outline-none focus:ring-2 focus:ring-focus focus:ring-inset min-h-[48px]"
+        aria-expanded={isExpanded}
+        aria-controls="statistics-content"
+      >
+        <h2 id="statistics-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#41B6E6]/10 rounded-lg sm:rounded-xl flex items-center justify-center">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#41B6E6]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+            </svg>
+          </div>
+          {t('summary.sections.statistics', 'What Others Chose')}
+        </h2>
+        <svg
+          className={`w-5 h-5 text-text-muted transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isExpanded && (
+        <div id="statistics-content" className="p-4 sm:p-6">
+          <p className="text-sm text-text-secondary mb-4">
+            {t('summary.statistics.description', 'You reviewed statistics about what other patients in similar situations chose. This information can provide helpful context for your decision.')}
+          </p>
+          <div className="bg-nhs-pale-grey/30 rounded-xl p-4">
+            <p className="text-xs text-text-muted italic">
+              {t('summary.statistics.disclaimer', 'Statistics are based on anonymised NHS data and are shown for informational purposes only. Every person is different and your kidney team will help you make the best decision for your individual circumstances.')}
+            </p>
+          </div>
+          <div className="mt-4 pt-3 border-t border-nhs-pale-grey print:hidden">
+            <Link
+              to="/statistics"
+              className="inline-flex items-center gap-2 text-nhs-blue hover:underline text-sm font-medium"
+            >
+              {t('summary.statistics.reviewStats', 'Review statistics')}
+              <ForwardIcon className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
 

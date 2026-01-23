@@ -196,15 +196,46 @@
     "homeAriaLabel": "Công cụ hỗ trợ quyết định điều trị thận NHS - Trang chủ"
   },
   "progress": {
-    "language": "Ngôn ngữ",
-    "privacy": "Quyền riêng tư",
-    "yourJourney": "Hành trình của bạn",
-    "aboutYou": "Về bạn",
-    "yourOptions": "Lựa chọn của bạn",
-    "ariaLabel": "Tiến trình trong công cụ hỗ trợ quyết định",
-    "stepOfTotal": "Bước {{current}} của {{total}}",
-    "percentComplete": "Hoàn thành {{percentage}}%",
-    "ariaProgressLabel": "Tiến trình: Đã hoàn thành {{current}} của {{total}} bước"
+    "title": "Hành trình học tập của bạn",
+    "yourProgress": "Tiến trình của bạn",
+    "complete": "hoàn thành",
+    "treatments": "phương pháp điều trị",
+    "sections": {
+      "title": "Các phần để khám phá",
+      "questionnaire": "Về bạn",
+      "questionnaireDesc": "Chia sẻ tình huống của bạn",
+      "treatments": "Các lựa chọn điều trị",
+      "treatmentsDesc": "Đã khám phá {{viewed}} trong số {{total}}",
+      "values": "Bài tập về giá trị",
+      "valuesDesc": "Làm rõ các ưu tiên của bạn",
+      "chat": "Đặt câu hỏi",
+      "chatDesc": "Nhận câu trả lời",
+      "lifeGoals": "Muc tieu Cuoc song",
+      "lifeGoalsDesc": "Ghep dieu tri voi muc tieu",
+      "statistics": "Nguoi khac da chon gi",
+      "statisticsDesc": "Xem lua chon cua benh nhan"
+    },
+    "status": {
+      "completed": "Đã hoàn thành",
+      "inProgress": "Đang tiến hành"
+    },
+    "badges": {
+      "title": "Huy hiệu của bạn",
+      "explorer": "Nhà khám phá",
+      "allTreatments": "Tất cả phương pháp điều trị",
+      "values": "Giá trị rõ ràng",
+      "curious": "Tâm trí tò mò",
+      "complete": "Hoàn thành hành trình"
+    },
+    "encouragement": {
+      "start": "Bắt đầu hành trình của bạn bằng cách khám phá các lựa chọn điều trị",
+      "beginning": "Khởi đầu tuyệt vời! Tiếp tục khám phá để tìm hiểu thêm",
+      "making": "Bạn đang tiến bộ tốt!",
+      "halfway": "Đã qua nửa chặng đường - làm tốt lắm!",
+      "almost": "Gần hoàn thành! Chỉ còn vài phần nữa",
+      "complete": "Tuyệt vời! Bạn đã khám phá mọi thứ"
+    },
+    "viewSummary": "Xem bản tóm tắt của bạn"
   },
   "journey": {
     "title": "Bạn đang ở đâu trong hành trình chăm sóc thận?",
@@ -489,6 +520,16 @@
         "title": "Đặt câu hỏi",
         "description": "Trò chuyện với trợ lý AI của chúng tôi về các lựa chọn điều trị thận. Nhận câu trả lời cho câu hỏi của bạn theo cách hội thoại.",
         "action": "Bắt đầu trò chuyện"
+      },
+      "lifeGoals": {
+        "title": "Tuong thich Muc tieu Song",
+        "description": "Xem cach dieu tri phu hop voi muc tieu cua ban",
+        "action": "Kham pha muc tieu"
+      },
+      "statistics": {
+        "title": "Nguoi khac da chon gi",
+        "description": "Xem nhung nguoi trong tinh huong tuong tu da quyet dinh gi",
+        "action": "Xem thong ke"
       }
     },
     "status": {
@@ -652,7 +693,34 @@
     "scrollHint": "Cuộn ngang để xem tất cả các phương pháp điều trị",
     "tableHeading": "Bảng so sánh điều trị",
     "tableLabel": "So sánh các lựa chọn điều trị thận",
-    "criteria": "Tiêu chí",
+    "criteria": {
+      "timeCommitment": "Cam kết thời gian mỗi tuần",
+      "timeCommitmentHint": "Số giờ dành cho điều trị",
+      "location": "Địa điểm điều trị",
+      "locationHint": "Nơi điều trị diễn ra",
+      "travel": "Tác động đến du lịch",
+      "travelHint": "Khả năng đi du lịch và nghỉ mát",
+      "diet": "Hạn chế chế độ ăn",
+      "dietHint": "Giới hạn về thức ăn và đồ uống",
+      "surgery": "Yêu cầu phẫu thuật",
+      "surgeryHint": "Các thủ thuật ban đầu cần thiết",
+      "supportNeeded": "Cần hỗ trợ",
+      "supportNeededHint": "Sự giúp đỡ từ gia đình hoặc người chăm sóc",
+      "recoveryTime": "Thời gian hồi phục",
+      "recoveryTimeHint": "Thời gian để thích nghi với điều trị",
+      "longTermOutlook": "Triển vọng dài hạn",
+      "longTermOutlookHint": "Kết quả dự kiến theo thời gian",
+      "scheduleFlexibility": "Linh hoạt lịch trình",
+      "scheduleFlexibilityHint": "Kiểm soát lịch trình của bạn",
+      "trainingRequired": "Yêu cầu đào tạo",
+      "trainingRequiredHint": "Thời gian học cần thiết",
+      "survivalRates": "Tỷ lệ sống sót",
+      "survivalRatesHint": "Kết quả chung (thay đổi theo từng người)",
+      "qualityOfLife": "Chất lượng cuộc sống",
+      "qualityOfLifeHint": "Sức khỏe tổng thể",
+      "energyLevels": "Mức năng lượng",
+      "energyLevelsHint": "Năng lượng và mệt mỏi điển hình"
+    },
     "recommended": "Được đề xuất",
     "remember": "Hãy nhớ",
     "guidance": "Không có phương pháp điều trị nào hoàn hảo cho tất cả mọi người. Lựa chọn tốt nhất phụ thuộc vào tình huống cá nhân, sức khỏe và giá trị của bạn. So sánh này là điểm khởi đầu cho các cuộc thảo luận với đội ngũ thận của bạn.",
@@ -681,34 +749,6 @@
       "medical": "Yếu tố y tế",
       "support": "Yêu cầu hỗ trợ",
       "health": "Kết quả sức khỏe"
-    },
-    "criteria": {
-      "timeCommitment": "Cam kết thời gian mỗi tuần",
-      "timeCommitmentHint": "Số giờ dành cho điều trị",
-      "location": "Địa điểm điều trị",
-      "locationHint": "Nơi điều trị diễn ra",
-      "travel": "Tác động đến du lịch",
-      "travelHint": "Khả năng đi du lịch và nghỉ mát",
-      "diet": "Hạn chế chế độ ăn",
-      "dietHint": "Giới hạn về thức ăn và đồ uống",
-      "surgery": "Yêu cầu phẫu thuật",
-      "surgeryHint": "Các thủ thuật ban đầu cần thiết",
-      "supportNeeded": "Cần hỗ trợ",
-      "supportNeededHint": "Sự giúp đỡ từ gia đình hoặc người chăm sóc",
-      "recoveryTime": "Thời gian hồi phục",
-      "recoveryTimeHint": "Thời gian để thích nghi với điều trị",
-      "longTermOutlook": "Triển vọng dài hạn",
-      "longTermOutlookHint": "Kết quả dự kiến theo thời gian",
-      "scheduleFlexibility": "Linh hoạt lịch trình",
-      "scheduleFlexibilityHint": "Kiểm soát lịch trình của bạn",
-      "trainingRequired": "Yêu cầu đào tạo",
-      "trainingRequiredHint": "Thời gian học cần thiết",
-      "survivalRates": "Tỷ lệ sống sót",
-      "survivalRatesHint": "Kết quả chung (thay đổi theo từng người)",
-      "qualityOfLife": "Chất lượng cuộc sống",
-      "qualityOfLifeHint": "Sức khỏe tổng thể",
-      "energyLevels": "Mức năng lượng",
-      "energyLevelsHint": "Năng lượng và mệt mỏi điển hình"
     },
     "values": {
       "minimalAfterRecovery": "Tối thiểu sau khi hồi phục",
@@ -1077,7 +1117,9 @@
       "viewed": "Các phương pháp điều trị đã khám phá",
       "questions": "Câu hỏi cho đội ngũ của bạn",
       "priorities": "Các ưu tiên của bạn",
-      "nextSteps": "Các bước tiếp theo được đề xuất"
+      "nextSteps": "Các bước tiếp theo được đề xuất",
+      "lifeGoals": "Tuong thich Muc tieu Song",
+      "statistics": "Nguoi khac da chon gi"
     },
     "print": "In tóm tắt",
     "email": "Gửi email tóm tắt",
@@ -1193,7 +1235,17 @@
       "notViewed": "Chưa khám phá"
     },
     "printOptimised": "Trang này được tối ưu hóa cho in ấn",
-    "accessibleFormat": "Cần định dạng khác? Hãy hỏi đội ngũ thận của bạn."
+    "accessibleFormat": "Cần định dạng khác? Hãy hỏi đội ngũ thận của bạn.",
+    "lifeGoals": {
+      "selectedGoals": "Muc tieu da chon cua ban",
+      "topCompatible": "Dieu tri phu hop nhat",
+      "reviewGoals": "Xem lai muc tieu cua ban"
+    },
+    "statistics": {
+      "description": "Ban da xem thong ke ve lua chon cua cac benh nhan khac.",
+      "disclaimer": "Thong ke dua tren du lieu an danh cua NHS.",
+      "reviewStats": "Xem lai thong ke"
+    }
   },
   "session": {
     "timeRemaining": "Thời gian còn lại: {{minutes}}",
@@ -1327,44 +1379,6 @@
       "sleep": "Nghỉ ngơi khi mệt"
     }
   },
-  "progress": {
-    "title": "Hành trình học tập của bạn",
-    "yourProgress": "Tiến trình của bạn",
-    "complete": "hoàn thành",
-    "treatments": "phương pháp điều trị",
-    "sections": {
-      "title": "Các phần để khám phá",
-      "questionnaire": "Về bạn",
-      "questionnaireDesc": "Chia sẻ tình huống của bạn",
-      "treatments": "Các lựa chọn điều trị",
-      "treatmentsDesc": "Đã khám phá {{viewed}} trong số {{total}}",
-      "values": "Bài tập về giá trị",
-      "valuesDesc": "Làm rõ các ưu tiên của bạn",
-      "chat": "Đặt câu hỏi",
-      "chatDesc": "Nhận câu trả lời"
-    },
-    "status": {
-      "completed": "Đã hoàn thành",
-      "inProgress": "Đang tiến hành"
-    },
-    "badges": {
-      "title": "Huy hiệu của bạn",
-      "explorer": "Nhà khám phá",
-      "allTreatments": "Tất cả phương pháp điều trị",
-      "values": "Giá trị rõ ràng",
-      "curious": "Tâm trí tò mò",
-      "complete": "Hoàn thành hành trình"
-    },
-    "encouragement": {
-      "start": "Bắt đầu hành trình của bạn bằng cách khám phá các lựa chọn điều trị",
-      "beginning": "Khởi đầu tuyệt vời! Tiếp tục khám phá để tìm hiểu thêm",
-      "making": "Bạn đang tiến bộ tốt!",
-      "halfway": "Đã qua nửa chặng đường - làm tốt lắm!",
-      "almost": "Gần hoàn thành! Chỉ còn vài phần nữa",
-      "complete": "Tuyệt vời! Bạn đã khám phá mọi thứ"
-    },
-    "viewSummary": "Xem bản tóm tắt của bạn"
-  },
   "scenario": {
     "title": "Khám phá kịch bản: Nếu như?",
     "subtitle": "Xem các tình huống cuộc sống khác nhau hoạt động như thế nào với mỗi lựa chọn điều trị",
@@ -1465,5 +1479,81 @@
     "dayInLife": "Một ngày trong cuộc sống",
     "faqDesc": "Các câu hỏi bệnh nhân thường hỏi về phương pháp điều trị này",
     "categoryGeneral": "Chung"
+  },
+  "lifeGoals": {
+    "title": "Tuong thich Muc tieu Cuoc song",
+    "subtitle": "Xem cach dieu tri phu hop voi muc tieu ca nhan cua ban",
+    "introduction": "Hieu cach moi phuong phap dieu tri phu hop voi nhung gi quan trong nhat trong cuoc song co the giup ban quyet dinh.",
+    "categories": {
+      "work": {
+        "name": "Cong viec va Su nghiep",
+        "description": "Muc tieu lien quan den cong viec va cuoc song nghe nghiep"
+      },
+      "family": {
+        "name": "Gia dinh va Cac moi quan he",
+        "description": "Muc tieu lien quan den thoi gian gia dinh va cham soc nguoi khac"
+      },
+      "travel": {
+        "name": "Du lich va Ky nghi",
+        "description": "Muc tieu lien quan den du lich va kham pha"
+      },
+      "hobbies": {
+        "name": "So thich va Hoat dong",
+        "description": "Muc tieu lien quan den the thao va so thich"
+      },
+      "independence": {
+        "name": "Doc lap",
+        "description": "Muc tieu lien quan den duy tri su doc lap"
+      },
+      "religious": {
+        "name": "Duc tin va Tam linh",
+        "description": "Muc tieu lien quan den thuc hanh ton giao"
+      }
+    },
+    "goals": {
+      "fullTimeWork": "Tiep tuc lam viec toan thoi gian",
+      "partTimeWork": "Lam viec ban thoi gian",
+      "retirement": "Tan huong nghi huu",
+      "childcare": "Cham soc con hoac chau",
+      "familyEvents": "Tham gia su kien gia dinh",
+      "socialLife": "Duy tri doi song xa hoi nang dong",
+      "shortTrips": "Di chuyen ngan ngay",
+      "longHolidays": "Ky nghi dai o nuoc ngoai",
+      "pilgrimages": "Hanh huong ton giao",
+      "exercise": "Duy tri hoat dong the chat",
+      "gardening": "Tiep tuc lam vuon",
+      "sports": "Tham gia the thao",
+      "liveAlone": "Song doc lap",
+      "driveCar": "Tiep tuc lai xe",
+      "cookMeals": "Tu nau an",
+      "prayRegularly": "Duy tri gio cau nguyen deu dan",
+      "attendWorship": "Tham du cac buoi le ton giao",
+      "fastingPractice": "Thuc hanh an chay ton giao"
+    },
+    "results": {
+      "title": "Ket qua Tuong thich cua Ban",
+      "description": "Dua tren muc tieu da chon",
+      "bestMatch": "Phu hop Nhat",
+      "noGoalsSelected": "Chon it nhat mot muc tieu"
+    },
+    "compatibility": {
+      "high": "Tuong thich cao",
+      "medium": "Tuong thich vua phai",
+      "low": "Tuong thich thap hon"
+    },
+    "discussionPrompts": {
+      "title": "Cau hoi de Thao luan",
+      "prompt1": "Dieu tri nay se anh huong den sinh hoat hang ngay cua toi nhu the nao?",
+      "prompt2": "Toi co the dat duoc muc tieu voi dieu tri nay khong?",
+      "prompt3": "Toi can thuc hien nhung dieu chinh gi?"
+    }
+  },
+  "statistics": {
+    "page": {
+      "title": "Nhung nguoi khac trong tinh huong tuong tu da chon gi",
+      "introduction": "Hieu nhung gi nguoi khac da chon co the giup ich. Day la thong ke thuc te tu benh nhan than tai Vuong quoc Anh.",
+      "personalized": "Ca nhan hoa cho ho so cua ban",
+      "compareTreatments": "So sanh cac phuong phap dieu tri"
+    }
   }
 }

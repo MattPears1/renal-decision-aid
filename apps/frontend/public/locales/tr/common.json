@@ -196,15 +196,46 @@
     "homeAriaLabel": "NHS Bobrek Tedavisi Karar Destek Araci - Ana Sayfa"
   },
   "progress": {
-    "language": "Dil",
-    "privacy": "Gizlilik",
-    "yourJourney": "Yolculugunuz",
-    "aboutYou": "Hakkinda",
-    "yourOptions": "Secenekleriniz",
-    "ariaLabel": "Karar destek araci ilerlemesi",
-    "stepOfTotal": "Adim {{current}} / {{total}}",
-    "percentComplete": "%{{percentage}} tamamlandi",
-    "ariaProgressLabel": "Ilerleme: {{total}} adimdan {{current}} tamamlandi"
+    "title": "Ogrenme Yolculugunuz",
+    "yourProgress": "Ilerlemeniz",
+    "complete": "tamamlandi",
+    "treatments": "tedaviler",
+    "sections": {
+      "title": "Kesfedilecek Bolumler",
+      "questionnaire": "Hakkinda",
+      "questionnaireDesc": "Durumunuzu paylasin",
+      "treatments": "Tedavi Secenekleri",
+      "treatmentsDesc": "{{viewed}} / {{total}} kesfedildi",
+      "values": "Degerler Egzersizi",
+      "valuesDesc": "Onceliklerinizi netlestirin",
+      "chat": "Soru Sorun",
+      "chatDesc": "Yanitlar alin",
+      "lifeGoals": "Yasam Hedefleri",
+      "lifeGoalsDesc": "Tedavi ve hedef eslestir",
+      "statistics": "Digerleri ne secti",
+      "statisticsDesc": "Hasta tercihlerini gor"
+    },
+    "status": {
+      "completed": "Tamamlandi",
+      "inProgress": "Devam Ediyor"
+    },
+    "badges": {
+      "title": "Rozetleriniz",
+      "explorer": "Kâsif",
+      "allTreatments": "Tum Tedaviler",
+      "values": "Degerler Netlesti",
+      "curious": "Merakli Zihin",
+      "complete": "Yolculuk Tamamlandi"
+    },
+    "encouragement": {
+      "start": "Tedavi seceneklerini kesfederek yolculugunuza baslayin",
+      "beginning": "Iyi bir baslangic! Daha fazla ogremek icin kesfetmeye devam edin",
+      "making": "Iyi ilerleme kaydediyorsunuz!",
+      "halfway": "Yarindan fazla bitti - aferin!",
+      "almost": "Neredeyse tamamlandi! Sadece birkac bolum daha",
+      "complete": "Mukemmel! Her seyi kesefettiniz"
+    },
+    "viewSummary": "Ozetinizi Gorunuz"
   },
   "journey": {
     "title": "Bobrek Bakim Yolculugunuzda Neredesiniz?",
@@ -489,6 +520,16 @@
         "title": "Soru Sorun",
         "description": "Bobrek tedavi secenekleri hakkinda yapay zeka asistanimizla sohbet ediuniz. Sorulariniza konusma halinde yanitlar aliniz.",
         "action": "Sohbet Basla"
+      },
+      "lifeGoals": {
+        "title": "Yasam Hedefleri Uyumlulugu",
+        "description": "Tedavilerin hedeflerinizle nasil uyumlastugunu gorun",
+        "action": "Hedefleri arastir"
+      },
+      "statistics": {
+        "title": "Digerleri ne secti",
+        "description": "Benzer durumlardaki kisilerin ne sectigini gorun",
+        "action": "Istatistikleri gor"
       }
     },
     "status": {
@@ -652,7 +693,34 @@
     "scrollHint": "Tum tedavileri gormek icin yatay olarak kaydirun",
     "tableHeading": "Tedavi Karsilastirma Tablosu",
     "tableLabel": "Bobrek tedavi seceneklerinin karsilastirmasi",
-    "criteria": "Kriterler",
+    "criteria": {
+      "timeCommitment": "Haftalik zaman taahhudü",
+      "timeCommitmentHint": "Tedaviye harcanan saatler",
+      "location": "Tedavi yeri",
+      "locationHint": "Tedavinin yapildigi yer",
+      "travel": "Seyahat uzerindeki etkisi",
+      "travelHint": "Seyahat ve tatil yapabilme",
+      "diet": "Diyet kisitlamalari",
+      "dietHint": "Yemek ve icecek sinirliamalari",
+      "surgery": "Ameliyat gerekliligi",
+      "surgeryHint": "Ilk islemler gerekli",
+      "supportNeeded": "Gerekli destek",
+      "supportNeededHint": "Aile veya bakicalardan yardim",
+      "recoveryTime": "Iyilesme suresi",
+      "recoveryTimeHint": "Tedaviye uyum suresi",
+      "longTermOutlook": "Uzun vadeli gorunum",
+      "longTermOutlookHint": "Zaman icinde beklenen sonuclar",
+      "scheduleFlexibility": "Program esnekligi",
+      "scheduleFlexibilityHint": "Programiniz uzerindeki kontrol",
+      "trainingRequired": "Egitim gerekliligi",
+      "trainingRequiredHint": "Gerekli ogrenme suresi",
+      "survivalRates": "Sagkalim oranlari",
+      "survivalRatesHint": "Genel sonuclar (kisiden kisiye degisir)",
+      "qualityOfLife": "Yasam kalitesi",
+      "qualityOfLifeHint": "Genel iyilik hali",
+      "energyLevels": "Enerji seviyeleri",
+      "energyLevelsHint": "Tipik enerji ve yorgunluk"
+    },
     "recommended": "Onerilen",
     "remember": "Unutmayuniz",
     "guidance": "Hicbir tedavi herkes icin mukemmel degildir. En iyi secim kisisel durumunuza, sagligunuza ve degerlerinize baglidir. Bu karsilastirma, bobrek ekibinizle yapacaginiz gorusmelerin bir baslangic noktasidir.",
@@ -681,34 +749,6 @@
       "medical": "Tibbi Faktorler",
       "support": "Destek Gereksinimleri",
       "health": "Saglik Sonuclari"
-    },
-    "criteria": {
-      "timeCommitment": "Haftalik zaman taahhudü",
-      "timeCommitmentHint": "Tedaviye harcanan saatler",
-      "location": "Tedavi yeri",
-      "locationHint": "Tedavinin yapildigi yer",
-      "travel": "Seyahat uzerindeki etkisi",
-      "travelHint": "Seyahat ve tatil yapabilme",
-      "diet": "Diyet kisitlamalari",
-      "dietHint": "Yemek ve icecek sinirliamalari",
-      "surgery": "Ameliyat gerekliligi",
-      "surgeryHint": "Ilk islemler gerekli",
-      "supportNeeded": "Gerekli destek",
-      "supportNeededHint": "Aile veya bakicalardan yardim",
-      "recoveryTime": "Iyilesme suresi",
-      "recoveryTimeHint": "Tedaviye uyum suresi",
-      "longTermOutlook": "Uzun vadeli gorunum",
-      "longTermOutlookHint": "Zaman icinde beklenen sonuclar",
-      "scheduleFlexibility": "Program esnekligi",
-      "scheduleFlexibilityHint": "Programiniz uzerindeki kontrol",
-      "trainingRequired": "Egitim gerekliligi",
-      "trainingRequiredHint": "Gerekli ogrenme suresi",
-      "survivalRates": "Sagkalim oranlari",
-      "survivalRatesHint": "Genel sonuclar (kisiden kisiye degisir)",
-      "qualityOfLife": "Yasam kalitesi",
-      "qualityOfLifeHint": "Genel iyilik hali",
-      "energyLevels": "Enerji seviyeleri",
-      "energyLevelsHint": "Tipik enerji ve yorgunluk"
     },
     "values": {
       "minimalAfterRecovery": "Iyilesmeden sonra minimal",
@@ -1077,7 +1117,9 @@
       "viewed": "Kesfedilen Tedaviler",
       "questions": "Ekibiniz Icin Sorular",
       "priorities": "Oncelikleriniz",
-      "nextSteps": "Onerilen Sonraki Adimlar"
+      "nextSteps": "Onerilen Sonraki Adimlar",
+      "lifeGoals": "Yasam Hedefleri Uyumlulugu",
+      "statistics": "Digerleri ne secti"
     },
     "print": "Ozeti Yazdir",
     "email": "Ozeti E-postayla Gonder",
@@ -1162,6 +1204,16 @@
       "4": "Onemli",
       "5": "Cok onemli",
       "default": "Onemli"
+    },
+    "lifeGoals": {
+      "selectedGoals": "Sectiginiz hedefler",
+      "topCompatible": "En uyumlu tedaviler",
+      "reviewGoals": "Hedeflerinizi gozden gecirin"
+    },
+    "statistics": {
+      "description": "Diger hastalarin tercihlerine iliskin istatistikleri goruntulediniz.",
+      "disclaimer": "Istatistikler NHS'nin anonim verilerine dayanmaktadir.",
+      "reviewStats": "Istatistikleri gozden gecir"
     }
   },
   "session": {
@@ -1296,44 +1348,6 @@
       "sleep": "Yorgun oldugunuzda dinlenin"
     }
   },
-  "progress": {
-    "title": "Ogrenme Yolculugunuz",
-    "yourProgress": "Ilerlemeniz",
-    "complete": "tamamlandi",
-    "treatments": "tedaviler",
-    "sections": {
-      "title": "Kesfedilecek Bolumler",
-      "questionnaire": "Hakkinda",
-      "questionnaireDesc": "Durumunuzu paylasin",
-      "treatments": "Tedavi Secenekleri",
-      "treatmentsDesc": "{{viewed}} / {{total}} kesfedildi",
-      "values": "Degerler Egzersizi",
-      "valuesDesc": "Onceliklerinizi netlestirin",
-      "chat": "Soru Sorun",
-      "chatDesc": "Yanitlar alin"
-    },
-    "status": {
-      "completed": "Tamamlandi",
-      "inProgress": "Devam Ediyor"
-    },
-    "badges": {
-      "title": "Rozetleriniz",
-      "explorer": "Kâsif",
-      "allTreatments": "Tum Tedaviler",
-      "values": "Degerler Netlesti",
-      "curious": "Merakli Zihin",
-      "complete": "Yolculuk Tamamlandi"
-    },
-    "encouragement": {
-      "start": "Tedavi seceneklerini kesfederek yolculugunuza baslayin",
-      "beginning": "Iyi bir baslangic! Daha fazla ogremek icin kesfetmeye devam edin",
-      "making": "Iyi ilerleme kaydediyorsunuz!",
-      "halfway": "Yarindan fazla bitti - aferin!",
-      "almost": "Neredeyse tamamlandi! Sadece birkac bolum daha",
-      "complete": "Mukemmel! Her seyi kesefettiniz"
-    },
-    "viewSummary": "Ozetinizi Gorunuz"
-  },
   "scenario": {
     "title": "Ya... Senaryo Kesfi",
     "subtitle": "Farkli yasam durumlarinin her tedavi secenegiyle nasil calistigini gorun",
@@ -1434,5 +1448,81 @@
     "dayInLife": "Gunluk Yasam",
     "faqDesc": "Hastaların bu tedavi hakkında sıkça sordukları sorular",
     "categoryGeneral": "Genel"
+  },
+  "lifeGoals": {
+    "title": "Yasam Hedefleri Uyumlulugu",
+    "subtitle": "Tedavilerin kisisel hedeflerinizle nasil uyumlastugunu gorun",
+    "introduction": "Her tedavinin hayatinizdaki en onemli seylerle nasil uyumlastugunu anlamak karar vermenize yardimci olabilir.",
+    "categories": {
+      "work": {
+        "name": "Is ve Kariyer",
+        "description": "Isiniz ve mesleki yasaminizla ilgili hedefler"
+      },
+      "family": {
+        "name": "Aile ve Iliskiler",
+        "description": "Aile zamani ve baskalarinin bakimiyla ilgili hedefler"
+      },
+      "travel": {
+        "name": "Seyahat ve Tatil",
+        "description": "Seyahat ve yeni yerler kesfetmeyle ilgili hedefler"
+      },
+      "hobbies": {
+        "name": "Hobiler ve Aktiviteler",
+        "description": "Spor ve hobilerle ilgili hedefler"
+      },
+      "independence": {
+        "name": "Bagimsizlik",
+        "description": "Bagimsizligi surdurmeyle ilgili hedefler"
+      },
+      "religious": {
+        "name": "Inanc ve Manevi Hayat",
+        "description": "Dini uygulamalarla ilgili hedefler"
+      }
+    },
+    "goals": {
+      "fullTimeWork": "Tam zamanli calismaya devam etmek",
+      "partTimeWork": "Yari zamanli calismak",
+      "retirement": "Emekliliginin tadini cikarmak",
+      "childcare": "Cocuklara veya torunlara bakmak",
+      "familyEvents": "Aile etkinliklerine katilmak",
+      "socialLife": "Aktif sosyal hayati surdurrmek",
+      "shortTrips": "Kisa geziler yapmak",
+      "longHolidays": "Yurt disinda uzun tatiller",
+      "pilgrimages": "Hac yapmak",
+      "exercise": "Fiziksel olarak aktif kalmak",
+      "gardening": "Bahcecilige devam etmek",
+      "sports": "Spor yapmak",
+      "liveAlone": "Bagimsiz yasamak",
+      "driveCar": "Araba kullanmaya devam etmek",
+      "cookMeals": "Kendi yemeklerimi hazirlamak",
+      "prayRegularly": "Duzenlui namaz kilmak",
+      "attendWorship": "Dini ibadetlere katilmak",
+      "fastingPractice": "Dini oruc tutmak"
+    },
+    "results": {
+      "title": "Uyumluluk Sonuclariniz",
+      "description": "Sectiginiz hedeflere gore",
+      "bestMatch": "En Iyi Eslesme",
+      "noGoalsSelected": "En az bir hedef secin"
+    },
+    "compatibility": {
+      "high": "Yuksek uyumluluk",
+      "medium": "Orta uyumluluk",
+      "low": "Dusuk uyumluluk"
+    },
+    "discussionPrompts": {
+      "title": "Tartisma Sorulari",
+      "prompt1": "Bu tedavi gunluk rutinimu nasil etkileyecek?",
+      "prompt2": "Bu tedaviyle hedeflerimi gerceklestirebilir miyim?",
+      "prompt3": "Hangi ayarlamalari yapmam gerekecek?"
+    }
+  },
+  "statistics": {
+    "page": {
+      "title": "Benzer durumlardaki diger kisiler ne secti",
+      "introduction": "Baskalari ne sectigini anlamak yardimci olabilir. Bunlar Birlesik Krallik bobrek hastalarinin gercek istatistikleri.",
+      "personalized": "Profilinize ozel",
+      "compareTreatments": "Tedavileri karsilastir"
+    }
   }
 }

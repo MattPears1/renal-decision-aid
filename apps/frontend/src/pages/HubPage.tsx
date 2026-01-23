@@ -90,6 +90,24 @@ const HUB_CARDS: HubCard[] = [
     icon: <ChatIcon />,
     gradient: 'bg-gradient-to-br from-nhs-orange via-[#ED8B00] to-[#b36800]',
   },
+  {
+    id: 'life-goals',
+    titleKey: 'hub.cards.lifeGoals.title',
+    descriptionKey: 'hub.cards.lifeGoals.description',
+    href: '/life-goals',
+    actionKey: 'hub.cards.lifeGoals.action',
+    icon: <LifeGoalsIcon />,
+    gradient: 'bg-gradient-to-br from-[#78BE20] via-[#5EA515] to-[#3D6E0E]',
+  },
+  {
+    id: 'statistics',
+    titleKey: 'hub.cards.statistics.title',
+    descriptionKey: 'hub.cards.statistics.description',
+    href: '/statistics',
+    actionKey: 'hub.cards.statistics.action',
+    icon: <StatisticsIcon />,
+    gradient: 'bg-gradient-to-br from-[#41B6E6] via-[#2E8BC0] to-[#1B5E83]',
+  },
 ];
 
 /**
@@ -473,6 +491,8 @@ export default function HubPage() {
                           card.id === 'model' ? '3D Kidney Model' :
                           card.id === 'compare' ? 'Compare Treatments' :
                           card.id === 'values' ? 'Values Exercise' :
+                          card.id === 'life-goals' ? 'Life Goals Compatibility' :
+                          card.id === 'statistics' ? 'What Others Chose' :
                           'Ask Questions'
                         )}
                       </Link>
@@ -483,6 +503,8 @@ export default function HubPage() {
                         card.id === 'model' ? 'Explore interactive 3D models showing how different treatments work in your body. See the process visually.' :
                         card.id === 'compare' ? 'See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.' :
                         card.id === 'values' ? 'Think about what matters most to you. This exercise helps clarify your priorities to guide your decision.' :
+                        card.id === 'life-goals' ? 'See how treatments align with your personal goals for work, family, travel, and more.' :
+                        card.id === 'statistics' ? 'See what people in similar situations decided and their outcomes.' :
                         'Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.'
                       )}
                     </p>
@@ -499,6 +521,8 @@ export default function HubPage() {
                           card.id === 'model' ? 'View Model' :
                           card.id === 'compare' ? 'Compare' :
                           card.id === 'values' ? (status === 'in-progress' ? 'Continue' : 'Start') :
+                          card.id === 'life-goals' ? 'Explore Goals' :
+                          card.id === 'statistics' ? 'View Statistics' :
                           'Start Chat'
                         )}
                         <ChevronRightIcon className="transition-transform group-hover:translate-x-0.5" />
@@ -833,6 +857,22 @@ function SummaryNavIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+    </svg>
+  );
+}
+
+function LifeGoalsIcon() {
+  return (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+  );
+}
+
+function StatisticsIcon() {
+  return (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
     </svg>
   );
 }
