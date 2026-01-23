@@ -1431,6 +1431,8 @@
     }
   },
   "treatment": {
-    "dayInLife": "Um Dia na Vida"
+    "dayInLife": "Um Dia na Vida",
+    "faqDesc": "Perguntas frequentes dos pacientes sobre este tratamento",
+    "categoryGeneral": "Geral"
   }
 }

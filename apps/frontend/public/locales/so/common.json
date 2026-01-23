@@ -1431,7 +1431,9 @@
     }
   },
   "treatment": {
-    "dayInLife": "Maalin Nolosheed"
+    "dayInLife": "Maalin Nolosheed",
+    "faqDesc": "Su'aalaha bukaamadu badanaa ka weydiyaan daawayntan",
+    "categoryGeneral": "Guud"
   },
   "glossary": {
     "title": "Qaamuuska Erayada Caafimaadka",

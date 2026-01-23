@@ -1431,7 +1431,9 @@
     }
   },
   "treatment": {
-    "dayInLife": "一天的生活"
+    "dayInLife": "一天的生活",
+    "faqDesc": "患者经常询问的关于此治疗的问题",
+    "categoryGeneral": "一般"
   },
   "glossary": {
     "title": "医学术语词汇表",

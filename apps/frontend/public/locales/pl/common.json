@@ -1431,7 +1431,9 @@
     }
   },
   "treatment": {
-    "dayInLife": "Dzień z życia"
+    "dayInLife": "Dzień z życia",
+    "faqDesc": "Pytania często zadawane przez pacjentów na temat tego leczenia",
+    "categoryGeneral": "Ogólne"
   },
   "glossary": {
     "title": "Słownik terminów medycznych",

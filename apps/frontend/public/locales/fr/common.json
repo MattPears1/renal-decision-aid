@@ -1462,7 +1462,9 @@
     }
   },
   "treatment": {
-    "dayInLife": "Une journée type"
+    "dayInLife": "Une journée type",
+    "faqDesc": "Questions fréquemment posées par les patients sur ce traitement",
+    "categoryGeneral": "Général"
   },
   "glossary": {
     "title": "Glossaire des termes médicaux",

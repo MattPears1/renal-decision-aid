@@ -1462,6 +1462,8 @@
     }
   },
   "treatment": {
-    "dayInLife": "Một ngày trong cuộc sống"
+    "dayInLife": "Một ngày trong cuộc sống",
+    "faqDesc": "Các câu hỏi bệnh nhân thường hỏi về phương pháp điều trị này",
+    "categoryGeneral": "Chung"
   }
 }

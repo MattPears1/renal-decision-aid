@@ -19,9 +19,16 @@ export default function TreatmentDetailPage() {
   const { t } = useTranslation();
   const { markTreatmentViewed } = useSession();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [openQuestion, setOpenQuestion] = useState<number | null>(null);
-  const [questionFilter, setQuestionFilter] = useState<'all' | 'practical' | 'medical' | 'lifestyle' | 'emotional'>('all');
+  const [questionFilter, setQuestionFilter] = useState<'all' | 'general' | 'practical' | 'medical' | 'lifestyle' | 'emotional'>('all');
   const treatment = TREATMENT_DETAIL_DATA[type as TreatmentType];
+
+  // Merge FAQs and Common Questions into a single array with categories
+  const allFaqs = treatment ? [
+    // Original FAQs get 'general' category
+    ...treatment.faqs.map(faq => ({ ...faq, category: 'general' as const })),
+    // Common questions already have categories
+    ...treatment.commonQuestions,
+  ] : [];
 
   useEffect(() => { if (treatment) markTreatmentViewed(treatment.id); }, [treatment, markTreatmentViewed]);
 
@@ -64,7 +71,6 @@ export default function TreatmentDetailPage() {
     { id: 'day-summary', label: t('treatment.nav.daySummary', 'Typical Day') },
     { id: 'benefits', label: t('treatment.nav.benefits', 'Benefits') },
     { id: 'faq', label: t('treatment.nav.faq', 'FAQs') },
-    { id: 'common-questions', label: t('treatment.nav.commonQuestions', 'Questions') },
   ];
 
   return (
@@ -363,46 +369,22 @@ export default function TreatmentDetailPage() {
           </div>
         </section>
 
-        {/* FAQs Section */}
+        {/* Frequently Asked Questions Section - Merged FAQs and Common Questions */}
         <section className="mb-10" aria-labelledby="faq-heading">
           <header className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
               <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" /></svg>
             </div>
-            <h2 id="faq-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.faq', 'Frequently Asked Questions')}</h2>
-          </header>
-          <div className="bg-white rounded-xl border border-nhs-pale-grey overflow-hidden shadow-sm" role="list" aria-label={t('accessibility.faq')}>
-            {treatment.faqs.map((faq, idx) => (
-              <div key={idx} className={`border-b border-nhs-pale-grey last:border-b-0 ${openFaq === idx ? 'bg-nhs-blue/5' : ''}`} role="listitem">
-                <button className="w-full px-5 sm:px-6 py-4 flex justify-between items-center gap-3 text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[56px] touch-manipulation transition-colors hover:bg-nhs-blue/5" aria-expanded={openFaq === idx} aria-controls={`faq-answer-${idx}`} onClick={() => setOpenFaq(openFaq === idx ? null : idx)}>
-                  <span className="text-sm sm:text-base leading-snug">{faq.question}</span>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${openFaq === idx ? 'bg-nhs-blue text-white rotate-180' : 'bg-nhs-pale-grey text-nhs-blue'}`}>
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg>
-                  </div>
-                </button>
-                <div id={`faq-answer-${idx}`} className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-text-secondary leading-relaxed">{faq.answer}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Common Questions Section */}
-        <section className="mb-10" aria-labelledby="common-questions-heading">
-          <header className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 rounded-xl bg-nhs-green/10 flex items-center justify-center">
-              <svg className="w-5 h-5 text-nhs-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
-            </div>
             <div>
-              <h2 id="common-questions-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.commonQuestions', 'Common Questions')}</h2>
-              <p className="text-sm text-text-muted">{t('treatment.commonQuestionsDesc', 'Questions that patients often ask about this treatment')}</p>
+              <h2 id="faq-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.faq', 'Frequently Asked Questions')}</h2>
+              <p className="text-sm text-text-muted">{t('treatment.faqDesc', 'Questions that patients often ask about this treatment')}</p>
             </div>
           </header>
           <div className="flex flex-wrap gap-2 mb-4" role="tablist" aria-label={t('treatment.filterByCategory', 'Filter by category')}>
-            {(['all', 'practical', 'medical', 'lifestyle', 'emotional'] as const).map((category) => (
-              <button key={category} role="tab" aria-selected={questionFilter === category} onClick={() => setQuestionFilter(category)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] touch-manipulation ${questionFilter === category ? 'bg-nhs-green text-white shadow-sm' : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-blue/10 hover:text-nhs-blue'}`}>
+            {(['all', 'general', 'practical', 'medical', 'lifestyle', 'emotional'] as const).map((category) => (
+              <button key={category} role="tab" aria-selected={questionFilter === category} onClick={() => setQuestionFilter(category)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] touch-manipulation ${questionFilter === category ? 'bg-nhs-blue text-white shadow-sm' : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-blue/10 hover:text-nhs-blue'}`}>
                 {category === 'all' && t('treatment.categoryAll', 'All questions')}
+                {category === 'general' && t('treatment.categoryGeneral', 'General')}
                 {category === 'practical' && t('treatment.categoryPractical', 'Practical')}
                 {category === 'medical' && t('treatment.categoryMedical', 'Medical')}
                 {category === 'lifestyle' && t('treatment.categoryLifestyle', 'Lifestyle')}
@@ -410,27 +392,29 @@ export default function TreatmentDetailPage() {
               </button>
             ))}
           </div>
-          <div className="bg-white rounded-xl border border-nhs-pale-grey overflow-hidden shadow-sm" role="list">
-            {treatment.commonQuestions.filter(q => questionFilter === 'all' || q.category === questionFilter).map((question, idx) => {
-              const originalIdx = treatment.commonQuestions.findIndex(q => q.question === question.question);
+          <div className="bg-white rounded-xl border border-nhs-pale-grey overflow-hidden shadow-sm" role="list" aria-label={t('accessibility.faq')}>
+            {allFaqs.filter(q => questionFilter === 'all' || q.category === questionFilter).map((faq, idx) => {
+              const originalIdx = allFaqs.findIndex(q => q.question === faq.question);
+              const categoryColorClass = faq.category === 'general' ? 'bg-nhs-mid-grey/10 text-nhs-dark-grey' : faq.category === 'practical' ? 'bg-nhs-blue/10 text-nhs-blue' : faq.category === 'medical' ? 'bg-nhs-purple/10 text-nhs-purple' : faq.category === 'lifestyle' ? 'bg-nhs-green/10 text-nhs-green' : 'bg-nhs-orange/10 text-nhs-orange';
               return (
-                <div key={originalIdx} className={`border-b border-nhs-pale-grey last:border-b-0 ${openQuestion === originalIdx ? 'bg-nhs-green/5' : ''}`} role="listitem">
-                  <button className="w-full px-5 sm:px-6 py-4 flex justify-between items-center gap-3 text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[56px] touch-manipulation transition-colors hover:bg-nhs-green/5" aria-expanded={openQuestion === originalIdx} aria-controls={`question-answer-${originalIdx}`} onClick={() => setOpenQuestion(openQuestion === originalIdx ? null : originalIdx)}>
+                <div key={originalIdx} className={`border-b border-nhs-pale-grey last:border-b-0 ${openFaq === originalIdx ? 'bg-nhs-blue/5' : ''}`} role="listitem">
+                  <button className="w-full px-5 sm:px-6 py-4 flex justify-between items-center gap-3 text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[56px] touch-manipulation transition-colors hover:bg-nhs-blue/5" aria-expanded={openFaq === originalIdx} aria-controls={`faq-answer-${originalIdx}`} onClick={() => setOpenFaq(openFaq === originalIdx ? null : originalIdx)}>
                     <div className="flex items-center gap-3 flex-1 min-w-0">
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium flex-shrink-0 ${question.category === 'practical' ? 'bg-nhs-blue/10 text-nhs-blue' : question.category === 'medical' ? 'bg-nhs-purple/10 text-nhs-purple' : question.category === 'lifestyle' ? 'bg-nhs-green/10 text-nhs-green' : 'bg-nhs-orange/10 text-nhs-orange'}`}>
-                        {question.category === 'practical' && t('treatment.categoryPractical', 'Practical')}
-                        {question.category === 'medical' && t('treatment.categoryMedical', 'Medical')}
-                        {question.category === 'lifestyle' && t('treatment.categoryLifestyle', 'Lifestyle')}
-                        {question.category === 'emotional' && t('treatment.categoryEmotional', 'Emotional')}
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium flex-shrink-0 ${categoryColorClass}`}>
+                        {faq.category === 'general' && t('treatment.categoryGeneral', 'General')}
+                        {faq.category === 'practical' && t('treatment.categoryPractical', 'Practical')}
+                        {faq.category === 'medical' && t('treatment.categoryMedical', 'Medical')}
+                        {faq.category === 'lifestyle' && t('treatment.categoryLifestyle', 'Lifestyle')}
+                        {faq.category === 'emotional' && t('treatment.categoryEmotional', 'Emotional')}
                       </span>
-                      <span className="text-sm sm:text-base leading-snug">{question.question}</span>
+                      <span className="text-sm sm:text-base leading-snug">{faq.question}</span>
                     </div>
-                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${openQuestion === originalIdx ? 'bg-nhs-green text-white rotate-180' : 'bg-nhs-pale-grey text-nhs-green'}`}>
+                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${openFaq === originalIdx ? 'bg-nhs-blue text-white rotate-180' : 'bg-nhs-pale-grey text-nhs-blue'}`}>
                       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg>
                     </div>
                   </button>
-                  <div id={`question-answer-${originalIdx}`} className={`overflow-hidden transition-all duration-300 ${openQuestion === originalIdx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <div className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-text-secondary leading-relaxed">{question.answer}</div>
+                  <div id={`faq-answer-${originalIdx}`} className={`overflow-hidden transition-all duration-300 ${openFaq === originalIdx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-text-secondary leading-relaxed">{faq.answer}</div>
                   </div>
                 </div>
               );

@@ -1433,7 +1433,9 @@
     }
   },
   "treatment": {
-    "dayInLife": "يوم في الحياة"
+    "dayInLife": "يوم في الحياة",
+    "faqDesc": "أسئلة يطرحها المرضى غالبًا حول هذا العلاج",
+    "categoryGeneral": "عام"
   },
   "glossary": {
     "title": "قاموس المصطلحات الطبية",

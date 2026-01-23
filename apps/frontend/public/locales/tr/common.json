@@ -1431,6 +1431,8 @@
     }
   },
   "treatment": {
-    "dayInLife": "Gunluk Yasam"
+    "dayInLife": "Gunluk Yasam",
+    "faqDesc": "Hastaların bu tedavi hakkında sıkça sordukları sorular",
+    "categoryGeneral": "Genel"
   }
 }
