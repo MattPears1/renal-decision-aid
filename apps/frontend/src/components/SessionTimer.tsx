@@ -43,7 +43,7 @@ interface SessionTimerProps {
  */
 export default function SessionTimer({ showExtendButton = true, className = '' }: SessionTimerProps) {
   const { t } = useTranslation();
-  const { minutes, seconds, isWarning, formatted, extendSession } = useSessionTimer();
+  const { minutes, seconds: _seconds, isWarning, formatted, extendSession } = useSessionTimer();
   const [showModal, setShowModal] = useState(false);
 
   // Show warning modal when time is running low

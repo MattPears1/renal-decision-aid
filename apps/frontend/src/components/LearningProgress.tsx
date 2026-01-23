@@ -74,7 +74,7 @@ const ProgressRing = ({
   progress,
   size = 80,
   strokeWidth = 8,
-  color = '#005EB8',
+  color: _color = '#005EB8',
   animated = true,
 }: {
   progress: number;

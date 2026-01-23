@@ -36,6 +36,7 @@ function MiniKidneyModel() {
   });
 
   return (
+    // eslint-disable-next-line react/no-unknown-property
     <primitive
       ref={modelRef}
       object={clonedScene}
@@ -57,6 +58,7 @@ useGLTF.preload('/models/kidney.glb');
 function LoadingFallback() {
   return (
     <mesh>
+      {/* eslint-disable-next-line react/no-unknown-property */}
       <sphereGeometry args={[0.3, 16, 16]} />
       <meshStandardMaterial color="#CD5C5C" />
     </mesh>
@@ -108,11 +110,13 @@ export default function NHSHeader() {
                   style={{ background: 'transparent' }}
                 >
                   <Suspense fallback={<LoadingFallback />}>
-                    {/* Lighting */}
+                    {/* Lighting - eslint-disable react/no-unknown-property */}
+                    {/* eslint-disable react/no-unknown-property */}
                     <ambientLight intensity={0.7} />
                     <directionalLight position={[5, 5, 5]} intensity={1} />
                     <directionalLight position={[-5, -5, -5]} intensity={0.3} />
                     <pointLight position={[0, 5, 0]} intensity={0.4} />
+                    {/* eslint-enable react/no-unknown-property */}
 
                     {/* The 3D Kidney Model */}
                     <MiniKidneyModel />

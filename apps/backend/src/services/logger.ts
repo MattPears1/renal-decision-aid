@@ -30,6 +30,7 @@ import { Request, Response, NextFunction } from 'express';
  * @global
  */
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
     interface Request {
       /** Unique identifier for request tracing */

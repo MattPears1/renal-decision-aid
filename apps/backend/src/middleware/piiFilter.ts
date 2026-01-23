@@ -43,7 +43,7 @@ const PII_PATTERNS = {
   sortCode: /\b\d{2}[-\s]?\d{2}[-\s]?\d{2}\b/g,
 
   // Date of birth patterns (DD/MM/YYYY, DD-MM-YYYY)
-  dateOfBirth: /\b(?:dob|date of birth|born on)[\s:]*\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4}\b/gi,
+  dateOfBirth: /\b(?:dob|date of birth|born on)[\s:]*\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b/gi,
 
   // Full address patterns (simplified - looks for house number + street name patterns)
   streetAddress: /\b\d+\s+[A-Za-z]+\s+(?:street|road|lane|avenue|drive|close|way|court|place|crescent|terrace|gardens|grove|hill|park|square|mews|row|walk)\b/gi,
