@@ -38,7 +38,8 @@ export type UserRole = 'patient' | 'carer';
 
 export type CarerRelationship =
   | 'spouse'
-  | 'parent'
+  | 'mum'
+  | 'dad'
   | 'child'
   | 'sibling'
   | 'friend'
@@ -125,6 +126,8 @@ export interface Session {
   language: SupportedLanguage;
   userRole: UserRole;
   carerRelationship?: CarerRelationship;
+  /** Custom label for the person being supported (e.g., "Mum", "my friend John") */
+  customCarerLabel?: string;
   region?: string;
   journeyStage?: JourneyStage;
   questionnaireAnswers: QuestionnaireAnswer[];

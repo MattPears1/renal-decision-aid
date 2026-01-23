@@ -39,6 +39,7 @@ import type {
  * @property {(goals: string[]) => void} updateLifeGoals - Update life goals
  * @property {(role: UserRole) => void} setUserRole - Set user role (patient/carer)
  * @property {(relationship: CarerRelationship) => void} setCarerRelationship - Set carer relationship
+ * @property {(label: string) => void} setCustomCarerLabel - Set custom label for the person being supported
  * @property {(region: string) => void} setRegion - Set user region for support networks
  */
 interface SessionContextType {
@@ -47,7 +48,12 @@ interface SessionContextType {
   error: string | null;
 
   // Session management
-  createSession: (language: SupportedLanguage) => Promise<void>;
+  createSession: (
+    language: SupportedLanguage,
+    userRole?: UserRole,
+    carerRelationship?: CarerRelationship,
+    customCarerLabel?: string
+  ) => Promise<void>;
   endSession: () => Promise<void>;
 
   // Data updates
@@ -55,6 +61,7 @@ interface SessionContextType {
   setJourneyStage: (stage: JourneyStage) => void;
   setUserRole: (role: UserRole) => void;
   setCarerRelationship: (relationship: CarerRelationship) => void;
+  setCustomCarerLabel: (label: string) => void;
   setRegion: (region: string) => void;
   addQuestionnaireAnswer: (answer: QuestionnaireAnswer) => void;
   addValueRating: (rating: ValueRating) => void;
@@ -101,16 +108,23 @@ export function SessionProvider({ children }: SessionProviderProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const createSession = useCallback(async (language: SupportedLanguage) => {
+  const createSession = useCallback(async (
+    language: SupportedLanguage,
+    userRole: UserRole = 'patient',
+    carerRelationship?: CarerRelationship,
+    customCarerLabel?: string
+  ) => {
     setIsLoading(true);
     setError(null);
 
     try {
       const now = Date.now();
-      const newSession: Session = {
+      const newSession: Session & { lifeGoals?: string[] } = {
         id: crypto.randomUUID(),
         language,
-        userRole: 'patient', // Default to patient mode
+        userRole,
+        carerRelationship,
+        customCarerLabel,
         questionnaireAnswers: [],
         valueRatings: [],
         viewedTreatments: [],
@@ -180,6 +194,13 @@ export function SessionProvider({ children }: SessionProviderProps) {
   const setCarerRelationship = useCallback(
     (carerRelationship: CarerRelationship) => {
       updateSession({ carerRelationship });
+    },
+    [updateSession]
+  );
+
+  const setCustomCarerLabel = useCallback(
+    (customCarerLabel: string) => {
+      updateSession({ customCarerLabel });
     },
     [updateSession]
   );
@@ -276,6 +297,7 @@ export function SessionProvider({ children }: SessionProviderProps) {
     setJourneyStage,
     setUserRole,
     setCarerRelationship,
+    setCustomCarerLabel,
     setRegion,
     addQuestionnaireAnswer,
     addValueRating,

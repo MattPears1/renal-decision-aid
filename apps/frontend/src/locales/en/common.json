@@ -2313,13 +2313,17 @@
     "title": "Your relationship",
     "subtitle": "How are you connected to the person you're supporting?",
     "spouse": "Spouse/Partner",
-    "parent": "Parent",
+    "mum": "Mum",
+    "dad": "Dad",
     "child": "Child (adult)",
     "sibling": "Sibling",
     "friend": "Friend",
     "professional": "Professional carer",
     "other": "Other",
-    "thePerson": "the person you're supporting"
+    "thePerson": "the person you're supporting",
+    "customLabel": "How would you like us to refer to them?",
+    "customLabelPlaceholder": "e.g., Mum, Dad, my friend John",
+    "preview": "Preview: \"Where is {{label}} in their kidney care journey?\""
   },
   "pronouns": {
     "you": "you",

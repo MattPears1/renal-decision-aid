@@ -82,25 +82,40 @@ export function useCarerText(): CarerTextResult {
 
   const userRole = session?.userRole || 'patient';
   const carerRelationship = session?.carerRelationship;
+  const customCarerLabel = session?.customCarerLabel;
   const isCarer = userRole === 'carer';
 
   // Get the translated relationship label
+  // Priority: customCarerLabel > translated relationship > default
   const relationshipLabel = useMemo(() => {
     if (!isCarer) return '';
+
+    // Use custom label if provided (e.g., "Mum", "my friend John")
+    if (customCarerLabel?.trim()) {
+      return customCarerLabel.trim();
+    }
+
     if (!carerRelationship) {
       return t('carerRelationship.thePerson', 'the person you\'re supporting');
     }
-    // Return "your [relationship]" format
+
+    // Return "your [relationship]" format for preset relationships
     const relationshipName = t(
       `carerRelationship.${carerRelationship}`,
       carerRelationship
     );
     return `${t('pronouns.your', 'your')} ${relationshipName}`;
-  }, [isCarer, carerRelationship, t]);
+  }, [isCarer, carerRelationship, customCarerLabel, t]);
 
-  // Possessive form of relationship (e.g., "your spouse's")
+  // Possessive form of relationship (e.g., "your spouse's", "Mum's")
   const possessiveLabel = useMemo(() => {
     if (!isCarer) return t('pronouns.your', 'your');
+
+    // Use custom label if provided
+    if (customCarerLabel?.trim()) {
+      return `${customCarerLabel.trim()}'s`;
+    }
+
     if (!carerRelationship) {
       return t('pronouns.their', 'their');
     }
@@ -109,7 +124,7 @@ export function useCarerText(): CarerTextResult {
       carerRelationship
     );
     return `${t('pronouns.your', 'your')} ${relationshipName}'s`;
-  }, [isCarer, carerRelationship, t]);
+  }, [isCarer, carerRelationship, customCarerLabel, t]);
 
   // Pronouns based on mode
   const subjectPronoun = useMemo(

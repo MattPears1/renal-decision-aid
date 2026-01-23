@@ -26,7 +26,8 @@ import { changeLanguageAndWait } from '@/config/i18n';
 /** Carer relationship options for selection. */
 const CARER_RELATIONSHIPS: { value: CarerRelationship; labelKey: string }[] = [
   { value: 'spouse', labelKey: 'carerRelationship.spouse' },
-  { value: 'parent', labelKey: 'carerRelationship.parent' },
+  { value: 'mum', labelKey: 'carerRelationship.mum' },
+  { value: 'dad', labelKey: 'carerRelationship.dad' },
   { value: 'child', labelKey: 'carerRelationship.child' },
   { value: 'sibling', labelKey: 'carerRelationship.sibling' },
   { value: 'friend', labelKey: 'carerRelationship.friend' },
@@ -49,7 +50,7 @@ const CARER_RELATIONSHIPS: { value: CarerRelationship; labelKey: string }[] = [
 export default function LanguageSelectionPage() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
-  const { createSession, setUserRole, setCarerRelationship } = useSession();
+  const { createSession } = useSession();
   const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage | null>(null);
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -60,6 +61,7 @@ export default function LanguageSelectionPage() {
   const [showCompanionMode, setShowCompanionMode] = useState(false);
   const [userRoleSelection, setUserRoleSelection] = useState<UserRole>('patient');
   const [carerRelationshipSelection, setCarerRelationshipSelection] = useState<CarerRelationship | null>(null);
+  const [customCarerLabel, setCustomCarerLabel] = useState<string>('');
 
   useEffect(() => {
     // Trigger entrance animations
@@ -149,16 +151,13 @@ export default function LanguageSelectionPage() {
         console.warn(`Language change to ${selectedLanguage} may not have fully loaded`);
       }
 
-      // Create session with selected language
-      await createSession(selectedLanguage);
-
-      // Set user role if companion mode selected
-      if (userRoleSelection === 'carer') {
-        setUserRole('carer');
-        if (carerRelationshipSelection) {
-          setCarerRelationship(carerRelationshipSelection);
-        }
-      }
+      // Create session with all parameters at once (fixes timing issue)
+      await createSession(
+        selectedLanguage,
+        userRoleSelection,
+        carerRelationshipSelection || undefined,
+        customCarerLabel.trim() || undefined
+      );
 
       // Navigate to disclaimer
       navigate('/disclaimer');
@@ -316,6 +315,7 @@ export default function LanguageSelectionPage() {
                         setShowCompanionMode(false);
                         setUserRoleSelection('patient');
                         setCarerRelationshipSelection(null);
+                        setCustomCarerLabel('');
                       }}
                       className="p-2 text-text-secondary hover:text-text-primary hover:bg-nhs-pale-grey rounded-full transition-colors"
                       aria-label={t('common.close', 'Close')}
@@ -417,7 +417,13 @@ export default function LanguageSelectionPage() {
                           <button
                             key={rel.value}
                             type="button"
-                            onClick={() => setCarerRelationshipSelection(rel.value)}
+                            onClick={() => {
+                              setCarerRelationshipSelection(rel.value);
+                              // Clear custom label when selecting a preset option (except 'other')
+                              if (rel.value !== 'other') {
+                                setCustomCarerLabel('');
+                              }
+                            }}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
                                        ${carerRelationshipSelection === rel.value
                                          ? 'bg-nhs-purple text-white'
@@ -428,6 +434,32 @@ export default function LanguageSelectionPage() {
                           </button>
                         ))}
                       </div>
+
+                      {/* Custom label input (shown when 'other' selected or any relationship) */}
+                      {carerRelationshipSelection && (
+                        <div className="mt-4 animate-fade-in">
+                          <label className="block text-sm font-medium text-text-secondary mb-2">
+                            {t('carerRelationship.customLabel', 'How would you like us to refer to them?')}
+                          </label>
+                          <input
+                            type="text"
+                            value={customCarerLabel}
+                            onChange={(e) => setCustomCarerLabel(e.target.value)}
+                            placeholder={t('carerRelationship.customLabelPlaceholder', 'e.g., Mum, Dad, my friend John')}
+                            className="w-full px-4 py-3 border-2 border-nhs-pale-grey rounded-lg text-sm
+                                       focus:outline-none focus:ring-2 focus:ring-nhs-purple focus:border-nhs-purple
+                                       placeholder:text-text-muted"
+                            maxLength={50}
+                          />
+                          {customCarerLabel && (
+                            <p className="mt-2 text-sm text-nhs-purple">
+                              {t('carerRelationship.preview', 'Preview: "Where is {{label}} in their kidney care journey?"', {
+                                label: customCarerLabel
+                              })}
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
