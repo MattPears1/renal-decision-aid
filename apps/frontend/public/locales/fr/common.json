@@ -1,0 +1,1575 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "back": "Retour",
+    "next": "Suivant",
+    "skip": "Passer",
+    "returnToHub": "Retour au centre",
+    "backToHub": "Retour au centre",
+    "continueToQuestionnaire": "Continuer vers le questionnaire"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "print": "Imprimer",
+    "yes": "Oui",
+    "no": "Non",
+    "notSure": "Je ne suis pas sûr(e)",
+    "moreInfo": "Plus d'informations",
+    "close": "Fermer",
+    "back": "Retour",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "remove": "Supprimer",
+    "listenToPage": "Écouter cette page"
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "expandSection": "Développer la section",
+    "collapseSection": "Réduire la section",
+    "newWindow": "S'ouvre dans une nouvelle fenêtre",
+    "externalLink": "Lien externe",
+    "settings": "Accessibilité",
+    "settingsLabel": "Options d'accessibilité - Ajuster la taille du texte, le contraste et autres paramètres d'accessibilité",
+    "settingsTitle": "Ajuster la taille du texte, le contraste et autres paramètres d'accessibilité",
+    "breadcrumb": "Fil d'Ariane",
+    "pageNavigation": "Navigation de page",
+    "faq": "Questions fréquentes",
+    "frequentlyAskedQuestions": "Questions fréquemment posées",
+    "listenToPage": "Écouter cette page lue à haute voix",
+    "modal": {
+      "title": "Paramètres d'accessibilité",
+      "textSize": "Taille du texte",
+      "textSizeOptions": {
+        "small": "Petit",
+        "medium": "Moyen (Par défaut)",
+        "large": "Grand",
+        "extra-large": "Très grand"
+      },
+      "highContrast": "Mode contraste élevé",
+      "reducedMotion": "Animations réduites",
+      "lineSpacing": "Espacement des lignes",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Détendu",
+        "loose": "Espacé"
+      },
+      "save": "Enregistrer les paramètres",
+      "cancel": "Annuler",
+      "reset": "Réinitialiser"
+    }
+  },
+  "landing": {
+    "title": "Aide à la décision pour le traitement rénal",
+    "subtitle": "Services rénaux du NHS",
+    "description": "Cet outil vous aidera à comprendre vos options de traitement rénal et à réfléchir à ce qui compte le plus pour vous. Prenez votre temps - il n'y a pas de bonnes ou de mauvaises réponses.",
+    "startButton": "Commencer votre parcours",
+    "startButtonAriaLabel": "Commencer votre parcours de décision de traitement rénal",
+    "learnMore": "En savoir plus sur les maladies rénales",
+    "heroAriaLabel": "Section d'accueil",
+    "featuresHeading": "Comment cet outil vous aide",
+    "featuresSubheading": "Tout ce dont vous avez besoin pour prendre une décision éclairée concernant votre traitement rénal",
+    "features": {
+      "time": {
+        "title": "Environ 15 minutes",
+        "description": "Complétez à votre propre rythme. Vous pouvez faire des pauses quand vous en avez besoin et reprendre où vous vous êtes arrêté(e)."
+      },
+      "privacy": {
+        "title": "Votre vie privée est protégée",
+        "description": "Aucune information personnelle n'est stockée. Vos réponses aident à personnaliser l'outil uniquement pendant cette session."
+      },
+      "devices": {
+        "title": "Fonctionne sur tous les appareils",
+        "description": "Utilisez-le sur votre téléphone, tablette ou ordinateur. L'outil s'adapte automatiquement à la taille de votre écran."
+      }
+    },
+    "aboutHeading": "Ce que fait cet outil",
+    "about": {
+      "paragraph1": "Cet outil d'aide à la décision vous aidera à explorer les différentes options de traitement disponibles pour l'insuffisance rénale. Vous pouvez vous renseigner sur chaque traitement à votre rythme, réfléchir à ce qui compte le plus pour vous et créer un résumé à partager avec votre médecin ou infirmier(ère).",
+      "paragraph2": "Vous répondrez à quelques questions simples sur votre situation, puis vous explorerez les traitements qui pourraient vous convenir. Vos informations restent privées et ne sont pas conservées après la fermeture du navigateur.",
+      "paragraph3": "Cet outil ne remplace pas les conseils médicaux de votre équipe soignante. Il est conçu pour vous aider à vous sentir mieux informé(e) et plus confiant(e) lors de la discussion de vos options. Votre équipe néphrologique sont les experts de vos soins et vous aideront à prendre la bonne décision pour vous.",
+      "steps": {
+        "learn": {
+          "title": "Apprendre"
+        },
+        "explore": {
+          "title": "Explorer"
+        },
+        "decide": {
+          "title": "Décider"
+        }
+      }
+    },
+    "trustAriaLabel": "Informations sur la confiance et la sécurité",
+    "trust": {
+      "evidenceBased": "Informations fondées sur des preuves",
+      "languages": "Disponible en 11 langues",
+      "accessible": "Accessible à tous les utilisateurs",
+      "noAccount": "Aucun compte requis",
+      "time": "15 minutes",
+      "privateSecure": "Privé et sécurisé"
+    },
+    "ctaHeading": "Prêt(e) à commencer ?",
+    "ctaDescription": "Faites le premier pas pour comprendre vos options de traitement rénal. Vous pouvez commencer maintenant et revenir plus tard si vous avez besoin d'une pause."
+  },
+  "language": {
+    "title": "Choisissez votre langue",
+    "instruction": "Veuillez sélectionner votre langue préférée. Vous pouvez la changer à tout moment.",
+    "selectLanguage": "Sélectionner la langue",
+    "currentLanguage": "Langue actuelle"
+  },
+  "privacy": {
+    "pageAriaLabel": "Informations sur la confidentialité",
+    "progressLabel": "Progression de la configuration : 30%",
+    "progressText": "Étape 2 sur 4 : Informations sur la confidentialité",
+    "title": "Votre vie privée et vos informations",
+    "subtitle": "Avant de commencer, nous voulons que vous compreniez comment cet outil gère vos informations.",
+    "listenToPage": "Écouter cette page",
+    "stopReading": "Arrêter la lecture",
+    "sections": {
+      "privacy": {
+        "title": "Comment nous protégeons vos informations",
+        "content": "Vos réponses sont traitées de manière sécurisée et ne sont pas stockées de façon permanente. Cet outil ne collecte pas d'informations de santé personnelles permettant de vous identifier. Les données de votre session sont automatiquement supprimées lorsque vous fermez cet outil.",
+        "p1": "Cet outil utilise uniquement le stockage de session. Toute information que vous entrez, y compris vos réponses aux questions et vos préférences de traitement, n'est conservée que pendant que vous utilisez l'outil.",
+        "p2": "Lorsque vous fermez votre navigateur ou après 15 minutes d'inactivité, toutes vos informations sont automatiquement supprimées. Nous ne conservons rien vous concernant.",
+        "p3": "Nous collectons des informations anonymes sur la façon dont les gens utilisent cet outil pour nous aider à l'améliorer. Cela ne permet pas de vous identifier personnellement."
+      },
+      "ai": {
+        "title": "Comment fonctionne cet outil",
+        "content": "Cet outil d'aide à la décision utilise la technologie pour fournir des informations personnalisées basées sur vos réponses. Les informations fournies sont tirées des directives cliniques du NHS et de recherches fondées sur des preuves. Cet outil soutient mais ne remplace pas les discussions avec votre équipe de soins rénaux.",
+        "p1": "Cet outil comprend un assistant IA qui peut répondre à des questions générales sur les traitements rénaux. L'IA fournit uniquement des informations - elle ne peut pas vous donner de conseils médicaux spécifiques à votre situation.",
+        "p2": "L'IA peut parfois faire des erreurs ou fournir des informations incomplètes. Discutez toujours des décisions importantes avec votre équipe néphrologique qui connaît votre historique médical complet.",
+        "p3": "Cet outil ne remplace pas les conseils de votre équipe soignante. Il est conçu pour vous aider à vous sentir mieux informé(e) lors de la discussion de vos options avec vos médecins et infirmier(ère)s."
+      },
+      "medical": {
+        "title": "Informations médicales importantes",
+        "content": "Cet outil fournit des informations générales sur les options de traitement rénal. Il ne remplace pas un avis médical professionnel, un diagnostic ou un traitement. Consultez toujours votre spécialiste des reins ou votre équipe soignante avant de prendre des décisions concernant votre traitement. Si vous avez des préoccupations de santé urgentes, veuillez contacter votre médecin généraliste ou appeler le NHS 111."
+      },
+      "pii": {
+        "title": "Veuillez ne pas partager vos coordonnées personnelles",
+        "intro": "Pour protéger votre vie privée, veuillez ne pas entrer d'informations personnelles permettant de vous identifier lors de l'utilisation de cet outil, en particulier dans la fonction de chat.",
+        "listLabel": "Informations que vous ne devez pas partager",
+        "items": {
+          "nhsNumber": "Votre numéro NHS",
+          "fullName": "Votre nom complet",
+          "address": "Votre adresse",
+          "dob": "Votre date de naissance",
+          "phone": "Numéros de téléphone",
+          "email": "Adresses e-mail"
+        },
+        "outro": "Vous pouvez toujours nous parler de votre situation en termes généraux - par exemple, votre situation de vie ou ce qui compte le plus pour vous - sans partager de détails d'identification."
+      }
+    },
+    "summaryAriaLabel": "Résumé des points clés",
+    "summary": {
+      "title": "En résumé",
+      "notSaved": "Vos réponses ne sont pas enregistrées",
+      "noData": "Aucune donnée personnelle n'est collectée",
+      "leave": "Vous pouvez partir à tout moment"
+    },
+    "consent": {
+      "title": "Veuillez confirmer pour continuer",
+      "understand": "Je comprends que mes informations ne sont pas enregistrées après cette session et je ne partagerai pas d'informations d'identification personnelle",
+      "analytics": "J'accepte que des données analytiques anonymes soient collectées pour aider à améliorer cet outil (facultatif)",
+      "error": "Veuillez confirmer que vous comprenez les informations sur la confidentialité avant de continuer"
+    },
+    "continueButton": "Je comprends, continuer",
+    "continueAriaLabel": "Continuer vers la sélection de l'étape du parcours",
+    "readFullPolicy": "Lire la politique de confidentialité complète du NHS"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Démo",
+    "serviceName": "Aide à la décision pour le traitement rénal",
+    "tagline": "Vous aider à faire des choix éclairés",
+    "homeAriaLabel": "Aide à la décision pour le traitement rénal NHS - Accueil"
+  },
+  "progress": {
+    "language": "Langue",
+    "privacy": "Confidentialité",
+    "yourJourney": "Votre parcours",
+    "aboutYou": "À propos de vous",
+    "yourOptions": "Vos options",
+    "ariaLabel": "Progression dans l'outil d'aide à la décision",
+    "stepOfTotal": "Étape {{current}} sur {{total}}",
+    "percentComplete": "{{percentage}}% terminé",
+    "ariaProgressLabel": "Progression : {{current}} sur {{total}} étapes terminées"
+  },
+  "journey": {
+    "title": "Où en êtes-vous dans votre parcours de soins rénaux ?",
+    "subtitle": "Sélectionnez l'option qui décrit le mieux votre situation",
+    "instruction": "Sélectionnez l'option qui décrit le mieux votre situation actuelle",
+    "intro": "Le parcours rénal de chacun est différent. Pour nous aider à vous montrer les informations les plus pertinentes, veuillez nous dire où vous en êtes actuellement. Il n'y a pas de bonnes ou de mauvaises réponses.",
+    "error": "Veuillez sélectionner une option qui décrit votre situation. Si aucune ne convient, sélectionnez « Je soutiens un membre de ma famille ou un ami » pour continuer.",
+    "formLabel": "Options d'étape du parcours",
+    "legendLabel": "Sélectionnez où vous en êtes dans votre parcours rénal",
+    "radioGroupLabel": "Options d'étape du parcours",
+    "listenToQuestion": "Écouter cette question",
+    "audioText": "Où en êtes-vous dans votre parcours ? Sélectionnez l'option qui décrit le mieux votre situation.",
+    "reassurance": "Ne vous inquiétez pas si vous n'êtes pas sûr(e) de l'option qui vous convient le mieux. Vous pourrez toujours explorer toutes les options de traitement plus tard, et votre équipe néphrologique pourra clarifier votre situation. Votre sélection nous aide à vous montrer d'abord les informations les plus pertinentes.",
+    "needHelp": "J'ai besoin d'aide pour choisir",
+    "stages": {
+      "suspected": {
+        "title": "Je pense avoir une maladie rénale",
+        "description": "Vous êtes préoccupé(e) par votre santé rénale et souhaitez en savoir plus sur ce que signifie une maladie rénale."
+      },
+      "earlyDiagnosis": {
+        "title": "Je viens d'être diagnostiqué(e) - MRC stade précoce",
+        "description": "Vous avez récemment appris votre état rénal et souhaitez comprendre ce que cela signifie pour vous."
+      },
+      "lateDiagnosis": {
+        "title": "J'ai été diagnostiqué(e) - MRC stade avancé",
+        "description": "Votre fonction rénale a diminué de manière significative et vous devrez peut-être envisager des options de traitement bientôt."
+      },
+      "choosingTreatment": {
+        "title": "Je dois choisir un traitement bientôt",
+        "description": "Votre équipe néphrologique vous a dit que vous devrez commencer un traitement dans les mois à venir et vous souhaitez connaître vos options."
+      },
+      "transplantPending": {
+        "title": "Je dois recevoir une greffe - je veux en savoir plus",
+        "description": "Vous êtes sur la liste d'attente de greffe ou avez un donneur vivant et souhaitez savoir à quoi vous attendre."
+      },
+      "dialysisPending": {
+        "title": "Je dois commencer la dialyse - je veux en savoir plus",
+        "description": "Vous allez bientôt commencer un traitement de dialyse et souhaitez comprendre les différents types et à quoi ressemblera la vie quotidienne."
+      },
+      "supporting": {
+        "title": "Je soutiens un membre de ma famille ou un ami",
+        "description": "Quelqu'un de proche a une maladie rénale et vous souhaitez comprendre ses options pour mieux le soutenir."
+      }
+    },
+    "helpModal": {
+      "title": "Besoin d'aide pour choisir ?",
+      "intro": "Il est tout à fait normal de ne pas savoir quelle étape vous décrit le mieux. Voici quelques conseils :",
+      "tip1Title": "Pensez à votre dernier rendez-vous",
+      "tip1Text": "Qu'est-ce que votre équipe néphrologique vous a dit sur votre fonction rénale et les prochaines étapes ?",
+      "tip2Title": "Réfléchissez à ce qui vous a amené ici",
+      "tip2Text": "Cet outil vous a-t-il été donné par un médecin ou un(e) infirmier(ère) ? Ils ont peut-être suggéré quelle étape s'applique à vous.",
+      "tip3Title": "Si vous n'êtes toujours pas sûr(e)",
+      "tip3Text": "Choisissez l'option qui semble la plus proche de votre situation. Vous pourrez toujours explorer toutes les informations de cet outil, quelle que soit l'option sélectionnée.",
+      "note": "Votre équipe néphrologique sont les experts de vos soins. Si vous avez des questions sur votre santé rénale, veuillez les contacter directement.",
+      "understand": "Je comprends"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Parlez-nous de vous",
+      "description": "Ces questions nous aident à vous montrer les informations les plus pertinentes pour votre situation. Vos réponses sont privées et ne seront pas enregistrées après cette session.",
+      "features": {
+        "questions": "7 questions rapides",
+        "time": "Prend 3 à 5 minutes",
+        "private": "Totalement confidentiel",
+        "skip": "Passez n'importe quelle question"
+      },
+      "beginButton": "Commencer les questions",
+      "skipText": "Si vous préférez ne pas répondre à ces questions, vous pouvez passer directement aux informations générales sur les traitements.",
+      "skipButton": "Passer toutes les questions",
+      "backToJourney": "Retour à l'étape du parcours"
+    },
+    "progress": {
+      "label": "Progression des questions",
+      "questionOf": "Question {{current}} sur {{total}}",
+      "complete": "terminé"
+    },
+    "types": {
+      "scale": "Échelle de notation",
+      "single": "Choix unique",
+      "multiple": "Choix multiple"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "Que savez-vous sur les maladies rénales et leurs traitements ?",
+        "hint": "Cela nous aide à adapter les informations à votre niveau de compréhension actuel."
+      },
+      "goal": {
+        "title": "Qu'aimeriez-vous retirer de cette session ?",
+        "hint": "Sélectionnez l'option qui décrit le mieux votre objectif principal aujourd'hui."
+      },
+      "learning": {
+        "title": "Comment préférez-vous apprendre de nouvelles informations ?",
+        "hint": "Cela nous aide à présenter les informations de la manière qui vous convient le mieux."
+      },
+      "comfort": {
+        "title": "À quel point êtes-vous à l'aise avec les procédures médicales ?",
+        "hint": "C'est un sujet sensible. Vous pouvez passer cette question si vous préférez."
+      },
+      "support": {
+        "title": "Avez-vous du soutien à domicile ?",
+        "hint": "Certains traitements sont plus faciles avec l'aide de la famille ou des aidants."
+      },
+      "living": {
+        "title": "Où habitez-vous ?",
+        "hint": "Cela nous aide à comprendre quels traitements pourraient le mieux fonctionner dans votre environnement domestique."
+      },
+      "priorities": {
+        "title": "Qu'est-ce qui compte le plus pour vous dans le choix d'un traitement ?",
+        "hint": "Vos priorités nous aideront à mettre en évidence ce qui compte pour vous dans chaque option de traitement."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Sélectionnez jusqu'à {{max}} priorités les plus importantes pour vous.",
+      "selectAll": "Sélectionnez toutes les réponses applicables - vous pouvez choisir plus d'une option."
+    },
+    "audio": {
+      "listen": "Écouter cette question"
+    },
+    "slider": {
+      "ariaLabel": "Valeur de {{min}} à {{max}}"
+    },
+    "skipQuestion": "Passer cette question",
+    "viewResults": "Voir mes résultats",
+    "nextQuestion": "Question suivante",
+    "knowledge": {
+      "levels": {
+        "1": "Je sais très peu",
+        "2": "J'en sais un peu",
+        "3": "J'ai quelques connaissances",
+        "4": "J'en sais assez",
+        "5": "Je suis très bien informé(e)"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Apprendre les bases",
+          "description": "Je veux comprendre ce que signifie la maladie rénale et les options de traitement disponibles"
+        },
+        "compare": {
+          "label": "Comparer mes options",
+          "description": "Je connais déjà les bases et je veux comparer les différents traitements"
+        },
+        "prepare": {
+          "label": "Préparer une discussion",
+          "description": "Je veux préparer des questions et des réflexions pour mon prochain rendez-vous"
+        },
+        "support": {
+          "label": "Soutenir quelqu'un d'autre",
+          "description": "J'aide un membre de ma famille ou un ami à comprendre ses options"
+        },
+        "notSure": {
+          "label": "Je ne suis pas encore sûr(e)",
+          "description": "Je veux juste explorer et voir quelles informations sont disponibles"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Schémas et images visuels",
+          "description": "Les images, graphiques et schémas m'aident à comprendre"
+        },
+        "audio": {
+          "label": "Écouter les informations",
+          "description": "Je préfère entendre les informations lues à haute voix"
+        },
+        "reading": {
+          "label": "Lire du texte",
+          "description": "J'aime lire des informations écrites détaillées"
+        },
+        "video": {
+          "label": "Regarder des vidéos",
+          "description": "Les vidéos et animations fonctionnent le mieux pour moi"
+        },
+        "interactive": {
+          "label": "Outils interactifs",
+          "description": "J'apprends en faisant et en explorant"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Très mal à l'aise",
+        "2": "Plutôt mal à l'aise",
+        "3": "Neutre",
+        "4": "Assez à l'aise",
+        "5": "Très à l'aise"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Oui, je vis avec de la famille ou un(e) partenaire qui peut m'aider",
+        "carers": "Oui, j'ai des aidants professionnels qui m'aident",
+        "familyNearby": "Oui, de la famille habite à proximité et peut me rendre visite",
+        "limitedSupport": "J'ai un soutien limité disponible",
+        "preferNotSay": "Je préfère ne pas répondre"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "Maison avec beaucoup d'espace",
+        "homeLimited": "Maison avec espace de rangement limité",
+        "flat": "Appartement",
+        "supported": "Logement assisté ou établissement de soins"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Passer du temps avec ma famille",
+        "independence": "Maintenir mon indépendance",
+        "minimiseHospital": "Minimiser le temps à l'hôpital",
+        "routine": "Garder une routine régulière",
+        "control": "Avoir le contrôle sur mon traitement",
+        "longevity": "Vivre le plus longtemps possible",
+        "quality": "Qualité de vie au quotidien",
+        "travel": "Pouvoir voyager"
+      }
+    }
+  },
+  "hub": {
+    "title": "Vos informations personnalisées",
+    "subtitle": "Selon vos réponses, voici ce que nous vous recommandons d'explorer.",
+    "welcome": {
+      "title": "Vos options de traitement personnalisées",
+      "message": "En fonction de ce que vous nous avez dit, voici des ressources pour vous aider à comprendre votre état rénal et explorer vos options.",
+      "reminder": "N'oubliez pas que votre équipe néphrologique vous aidera à prendre la décision finale.",
+      "badge": "Votre parcours personnalisé"
+    },
+    "session": {
+      "timeRemaining": "Temps restant de session :",
+      "extend": "Prolonger la session",
+      "updateAnswers": "Modifier mes réponses",
+      "startOver": "Recommencer"
+    },
+    "alert": {
+      "title": "N'oubliez pas de sauvegarder votre résumé",
+      "message": "Vos informations ne seront pas conservées après cette session. Créez un résumé avant de partir pour garder une trace de votre exploration.",
+      "saveNow": "Sauvegarder maintenant"
+    },
+    "pathway": {
+      "title": "Comment souhaitez-vous explorer ?",
+      "guided": {
+        "title": "Votre parcours recommandé",
+        "badge": "Recommandé",
+        "description": "Suivez un parcours guidé étape par étape à travers les options de traitement adaptées à votre situation. Parfait si vous voulez une direction claire et un accompagnement.",
+        "action": "Commencer le parcours guidé"
+      },
+      "free": {
+        "title": "Explorer librement",
+        "description": "Parcourez toutes les options à votre rythme. Accédez directement aux sujets qui vous intéressent. Idéal si vous savez déjà ce que vous cherchez.",
+        "action": "Parcourir toutes les options"
+      }
+    },
+    "content": {
+      "title": "Outils pour vous aider à décider",
+      "subtitle": "Explorez chaque outil pour prendre une décision éclairée"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Options de traitement",
+        "description": "Découvrez toutes les options de traitement rénal disponibles, y compris les types de dialyse, la greffe et les soins conservateurs.",
+        "action": "Explorer"
+      },
+      "model": {
+        "title": "Modèle 3D des reins",
+        "description": "Explorez des modèles 3D interactifs montrant comment les différents traitements fonctionnent dans votre corps. Visualisez le processus.",
+        "action": "Voir le modèle"
+      },
+      "compare": {
+        "title": "Comparer les traitements",
+        "description": "Voir tous les traitements côte à côte. Comparez ce qui compte pour vous - du temps quotidien à la flexibilité de voyage.",
+        "action": "Comparer"
+      },
+      "values": {
+        "title": "Exercice sur les valeurs",
+        "description": "Réfléchissez à ce qui compte le plus pour vous. Cet exercice aide à clarifier vos priorités pour guider votre décision.",
+        "action": "Commencer"
+      },
+      "chat": {
+        "title": "Poser des questions",
+        "description": "Discutez avec notre assistant IA sur les options de traitement rénal. Obtenez des réponses à vos questions de manière conversationnelle.",
+        "action": "Démarrer le chat"
+      }
+    },
+    "status": {
+      "new": "Nouveau",
+      "inProgress": "En cours",
+      "completed": "Terminé"
+    },
+    "summary": {
+      "title": "Prêt(e) à revoir votre parcours ?",
+      "description": "Voir tout ce que vous avez exploré et créer un résumé à partager avec votre équipe néphrologique lors de votre prochain rendez-vous.",
+      "button": "Voir votre résumé",
+      "badge": "Dernière étape"
+    },
+    "quickAction": {
+      "summary": "Voir votre résumé"
+    }
+  },
+  "treatments": {
+    "title": "Comprendre vos options de traitement",
+    "subtitle": "Il existe différentes façons de traiter l'insuffisance rénale. Chacune a ses avantages et ses considérations.",
+    "detailedInfoAriaLabel": "Informations détaillées sur {{treatment}}",
+    "facts": {
+      "transplant": {
+        "survival": "Meilleurs résultats de survie à long terme",
+        "surgery": "Nécessite une chirurgie et un temps de récupération",
+        "medication": "Médicaments à vie nécessaires"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 fois par semaine, 4-5 heures chaque fois",
+        "professionalCare": "Soins et surveillance professionnels",
+        "travel": "Déplacement au centre nécessaire"
+      },
+      "peritoneal": {
+        "dailyHome": "Traitement quotidien à domicile",
+        "timingOptions": "Options nocturnes ou diurnes",
+        "flexibility": "Plus grande flexibilité et indépendance"
+      },
+      "conservative": {
+        "comfort": "Accent sur le confort et la qualité de vie",
+        "noDialysis": "Aucun traitement de dialyse requis",
+        "symptomManagement": "Gestion active des symptômes"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "Greffe de rein",
+        "shortDescription": "Recevoir un rein sain d'un donneur",
+        "description": "Une greffe de rein consiste à recevoir un rein sain d'un donneur vivant (comme un membre de la famille ou un ami) ou d'un donneur décédé. Une greffe réussie peut offrir la meilleure qualité de vie et la plus longue survie pour de nombreuses personnes souffrant d'insuffisance rénale.",
+        "benefits": [
+          "Offre souvent la meilleure qualité de vie",
+          "Pas de séances de dialyse régulières nécessaires",
+          "Moins de restrictions alimentaires",
+          "Meilleurs niveaux d'énergie pour la plupart des gens"
+        ],
+        "considerations": [
+          "Nécessite une chirurgie majeure",
+          "Besoin de prendre des médicaments immunosuppresseurs à vie",
+          "Peut nécessiter d'attendre un rein compatible",
+          "Ne convient pas à tout le monde"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Hémodialyse",
+        "shortDescription": "Filtration du sang à l'aide d'une machine",
+        "description": "L'hémodialyse utilise une machine pour filtrer votre sang à l'extérieur de votre corps. Cela se fait généralement dans une unité de dialyse à l'hôpital ou dans un centre communautaire, typiquement trois fois par semaine pendant environ quatre heures par séance. Certaines personnes font l'hémodialyse à domicile.",
+        "benefits": [
+          "Efficace pour éliminer les déchets et l'excès de liquide",
+          "Contact régulier avec l'équipe soignante",
+          "Option d'hémodialyse à domicile disponible pour certains",
+          "Le traitement est fait pour vous"
+        ],
+        "considerations": [
+          "Nécessite des visites régulières à l'hôpital ou au centre",
+          "Nécessite un accès vasculaire (fistule ou cathéter)",
+          "Peut se sentir fatigué(e) après le traitement",
+          "Restrictions alimentaires et de liquides applicables"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Dialyse péritonéale",
+        "shortDescription": "Filtration du sang à l'intérieur du corps via la paroi abdominale",
+        "description": "La dialyse péritonéale utilise la paroi de votre abdomen (péritoine) comme filtre naturel. Un liquide spécial est introduit dans votre abdomen par un petit tube, absorbe les déchets, puis est drainé. Cela peut être fait à domicile, soit pendant la journée, soit la nuit pendant que vous dormez.",
+        "benefits": [
+          "Fait à domicile, plus d'indépendance",
+          "Horaire plus flexible",
+          "Plus doux pour le corps, moins de hauts et de bas",
+          "Plus facile de voyager"
+        ],
+        "considerations": [
+          "Nécessite un engagement de traitement quotidien",
+          "Besoin d'un tube permanent dans votre abdomen",
+          "Risque d'infection si la technique n'est pas maintenue",
+          "Nécessite de l'espace de stockage pour les fournitures"
+        ]
+      },
+      "conservative": {
+        "title": "Traitement conservateur",
+        "shortDescription": "Gestion des symptômes sans dialyse",
+        "description": "Le traitement conservateur se concentre sur le maintien de la qualité de vie et la gestion des symptômes sans dialyse ni greffe. Cette approche peut convenir à certaines personnes, en particulier celles qui sont âgées, fragiles ou qui ont d'autres problèmes de santé graves. Il implique une gestion attentive des symptômes, des médicaments et le soutien de l'équipe de soins rénaux.",
+        "benefits": [
+          "Pas de séances de dialyse ni de chirurgie nécessaires",
+          "Accent sur la qualité de vie et le confort",
+          "Peut être approprié pour certains patients âgés ou fragiles",
+          "Maintenir la routine habituelle autant que possible"
+        ],
+        "considerations": [
+          "La fonction rénale continuera à décliner",
+          "Les symptômes nécessiteront une gestion active",
+          "Important d'avoir des conversations honnêtes sur les attentes",
+          "La planification anticipée des soins est recommandée"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "Comparer les options de traitement",
+    "subtitle": "Voyez comment les différents traitements se comparent sur des facteurs clés.",
+    "categories": {
+      "lifestyle": "Impact sur le mode de vie",
+      "medical": "Considérations médicales"
+    },
+    "items": {
+      "scheduleFlexibility": "Flexibilité de l'emploi du temps",
+      "travelAbility": "Capacité à voyager",
+      "dietRestrictions": "Restrictions alimentaires",
+      "hospitalVisits": "Visites à l'hôpital",
+      "surgeryRequired": "Chirurgie requise",
+      "medications": "Médicaments"
+    },
+    "values": {
+      "high": "Élevé",
+      "medium": "Moyen",
+      "low": "Faible",
+      "limited": "Limité",
+      "varies": "Variable",
+      "fewer": "Moins",
+      "more": "Plus",
+      "moderate": "Modéré",
+      "periodic": "Contrôles périodiques",
+      "threePerWeek": "3 fois par semaine",
+      "monthly": "Mensuel",
+      "asNeeded": "Selon les besoins",
+      "major": "Chirurgie majeure",
+      "minor": "Intervention mineure",
+      "none": "Aucun",
+      "lifelong": "Immunosuppresseurs à vie",
+      "several": "Plusieurs médicaments",
+      "symptomBased": "Selon les symptômes"
+    }
+  },
+  "compare": {
+    "title": "Comparer les options de traitement",
+    "subtitle": "Voyez comment les différents traitements se comparent sur les facteurs qui comptent pour vous.",
+    "intro": "Cette comparaison montre comment chaque option de traitement se comporte sur différents aspects de la vie quotidienne et des soins médicaux.",
+    "description": "Cet outil vous aide à comparer les options de traitement rénal côte à côte. Vous pouvez vous concentrer sur ce qui compte le plus pour vous. Sélectionnez les facteurs que vous souhaitez comparer ci-dessous.",
+    "customise": "Personnalisez votre comparaison",
+    "showTreatments": "Afficher les traitements :",
+    "highlightForMe": "Mettre en évidence les traitements pour moi",
+    "highlightHint": "Basé sur vos valeurs et priorités du questionnaire",
+    "understandingIcons": "Comprendre les icônes",
+    "scrollHint": "Faites défiler horizontalement pour voir tous les traitements",
+    "tableHeading": "Tableau de comparaison des traitements",
+    "tableLabel": "Comparaison des options de traitement rénal",
+    "criteria": "Critères",
+    "recommended": "Recommandé",
+    "remember": "N'oubliez pas",
+    "guidance": "Aucun traitement n'est parfait pour tout le monde. Le meilleur choix dépend de votre situation personnelle, de votre santé et de vos valeurs. Cette comparaison est un point de départ pour les discussions avec votre équipe néphrologique.",
+    "addToSummary": "Ajouter à mon résumé",
+    "treatments": {
+      "transplant": {
+        "name": "Greffe de rein",
+        "type": "Chirurgie"
+      },
+      "hemodialysis": {
+        "name": "Hémodialyse",
+        "type": "Dialyse en centre"
+      },
+      "peritoneal": {
+        "name": "Dialyse péritonéale",
+        "type": "Dialyse à domicile"
+      },
+      "conservative": {
+        "name": "Soins conservateurs",
+        "type": "Soins de soutien"
+      }
+    },
+    "categories": {
+      "dailyLife": "Impact sur la vie quotidienne",
+      "practical": "Considérations pratiques",
+      "medical": "Facteurs médicaux",
+      "support": "Besoins de soutien",
+      "health": "Résultats de santé"
+    },
+    "criteria": {
+      "timeCommitment": "Temps requis par semaine",
+      "timeCommitmentHint": "Heures consacrées au traitement",
+      "location": "Lieu du traitement",
+      "locationHint": "Où le traitement a lieu",
+      "travel": "Impact sur les voyages",
+      "travelHint": "Capacité à voyager et partir en vacances",
+      "diet": "Restrictions alimentaires",
+      "dietHint": "Limitations sur la nourriture et les boissons",
+      "surgery": "Chirurgie requise",
+      "surgeryHint": "Procédures initiales nécessaires",
+      "supportNeeded": "Soutien nécessaire",
+      "supportNeededHint": "Aide de la famille ou des aidants",
+      "recoveryTime": "Temps de récupération",
+      "recoveryTimeHint": "Temps pour s'adapter au traitement",
+      "longTermOutlook": "Perspectives à long terme",
+      "longTermOutlookHint": "Résultats attendus au fil du temps",
+      "scheduleFlexibility": "Flexibilité de l'emploi du temps",
+      "scheduleFlexibilityHint": "Contrôle sur votre emploi du temps",
+      "trainingRequired": "Formation requise",
+      "trainingRequiredHint": "Temps d'apprentissage nécessaire",
+      "survivalRates": "Taux de survie",
+      "survivalRatesHint": "Résultats généraux (varient selon la personne)",
+      "qualityOfLife": "Qualité de vie",
+      "qualityOfLifeHint": "Bien-être général",
+      "energyLevels": "Niveaux d'énergie",
+      "energyLevelsHint": "Énergie et fatigue typiques"
+    },
+    "values": {
+      "minimalAfterRecovery": "Minimal après récupération",
+      "regularCheckupsOnly": "Contrôles réguliers uniquement",
+      "12to15HrsWeekly": "12-15 heures par semaine",
+      "plusTravelTime": "Plus le temps de trajet",
+      "dailyExchanges": "Échanges quotidiens",
+      "canBeDoneOvernight": "Peut être fait la nuit",
+      "minimal": "Minimal",
+      "clinicVisitsAsNeeded": "Visites en clinique selon les besoins",
+      "noRestrictions": "Aucune restriction",
+      "afterRecovery": "Après récupération",
+      "hospitalClinic": "Hôpital/clinique",
+      "dialysisUnit": "Unité de dialyse",
+      "home": "Domicile",
+      "anyCleanSpace": "Tout espace propre",
+      "noEquipmentNeeded": "Aucun équipement nécessaire",
+      "veryFlexible": "Très flexible",
+      "takeMedicationsOnly": "Prendre les médicaments uniquement",
+      "difficult": "Difficile",
+      "mustArrangeHolidayDialysis": "Doit organiser la dialyse de vacances",
+      "goodFlexibility": "Bonne flexibilité",
+      "suppliesCanBeSentAhead": "Les fournitures peuvent être envoyées à l'avance",
+      "fewRestrictions": "Peu de restrictions",
+      "nearNormalDiet": "Régime quasi normal",
+      "moderateRestrictions": "Restrictions modérées",
+      "fluidAndPotassiumLimits": "Limites de liquides et de potassium",
+      "lessStrict": "Moins strict",
+      "moreFlexibility": "Plus de flexibilité",
+      "managedDiet": "Régime géré",
+      "tailoredToSymptoms": "Adapté aux symptômes",
+      "majorSurgery": "Chirurgie majeure",
+      "transplantOperationRequired": "Opération de greffe requise",
+      "minorSurgery": "Chirurgie mineure",
+      "fistulaOrGraftCreation": "Création de fistule ou de greffon",
+      "minorProcedure": "Intervention mineure",
+      "pdCatheterInsertion": "Insertion de cathéter de DP",
+      "noneRequired": "Aucune requise",
+      "noSurgicalProcedures": "Aucune procédure chirurgicale",
+      "initialSupport": "Soutien initial",
+      "duringRecoveryPeriod": "Pendant la période de récupération",
+      "noneNeeded": "Aucun nécessaire",
+      "professionalStaffProvideCare": "Le personnel professionnel fournit les soins",
+      "canDoIndependently": "Peut être fait de manière autonome",
+      "varies": "Variable",
+      "dependsOnSymptoms": "Dépend des symptômes",
+      "high": "Élevé",
+      "normalDailyLifePossible": "Vie quotidienne normale possible",
+      "low": "Faible",
+      "fixedHospitalSlots": "Créneaux hospitaliers fixes",
+      "chooseYourSchedule": "Choisissez votre emploi du temps",
+      "noFixedSchedule": "Pas d'emploi du temps fixe",
+      "medicationTraining": "Formation aux médicaments",
+      "learningYourNewRoutine": "Apprendre votre nouvelle routine",
+      "staffDoEverything": "Le personnel fait tout",
+      "oneToTwoWeeksTraining": "1-2 semaines de formation",
+      "learnTheTechnique": "Apprendre la technique",
+      "symptomManagement": "Gestion des symptômes",
+      "medicationGuidance": "Conseils sur les médicaments",
+      "bestOutcomes": "Meilleurs résultats",
+      "forSuitableCandidates": "Pour les candidats appropriés",
+      "good": "Bon",
+      "wellEstablishedTreatment": "Traitement bien établi",
+      "similarToHaemodialysis": "Similaire à l'hémodialyse",
+      "qualityFocused": "Axé sur la qualité",
+      "comfortOverLongevity": "Confort plutôt que longévité",
+      "excellent": "Excellent",
+      "nearNormalLifePossible": "Vie quasi normale possible",
+      "moderate": "Modéré",
+      "treatmentAffectsDailyRoutine": "Le traitement affecte la routine quotidienne",
+      "moreIndependence": "Plus d'indépendance",
+      "focusOnComfort": "Accent sur le confort",
+      "symptomManagementPriority": "Priorité à la gestion des symptômes",
+      "oftenExcellent": "Souvent excellent",
+      "energyRestored": "Énergie restaurée",
+      "variable": "Variable",
+      "fatigueAfterSessions": "Fatigue après les séances",
+      "generallyGood": "Généralement bon",
+      "steadyEnergyLevels": "Niveaux d'énergie stables",
+      "managedWithSupport": "Géré avec du soutien"
+    },
+    "legend": {
+      "title": "Guide d'évaluation",
+      "excellent": "Excellent",
+      "good": "Bon",
+      "moderate": "Modéré",
+      "challenging": "Difficile",
+      "varies": "Variable",
+      "excellentDesc": "Excellent - Généralement très favorable",
+      "goodDesc": "Bon - Généralement favorable",
+      "moderateDesc": "Modéré - Quelques limitations à considérer",
+      "challengingDesc": "Difficile - Considérations importantes",
+      "variesDesc": "Variable - Dépend des circonstances individuelles"
+    },
+    "viewDetails": "Voir les détails",
+    "backToHub": "Retour au centre",
+    "printComparison": "Imprimer la comparaison"
+  },
+  "chat": {
+    "title": "Poser des questions",
+    "subtitle": "Notre assistant IA peut répondre à des questions générales sur les traitements rénaux.",
+    "placeholder": "Tapez votre question ici...",
+    "send": "Envoyer",
+    "disclaimer": "Cet assistant fournit uniquement des informations générales et ne remplace pas les conseils médicaux de votre équipe de soins rénaux.",
+    "welcomeMessage": "Bonjour ! Je suis là pour vous aider à répondre à vos questions sur les maladies rénales et les options de traitement. Comment puis-je vous aider aujourd'hui ?",
+    "errorMessage": "Désolé, je n'ai pas pu traiter votre message. Veuillez réessayer.",
+    "thinking": "Réflexion en cours...",
+    "backToHub": "Retour au centre",
+    "privacyReminder": "Rappel de confidentialité :",
+    "readyToHelp": "Prêt à vous aider",
+    "status": {
+      "online": "En ligne"
+    },
+    "messagesLabel": "Messages du chat",
+    "inputLabel": "Saisie du message",
+    "audioInput": "Saisie vocale",
+    "piiWarning": "Veuillez ne pas partager d'informations personnelles comme votre nom, numéro NHS ou adresse. Ce chat n'est pas enregistré.",
+    "welcome": {
+      "greeting": "Bonjour ! Je suis l'assistant de soins rénaux du NHS. Je suis là pour vous aider à comprendre les options de traitement rénal.",
+      "prompt": "Vous pouvez me poser des questions sur la dialyse, les greffes, les soins conservateurs ou tout autre sujet lié au traitement rénal. Comment puis-je vous aider aujourd'hui ?"
+    },
+    "suggestedQuestions": "Questions suggérées",
+    "questions": {
+      "q1": "Quelle est la différence entre l'hémodialyse et la dialyse péritonéale ?",
+      "q2": "Combien de temps dure une opération de greffe de rein ?",
+      "q3": "Puis-je voyager pendant que je suis sous dialyse ?",
+      "q4": "Quels sont les effets secondaires du traitement par dialyse ?",
+      "q5": "Comment savoir si je suis éligible à une greffe ?",
+      "q6": "Qu'est-ce que les soins conservateurs et qui pourrait les choisir ?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Dites-m'en plus",
+      "prosAndCons": "Quels sont les avantages et inconvénients ?",
+      "dailyLife": "Comment cela affecte-t-il la vie quotidienne ?"
+    },
+    "voice": {
+      "startRecording": "Démarrer la saisie vocale",
+      "stopRecording": "Arrêter l'enregistrement",
+      "listening": "Écoute en cours...",
+      "processing": "Traitement en cours...",
+      "speaking": "Parole en cours...",
+      "paused": "En pause",
+      "playResponse": "Écouter la réponse",
+      "pauseResponse": "Pause",
+      "resumeResponse": "Reprendre",
+      "stopResponse": "Arrêter",
+      "loading": "Chargement audio...",
+      "loadingAudio": "Chargement audio...",
+      "requesting": "Demande d'autorisation...",
+      "notSupported": "Saisie vocale non prise en charge",
+      "error": "Une erreur s'est produite",
+      "micPermissionDenied": "L'autorisation du microphone a été refusée. Veuillez autoriser l'accès pour utiliser la saisie vocale.",
+      "noAudioDetected": "Aucun audio n'a été détecté. Veuillez réessayer.",
+      "transcriptionFailed": "Échec de la transcription audio. Veuillez réessayer.",
+      "synthesisFailed": "Échec de la lecture audio. Veuillez réessayer."
+    }
+  },
+  "values": {
+    "title": "Ce qui compte pour vous",
+    "subtitle": "Évaluez l'importance de chaque facteur pour vous. Cela nous aide à personnaliser vos informations.",
+    "instructions": "Déplacez le curseur pour indiquer l'importance (1 = Pas important, 5 = Très important)",
+    "sliderLabel": "Évaluation de l'importance",
+    "startExercise": "Commencer l'exercice sur les valeurs",
+    "lessImportant": "Moins important",
+    "moreImportant": "Plus important",
+    "skipStatement": "Passer cette déclaration",
+    "viewResults": "Voir mes résultats",
+    "statementsRemaining_one": "{{count}} déclaration restante",
+    "statementsRemaining_other": "{{count}} déclarations restantes",
+    "completed": "Terminé",
+    "intro": {
+      "title": "Qu'est-ce qui compte le plus pour vous ?",
+      "description": "Choisir un traitement rénal est une décision personnelle. Cet exercice vous aide à réfléchir à vos valeurs et priorités afin de pouvoir en discuter avec votre équipe néphrologique.",
+      "feature1": "10 déclarations de valeurs à évaluer",
+      "feature2": "Prend environ 5 minutes",
+      "feature3": "Pas de bonnes ou mauvaises réponses",
+      "feature4": "Voir vos priorités résumées",
+      "beginButton": "Commencer l'exercice",
+      "allAtOnce": "Préférez-vous voir toutes les déclarations en même temps ?",
+      "viewAll": "Voir toutes les déclarations"
+    },
+    "progress": {
+      "statement": "Déclaration",
+      "of": "sur"
+    },
+    "defaultHint": "Évaluez l'importance de ceci pour vous de 1 (Pas important) à 5 (Très important)",
+    "listenStatement": "Écouter cette déclaration",
+    "nav": {
+      "back": "Retour",
+      "skip": "Passer",
+      "next": "Suivant",
+      "finish": "Terminer",
+      "backToIntro": "Retour à l'introduction",
+      "seeResults": "Voir mes résultats"
+    },
+    "allAtOnce": {
+      "title": "Évaluer toutes les déclarations",
+      "description": "Évaluez chaque déclaration de 1 (Pas important) à 5 (Très important).",
+      "progress": "Terminé"
+    },
+    "results": {
+      "title": "Résumé de vos valeurs",
+      "description": "Selon vos réponses, voici ce qui compte le plus pour vous.",
+      "topPriorities": "Vos principales priorités",
+      "allValues": "Toutes vos valeurs",
+      "editValues": "Modifier vos valeurs",
+      "compareLink": "Comparer les traitements",
+      "addToSummary": "Ajouter à mon résumé",
+      "viewTreatments": "Voir les traitements correspondant à vos valeurs",
+      "backToHub": "Retour au centre"
+    },
+    "ratingLabels": {
+      "1": "Pas important",
+      "2": "Peu important",
+      "3": "Moyennement important",
+      "4": "Important",
+      "5": "Très important"
+    },
+    "ratings": {
+      "1": "Pas important",
+      "2": "Peu important",
+      "3": "Moyennement important",
+      "4": "Très important",
+      "5": "Extrêmement important"
+    },
+    "statements": {
+      "travel": {
+        "statement": "Pouvoir voyager est important pour moi",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "hospital-time": {
+        "statement": "Je veux minimiser le temps passé à l'hôpital",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "needles": {
+        "statement": "Je suis à l'aise avec les aiguilles et les procédures médicales",
+        "hint": "Évaluez votre accord avec cette déclaration"
+      },
+      "independence": {
+        "statement": "Maintenir mon indépendance est très important pour moi",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "family-burden": {
+        "statement": "Je veux éviter d'être un fardeau pour ma famille",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "longevity": {
+        "statement": "Vivre le plus longtemps possible est ma priorité",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "quality-of-life": {
+        "statement": "La qualité de vie compte plus que la durée de vie",
+        "hint": "Évaluez votre accord avec cette déclaration"
+      },
+      "home-treatment": {
+        "statement": "Je préférerais avoir mon traitement à domicile",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "work-activities": {
+        "statement": "Continuer à travailler ou à faire mes activités habituelles est important",
+        "hint": "Évaluez l'importance de ceci pour vous"
+      },
+      "professional-care": {
+        "statement": "Je préférerais que des professionnels s'occupent de mon traitement",
+        "hint": "Évaluez votre accord avec cette déclaration"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Maintenir mon indépendance et pouvoir prendre soin de moi-même",
+        "hint": "Pouvoir faire les activités quotidiennes sans dépendre fortement des autres"
+      },
+      "schedule": {
+        "text": "Avoir de la flexibilité dans mon emploi du temps et pouvoir voyager",
+        "hint": "Pouvoir planifier des activités et des voyages sans horaires de traitement stricts"
+      },
+      "hospitalTime": {
+        "text": "Passer moins de temps à l'hôpital ou en clinique",
+        "hint": "Minimiser le nombre et la durée des visites à l'hôpital"
+      },
+      "homeComfort": {
+        "text": "Recevoir un traitement dans le confort de mon domicile",
+        "hint": "Pouvoir gérer le traitement à domicile plutôt que dans un établissement médical"
+      },
+      "familyBurden": {
+        "text": "Ne pas être un fardeau pour ma famille",
+        "hint": "Minimiser l'impact de mon traitement sur les membres de la famille et les aidants"
+      },
+      "longevity": {
+        "text": "Vivre le plus longtemps possible",
+        "hint": "Privilégier les traitements qui peuvent prolonger l'espérance de vie"
+      },
+      "qualityOfLife": {
+        "text": "Qualité de vie plutôt que durée de vie",
+        "hint": "Privilégier le bien-être quotidien et le confort plutôt que la longévité maximale"
+      },
+      "energyLevels": {
+        "text": "Avoir de bons niveaux d'énergie et me sentir bien",
+        "hint": "Minimiser la fatigue et maintenir une énergie normale pour les activités"
+      },
+      "dietRestrictions": {
+        "text": "Avoir moins de restrictions sur la nourriture et les boissons",
+        "hint": "Pouvoir manger et boire avec des limitations minimales"
+      },
+      "naturalApproach": {
+        "text": "Adopter une approche plus naturelle avec moins d'interventions",
+        "hint": "Préférer des options de traitement qui semblent moins invasives ou médicales"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "Modèle 3D des reins",
+    "backToHub": "Retour au centre",
+    "title": "Visualiseur de modèle 3D des reins",
+    "interactiveDescription": "Explorez un modèle 3D interactif des reins humains. Utilisez votre souris ou le toucher pour faire pivoter et zoomer.",
+    "dragToRotate": "Faites glisser pour faire pivoter",
+    "scrollToZoom": "Faites défiler pour zoomer",
+    "labelsOn": "Étiquettes : Activées",
+    "labelsOff": "Étiquettes : Désactivées",
+    "autoRotateOn": "Rotation auto : Activée",
+    "autoRotateOff": "Rotation auto : Désactivée",
+    "reset": "Réinitialiser",
+    "resetView": "Réinitialiser la vue",
+    "aboutKidneys": "À propos de vos reins",
+    "kidneyInfo": "Vos reins sont des organes en forme de haricot de la taille de votre poing. Ils filtrent environ 200 litres de sang par jour, éliminant les déchets et l'excès de liquide.",
+    "kidneyFunction": "Ce que font les reins",
+    "functionInfo": "Les reins régulent la pression artérielle, produisent des hormones, équilibrent les fluides corporels et filtrent les déchets dans l'urine.",
+    "whenKidneysFail": "Quand les reins cessent de fonctionner",
+    "failureInfo": "Quand les reins perdent leur fonction, des traitements comme la dialyse ou la greffe peuvent aider à faire le travail que vos reins ne peuvent plus faire.",
+    "learnMore": "En savoir plus sur les options de traitement",
+    "exploreTreatments": "Explorer les traitements",
+    "compareTreatments": "Comparer les traitements",
+    "continueJourney": "Continuez votre parcours en explorant les options de traitement",
+    "loading": "Chargement du modèle 3D...",
+    "interactiveTool": "Outil d'apprentissage interactif",
+    "interactive3DModel": "Modèle 3D interactif",
+    "anatomy": {
+      "kidney": {
+        "label": "Rein",
+        "description": "L'organe principal de filtration qui élimine les déchets de votre sang et produit l'urine."
+      },
+      "renalArtery": {
+        "label": "Artère rénale",
+        "description": "Transporte le sang du cœur vers le rein pour la filtration."
+      },
+      "renalVein": {
+        "label": "Veine rénale",
+        "description": "Transporte le sang filtré du rein vers le cœur."
+      },
+      "ureter": {
+        "label": "Uretère",
+        "description": "Le tube qui transporte l'urine du rein vers la vessie."
+      },
+      "adrenalGland": {
+        "label": "Glande surrénale",
+        "description": "Une petite glande au-dessus du rein qui produit des hormones importantes."
+      }
+    }
+  },
+  "summary": {
+    "title": "Résumé de votre session",
+    "subtitle": "Voici un résumé de ce que vous avez exploré aujourd'hui.",
+    "sections": {
+      "journey": "Votre étape du parcours",
+      "values": "Ce qui compte pour vous",
+      "viewed": "Traitements explorés",
+      "questions": "Questions pour votre équipe",
+      "priorities": "Vos priorités",
+      "nextSteps": "Prochaines étapes suggérées"
+    },
+    "print": "Imprimer le résumé",
+    "email": "Envoyer le résumé par e-mail",
+    "startOver": "Recommencer",
+    "share": "Partager",
+    "sessionId": "ID de session",
+    "notSpecified": "Non spécifié",
+    "readyToReview": "Prêt à examiner",
+    "viewed": "Consulté",
+    "noValues": "Vous n'avez pas encore terminé l'exercice sur les valeurs.",
+    "completeValues": "Compléter maintenant",
+    "noTreatments": "Vous n'avez pas encore exploré de traitements.",
+    "exploreTreatments": "Explorer les traitements",
+    "seeAll": "Voir tout",
+    "confirmReset": "Êtes-vous sûr(e) de vouloir recommencer ? Toute votre progression sera perdue.",
+    "addQuestionPlaceholder": "Tapez votre propre question...",
+    "question1": "Quelles options de traitement conviennent à ma situation ?",
+    "question2": "À quoi ressemblerait ma vie quotidienne avec chaque traitement ?",
+    "question3": "Comment puis-je commencer le processus pour mon traitement préféré ?",
+    "step1": {
+      "title": "Examinez ce résumé",
+      "description": "Prenez le temps de regarder ce que vous avez exploré et de réfléchir à d'éventuelles questions supplémentaires."
+    },
+    "step2": {
+      "title": "Partagez avec la famille ou les aidants",
+      "description": "Si vous avez du soutien à domicile, discutez de vos réflexions avec eux."
+    },
+    "step3": {
+      "title": "Discutez avec votre équipe de soins rénaux",
+      "description": "Apportez ce résumé à votre prochain rendez-vous pour discuter de vos options."
+    },
+    "privacy": {
+      "title": "Votre confidentialité",
+      "text": "Ces informations sont stockées uniquement dans votre navigateur et seront effacées lorsque vous terminerez votre session. Aucune donnée personnelle n'a été enregistrée sur un serveur."
+    },
+    "disclaimer": {
+      "title": "Rappel important",
+      "text": "Ce résumé est fourni à titre informatif uniquement et ne constitue pas un avis médical. Discutez toujours de vos options de traitement avec votre équipe de soins rénaux qui connaît votre situation individuelle."
+    },
+    "printForAppointment": "Imprimer pour votre rendez-vous",
+    "askMore": "Avez-vous d'autres questions ?",
+    "printHeader": {
+      "title": "Aide à la décision pour le traitement rénal NHS",
+      "subtitle": "Votre résumé de session personnel",
+      "dateLabel": "Date : {{date}}",
+      "footer": "Généré par l'aide à la décision pour le traitement rénal NHS - {{date}} - Ce document est destiné uniquement à la discussion avec votre équipe soignante"
+    },
+    "shareTitle": "Résumé du traitement rénal NHS",
+    "shareText": "Mon résumé de décision de traitement rénal",
+    "readyForAppointment": "Prêt(e) pour votre prochain rendez-vous ?",
+    "printInstructions": "Imprimez ce résumé pour l'apporter à votre équipe de soins rénaux",
+    "journeyStages": {
+      "newly-diagnosed": "Nouvellement diagnostiqué(e)",
+      "monitoring": "En surveillance",
+      "preparing": "Préparation au traitement",
+      "on-dialysis": "Actuellement sous dialyse",
+      "transplant-waiting": "Sur liste d'attente de greffe",
+      "post-transplant": "Après greffe",
+      "supporting-someone": "Soutien à quelqu'un"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "Vous apprenez votre état rénal et souhaitez comprendre vos options.",
+      "monitoring": "Vos reins sont surveillés et vous vous préparez pour l'avenir.",
+      "preparing": "Vous devez bientôt commencer un traitement et souhaitez comprendre vos choix.",
+      "on-dialysis": "Vous êtes sous dialyse et explorez d'autres options.",
+      "transplant-waiting": "Vous êtes sur la liste d'attente de greffe.",
+      "post-transplant": "Vous avez eu une greffe de rein et souhaitez un soutien continu.",
+      "supporting-someone": "Vous soutenez un proche atteint d'une maladie rénale.",
+      "default": "Votre étape actuelle dans le parcours de soins rénaux."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Hémodialyse",
+      "peritoneal-dialysis": "Dialyse péritonéale",
+      "home-haemodialysis": "Hémodialyse à domicile",
+      "kidney-transplant": "Greffe de rein",
+      "conservative-care": "Soins conservateurs"
+    },
+    "valueLabels": {
+      "1": "Pas important",
+      "2": "Peu important",
+      "3": "Moyennement important",
+      "4": "Important",
+      "5": "Très important",
+      "default": "Important"
+    },
+    "shareWithTeam": {
+      "title": "Partager avec votre équipe néphrologique",
+      "description": "Apportez ce résumé à votre prochain rendez-vous. Votre équipe de soins rénaux peut vous aider à discuter de vos options et répondre à vos questions.",
+      "qrTitle": "Scannez pour accéder à cet outil",
+      "qrDescription": "Votre équipe soignante peut scanner ce code pour ouvrir l'aide à la décision pour le traitement rénal NHS",
+      "printTip": "Imprimez cette page ou enregistrez-la en PDF pour l'apporter à votre rendez-vous",
+      "appointmentReminder": "N'oubliez pas de mentionner ce résumé à votre équipe néphrologique lors de votre prochain rendez-vous"
+    },
+    "progressOverview": {
+      "title": "Progression de votre parcours",
+      "sectionsCompleted": "Sections terminées",
+      "treatmentsExplored": "Traitements explorés",
+      "valuesIdentified": "Principales priorités identifiées",
+      "questionsReady": "Questions pour votre équipe"
+    },
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié dans le presse-papiers",
+    "downloadPDF": "Télécharger le PDF",
+    "saveForLater": "Enregistrer pour plus tard",
+    "completionBadge": "Session terminée",
+    "explorationBadge": "Exploration en cours",
+    "topPrioritiesTitle": "Vos 3 principales priorités",
+    "allPrioritiesTitle": "Toutes vos priorités évaluées",
+    "noPriorities": "Complétez l'exercice sur les valeurs pour voir vos priorités ici",
+    "treatmentInterest": {
+      "high": "Grand intérêt",
+      "viewed": "Exploré",
+      "notViewed": "Pas encore exploré"
+    },
+    "printOptimised": "Cette page est optimisée pour l'impression",
+    "accessibleFormat": "Besoin de ce document dans un autre format ? Demandez à votre équipe néphrologique."
+  },
+  "session": {
+    "timeRemaining": "Temps restant : {{minutes}}",
+    "sessionExpiring": "Votre session va bientôt expirer",
+    "expiringMessage": "Votre session expirera dans {{minutes}} minutes. Souhaitez-vous continuer ?",
+    "extendSession": "Continuer la session",
+    "sessionExpired": "Votre session a expiré. Veuillez recommencer.",
+    "startNewSession": "Démarrer une nouvelle session",
+    "createError": "Échec de la création de la session. Veuillez réessayer."
+  },
+  "footer": {
+    "nhsInfo": "Soins rénaux NHS",
+    "accessibility": "Accessibilité",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfUse": "Conditions d'utilisation",
+    "contact": "Contact",
+    "contactUs": "Nous contacter",
+    "navigationLabel": "Navigation du pied de page",
+    "supportingDecisions": "Soutenir des décisions de santé éclairées",
+    "copyright": "Pears Research Services. Tous droits réservés.",
+    "demoVersion": "Version démo 1.0",
+    "disclaimer": {
+      "title": "Avertissement important",
+      "text1": "Cette application est une",
+      "mockDesign": "maquette de conception",
+      "text2": "créée par",
+      "company": "Pears Research Services",
+      "text3": "à des fins de démonstration uniquement. Elle n'est pas affiliée au NHS ni approuvée par celui-ci."
+    }
+  },
+  "timeline": {
+    "title": "Une journée type",
+    "subtitle": "Découvrez à quoi ressemble une journée typique avec ce traitement",
+    "morning": "Matin",
+    "afternoon": "Après-midi",
+    "evening": "Soir",
+    "night": "Nuit",
+    "treatmentActivities": "{{count}} activités liées au traitement",
+    "legend": {
+      "treatment": "Lié au traitement",
+      "regular": "Activités régulières"
+    },
+    "dayType": {
+      "dialysisDay": "Jour de dialyse (Lun/Mer/Ven)",
+      "restDay": "Jour de repos (Mar/Jeu/Sam/Dim)",
+      "apdNight": "DPA (Automatisée nocturne)",
+      "capd": "DPCA (Échanges manuels)",
+      "typical": "Journée typique"
+    },
+    "toggle": {
+      "dialysisDay": "Jour de dialyse",
+      "restDay": "Jour de repos",
+      "apd": "DPA",
+      "capd": "DPCA"
+    },
+    "duration": {
+      "15min": "15 min",
+      "20min": "20 min",
+      "30min": "30-60 min",
+      "4hrs": "4-5 heures",
+      "8hrs": "8-10 heures"
+    },
+    "transplant": {
+      "wakeUp": "Réveil et routine matinale",
+      "medication": "Prendre les médicaments immunosuppresseurs",
+      "breakfast": "Petit-déjeuner - repas sain et équilibré",
+      "work": "Travail, loisirs ou activités",
+      "lunch": "Déjeuner - peu de restrictions alimentaires",
+      "activities": "Continuer les activités quotidiennes",
+      "exercise": "Exercice léger ou promenade",
+      "dinner": "Dîner en famille",
+      "eveningMeds": "Médicaments du soir",
+      "relax": "Détente et loisirs",
+      "sleep": "Sommeil normal"
+    },
+    "hemo": {
+      "wakeEarly": "Réveil matinal",
+      "lightBreakfast": "Petit-déjeuner léger avec limites de liquides",
+      "travelTo": "Trajet vers le centre de dialyse",
+      "session": "Séance de dialyse",
+      "travelHome": "Retour à la maison après la dialyse",
+      "rest": "Repos et récupération - peut se sentir fatigué(e)",
+      "lightMeal": "Repas léger avec restrictions alimentaires",
+      "quietEvening": "Activités calmes en soirée",
+      "earlyBed": "Coucher tôt après le jour de traitement",
+      "regularWake": "Réveil",
+      "breakfast": "Petit-déjeuner selon les directives alimentaires",
+      "normalDay": "Travail ou activités régulières",
+      "lunch": "Déjeuner - en surveillant liquides et potassium",
+      "continue": "Continuer les activités quotidiennes",
+      "dinner": "Dîner en famille",
+      "leisure": "Temps de loisirs",
+      "sleep": "Coucher normal"
+    },
+    "pd": {
+      "disconnect": "Déconnexion de la machine DPA",
+      "morning": "Routine matinale et douche",
+      "breakfast": "Petit-déjeuner - plus de liberté alimentaire",
+      "work": "Travail ou activités - libre pendant la journée",
+      "lunch": "Déjeuner - moins de restrictions que l'HD",
+      "activities": "Continuer activités, loisirs",
+      "exercise": "Exercice ou activités en plein air",
+      "dinner": "Dîner en famille",
+      "leisure": "Loisirs en soirée",
+      "setup": "Installation de la machine DPA",
+      "overnight": "Sommeil pendant que la DPA fonctionne la nuit",
+      "capdWake": "Réveil",
+      "exchange1": "Premier échange de la journée",
+      "capdBreakfast": "Petit-déjeuner",
+      "capdWork": "Travail ou activités",
+      "exchange2": "Deuxième échange",
+      "capdLunch": "Déjeuner",
+      "capdActivities": "Activités de l'après-midi",
+      "exchange3": "Troisième échange",
+      "capdDinner": "Dîner",
+      "capdLeisure": "Détente en soirée",
+      "exchange4": "Dernier échange avant le coucher",
+      "capdSleep": "Sommeil"
+    },
+    "conservative": {
+      "wake": "Réveil quand vous êtes prêt(e)",
+      "meds": "Prendre les médicaments de gestion des symptômes",
+      "breakfast": "Petit-déjeuner selon tolérance",
+      "morning": "Activités matinales selon l'énergie disponible",
+      "lunch": "Déjeuner - manger ce qui vous fait plaisir",
+      "rest": "Repos ou activités légères",
+      "visitors": "Temps avec la famille ou les visiteurs",
+      "eveningMeds": "Médicaments du soir",
+      "dinner": "Dîner avec les proches",
+      "relax": "Soirée calme à la maison",
+      "sleep": "Repos quand vous êtes fatigué(e)"
+    }
+  },
+  "progress": {
+    "title": "Votre parcours d'apprentissage",
+    "yourProgress": "Votre progression",
+    "complete": "terminé",
+    "treatments": "traitements",
+    "sections": {
+      "title": "Sections à explorer",
+      "questionnaire": "À propos de vous",
+      "questionnaireDesc": "Partagez votre situation",
+      "treatments": "Options de traitement",
+      "treatmentsDesc": "{{viewed}} sur {{total}} explorées",
+      "values": "Exercice sur les valeurs",
+      "valuesDesc": "Clarifiez vos priorités",
+      "chat": "Poser des questions",
+      "chatDesc": "Obtenir des réponses"
+    },
+    "status": {
+      "completed": "Terminé",
+      "inProgress": "En cours"
+    },
+    "badges": {
+      "title": "Vos badges",
+      "explorer": "Explorateur",
+      "allTreatments": "Tous les traitements",
+      "values": "Valeurs claires",
+      "curious": "Esprit curieux",
+      "complete": "Parcours terminé"
+    },
+    "encouragement": {
+      "start": "Commencez votre parcours en explorant les options de traitement",
+      "beginning": "Bon début ! Continuez à explorer pour en savoir plus",
+      "making": "Vous progressez bien !",
+      "halfway": "Plus de la moitié terminée - bravo !",
+      "almost": "Presque terminé ! Encore quelques sections",
+      "complete": "Excellent ! Vous avez tout exploré"
+    },
+    "viewSummary": "Voir votre résumé"
+  },
+  "scenario": {
+    "title": "Et si ? Explorateur de scénarios",
+    "subtitle": "Voyez comment différentes situations de vie fonctionnent avec chaque option de traitement",
+    "tips": "Conseils",
+    "learnMore": "En savoir plus sur {{treatment}}",
+    "compareAll": "Comparer tous les traitements",
+    "legend": {
+      "title": "Guide d'évaluation"
+    },
+    "rating": {
+      "excellent": "Excellent",
+      "good": "Bon",
+      "moderate": "Modéré",
+      "challenging": "Difficile"
+    },
+    "travel": {
+      "title": "Et si je veux voyager ?",
+      "description": "Explorez comment chaque traitement affecte votre capacité à voyager pour les vacances ou les visites",
+      "transplant": "Après la récupération, vous pouvez voyager librement. Emportez vos médicaments et sachez où chercher des soins si nécessaire.",
+      "transplantTip1": "Emportez une lettre de votre équipe de greffe",
+      "transplantTip2": "Renseignez-vous sur les établissements médicaux à votre destination",
+      "transplantTip3": "Mettez des médicaments supplémentaires dans votre bagage à main",
+      "hemodialysis": "Voyager nécessite une planification à l'avance pour organiser la dialyse à votre destination. Des unités de dialyse de vacances existent mais la disponibilité varie.",
+      "hemodialysisTip1": "Réservez la dialyse de vacances 6-8 semaines à l'avance",
+      "hemodialysisTip2": "Votre équipe de dialyse peut aider avec les arrangements",
+      "hemodialysisTip3": "Les voyages au Royaume-Uni sont plus faciles qu'à l'international",
+      "peritoneal": "Plus de liberté pour voyager. Les fournitures peuvent être livrées à votre destination ou vous pouvez les emporter avec vous.",
+      "peritonealTip1": "Organisez la livraison des fournitures 4-6 semaines à l'avance",
+      "peritonealTip2": "Les compagnies aériennes autorisent généralement des bagages supplémentaires pour les fournitures",
+      "peritonealTip3": "Besoin d'un espace propre pour les échanges",
+      "conservative": "Pas de restrictions de dialyse, mais le voyage dépend de comment vous vous sentez. Les courts trajets peuvent être plus faciles à gérer.",
+      "conservativeTip1": "Discutez de vos projets de voyage avec votre équipe soignante",
+      "conservativeTip2": "Considérez attentivement l'assurance voyage",
+      "conservativeTip3": "Prévoyez des périodes de repos pendant les voyages"
+    },
+    "work": {
+      "title": "Et si je veux travailler à temps plein ?",
+      "description": "Voyez comment les différents traitements s'adaptent au maintien d'un emploi",
+      "transplant": "Après 2-3 mois de récupération, la plupart des gens peuvent reprendre un travail à temps plein avec des niveaux d'énergie quasi normaux.",
+      "transplantTip1": "Prévoyez un retour progressif au travail",
+      "transplantTip2": "Vous pourriez avoir besoin de temps libre pour les rendez-vous en clinique",
+      "transplantTip3": "De nombreux employeurs offrent des arrangements flexibles",
+      "hemodialysis": "Possible mais difficile. Les séances durent 4-5 heures trois fois par semaine, plus le temps de récupération. Les créneaux du soir ou du matin peuvent aider.",
+      "hemodialysisTip1": "Discutez d'horaires flexibles avec votre employeur",
+      "hemodialysisTip2": "Créneaux de dialyse le soir ou tôt le matin",
+      "hemodialysisTip3": "L'hémodialyse à domicile offre plus de flexibilité",
+      "peritoneal": "La DPA nocturne signifie que les journées sont libres pour le travail. La DPCA nécessite des pauses pour les échanges mais beaucoup continuent à travailler.",
+      "peritonealTip1": "La DPA est idéale pour les travailleurs à temps plein",
+      "peritonealTip2": "Vous pouvez faire des échanges DPCA au travail",
+      "peritonealTip3": "Les niveaux d'énergie sont souvent meilleurs qu'avec l'HD",
+      "conservative": "Dépend des symptômes et de l'énergie. Beaucoup continuent à temps partiel ou à horaires réduits. L'accent est mis sur la qualité de vie.",
+      "conservativeTip1": "Envisagez de réduire progressivement les heures",
+      "conservativeTip2": "Discutez des aménagements avec la médecine du travail",
+      "conservativeTip3": "Priorisez les activités qui comptent le plus"
+    },
+    "liveAlone": {
+      "title": "Et si je vis seul(e) ?",
+      "description": "Comprenez quels traitements fonctionnent bien pour les personnes vivant de manière indépendante",
+      "transplant": "Vous aurez besoin de soutien pendant la récupération (2-4 semaines), mais ensuite vous pourrez vivre de manière indépendante.",
+      "transplantTip1": "Organisez de l'aide pour les premières semaines après la chirurgie",
+      "transplantTip2": "Ayez des contacts d'urgence disponibles",
+      "transplantTip3": "Configurez des rappels pour les médicaments",
+      "hemodialysis": "Le traitement est effectué dans un centre avec du personnel professionnel. Aucune installation à domicile requise. Contact régulier avec l'équipe soignante.",
+      "hemodialysisTip1": "Le transport hospitalier peut être disponible",
+      "hemodialysisTip2": "Le personnel vous surveille pendant le traitement",
+      "hemodialysisTip3": "Soutien social des autres patients",
+      "peritoneal": "Beaucoup de gens font la DP seuls avec succès. La formation vous prépare bien. Assistance téléphonique 24h/24 disponible.",
+      "peritonealTip1": "Formation approfondie avant de commencer",
+      "peritonealTip2": "Visites régulières à domicile des infirmières DP",
+      "peritonealTip3": "Ligne d'assistance 24 heures pour les urgences",
+      "conservative": "Initialement gérable seul(e). À mesure que les symptômes progressent, vous pourriez avoir besoin d'un soutien croissant. Les services communautaires peuvent aider.",
+      "conservativeTip1": "Contacts réguliers avec l'équipe soignante",
+      "conservativeTip2": "Services de soutien communautaire disponibles",
+      "conservativeTip3": "Planifiez à l'avance les besoins de soins futurs"
+    },
+    "family": {
+      "title": "Et si j'ai de jeunes enfants ?",
+      "description": "Considérez comment les traitements affectent la garde des enfants et le temps en famille",
+      "transplant": "Après la récupération, vous pouvez être pleinement impliqué(e) dans la vie familiale. Meilleure qualité de vie pour une parentalité active.",
+      "transplantTip1": "Organisez la garde d'enfants pendant la récupération",
+      "transplantTip2": "Peut reprendre les activités parentales normales",
+      "transplantTip3": "Bonne énergie pour les activités familiales",
+      "hemodialysis": "Temps régulier loin de la maison pour le traitement. La fatigue après les séances peut affecter les activités familiales. Garde d'enfants nécessaire pendant les séances.",
+      "hemodialysisTip1": "Planifiez les séances autour des heures d'école",
+      "hemodialysisTip2": "Impliquez les enfants de manière appropriée à leur âge",
+      "hemodialysisTip3": "Planifiez du temps en famille les jours sans dialyse",
+      "peritoneal": "Le traitement à domicile signifie plus de temps avec la famille. La DPA nocturne laisse les journées libres pour la garde des enfants.",
+      "peritonealTip1": "La DPA se fait pendant que les enfants dorment",
+      "peritonealTip2": "Les journées sont libres pour les trajets scolaires",
+      "peritonealTip3": "Les enfants peuvent être impliqués en toute sécurité",
+      "conservative": "Pas d'horaire de traitement, mais les niveaux d'énergie varient. Accent sur le temps de qualité avec la famille.",
+      "conservativeTip1": "Priorisez les moments familiaux spéciaux",
+      "conservativeTip2": "Acceptez de l'aide pour la garde des enfants quand nécessaire",
+      "conservativeTip3": "Ayez des conversations honnêtes avec les enfants"
+    }
+  },
+  "treatment": {
+    "dayInLife": "Une journée type"
+  },
+  "glossary": {
+    "title": "Glossaire des termes médicaux",
+    "subtitle": "Définitions simples et claires des termes médicaux liés aux maladies rénales et aux traitements. Utilisez la barre de recherche ou filtrez par catégorie pour trouver ce dont vous avez besoin.",
+    "breadcrumb": "Glossaire",
+    "searchSection": "Rechercher et filtrer les termes",
+    "searchLabel": "Rechercher des termes médicaux",
+    "searchPlaceholder": "Rechercher un terme...",
+    "clearSearch": "Effacer la recherche",
+    "filterByCategory": "Filtrer par catégorie",
+    "resultsCount": "{{count}} termes trouvés",
+    "expandAll": "Tout développer",
+    "collapseAll": "Tout réduire",
+    "termsList": "Liste des termes médicaux",
+    "viewTreatments": "Voir les options de traitement",
+    "noResults": {
+      "title": "Aucun terme trouvé",
+      "message": "Essayez d'ajuster votre recherche ou votre filtre pour trouver ce que vous cherchez.",
+      "reset": "Réinitialiser les filtres"
+    },
+    "help": {
+      "title": "Besoin de plus d'aide pour comprendre ?",
+      "description": "Si vous ne trouvez pas un terme ou avez besoin de plus d'explications, notre assistant IA peut vous aider à répondre à vos questions sur les maladies rénales et les traitements.",
+      "chatButton": "Poser une question"
+    },
+    "categories": {
+      "all": "Tous les termes",
+      "dialysis": "Dialyse",
+      "transplant": "Transplantation",
+      "kidneyFunction": "Fonction rénale",
+      "kidney-function": "Fonction rénale",
+      "access": "Accès vasculaire",
+      "care": "Options de soins",
+      "general": "Général"
+    },
+    "links": {
+      "learnMore": "En savoir plus",
+      "treatments": "Voir les traitements",
+      "viewModel": "Voir le modèle 3D"
+    },
+    "terms": {
+      "dialysis": {
+        "title": "Dialyse",
+        "definition": "Un traitement qui fait une partie du travail que vos reins ne peuvent plus faire. Elle élimine les déchets, l'excès de sel et d'eau de votre sang. Il existe deux types principaux : l'hémodialyse et la dialyse péritonéale."
+      },
+      "haemodialysis": {
+        "title": "Hémodialyse (HD)",
+        "definition": "Un type de dialyse qui utilise une machine pour filtrer votre sang à l'extérieur de votre corps. Le sang est prélevé par des tubes vers une machine de dialyse qui filtre les déchets et l'excès de liquide, puis retourne le sang propre. Généralement effectuée 3 fois par semaine pendant environ 4 heures."
+      },
+      "peritonealDialysis": {
+        "title": "Dialyse péritonéale (DP)",
+        "definition": "Un type de dialyse qui utilise la membrane de votre abdomen (péritoine) comme filtre naturel. Un liquide spécial est introduit dans votre abdomen par un tube souple, où il absorbe les déchets et l'excès de liquide, puis est drainé. Peut être effectuée à domicile."
+      },
+      "apd": {
+        "title": "DPA (Dialyse péritonéale automatisée)",
+        "definition": "Un type de dialyse péritonéale où une machine effectue les échanges automatiquement, généralement pendant que vous dormez la nuit. La machine remplit et draine le liquide de dialyse plusieurs fois pendant la nuit, laissant vos journées libres."
+      },
+      "capd": {
+        "title": "DPCA (Dialyse péritonéale continue ambulatoire)",
+        "definition": "Un type de dialyse péritonéale où vous changez manuellement le liquide vous-même, généralement 3-4 fois par jour. Chaque échange prend environ 30-40 minutes. Vous pouvez le faire à la maison, au travail ou en voyage."
+      },
+      "transplant": {
+        "title": "Transplantation rénale",
+        "definition": "Une opération pour placer un rein sain d'un donneur dans votre corps. Le nouveau rein prend en charge la filtration de votre sang. Une transplantation réussie signifie que vous n'avez plus besoin de dialyse, bien que vous devrez prendre des médicaments à vie."
+      },
+      "livingDonor": {
+        "title": "Donneur vivant",
+        "definition": "Une personne vivante qui donne un de ses reins à quelqu'un qui a besoin d'une transplantation. Les donneurs vivants sont souvent des membres de la famille ou des amis proches. Les gens peuvent vivre en bonne santé avec un seul rein."
+      },
+      "deceasedDonor": {
+        "title": "Donneur décédé",
+        "definition": "Un rein provenant d'une personne décédée qui a accepté de donner ses organes, ou dont la famille a donné son accord. La plupart des personnes qui reçoivent une transplantation rénale l'obtiennent d'un donneur décédé."
+      },
+      "kidneyFunction": {
+        "title": "Fonction rénale",
+        "definition": "Le degré de fonctionnement de vos reins. Vos reins filtrent les déchets et l'excès d'eau de votre sang, aident à contrôler la pression artérielle, produisent des hormones et maintiennent vos os en bonne santé."
+      },
+      "egfr": {
+        "title": "DFGe (Débit de filtration glomérulaire estimé)",
+        "definition": "Une mesure de la capacité de vos reins à filtrer les déchets de votre sang. Calculé à partir d'une analyse de sang mesurant la créatinine. Un DFGe normal est supérieur à 90. En dessous de 15 signifie généralement une insuffisance rénale et le besoin d'un traitement comme la dialyse ou la transplantation."
+      },
+      "creatinine": {
+        "title": "Créatinine",
+        "definition": "Un déchet produit par vos muscles qui est normalement filtré par vos reins. Une analyse de sang mesure la quantité de créatinine dans votre sang. Des niveaux élevés peuvent indiquer que vos reins ne fonctionnent pas aussi bien qu'ils le devraient."
+      },
+      "ckd": {
+        "title": "MRC (Maladie rénale chronique)",
+        "definition": "Une condition à long terme où vos reins ne fonctionnent pas aussi bien qu'ils le devraient. La MRC est divisée en stades 1-5, le stade 5 étant le plus sévère (insuffisance rénale). De nombreuses personnes atteintes de MRC peuvent vivre normalement avec un traitement."
+      },
+      "fistula": {
+        "title": "Fistule (Fistule AV)",
+        "definition": "Un type d'accès pour l'hémodialyse créé par une petite opération qui relie une artère à une veine, généralement dans votre bras. Cela rend la veine plus grosse et plus forte pour qu'elle puisse être utilisée pour la dialyse."
+      },
+      "catheter": {
+        "title": "Cathéter (Ligne de dialyse)",
+        "definition": "Un tube souple inséré dans une grande veine, généralement dans votre cou ou votre poitrine, pour permettre l'accès à l'hémodialyse. Un cathéter peut être utilisé immédiatement mais présente un risque plus élevé d'infection qu'une fistule."
+      },
+      "conservativeCare": {
+        "title": "Soins conservateurs",
+        "definition": "Une approche de traitement axée sur la gestion des symptômes et le maintien de la qualité de vie sans dialyse ni transplantation. Elle comprend des médicaments, des changements alimentaires et le soutien de votre équipe rénale."
+      },
+      "anaemia": {
+        "title": "Anémie",
+        "definition": "Une condition où vous avez moins de globules rouges que la normale, ce qui peut vous faire sentir fatigué et essoufflé. Elle est courante chez les personnes atteintes de maladie rénale car les reins produisent une hormone qui aide à fabriquer les globules rouges."
+      },
+      "potassium": {
+        "title": "Potassium",
+        "definition": "Un minéral présent dans de nombreux aliments qui aide vos muscles et votre cœur à fonctionner correctement. Lorsque les reins ne fonctionnent pas bien, le potassium peut s'accumuler à des niveaux dangereux dans votre sang."
+      },
+      "phosphate": {
+        "title": "Phosphate",
+        "definition": "Un minéral présent dans de nombreux aliments qui aide à construire des os solides. Lorsque les reins ne fonctionnent pas bien, le phosphate peut s'accumuler dans votre sang et affaiblir vos os."
+      }
+    }
+  }
+}

@@ -1,0 +1,1461 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "skip": "Bỏ qua",
+    "returnToHub": "Quay về trung tâm",
+    "backToHub": "Quay về trung tâm",
+    "continueToQuestionnaire": "Tiếp tục đến bảng câu hỏi"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "continue": "Tiếp tục",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "print": "In",
+    "yes": "Có",
+    "no": "Không",
+    "notSure": "Không chắc chắn",
+    "moreInfo": "Thêm thông tin",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "edit": "Chỉnh sửa",
+    "add": "Thêm",
+    "remove": "Xóa",
+    "listenToPage": "Nghe trang này"
+  },
+  "accessibility": {
+    "skipToContent": "Chuyển đến nội dung chính",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "expandSection": "Mở rộng phần",
+    "collapseSection": "Thu gọn phần",
+    "newWindow": "Mở trong cửa sổ mới",
+    "externalLink": "Liên kết bên ngoài",
+    "settings": "Trợ năng",
+    "settingsLabel": "Tùy chọn trợ năng - Điều chỉnh cỡ chữ, độ tương phản và các cài đặt trợ năng khác",
+    "settingsTitle": "Điều chỉnh cỡ chữ, độ tương phản và các cài đặt trợ năng khác",
+    "breadcrumb": "Điều hướng theo đường dẫn",
+    "pageNavigation": "Điều hướng trang",
+    "faq": "Câu hỏi thường gặp",
+    "frequentlyAskedQuestions": "Câu hỏi thường gặp",
+    "listenToPage": "Nghe trang này được đọc to",
+    "modal": {
+      "title": "Cài đặt trợ năng",
+      "textSize": "Cỡ chữ",
+      "textSizeOptions": {
+        "small": "Nhỏ",
+        "medium": "Trung bình (Mặc định)",
+        "large": "Lớn",
+        "extra-large": "Rất lớn"
+      },
+      "highContrast": "Chế độ tương phản cao",
+      "reducedMotion": "Giảm chuyển động",
+      "lineSpacing": "Khoảng cách dòng",
+      "lineSpacingOptions": {
+        "normal": "Bình thường",
+        "relaxed": "Thoáng",
+        "loose": "Rộng"
+      },
+      "save": "Lưu cài đặt",
+      "cancel": "Hủy",
+      "reset": "Khôi phục mặc định"
+    }
+  },
+  "landing": {
+    "title": "Công cụ hỗ trợ quyết định điều trị thận",
+    "subtitle": "Dịch vụ thận NHS",
+    "description": "Công cụ này sẽ giúp bạn hiểu các lựa chọn điều trị thận và suy nghĩ về điều gì quan trọng nhất với bạn. Hãy dành thời gian - không có câu trả lời đúng hay sai.",
+    "startButton": "Bắt đầu hành trình của bạn",
+    "startButtonAriaLabel": "Bắt đầu hành trình quyết định điều trị thận của bạn",
+    "learnMore": "Tìm hiểu thêm về bệnh thận",
+    "heroAriaLabel": "Phần chào mừng",
+    "featuresHeading": "Công cụ này giúp bạn như thế nào",
+    "featuresSubheading": "Tất cả những gì bạn cần để đưa ra quyết định sáng suốt về điều trị thận",
+    "features": {
+      "time": {
+        "title": "Mất khoảng 15 phút",
+        "description": "Hoàn thành theo tốc độ của bạn. Bạn có thể nghỉ giải lao bất cứ lúc nào và quay lại nơi bạn đã dừng."
+      },
+      "privacy": {
+        "title": "Quyền riêng tư của bạn được bảo vệ",
+        "description": "Không có thông tin cá nhân nào được lưu trữ. Câu trả lời của bạn chỉ giúp cá nhân hóa công cụ trong phiên này."
+      },
+      "devices": {
+        "title": "Hoạt động trên mọi thiết bị",
+        "description": "Sử dụng trên điện thoại, máy tính bảng hoặc máy tính. Công cụ tự động điều chỉnh theo kích thước màn hình của bạn."
+      }
+    },
+    "aboutHeading": "Công cụ này làm gì",
+    "about": {
+      "paragraph1": "Công cụ hỗ trợ quyết định này sẽ giúp bạn khám phá các lựa chọn điều trị khác nhau cho suy thận. Bạn có thể tìm hiểu về từng phương pháp điều trị theo tốc độ của mình, suy nghĩ về điều gì quan trọng nhất với bạn và tạo bản tóm tắt để chia sẻ với bác sĩ hoặc y tá.",
+      "paragraph2": "Bạn sẽ trả lời một vài câu hỏi đơn giản về tình trạng của mình, sau đó khám phá các phương pháp điều trị có thể phù hợp với bạn. Thông tin của bạn được giữ riêng tư và không được lưu sau khi bạn đóng trình duyệt.",
+      "paragraph3": "Công cụ này không thay thế lời khuyên y tế từ đội ngũ chăm sóc sức khỏe của bạn. Nó được thiết kế để giúp bạn cảm thấy được thông tin và tự tin hơn khi thảo luận về các lựa chọn. Đội ngũ thận của bạn là chuyên gia trong việc chăm sóc bạn và sẽ giúp bạn đưa ra quyết định đúng đắn.",
+      "steps": {
+        "learn": {
+          "title": "Tìm hiểu"
+        },
+        "explore": {
+          "title": "Khám phá"
+        },
+        "decide": {
+          "title": "Quyết định"
+        }
+      }
+    },
+    "trustAriaLabel": "Thông tin về độ tin cậy và an toàn",
+    "trust": {
+      "evidenceBased": "Thông tin dựa trên bằng chứng",
+      "languages": "Có sẵn bằng 11 ngôn ngữ",
+      "accessible": "Dễ tiếp cận cho mọi người dùng",
+      "noAccount": "Không cần tài khoản",
+      "time": "15 phút",
+      "privateSecure": "Riêng tư & An toàn"
+    },
+    "ctaHeading": "Sẵn sàng bắt đầu?",
+    "ctaDescription": "Hãy thực hiện bước đầu tiên để hiểu các lựa chọn điều trị thận của bạn. Bạn có thể bắt đầu ngay và quay lại sau nếu cần nghỉ ngơi."
+  },
+  "language": {
+    "title": "Chọn ngôn ngữ của bạn",
+    "instruction": "Vui lòng chọn ngôn ngữ ưa thích của bạn. Bạn có thể thay đổi bất cứ lúc nào.",
+    "selectLanguage": "Chọn ngôn ngữ",
+    "currentLanguage": "Ngôn ngữ hiện tại"
+  },
+  "privacy": {
+    "pageAriaLabel": "Thông tin về quyền riêng tư",
+    "progressLabel": "Tiến trình thiết lập: 30%",
+    "progressText": "Bước 2 của 4: Thông tin về quyền riêng tư",
+    "title": "Quyền riêng tư & Thông tin của bạn",
+    "subtitle": "Trước khi bắt đầu, chúng tôi muốn bạn hiểu cách công cụ này xử lý thông tin của bạn.",
+    "listenToPage": "Nghe trang này",
+    "stopReading": "Dừng đọc",
+    "sections": {
+      "privacy": {
+        "title": "Cách chúng tôi bảo vệ thông tin của bạn",
+        "content": "Các phản hồi của bạn được xử lý an toàn và không được lưu trữ vĩnh viễn. Công cụ này không thu thập thông tin sức khỏe cá nhân có thể nhận dạng bạn. Dữ liệu phiên của bạn sẽ tự động bị xóa khi bạn đóng công cụ này.",
+        "p1": "Công cụ này chỉ sử dụng lưu trữ phiên. Mọi thông tin bạn nhập, bao gồm câu trả lời và sở thích điều trị, chỉ được giữ trong khi bạn đang sử dụng công cụ.",
+        "p2": "Khi bạn đóng trình duyệt hoặc sau 15 phút không hoạt động, tất cả thông tin của bạn sẽ tự động bị xóa. Chúng tôi không lưu bất cứ điều gì về bạn.",
+        "p3": "Chúng tôi thu thập thông tin ẩn danh về cách mọi người sử dụng công cụ này để giúp cải thiện nó. Điều này không thể nhận dạng cá nhân bạn."
+      },
+      "ai": {
+        "title": "Cách công cụ này hoạt động",
+        "content": "Công cụ hỗ trợ quyết định này sử dụng công nghệ để cung cấp thông tin cá nhân hóa dựa trên phản hồi của bạn. Thông tin được cung cấp dựa trên hướng dẫn lâm sàng của NHS và nghiên cứu dựa trên bằng chứng. Công cụ này hỗ trợ nhưng không thay thế các cuộc thảo luận với đội ngũ chăm sóc thận của bạn.",
+        "p1": "Công cụ này bao gồm trợ lý AI có thể trả lời các câu hỏi chung về điều trị thận. AI chỉ cung cấp thông tin - nó không thể đưa ra lời khuyên y tế cụ thể cho tình huống của bạn.",
+        "p2": "AI đôi khi có thể mắc lỗi hoặc cung cấp thông tin không đầy đủ. Luôn thảo luận các quyết định quan trọng với đội ngũ thận của bạn, những người biết đầy đủ lịch sử y tế của bạn.",
+        "p3": "Công cụ này không thay thế lời khuyên từ đội ngũ chăm sóc sức khỏe của bạn. Nó được thiết kế để giúp bạn cảm thấy được thông tin hơn khi thảo luận các lựa chọn với bác sĩ và y tá."
+      },
+      "medical": {
+        "title": "Thông tin y tế quan trọng",
+        "content": "Công cụ này cung cấp thông tin chung về các lựa chọn điều trị thận. Nó không thay thế lời khuyên y tế chuyên nghiệp, chẩn đoán hoặc điều trị. Luôn tham khảo ý kiến bác sĩ chuyên khoa thận hoặc đội ngũ chăm sóc sức khỏe trước khi đưa ra bất kỳ quyết định nào về điều trị của bạn. Nếu bạn có lo ngại về sức khỏe khẩn cấp, vui lòng liên hệ bác sĩ đa khoa hoặc gọi NHS 111."
+      },
+      "pii": {
+        "title": "Vui lòng không chia sẻ thông tin cá nhân",
+        "intro": "Để bảo vệ quyền riêng tư của bạn, vui lòng không nhập bất kỳ thông tin cá nhân nào có thể nhận dạng bạn khi sử dụng công cụ này, đặc biệt là trong tính năng trò chuyện.",
+        "listLabel": "Thông tin bạn không nên chia sẻ",
+        "items": {
+          "nhsNumber": "Số NHS của bạn",
+          "fullName": "Họ và tên đầy đủ của bạn",
+          "address": "Địa chỉ nhà của bạn",
+          "dob": "Ngày sinh của bạn",
+          "phone": "Số điện thoại",
+          "email": "Địa chỉ email"
+        },
+        "outro": "Bạn vẫn có thể cho chúng tôi biết về tình huống của mình một cách chung chung - ví dụ, hoàn cảnh sống hoặc điều gì quan trọng nhất với bạn - mà không cần chia sẻ chi tiết nhận dạng."
+      }
+    },
+    "summaryAriaLabel": "Tóm tắt các điểm chính",
+    "summary": {
+      "title": "Tóm lại",
+      "notSaved": "Câu trả lời của bạn không được lưu",
+      "noData": "Không thu thập dữ liệu cá nhân",
+      "leave": "Bạn có thể rời đi bất cứ lúc nào"
+    },
+    "consent": {
+      "title": "Vui lòng xác nhận để tiếp tục",
+      "understand": "Tôi hiểu rằng thông tin của tôi không được lưu sau phiên này và tôi sẽ không chia sẻ thông tin nhận dạng cá nhân",
+      "analytics": "Tôi đồng ý cho phép thu thập phân tích ẩn danh để giúp cải thiện công cụ này (tùy chọn)",
+      "error": "Vui lòng xác nhận bạn đã hiểu thông tin về quyền riêng tư trước khi tiếp tục"
+    },
+    "continueButton": "Tôi đã hiểu, Tiếp tục",
+    "continueAriaLabel": "Tiếp tục đến lựa chọn giai đoạn hành trình",
+    "readFullPolicy": "Đọc toàn bộ Chính sách quyền riêng tư của NHS"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Demo",
+    "serviceName": "Công cụ hỗ trợ quyết định điều trị thận",
+    "tagline": "Giúp bạn đưa ra lựa chọn sáng suốt",
+    "homeAriaLabel": "Công cụ hỗ trợ quyết định điều trị thận NHS - Trang chủ"
+  },
+  "progress": {
+    "language": "Ngôn ngữ",
+    "privacy": "Quyền riêng tư",
+    "yourJourney": "Hành trình của bạn",
+    "aboutYou": "Về bạn",
+    "yourOptions": "Lựa chọn của bạn",
+    "ariaLabel": "Tiến trình trong công cụ hỗ trợ quyết định",
+    "stepOfTotal": "Bước {{current}} của {{total}}",
+    "percentComplete": "Hoàn thành {{percentage}}%",
+    "ariaProgressLabel": "Tiến trình: Đã hoàn thành {{current}} của {{total}} bước"
+  },
+  "journey": {
+    "title": "Bạn đang ở đâu trong hành trình chăm sóc thận?",
+    "subtitle": "Chọn tùy chọn mô tả đúng nhất tình huống của bạn",
+    "instruction": "Chọn tùy chọn mô tả đúng nhất tình huống hiện tại của bạn",
+    "intro": "Hành trình thận của mỗi người là khác nhau. Để giúp chúng tôi hiển thị thông tin phù hợp nhất, vui lòng cho chúng tôi biết bạn đang ở đâu ngay bây giờ. Không có câu trả lời đúng hay sai.",
+    "error": "Vui lòng chọn một tùy chọn mô tả tình huống của bạn. Nếu không có tùy chọn nào phù hợp, hãy chọn \"Tôi đang hỗ trợ một thành viên trong gia đình hoặc bạn bè\" để tiếp tục.",
+    "formLabel": "Các tùy chọn giai đoạn hành trình",
+    "legendLabel": "Chọn bạn đang ở đâu trong hành trình thận",
+    "radioGroupLabel": "Các tùy chọn giai đoạn hành trình",
+    "listenToQuestion": "Nghe câu hỏi này",
+    "audioText": "Bạn đang ở đâu trong hành trình của mình? Chọn tùy chọn mô tả đúng nhất tình huống của bạn.",
+    "reassurance": "Đừng lo lắng nếu bạn không chắc tùy chọn nào phù hợp nhất. Bạn luôn có thể khám phá tất cả các lựa chọn điều trị sau đó, và đội ngũ thận của bạn có thể giúp làm rõ tình huống của bạn. Lựa chọn của bạn giúp chúng tôi hiển thị thông tin phù hợp nhất trước.",
+    "needHelp": "Tôi cần trợ giúp để chọn",
+    "stages": {
+      "suspected": {
+        "title": "Tôi nghĩ tôi có thể bị bệnh thận",
+        "description": "Bạn lo lắng về sức khỏe thận của mình và muốn tìm hiểu thêm về bệnh thận là gì."
+      },
+      "earlyDiagnosis": {
+        "title": "Tôi vừa được chẩn đoán - bệnh thận mạn giai đoạn sớm",
+        "description": "Bạn mới biết về tình trạng thận của mình và muốn hiểu điều này có nghĩa gì với bạn."
+      },
+      "lateDiagnosis": {
+        "title": "Tôi đã được chẩn đoán - bệnh thận mạn giai đoạn muộn",
+        "description": "Chức năng thận của bạn đã suy giảm đáng kể và bạn có thể cần suy nghĩ về các lựa chọn điều trị sớm."
+      },
+      "choosingTreatment": {
+        "title": "Tôi cần chọn phương pháp điều trị sớm",
+        "description": "Đội ngũ thận của bạn đã cho bạn biết rằng bạn sẽ cần bắt đầu điều trị trong những tháng tới và bạn muốn tìm hiểu về các lựa chọn của mình."
+      },
+      "transplantPending": {
+        "title": "Tôi sắp được ghép thận - muốn tìm hiểu thêm",
+        "description": "Bạn đang trong danh sách chờ ghép hoặc có người hiến tặng sống và muốn biết thêm về những gì sẽ xảy ra."
+      },
+      "dialysisPending": {
+        "title": "Tôi sắp bắt đầu lọc máu - muốn tìm hiểu thêm",
+        "description": "Bạn sẽ sớm bắt đầu điều trị lọc máu và muốn hiểu các loại khác nhau và cuộc sống hàng ngày sẽ như thế nào."
+      },
+      "supporting": {
+        "title": "Tôi đang hỗ trợ một thành viên trong gia đình hoặc bạn bè",
+        "description": "Ai đó thân thiết với bạn bị bệnh thận và bạn muốn hiểu các lựa chọn của họ để giúp hỗ trợ họ."
+      }
+    },
+    "helpModal": {
+      "title": "Cần trợ giúp để chọn?",
+      "intro": "Hoàn toàn bình thường khi cảm thấy không chắc giai đoạn nào mô tả bạn tốt nhất. Đây là một số mẹo:",
+      "tip1Title": "Nghĩ về cuộc hẹn gần đây nhất của bạn",
+      "tip1Text": "Đội ngũ thận của bạn đã nói gì về chức năng thận và các bước tiếp theo?",
+      "tip2Title": "Xem xét điều gì đưa bạn đến đây",
+      "tip2Text": "Bạn có được bác sĩ hoặc y tá đưa công cụ này không? Họ có thể đã gợi ý giai đoạn nào áp dụng cho bạn.",
+      "tip3Title": "Nếu bạn vẫn không chắc",
+      "tip3Text": "Chọn tùy chọn gần nhất với tình huống của bạn. Bạn vẫn có thể khám phá tất cả thông tin trong công cụ này, bất kể bạn chọn tùy chọn nào.",
+      "note": "Đội ngũ thận của bạn là chuyên gia trong việc chăm sóc bạn. Nếu bạn có câu hỏi về sức khỏe thận, vui lòng liên hệ trực tiếp với họ.",
+      "understand": "Tôi đã hiểu"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Hãy cho chúng tôi biết về bạn",
+      "description": "Những câu hỏi này giúp chúng tôi hiển thị thông tin phù hợp nhất với tình huống của bạn. Câu trả lời của bạn là riêng tư và sẽ không được lưu sau phiên này.",
+      "features": {
+        "questions": "7 câu hỏi nhanh",
+        "time": "Mất 3-5 phút",
+        "private": "Hoàn toàn riêng tư",
+        "skip": "Bỏ qua bất kỳ câu hỏi nào"
+      },
+      "beginButton": "Bắt đầu câu hỏi",
+      "skipText": "Nếu bạn không muốn trả lời những câu hỏi này, bạn có thể bỏ qua để xem thông tin điều trị chung.",
+      "skipButton": "Bỏ qua tất cả câu hỏi",
+      "backToJourney": "Quay lại giai đoạn hành trình"
+    },
+    "progress": {
+      "label": "Tiến trình câu hỏi",
+      "questionOf": "Câu hỏi {{current}} của {{total}}",
+      "complete": "hoàn thành"
+    },
+    "types": {
+      "scale": "Đánh giá thang điểm",
+      "single": "Lựa chọn đơn",
+      "multiple": "Lựa chọn nhiều"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "Bạn biết bao nhiêu về bệnh thận và các phương pháp điều trị?",
+        "hint": "Điều này giúp chúng tôi điều chỉnh thông tin phù hợp với hiểu biết hiện tại của bạn."
+      },
+      "goal": {
+        "title": "Bạn muốn đạt được gì từ phiên này?",
+        "hint": "Chọn tùy chọn mô tả mục tiêu chính của bạn hôm nay."
+      },
+      "learning": {
+        "title": "Bạn thích học thông tin mới theo cách nào?",
+        "hint": "Điều này giúp chúng tôi trình bày thông tin theo cách hiệu quả nhất cho bạn."
+      },
+      "comfort": {
+        "title": "Bạn cảm thấy thoải mái như thế nào với các thủ thuật y tế?",
+        "hint": "Đây là một chủ đề nhạy cảm. Bạn có thể bỏ qua câu hỏi này nếu muốn."
+      },
+      "support": {
+        "title": "Bạn có người hỗ trợ ở nhà không?",
+        "hint": "Một số phương pháp điều trị dễ dàng hơn với sự giúp đỡ từ gia đình hoặc người chăm sóc."
+      },
+      "living": {
+        "title": "Bạn sống ở đâu?",
+        "hint": "Điều này giúp chúng tôi hiểu phương pháp điều trị nào có thể phù hợp nhất trong môi trường nhà của bạn."
+      },
+      "priorities": {
+        "title": "Điều gì quan trọng nhất với bạn khi chọn phương pháp điều trị?",
+        "hint": "Các ưu tiên của bạn sẽ giúp chúng tôi làm nổi bật điều quan trọng với bạn trong mỗi lựa chọn điều trị."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Chọn tối đa {{max}} ưu tiên quan trọng nhất với bạn.",
+      "selectAll": "Chọn tất cả các mục phù hợp - bạn có thể chọn nhiều hơn một tùy chọn."
+    },
+    "audio": {
+      "listen": "Nghe câu hỏi này"
+    },
+    "slider": {
+      "ariaLabel": "Giá trị từ {{min}} đến {{max}}"
+    },
+    "skipQuestion": "Bỏ qua câu hỏi này",
+    "viewResults": "Xem kết quả của tôi",
+    "nextQuestion": "Câu hỏi tiếp theo",
+    "knowledge": {
+      "levels": {
+        "1": "Tôi biết rất ít",
+        "2": "Tôi biết một chút",
+        "3": "Tôi có một số kiến thức",
+        "4": "Tôi biết khá nhiều",
+        "5": "Tôi rất am hiểu"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Học những điều cơ bản",
+          "description": "Tôi muốn hiểu bệnh thận là gì và các lựa chọn điều trị có sẵn"
+        },
+        "compare": {
+          "label": "So sánh các lựa chọn của tôi",
+          "description": "Tôi đã biết những điều cơ bản và muốn so sánh các phương pháp điều trị khác nhau"
+        },
+        "prepare": {
+          "label": "Chuẩn bị cho cuộc thảo luận",
+          "description": "Tôi muốn chuẩn bị câu hỏi và suy nghĩ cho cuộc hẹn tiếp theo"
+        },
+        "support": {
+          "label": "Hỗ trợ người khác",
+          "description": "Tôi đang giúp một thành viên gia đình hoặc bạn bè hiểu các lựa chọn của họ"
+        },
+        "notSure": {
+          "label": "Tôi chưa chắc chắn",
+          "description": "Tôi chỉ muốn khám phá và xem thông tin có sẵn"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Sơ đồ và hình ảnh trực quan",
+          "description": "Hình ảnh, biểu đồ và sơ đồ giúp tôi hiểu"
+        },
+        "audio": {
+          "label": "Nghe thông tin",
+          "description": "Tôi thích nghe thông tin được đọc to"
+        },
+        "reading": {
+          "label": "Đọc văn bản",
+          "description": "Tôi thích đọc thông tin chi tiết được viết ra"
+        },
+        "video": {
+          "label": "Xem video",
+          "description": "Video và hoạt hình phù hợp nhất với tôi"
+        },
+        "interactive": {
+          "label": "Công cụ tương tác",
+          "description": "Tôi học bằng cách làm và khám phá"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Rất không thoải mái",
+        "2": "Hơi không thoải mái",
+        "3": "Bình thường",
+        "4": "Khá thoải mái",
+        "5": "Rất thoải mái"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Có, tôi sống với gia đình hoặc người bạn đời có thể giúp đỡ",
+        "carers": "Có, tôi có người chăm sóc chuyên nghiệp giúp tôi",
+        "familyNearby": "Có, gia đình sống gần đó và có thể đến thăm",
+        "limitedSupport": "Tôi có sự hỗ trợ hạn chế",
+        "preferNotSay": "Tôi không muốn nói"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "Nhà với nhiều không gian",
+        "homeLimited": "Nhà với không gian lưu trữ hạn chế",
+        "flat": "Căn hộ chung cư",
+        "supported": "Nhà ở được hỗ trợ hoặc chăm sóc"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Dành thời gian với gia đình",
+        "independence": "Duy trì sự độc lập",
+        "minimiseHospital": "Giảm thiểu thời gian ở bệnh viện",
+        "routine": "Duy trì thói quen đều đặn",
+        "control": "Kiểm soát việc điều trị của mình",
+        "longevity": "Sống càng lâu càng tốt",
+        "quality": "Chất lượng cuộc sống hàng ngày",
+        "travel": "Có thể đi du lịch"
+      }
+    }
+  },
+  "hub": {
+    "title": "Thông tin cá nhân hóa của bạn",
+    "subtitle": "Dựa trên phản hồi của bạn, đây là những gì chúng tôi khuyên bạn nên khám phá.",
+    "welcome": {
+      "title": "Các lựa chọn điều trị cá nhân hóa của bạn",
+      "message": "Dựa trên những gì bạn đã cho chúng tôi biết, đây là các tài nguyên giúp bạn hiểu tình trạng thận và khám phá các lựa chọn của bạn.",
+      "reminder": "Hãy nhớ, đội ngũ thận của bạn sẽ giúp bạn đưa ra quyết định cuối cùng.",
+      "badge": "Hành trình cá nhân hóa của bạn"
+    },
+    "session": {
+      "timeRemaining": "Thời gian phiên còn lại:",
+      "extend": "Gia hạn phiên",
+      "updateAnswers": "Cập nhật câu trả lời của tôi",
+      "startOver": "Bắt đầu lại"
+    },
+    "alert": {
+      "title": "Nhớ lưu bản tóm tắt của bạn",
+      "message": "Thông tin của bạn sẽ không được lưu sau phiên này. Tạo bản tóm tắt trước khi rời đi để giữ lại hồ sơ về việc khám phá của bạn.",
+      "saveNow": "Lưu ngay"
+    },
+    "pathway": {
+      "title": "Bạn muốn khám phá như thế nào?",
+      "guided": {
+        "title": "Hành trình được đề xuất của bạn",
+        "badge": "Được đề xuất",
+        "description": "Theo một lộ trình hướng dẫn từng bước qua các lựa chọn điều trị phù hợp với tình huống của bạn. Hoàn hảo nếu bạn muốn có hướng dẫn và hỗ trợ rõ ràng.",
+        "action": "Bắt đầu hành trình hướng dẫn"
+      },
+      "free": {
+        "title": "Khám phá tự do",
+        "description": "Duyệt tất cả các lựa chọn theo tốc độ của riêng bạn. Chuyển trực tiếp đến các chủ đề bạn quan tâm. Lý tưởng nếu bạn đã biết những gì bạn đang tìm kiếm.",
+        "action": "Duyệt tất cả các lựa chọn"
+      }
+    },
+    "content": {
+      "title": "Công cụ giúp bạn quyết định",
+      "subtitle": "Khám phá từng công cụ để đưa ra quyết định sáng suốt"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Các lựa chọn điều trị",
+        "description": "Tìm hiểu về tất cả các lựa chọn điều trị thận có sẵn bao gồm các loại lọc máu, ghép thận và chăm sóc bảo tồn.",
+        "action": "Khám phá"
+      },
+      "model": {
+        "title": "Mô hình thận 3D",
+        "description": "Khám phá các mô hình 3D tương tác cho thấy các phương pháp điều trị khác nhau hoạt động như thế nào trong cơ thể bạn. Xem quy trình một cách trực quan.",
+        "action": "Xem mô hình"
+      },
+      "compare": {
+        "title": "So sánh các phương pháp điều trị",
+        "description": "Xem tất cả các phương pháp điều trị cạnh nhau. So sánh những gì quan trọng với bạn - từ thời gian hàng ngày đến sự linh hoạt khi đi du lịch.",
+        "action": "So sánh"
+      },
+      "values": {
+        "title": "Bài tập về giá trị",
+        "description": "Suy nghĩ về điều gì quan trọng nhất với bạn. Bài tập này giúp làm rõ các ưu tiên của bạn để hướng dẫn quyết định.",
+        "action": "Bắt đầu"
+      },
+      "chat": {
+        "title": "Đặt câu hỏi",
+        "description": "Trò chuyện với trợ lý AI của chúng tôi về các lựa chọn điều trị thận. Nhận câu trả lời cho câu hỏi của bạn theo cách hội thoại.",
+        "action": "Bắt đầu trò chuyện"
+      }
+    },
+    "status": {
+      "new": "Mới",
+      "inProgress": "Đang tiến hành",
+      "completed": "Đã hoàn thành"
+    },
+    "summary": {
+      "title": "Sẵn sàng xem lại hành trình của bạn?",
+      "description": "Xem mọi thứ bạn đã khám phá và tạo bản tóm tắt để chia sẻ với đội ngũ thận tại cuộc hẹn tiếp theo.",
+      "button": "Xem bản tóm tắt của bạn",
+      "badge": "Bước cuối cùng"
+    },
+    "quickAction": {
+      "summary": "Xem bản tóm tắt của bạn"
+    }
+  },
+  "treatments": {
+    "title": "Hiểu các lựa chọn điều trị của bạn",
+    "subtitle": "Có nhiều cách khác nhau để điều trị suy thận. Mỗi cách có lợi ích và những điều cần xem xét.",
+    "detailedInfoAriaLabel": "Thông tin chi tiết về {{treatment}}",
+    "facts": {
+      "transplant": {
+        "survival": "Kết quả sống sót dài hạn tốt nhất",
+        "surgery": "Yêu cầu phẫu thuật và thời gian hồi phục",
+        "medication": "Cần dùng thuốc suốt đời"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 lần mỗi tuần, 4-5 giờ mỗi lần",
+        "professionalCare": "Chăm sóc và theo dõi chuyên nghiệp",
+        "travel": "Cần đi đến trung tâm"
+      },
+      "peritoneal": {
+        "dailyHome": "Điều trị hàng ngày tại nhà",
+        "timingOptions": "Có thể làm qua đêm hoặc ban ngày",
+        "flexibility": "Linh hoạt và độc lập hơn"
+      },
+      "conservative": {
+        "comfort": "Tập trung vào sự thoải mái và chất lượng cuộc sống",
+        "noDialysis": "Không cần điều trị lọc máu",
+        "symptomManagement": "Quản lý triệu chứng tích cực"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "Ghép thận",
+        "shortDescription": "Nhận một quả thận khỏe mạnh từ người hiến tặng",
+        "description": "Ghép thận bao gồm việc nhận một quả thận khỏe mạnh từ người hiến tặng sống (như thành viên gia đình hoặc bạn bè) hoặc người hiến tặng đã mất. Một ca ghép thành công có thể mang lại chất lượng cuộc sống tốt nhất và thời gian sống lâu nhất cho nhiều người bị suy thận.",
+        "benefits": [
+          "Thường mang lại chất lượng cuộc sống tốt nhất",
+          "Không cần các buổi lọc máu thường xuyên",
+          "Ít hạn chế chế độ ăn hơn",
+          "Mức năng lượng tốt hơn cho hầu hết mọi người"
+        ],
+        "considerations": [
+          "Yêu cầu phẫu thuật lớn",
+          "Cần dùng thuốc ức chế miễn dịch suốt đời",
+          "Có thể cần đợi để có thận phù hợp",
+          "Không phù hợp với tất cả mọi người"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Chạy thận nhân tạo",
+        "shortDescription": "Lọc máu bằng máy",
+        "description": "Chạy thận nhân tạo sử dụng máy để lọc máu của bạn bên ngoài cơ thể. Điều này thường được thực hiện tại đơn vị lọc máu trong bệnh viện hoặc trung tâm cộng đồng, thường ba lần mỗi tuần trong khoảng bốn giờ mỗi buổi. Một số người thực hiện chạy thận nhân tạo tại nhà.",
+        "benefits": [
+          "Hiệu quả trong việc loại bỏ chất thải và chất lỏng dư thừa",
+          "Tiếp xúc thường xuyên với đội ngũ chăm sóc sức khỏe",
+          "Có tùy chọn chạy thận nhân tạo tại nhà cho một số người",
+          "Điều trị được thực hiện cho bạn"
+        ],
+        "considerations": [
+          "Yêu cầu đến bệnh viện hoặc trung tâm thường xuyên",
+          "Cần đường vào mạch máu (fistula hoặc ống thông)",
+          "Có thể cảm thấy mệt sau điều trị",
+          "Áp dụng hạn chế chế độ ăn và chất lỏng"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Lọc màng bụng",
+        "shortDescription": "Lọc máu bên trong cơ thể sử dụng màng bụng",
+        "description": "Lọc màng bụng sử dụng màng bụng (phúc mạc) của bạn như một bộ lọc tự nhiên. Một dung dịch đặc biệt được đưa vào bụng thông qua một ống nhỏ, hấp thụ các chất thải, và sau đó được tháo ra. Điều này có thể được thực hiện tại nhà, ban ngày hoặc qua đêm trong khi bạn ngủ.",
+        "benefits": [
+          "Thực hiện tại nhà, độc lập hơn",
+          "Lịch trình linh hoạt hơn",
+          "Nhẹ nhàng hơn với cơ thể, ít biến động hơn",
+          "Dễ đi du lịch hơn"
+        ],
+        "considerations": [
+          "Yêu cầu cam kết điều trị hàng ngày",
+          "Cần một ống vĩnh viễn trong bụng",
+          "Nguy cơ nhiễm trùng nếu không duy trì kỹ thuật",
+          "Yêu cầu không gian lưu trữ cho vật tư"
+        ]
+      },
+      "conservative": {
+        "title": "Chăm sóc bảo tồn",
+        "shortDescription": "Quản lý triệu chứng không cần lọc máu",
+        "description": "Chăm sóc bảo tồn tập trung vào duy trì chất lượng cuộc sống và quản lý triệu chứng mà không cần lọc máu hoặc ghép thận. Phương pháp này có thể phù hợp với một số người, đặc biệt là những người cao tuổi, yếu, hoặc có các tình trạng sức khỏe nghiêm trọng khác. Nó bao gồm quản lý triệu chứng cẩn thận, thuốc và hỗ trợ từ đội ngũ chăm sóc thận.",
+        "benefits": [
+          "Không cần các buổi lọc máu hoặc phẫu thuật",
+          "Tập trung vào chất lượng cuộc sống và sự thoải mái",
+          "Có thể phù hợp với một số bệnh nhân cao tuổi hoặc yếu",
+          "Duy trì thói quen thông thường càng nhiều càng tốt"
+        ],
+        "considerations": [
+          "Chức năng thận sẽ tiếp tục suy giảm",
+          "Triệu chứng sẽ cần được quản lý tích cực",
+          "Quan trọng phải có cuộc trò chuyện thành thật về kỳ vọng",
+          "Khuyến nghị lập kế hoạch chăm sóc trước"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "So sánh các lựa chọn điều trị",
+    "subtitle": "Xem các phương pháp điều trị khác nhau so sánh như thế nào qua các yếu tố chính.",
+    "categories": {
+      "lifestyle": "Tác động đến lối sống",
+      "medical": "Xem xét y tế"
+    },
+    "items": {
+      "scheduleFlexibility": "Linh hoạt lịch trình",
+      "travelAbility": "Khả năng đi du lịch",
+      "dietRestrictions": "Hạn chế chế độ ăn",
+      "hospitalVisits": "Đến bệnh viện",
+      "surgeryRequired": "Yêu cầu phẫu thuật",
+      "medications": "Thuốc"
+    },
+    "values": {
+      "high": "Cao",
+      "medium": "Trung bình",
+      "low": "Thấp",
+      "limited": "Hạn chế",
+      "varies": "Thay đổi",
+      "fewer": "Ít hơn",
+      "more": "Nhiều hơn",
+      "moderate": "Vừa phải",
+      "periodic": "Kiểm tra định kỳ",
+      "threePerWeek": "3 lần mỗi tuần",
+      "monthly": "Hàng tháng",
+      "asNeeded": "Khi cần",
+      "major": "Phẫu thuật lớn",
+      "minor": "Thủ thuật nhỏ",
+      "none": "Không",
+      "lifelong": "Thuốc ức chế miễn dịch suốt đời",
+      "several": "Nhiều loại thuốc",
+      "symptomBased": "Dựa trên triệu chứng"
+    }
+  },
+  "compare": {
+    "title": "So sánh các lựa chọn điều trị",
+    "subtitle": "Xem các phương pháp điều trị khác nhau so sánh như thế nào qua các yếu tố quan trọng với bạn.",
+    "intro": "So sánh này cho thấy mỗi lựa chọn điều trị hoạt động như thế nào qua các khía cạnh khác nhau của cuộc sống hàng ngày và chăm sóc y tế.",
+    "description": "Công cụ này giúp bạn so sánh các lựa chọn điều trị thận cạnh nhau. Bạn có thể tập trung vào những điều quan trọng nhất với bạn. Chọn các yếu tố bạn muốn so sánh bên dưới.",
+    "customise": "Tùy chỉnh so sánh của bạn",
+    "showTreatments": "Hiển thị các phương pháp điều trị:",
+    "highlightForMe": "Làm nổi bật các phương pháp điều trị cho tôi",
+    "highlightHint": "Dựa trên giá trị và ưu tiên của bạn từ bảng câu hỏi",
+    "understandingIcons": "Hiểu các biểu tượng",
+    "scrollHint": "Cuộn ngang để xem tất cả các phương pháp điều trị",
+    "tableHeading": "Bảng so sánh điều trị",
+    "tableLabel": "So sánh các lựa chọn điều trị thận",
+    "criteria": "Tiêu chí",
+    "recommended": "Được đề xuất",
+    "remember": "Hãy nhớ",
+    "guidance": "Không có phương pháp điều trị nào hoàn hảo cho tất cả mọi người. Lựa chọn tốt nhất phụ thuộc vào tình huống cá nhân, sức khỏe và giá trị của bạn. So sánh này là điểm khởi đầu cho các cuộc thảo luận với đội ngũ thận của bạn.",
+    "addToSummary": "Thêm vào bản tóm tắt của tôi",
+    "treatments": {
+      "transplant": {
+        "name": "Ghép thận",
+        "type": "Phẫu thuật"
+      },
+      "hemodialysis": {
+        "name": "Chạy thận nhân tạo",
+        "type": "Lọc máu tại trung tâm"
+      },
+      "peritoneal": {
+        "name": "Lọc màng bụng",
+        "type": "Lọc máu tại nhà"
+      },
+      "conservative": {
+        "name": "Chăm sóc bảo tồn",
+        "type": "Chăm sóc hỗ trợ"
+      }
+    },
+    "categories": {
+      "dailyLife": "Tác động đến cuộc sống hàng ngày",
+      "practical": "Xem xét thực tế",
+      "medical": "Yếu tố y tế",
+      "support": "Yêu cầu hỗ trợ",
+      "health": "Kết quả sức khỏe"
+    },
+    "criteria": {
+      "timeCommitment": "Cam kết thời gian mỗi tuần",
+      "timeCommitmentHint": "Số giờ dành cho điều trị",
+      "location": "Địa điểm điều trị",
+      "locationHint": "Nơi điều trị diễn ra",
+      "travel": "Tác động đến du lịch",
+      "travelHint": "Khả năng đi du lịch và nghỉ mát",
+      "diet": "Hạn chế chế độ ăn",
+      "dietHint": "Giới hạn về thức ăn và đồ uống",
+      "surgery": "Yêu cầu phẫu thuật",
+      "surgeryHint": "Các thủ thuật ban đầu cần thiết",
+      "supportNeeded": "Cần hỗ trợ",
+      "supportNeededHint": "Sự giúp đỡ từ gia đình hoặc người chăm sóc",
+      "recoveryTime": "Thời gian hồi phục",
+      "recoveryTimeHint": "Thời gian để thích nghi với điều trị",
+      "longTermOutlook": "Triển vọng dài hạn",
+      "longTermOutlookHint": "Kết quả dự kiến theo thời gian",
+      "scheduleFlexibility": "Linh hoạt lịch trình",
+      "scheduleFlexibilityHint": "Kiểm soát lịch trình của bạn",
+      "trainingRequired": "Yêu cầu đào tạo",
+      "trainingRequiredHint": "Thời gian học cần thiết",
+      "survivalRates": "Tỷ lệ sống sót",
+      "survivalRatesHint": "Kết quả chung (thay đổi theo từng người)",
+      "qualityOfLife": "Chất lượng cuộc sống",
+      "qualityOfLifeHint": "Sức khỏe tổng thể",
+      "energyLevels": "Mức năng lượng",
+      "energyLevelsHint": "Năng lượng và mệt mỏi điển hình"
+    },
+    "values": {
+      "minimalAfterRecovery": "Tối thiểu sau khi hồi phục",
+      "regularCheckupsOnly": "Chỉ kiểm tra định kỳ",
+      "12to15HrsWeekly": "12-15 giờ hàng tuần",
+      "plusTravelTime": "Cộng thêm thời gian đi lại",
+      "dailyExchanges": "Trao đổi hàng ngày",
+      "canBeDoneOvernight": "Có thể thực hiện qua đêm",
+      "minimal": "Tối thiểu",
+      "clinicVisitsAsNeeded": "Đến phòng khám khi cần",
+      "noRestrictions": "Không hạn chế",
+      "afterRecovery": "Sau khi hồi phục",
+      "hospitalClinic": "Bệnh viện/phòng khám",
+      "dialysisUnit": "Đơn vị lọc máu",
+      "home": "Tại nhà",
+      "anyCleanSpace": "Bất kỳ không gian sạch nào",
+      "noEquipmentNeeded": "Không cần thiết bị",
+      "veryFlexible": "Rất linh hoạt",
+      "takeMedicationsOnly": "Chỉ uống thuốc",
+      "difficult": "Khó khăn",
+      "mustArrangeHolidayDialysis": "Phải sắp xếp lọc máu khi đi nghỉ",
+      "goodFlexibility": "Linh hoạt tốt",
+      "suppliesCanBeSentAhead": "Vật tư có thể được gửi trước",
+      "fewRestrictions": "Ít hạn chế",
+      "nearNormalDiet": "Chế độ ăn gần như bình thường",
+      "moderateRestrictions": "Hạn chế vừa phải",
+      "fluidAndPotassiumLimits": "Giới hạn chất lỏng và kali",
+      "lessStrict": "Ít nghiêm ngặt hơn",
+      "moreFlexibility": "Linh hoạt hơn",
+      "managedDiet": "Chế độ ăn được quản lý",
+      "tailoredToSymptoms": "Điều chỉnh theo triệu chứng",
+      "majorSurgery": "Phẫu thuật lớn",
+      "transplantOperationRequired": "Yêu cầu phẫu thuật ghép thận",
+      "minorSurgery": "Phẫu thuật nhỏ",
+      "fistulaOrGraftCreation": "Tạo fistula hoặc ghép mạch",
+      "minorProcedure": "Thủ thuật nhỏ",
+      "pdCatheterInsertion": "Đặt ống thông lọc màng bụng",
+      "noneRequired": "Không yêu cầu",
+      "noSurgicalProcedures": "Không có thủ thuật phẫu thuật",
+      "initialSupport": "Hỗ trợ ban đầu",
+      "duringRecoveryPeriod": "Trong thời gian hồi phục",
+      "noneNeeded": "Không cần",
+      "professionalStaffProvideCare": "Nhân viên chuyên nghiệp cung cấp chăm sóc",
+      "canDoIndependently": "Có thể tự làm",
+      "varies": "Thay đổi",
+      "dependsOnSymptoms": "Phụ thuộc vào triệu chứng",
+      "high": "Cao",
+      "normalDailyLifePossible": "Có thể sống bình thường hàng ngày",
+      "low": "Thấp",
+      "fixedHospitalSlots": "Khung giờ bệnh viện cố định",
+      "chooseYourSchedule": "Chọn lịch trình của bạn",
+      "noFixedSchedule": "Không có lịch trình cố định",
+      "medicationTraining": "Đào tạo về thuốc",
+      "learningYourNewRoutine": "Học thói quen mới của bạn",
+      "staffDoEverything": "Nhân viên làm mọi thứ",
+      "oneToTwoWeeksTraining": "Đào tạo 1-2 tuần",
+      "learnTheTechnique": "Học kỹ thuật",
+      "symptomManagement": "Quản lý triệu chứng",
+      "medicationGuidance": "Hướng dẫn về thuốc",
+      "bestOutcomes": "Kết quả tốt nhất",
+      "forSuitableCandidates": "Cho các ứng viên phù hợp",
+      "good": "Tốt",
+      "wellEstablishedTreatment": "Phương pháp điều trị được thiết lập tốt",
+      "similarToHaemodialysis": "Tương tự chạy thận nhân tạo",
+      "qualityFocused": "Tập trung chất lượng",
+      "comfortOverLongevity": "Sự thoải mái hơn tuổi thọ",
+      "excellent": "Xuất sắc",
+      "nearNormalLifePossible": "Có thể sống gần như bình thường",
+      "moderate": "Vừa phải",
+      "treatmentAffectsDailyRoutine": "Điều trị ảnh hưởng đến thói quen hàng ngày",
+      "moreIndependence": "Độc lập hơn",
+      "focusOnComfort": "Tập trung vào sự thoải mái",
+      "symptomManagementPriority": "Ưu tiên quản lý triệu chứng",
+      "oftenExcellent": "Thường xuất sắc",
+      "energyRestored": "Năng lượng được phục hồi",
+      "variable": "Thay đổi",
+      "fatigueAfterSessions": "Mệt mỏi sau các buổi",
+      "generallyGood": "Nói chung tốt",
+      "steadyEnergyLevels": "Mức năng lượng ổn định",
+      "managedWithSupport": "Được quản lý với sự hỗ trợ"
+    },
+    "legend": {
+      "title": "Hướng dẫn đánh giá",
+      "excellent": "Xuất sắc",
+      "good": "Tốt",
+      "moderate": "Vừa phải",
+      "challenging": "Thách thức",
+      "varies": "Thay đổi",
+      "excellentDesc": "Xuất sắc - Nói chung rất thuận lợi",
+      "goodDesc": "Tốt - Nói chung thuận lợi",
+      "moderateDesc": "Vừa phải - Một số hạn chế cần xem xét",
+      "challengingDesc": "Thách thức - Những xem xét đáng kể",
+      "variesDesc": "Thay đổi - Phụ thuộc vào hoàn cảnh cá nhân"
+    },
+    "viewDetails": "Xem chi tiết",
+    "backToHub": "Quay về trung tâm",
+    "printComparison": "In so sánh"
+  },
+  "chat": {
+    "title": "Đặt câu hỏi",
+    "subtitle": "Trợ lý AI của chúng tôi có thể trả lời các câu hỏi chung về điều trị thận.",
+    "placeholder": "Nhập câu hỏi của bạn ở đây...",
+    "send": "Gửi",
+    "disclaimer": "Trợ lý này chỉ cung cấp thông tin chung và không thay thế lời khuyên y tế từ đội ngũ chăm sóc thận của bạn.",
+    "welcomeMessage": "Xin chào! Tôi ở đây để giúp trả lời câu hỏi của bạn về bệnh thận và các lựa chọn điều trị. Tôi có thể giúp gì cho bạn hôm nay?",
+    "errorMessage": "Xin lỗi, tôi không thể xử lý tin nhắn của bạn. Vui lòng thử lại.",
+    "thinking": "Đang suy nghĩ...",
+    "backToHub": "Quay về trung tâm",
+    "privacyReminder": "Nhắc nhở về quyền riêng tư:",
+    "readyToHelp": "Sẵn sàng giúp đỡ",
+    "status": {
+      "online": "Trực tuyến"
+    },
+    "messagesLabel": "Tin nhắn trò chuyện",
+    "inputLabel": "Nhập tin nhắn",
+    "audioInput": "Nhập bằng giọng nói",
+    "piiWarning": "Vui lòng không chia sẻ thông tin cá nhân như tên, số NHS hoặc địa chỉ của bạn. Cuộc trò chuyện này không được lưu.",
+    "welcome": {
+      "greeting": "Xin chào! Tôi là Trợ lý chăm sóc thận NHS. Tôi ở đây để giúp bạn hiểu các lựa chọn điều trị thận.",
+      "prompt": "Bạn có thể hỏi tôi các câu hỏi về lọc máu, ghép thận, chăm sóc bảo tồn, hoặc bất cứ điều gì khác liên quan đến điều trị thận. Tôi có thể giúp gì cho bạn hôm nay?"
+    },
+    "suggestedQuestions": "Câu hỏi gợi ý",
+    "questions": {
+      "q1": "Sự khác biệt giữa chạy thận nhân tạo và lọc màng bụng là gì?",
+      "q2": "Phẫu thuật ghép thận mất bao lâu?",
+      "q3": "Tôi có thể đi du lịch khi đang lọc máu không?",
+      "q4": "Tác dụng phụ của điều trị lọc máu là gì?",
+      "q5": "Làm thế nào để biết tôi có phù hợp để ghép thận không?",
+      "q6": "Chăm sóc bảo tồn là gì và ai có thể chọn nó?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Cho tôi biết thêm",
+      "prosAndCons": "Ưu và nhược điểm là gì?",
+      "dailyLife": "Điều này ảnh hưởng đến cuộc sống hàng ngày như thế nào?"
+    },
+    "voice": {
+      "startRecording": "Bắt đầu nhập giọng nói",
+      "stopRecording": "Dừng ghi âm",
+      "listening": "Đang nghe...",
+      "processing": "Đang xử lý...",
+      "speaking": "Đang nói...",
+      "paused": "Đã tạm dừng",
+      "playResponse": "Nghe phản hồi",
+      "pauseResponse": "Tạm dừng",
+      "resumeResponse": "Tiếp tục",
+      "stopResponse": "Dừng",
+      "loading": "Đang tải âm thanh...",
+      "loadingAudio": "Đang tải âm thanh...",
+      "requesting": "Đang yêu cầu quyền...",
+      "notSupported": "Nhập giọng nói không được hỗ trợ",
+      "error": "Đã xảy ra lỗi",
+      "micPermissionDenied": "Quyền truy cập microphone bị từ chối. Vui lòng cho phép truy cập để sử dụng nhập giọng nói.",
+      "noAudioDetected": "Không phát hiện âm thanh. Vui lòng thử lại.",
+      "transcriptionFailed": "Không thể chuyển đổi âm thanh. Vui lòng thử lại.",
+      "synthesisFailed": "Không thể phát âm thanh. Vui lòng thử lại."
+    }
+  },
+  "values": {
+    "title": "Điều gì quan trọng với bạn",
+    "subtitle": "Đánh giá mức độ quan trọng của mỗi yếu tố với bạn. Điều này giúp chúng tôi cá nhân hóa thông tin của bạn.",
+    "instructions": "Di chuyển thanh trượt để chỉ mức độ quan trọng (1 = Không quan trọng, 5 = Rất quan trọng)",
+    "sliderLabel": "Đánh giá mức độ quan trọng",
+    "startExercise": "Bắt đầu bài tập về giá trị",
+    "lessImportant": "Ít quan trọng hơn",
+    "moreImportant": "Quan trọng hơn",
+    "skipStatement": "Bỏ qua câu này",
+    "viewResults": "Xem kết quả của tôi",
+    "statementsRemaining_one": "Còn {{count}} câu",
+    "statementsRemaining_other": "Còn {{count}} câu",
+    "completed": "Đã hoàn thành",
+    "intro": {
+      "title": "Điều gì quan trọng nhất với bạn?",
+      "description": "Chọn phương pháp điều trị thận là quyết định cá nhân. Bài tập này giúp bạn suy nghĩ về giá trị và ưu tiên của mình để bạn có thể thảo luận chúng với đội ngũ thận.",
+      "feature1": "10 câu về giá trị để đánh giá",
+      "feature2": "Mất khoảng 5 phút",
+      "feature3": "Không có câu trả lời đúng hay sai",
+      "feature4": "Xem tóm tắt các ưu tiên của bạn",
+      "beginButton": "Bắt đầu bài tập",
+      "allAtOnce": "Muốn xem tất cả các câu cùng một lúc?",
+      "viewAll": "Xem tất cả các câu"
+    },
+    "progress": {
+      "statement": "Câu",
+      "of": "của"
+    },
+    "defaultHint": "Đánh giá mức độ quan trọng của điều này với bạn từ 1 (Không quan trọng) đến 5 (Rất quan trọng)",
+    "listenStatement": "Nghe câu này",
+    "nav": {
+      "back": "Quay lại",
+      "skip": "Bỏ qua",
+      "next": "Tiếp theo",
+      "finish": "Hoàn thành",
+      "backToIntro": "Quay lại phần giới thiệu",
+      "seeResults": "Xem kết quả của tôi"
+    },
+    "allAtOnce": {
+      "title": "Đánh giá tất cả các câu",
+      "description": "Đánh giá mỗi câu từ 1 (Không quan trọng) đến 5 (Rất quan trọng).",
+      "progress": "Đã hoàn thành"
+    },
+    "results": {
+      "title": "Tóm tắt giá trị của bạn",
+      "description": "Dựa trên phản hồi của bạn, đây là những gì quan trọng nhất với bạn.",
+      "topPriorities": "Các ưu tiên hàng đầu của bạn",
+      "allValues": "Tất cả giá trị của bạn",
+      "editValues": "Chỉnh sửa giá trị của bạn",
+      "compareLink": "So sánh các phương pháp điều trị",
+      "addToSummary": "Thêm vào bản tóm tắt của tôi",
+      "viewTreatments": "Xem các phương pháp điều trị phù hợp với giá trị của bạn",
+      "backToHub": "Quay về trung tâm"
+    },
+    "ratingLabels": {
+      "1": "Không quan trọng",
+      "2": "Hơi quan trọng",
+      "3": "Quan trọng vừa phải",
+      "4": "Quan trọng",
+      "5": "Rất quan trọng"
+    },
+    "ratings": {
+      "1": "Không quan trọng",
+      "2": "Hơi quan trọng",
+      "3": "Quan trọng vừa phải",
+      "4": "Rất quan trọng",
+      "5": "Cực kỳ quan trọng"
+    },
+    "statements": {
+      "travel": {
+        "statement": "Có thể đi du lịch là quan trọng với tôi",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "hospital-time": {
+        "statement": "Tôi muốn giảm thiểu thời gian ở bệnh viện",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "needles": {
+        "statement": "Tôi thoải mái với kim tiêm và các thủ thuật y tế",
+        "hint": "Đánh giá mức độ bạn đồng ý với câu này"
+      },
+      "independence": {
+        "statement": "Duy trì sự độc lập là rất quan trọng với tôi",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "family-burden": {
+        "statement": "Tôi muốn tránh trở thành gánh nặng cho gia đình",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "longevity": {
+        "statement": "Sống càng lâu càng tốt là ưu tiên của tôi",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "quality-of-life": {
+        "statement": "Chất lượng cuộc sống quan trọng hơn tuổi thọ",
+        "hint": "Đánh giá mức độ bạn đồng ý với câu này"
+      },
+      "home-treatment": {
+        "statement": "Tôi muốn được điều trị tại nhà",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "work-activities": {
+        "statement": "Tiếp tục làm việc hoặc hoạt động thường ngày là quan trọng",
+        "hint": "Đánh giá mức độ quan trọng của điều này với bạn"
+      },
+      "professional-care": {
+        "statement": "Tôi muốn các chuyên gia chăm sóc việc điều trị của tôi",
+        "hint": "Đánh giá mức độ bạn đồng ý với câu này"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Duy trì sự độc lập và có thể tự chăm sóc bản thân",
+        "hint": "Có thể thực hiện các hoạt động hàng ngày mà không phụ thuộc nhiều vào người khác"
+      },
+      "schedule": {
+        "text": "Có sự linh hoạt trong lịch trình và có thể đi du lịch",
+        "hint": "Có thể lên kế hoạch hoạt động và chuyến đi mà không bị ràng buộc bởi thời gian điều trị nghiêm ngặt"
+      },
+      "hospitalTime": {
+        "text": "Dành ít thời gian hơn ở bệnh viện hoặc phòng khám",
+        "hint": "Giảm thiểu số lần và thời gian đến bệnh viện"
+      },
+      "homeComfort": {
+        "text": "Được điều trị tại nhà thoải mái",
+        "hint": "Có thể quản lý điều trị tại nhà thay vì cơ sở y tế"
+      },
+      "familyBurden": {
+        "text": "Không trở thành gánh nặng cho gia đình",
+        "hint": "Giảm thiểu tác động của điều trị đến các thành viên gia đình và người chăm sóc"
+      },
+      "longevity": {
+        "text": "Sống càng lâu càng tốt",
+        "hint": "Ưu tiên các phương pháp điều trị có thể kéo dài tuổi thọ"
+      },
+      "qualityOfLife": {
+        "text": "Chất lượng cuộc sống hơn tuổi thọ",
+        "hint": "Ưu tiên sức khỏe và sự thoải mái hàng ngày hơn tuổi thọ tối đa"
+      },
+      "energyLevels": {
+        "text": "Có mức năng lượng tốt và cảm thấy khỏe",
+        "hint": "Giảm thiểu mệt mỏi và duy trì năng lượng bình thường cho các hoạt động"
+      },
+      "dietRestrictions": {
+        "text": "Có ít hạn chế về thức ăn và đồ uống",
+        "hint": "Có thể ăn uống với ít giới hạn"
+      },
+      "naturalApproach": {
+        "text": "Thực hiện cách tiếp cận tự nhiên hơn với ít can thiệp hơn",
+        "hint": "Ưu tiên các lựa chọn điều trị ít xâm lấn hoặc mang tính y tế"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "Mô hình thận 3D",
+    "backToHub": "Quay về trung tâm",
+    "title": "Trình xem mô hình thận 3D",
+    "interactiveDescription": "Khám phá mô hình 3D tương tác của thận người. Sử dụng chuột hoặc chạm để xoay và phóng to.",
+    "dragToRotate": "Kéo để xoay",
+    "scrollToZoom": "Cuộn để phóng to",
+    "labelsOn": "Nhãn: Bật",
+    "labelsOff": "Nhãn: Tắt",
+    "autoRotateOn": "Tự động xoay: Bật",
+    "autoRotateOff": "Tự động xoay: Tắt",
+    "reset": "Đặt lại",
+    "resetView": "Đặt lại góc nhìn",
+    "aboutKidneys": "Về thận của bạn",
+    "kidneyInfo": "Thận của bạn là các cơ quan hình hạt đậu có kích thước bằng nắm tay. Chúng lọc khoảng 200 lít máu mỗi ngày, loại bỏ chất thải và chất lỏng dư thừa.",
+    "kidneyFunction": "Thận làm gì",
+    "functionInfo": "Thận điều hòa huyết áp, sản xuất hormone, cân bằng dịch cơ thể và lọc các chất thải vào nước tiểu.",
+    "whenKidneysFail": "Khi thận suy",
+    "failureInfo": "Khi thận mất chức năng, các phương pháp điều trị như lọc máu hoặc ghép thận có thể giúp thực hiện công việc mà thận của bạn không còn làm được.",
+    "learnMore": "Tìm hiểu thêm về các lựa chọn điều trị",
+    "exploreTreatments": "Khám phá các phương pháp điều trị",
+    "compareTreatments": "So sánh các phương pháp điều trị",
+    "continueJourney": "Tiếp tục hành trình của bạn bằng cách khám phá các lựa chọn điều trị",
+    "loading": "Đang tải mô hình 3D...",
+    "interactiveTool": "Công cụ học tập tương tác",
+    "interactive3DModel": "Mô hình 3D tương tác",
+    "anatomy": {
+      "kidney": {
+        "label": "Thận",
+        "description": "Cơ quan lọc chính loại bỏ chất thải từ máu và sản xuất nước tiểu."
+      },
+      "renalArtery": {
+        "label": "Động mạch thận",
+        "description": "Mang máu từ tim đến thận để lọc."
+      },
+      "renalVein": {
+        "label": "Tĩnh mạch thận",
+        "description": "Mang máu đã lọc từ thận trở về tim."
+      },
+      "ureter": {
+        "label": "Niệu quản",
+        "description": "Ống dẫn nước tiểu từ thận đến bàng quang."
+      },
+      "adrenalGland": {
+        "label": "Tuyến thượng thận",
+        "description": "Tuyến nhỏ trên đỉnh thận sản xuất các hormone quan trọng."
+      }
+    }
+  },
+  "summary": {
+    "title": "Tóm tắt phiên của bạn",
+    "subtitle": "Đây là tóm tắt những gì bạn đã khám phá hôm nay.",
+    "sections": {
+      "journey": "Giai đoạn hành trình của bạn",
+      "values": "Điều gì quan trọng với bạn",
+      "viewed": "Các phương pháp điều trị đã khám phá",
+      "questions": "Câu hỏi cho đội ngũ của bạn",
+      "priorities": "Các ưu tiên của bạn",
+      "nextSteps": "Các bước tiếp theo được đề xuất"
+    },
+    "print": "In tóm tắt",
+    "email": "Gửi email tóm tắt",
+    "startOver": "Bắt đầu lại",
+    "share": "Chia sẻ",
+    "sessionId": "Mã phiên",
+    "notSpecified": "Chưa được chỉ định",
+    "readyToReview": "Sẵn sàng xem lại",
+    "viewed": "Đã xem",
+    "noValues": "Bạn chưa hoàn thành bài tập về giá trị.",
+    "completeValues": "Hoàn thành ngay",
+    "noTreatments": "Bạn chưa khám phá phương pháp điều trị nào.",
+    "exploreTreatments": "Khám phá các phương pháp điều trị",
+    "seeAll": "Xem tất cả",
+    "confirmReset": "Bạn có chắc chắn muốn bắt đầu lại? Tất cả tiến trình của bạn sẽ bị mất.",
+    "addQuestionPlaceholder": "Nhập câu hỏi của riêng bạn...",
+    "question1": "Những lựa chọn điều trị nào phù hợp với tình huống của tôi?",
+    "question2": "Cuộc sống hàng ngày của tôi sẽ như thế nào với mỗi phương pháp điều trị?",
+    "question3": "Làm thế nào để bắt đầu quy trình cho phương pháp điều trị tôi ưa thích?",
+    "step1": {
+      "title": "Xem lại bản tóm tắt này",
+      "description": "Dành thời gian xem qua những gì bạn đã khám phá và suy nghĩ về bất kỳ câu hỏi bổ sung nào."
+    },
+    "step2": {
+      "title": "Chia sẻ với gia đình hoặc người chăm sóc",
+      "description": "Nếu bạn có sự hỗ trợ tại nhà, hãy thảo luận suy nghĩ của bạn với họ."
+    },
+    "step3": {
+      "title": "Thảo luận với đội ngũ chăm sóc thận của bạn",
+      "description": "Mang bản tóm tắt này đến cuộc hẹn tiếp theo để thảo luận về các lựa chọn của bạn."
+    },
+    "privacy": {
+      "title": "Quyền riêng tư của bạn",
+      "text": "Thông tin này chỉ được lưu trữ trong trình duyệt của bạn và sẽ được xóa khi bạn kết thúc phiên. Không có dữ liệu cá nhân nào được lưu trên bất kỳ máy chủ nào."
+    },
+    "disclaimer": {
+      "title": "Nhắc nhở quan trọng",
+      "text": "Bản tóm tắt này chỉ dành cho mục đích thông tin và không cấu thành lời khuyên y tế. Luôn thảo luận về các lựa chọn điều trị với đội ngũ chăm sóc thận của bạn, những người biết hoàn cảnh cá nhân của bạn."
+    },
+    "printForAppointment": "In cho cuộc hẹn của bạn",
+    "askMore": "Có thêm câu hỏi?",
+    "printHeader": {
+      "title": "Công cụ hỗ trợ quyết định điều trị thận NHS",
+      "subtitle": "Bản tóm tắt phiên cá nhân của bạn",
+      "dateLabel": "Ngày: {{date}}",
+      "footer": "Được tạo bởi Công cụ hỗ trợ quyết định điều trị thận NHS - {{date}} - Tài liệu này chỉ để thảo luận với đội ngũ chăm sóc sức khỏe của bạn"
+    },
+    "shareTitle": "Tóm tắt điều trị thận NHS",
+    "shareText": "Bản tóm tắt quyết định điều trị thận của tôi",
+    "readyForAppointment": "Sẵn sàng cho cuộc hẹn tiếp theo?",
+    "printInstructions": "In bản tóm tắt này để mang đến đội ngũ chăm sóc thận của bạn",
+    "journeyStages": {
+      "newly-diagnosed": "Mới được chẩn đoán",
+      "monitoring": "Đang được theo dõi",
+      "preparing": "Chuẩn bị cho điều trị",
+      "on-dialysis": "Hiện đang lọc máu",
+      "transplant-waiting": "Trong danh sách chờ ghép thận",
+      "post-transplant": "Sau ghép thận",
+      "supporting-someone": "Hỗ trợ ai đó"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "Bạn đang tìm hiểu về tình trạng thận của mình và muốn hiểu các lựa chọn.",
+      "monitoring": "Thận của bạn đang được theo dõi và bạn đang chuẩn bị cho tương lai.",
+      "preparing": "Bạn cần bắt đầu điều trị sớm và muốn hiểu các lựa chọn của mình.",
+      "on-dialysis": "Bạn đang được lọc máu và khám phá các lựa chọn khác.",
+      "transplant-waiting": "Bạn đang trong danh sách chờ ghép thận.",
+      "post-transplant": "Bạn đã được ghép thận và muốn được hỗ trợ liên tục.",
+      "supporting-someone": "Bạn đang hỗ trợ người thân bị bệnh thận.",
+      "default": "Giai đoạn hiện tại của bạn trong hành trình chăm sóc thận."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Chạy thận nhân tạo",
+      "peritoneal-dialysis": "Lọc màng bụng",
+      "home-haemodialysis": "Chạy thận nhân tạo tại nhà",
+      "kidney-transplant": "Ghép thận",
+      "conservative-care": "Chăm sóc bảo tồn"
+    },
+    "valueLabels": {
+      "1": "Không quan trọng",
+      "2": "Hơi quan trọng",
+      "3": "Quan trọng vừa phải",
+      "4": "Quan trọng",
+      "5": "Rất quan trọng",
+      "default": "Quan trọng"
+    },
+    "shareWithTeam": {
+      "title": "Chia sẻ với đội ngũ thận của bạn",
+      "description": "Mang bản tóm tắt này đến cuộc hẹn tiếp theo. Đội ngũ chăm sóc thận của bạn có thể giúp bạn thảo luận về các lựa chọn và trả lời câu hỏi của bạn.",
+      "qrTitle": "Quét để truy cập công cụ này",
+      "qrDescription": "Đội ngũ chăm sóc sức khỏe của bạn có thể quét mã này để mở Công cụ hỗ trợ quyết định điều trị thận NHS",
+      "printTip": "In trang này hoặc lưu dưới dạng PDF để mang đến cuộc hẹn",
+      "appointmentReminder": "Nhớ đề cập đến bản tóm tắt này với đội ngũ thận tại cuộc hẹn tiếp theo"
+    },
+    "progressOverview": {
+      "title": "Tiến trình hành trình của bạn",
+      "sectionsCompleted": "Các phần đã hoàn thành",
+      "treatmentsExplored": "Các phương pháp điều trị đã khám phá",
+      "valuesIdentified": "Các ưu tiên hàng đầu đã xác định",
+      "questionsReady": "Câu hỏi cho đội ngũ của bạn"
+    },
+    "copyLink": "Sao chép liên kết",
+    "linkCopied": "Liên kết đã được sao chép vào bộ nhớ tạm",
+    "downloadPDF": "Tải PDF",
+    "saveForLater": "Lưu để sau",
+    "completionBadge": "Phiên hoàn thành",
+    "explorationBadge": "Đang khám phá",
+    "topPrioritiesTitle": "3 ưu tiên hàng đầu của bạn",
+    "allPrioritiesTitle": "Tất cả các ưu tiên bạn đã đánh giá",
+    "noPriorities": "Hoàn thành bài tập về giá trị để xem các ưu tiên của bạn tại đây",
+    "treatmentInterest": {
+      "high": "Quan tâm cao",
+      "viewed": "Đã khám phá",
+      "notViewed": "Chưa khám phá"
+    },
+    "printOptimised": "Trang này được tối ưu hóa cho in ấn",
+    "accessibleFormat": "Cần định dạng khác? Hãy hỏi đội ngũ thận của bạn."
+  },
+  "session": {
+    "timeRemaining": "Thời gian còn lại: {{minutes}}",
+    "sessionExpiring": "Phiên của bạn sắp hết hạn",
+    "expiringMessage": "Phiên của bạn sẽ hết hạn trong {{minutes}} phút. Bạn có muốn tiếp tục không?",
+    "extendSession": "Tiếp tục phiên",
+    "sessionExpired": "Phiên của bạn đã hết hạn. Vui lòng bắt đầu lại.",
+    "startNewSession": "Bắt đầu phiên mới",
+    "createError": "Không thể tạo phiên. Vui lòng thử lại."
+  },
+  "footer": {
+    "nhsInfo": "Chăm sóc thận NHS",
+    "accessibility": "Trợ năng",
+    "privacyPolicy": "Chính sách quyền riêng tư",
+    "termsOfUse": "Điều khoản sử dụng",
+    "contact": "Liên hệ",
+    "contactUs": "Liên hệ với chúng tôi",
+    "navigationLabel": "Điều hướng chân trang",
+    "supportingDecisions": "Hỗ trợ các quyết định chăm sóc sức khỏe sáng suốt",
+    "copyright": "Pears Research Services. Bảo lưu mọi quyền.",
+    "demoVersion": "Phiên bản Demo 1.0",
+    "disclaimer": {
+      "title": "Tuyên bố từ chối trách nhiệm quan trọng",
+      "text1": "Ứng dụng này là một",
+      "mockDesign": "thiết kế mẫu",
+      "text2": "được tạo bởi",
+      "company": "Pears Research Services",
+      "text3": "chỉ cho mục đích trình diễn. Nó không liên kết với hoặc được xác nhận bởi NHS."
+    }
+  },
+  "timeline": {
+    "title": "Một ngày trong cuộc sống",
+    "subtitle": "Xem một ngày điển hình như thế nào với phương pháp điều trị này",
+    "morning": "Sáng",
+    "afternoon": "Chiều",
+    "evening": "Tối",
+    "night": "Đêm",
+    "treatmentActivities": "{{count}} hoạt động liên quan đến điều trị",
+    "legend": {
+      "treatment": "Liên quan đến điều trị",
+      "regular": "Hoạt động thường xuyên"
+    },
+    "dayType": {
+      "dialysisDay": "Ngày lọc máu (T2/T4/T6)",
+      "restDay": "Ngày nghỉ (T3/T5/T7/CN)",
+      "apdNight": "APD (Tự động qua đêm)",
+      "capd": "CAPD (Trao đổi thủ công)",
+      "typical": "Ngày điển hình"
+    },
+    "toggle": {
+      "dialysisDay": "Ngày lọc máu",
+      "restDay": "Ngày nghỉ",
+      "apd": "APD",
+      "capd": "CAPD"
+    },
+    "duration": {
+      "15min": "15 phút",
+      "20min": "20 phút",
+      "30min": "30-60 phút",
+      "4hrs": "4-5 giờ",
+      "8hrs": "8-10 giờ"
+    },
+    "transplant": {
+      "wakeUp": "Thức dậy và thói quen buổi sáng",
+      "medication": "Uống thuốc ức chế miễn dịch",
+      "breakfast": "Bữa sáng - bữa ăn lành mạnh, cân bằng",
+      "work": "Công việc, sở thích hoặc hoạt động",
+      "lunch": "Bữa trưa - ít hạn chế chế độ ăn",
+      "activities": "Tiếp tục các hoạt động hàng ngày",
+      "exercise": "Tập thể dục nhẹ hoặc đi bộ",
+      "dinner": "Bữa tối với gia đình",
+      "eveningMeds": "Thuốc buổi tối",
+      "relax": "Thư giãn và giải trí",
+      "sleep": "Giấc ngủ bình thường"
+    },
+    "hemo": {
+      "wakeEarly": "Dậy sớm",
+      "lightBreakfast": "Bữa sáng nhẹ với giới hạn chất lỏng",
+      "travelTo": "Đi đến trung tâm lọc máu",
+      "session": "Buổi lọc máu",
+      "travelHome": "Về nhà sau lọc máu",
+      "rest": "Nghỉ ngơi và hồi phục - có thể cảm thấy mệt",
+      "lightMeal": "Bữa ăn nhẹ với hạn chế chế độ ăn",
+      "quietEvening": "Hoạt động buổi tối yên tĩnh",
+      "earlyBed": "Đi ngủ sớm sau ngày điều trị",
+      "regularWake": "Thức dậy",
+      "breakfast": "Bữa sáng theo hướng dẫn chế độ ăn",
+      "normalDay": "Công việc hoặc hoạt động thường xuyên",
+      "lunch": "Bữa trưa - chú ý chất lỏng và kali",
+      "continue": "Tiếp tục các hoạt động hàng ngày",
+      "dinner": "Bữa tối với gia đình",
+      "leisure": "Thời gian giải trí",
+      "sleep": "Giờ ngủ bình thường"
+    },
+    "pd": {
+      "disconnect": "Ngắt kết nối máy APD",
+      "morning": "Thói quen buổi sáng và tắm",
+      "breakfast": "Bữa sáng - tự do hơn về chế độ ăn",
+      "work": "Công việc hoặc hoạt động - rảnh rỗi ban ngày",
+      "lunch": "Bữa trưa - ít hạn chế hơn chạy thận nhân tạo",
+      "activities": "Tiếp tục hoạt động, sở thích",
+      "exercise": "Tập thể dục hoặc hoạt động ngoài trời",
+      "dinner": "Bữa tối với gia đình",
+      "leisure": "Thời gian giải trí buổi tối",
+      "setup": "Thiết lập máy APD",
+      "overnight": "Ngủ trong khi APD hoạt động qua đêm",
+      "capdWake": "Thức dậy",
+      "exchange1": "Trao đổi đầu tiên trong ngày",
+      "capdBreakfast": "Bữa sáng",
+      "capdWork": "Công việc hoặc hoạt động",
+      "exchange2": "Trao đổi thứ hai",
+      "capdLunch": "Bữa trưa",
+      "capdActivities": "Hoạt động buổi chiều",
+      "exchange3": "Trao đổi thứ ba",
+      "capdDinner": "Bữa tối",
+      "capdLeisure": "Thư giãn buổi tối",
+      "exchange4": "Trao đổi cuối cùng trước khi ngủ",
+      "capdSleep": "Ngủ"
+    },
+    "conservative": {
+      "wake": "Thức dậy khi sẵn sàng",
+      "meds": "Uống thuốc quản lý triệu chứng",
+      "breakfast": "Bữa sáng theo khả năng",
+      "morning": "Hoạt động buổi sáng theo năng lượng cho phép",
+      "lunch": "Bữa trưa - ăn những gì bạn thích",
+      "rest": "Nghỉ ngơi hoặc hoạt động nhẹ nhàng",
+      "visitors": "Thời gian với gia đình hoặc khách thăm",
+      "eveningMeds": "Thuốc buổi tối",
+      "dinner": "Bữa tối với người thân",
+      "relax": "Buổi tối yên tĩnh ở nhà",
+      "sleep": "Nghỉ ngơi khi mệt"
+    }
+  },
+  "progress": {
+    "title": "Hành trình học tập của bạn",
+    "yourProgress": "Tiến trình của bạn",
+    "complete": "hoàn thành",
+    "treatments": "phương pháp điều trị",
+    "sections": {
+      "title": "Các phần để khám phá",
+      "questionnaire": "Về bạn",
+      "questionnaireDesc": "Chia sẻ tình huống của bạn",
+      "treatments": "Các lựa chọn điều trị",
+      "treatmentsDesc": "Đã khám phá {{viewed}} trong số {{total}}",
+      "values": "Bài tập về giá trị",
+      "valuesDesc": "Làm rõ các ưu tiên của bạn",
+      "chat": "Đặt câu hỏi",
+      "chatDesc": "Nhận câu trả lời"
+    },
+    "status": {
+      "completed": "Đã hoàn thành",
+      "inProgress": "Đang tiến hành"
+    },
+    "badges": {
+      "title": "Huy hiệu của bạn",
+      "explorer": "Nhà khám phá",
+      "allTreatments": "Tất cả phương pháp điều trị",
+      "values": "Giá trị rõ ràng",
+      "curious": "Tâm trí tò mò",
+      "complete": "Hoàn thành hành trình"
+    },
+    "encouragement": {
+      "start": "Bắt đầu hành trình của bạn bằng cách khám phá các lựa chọn điều trị",
+      "beginning": "Khởi đầu tuyệt vời! Tiếp tục khám phá để tìm hiểu thêm",
+      "making": "Bạn đang tiến bộ tốt!",
+      "halfway": "Đã qua nửa chặng đường - làm tốt lắm!",
+      "almost": "Gần hoàn thành! Chỉ còn vài phần nữa",
+      "complete": "Tuyệt vời! Bạn đã khám phá mọi thứ"
+    },
+    "viewSummary": "Xem bản tóm tắt của bạn"
+  },
+  "scenario": {
+    "title": "Khám phá kịch bản: Nếu như?",
+    "subtitle": "Xem các tình huống cuộc sống khác nhau hoạt động như thế nào với mỗi lựa chọn điều trị",
+    "tips": "Mẹo",
+    "learnMore": "Tìm hiểu thêm về {{treatment}}",
+    "compareAll": "So sánh tất cả các phương pháp điều trị",
+    "legend": {
+      "title": "Hướng dẫn đánh giá"
+    },
+    "rating": {
+      "excellent": "Xuất sắc",
+      "good": "Tốt",
+      "moderate": "Vừa phải",
+      "challenging": "Thách thức"
+    },
+    "travel": {
+      "title": "Nếu tôi muốn đi du lịch thì sao?",
+      "description": "Khám phá cách mỗi phương pháp điều trị ảnh hưởng đến khả năng đi du lịch nghỉ mát hoặc thăm viếng",
+      "transplant": "Sau khi hồi phục, bạn có thể đi du lịch tự do. Mang theo thuốc và biết nơi tìm kiếm sự chăm sóc nếu cần.",
+      "transplantTip1": "Mang theo thư từ đội ngũ ghép thận của bạn",
+      "transplantTip2": "Nghiên cứu các cơ sở y tế tại điểm đến",
+      "transplantTip3": "Đóng gói thuốc dự phòng trong hành lý xách tay",
+      "hemodialysis": "Du lịch yêu cầu lên kế hoạch trước để sắp xếp lọc máu tại điểm đến. Các đơn vị lọc máu kỳ nghỉ tồn tại nhưng sự sẵn có khác nhau.",
+      "hemodialysisTip1": "Đặt lọc máu kỳ nghỉ trước 6-8 tuần",
+      "hemodialysisTip2": "Đội ngũ lọc máu của bạn có thể giúp sắp xếp",
+      "hemodialysisTip3": "Du lịch trong nước dễ dàng hơn quốc tế",
+      "peritoneal": "Tự do hơn để đi du lịch. Vật tư có thể được giao đến điểm đến hoặc bạn có thể mang theo.",
+      "peritonealTip1": "Sắp xếp giao vật tư trước 4-6 tuần",
+      "peritonealTip2": "Các hãng hàng không thường cho phép hành lý thêm cho vật tư",
+      "peritonealTip3": "Cần không gian sạch để trao đổi",
+      "conservative": "Không có hạn chế lọc máu, nhưng du lịch phụ thuộc vào cảm giác của bạn. Các chuyến đi ngắn có thể dễ quản lý hơn.",
+      "conservativeTip1": "Thảo luận kế hoạch du lịch với đội ngũ chăm sóc",
+      "conservativeTip2": "Xem xét bảo hiểm du lịch cẩn thận",
+      "conservativeTip3": "Lên kế hoạch cho thời gian nghỉ ngơi trong các chuyến đi"
+    },
+    "work": {
+      "title": "Nếu tôi muốn làm việc toàn thời gian thì sao?",
+      "description": "Xem các phương pháp điều trị khác nhau phù hợp như thế nào với việc duy trì công việc",
+      "transplant": "Sau 2-3 tháng hồi phục, hầu hết mọi người có thể trở lại làm việc toàn thời gian với mức năng lượng gần như bình thường.",
+      "transplantTip1": "Lên kế hoạch trở lại làm việc theo giai đoạn",
+      "transplantTip2": "Bạn có thể cần nghỉ phép cho các cuộc hẹn khám",
+      "transplantTip3": "Nhiều nhà tuyển dụng cung cấp sắp xếp linh hoạt",
+      "hemodialysis": "Có thể nhưng thách thức. Các buổi mất 4-5 giờ ba lần mỗi tuần, cộng thêm thời gian hồi phục. Ca tối/sáng sớm có thể giúp ích.",
+      "hemodialysisTip1": "Thảo luận giờ linh hoạt với nhà tuyển dụng",
+      "hemodialysisTip2": "Các khung giờ lọc máu buổi tối hoặc sáng sớm",
+      "hemodialysisTip3": "Chạy thận nhân tạo tại nhà linh hoạt hơn",
+      "peritoneal": "APD qua đêm có nghĩa là ban ngày rảnh rỗi cho công việc. CAPD yêu cầu nghỉ giải lao để trao đổi nhưng nhiều người tiếp tục làm việc.",
+      "peritonealTip1": "APD lý tưởng cho người làm việc toàn thời gian",
+      "peritonealTip2": "Bạn có thể thực hiện trao đổi CAPD tại nơi làm việc",
+      "peritonealTip3": "Mức năng lượng thường tốt hơn chạy thận nhân tạo",
+      "conservative": "Phụ thuộc vào triệu chứng và năng lượng. Nhiều người tiếp tục làm việc bán thời gian hoặc giảm giờ. Tập trung vào chất lượng cuộc sống.",
+      "conservativeTip1": "Xem xét giảm giờ dần dần",
+      "conservativeTip2": "Thảo luận điều chỉnh với sức khỏe nghề nghiệp",
+      "conservativeTip3": "Ưu tiên các hoạt động quan trọng nhất"
+    },
+    "liveAlone": {
+      "title": "Nếu tôi sống một mình thì sao?",
+      "description": "Hiểu phương pháp điều trị nào phù hợp với những người sống độc lập",
+      "transplant": "Bạn sẽ cần hỗ trợ trong quá trình hồi phục (2-4 tuần), nhưng sau đó có thể sống độc lập.",
+      "transplantTip1": "Sắp xếp sự giúp đỡ cho vài tuần đầu sau phẫu thuật",
+      "transplantTip2": "Có liên hệ khẩn cấp sẵn sàng",
+      "transplantTip3": "Thiết lập nhắc nhở uống thuốc",
+      "hemodialysis": "Điều trị được thực hiện tại trung tâm với nhân viên chuyên nghiệp. Không cần thiết lập tại nhà. Tiếp xúc thường xuyên với đội ngũ chăm sóc sức khỏe.",
+      "hemodialysisTip1": "Có thể có xe đưa đón của bệnh viện",
+      "hemodialysisTip2": "Nhân viên theo dõi bạn trong quá trình điều trị",
+      "hemodialysisTip3": "Hỗ trợ xã hội từ các bệnh nhân khác",
+      "peritoneal": "Nhiều người tự làm lọc màng bụng thành công. Đào tạo chuẩn bị bạn tốt. Có hỗ trợ qua điện thoại 24/7.",
+      "peritonealTip1": "Đào tạo kỹ lưỡng trước khi bắt đầu",
+      "peritonealTip2": "Y tá lọc màng bụng đến thăm nhà thường xuyên",
+      "peritonealTip3": "Đường dây nóng 24 giờ cho trường hợp khẩn cấp",
+      "conservative": "Ban đầu có thể quản lý một mình. Khi triệu chứng tiến triển, bạn có thể cần hỗ trợ ngày càng tăng. Các dịch vụ cộng đồng có thể giúp.",
+      "conservativeTip1": "Kiểm tra thường xuyên với đội ngũ chăm sóc",
+      "conservativeTip2": "Có sẵn dịch vụ hỗ trợ cộng đồng",
+      "conservativeTip3": "Lên kế hoạch trước cho nhu cầu chăm sóc trong tương lai"
+    },
+    "family": {
+      "title": "Nếu tôi có con nhỏ thì sao?",
+      "description": "Xem xét các phương pháp điều trị ảnh hưởng như thế nào đến việc chăm sóc trẻ em và thời gian gia đình",
+      "transplant": "Sau khi hồi phục, bạn có thể tham gia đầy đủ vào cuộc sống gia đình. Chất lượng cuộc sống tốt nhất cho việc nuôi dạy con tích cực.",
+      "transplantTip1": "Sắp xếp chăm sóc trẻ trong thời gian hồi phục",
+      "transplantTip2": "Có thể trở lại các hoạt động nuôi dạy con bình thường",
+      "transplantTip3": "Năng lượng tốt cho các hoạt động gia đình",
+      "hemodialysis": "Thời gian xa nhà thường xuyên để điều trị. Mệt mỏi sau các buổi có thể ảnh hưởng đến các hoạt động gia đình. Cần chăm sóc trẻ trong các buổi điều trị.",
+      "hemodialysisTip1": "Lên lịch các buổi theo giờ học",
+      "hemodialysisTip2": "Cho trẻ tham gia phù hợp với lứa tuổi",
+      "hemodialysisTip3": "Lên kế hoạch thời gian gia đình vào những ngày không lọc máu",
+      "peritoneal": "Điều trị tại nhà có nghĩa là nhiều thời gian hơn với gia đình. APD qua đêm để ngày rảnh rỗi cho việc chăm sóc trẻ.",
+      "peritonealTip1": "APD diễn ra trong khi trẻ ngủ",
+      "peritonealTip2": "Ban ngày rảnh rỗi để đưa đón trẻ đi học",
+      "peritonealTip3": "Trẻ có thể được tham gia một cách an toàn",
+      "conservative": "Không có lịch trình điều trị, nhưng mức năng lượng thay đổi. Tập trung vào thời gian chất lượng với gia đình.",
+      "conservativeTip1": "Ưu tiên những khoảnh khắc gia đình đặc biệt",
+      "conservativeTip2": "Chấp nhận sự giúp đỡ chăm sóc trẻ khi cần",
+      "conservativeTip3": "Có cuộc trò chuyện thành thật với trẻ"
+    }
+  },
+  "treatment": {
+    "dayInLife": "Một ngày trong cuộc sống"
+  }
+}

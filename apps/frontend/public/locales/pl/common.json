@@ -108,7 +108,7 @@
     "trustAriaLabel": "Informacje o zaufaniu i bezpieczeństwie",
     "trust": {
       "evidenceBased": "Informacje oparte na dowodach",
-      "languages": "Dostępne w 9 językach",
+      "languages": "Dostępne w 11 językach",
       "accessible": "Dostępne dla wszystkich użytkowników",
       "noAccount": "Nie wymaga konta",
       "time": "15 minut",
@@ -1426,5 +1426,119 @@
   },
   "treatment": {
     "dayInLife": "Dzień z życia"
+  },
+  "glossary": {
+    "title": "Słownik terminów medycznych",
+    "subtitle": "Proste, zrozumiałe definicje terminów medycznych związanych z chorobami nerek i leczeniem. Użyj wyszukiwania lub filtruj według kategorii, aby znaleźć to, czego szukasz.",
+    "breadcrumb": "Słownik",
+    "searchSection": "Wyszukaj i filtruj terminy",
+    "searchLabel": "Szukaj terminów medycznych",
+    "searchPlaceholder": "Szukaj terminu...",
+    "clearSearch": "Wyczyść wyszukiwanie",
+    "filterByCategory": "Filtruj według kategorii",
+    "resultsCount": "Znaleziono {{count}} terminów",
+    "expandAll": "Rozwiń wszystkie",
+    "collapseAll": "Zwiń wszystkie",
+    "termsList": "Lista terminów medycznych",
+    "viewTreatments": "Zobacz opcje leczenia",
+    "noResults": {
+      "title": "Nie znaleziono terminów",
+      "message": "Spróbuj dostosować wyszukiwanie lub filtr, aby znaleźć to, czego szukasz.",
+      "reset": "Zresetuj filtry"
+    },
+    "help": {
+      "title": "Potrzebujesz więcej pomocy w zrozumieniu?",
+      "description": "Jeśli nie możesz znaleźć terminu lub potrzebujesz więcej wyjaśnień, nasz asystent AI może pomóc odpowiedzieć na pytania dotyczące chorób nerek i leczenia.",
+      "chatButton": "Zadaj pytanie"
+    },
+    "categories": {
+      "all": "Wszystkie terminy",
+      "dialysis": "Dializa",
+      "transplant": "Przeszczep",
+      "kidneyFunction": "Funkcja nerek",
+      "kidney-function": "Funkcja nerek",
+      "access": "Dostęp naczyniowy",
+      "care": "Opcje opieki",
+      "general": "Ogólne"
+    },
+    "links": {
+      "learnMore": "Dowiedz się więcej",
+      "treatments": "Zobacz zabiegi",
+      "viewModel": "Zobacz model 3D"
+    },
+    "terms": {
+      "dialysis": {
+        "title": "Dializa",
+        "definition": "Zabieg wykonujący część pracy, której nie mogą już wykonywać nerki. Usuwa produkty przemiany materii, nadmiar soli i wody z krwi. Istnieją dwa główne rodzaje: hemodializa i dializa otrzewnowa."
+      },
+      "haemodialysis": {
+        "title": "Hemodializa (HD)",
+        "definition": "Rodzaj dializy wykorzystujący aparat do filtrowania krwi poza organizmem. Krew jest pobierana z ciała przez rurki do aparatu dializacyjnego, który odfiltrowuje odpady i nadmiar płynów, a następnie zwraca oczyszczoną krew. Zwykle wykonywana 3 razy w tygodniu przez około 4 godziny."
+      },
+      "peritonealDialysis": {
+        "title": "Dializa otrzewnowa (DO)",
+        "definition": "Rodzaj dializy wykorzystujący wyściółkę brzucha (otrzewną) jako naturalny filtr. Specjalny płyn jest wprowadzany do brzucha przez miękką rurkę, gdzie wchłania produkty przemiany materii i nadmiar płynów, a następnie jest odprowadzany. Może być wykonywana w domu."
+      },
+      "apd": {
+        "title": "APD (Automatyczna dializa otrzewnowa)",
+        "definition": "Rodzaj dializy otrzewnowej, w której aparat automatycznie wykonuje wymiany, zwykle podczas snu w nocy. Aparat napełnia i opróżnia płyn dializacyjny z brzucha kilka razy w nocy, pozostawiając dni wolne."
+      },
+      "capd": {
+        "title": "CAPD (Ciągła ambulatoryjna dializa otrzewnowa)",
+        "definition": "Rodzaj dializy otrzewnowej, w której sam ręcznie wymieniasz płyn w brzuchu, zwykle 3-4 razy dziennie. Każda wymiana trwa około 30-40 minut. Możesz to robić w domu, pracy lub podczas podróży."
+      },
+      "transplant": {
+        "title": "Przeszczep nerki",
+        "definition": "Operacja polegająca na umieszczeniu zdrowej nerki od dawcy w ciele. Nowa nerka przejmuje filtrowanie krwi. Udany przeszczep oznacza, że nie potrzebujesz już dializy, choć będziesz musiał brać leki do końca życia, aby zapobiec odrzuceniu nerki."
+      },
+      "livingDonor": {
+        "title": "Żywy dawca",
+        "definition": "Osoba żyjąca, która oddaje jedną ze swoich nerek komuś potrzebującemu przeszczepu. Żywymi dawcami są często członkowie rodziny lub bliscy przyjaciele, ale mogą to być również osoby chcące pomóc komuś, kogo nie znają (dawcy altruistyczni). Ludzie mogą żyć zdrowo z jedną nerką."
+      },
+      "deceasedDonor": {
+        "title": "Zmarły dawca",
+        "definition": "Nerka pochodząca od osoby zmarłej, która zgodziła się na oddanie narządów, lub której rodzina wyraziła zgodę w jej imieniu. Większość osób otrzymujących przeszczep nerki dostaje ją od zmarłego dawcy."
+      },
+      "kidneyFunction": {
+        "title": "Funkcja nerek",
+        "definition": "Jak dobrze działają twoje nerki. Nerki filtrują odpady i nadmiar wody z krwi, pomagają kontrolować ciśnienie krwi, produkują hormony i utrzymują zdrowe kości. Funkcja nerek jest mierzona poprzez badania krwi i moczu."
+      },
+      "egfr": {
+        "title": "eGFR (Szacunkowy wskaźnik filtracji kłębuszkowej)",
+        "definition": "Miara tego, jak dobrze nerki filtrują odpady z krwi. Oblicza się ją na podstawie badania krwi mierzącego kreatyninę. Prawidłowy eGFR wynosi powyżej 90. Poniżej 15 zwykle oznacza niewydolność nerek i konieczność leczenia, takiego jak dializa lub przeszczep."
+      },
+      "creatinine": {
+        "title": "Kreatynina",
+        "definition": "Produkt przemiany materii wytwarzany przez mięśnie, który normalnie jest filtrowany przez nerki. Badanie krwi mierzy ilość kreatyniny. Wysokie poziomy mogą wskazywać, że nerki nie pracują tak dobrze, jak powinny."
+      },
+      "ckd": {
+        "title": "PChN (Przewlekła choroba nerek)",
+        "definition": "Długotrwały stan, w którym nerki nie pracują tak dobrze, jak powinny. PChN dzieli się na stadia 1-5 w zależności od tego, jak dobrze działają nerki, przy czym stadium 5 jest najcięższe (niewydolność nerek). Wiele osób z PChN może prowadzić normalne życie przy odpowiednim leczeniu."
+      },
+      "fistula": {
+        "title": "Przetoka (przetoka AV)",
+        "definition": "Rodzaj dostępu do hemodializy utworzony przez małą operację łączącą tętnicę z żyłą, zwykle w ramieniu. Sprawia to, że żyła staje się większa i silniejsza, dzięki czemu może być używana do dializy. Przetoka jest uważana za najlepszy rodzaj dostępu do hemodializy."
+      },
+      "catheter": {
+        "title": "Cewnik (linia dializacyjna)",
+        "definition": "Miękka rurka wprowadzana do dużej żyły, zwykle w szyi lub klatce piersiowej, umożliwiająca dostęp do hemodializy. Cewnik może być użyty od razu, ale ma wyższe ryzyko infekcji niż przetoka lub graft."
+      },
+      "conservativeCare": {
+        "title": "Opieka zachowawcza",
+        "definition": "Podejście do leczenia skupiające się na łagodzeniu objawów i utrzymaniu jakości życia bez dializy lub przeszczepu. Obejmuje leki, zmiany diety i wsparcie zespołu nefrologicznego. Niektórzy wybierają tę opcję, szczególnie osoby starsze lub z innymi poważnymi schorzeniami."
+      },
+      "anaemia": {
+        "title": "Niedokrwistość",
+        "definition": "Stan, w którym masz mniej czerwonych krwinek niż normalnie, co może powodować zmęczenie i duszność. Jest powszechny u osób z chorobą nerek, ponieważ nerki wytwarzają hormon (erytropoetynę), który pomaga wytwarzać czerwone krwinki. Leczenie może obejmować zastrzyki lub suplementy żelaza."
+      },
+      "potassium": {
+        "title": "Potas",
+        "definition": "Minerał występujący w wielu pokarmach, który pomaga w prawidłowej pracy mięśni i serca. Gdy nerki nie działają dobrze, potas może gromadzić się do niebezpiecznych poziomów we krwi. Może być konieczne ograniczenie pokarmów bogatych w potas, takich jak banany, pomarańcze i ziemniaki."
+      },
+      "phosphate": {
+        "title": "Fosforany",
+        "definition": "Minerał występujący w wielu pokarmach, który pomaga budować silne kości. Gdy nerki nie działają dobrze, fosforany mogą gromadzić się we krwi i osłabiać kości. Może być konieczne przyjmowanie tabletek zwanych wiązaczami fosforanów podczas posiłków i ograniczenie niektórych pokarmów."
+      }
+    }
   }
 }
