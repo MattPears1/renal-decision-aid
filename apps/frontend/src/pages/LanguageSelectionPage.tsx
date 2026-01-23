@@ -398,12 +398,12 @@ function LanguageCard({
         {englishName}
       </span>
 
-      {/* Audio Preview Button - Compact */}
+      {/* Audio Preview Button */}
       <button
         type="button"
         onClick={onPlayAudio}
-        className={`inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[36px] text-xs sm:text-sm font-medium
-                    border rounded-full z-10 relative
+        className={`inline-flex items-center gap-2 px-4 py-2 min-h-[44px] text-xs sm:text-sm font-medium
+                    border rounded-full z-10 relative touch-manipulation
                     transition-all duration-200
                     focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2
                     ${isPlaying

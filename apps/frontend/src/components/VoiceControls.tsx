@@ -78,10 +78,10 @@ export function MicrophoneButton({
   const hasError = recordingState === 'error';
   const isDisabled = !isSupported || isProcessing || isRequesting;
 
-  // Size classes - enhanced for better touch targets
+  // Size classes - WCAG 2.2 AA compliant (minimum 44px touch target)
   const sizeClasses = {
-    sm: 'w-9 h-9 min-w-[36px] min-h-[36px]',
-    md: 'w-11 h-11 min-w-[44px] min-h-[44px]',
+    sm: 'w-11 h-11 min-w-[44px] min-h-[44px]',
+    md: 'w-12 h-12 min-w-[48px] min-h-[48px]',
     lg: 'w-14 h-14 min-w-[56px] min-h-[56px]',
   };
 
@@ -230,11 +230,11 @@ export function SpeakerButton({
   const hasError = speechState === 'error';
   const isActive = isPlaying || isPaused || isLoading;
 
-  // Size classes - enhanced for better touch targets
+  // Size classes - WCAG 2.2 AA compliant (minimum 44px touch target)
   const sizeClasses = {
-    sm: 'w-8 h-8 min-w-[32px] min-h-[32px]',
-    md: 'w-10 h-10 min-w-[40px] min-h-[40px]',
-    lg: 'w-12 h-12 min-w-[48px] min-h-[48px]',
+    sm: 'w-11 h-11 min-w-[44px] min-h-[44px]',
+    md: 'w-12 h-12 min-w-[48px] min-h-[48px]',
+    lg: 'w-14 h-14 min-w-[56px] min-h-[56px]',
   };
 
   const iconSizes = {

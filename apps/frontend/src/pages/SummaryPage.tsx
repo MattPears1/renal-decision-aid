@@ -280,7 +280,7 @@ export default function SummaryPage() {
             </h2>
             <Link
               to="/journey"
-              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-2 sm:px-3 py-1.5 rounded-lg flex items-center gap-1 sm:gap-1.5 transition-colors print:hidden min-h-[36px]"
+              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors print:hidden min-h-[44px] touch-manipulation no-underline"
             >
               <EditIcon className="w-3 h-3 sm:w-4 sm:h-4" />
               {t('common.edit', 'Edit')}
@@ -318,7 +318,7 @@ export default function SummaryPage() {
             </h2>
             <Link
               to="/values"
-              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-2 sm:px-3 py-1.5 rounded-lg flex items-center gap-1 sm:gap-1.5 transition-colors print:hidden min-h-[36px]"
+              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors print:hidden min-h-[44px] touch-manipulation no-underline"
             >
               <EditIcon className="w-3 h-3 sm:w-4 sm:h-4" />
               {t('common.edit', 'Edit')}
@@ -383,7 +383,7 @@ export default function SummaryPage() {
             </h2>
             <Link
               to="/treatments"
-              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-2 sm:px-3 py-1.5 rounded-lg flex items-center gap-1 sm:gap-1.5 transition-colors print:hidden min-h-[36px]"
+              className="text-xs sm:text-sm text-nhs-blue hover:bg-nhs-blue/5 px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors print:hidden min-h-[44px] touch-manipulation no-underline"
             >
               {t('summary.seeAll', 'See all')}
             </Link>

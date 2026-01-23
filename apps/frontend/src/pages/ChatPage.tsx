@@ -585,7 +585,7 @@ export default function ChatPage() {
                           <button
                             key={idx}
                             onClick={() => handleSend(reply)}
-                            className="px-3 sm:px-4 py-2 bg-white border-2 border-nhs-blue/30 text-xs sm:text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm min-h-[36px] sm:min-h-[40px] touch-manipulation animate-scale-in"
+                            className="px-4 py-2.5 bg-white border-2 border-nhs-blue/30 text-xs sm:text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm min-h-[44px] touch-manipulation animate-scale-in"
                           >
                             {reply}
                           </button>

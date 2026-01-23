@@ -141,17 +141,23 @@
     @apply text-lg md:text-xl;
   }
 
-  /* Link styles */
-  a {
+  /* Link styles - exclude styled button links */
+  a:not([class*="bg-"]):not([class*="btn"]):not(.no-underline) {
     @apply text-nhs-blue underline transition-colors duration-fast;
   }
 
-  a:hover {
+  a:not([class*="bg-"]):not([class*="btn"]):not(.no-underline):hover {
     @apply text-nhs-blue-dark;
   }
 
-  a:visited {
+  a:not([class*="bg-"]):not([class*="btn"]):not(.no-underline):visited {
     @apply text-nhs-purple;
+  }
+
+  /* Ensure button-styled links maintain their colors */
+  a[class*="bg-gradient"],
+  a[class*="bg-nhs-"] {
+    text-decoration: none;
   }
 
   /* Paragraph spacing */
