@@ -59,6 +59,8 @@ export default function SummaryPage() {
   const navigate = useNavigate();
   const { session, endSession } = useSession();
   const [linkCopied, setLinkCopied] = useState(false);
+  const userRole = session?.userRole || 'patient';
+  const isCarer = userRole === 'carer';
 
   /**
    * Triggers the browser print dialog.
@@ -506,6 +508,59 @@ export default function SummaryPage() {
         <div className="mb-4 sm:mb-6 print:mb-4">
           <FamilyDiscussionPrompts variant="compact" />
         </div>
+
+        {/* Carer Support Section - Only shown in companion mode */}
+        {isCarer && (
+          <section className="bg-gradient-to-br from-nhs-pink/5 via-nhs-purple/5 to-white border border-nhs-pink/20 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="carer-support-heading">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-pink/10 to-transparent border-b border-nhs-pink/20">
+              <h2 id="carer-support-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-pink/20 rounded-lg sm:rounded-xl flex items-center justify-center">
+                  <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-pink" />
+                </div>
+                {t('summary.carer.title', 'Support for You')}
+              </h2>
+            </div>
+            <div className="p-4 sm:p-6">
+              <p className="text-sm sm:text-base text-text-secondary mb-4 leading-relaxed">
+                {t('summary.carer.description', 'As a carer or family member, you deserve support too. Here are resources to help you on this journey.')}
+              </p>
+              <div className="flex flex-wrap gap-3 print:hidden">
+                <Link
+                  to="/support-networks"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-nhs-pink text-white text-sm font-semibold rounded-xl hover:bg-nhs-pink/90 active:scale-[0.98] transition-all shadow-sm"
+                >
+                  <TeamIcon className="w-4 h-4" />
+                  {t('summary.carer.findSupport', 'Find Support Networks')}
+                </Link>
+                <a
+                  href="https://www.carersuk.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-white border border-nhs-pink/30 text-nhs-pink text-sm font-semibold rounded-xl hover:bg-nhs-pink/5 active:scale-[0.98] transition-all"
+                >
+                  {t('summary.carer.carersUK', 'Carers UK')}
+                </a>
+                <a
+                  href="https://www.kidneycareuk.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-white border border-nhs-blue/30 text-nhs-blue text-sm font-semibold rounded-xl hover:bg-nhs-blue/5 active:scale-[0.98] transition-all"
+                >
+                  {t('summary.carer.kidneyCareUK', 'Kidney Care UK')}
+                </a>
+              </div>
+              {/* Print version links */}
+              <div className="hidden print:block text-sm text-text-secondary">
+                <p className="font-semibold mb-2">{t('summary.carer.printLinks', 'Useful websites:')}</p>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Carers UK: www.carersuk.org</li>
+                  <li>Kidney Care UK: www.kidneycareuk.org</li>
+                  <li>Carers Trust: www.carers.org</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Next Steps Section */}
         <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="nextsteps-heading">

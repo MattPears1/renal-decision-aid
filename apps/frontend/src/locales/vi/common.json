@@ -123,6 +123,31 @@
     "selectLanguage": "Chọn ngôn ngữ",
     "currentLanguage": "Ngôn ngữ hiện tại"
   },
+  "userRole": {
+    "title": "Bạn là ai?",
+    "subtitle": "Điều này giúp chúng tôi cá nhân hóa trải nghiệm của bạn",
+    "patient": {
+      "title": "Tôi đang đưa ra quyết định điều trị cho bản thân",
+      "description": "Tôi bị bệnh thận và muốn tìm hiểu về các lựa chọn điều trị của mình"
+    },
+    "carer": {
+      "title": "Tôi đang hỗ trợ người khác",
+      "description": "Tôi là người chăm sóc, thành viên gia đình, hoặc bạn bè đang giúp đỡ người bị bệnh thận"
+    },
+    "toggle": "Bạn có phải là người chăm sóc hoặc thành viên gia đình không?",
+    "switchMode": "Chuyển sang Chế độ Đồng hành"
+  },
+  "carerRelationship": {
+    "title": "Mối quan hệ của bạn",
+    "subtitle": "Bạn có mối quan hệ như thế nào với người bạn đang hỗ trợ?",
+    "spouse": "Vợ/Chồng/Bạn đời",
+    "parent": "Cha mẹ",
+    "child": "Con (trưởng thành)",
+    "sibling": "Anh chị em",
+    "friend": "Bạn bè",
+    "professional": "Người chăm sóc chuyên nghiệp",
+    "other": "Khác"
+  },
   "privacy": {
     "pageAriaLabel": "Thông tin về quyền riêng tư",
     "progressLabel": "Tiến trình thiết lập: 30%",
@@ -483,6 +508,21 @@
         "title": "Đặt câu hỏi",
         "description": "Trò chuyện với trợ lý AI của chúng tôi về các lựa chọn điều trị thận. Nhận câu trả lời cho câu hỏi của bạn theo cách hội thoại.",
         "action": "Bắt đầu trò chuyện"
+      },
+      "lifeGoals": {
+        "title": "Tương thích với Mục tiêu Cuộc sống",
+        "description": "Xem các phương pháp điều trị khác nhau phù hợp như thế nào với mục tiêu cá nhân của bạn về công việc, gia đình, du lịch và hơn thế nữa.",
+        "action": "Khám phá Mục tiêu"
+      },
+      "statistics": {
+        "title": "Người khác đã chọn gì",
+        "description": "Xem những người trong tình huống tương tự đã quyết định như thế nào và kết quả của họ.",
+        "action": "Xem Thống kê"
+      },
+      "supportNetworks": {
+        "title": "Mạng lưới Hỗ trợ",
+        "description": "Tìm các nhóm hỗ trợ thận địa phương, tổ chức người chăm sóc và dịch vụ NHS trong khu vực của bạn.",
+        "action": "Tìm Hỗ trợ"
       }
     },
     "status": {
@@ -498,6 +538,21 @@
     },
     "quickAction": {
       "summary": "Xem bản tóm tắt của bạn"
+    },
+    "carer": {
+      "title": "Hỗ trợ Người thân qua Hành trình Điều trị",
+      "welcome": "Chào mừng bạn! Bạn đang hỗ trợ ai đó trong hành trình điều trị thận của họ. Những tài nguyên này sẽ giúp bạn hiểu các lựa chọn của họ và cung cấp sự hỗ trợ có ý nghĩa.",
+      "welcomeWithRelation": "Chào mừng bạn! Với vai trò là {{relationship}} của họ, sự hỗ trợ của bạn rất quan trọng.",
+      "badge": "Chế độ Đồng hành",
+      "selfCare": {
+        "title": "Chăm sóc Bản thân",
+        "subtitle": "Việc chăm sóc người khác có thể rất đòi hỏi. Hãy nhớ dành thời gian cho bản thân.",
+        "tip1": "Việc chăm sóc người khác có thể rất đòi hỏi. Hãy nhớ dành thời gian cho bản thân và kết nối với những người hiểu trải nghiệm của bạn.",
+        "tip2": "Hãy nghỉ ngơi thường xuyên và chăm sóc sức khỏe của chính bạn.",
+        "tip3": "Đừng ngại nhờ giúp đỡ khi bạn cần.",
+        "findSupport": "Tìm Hỗ trợ cho Người Chăm sóc",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -1187,7 +1242,15 @@
       "notViewed": "Chưa khám phá"
     },
     "printOptimised": "Trang này được tối ưu hóa cho in ấn",
-    "accessibleFormat": "Cần định dạng khác? Hãy hỏi đội ngũ thận của bạn."
+    "accessibleFormat": "Cần định dạng khác? Hãy hỏi đội ngũ thận của bạn.",
+    "carer": {
+      "title": "Hỗ trợ cho Bạn",
+      "description": "Với vai trò là người chăm sóc hoặc thành viên gia đình, bạn cũng xứng đáng được hỗ trợ. Dưới đây là các tài nguyên giúp bạn trong hành trình này.",
+      "findSupport": "Tìm Mạng lưới Hỗ trợ",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Các trang web hữu ích:"
+    }
   },
   "session": {
     "timeRemaining": "Thời gian còn lại: {{minutes}}",
@@ -1457,5 +1520,31 @@
   },
   "treatment": {
     "dayInLife": "Một ngày trong cuộc sống"
+  },
+  "supportNetworks": {
+    "title": "Mạng lưới Hỗ trợ",
+    "subtitle": "Tìm các tổ chức hỗ trợ thận địa phương và toàn quốc",
+    "searchPlaceholder": "Tìm kiếm theo thành phố hoặc khu vực (ví dụ: Bradford, Leeds)",
+    "searchLabel": "Tìm kiếm hỗ trợ",
+    "filters": {
+      "all": "Tất cả",
+      "patient": "Hỗ trợ Bệnh nhân",
+      "carer": "Hỗ trợ Người chăm sóc",
+      "nhs": "Dịch vụ NHS"
+    },
+    "noResults": "Không tìm thấy mạng lưới hỗ trợ nào cho khu vực này",
+    "tryDifferent": "Hãy thử từ khóa tìm kiếm khác hoặc xem các tổ chức toàn quốc bên dưới",
+    "national": "Tổ chức Toàn quốc",
+    "regional": "Hỗ trợ Khu vực",
+    "visitWebsite": "Truy cập Website",
+    "callHelpline": "Gọi Đường dây Hỗ trợ",
+    "services": "Dịch vụ",
+    "regions": "Khu vực được phục vụ",
+    "backToHub": "Quay về Trung tâm",
+    "forPatients": "Dành cho bệnh nhân",
+    "forCarers": "Dành cho người chăm sóc",
+    "nhsTrust": "NHS Trust",
+    "charity": "Tổ chức Từ thiện",
+    "carerOrg": "Tổ chức Người chăm sóc"
   }
 }

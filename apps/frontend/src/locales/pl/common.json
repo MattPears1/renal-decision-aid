@@ -123,6 +123,31 @@
     "selectLanguage": "Wybierz język",
     "currentLanguage": "Aktualny język"
   },
+  "userRole": {
+    "title": "Kim jesteś?",
+    "subtitle": "Pomoże nam to spersonalizować Twoje doświadczenie",
+    "patient": {
+      "title": "Podejmuję własną decyzję o leczeniu",
+      "description": "Mam chorobę nerek i chcę poznać moje opcje leczenia"
+    },
+    "carer": {
+      "title": "Wspieram kogoś",
+      "description": "Jestem opiekunem, członkiem rodziny lub przyjacielem pomagającym komuś z chorobą nerek"
+    },
+    "toggle": "Czy jesteś opiekunem lub członkiem rodziny?",
+    "switchMode": "Przełącz na tryb towarzysza"
+  },
+  "carerRelationship": {
+    "title": "Twoja relacja",
+    "subtitle": "Jaka jest Twoja relacja z osobą, którą wspierasz?",
+    "spouse": "Małżonek/Partner",
+    "parent": "Rodzic",
+    "child": "Dziecko (dorosłe)",
+    "sibling": "Rodzeństwo",
+    "friend": "Przyjaciel",
+    "professional": "Profesjonalny opiekun",
+    "other": "Inne"
+  },
   "privacy": {
     "pageAriaLabel": "Informacje o prywatności",
     "progressLabel": "Postęp konfiguracji: 30%",
@@ -519,6 +544,21 @@
         "title": "Zadaj pytania",
         "description": "Porozmawiaj z naszym asystentem AI o opcjach leczenia nerek. Uzyskaj odpowiedzi na pytania w formie rozmowy.",
         "action": "Rozpocznij czat"
+      },
+      "lifeGoals": {
+        "title": "Zgodność z celami życiowymi",
+        "description": "Zobacz, jak różne metody leczenia pasują do Twoich osobistych celów dotyczących pracy, rodziny, podróży i innych aspektów życia.",
+        "action": "Poznaj cele"
+      },
+      "statistics": {
+        "title": "Co wybrali inni",
+        "description": "Zobacz, jakie decyzje podjęły osoby w podobnych sytuacjach i jakie były ich wyniki.",
+        "action": "Zobacz statystyki"
+      },
+      "supportNetworks": {
+        "title": "Sieci wsparcia",
+        "description": "Znajdź lokalne grupy wsparcia dla pacjentów z chorobami nerek, organizacje dla opiekunów i usługi NHS w Twojej okolicy.",
+        "action": "Znajdź wsparcie"
       }
     },
     "status": {
@@ -534,6 +574,21 @@
     },
     "quickAction": {
       "summary": "Zobacz swoje podsumowanie"
+    },
+    "carer": {
+      "title": "Wspieranie kogoś w podróży przez leczenie",
+      "welcome": "Witaj! Wspierasz kogoś w podróży przez leczenie nerek. Te zasoby pomogą Ci zrozumieć dostępne opcje i zapewnić wartościowe wsparcie.",
+      "welcomeWithRelation": "Witaj! Jako {{relationship}}, Twoje wsparcie ma ogromne znaczenie.",
+      "badge": "Tryb towarzysza",
+      "selfCare": {
+        "title": "Dbanie o siebie",
+        "subtitle": "Opieka nad kimś może być wymagająca. Pamiętaj, aby znaleźć czas dla siebie.",
+        "tip1": "Opieka nad kimś może być wymagająca. Pamiętaj, aby znaleźć czas dla siebie i nawiązać kontakt z innymi, którzy rozumieją Twoje doświadczenie.",
+        "tip2": "Rób regularne przerwy i dbaj o swoje zdrowie.",
+        "tip3": "Nie bój się prosić o pomoc, gdy jej potrzebujesz.",
+        "findSupport": "Znajdź wsparcie dla opiekunów",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -1194,7 +1249,41 @@
       "4": "Ważne",
       "5": "Bardzo ważne",
       "default": "Ważne"
+    },
+    "carer": {
+      "title": "Wsparcie dla Ciebie",
+      "description": "Jako opiekun lub członek rodziny, Ty również zasługujesz na wsparcie. Oto zasoby, które pomogą Ci w tej podróży.",
+      "findSupport": "Znajdź sieci wsparcia",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Przydatne strony internetowe:"
     }
+  },
+  "supportNetworks": {
+    "title": "Sieci wsparcia",
+    "subtitle": "Znajdź lokalne i krajowe organizacje wspierające pacjentów z chorobami nerek",
+    "searchPlaceholder": "Szukaj według miasta lub regionu (np. Bradford, Leeds)",
+    "searchLabel": "Szukaj wsparcia",
+    "filters": {
+      "all": "Wszystkie",
+      "patient": "Wsparcie dla pacjentów",
+      "carer": "Wsparcie dla opiekunów",
+      "nhs": "Usługi NHS"
+    },
+    "noResults": "Nie znaleziono sieci wsparcia dla tego obszaru",
+    "tryDifferent": "Spróbuj innego wyszukiwania lub przejrzyj organizacje krajowe poniżej",
+    "national": "Organizacje krajowe",
+    "regional": "Wsparcie regionalne",
+    "visitWebsite": "Odwiedź stronę",
+    "callHelpline": "Zadzwoń na infolinię",
+    "services": "Usługi",
+    "regions": "Obsługiwane obszary",
+    "backToHub": "Powrót do centrum",
+    "forPatients": "Dla pacjentów",
+    "forCarers": "Dla opiekunów",
+    "nhsTrust": "NHS Trust",
+    "charity": "Organizacja charytatywna",
+    "carerOrg": "Organizacja opiekunów"
   },
   "session": {
     "timeRemaining": "Pozostały czas: {{minutes}}",

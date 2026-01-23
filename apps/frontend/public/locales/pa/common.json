@@ -65,12 +65,32 @@
     "title": "ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ",
     "instruction": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਚੁਣੋ। ਤੁਸੀਂ ਇਸਨੂੰ ਕਿਸੇ ਵੀ ਸਮੇਂ ਬਦਲ ਸਕਦੇ ਹੋ।",
     "selectLanguage": "ਭਾਸ਼ਾ ਚੁਣੋ",
-    "currentLanguage": "ਮੌਜੂਦਾ ਭਾਸ਼ਾ",
-    "confirmChange": "ਭਾਸ਼ਾ ਬਦਲਣੀ ਹੈ?",
-    "confirmChangeMessage": "ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ 'ਤੇ ਭਾਸ਼ਾ {{language}} ਵਿੱਚ ਬਦਲਣਾ ਚਾਹੁੰਦੇ ਹੋ? ਸਾਰਾ ਟੈਕਸਟ ਅੱਪਡੇਟ ਹੋ ਜਾਵੇਗਾ।",
-    "searchLanguages": "ਭਾਸ਼ਾਵਾਂ ਲੱਭੋ...",
-    "languagesAvailable": "ਭਾਸ਼ਾਵਾਂ ਉਪਲਬਧ",
-    "noResults": "ਕੋਈ ਭਾਸ਼ਾ ਨਹੀਂ ਮਿਲੀ"
+    "currentLanguage": "ਮੌਜੂਦਾ ਭਾਸ਼ਾ"
+  },
+  "userRole": {
+    "title": "ਤੁਸੀਂ ਕੌਣ ਹੋ?",
+    "subtitle": "ਇਹ ਸਾਨੂੰ ਤੁਹਾਡੇ ਤਜ਼ਰਬੇ ਨੂੰ ਵਿਅਕਤੀਗਤ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ",
+    "patient": {
+      "title": "ਮੈਂ ਆਪਣਾ ਇਲਾਜ ਫੈਸਲਾ ਲੈ ਰਿਹਾ/ਰਹੀ ਹਾਂ",
+      "description": "ਮੈਨੂੰ ਗੁਰਦੇ ਦੀ ਬਿਮਾਰੀ ਹੈ ਅਤੇ ਮੈਂ ਆਪਣੇ ਇਲਾਜ ਦੇ ਵਿਕਲਪਾਂ ਬਾਰੇ ਜਾਣਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ"
+    },
+    "carer": {
+      "title": "ਮੈਂ ਕਿਸੇ ਦਾ ਸਮਰਥਨ ਕਰ ਰਿਹਾ/ਰਹੀ ਹਾਂ",
+      "description": "ਮੈਂ ਇੱਕ ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਾ, ਪਰਿਵਾਰਕ ਮੈਂਬਰ, ਜਾਂ ਦੋਸਤ ਹਾਂ ਜੋ ਗੁਰਦੇ ਦੀ ਬਿਮਾਰੀ ਵਾਲੇ ਕਿਸੇ ਵਿਅਕਤੀ ਦੀ ਮਦਦ ਕਰ ਰਿਹਾ/ਰਹੀ ਹਾਂ"
+    },
+    "toggle": "ਕੀ ਤੁਸੀਂ ਦੇਖਭਾਲ ਕਰਨ ਵਾਲੇ ਜਾਂ ਪਰਿਵਾਰਕ ਮੈਂਬਰ ਹੋ?",
+    "switchMode": "ਸਾਥੀ ਮੋਡ ਵਿੱਚ ਬਦਲੋ"
+  },
+  "carerRelationship": {
+    "title": "ਤੁਹਾਡਾ ਰਿਸ਼ਤਾ",
+    "subtitle": "ਤੁਸੀਂ ਜਿਸ ਵਿਅਕਤੀ ਦਾ ਸਮਰਥਨ ਕਰ ਰਹੇ ਹੋ ਉਸ ਨਾਲ ਕਿਵੇਂ ਜੁੜੇ ਹੋ?",
+    "spouse": "ਜੀਵਨ ਸਾਥੀ/ਸਾਥੀ",
+    "parent": "ਮਾਤਾ-ਪਿਤਾ",
+    "child": "ਬੱਚਾ (ਬਾਲਗ)",
+    "sibling": "ਭੈਣ-ਭਰਾ",
+    "friend": "ਦੋਸਤ",
+    "professional": "ਪੇਸ਼ੇਵਰ ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਾ",
+    "other": "ਹੋਰ"
   },
   "privacy": {
     "pageAriaLabel": "ਗੋਪਨੀਯਤਾ ਜਾਣਕਾਰੀ",
@@ -139,46 +159,15 @@
     "homeAriaLabel": "NHS ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਹਾਇਤਾ - ਹੋਮ"
   },
   "progress": {
-    "title": "ਤੁਹਾਡੀ ਸਿੱਖਣ ਦੀ ਯਾਤਰਾ",
-    "yourProgress": "ਤੁਹਾਡੀ ਤਰੱਕੀ",
-    "complete": "ਪੂਰਾ",
-    "treatments": "ਇਲਾਜ",
-    "sections": {
-      "title": "ਖੋਜਣ ਲਈ ਭਾਗ",
-      "questionnaire": "ਤੁਹਾਡੇ ਬਾਰੇ",
-      "questionnaireDesc": "ਆਪਣੀ ਸਥਿਤੀ ਸਾਂਝੀ ਕਰੋ",
-      "treatments": "ਇਲਾਜ ਵਿਕਲਪ",
-      "treatmentsDesc": "{{total}} ਵਿੱਚੋਂ {{viewed}} ਖੋਜੇ",
-      "values": "ਮੁੱਲ ਅਭਿਆਸ",
-      "valuesDesc": "ਆਪਣੀਆਂ ਤਰਜੀਹਾਂ ਸਪੱਸ਼ਟ ਕਰੋ",
-      "chat": "ਸਵਾਲ ਪੁੱਛੋ",
-      "chatDesc": "ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰੋ",
-      "lifeGoals": "ਜੀਵਨ ਟੀਚੇ",
-      "lifeGoalsDesc": "ਇਲਾਜ ਅਤੇ ਟੀਚਿਆਂ ਦਾ ਮੇਲ",
-      "statistics": "ਦੂਜਿਆਂ ਨੇ ਕੀ ਚੁਣਿਆ",
-      "statisticsDesc": "ਮਰੀਜ਼ਾਂ ਦੀ ਪਸੰਦ ਦੇਖੋ"
-    },
-    "status": {
-      "completed": "ਪੂਰਾ",
-      "inProgress": "ਪ੍ਰਗਤੀ ਵਿੱਚ"
-    },
-    "badges": {
-      "title": "ਤੁਹਾਡੇ ਬੈਜ",
-      "explorer": "ਖੋਜੀ",
-      "allTreatments": "ਸਾਰੇ ਇਲਾਜ",
-      "values": "ਮੁੱਲ ਸਪੱਸ਼ਟ",
-      "curious": "ਉਤਸੁਕ ਮਨ",
-      "complete": "ਯਾਤਰਾ ਪੂਰੀ"
-    },
-    "encouragement": {
-      "start": "ਇਲਾਜ ਵਿਕਲਪਾਂ ਦੀ ਪੜਚੋਲ ਕਰਕੇ ਆਪਣੀ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰੋ",
-      "beginning": "ਵਧੀਆ ਸ਼ੁਰੂਆਤ! ਹੋਰ ਜਾਣਨ ਲਈ ਖੋਜ ਜਾਰੀ ਰੱਖੋ",
-      "making": "ਤੁਸੀਂ ਚੰਗੀ ਤਰੱਕੀ ਕਰ ਰਹੇ ਹੋ!",
-      "halfway": "ਅੱਧੇ ਤੋਂ ਵੱਧ ਪੂਰਾ - ਸ਼ਾਬਾਸ਼!",
-      "almost": "ਲਗਭਗ ਪੂਰਾ! ਬੱਸ ਕੁਝ ਹੋਰ ਭਾਗ ਬਾਕੀ ਹਨ",
-      "complete": "ਸ਼ਾਨਦਾਰ! ਤੁਸੀਂ ਸਭ ਕੁਝ ਖੋਜ ਲਿਆ ਹੈ"
-    },
-    "viewSummary": "ਆਪਣਾ ਸਾਰ ਦੇਖੋ"
+    "language": "ਭਾਸ਼ਾ",
+    "privacy": "ਗੋਪਨੀਯਤਾ",
+    "yourJourney": "ਤੁਹਾਡੀ ਯਾਤਰਾ",
+    "aboutYou": "ਤੁਹਾਡੇ ਬਾਰੇ",
+    "yourOptions": "ਤੁਹਾਡੇ ਵਿਕਲਪ",
+    "ariaLabel": "ਫੈਸਲਾ ਸਹਾਇਤਾ ਦੁਆਰਾ ਤਰੱਕੀ",
+    "stepOfTotal": "{{total}} ਵਿੱਚੋਂ ਕਦਮ {{current}}",
+    "percentComplete": "{{percentage}}% ਪੂਰਾ",
+    "ariaProgressLabel": "ਤਰੱਕੀ: {{total}} ਕਦਮਾਂ ਵਿੱਚੋਂ {{current}} ਪੂਰੇ"
   },
   "journey": {
     "title": "ਤੁਸੀਂ ਆਪਣੀ ਗੁਰਦਾ ਦੇਖਭਾਲ ਯਾਤਰਾ ਵਿੱਚ ਕਿੱਥੇ ਹੋ?",
@@ -338,7 +327,6 @@
     "error": "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
     "continue": "ਜਾਰੀ ਰੱਖੋ",
     "cancel": "ਰੱਦ ਕਰੋ",
-    "confirm": "ਪੁਸ਼ਟੀ ਕਰੋ",
     "save": "ਸੰਭਾਲੋ",
     "print": "ਪ੍ਰਿੰਟ ਕਰੋ",
     "yes": "ਹਾਂ",
@@ -747,34 +735,7 @@
     "scrollHint": "ਸਾਰੇ ਇਲਾਜ ਦੇਖਣ ਲਈ ਖਿਤਿਜੀ ਤੌਰ 'ਤੇ ਸਕ੍ਰੋਲ ਕਰੋ",
     "tableHeading": "ਇਲਾਜ ਤੁਲਨਾ ਸਾਰਣੀ",
     "tableLabel": "ਗੁਰਦਾ ਇਲਾਜ ਵਿਕਲਪਾਂ ਦੀ ਤੁਲਨਾ",
-    "criteria": {
-      "timeCommitment": "ਹਫ਼ਤਾਵਾਰੀ ਸਮਾਂ ਪ੍ਰਤੀਬੱਧਤਾ",
-      "timeCommitmentHint": "ਇਲਾਜ 'ਤੇ ਖਰਚੇ ਘੰਟੇ",
-      "location": "ਇਲਾਜ ਦੀ ਜਗ੍ਹਾ",
-      "locationHint": "ਇਲਾਜ ਕਿੱਥੇ ਹੁੰਦਾ ਹੈ",
-      "travel": "ਯਾਤਰਾ 'ਤੇ ਪ੍ਰਭਾਵ",
-      "travelHint": "ਯਾਤਰਾ ਅਤੇ ਛੁੱਟੀਆਂ ਦੀ ਸਮਰੱਥਾ",
-      "diet": "ਖੁਰਾਕ ਪਾਬੰਦੀਆਂ",
-      "dietHint": "ਖਾਣ-ਪੀਣ ਦੀਆਂ ਸੀਮਾਵਾਂ",
-      "surgery": "ਸਰਜਰੀ ਦੀ ਲੋੜ",
-      "surgeryHint": "ਸ਼ੁਰੂਆਤੀ ਪ੍ਰਕਿਰਿਆਵਾਂ ਦੀ ਲੋੜ",
-      "supportNeeded": "ਸਹਾਇਤਾ ਦੀ ਲੋੜ",
-      "supportNeededHint": "ਪਰਿਵਾਰ ਜਾਂ ਦੇਖਭਾਲਕਰਤਾਵਾਂ ਤੋਂ ਮਦਦ",
-      "recoveryTime": "ਰਿਕਵਰੀ ਸਮਾਂ",
-      "recoveryTimeHint": "ਇਲਾਜ ਨਾਲ ਅਨੁਕੂਲ ਹੋਣ ਦਾ ਸਮਾਂ",
-      "longTermOutlook": "ਲੰਬੇ ਸਮੇਂ ਦੀ ਸੰਭਾਵਨਾ",
-      "longTermOutlookHint": "ਸਮੇਂ ਦੇ ਨਾਲ ਸੰਭਾਵਿਤ ਨਤੀਜੇ",
-      "scheduleFlexibility": "ਸਮਾਂ-ਸੂਚੀ ਲਚਕਤਾ",
-      "scheduleFlexibilityHint": "ਆਪਣੀ ਸਮਾਂ-ਸੂਚੀ 'ਤੇ ਕੰਟਰੋਲ",
-      "trainingRequired": "ਸਿਖਲਾਈ ਦੀ ਲੋੜ",
-      "trainingRequiredHint": "ਸਿੱਖਣ ਲਈ ਲੋੜੀਂਦਾ ਸਮਾਂ",
-      "survivalRates": "ਬਚਾਅ ਦਰਾਂ",
-      "survivalRatesHint": "ਆਮ ਨਤੀਜੇ (ਵਿਅਕਤੀ ਅਨੁਸਾਰ ਬਦਲਦੇ ਹਨ)",
-      "qualityOfLife": "ਜੀਵਨ ਦੀ ਗੁਣਵੱਤਾ",
-      "qualityOfLifeHint": "ਸਮੁੱਚੀ ਭਲਾਈ",
-      "energyLevels": "ਊਰਜਾ ਪੱਧਰ",
-      "energyLevelsHint": "ਆਮ ਊਰਜਾ ਅਤੇ ਥਕਾਵਟ"
-    },
+    "criteria": "ਮਾਪਦੰਡ",
     "recommended": "ਸਿਫਾਰਸ਼ ਕੀਤਾ",
     "remember": "ਯਾਦ ਰੱਖੋ",
     "guidance": "ਕੋਈ ਵੀ ਇਲਾਜ ਸਾਰਿਆਂ ਲਈ ਸੰਪੂਰਨ ਨਹੀਂ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਚੋਣ ਤੁਹਾਡੀ ਨਿੱਜੀ ਸਥਿਤੀ, ਸਿਹਤ ਅਤੇ ਮੁੱਲਾਂ 'ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ। ਇਹ ਤੁਲਨਾ ਤੁਹਾਡੀ ਗੁਰਦਾ ਟੀਮ ਨਾਲ ਚਰਚਾ ਲਈ ਸ਼ੁਰੂਆਤੀ ਬਿੰਦੂ ਹੈ।",
@@ -803,6 +764,34 @@
       "medical": "ਡਾਕਟਰੀ ਕਾਰਕ",
       "support": "ਸਹਾਇਤਾ ਲੋੜਾਂ",
       "health": "ਸਿਹਤ ਨਤੀਜੇ"
+    },
+    "criteria": {
+      "timeCommitment": "ਹਫ਼ਤਾਵਾਰੀ ਸਮਾਂ ਪ੍ਰਤੀਬੱਧਤਾ",
+      "timeCommitmentHint": "ਇਲਾਜ 'ਤੇ ਖਰਚੇ ਘੰਟੇ",
+      "location": "ਇਲਾਜ ਦੀ ਜਗ੍ਹਾ",
+      "locationHint": "ਇਲਾਜ ਕਿੱਥੇ ਹੁੰਦਾ ਹੈ",
+      "travel": "ਯਾਤਰਾ 'ਤੇ ਪ੍ਰਭਾਵ",
+      "travelHint": "ਯਾਤਰਾ ਅਤੇ ਛੁੱਟੀਆਂ ਦੀ ਸਮਰੱਥਾ",
+      "diet": "ਖੁਰਾਕ ਪਾਬੰਦੀਆਂ",
+      "dietHint": "ਖਾਣ-ਪੀਣ ਦੀਆਂ ਸੀਮਾਵਾਂ",
+      "surgery": "ਸਰਜਰੀ ਦੀ ਲੋੜ",
+      "surgeryHint": "ਸ਼ੁਰੂਆਤੀ ਪ੍ਰਕਿਰਿਆਵਾਂ ਦੀ ਲੋੜ",
+      "supportNeeded": "ਸਹਾਇਤਾ ਦੀ ਲੋੜ",
+      "supportNeededHint": "ਪਰਿਵਾਰ ਜਾਂ ਦੇਖਭਾਲਕਰਤਾਵਾਂ ਤੋਂ ਮਦਦ",
+      "recoveryTime": "ਰਿਕਵਰੀ ਸਮਾਂ",
+      "recoveryTimeHint": "ਇਲਾਜ ਨਾਲ ਅਨੁਕੂਲ ਹੋਣ ਦਾ ਸਮਾਂ",
+      "longTermOutlook": "ਲੰਬੇ ਸਮੇਂ ਦੀ ਸੰਭਾਵਨਾ",
+      "longTermOutlookHint": "ਸਮੇਂ ਦੇ ਨਾਲ ਸੰਭਾਵਿਤ ਨਤੀਜੇ",
+      "scheduleFlexibility": "ਸਮਾਂ-ਸੂਚੀ ਲਚਕਤਾ",
+      "scheduleFlexibilityHint": "ਆਪਣੀ ਸਮਾਂ-ਸੂਚੀ 'ਤੇ ਕੰਟਰੋਲ",
+      "trainingRequired": "ਸਿਖਲਾਈ ਦੀ ਲੋੜ",
+      "trainingRequiredHint": "ਸਿੱਖਣ ਲਈ ਲੋੜੀਂਦਾ ਸਮਾਂ",
+      "survivalRates": "ਬਚਾਅ ਦਰਾਂ",
+      "survivalRatesHint": "ਆਮ ਨਤੀਜੇ (ਵਿਅਕਤੀ ਅਨੁਸਾਰ ਬਦਲਦੇ ਹਨ)",
+      "qualityOfLife": "ਜੀਵਨ ਦੀ ਗੁਣਵੱਤਾ",
+      "qualityOfLifeHint": "ਸਮੁੱਚੀ ਭਲਾਈ",
+      "energyLevels": "ਊਰਜਾ ਪੱਧਰ",
+      "energyLevelsHint": "ਆਮ ਊਰਜਾ ਅਤੇ ਥਕਾਵਟ"
     },
     "values": {
       "minimalAfterRecovery": "ਰਿਕਵਰੀ ਤੋਂ ਬਾਅਦ ਘੱਟੋ-ਘੱਟ",
@@ -1025,14 +1014,19 @@
         "action": "ਚੈਟ ਸ਼ੁਰੂ ਕਰੋ"
       },
       "lifeGoals": {
-        "title": "ਜੀਵਨ ਟੀਚੇ ਅਨੁਕੂਲਤਾ",
-        "description": "ਦੇਖੋ ਕਿ ਇਲਾਜ ਤੁਹਾਡੇ ਟੀਚਿਆਂ ਨਾਲ ਕਿਵੇਂ ਮੇਲ ਖਾਂਦੇ ਹਨ",
+        "title": "ਜੀਵਨ ਦੇ ਟੀਚਿਆਂ ਨਾਲ ਅਨੁਕੂਲਤਾ",
+        "description": "ਦੇਖੋ ਕਿ ਵੱਖ-ਵੱਖ ਇਲਾਜ ਕੰਮ, ਪਰਿਵਾਰ, ਯਾਤਰਾ ਅਤੇ ਹੋਰਾਂ ਲਈ ਤੁਹਾਡੇ ਨਿੱਜੀ ਟੀਚਿਆਂ ਨਾਲ ਕਿਵੇਂ ਮੇਲ ਖਾਂਦੇ ਹਨ।",
         "action": "ਟੀਚੇ ਖੋਜੋ"
       },
       "statistics": {
         "title": "ਦੂਜਿਆਂ ਨੇ ਕੀ ਚੁਣਿਆ",
-        "description": "ਸਮਾਨ ਸਥਿਤੀਆਂ ਵਿੱਚ ਲੋਕਾਂ ਨੇ ਕੀ ਫੈਸਲਾ ਕੀਤਾ ਦੇਖੋ",
+        "description": "ਦੇਖੋ ਕਿ ਸਮਾਨ ਸਥਿਤੀਆਂ ਵਿੱਚ ਲੋਕਾਂ ਨੇ ਕੀ ਫੈਸਲਾ ਕੀਤਾ ਅਤੇ ਉਹਨਾਂ ਦੇ ਨਤੀਜੇ ਕੀ ਰਹੇ।",
         "action": "ਅੰਕੜੇ ਦੇਖੋ"
+      },
+      "supportNetworks": {
+        "title": "ਸਹਾਇਤਾ ਨੈੱਟਵਰਕ",
+        "description": "ਆਪਣੇ ਖੇਤਰ ਵਿੱਚ ਸਥਾਨਕ ਗੁਰਦਾ ਸਹਾਇਤਾ ਗਰੁੱਪ, ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਿਆਂ ਦੀਆਂ ਸੰਸਥਾਵਾਂ ਅਤੇ NHS ਸੇਵਾਵਾਂ ਲੱਭੋ।",
+        "action": "ਸਹਾਇਤਾ ਲੱਭੋ"
       }
     },
     "status": {
@@ -1054,115 +1048,35 @@
     },
     "quickAction": {
       "summary": "ਆਪਣਾ ਸਾਰ ਦੇਖੋ"
+    },
+    "carer": {
+      "title": "ਉਹਨਾਂ ਦੀ ਇਲਾਜ ਯਾਤਰਾ ਵਿੱਚ ਕਿਸੇ ਦਾ ਸਮਰਥਨ ਕਰਨਾ",
+      "welcome": "ਜੀ ਆਇਆਂ ਨੂੰ! ਤੁਸੀਂ ਕਿਸੇ ਦੀ ਗੁਰਦਾ ਇਲਾਜ ਯਾਤਰਾ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰ ਰਹੇ ਹੋ। ਇਹ ਸਰੋਤ ਤੁਹਾਨੂੰ ਉਹਨਾਂ ਦੇ ਵਿਕਲਪਾਂ ਨੂੰ ਸਮਝਣ ਅਤੇ ਅਰਥਪੂਰਨ ਸਹਾਇਤਾ ਪ੍ਰਦਾਨ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਨਗੇ।",
+      "welcomeWithRelation": "ਜੀ ਆਇਆਂ ਨੂੰ! ਉਹਨਾਂ ਦੇ {{relationship}} ਵਜੋਂ, ਤੁਹਾਡਾ ਸਮਰਥਨ ਮਹੱਤਵਪੂਰਨ ਹੈ।",
+      "badge": "ਸਾਥੀ ਮੋਡ",
+      "selfCare": {
+        "title": "ਆਪਣਾ ਖਿਆਲ ਰੱਖਣਾ",
+        "subtitle": "ਕਿਸੇ ਦੀ ਦੇਖਭਾਲ ਕਰਨਾ ਮੰਗ ਵਾਲਾ ਹੋ ਸਕਦਾ ਹੈ। ਆਪਣੇ ਲਈ ਸਮਾਂ ਕੱਢਣਾ ਯਾਦ ਰੱਖੋ।",
+        "tip1": "ਕਿਸੇ ਦੀ ਦੇਖਭਾਲ ਕਰਨਾ ਮੰਗ ਵਾਲਾ ਹੋ ਸਕਦਾ ਹੈ। ਆਪਣੇ ਲਈ ਸਮਾਂ ਕੱਢਣਾ ਅਤੇ ਦੂਜਿਆਂ ਨਾਲ ਜੁੜਨਾ ਯਾਦ ਰੱਖੋ ਜੋ ਤੁਹਾਡੇ ਤਜ਼ਰਬੇ ਨੂੰ ਸਮਝਦੇ ਹਨ।",
+        "tip2": "ਨਿਯਮਿਤ ਬ੍ਰੇਕ ਲਓ ਅਤੇ ਆਪਣੀ ਸਿਹਤ ਦਾ ਧਿਆਨ ਰੱਖੋ।",
+        "tip3": "ਜਦੋਂ ਲੋੜ ਹੋਵੇ ਤਾਂ ਮਦਦ ਮੰਗਣ ਤੋਂ ਨਾ ਡਰੋ।",
+        "findSupport": "ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਿਆਂ ਲਈ ਸਹਾਇਤਾ ਲੱਭੋ",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "summary": {
-    "title": "ਤੁਹਾਡੇ ਸੈਸ਼ਨ ਦਾ ਸਾਰ",
-    "subtitle": "ਅੱਜ ਤੁਸੀਂ ਜੋ ਖੋਜਿਆ ਉਸਦਾ ਸਾਰ ਇੱਥੇ ਹੈ।",
+    "title": "ਤੁਹਾਡਾ ਸੈਸ਼ਨ ਸਾਰ",
+    "subtitle": "ਇੱਥੇ ਅੱਜ ਤੁਸੀਂ ਜੋ ਖੋਜਿਆ ਉਸਦਾ ਸਾਰ ਹੈ।",
     "sections": {
       "journey": "ਤੁਹਾਡੀ ਯਾਤਰਾ ਦਾ ਪੜਾਅ",
       "values": "ਤੁਹਾਡੇ ਲਈ ਕੀ ਮਹੱਤਵਪੂਰਨ ਹੈ",
       "viewed": "ਖੋਜੇ ਗਏ ਇਲਾਜ",
-      "questions": "ਚਰਚਾ ਲਈ ਸਵਾਲ",
-      "priorities": "Your Priorities",
-      "nextSteps": "Suggested Next Steps",
-      "lifeGoals": "ਜੀਵਨ ਟੀਚੇ ਅਨੁਕੂਲਤਾ",
-      "statistics": "ਦੂਜਿਆਂ ਨੇ ਕੀ ਚੁਣਿਆ"
+      "questions": "ਚਰਚਾ ਲਈ ਸਵਾਲ"
     },
     "print": "ਸਾਰ ਪ੍ਰਿੰਟ ਕਰੋ",
     "email": "ਸਾਰ ਈਮੇਲ ਕਰੋ",
-    "startOver": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ",
-    "share": "Share",
-    "sessionId": "Session ID",
-    "notSpecified": "Not specified",
-    "readyToReview": "ਸਮੀਖਿਆ ਲਈ ਤਿਆਰ",
-    "viewed": "Viewed",
-    "noValues": "You have not completed the values exercise yet.",
-    "completeValues": "Complete now",
-    "noTreatments": "You have not explored any treatments yet.",
-    "exploreTreatments": "Explore treatments",
-    "seeAll": "See all",
-    "confirmReset": "Are you sure you want to start over? All your progress will be lost.",
-    "addQuestionPlaceholder": "Type your own question...",
-    "question1": "Which treatment options are suitable for my situation?",
-    "question2": "What would my daily life look like with each treatment?",
-    "question3": "How do I start the process for my preferred treatment?",
-    "step1": {
-      "title": "Review this summary",
-      "description": "Take time to look through what you have explored and think about any additional questions."
-    },
-    "step2": {
-      "title": "Share with family or carers",
-      "description": "If you have support at home, discuss your thoughts with them."
-    },
-    "step3": {
-      "title": "Discuss with your kidney care team",
-      "description": "Bring this summary to your next appointment to discuss your options."
-    },
-    "privacy": {
-      "title": "Your Privacy",
-      "text": "This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server."
-    },
-    "disclaimer": {
-      "title": "Important Reminder",
-      "text": "This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances."
-    },
-    "printForAppointment": "Print for Your Appointment",
-    "askMore": "Have more questions?",
-    "shareTitle": "NHS ਗੁਰਦਾ ਇਲਾਜ ਸਾਰ",
-    "shareText": "ਮੇਰਾ ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਾਰ",
-    "readyForAppointment": "ਆਪਣੀ ਅਗਲੀ ਮੁਲਾਕਾਤ ਲਈ ਤਿਆਰ ਹੋ?",
-    "printInstructions": "ਆਪਣੀ ਗੁਰਦਾ ਦੇਖਭਾਲ ਟੀਮ ਨਾਲ ਲੈ ਜਾਣ ਲਈ ਇਸ ਸਾਰ ਨੂੰ ਪ੍ਰਿੰਟ ਕਰੋ",
-    "printHeader": {
-      "title": "NHS ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਹਾਇਤਾ",
-      "subtitle": "ਤੁਹਾਡਾ ਨਿੱਜੀ ਸੈਸ਼ਨ ਸਾਰ",
-      "dateLabel": "ਮਿਤੀ: {{date}}",
-      "footer": "NHS ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਹਾਇਤਾ ਦੁਆਰਾ ਤਿਆਰ - {{date}}"
-    },
-    "journeyStages": {
-      "newly-diagnosed": "Newly Diagnosed",
-      "monitoring": "Being Monitored",
-      "preparing": "Preparing for Treatment",
-      "on-dialysis": "Currently on Dialysis",
-      "transplant-waiting": "On Transplant Waiting List",
-      "post-transplant": "After Transplant",
-      "supporting-someone": "Supporting Someone"
-    },
-    "journeyDescriptions": {
-      "newly-diagnosed": "You are learning about your kidney condition and want to understand your options.",
-      "monitoring": "Your kidneys are being monitored and you are preparing for the future.",
-      "preparing": "You need to start treatment soon and want to understand your choices.",
-      "on-dialysis": "You are receiving dialysis and exploring other options.",
-      "transplant-waiting": "You are on the transplant waiting list.",
-      "post-transplant": "You have had a kidney transplant and want ongoing support.",
-      "supporting-someone": "You are supporting a loved one with kidney disease.",
-      "default": "Your current stage in the kidney care journey."
-    },
-    "treatmentLabels": {
-      "haemodialysis": "Haemodialysis",
-      "peritoneal-dialysis": "Peritoneal Dialysis",
-      "home-haemodialysis": "Home Haemodialysis",
-      "kidney-transplant": "Kidney Transplant",
-      "conservative-care": "Conservative Care"
-    },
-    "valueLabels": {
-      "1": "ਮਹੱਤਵਪੂਰਨ ਨਹੀਂ",
-      "2": "ਥੋੜ੍ਹਾ ਮਹੱਤਵਪੂਰਨ",
-      "3": "ਮੱਧਮ ਮਹੱਤਵਪੂਰਨ",
-      "4": "ਮਹੱਤਵਪੂਰਨ",
-      "5": "ਬਹੁਤ ਮਹੱਤਵਪੂਰਨ",
-      "default": "ਮਹੱਤਵਪੂਰਨ"
-    },
-    "lifeGoals": {
-      "selectedGoals": "ਤੁਹਾਡੇ ਚੁਣੇ ਟੀਚੇ",
-      "topCompatible": "ਸਭ ਤੋਂ ਅਨੁਕੂਲ ਇਲਾਜ",
-      "reviewGoals": "ਆਪਣੇ ਟੀਚਿਆਂ ਦੀ ਸਮੀਖਿਆ ਕਰੋ"
-    },
-    "statistics": {
-      "description": "ਤੁਸੀਂ ਹੋਰ ਮਰੀਜ਼ਾਂ ਦੀ ਪਸੰਦ ਦੇ ਅੰਕੜੇ ਦੇਖੇ ਹਨ।",
-      "disclaimer": "ਅੰਕੜੇ NHS ਦੇ ਅਗਿਆਤ ਡੇਟਾ ਤੇ ਅਧਾਰਤ ਹਨ।",
-      "reviewStats": "ਅੰਕੜਿਆਂ ਦੀ ਸਮੀਖਿਆ ਕਰੋ"
-    }
+    "startOver": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ"
   },
   "values": {
     "title": "ਤੁਹਾਡੇ ਲਈ ਕੀ ਮਹੱਤਵਪੂਰਨ ਹੈ",
@@ -1317,6 +1231,136 @@
       }
     }
   },
+  "summary": {
+    "title": "ਤੁਹਾਡੇ ਸੈਸ਼ਨ ਦਾ ਸਾਰ",
+    "subtitle": "ਅੱਜ ਤੁਸੀਂ ਜੋ ਖੋਜਿਆ ਉਸਦਾ ਸਾਰ ਇੱਥੇ ਹੈ।",
+    "sections": {
+      "journey": "ਤੁਹਾਡੀ ਯਾਤਰਾ ਦਾ ਪੜਾਅ",
+      "values": "ਤੁਹਾਡੇ ਲਈ ਕੀ ਮਹੱਤਵਪੂਰਨ ਹੈ",
+      "viewed": "ਖੋਜੇ ਗਏ ਇਲਾਜ",
+      "questions": "ਚਰਚਾ ਲਈ ਸਵਾਲ",
+      "priorities": "Your Priorities",
+      "nextSteps": "Suggested Next Steps"
+    },
+    "print": "ਸਾਰ ਪ੍ਰਿੰਟ ਕਰੋ",
+    "email": "ਸਾਰ ਈਮੇਲ ਕਰੋ",
+    "startOver": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ",
+    "share": "Share",
+    "sessionId": "Session ID",
+    "notSpecified": "Not specified",
+    "readyToReview": "ਸਮੀਖਿਆ ਲਈ ਤਿਆਰ",
+    "viewed": "Viewed",
+    "noValues": "You have not completed the values exercise yet.",
+    "completeValues": "Complete now",
+    "noTreatments": "You have not explored any treatments yet.",
+    "exploreTreatments": "Explore treatments",
+    "seeAll": "See all",
+    "confirmReset": "Are you sure you want to start over? All your progress will be lost.",
+    "addQuestionPlaceholder": "Type your own question...",
+    "question1": "Which treatment options are suitable for my situation?",
+    "question2": "What would my daily life look like with each treatment?",
+    "question3": "How do I start the process for my preferred treatment?",
+    "step1": {
+      "title": "Review this summary",
+      "description": "Take time to look through what you have explored and think about any additional questions."
+    },
+    "step2": {
+      "title": "Share with family or carers",
+      "description": "If you have support at home, discuss your thoughts with them."
+    },
+    "step3": {
+      "title": "Discuss with your kidney care team",
+      "description": "Bring this summary to your next appointment to discuss your options."
+    },
+    "privacy": {
+      "title": "Your Privacy",
+      "text": "This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server."
+    },
+    "disclaimer": {
+      "title": "Important Reminder",
+      "text": "This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances."
+    },
+    "printForAppointment": "Print for Your Appointment",
+    "askMore": "Have more questions?",
+    "shareTitle": "NHS ਗੁਰਦਾ ਇਲਾਜ ਸਾਰ",
+    "shareText": "ਮੇਰਾ ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਾਰ",
+    "readyForAppointment": "ਆਪਣੀ ਅਗਲੀ ਮੁਲਾਕਾਤ ਲਈ ਤਿਆਰ ਹੋ?",
+    "printInstructions": "ਆਪਣੀ ਗੁਰਦਾ ਦੇਖਭਾਲ ਟੀਮ ਨਾਲ ਲੈ ਜਾਣ ਲਈ ਇਸ ਸਾਰ ਨੂੰ ਪ੍ਰਿੰਟ ਕਰੋ",
+    "printHeader": {
+      "title": "NHS ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਹਾਇਤਾ",
+      "subtitle": "ਤੁਹਾਡਾ ਨਿੱਜੀ ਸੈਸ਼ਨ ਸਾਰ",
+      "dateLabel": "ਮਿਤੀ: {{date}}",
+      "footer": "NHS ਗੁਰਦਾ ਇਲਾਜ ਫੈਸਲਾ ਸਹਾਇਤਾ ਦੁਆਰਾ ਤਿਆਰ - {{date}}"
+    },
+    "journeyStages": {
+      "newly-diagnosed": "Newly Diagnosed",
+      "monitoring": "Being Monitored",
+      "preparing": "Preparing for Treatment",
+      "on-dialysis": "Currently on Dialysis",
+      "transplant-waiting": "On Transplant Waiting List",
+      "post-transplant": "After Transplant",
+      "supporting-someone": "Supporting Someone"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "You are learning about your kidney condition and want to understand your options.",
+      "monitoring": "Your kidneys are being monitored and you are preparing for the future.",
+      "preparing": "You need to start treatment soon and want to understand your choices.",
+      "on-dialysis": "You are receiving dialysis and exploring other options.",
+      "transplant-waiting": "You are on the transplant waiting list.",
+      "post-transplant": "You have had a kidney transplant and want ongoing support.",
+      "supporting-someone": "You are supporting a loved one with kidney disease.",
+      "default": "Your current stage in the kidney care journey."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Haemodialysis",
+      "peritoneal-dialysis": "Peritoneal Dialysis",
+      "home-haemodialysis": "Home Haemodialysis",
+      "kidney-transplant": "Kidney Transplant",
+      "conservative-care": "Conservative Care"
+    },
+    "valueLabels": {
+      "1": "ਮਹੱਤਵਪੂਰਨ ਨਹੀਂ",
+      "2": "ਥੋੜ੍ਹਾ ਮਹੱਤਵਪੂਰਨ",
+      "3": "ਮੱਧਮ ਮਹੱਤਵਪੂਰਨ",
+      "4": "ਮਹੱਤਵਪੂਰਨ",
+      "5": "ਬਹੁਤ ਮਹੱਤਵਪੂਰਨ",
+      "default": "ਮਹੱਤਵਪੂਰਨ"
+    },
+    "carer": {
+      "title": "ਤੁਹਾਡੇ ਲਈ ਸਹਾਇਤਾ",
+      "description": "ਇੱਕ ਦੇਖਭਾਲ ਕਰਨ ਵਾਲੇ ਜਾਂ ਪਰਿਵਾਰਕ ਮੈਂਬਰ ਵਜੋਂ, ਤੁਸੀਂ ਵੀ ਸਹਾਇਤਾ ਦੇ ਹੱਕਦਾਰ ਹੋ। ਇਸ ਯਾਤਰਾ ਵਿੱਚ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਲਈ ਇੱਥੇ ਸਰੋਤ ਹਨ।",
+      "findSupport": "ਸਹਾਇਤਾ ਨੈੱਟਵਰਕ ਲੱਭੋ",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "ਉਪਯੋਗੀ ਵੈੱਬਸਾਈਟਾਂ:"
+    }
+  },
+  "supportNetworks": {
+    "title": "ਸਹਾਇਤਾ ਨੈੱਟਵਰਕ",
+    "subtitle": "ਸਥਾਨਕ ਅਤੇ ਰਾਸ਼ਟਰੀ ਗੁਰਦਾ ਸਹਾਇਤਾ ਸੰਸਥਾਵਾਂ ਲੱਭੋ",
+    "searchPlaceholder": "ਸ਼ਹਿਰ ਜਾਂ ਖੇਤਰ ਦੁਆਰਾ ਖੋਜੋ (ਜਿਵੇਂ, Bradford, Leeds)",
+    "searchLabel": "ਸਹਾਇਤਾ ਲੱਭੋ",
+    "filters": {
+      "all": "ਸਾਰੇ",
+      "patient": "ਮਰੀਜ਼ ਸਹਾਇਤਾ",
+      "carer": "ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਿਆਂ ਲਈ ਸਹਾਇਤਾ",
+      "nhs": "NHS ਸੇਵਾਵਾਂ"
+    },
+    "noResults": "ਇਸ ਖੇਤਰ ਲਈ ਕੋਈ ਸਹਾਇਤਾ ਨੈੱਟਵਰਕ ਨਹੀਂ ਮਿਲਿਆ",
+    "tryDifferent": "ਕੋਈ ਵੱਖਰਾ ਖੋਜ ਸ਼ਬਦ ਅਜ਼ਮਾਓ ਜਾਂ ਹੇਠਾਂ ਰਾਸ਼ਟਰੀ ਸੰਸਥਾਵਾਂ ਦੇਖੋ",
+    "national": "ਰਾਸ਼ਟਰੀ ਸੰਸਥਾਵਾਂ",
+    "regional": "ਖੇਤਰੀ ਸਹਾਇਤਾ",
+    "visitWebsite": "ਵੈੱਬਸਾਈਟ ਦੇਖੋ",
+    "callHelpline": "ਹੈਲਪਲਾਈਨ 'ਤੇ ਕਾਲ ਕਰੋ",
+    "services": "ਸੇਵਾਵਾਂ",
+    "regions": "ਕਵਰ ਕੀਤੇ ਖੇਤਰ",
+    "backToHub": "ਹੱਬ 'ਤੇ ਵਾਪਸ",
+    "forPatients": "ਮਰੀਜ਼ਾਂ ਲਈ",
+    "forCarers": "ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਿਆਂ ਲਈ",
+    "nhsTrust": "NHS ਟਰੱਸਟ",
+    "charity": "ਚੈਰਿਟੀ",
+    "carerOrg": "ਦੇਖਭਾਲ ਕਰਨ ਵਾਲਿਆਂ ਦੀ ਸੰਸਥਾ"
+  },
   "timeline": {
     "title": "ਜੀਵਨ ਦਾ ਇੱਕ ਦਿਨ",
     "subtitle": "ਦੇਖੋ ਕਿ ਇਸ ਇਲਾਜ ਨਾਲ ਇੱਕ ਆਮ ਦਿਨ ਕਿਵੇਂ ਦਿਖਦਾ ਹੈ",
@@ -1420,6 +1464,44 @@
       "sleep": "ਜਦੋਂ ਥੱਕੋ ਆਰਾਮ ਕਰੋ"
     }
   },
+  "progress": {
+    "title": "ਤੁਹਾਡੀ ਸਿੱਖਣ ਦੀ ਯਾਤਰਾ",
+    "yourProgress": "ਤੁਹਾਡੀ ਤਰੱਕੀ",
+    "complete": "ਪੂਰਾ",
+    "treatments": "ਇਲਾਜ",
+    "sections": {
+      "title": "ਖੋਜਣ ਲਈ ਭਾਗ",
+      "questionnaire": "ਤੁਹਾਡੇ ਬਾਰੇ",
+      "questionnaireDesc": "ਆਪਣੀ ਸਥਿਤੀ ਸਾਂਝੀ ਕਰੋ",
+      "treatments": "ਇਲਾਜ ਵਿਕਲਪ",
+      "treatmentsDesc": "{{total}} ਵਿੱਚੋਂ {{viewed}} ਖੋਜੇ",
+      "values": "ਮੁੱਲ ਅਭਿਆਸ",
+      "valuesDesc": "ਆਪਣੀਆਂ ਤਰਜੀਹਾਂ ਸਪੱਸ਼ਟ ਕਰੋ",
+      "chat": "ਸਵਾਲ ਪੁੱਛੋ",
+      "chatDesc": "ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰੋ"
+    },
+    "status": {
+      "completed": "ਪੂਰਾ",
+      "inProgress": "ਪ੍ਰਗਤੀ ਵਿੱਚ"
+    },
+    "badges": {
+      "title": "ਤੁਹਾਡੇ ਬੈਜ",
+      "explorer": "ਖੋਜੀ",
+      "allTreatments": "ਸਾਰੇ ਇਲਾਜ",
+      "values": "ਮੁੱਲ ਸਪੱਸ਼ਟ",
+      "curious": "ਉਤਸੁਕ ਮਨ",
+      "complete": "ਯਾਤਰਾ ਪੂਰੀ"
+    },
+    "encouragement": {
+      "start": "ਇਲਾਜ ਵਿਕਲਪਾਂ ਦੀ ਪੜਚੋਲ ਕਰਕੇ ਆਪਣੀ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰੋ",
+      "beginning": "ਵਧੀਆ ਸ਼ੁਰੂਆਤ! ਹੋਰ ਜਾਣਨ ਲਈ ਖੋਜ ਜਾਰੀ ਰੱਖੋ",
+      "making": "ਤੁਸੀਂ ਚੰਗੀ ਤਰੱਕੀ ਕਰ ਰਹੇ ਹੋ!",
+      "halfway": "ਅੱਧੇ ਤੋਂ ਵੱਧ ਪੂਰਾ - ਸ਼ਾਬਾਸ਼!",
+      "almost": "ਲਗਭਗ ਪੂਰਾ! ਬੱਸ ਕੁਝ ਹੋਰ ਭਾਗ ਬਾਕੀ ਹਨ",
+      "complete": "ਸ਼ਾਨਦਾਰ! ਤੁਸੀਂ ਸਭ ਕੁਝ ਖੋਜ ਲਿਆ ਹੈ"
+    },
+    "viewSummary": "ਆਪਣਾ ਸਾਰ ਦੇਖੋ"
+  },
   "scenario": {
     "title": "ਜੇ ਹੋਵੇ ਤਾਂ? ਦ੍ਰਿਸ਼ ਖੋਜੀ",
     "subtitle": "ਦੇਖੋ ਕਿ ਵੱਖ-ਵੱਖ ਜੀਵਨ ਸਥਿਤੀਆਂ ਹਰੇਕ ਇਲਾਜ ਵਿਕਲਪ ਨਾਲ ਕਿਵੇਂ ਕੰਮ ਕਰਦੀਆਂ ਹਨ",
@@ -1517,84 +1599,6 @@
     }
   },
   "treatment": {
-    "dayInLife": "ਜੀਵਨ ਦਾ ਇੱਕ ਦਿਨ",
-    "faqDesc": "ਇਸ ਇਲਾਜ ਬਾਰੇ ਮਰੀਜ਼ ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ",
-    "categoryGeneral": "ਆਮ"
-  },
-  "lifeGoals": {
-    "title": "ਜੀਵਨ ਟੀਚੇ ਅਨੁਕੂਲਤਾ",
-    "subtitle": "ਦੇਖੋ ਕਿ ਇਲਾਜ ਤੁਹਾਡੇ ਨਿੱਜੀ ਟੀਚਿਆਂ ਨਾਲ ਕਿਵੇਂ ਮੇਲ ਖਾਂਦੇ ਹਨ",
-    "introduction": "ਹਰ ਇਲਾਜ ਤੁਹਾਡੀ ਜ਼ਿੰਦਗੀ ਵਿੱਚ ਸਭ ਤੋਂ ਮਹੱਤਵਪੂਰਨ ਚੀਜ਼ਾਂ ਨਾਲ ਕਿਵੇਂ ਮੇਲ ਖਾਂਦਾ ਹੈ ਇਹ ਸਮਝਣਾ ਫੈਸਲਾ ਲੈਣ ਵਿੱਚ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।",
-    "categories": {
-      "work": {
-        "name": "ਕੰਮ ਅਤੇ ਕਰੀਅਰ",
-        "description": "ਤੁਹਾਡੀ ਨੌਕਰੀ ਅਤੇ ਪੇਸ਼ੇਵਰ ਜੀਵਨ ਨਾਲ ਸੰਬੰਧਿਤ ਟੀਚੇ"
-      },
-      "family": {
-        "name": "ਪਰਿਵਾਰ ਅਤੇ ਰਿਸ਼ਤੇ",
-        "description": "ਪਰਿਵਾਰਕ ਸਮੇਂ ਅਤੇ ਦੂਜਿਆਂ ਦੀ ਦੇਖਭਾਲ ਨਾਲ ਸੰਬੰਧਿਤ ਟੀਚੇ"
-      },
-      "travel": {
-        "name": "ਯਾਤਰਾ ਅਤੇ ਛੁੱਟੀਆਂ",
-        "description": "ਯਾਤਰਾ ਅਤੇ ਨਵੀਆਂ ਥਾਵਾਂ ਖੋਜਣ ਨਾਲ ਸੰਬੰਧਿਤ ਟੀਚੇ"
-      },
-      "hobbies": {
-        "name": "ਸ਼ੌਕ ਅਤੇ ਗਤੀਵਿਧੀਆਂ",
-        "description": "ਖੇਡਾਂ ਅਤੇ ਸ਼ੌਕ ਨਾਲ ਸੰਬੰਧਿਤ ਟੀਚੇ"
-      },
-      "independence": {
-        "name": "ਸੁਤੰਤਰਤਾ",
-        "description": "ਸੁਤੰਤਰਤਾ ਬਣਾਈ ਰੱਖਣ ਨਾਲ ਸੰਬੰਧਿਤ ਟੀਚੇ"
-      },
-      "religious": {
-        "name": "ਧਰਮ ਅਤੇ ਅਧਿਆਤਮਿਕਤਾ",
-        "description": "ਧਾਰਮਿਕ ਅਭਿਆਸ ਨਾਲ ਸੰਬੰਧਿਤ ਟੀਚੇ"
-      }
-    },
-    "goals": {
-      "fullTimeWork": "ਪੂਰੇ ਸਮੇਂ ਕੰਮ ਜਾਰੀ ਰੱਖਣਾ",
-      "partTimeWork": "ਅੰਸ਼ਕ ਸਮੇਂ ਕੰਮ ਕਰਨਾ",
-      "retirement": "ਸੇਵਾਮੁਕਤੀ ਦਾ ਆਨੰਦ ਲੈਣਾ",
-      "childcare": "ਬੱਚਿਆਂ ਜਾਂ ਪੋਤੇ-ਪੋਤੀਆਂ ਦੀ ਦੇਖਭਾਲ",
-      "familyEvents": "ਪਰਿਵਾਰਕ ਸਮਾਗਮਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣਾ",
-      "socialLife": "ਸਰਗਰਮ ਸਮਾਜਿਕ ਜੀਵਨ ਬਣਾਈ ਰੱਖਣਾ",
-      "shortTrips": "ਛੋਟੀਆਂ ਯਾਤਰਾਵਾਂ ਕਰਨੀਆਂ",
-      "longHolidays": "ਵਿਦੇਸ਼ ਵਿੱਚ ਲੰਬੀਆਂ ਛੁੱਟੀਆਂ",
-      "pilgrimages": "ਧਾਰਮਿਕ ਯਾਤਰਾ ਕਰਨੀ",
-      "exercise": "ਸਰੀਰਕ ਤੌਰ ਤੇ ਸਰਗਰਮ ਰਹਿਣਾ",
-      "gardening": "ਬਾਗਬਾਨੀ ਜਾਰੀ ਰੱਖਣੀ",
-      "sports": "ਖੇਡਾਂ ਵਿੱਚ ਹਿੱਸਾ ਲੈਣਾ",
-      "liveAlone": "ਸੁਤੰਤਰ ਰੂਪ ਵਿੱਚ ਰਹਿਣਾ",
-      "driveCar": "ਗੱਡੀ ਚਲਾਉਣਾ ਜਾਰੀ ਰੱਖਣਾ",
-      "cookMeals": "ਆਪਣਾ ਖਾਣਾ ਬਣਾਉਣਾ",
-      "prayRegularly": "ਨਿਯਮਤ ਪ੍ਰਾਰਥਨਾ ਸਮੇਂ ਬਣਾਈ ਰੱਖਣਾ",
-      "attendWorship": "ਧਾਰਮਿਕ ਸੇਵਾਵਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣਾ",
-      "fastingPractice": "ਧਾਰਮਿਕ ਵਰਤ ਰੱਖਣਾ"
-    },
-    "results": {
-      "title": "ਤੁਹਾਡੇ ਅਨੁਕੂਲਤਾ ਨਤੀਜੇ",
-      "description": "ਤੁਹਾਡੇ ਚੁਣੇ ਹੋਏ ਟੀਚਿਆਂ ਦੇ ਅਧਾਰ ਤੇ",
-      "bestMatch": "ਸਭ ਤੋਂ ਵਧੀਆ ਮੇਲ",
-      "noGoalsSelected": "ਘੱਟੋ-ਘੱਟ ਇੱਕ ਟੀਚਾ ਚੁਣੋ"
-    },
-    "compatibility": {
-      "high": "ਉੱਚ ਅਨੁਕੂਲਤਾ",
-      "medium": "ਮੱਧਮ ਅਨੁਕੂਲਤਾ",
-      "low": "ਘੱਟ ਅਨੁਕੂਲਤਾ"
-    },
-    "discussionPrompts": {
-      "title": "ਚਰਚਾ ਲਈ ਸਵਾਲ",
-      "prompt1": "ਇਹ ਇਲਾਜ ਮੇਰੀ ਰੋਜ਼ਾਨਾ ਰੁਟੀਨ ਨੂੰ ਕਿਵੇਂ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ?",
-      "prompt2": "ਕੀ ਮੈਂ ਇਸ ਇਲਾਜ ਨਾਲ ਆਪਣੇ ਟੀਚੇ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦਾ ਹਾਂ?",
-      "prompt3": "ਮੈਨੂੰ ਕਿਹੜੇ ਸਮਾਯੋਜਨ ਕਰਨੇ ਪੈਣਗੇ?"
-    }
-  },
-  "statistics": {
-    "page": {
-      "title": "ਸਮਾਨ ਸਥਿਤੀਆਂ ਵਿੱਚ ਦੂਜਿਆਂ ਨੇ ਕੀ ਚੁਣਿਆ",
-      "introduction": "ਦੂਜਿਆਂ ਨੇ ਕੀ ਚੁਣਿਆ ਇਹ ਸਮਝਣਾ ਮਦਦਗਾਰ ਹੋ ਸਕਦਾ ਹੈ। ਇਹ UK ਗੁਰਦੇ ਦੇ ਮਰੀਜ਼ਾਂ ਦੇ ਅਸਲ ਅੰਕੜੇ ਹਨ।",
-      "personalized": "ਤੁਹਾਡੀ ਪ੍ਰੋਫ਼ਾਈਲ ਲਈ ਵਿਅਕਤੀਗਤ",
-      "compareTreatments": "ਇਲਾਜਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ"
-    }
+    "dayInLife": "ਜੀਵਨ ਦਾ ਇੱਕ ਦਿਨ"
   }
 }

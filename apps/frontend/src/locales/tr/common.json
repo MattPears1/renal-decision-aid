@@ -123,6 +123,33 @@
     "selectLanguage": "Dil secin",
     "currentLanguage": "Mevcut dil"
   },
+  "userRole": {
+    "title": "Siz kimsiniz?",
+    "subtitle": "Bu, deneyiminizi kisisellistirmemize yardimci olur",
+    "patient": {
+      "title": "Kendi tedavi kararimi veriyorum",
+      "description": "Bobrek hastasiyim ve tedavi seceneklerimi ogrenmek istiyorum"
+    },
+    "carer": {
+      "title": "Birine destek veriyorum",
+      "description": "Bobrek hastaligi olan birine yardimci olan bakici, aile uyesi veya arkadasim"
+    },
+    "toggle": "Bakici veya aile uyesi misiniz?",
+    "switchMode": "Refakatci Moduna Gec",
+    "patientMode": "Hasta Moduna Gec",
+    "currentMode": "{{mode}} modundasiniz"
+  },
+  "carerRelationship": {
+    "title": "Iliski durumunuz",
+    "subtitle": "Desteklediginiz kisiyle nasil baglanti kuruyorsunuz?",
+    "spouse": "Es/Partner",
+    "parent": "Ebeveyn",
+    "child": "Cocuk (yetiskin)",
+    "sibling": "Kardes",
+    "friend": "Arkadas",
+    "professional": "Profesyonel bakici",
+    "other": "Diger"
+  },
   "privacy": {
     "pageAriaLabel": "Gizlilik bilgileri",
     "progressLabel": "Kurulum ilerlemesi: %30",
@@ -483,6 +510,21 @@
         "title": "Soru Sorun",
         "description": "Bobrek tedavi secenekleri hakkinda yapay zeka asistanimizla sohbet ediuniz. Sorulariniza konusma halinde yanitlar aliniz.",
         "action": "Sohbet Basla"
+      },
+      "lifeGoals": {
+        "title": "Yasam Hedefleri Uyumlulugu",
+        "description": "Farkli tedavilerin is, aile, seyahat ve diger kisisel hedeflerinizle nasil uyumlastugunu gorun.",
+        "action": "Hedefleri Kesfedin"
+      },
+      "statistics": {
+        "title": "Baskalarinin Tercihleri",
+        "description": "Benzer durumlardaki kisilerin neler sectiklerini ve sonuclarini gorun.",
+        "action": "Istatistikleri Gorunuz"
+      },
+      "supportNetworks": {
+        "title": "Destek Aglari",
+        "description": "Bolgenizde bobrek destek gruplari, bakici kuruluslari ve NHS hizmetlerini bulun.",
+        "action": "Destek Bulun"
       }
     },
     "status": {
@@ -498,6 +540,40 @@
     },
     "quickAction": {
       "summary": "Ozetinizi Gorunuz"
+    },
+    "carer": {
+      "title": "Tedavi Yolculugunda Birini Desteklemek",
+      "welcome": "Hos geldiniz! Birinin bobrek tedavi yolculugunda destek oluyorsunuz. Bu kaynaklar seceneklerini anlamaniza ve anlamli destek saglamaniza yardimci olacak.",
+      "welcomeWithRelation": "Hos geldiniz! Onlarin {{relationship}} olarak desteginiz cok onemli.",
+      "badge": "Refakatci Modu",
+      "selfCare": {
+        "title": "Kendinize Bakma",
+        "subtitle": "Birine bakmak zorlayici olabilir. Kendinize zaman ayirmayi unutmayin.",
+        "tip1": "Birine bakmak zorlayici olabilir. Kendinize zaman ayirmayi ve deneyiminizi anlayan baskalariyla baglanti kurmayi unutmayin.",
+        "tip2": "Duzenlı molalar verin ve kendi sagliginiza dikkat edin.",
+        "tip3": "Ihtiyaciniz oldugunda yardim istemekten cekınmeyın.",
+        "findSupport": "Bakici Destegi Bulun",
+        "carersUK": "Carers UK"
+      },
+      "cards": {
+        "treatments": {
+          "description": "Tedavi seceneklerini anlamalarina yardimci olun"
+        },
+        "values": {
+          "description": "Onlar icin en onemli seyleri birlikte kesfedın"
+        },
+        "compare": {
+          "description": "Tedavileri yan yana karsilastirin"
+        },
+        "lifeGoals": {
+          "description": "Tedavilerin yasam hedeflerine nasil uydugunu gorun"
+        },
+        "support": {
+          "title": "Destek Aglari",
+          "description": "Yerel bobrek ve bakici destek kuruluslarini bulun",
+          "action": "Destek Bulun"
+        }
+      }
     }
   },
   "treatments": {
@@ -1156,6 +1232,14 @@
       "4": "Onemli",
       "5": "Cok onemli",
       "default": "Onemli"
+    },
+    "carer": {
+      "title": "Sizin Icin Destek",
+      "description": "Bakici veya aile uyesi olarak siz de destegi hak ediyorsunuz. Bu yolculukta size yardimci olacak kaynaklar burada.",
+      "findSupport": "Destek Aglarini Bulun",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Faydali web siteleri:"
     }
   },
   "session": {
@@ -1426,5 +1510,32 @@
   },
   "treatment": {
     "dayInLife": "Gunluk Yasam"
+  },
+  "supportNetworks": {
+    "title": "Destek Aglari",
+    "subtitle": "Yerel ve ulusal bobrek destek kuruluslarini bulun",
+    "searchPlaceholder": "Sehir veya bolgeye gore arayin (ornegin Bradford, Leeds)",
+    "searchLabel": "Bolgenizde destek arayin",
+    "filters": {
+      "all": "Tumu",
+      "patient": "Hasta Destegi",
+      "carer": "Bakici Destegi",
+      "nhs": "NHS Hizmetleri",
+      "national": "Ulusal"
+    },
+    "noResults": "\"{{query}}\" icin destek agi bulunamadi",
+    "noResultsHint": "Farkli bir sehir veya bolge arayin veya asagidaki ulusal kuruluslarimiza goz atin.",
+    "showingResults": "\"{{query}}\" icin {{count}} sonuc gosteriliyor",
+    "national": "Ulusal Kuruluslar",
+    "regional": "Bolgesel Destek",
+    "visitWebsite": "Web Sitesini Ziyaret Edin",
+    "callHelpline": "Yardim Hattini Arayin",
+    "services": "Sunulan hizmetler",
+    "coverage": "Kapsam alani",
+    "forPatients": "Hastalar icin",
+    "forCarers": "Bakicilar icin",
+    "nhsTrust": "NHS Trust",
+    "charity": "Yardim Kurulusu",
+    "carerOrg": "Bakici Kurulusu"
   }
 }

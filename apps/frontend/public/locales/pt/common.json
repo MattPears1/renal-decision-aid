@@ -13,7 +13,6 @@
     "error": "Ocorreu um erro. Por favor, tente novamente.",
     "continue": "Continuar",
     "cancel": "Cancelar",
-    "confirm": "Confirmar",
     "save": "Guardar",
     "print": "Imprimir",
     "yes": "Sim",
@@ -122,12 +121,32 @@
     "title": "Escolha o Seu Idioma",
     "instruction": "Por favor, selecione o seu idioma preferido. Pode alterar isto a qualquer momento.",
     "selectLanguage": "Selecionar idioma",
-    "currentLanguage": "Idioma atual",
-    "confirmChange": "Mudar idioma?",
-    "confirmChangeMessage": "Tem a certeza de que deseja mudar o idioma para {{language}}? Todo o texto sera atualizado.",
-    "searchLanguages": "Pesquisar idiomas...",
-    "languagesAvailable": "idiomas disponiveis",
-    "noResults": "Nenhum idioma encontrado"
+    "currentLanguage": "Idioma atual"
+  },
+  "userRole": {
+    "title": "Quem e voce?",
+    "subtitle": "Isto ajuda-nos a personalizar a sua experiencia",
+    "patient": {
+      "title": "Estou a tomar a minha propria decisao de tratamento",
+      "description": "Tenho doenca renal e quero conhecer as minhas opcoes de tratamento"
+    },
+    "carer": {
+      "title": "Estou a apoiar alguem",
+      "description": "Sou um cuidador, familiar ou amigo a ajudar alguem com doenca renal"
+    },
+    "toggle": "E cuidador ou familiar?",
+    "switchMode": "Mudar para Modo Acompanhante"
+  },
+  "carerRelationship": {
+    "title": "A sua relacao",
+    "subtitle": "Qual e a sua ligacao com a pessoa que esta a apoiar?",
+    "spouse": "Conjuge/Parceiro",
+    "parent": "Progenitor",
+    "child": "Filho/a (adulto)",
+    "sibling": "Irmao/Irma",
+    "friend": "Amigo/a",
+    "professional": "Cuidador profissional",
+    "other": "Outro"
   },
   "privacy": {
     "pageAriaLabel": "Informacao de privacidade",
@@ -196,46 +215,15 @@
     "homeAriaLabel": "Apoio a Decisao sobre Tratamento Renal do NHS - Inicio"
   },
   "progress": {
-    "title": "O Seu Percurso de Aprendizagem",
-    "yourProgress": "O Seu Progresso",
-    "complete": "concluido",
-    "treatments": "tratamentos",
-    "sections": {
-      "title": "Seccoes para Explorar",
-      "questionnaire": "Sobre Si",
-      "questionnaireDesc": "Partilhe a sua situacao",
-      "treatments": "Opcoes de Tratamento",
-      "treatmentsDesc": "{{viewed}} de {{total}} explorados",
-      "values": "Exercicio de Valores",
-      "valuesDesc": "Clarifique as suas prioridades",
-      "chat": "Fazer Perguntas",
-      "chatDesc": "Obtenha respostas",
-      "lifeGoals": "Objetivos de vida",
-      "lifeGoalsDesc": "Associar tratamentos e objetivos",
-      "statistics": "O que outros escolheram",
-      "statisticsDesc": "Ver escolhas dos pacientes"
-    },
-    "status": {
-      "completed": "Concluido",
-      "inProgress": "Em Curso"
-    },
-    "badges": {
-      "title": "As Suas Medalhas",
-      "explorer": "Explorador",
-      "allTreatments": "Todos os Tratamentos",
-      "values": "Valores Claros",
-      "curious": "Mente Curiosa",
-      "complete": "Percurso Completo"
-    },
-    "encouragement": {
-      "start": "Comece o seu percurso explorando opcoes de tratamento",
-      "beginning": "Otimo inicio! Continue a explorar para saber mais",
-      "making": "Esta a fazer bom progresso!",
-      "halfway": "Mais de metade - muito bem!",
-      "almost": "Quase completo! Apenas mais algumas seccoes",
-      "complete": "Excelente! Explorou tudo"
-    },
-    "viewSummary": "Ver o Seu Resumo"
+    "language": "Idioma",
+    "privacy": "Privacidade",
+    "yourJourney": "O Seu Percurso",
+    "aboutYou": "Sobre Si",
+    "yourOptions": "As Suas Opcoes",
+    "ariaLabel": "Progresso atraves do apoio a decisao",
+    "stepOfTotal": "Passo {{current}} de {{total}}",
+    "percentComplete": "{{percentage}}% concluido",
+    "ariaProgressLabel": "Progresso: {{current}} de {{total}} passos concluidos"
   },
   "journey": {
     "title": "Onde Esta no Seu Percurso de Cuidados Renais?",
@@ -522,14 +510,19 @@
         "action": "Iniciar Chat"
       },
       "lifeGoals": {
-        "title": "Compatibilidade de Objetivos",
-        "description": "Veja como os tratamentos se alinham com seus objetivos",
-        "action": "Explorar objetivos"
+        "title": "Compatibilidade com Objetivos de Vida",
+        "description": "Veja como os diferentes tratamentos se alinham com os seus objetivos pessoais para trabalho, familia, viagens e mais.",
+        "action": "Explorar Objetivos"
       },
       "statistics": {
-        "title": "O que outros escolheram",
-        "description": "Veja o que pessoas em situacoes similares decidiram",
-        "action": "Ver estatisticas"
+        "title": "O Que Outros Escolheram",
+        "description": "Veja o que pessoas em situacoes semelhantes decidiram e os seus resultados.",
+        "action": "Ver Estatisticas"
+      },
+      "supportNetworks": {
+        "title": "Redes de Apoio",
+        "description": "Encontre grupos locais de apoio renal, organizacoes de cuidadores e servicos do NHS na sua area.",
+        "action": "Encontrar Apoio"
       }
     },
     "status": {
@@ -545,6 +538,21 @@
     },
     "quickAction": {
       "summary": "Ver o Seu Resumo"
+    },
+    "carer": {
+      "title": "Apoiar Alguem na Sua Jornada de Tratamento",
+      "welcome": "Bem-vindo! Esta a apoiar alguem na sua jornada de tratamento renal. Estes recursos vao ajuda-lo a compreender as opcoes disponiveis e a fornecer apoio significativo.",
+      "welcomeWithRelation": "Bem-vindo! Como {{relationship}}, o seu apoio e importante.",
+      "badge": "Modo Acompanhante",
+      "selfCare": {
+        "title": "Cuidar de Si",
+        "subtitle": "Cuidar de alguem pode ser exigente. Lembre-se de reservar tempo para si.",
+        "tip1": "Cuidar de alguem pode ser exigente. Lembre-se de reservar tempo para si e de se ligar a outros que compreendem a sua experiencia.",
+        "tip2": "Faca pausas regulares e cuide da sua propria saude.",
+        "tip3": "Nao tenha medo de pedir ajuda quando precisar.",
+        "findSupport": "Encontrar Apoio para Cuidadores",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -693,34 +701,7 @@
     "scrollHint": "Deslize horizontalmente para ver todos os tratamentos",
     "tableHeading": "Tabela de Comparacao de Tratamentos",
     "tableLabel": "Comparacao de opcoes de tratamento renal",
-    "criteria": {
-      "timeCommitment": "Compromisso de tempo por semana",
-      "timeCommitmentHint": "Horas gastas em tratamento",
-      "location": "Local do tratamento",
-      "locationHint": "Onde o tratamento acontece",
-      "travel": "Impacto nas viagens",
-      "travelHint": "Capacidade de viajar e fazer ferias",
-      "diet": "Restricoes dieteticas",
-      "dietHint": "Limitacoes em comida e bebida",
-      "surgery": "Cirurgia necessaria",
-      "surgeryHint": "Procedimentos iniciais necessarios",
-      "supportNeeded": "Apoio necessario",
-      "supportNeededHint": "Ajuda de familia ou cuidadores",
-      "recoveryTime": "Tempo de recuperacao",
-      "recoveryTimeHint": "Tempo para se adaptar ao tratamento",
-      "longTermOutlook": "Perspetiva a longo prazo",
-      "longTermOutlookHint": "Resultados esperados ao longo do tempo",
-      "scheduleFlexibility": "Flexibilidade de horario",
-      "scheduleFlexibilityHint": "Controlo sobre o seu horario",
-      "trainingRequired": "Formacao necessaria",
-      "trainingRequiredHint": "Tempo de aprendizagem necessario",
-      "survivalRates": "Taxas de sobrevivencia",
-      "survivalRatesHint": "Resultados gerais (varia por pessoa)",
-      "qualityOfLife": "Qualidade de vida",
-      "qualityOfLifeHint": "Bem-estar geral",
-      "energyLevels": "Niveis de energia",
-      "energyLevelsHint": "Energia e fadiga tipicas"
-    },
+    "criteria": "Criterios",
     "recommended": "Recomendado",
     "remember": "Lembre-se",
     "guidance": "Nenhum tratamento e perfeito para toda a gente. A melhor escolha depende da sua situacao pessoal, saude e valores. Esta comparacao e um ponto de partida para discussoes com a sua equipa renal.",
@@ -749,6 +730,34 @@
       "medical": "Fatores Medicos",
       "support": "Requisitos de Apoio",
       "health": "Resultados de Saude"
+    },
+    "criteria": {
+      "timeCommitment": "Compromisso de tempo por semana",
+      "timeCommitmentHint": "Horas gastas em tratamento",
+      "location": "Local do tratamento",
+      "locationHint": "Onde o tratamento acontece",
+      "travel": "Impacto nas viagens",
+      "travelHint": "Capacidade de viajar e fazer ferias",
+      "diet": "Restricoes dieteticas",
+      "dietHint": "Limitacoes em comida e bebida",
+      "surgery": "Cirurgia necessaria",
+      "surgeryHint": "Procedimentos iniciais necessarios",
+      "supportNeeded": "Apoio necessario",
+      "supportNeededHint": "Ajuda de familia ou cuidadores",
+      "recoveryTime": "Tempo de recuperacao",
+      "recoveryTimeHint": "Tempo para se adaptar ao tratamento",
+      "longTermOutlook": "Perspetiva a longo prazo",
+      "longTermOutlookHint": "Resultados esperados ao longo do tempo",
+      "scheduleFlexibility": "Flexibilidade de horario",
+      "scheduleFlexibilityHint": "Controlo sobre o seu horario",
+      "trainingRequired": "Formacao necessaria",
+      "trainingRequiredHint": "Tempo de aprendizagem necessario",
+      "survivalRates": "Taxas de sobrevivencia",
+      "survivalRatesHint": "Resultados gerais (varia por pessoa)",
+      "qualityOfLife": "Qualidade de vida",
+      "qualityOfLifeHint": "Bem-estar geral",
+      "energyLevels": "Niveis de energia",
+      "energyLevelsHint": "Energia e fadiga tipicas"
     },
     "values": {
       "minimalAfterRecovery": "Minimo apos recuperacao",
@@ -1117,9 +1126,7 @@
       "viewed": "Tratamentos Explorados",
       "questions": "Perguntas para a Sua Equipa",
       "priorities": "As Suas Prioridades",
-      "nextSteps": "Proximos Passos Sugeridos",
-      "lifeGoals": "Compatibilidade de objetivos",
-      "statistics": "O que outros escolheram"
+      "nextSteps": "Proximos Passos Sugeridos"
     },
     "print": "Imprimir Resumo",
     "email": "Enviar Resumo por Email",
@@ -1205,16 +1212,72 @@
       "5": "Muito importante",
       "default": "Importante"
     },
-    "lifeGoals": {
-      "selectedGoals": "Seus objetivos selecionados",
-      "topCompatible": "Tratamentos mais compativeis",
-      "reviewGoals": "Revisar seus objetivos"
-    },
-    "statistics": {
-      "description": "Voce viu estatisticas sobre as escolhas de outros pacientes.",
-      "disclaimer": "Estatisticas baseadas em dados anonimos do NHS.",
-      "reviewStats": "Revisar estatisticas"
+    "carer": {
+      "title": "Apoio para Si",
+      "description": "Como cuidador ou familiar, tambem merece apoio. Aqui estao recursos que podem ajudar.",
+      "resources": {
+        "title": "Recursos para Cuidadores",
+        "items": {
+          "carerSupport": "Apoio ao Cuidador do NHS",
+          "kidneyCarerInfo": "Informacao para Cuidadores - Kidney Care UK",
+          "respiteCare": "Opcoes de Cuidados de Descanso",
+          "mentalHealth": "Apoio de Saude Mental para Cuidadores"
+        }
+      },
+      "selfCare": {
+        "title": "Cuidar de Si Proprio",
+        "tips": {
+          "breaks": "Faca pausas regulares quando possivel",
+          "support": "Conecte-se com outros cuidadores para apoio",
+          "health": "Nao negligencie a sua propria saude",
+          "help": "Peca ajuda quando precisar"
+        }
+      }
     }
+  },
+  "supportNetworks": {
+    "title": "Redes de Apoio",
+    "description": "Conecte-se com outros e encontre apoio durante a sua jornada de tratamento renal.",
+    "categories": {
+      "peer": {
+        "title": "Apoio de Pares",
+        "description": "Conecte-se com outros que compreendem a sua experiencia.",
+        "items": {
+          "patientGroups": "Grupos de Pacientes com Doenca Renal",
+          "onlineCommunities": "Comunidades de Apoio Online",
+          "localMeetups": "Grupos de Apoio Locais"
+        }
+      },
+      "professional": {
+        "title": "Apoio Profissional",
+        "description": "Aceda a servicos de apoio profissional.",
+        "items": {
+          "renalCounsellor": "Conselheiro Social Renal",
+          "psychologist": "Psicologo de Saude",
+          "dietitian": "Dietista Renal"
+        }
+      },
+      "family": {
+        "title": "Apoio Familiar e de Cuidadores",
+        "description": "Recursos para aqueles que apoiam pessoas com doenca renal.",
+        "items": {
+          "carerGroups": "Grupos de Apoio a Cuidadores",
+          "familyEducation": "Sessoes de Educacao Familiar",
+          "respiteCare": "Servicos de Cuidados de Descanso"
+        }
+      },
+      "charity": {
+        "title": "Instituicoes de Caridade e Organizacoes",
+        "description": "Organizacoes que fornecem apoio e recursos.",
+        "items": {
+          "kidneyCarerUK": "Kidney Care UK",
+          "nationalKidneyFederation": "National Kidney Federation",
+          "kidneyResearchUK": "Kidney Research UK"
+        }
+      }
+    },
+    "findSupport": "Encontrar Apoio",
+    "learnMore": "Saber Mais"
   },
   "session": {
     "timeRemaining": "Tempo restante: {{minutes}}",
@@ -1348,6 +1411,44 @@
       "sleep": "Descansar quando cansado"
     }
   },
+  "progress": {
+    "title": "O Seu Percurso de Aprendizagem",
+    "yourProgress": "O Seu Progresso",
+    "complete": "concluido",
+    "treatments": "tratamentos",
+    "sections": {
+      "title": "Seccoes para Explorar",
+      "questionnaire": "Sobre Si",
+      "questionnaireDesc": "Partilhe a sua situacao",
+      "treatments": "Opcoes de Tratamento",
+      "treatmentsDesc": "{{viewed}} de {{total}} explorados",
+      "values": "Exercicio de Valores",
+      "valuesDesc": "Clarifique as suas prioridades",
+      "chat": "Fazer Perguntas",
+      "chatDesc": "Obtenha respostas"
+    },
+    "status": {
+      "completed": "Concluido",
+      "inProgress": "Em Curso"
+    },
+    "badges": {
+      "title": "As Suas Medalhas",
+      "explorer": "Explorador",
+      "allTreatments": "Todos os Tratamentos",
+      "values": "Valores Claros",
+      "curious": "Mente Curiosa",
+      "complete": "Percurso Completo"
+    },
+    "encouragement": {
+      "start": "Comece o seu percurso explorando opcoes de tratamento",
+      "beginning": "Otimo inicio! Continue a explorar para saber mais",
+      "making": "Esta a fazer bom progresso!",
+      "halfway": "Mais de metade - muito bem!",
+      "almost": "Quase completo! Apenas mais algumas seccoes",
+      "complete": "Excelente! Explorou tudo"
+    },
+    "viewSummary": "Ver o Seu Resumo"
+  },
   "scenario": {
     "title": "E Se? Explorador de Cenarios",
     "subtitle": "Veja como diferentes situacoes de vida funcionam com cada opcao de tratamento",
@@ -1445,84 +1546,6 @@
     }
   },
   "treatment": {
-    "dayInLife": "Um Dia na Vida",
-    "faqDesc": "Perguntas frequentes dos pacientes sobre este tratamento",
-    "categoryGeneral": "Geral"
-  },
-  "lifeGoals": {
-    "title": "Compatibilidade de Objetivos de Vida",
-    "subtitle": "Veja como os tratamentos se alinham com seus objetivos pessoais",
-    "introduction": "Entender como cada tratamento se encaixa no que e mais importante para voce pode ajudar na decisao.",
-    "categories": {
-      "work": {
-        "name": "Trabalho e Carreira",
-        "description": "Objetivos relacionados ao seu emprego e vida profissional"
-      },
-      "family": {
-        "name": "Familia e Relacionamentos",
-        "description": "Objetivos relacionados ao tempo em familia e cuidar dos outros"
-      },
-      "travel": {
-        "name": "Viagens e Ferias",
-        "description": "Objetivos relacionados a viagens e explorar novos lugares"
-      },
-      "hobbies": {
-        "name": "Hobbies e Atividades",
-        "description": "Objetivos relacionados a esportes e hobbies"
-      },
-      "independence": {
-        "name": "Independencia",
-        "description": "Objetivos relacionados a manter a independencia"
-      },
-      "religious": {
-        "name": "Fe e Espiritualidade",
-        "description": "Objetivos relacionados a pratica religiosa"
-      }
-    },
-    "goals": {
-      "fullTimeWork": "Continuar trabalhando em tempo integral",
-      "partTimeWork": "Trabalhar meio periodo",
-      "retirement": "Aproveitar a aposentadoria",
-      "childcare": "Cuidar de filhos ou netos",
-      "familyEvents": "Participar de eventos familiares",
-      "socialLife": "Manter uma vida social ativa",
-      "shortTrips": "Fazer viagens curtas",
-      "longHolidays": "Ferias mais longas no exterior",
-      "pilgrimages": "Fazer peregrinacoes religiosas",
-      "exercise": "Manter-se fisicamente ativo",
-      "gardening": "Continuar a jardinagem",
-      "sports": "Participar de esportes",
-      "liveAlone": "Viver de forma independente",
-      "driveCar": "Continuar dirigindo",
-      "cookMeals": "Preparar minhas proprias refeicoes",
-      "prayRegularly": "Manter horarios regulares de oracao",
-      "attendWorship": "Participar de servicos religiosos",
-      "fastingPractice": "Observar jejum religioso"
-    },
-    "results": {
-      "title": "Seus Resultados de Compatibilidade",
-      "description": "Com base nos seus objetivos selecionados",
-      "bestMatch": "Melhor Correspondencia",
-      "noGoalsSelected": "Selecione pelo menos um objetivo"
-    },
-    "compatibility": {
-      "high": "Alta compatibilidade",
-      "medium": "Compatibilidade moderada",
-      "low": "Compatibilidade menor"
-    },
-    "discussionPrompts": {
-      "title": "Perguntas para Discutir",
-      "prompt1": "Como este tratamento afetara minha rotina diaria?",
-      "prompt2": "Posso alcancar meus objetivos com este tratamento?",
-      "prompt3": "Que ajustes precisarei fazer?"
-    }
-  },
-  "statistics": {
-    "page": {
-      "title": "O que outros em situacoes semelhantes escolheram",
-      "introduction": "Entender o que outros escolheram pode ajudar. Estas sao estatisticas reais de pacientes renais do Reino Unido.",
-      "personalized": "Personalizado para o seu perfil",
-      "compareTreatments": "Comparar tratamentos"
-    }
+    "dayInLife": "Um Dia na Vida"
   }
 }

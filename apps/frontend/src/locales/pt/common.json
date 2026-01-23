@@ -123,6 +123,31 @@
     "selectLanguage": "Selecionar idioma",
     "currentLanguage": "Idioma atual"
   },
+  "userRole": {
+    "title": "Quem e voce?",
+    "subtitle": "Isto ajuda-nos a personalizar a sua experiencia",
+    "patient": {
+      "title": "Estou a tomar a minha propria decisao de tratamento",
+      "description": "Tenho doenca renal e quero conhecer as minhas opcoes de tratamento"
+    },
+    "carer": {
+      "title": "Estou a apoiar alguem",
+      "description": "Sou um cuidador, familiar ou amigo a ajudar alguem com doenca renal"
+    },
+    "toggle": "E cuidador ou familiar?",
+    "switchMode": "Mudar para Modo Acompanhante"
+  },
+  "carerRelationship": {
+    "title": "A sua relacao",
+    "subtitle": "Qual e a sua ligacao com a pessoa que esta a apoiar?",
+    "spouse": "Conjuge/Parceiro",
+    "parent": "Progenitor",
+    "child": "Filho/a (adulto)",
+    "sibling": "Irmao/Irma",
+    "friend": "Amigo/a",
+    "professional": "Cuidador profissional",
+    "other": "Outro"
+  },
   "privacy": {
     "pageAriaLabel": "Informacao de privacidade",
     "progressLabel": "Progresso da configuracao: 30%",
@@ -483,6 +508,21 @@
         "title": "Fazer Perguntas",
         "description": "Converse com o nosso assistente de IA sobre opcoes de tratamento renal. Obtenha respostas as suas perguntas de forma conversacional.",
         "action": "Iniciar Chat"
+      },
+      "lifeGoals": {
+        "title": "Compatibilidade com Objetivos de Vida",
+        "description": "Veja como os diferentes tratamentos se alinham com os seus objetivos pessoais para trabalho, familia, viagens e mais.",
+        "action": "Explorar Objetivos"
+      },
+      "statistics": {
+        "title": "O Que Outros Escolheram",
+        "description": "Veja o que pessoas em situacoes semelhantes decidiram e os seus resultados.",
+        "action": "Ver Estatisticas"
+      },
+      "supportNetworks": {
+        "title": "Redes de Apoio",
+        "description": "Encontre grupos locais de apoio renal, organizacoes de cuidadores e servicos do NHS na sua area.",
+        "action": "Encontrar Apoio"
       }
     },
     "status": {
@@ -498,6 +538,21 @@
     },
     "quickAction": {
       "summary": "Ver o Seu Resumo"
+    },
+    "carer": {
+      "title": "Apoiar Alguem na Sua Jornada de Tratamento",
+      "welcome": "Bem-vindo! Esta a apoiar alguem na sua jornada de tratamento renal. Estes recursos vao ajuda-lo a compreender as opcoes disponiveis e a fornecer apoio significativo.",
+      "welcomeWithRelation": "Bem-vindo! Como {{relationship}}, o seu apoio e importante.",
+      "badge": "Modo Acompanhante",
+      "selfCare": {
+        "title": "Cuidar de Si",
+        "subtitle": "Cuidar de alguem pode ser exigente. Lembre-se de reservar tempo para si.",
+        "tip1": "Cuidar de alguem pode ser exigente. Lembre-se de reservar tempo para si e de se ligar a outros que compreendem a sua experiencia.",
+        "tip2": "Faca pausas regulares e cuide da sua propria saude.",
+        "tip3": "Nao tenha medo de pedir ajuda quando precisar.",
+        "findSupport": "Encontrar Apoio para Cuidadores",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -1156,7 +1211,73 @@
       "4": "Importante",
       "5": "Muito importante",
       "default": "Importante"
+    },
+    "carer": {
+      "title": "Apoio para Si",
+      "description": "Como cuidador ou familiar, tambem merece apoio. Aqui estao recursos que podem ajudar.",
+      "resources": {
+        "title": "Recursos para Cuidadores",
+        "items": {
+          "carerSupport": "Apoio ao Cuidador do NHS",
+          "kidneyCarerInfo": "Informacao para Cuidadores - Kidney Care UK",
+          "respiteCare": "Opcoes de Cuidados de Descanso",
+          "mentalHealth": "Apoio de Saude Mental para Cuidadores"
+        }
+      },
+      "selfCare": {
+        "title": "Cuidar de Si Proprio",
+        "tips": {
+          "breaks": "Faca pausas regulares quando possivel",
+          "support": "Conecte-se com outros cuidadores para apoio",
+          "health": "Nao negligencie a sua propria saude",
+          "help": "Peca ajuda quando precisar"
+        }
+      }
     }
+  },
+  "supportNetworks": {
+    "title": "Redes de Apoio",
+    "description": "Conecte-se com outros e encontre apoio durante a sua jornada de tratamento renal.",
+    "categories": {
+      "peer": {
+        "title": "Apoio de Pares",
+        "description": "Conecte-se com outros que compreendem a sua experiencia.",
+        "items": {
+          "patientGroups": "Grupos de Pacientes com Doenca Renal",
+          "onlineCommunities": "Comunidades de Apoio Online",
+          "localMeetups": "Grupos de Apoio Locais"
+        }
+      },
+      "professional": {
+        "title": "Apoio Profissional",
+        "description": "Aceda a servicos de apoio profissional.",
+        "items": {
+          "renalCounsellor": "Conselheiro Social Renal",
+          "psychologist": "Psicologo de Saude",
+          "dietitian": "Dietista Renal"
+        }
+      },
+      "family": {
+        "title": "Apoio Familiar e de Cuidadores",
+        "description": "Recursos para aqueles que apoiam pessoas com doenca renal.",
+        "items": {
+          "carerGroups": "Grupos de Apoio a Cuidadores",
+          "familyEducation": "Sessoes de Educacao Familiar",
+          "respiteCare": "Servicos de Cuidados de Descanso"
+        }
+      },
+      "charity": {
+        "title": "Instituicoes de Caridade e Organizacoes",
+        "description": "Organizacoes que fornecem apoio e recursos.",
+        "items": {
+          "kidneyCarerUK": "Kidney Care UK",
+          "nationalKidneyFederation": "National Kidney Federation",
+          "kidneyResearchUK": "Kidney Research UK"
+        }
+      }
+    },
+    "findSupport": "Encontrar Apoio",
+    "learnMore": "Saber Mais"
   },
   "session": {
     "timeRemaining": "Tempo restante: {{minutes}}",

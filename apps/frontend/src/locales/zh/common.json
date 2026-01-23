@@ -123,6 +123,31 @@
     "selectLanguage": "选择语言",
     "currentLanguage": "当前语言"
   },
+  "userRole": {
+    "title": "您是谁？",
+    "subtitle": "这有助于我们为您个性化体验",
+    "patient": {
+      "title": "我在为自己做治疗决定",
+      "description": "我患有肾病，想了解我的治疗选择"
+    },
+    "carer": {
+      "title": "我在支持他人",
+      "description": "我是护理者、家庭成员或朋友，正在帮助患有肾病的人"
+    },
+    "toggle": "您是护理者或家庭成员吗？",
+    "switchMode": "切换到陪伴模式"
+  },
+  "carerRelationship": {
+    "title": "您的关系",
+    "subtitle": "您与您支持的人有什么关系？",
+    "spouse": "配偶/伴侣",
+    "parent": "父母",
+    "child": "子女（成年）",
+    "sibling": "兄弟姐妹",
+    "friend": "朋友",
+    "professional": "专业护理人员",
+    "other": "其他"
+  },
   "privacy": {
     "pageAriaLabel": "隐私信息",
     "progressLabel": "设置进度：30%",
@@ -483,6 +508,21 @@
         "title": "提问",
         "description": "与我们的AI助手聊天，了解肾脏治疗选择。以对话方式获得问题的答案。",
         "action": "开始聊天"
+      },
+      "lifeGoals": {
+        "title": "生活目标兼容性",
+        "description": "查看不同的治疗方案如何与您的工作、家庭、旅行等个人目标相匹配。",
+        "action": "探索目标"
+      },
+      "statistics": {
+        "title": "其他人的选择",
+        "description": "了解类似情况的人做出了什么决定及其结果。",
+        "action": "查看统计"
+      },
+      "supportNetworks": {
+        "title": "支持网络",
+        "description": "查找您所在地区的肾脏支持小组、护理者组织和NHS服务。",
+        "action": "寻找支持"
       }
     },
     "status": {
@@ -498,6 +538,21 @@
     },
     "quickAction": {
       "summary": "查看您的摘要"
+    },
+    "carer": {
+      "title": "支持他人的治疗旅程",
+      "welcome": "欢迎！您正在支持某人的肾脏治疗旅程。这些资源将帮助您了解他们的选择并提供有意义的支持。",
+      "welcomeWithRelation": "欢迎！作为他们的{{relationship}}，您的支持非常重要。",
+      "badge": "陪伴模式",
+      "selfCare": {
+        "title": "照顾自己",
+        "subtitle": "照顾他人可能很辛苦。记得给自己留出时间。",
+        "tip1": "照顾他人可能很辛苦。记得给自己留出时间，与理解您经历的人交流。",
+        "tip2": "定期休息，照顾好自己的健康。",
+        "tip3": "需要时不要害怕寻求帮助。",
+        "findSupport": "寻找护理者支持",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -1156,6 +1211,14 @@
       "4": "重要",
       "5": "非常重要",
       "default": "重要"
+    },
+    "carer": {
+      "title": "对您的支持",
+      "description": "作为护理者或家庭成员，您也值得获得支持。以下是帮助您走过这段旅程的资源。",
+      "findSupport": "寻找支持网络",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "有用的网站："
     }
   },
   "session": {
@@ -1540,5 +1603,31 @@
         "definition": "许多食物中的矿物质，帮助建立强壮的骨骼。当肾脏功能不好时，磷酸盐可能在血液中积累并削弱骨骼。可能需要在进餐时服用磷酸盐结合剂并限制某些食物。"
       }
     }
+  },
+  "supportNetworks": {
+    "title": "支持网络",
+    "subtitle": "查找本地和全国肾脏支持组织",
+    "searchPlaceholder": "按城市或地区搜索（例如：Bradford、Leeds）",
+    "searchLabel": "搜索支持",
+    "filters": {
+      "all": "全部",
+      "patient": "患者支持",
+      "carer": "护理者支持",
+      "nhs": "NHS服务"
+    },
+    "noResults": "未找到该地区的支持网络",
+    "tryDifferent": "尝试不同的搜索词或浏览下方的全国组织",
+    "national": "全国组织",
+    "regional": "地区支持",
+    "visitWebsite": "访问网站",
+    "callHelpline": "拨打帮助热线",
+    "services": "服务",
+    "regions": "覆盖地区",
+    "backToHub": "返回主页",
+    "forPatients": "患者专用",
+    "forCarers": "护理者专用",
+    "nhsTrust": "NHS信托",
+    "charity": "慈善机构",
+    "carerOrg": "护理者组织"
   }
 }

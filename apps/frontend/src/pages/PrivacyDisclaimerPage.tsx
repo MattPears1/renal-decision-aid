@@ -44,7 +44,7 @@ const PII_ITEMS = [
  */
 export default function PrivacyDisclaimerPage() {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [consentUnderstood, setConsentUnderstood] = useState(false);
   const [consentAnalytics, setConsentAnalytics] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -84,8 +84,28 @@ export default function PrivacyDisclaimerPage() {
         if (pageContent) {
           const text = pageContent.textContent || '';
           const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'en-GB';
-          utterance.rate = 0.9;
+          utterance.lang = i18n.language || 'en-GB';
+          utterance.rate = 1.0;
+
+          // Select best available female voice
+          const voices = window.speechSynthesis.getVoices();
+          const lang = i18n.language || 'en';
+          console.log('[TTS] Available voices for', lang, ':', voices.filter(v => v.lang.startsWith(lang)).map(v => v.name));
+          // Priority: Google Female > Microsoft Female (Zira/Hazel) > any online female > any female
+          const bestVoice = voices.find(v =>
+            v.lang.startsWith(lang) && v.name.includes('Google') && v.name.includes('Female')
+          ) || voices.find(v =>
+            v.lang.startsWith(lang) && (v.name.includes('Zira') || v.name.includes('Hazel') || v.name.includes('Natural'))
+          ) || voices.find(v =>
+            v.lang.startsWith(lang) && !v.localService
+          ) || voices.find(v =>
+            v.lang.startsWith(lang)
+          );
+          if (bestVoice) {
+            utterance.voice = bestVoice;
+            console.log('[TTS] Using voice:', bestVoice.name);
+          }
+
           utterance.onend = () => setIsPlaying(false);
           utterance.onerror = () => setIsPlaying(false);
           window.speechSynthesis.speak(utterance);
@@ -93,7 +113,7 @@ export default function PrivacyDisclaimerPage() {
         }
       }
     }
-  }, [isPlaying]);
+  }, [isPlaying, i18n.language]);
 
   return (
     <main className="min-h-screen bg-bg-page page-content" aria-label={t('privacy.pageAriaLabel', 'Privacy information')}>

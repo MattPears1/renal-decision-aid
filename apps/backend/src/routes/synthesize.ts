@@ -26,12 +26,18 @@ import logger, { logError } from '../services/logger.js';
 const router = Router();
 
 /**
- * OpenAI client instance for TTS API calls.
+ * Lazily initialized OpenAI client instance for TTS API calls.
+ * Initialized on first use to ensure env vars are loaded.
  * @type {OpenAI | null}
  */
-const openai = process.env.OPENAI_API_KEY
-  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-  : null;
+let openai: OpenAI | null = null;
+
+function getOpenAI(): OpenAI | null {
+  if (!openai && process.env.OPENAI_API_KEY) {
+    openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  }
+  return openai;
+}
 
 /**
  * Available TTS voice options from OpenAI.
@@ -95,7 +101,8 @@ type TTSModel = 'gpt-4o-mini-tts' | 'tts-1' | 'tts-1-hd';
 router.post('/', async (req: Request, res: Response) => {
   try {
     // Check if OpenAI is configured
-    if (!openai) {
+    const client = getOpenAI();
+    if (!client) {
       logger.warn('Synthesis attempted without OpenAI API key', { requestId: req.requestId });
       res.status(503).json({
         error: 'Service Unavailable',
@@ -152,7 +159,7 @@ router.post('/', async (req: Request, res: Response) => {
     });
 
     // Call OpenAI TTS API
-    const mp3Response = await openai.audio.speech.create({
+    const mp3Response = await client.audio.speech.create({
       model: selectedModel,
       voice: selectedVoice,
       input: text,
@@ -244,7 +251,8 @@ const LANGUAGE_NAMES: Record<string, string> = {
  */
 router.post('/page', async (req: Request, res: Response) => {
   try {
-    if (!openai) {
+    const client = getOpenAI();
+    if (!client) {
       res.status(503).json({
         error: 'Service Unavailable',
         message: 'Text-to-speech service is not configured',
@@ -277,23 +285,45 @@ router.post('/page', async (req: Request, res: Response) => {
       languageName,
     });
 
-    const mp3Response = await openai.audio.speech.create({
+    // Use asResponse() to get the raw HTTP response for streaming
+    const rawResponse = await client.audio.speech.create({
       model: 'gpt-4o-mini-tts',
       voice: 'nova',
       input: truncatedText,
       instructions,
       response_format: 'mp3',
-    });
+    }).asResponse();
 
-    const audioBuffer = await mp3Response.arrayBuffer();
-
+    // Stream the response directly from OpenAI to the client
     res.set({
       'Content-Type': 'audio/mpeg',
-      'Content-Length': audioBuffer.byteLength.toString(),
+      'Transfer-Encoding': 'chunked',
       'Cache-Control': 'no-cache',
+      'Connection': 'keep-alive',
     });
 
-    res.send(Buffer.from(audioBuffer));
+    const body = rawResponse.body;
+    if (body) {
+      const reader = (body as any).getReader();
+      let totalBytes = 0;
+      const pump = async (): Promise<void> => {
+        const { done, value } = await reader.read();
+        if (done) {
+          logger.debug('Page TTS stream complete', { requestId: req.requestId, totalBytes });
+          res.end();
+          return;
+        }
+        totalBytes += value.length;
+        res.write(Buffer.from(value));
+        return pump();
+      };
+      await pump();
+    } else {
+      // Fallback if body not available
+      logger.debug('Using buffered fallback for page TTS', { requestId: req.requestId });
+      const audioBuffer = await rawResponse.arrayBuffer();
+      res.send(Buffer.from(audioBuffer));
+    }
   } catch (error) {
     logError(error as Error, { requestId: req.requestId, operation: 'synthesize-page' });
 

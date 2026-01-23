@@ -13,7 +13,6 @@
     "error": "Coś poszło nie tak. Spróbuj ponownie.",
     "continue": "Kontynuuj",
     "cancel": "Anuluj",
-    "confirm": "Potwierdź",
     "save": "Zapisz",
     "print": "Drukuj",
     "yes": "Tak",
@@ -122,12 +121,32 @@
     "title": "Wybierz swój język",
     "instruction": "Wybierz preferowany język. Możesz go zmienić w dowolnym momencie.",
     "selectLanguage": "Wybierz język",
-    "currentLanguage": "Aktualny język",
-    "confirmChange": "Zmienić język?",
-    "confirmChangeMessage": "Czy na pewno chcesz zmienić język na {{language}}? Cały tekst zostanie zaktualizowany.",
-    "searchLanguages": "Szukaj języków...",
-    "languagesAvailable": "dostępnych języków",
-    "noResults": "Nie znaleziono języków"
+    "currentLanguage": "Aktualny język"
+  },
+  "userRole": {
+    "title": "Kim jesteś?",
+    "subtitle": "Pomoże nam to spersonalizować Twoje doświadczenie",
+    "patient": {
+      "title": "Podejmuję własną decyzję o leczeniu",
+      "description": "Mam chorobę nerek i chcę poznać moje opcje leczenia"
+    },
+    "carer": {
+      "title": "Wspieram kogoś",
+      "description": "Jestem opiekunem, członkiem rodziny lub przyjacielem pomagającym komuś z chorobą nerek"
+    },
+    "toggle": "Czy jesteś opiekunem lub członkiem rodziny?",
+    "switchMode": "Przełącz na tryb towarzysza"
+  },
+  "carerRelationship": {
+    "title": "Twoja relacja",
+    "subtitle": "Jaka jest Twoja relacja z osobą, którą wspierasz?",
+    "spouse": "Małżonek/Partner",
+    "parent": "Rodzic",
+    "child": "Dziecko (dorosłe)",
+    "sibling": "Rodzeństwo",
+    "friend": "Przyjaciel",
+    "professional": "Profesjonalny opiekun",
+    "other": "Inne"
   },
   "privacy": {
     "pageAriaLabel": "Informacje o prywatności",
@@ -218,11 +237,7 @@
       "values": "Ćwiczenie wartości",
       "valuesDesc": "Wyjaśnij swoje priorytety",
       "chat": "Zadaj pytania",
-      "chatDesc": "Uzyskaj odpowiedzi",
-      "lifeGoals": "Cele zyciowe",
-      "lifeGoalsDesc": "Dopasuj leczenie do celow",
-      "statistics": "Co wybrali inni",
-      "statisticsDesc": "Zobacz wybory pacjentow"
+      "chatDesc": "Uzyskaj odpowiedzi"
     },
     "status": {
       "completed": "Ukończone",
@@ -531,14 +546,19 @@
         "action": "Rozpocznij czat"
       },
       "lifeGoals": {
-        "title": "Zgodnosc celow zyciowych",
-        "description": "Zobacz jak leczenie pasuje do Twoich celow",
-        "action": "Zbadaj cele"
+        "title": "Zgodność z celami życiowymi",
+        "description": "Zobacz, jak różne metody leczenia pasują do Twoich osobistych celów dotyczących pracy, rodziny, podróży i innych aspektów życia.",
+        "action": "Poznaj cele"
       },
       "statistics": {
         "title": "Co wybrali inni",
-        "description": "Zobacz co zdecydowali ludzie w podobnych sytuacjach",
+        "description": "Zobacz, jakie decyzje podjęły osoby w podobnych sytuacjach i jakie były ich wyniki.",
         "action": "Zobacz statystyki"
+      },
+      "supportNetworks": {
+        "title": "Sieci wsparcia",
+        "description": "Znajdź lokalne grupy wsparcia dla pacjentów z chorobami nerek, organizacje dla opiekunów i usługi NHS w Twojej okolicy.",
+        "action": "Znajdź wsparcie"
       }
     },
     "status": {
@@ -554,6 +574,21 @@
     },
     "quickAction": {
       "summary": "Zobacz swoje podsumowanie"
+    },
+    "carer": {
+      "title": "Wspieranie kogoś w podróży przez leczenie",
+      "welcome": "Witaj! Wspierasz kogoś w podróży przez leczenie nerek. Te zasoby pomogą Ci zrozumieć dostępne opcje i zapewnić wartościowe wsparcie.",
+      "welcomeWithRelation": "Witaj! Jako {{relationship}}, Twoje wsparcie ma ogromne znaczenie.",
+      "badge": "Tryb towarzysza",
+      "selfCare": {
+        "title": "Dbanie o siebie",
+        "subtitle": "Opieka nad kimś może być wymagająca. Pamiętaj, aby znaleźć czas dla siebie.",
+        "tip1": "Opieka nad kimś może być wymagająca. Pamiętaj, aby znaleźć czas dla siebie i nawiązać kontakt z innymi, którzy rozumieją Twoje doświadczenie.",
+        "tip2": "Rób regularne przerwy i dbaj o swoje zdrowie.",
+        "tip3": "Nie bój się prosić o pomoc, gdy jej potrzebujesz.",
+        "findSupport": "Znajdź wsparcie dla opiekunów",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -702,34 +737,7 @@
     "scrollHint": "Przewiń poziomo, aby zobaczyć wszystkie zabiegi",
     "tableHeading": "Tabela porównania zabiegów",
     "tableLabel": "Porównanie opcji leczenia nerek",
-    "criteria": {
-      "timeCommitment": "Czas poświęcony tygodniowo",
-      "timeCommitmentHint": "Godziny spędzone na zabiegu",
-      "location": "Miejsce zabiegu",
-      "locationHint": "Gdzie odbywa się zabieg",
-      "travel": "Wpływ na podróże",
-      "travelHint": "Możliwość podróżowania i wakacji",
-      "diet": "Ograniczenia dietetyczne",
-      "dietHint": "Ograniczenia w jedzeniu i piciu",
-      "surgery": "Wymagana operacja",
-      "surgeryHint": "Potrzebne początkowe procedury",
-      "supportNeeded": "Potrzebne wsparcie",
-      "supportNeededHint": "Pomoc od rodziny lub opiekunów",
-      "recoveryTime": "Czas rekonwalescencji",
-      "recoveryTimeHint": "Czas na przystosowanie się do zabiegu",
-      "longTermOutlook": "Perspektywa długoterminowa",
-      "longTermOutlookHint": "Oczekiwane wyniki w czasie",
-      "scheduleFlexibility": "Elastyczność harmonogramu",
-      "scheduleFlexibilityHint": "Kontrola nad harmonogramem",
-      "trainingRequired": "Wymagane szkolenie",
-      "trainingRequiredHint": "Potrzebny czas nauki",
-      "survivalRates": "Wskaźniki przeżycia",
-      "survivalRatesHint": "Ogólne wyniki (różnią się w zależności od osoby)",
-      "qualityOfLife": "Jakość życia",
-      "qualityOfLifeHint": "Ogólne samopoczucie",
-      "energyLevels": "Poziom energii",
-      "energyLevelsHint": "Typowa energia i zmęczenie"
-    },
+    "criteria": "Kryteria",
     "recommended": "Zalecane",
     "remember": "Pamiętaj",
     "guidance": "Żaden zabieg nie jest idealny dla wszystkich. Najlepszy wybór zależy od Twojej osobistej sytuacji, zdrowia i wartości. To porównanie jest punktem wyjścia do rozmów z zespołem nefrologicznym.",
@@ -758,6 +766,34 @@
       "medical": "Czynniki medyczne",
       "support": "Wymagania wsparcia",
       "health": "Wyniki zdrowotne"
+    },
+    "criteria": {
+      "timeCommitment": "Czas poświęcony tygodniowo",
+      "timeCommitmentHint": "Godziny spędzone na zabiegu",
+      "location": "Miejsce zabiegu",
+      "locationHint": "Gdzie odbywa się zabieg",
+      "travel": "Wpływ na podróże",
+      "travelHint": "Możliwość podróżowania i wakacji",
+      "diet": "Ograniczenia dietetyczne",
+      "dietHint": "Ograniczenia w jedzeniu i piciu",
+      "surgery": "Wymagana operacja",
+      "surgeryHint": "Potrzebne początkowe procedury",
+      "supportNeeded": "Potrzebne wsparcie",
+      "supportNeededHint": "Pomoc od rodziny lub opiekunów",
+      "recoveryTime": "Czas rekonwalescencji",
+      "recoveryTimeHint": "Czas na przystosowanie się do zabiegu",
+      "longTermOutlook": "Perspektywa długoterminowa",
+      "longTermOutlookHint": "Oczekiwane wyniki w czasie",
+      "scheduleFlexibility": "Elastyczność harmonogramu",
+      "scheduleFlexibilityHint": "Kontrola nad harmonogramem",
+      "trainingRequired": "Wymagane szkolenie",
+      "trainingRequiredHint": "Potrzebny czas nauki",
+      "survivalRates": "Wskaźniki przeżycia",
+      "survivalRatesHint": "Ogólne wyniki (różnią się w zależności od osoby)",
+      "qualityOfLife": "Jakość życia",
+      "qualityOfLifeHint": "Ogólne samopoczucie",
+      "energyLevels": "Poziom energii",
+      "energyLevelsHint": "Typowa energia i zmęczenie"
     },
     "values": {
       "minimalAfterRecovery": "Minimalne po rekonwalescencji",
@@ -1128,9 +1164,7 @@
       "viewed": "Poznane zabiegi",
       "questions": "Pytania dla Twojego zespołu",
       "priorities": "Twoje priorytety",
-      "nextSteps": "Sugerowane następne kroki",
-      "lifeGoals": "Zgodnosc celow zyciowych",
-      "statistics": "Co wybrali inni"
+      "nextSteps": "Sugerowane następne kroki"
     },
     "print": "Drukuj podsumowanie",
     "email": "Wyślij podsumowanie e-mailem",
@@ -1216,16 +1250,40 @@
       "5": "Bardzo ważne",
       "default": "Ważne"
     },
-    "lifeGoals": {
-      "selectedGoals": "Twoje wybrane cele",
-      "topCompatible": "Najbardziej kompatybilne leczenia",
-      "reviewGoals": "Przejrzyj swoje cele"
-    },
-    "statistics": {
-      "description": "Obejrzales statystyki wyborow innych pacjentow.",
-      "disclaimer": "Statystyki oparte na anonimowych danych NHS.",
-      "reviewStats": "Przejrzyj statystyki"
+    "carer": {
+      "title": "Wsparcie dla Ciebie",
+      "description": "Jako opiekun lub członek rodziny, Ty również zasługujesz na wsparcie. Oto zasoby, które pomogą Ci w tej podróży.",
+      "findSupport": "Znajdź sieci wsparcia",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Przydatne strony internetowe:"
     }
+  },
+  "supportNetworks": {
+    "title": "Sieci wsparcia",
+    "subtitle": "Znajdź lokalne i krajowe organizacje wspierające pacjentów z chorobami nerek",
+    "searchPlaceholder": "Szukaj według miasta lub regionu (np. Bradford, Leeds)",
+    "searchLabel": "Szukaj wsparcia",
+    "filters": {
+      "all": "Wszystkie",
+      "patient": "Wsparcie dla pacjentów",
+      "carer": "Wsparcie dla opiekunów",
+      "nhs": "Usługi NHS"
+    },
+    "noResults": "Nie znaleziono sieci wsparcia dla tego obszaru",
+    "tryDifferent": "Spróbuj innego wyszukiwania lub przejrzyj organizacje krajowe poniżej",
+    "national": "Organizacje krajowe",
+    "regional": "Wsparcie regionalne",
+    "visitWebsite": "Odwiedź stronę",
+    "callHelpline": "Zadzwoń na infolinię",
+    "services": "Usługi",
+    "regions": "Obsługiwane obszary",
+    "backToHub": "Powrót do centrum",
+    "forPatients": "Dla pacjentów",
+    "forCarers": "Dla opiekunów",
+    "nhsTrust": "NHS Trust",
+    "charity": "Organizacja charytatywna",
+    "carerOrg": "Organizacja opiekunów"
   },
   "session": {
     "timeRemaining": "Pozostały czas: {{minutes}}",
@@ -1456,9 +1514,7 @@
     }
   },
   "treatment": {
-    "dayInLife": "Dzień z życia",
-    "faqDesc": "Pytania często zadawane przez pacjentów na temat tego leczenia",
-    "categoryGeneral": "Ogólne"
+    "dayInLife": "Dzień z życia"
   },
   "glossary": {
     "title": "Słownik terminów medycznych",
@@ -1572,82 +1628,6 @@
         "title": "Fosforany",
         "definition": "Minerał występujący w wielu pokarmach, który pomaga budować silne kości. Gdy nerki nie działają dobrze, fosforany mogą gromadzić się we krwi i osłabiać kości. Może być konieczne przyjmowanie tabletek zwanych wiązaczami fosforanów podczas posiłków i ograniczenie niektórych pokarmów."
       }
-    }
-  },
-  "lifeGoals": {
-    "title": "Zgodnosc celow zyciowych",
-    "subtitle": "Zobacz, jak leczenie pasuje do Twoich osobistych celow",
-    "introduction": "Zrozumienie, jak kazde leczenie pasuje do tego, co jest dla Ciebie najwazniejsze, moze pomoc w podjęciu decyzji.",
-    "categories": {
-      "work": {
-        "name": "Praca i kariera",
-        "description": "Cele zwiazane z praca i zyciem zawodowym"
-      },
-      "family": {
-        "name": "Rodzina i relacje",
-        "description": "Cele zwiazane z czasem rodzinnym i opieka nad innymi"
-      },
-      "travel": {
-        "name": "Podroze i wakacje",
-        "description": "Cele zwiazane z podrozami i odkrywaniem"
-      },
-      "hobbies": {
-        "name": "Hobby i aktywnosci",
-        "description": "Cele zwiazane ze sportem i hobby"
-      },
-      "independence": {
-        "name": "Niezaleznosc",
-        "description": "Cele zwiazane z utrzymaniem niezaleznosci"
-      },
-      "religious": {
-        "name": "Wiara i duchowosc",
-        "description": "Cele zwiazane z praktyka religijna"
-      }
-    },
-    "goals": {
-      "fullTimeWork": "Kontynuowac prace na pelny etat",
-      "partTimeWork": "Pracowac na pol etatu",
-      "retirement": "Cieszyc sie emerytura",
-      "childcare": "Opiekowac sie dziecmi lub wnukami",
-      "familyEvents": "Uczestniczyc w wydarzeniach rodzinnych",
-      "socialLife": "Utrzymywac aktywne zycie towarzyskie",
-      "shortTrips": "Robic krotkie wycieczki",
-      "longHolidays": "Jezdzic na dluzsze wakacje za granice",
-      "pilgrimages": "Odbywac pielgrzymki",
-      "exercise": "Pozostac aktywnym fizycznie",
-      "gardening": "Kontynuowac ogrodnictwo",
-      "sports": "Uprawiac sport",
-      "liveAlone": "Mieszkac samodzielnie",
-      "driveCar": "Kontynuowac prowadzenie samochodu",
-      "cookMeals": "Gotowac wlasne posilki",
-      "prayRegularly": "Utrzymywac regularne modlitwy",
-      "attendWorship": "Uczestniczyc w nabozenstvach",
-      "fastingPractice": "Zachowywac post religijny"
-    },
-    "results": {
-      "title": "Twoje wyniki zgodnosci",
-      "description": "Na podstawie wybranych celow",
-      "bestMatch": "Najlepsze dopasowanie",
-      "noGoalsSelected": "Wybierz co najmniej jeden cel"
-    },
-    "compatibility": {
-      "high": "Wysoka zgodnosc",
-      "medium": "Umiarkowana zgodnosc",
-      "low": "Nizsza zgodnosc"
-    },
-    "discussionPrompts": {
-      "title": "Pytania do omowienia",
-      "prompt1": "Jak to leczenie wplynie na moja codzienna rutyne?",
-      "prompt2": "Czy moge osiagnac swoje cele z tym leczeniem?",
-      "prompt3": "Jakie dostosowania bede musial wprowadzic?"
-    }
-  },
-  "statistics": {
-    "page": {
-      "title": "Co wybrali inni w podobnych sytuacjach",
-      "introduction": "Zrozumienie co wybrali inni moze pomoc. To prawdziwe statystyki od pacjentow nerkowych w UK.",
-      "personalized": "Spersonalizowane do Twojego profilu",
-      "compareTreatments": "Porownaj leczenia"
     }
   }
 }

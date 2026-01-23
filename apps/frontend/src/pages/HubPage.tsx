@@ -18,7 +18,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useCallback } from 'react';
-import { useSession, useSessionTimer } from '@/context/SessionContext';
+import { useSession } from '@/context/SessionContext';
 import LearningProgress from '@/components/LearningProgress';
 import ScenarioExplorer from '@/components/ScenarioExplorer';
 import { DecisionReadinessIndicator, DecisionJournal } from '@/components/decision';
@@ -108,6 +108,15 @@ const HUB_CARDS: HubCard[] = [
     icon: <StatisticsIcon />,
     gradient: 'bg-gradient-to-br from-[#41B6E6] via-[#2E8BC0] to-[#1B5E83]',
   },
+  {
+    id: 'support-networks',
+    titleKey: 'hub.cards.supportNetworks.title',
+    descriptionKey: 'hub.cards.supportNetworks.description',
+    href: '/support-networks',
+    actionKey: 'hub.cards.supportNetworks.action',
+    icon: <SupportNetworksIcon />,
+    gradient: 'bg-gradient-to-br from-[#E8EDEE] via-[#768692] to-[#425563]',
+  },
 ];
 
 /**
@@ -126,13 +135,15 @@ export default function HubPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { session } = useSession();
-  const { formatted, isWarning, extendSession } = useSessionTimer();
   const [activeNavItem, setActiveNavItem] = useState<string>('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const journeyStage = session?.journeyStage;
   const viewedTreatments = session?.viewedTreatments || [];
   const valueRatings = session?.valueRatings || [];
+  const userRole = session?.userRole || 'patient';
+  const carerRelationship = session?.carerRelationship;
+  const isCarer = userRole === 'carer';
 
   // Track scroll position for sticky header effects
   useEffect(() => {
@@ -173,8 +184,11 @@ export default function HubPage() {
     }
   };
 
-  // Get personalized welcome message based on journey stage
+  // Get personalized welcome message based on journey stage and user role
   const getWelcomeMessage = () => {
+    if (isCarer) {
+      return t('hub.carer.welcome', "Welcome! You're supporting someone on their kidney treatment journey. These resources will help you understand their options and provide meaningful support.");
+    }
     const stageMessages: Record<string, string> = {
       'newly-diagnosed': 'Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.',
       'monitoring': 'As your kidneys are being monitored, these resources will help you prepare for potential future treatments.',
@@ -187,42 +201,30 @@ export default function HubPage() {
     return t('hub.welcome.message', stageMessages[journeyStage || 'newly-diagnosed'] || stageMessages['newly-diagnosed']);
   };
 
+  // Get relationship display text for carers
+  const getRelationshipText = () => {
+    if (!carerRelationship) return '';
+    const relationships: Record<string, string> = {
+      spouse: t('carerRelationship.spouse', 'Spouse/Partner'),
+      parent: t('carerRelationship.parent', 'Parent'),
+      child: t('carerRelationship.child', 'Child (adult)'),
+      sibling: t('carerRelationship.sibling', 'Sibling'),
+      friend: t('carerRelationship.friend', 'Friend'),
+      professional: t('carerRelationship.professional', 'Professional carer'),
+      other: t('carerRelationship.other', 'Other'),
+    };
+    return relationships[carerRelationship] || '';
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-bg-page via-bg-surface/50 to-bg-surface">
-      {/* Session Timer Bar - Enhanced with better visual hierarchy */}
+      {/* Navigation Bar */}
       <div
         className={`bg-white/95 backdrop-blur-md border-b border-nhs-pale-grey/80 py-2.5 sm:py-3 px-3 sm:px-4 sticky top-0 z-40 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}
-        role="status"
-        aria-live="polite"
       >
-        <div className="max-w-container-xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-3">
-          {/* Session timer with visual indicator */}
-          <div className="flex items-center gap-3 w-full sm:w-auto">
-            <div className={`relative p-2 rounded-xl transition-all duration-300 ${isWarning ? 'bg-nhs-red/10' : 'bg-nhs-blue/10'}`}>
-              <ClockIcon className={isWarning ? 'text-nhs-red' : 'text-nhs-blue'} />
-              {isWarning && (
-                <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-nhs-red rounded-full animate-pulse" />
-              )}
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] sm:text-xs text-text-muted uppercase tracking-wide font-medium">
-                {t('hub.session.timeRemaining', 'Session time remaining')}
-              </span>
-              <span className={`font-bold text-sm sm:text-base tabular-nums ${isWarning ? 'text-nhs-red' : 'text-text-primary'}`}>
-                {formatted}
-              </span>
-            </div>
-            {isWarning && (
-              <button
-                onClick={extendSession}
-                className="ml-auto sm:ml-3 px-4 py-2 min-h-[40px] bg-nhs-blue text-white text-xs sm:text-sm font-semibold rounded-xl hover:bg-nhs-blue-dark active:scale-[0.98] transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2"
-              >
-                {t('hub.session.extend', 'Extend session')}
-              </button>
-            )}
-          </div>
-          {/* Quick actions - improved styling */}
-          <div className="flex items-center gap-1 sm:gap-2 ml-auto sm:ml-0">
+        <div className="max-w-container-xl mx-auto flex justify-end items-center gap-2 sm:gap-3">
+          {/* Quick actions */}
+          <div className="flex items-center gap-1 sm:gap-2">
             <Link
               to="/glossary"
               className="group flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-text-secondary hover:text-nhs-blue hover:bg-nhs-blue/5 transition-all focus:outline-none focus:ring-2 focus:ring-focus rounded-lg px-2.5 sm:px-3 py-2 min-h-[40px]"
@@ -262,15 +264,25 @@ export default function HubPage() {
 
             <div className="relative flex flex-col md:flex-row md:items-center gap-4 sm:gap-6">
               <div className="flex-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-nhs-blue/10 to-nhs-green/10 rounded-full text-xs sm:text-sm font-semibold text-nhs-blue mb-4 sm:mb-5">
+                <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-5 ${
+                  isCarer
+                    ? 'bg-gradient-to-r from-nhs-pink/10 to-nhs-purple/10 text-nhs-pink'
+                    : 'bg-gradient-to-r from-nhs-blue/10 to-nhs-green/10 text-nhs-blue'
+                }`}>
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nhs-green opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-nhs-green" />
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isCarer ? 'bg-nhs-pink' : 'bg-nhs-green'}`} />
+                    <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isCarer ? 'bg-nhs-pink' : 'bg-nhs-green'}`} />
                   </span>
-                  {t('hub.welcome.badge', 'Your personalised journey')}
+                  {isCarer
+                    ? t('hub.carer.badge', 'Companion Mode') + (carerRelationship ? ` · ${getRelationshipText()}` : '')
+                    : t('hub.welcome.badge', 'Your personalised journey')
+                  }
                 </div>
                 <h1 id="welcome-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 sm:mb-5 leading-tight">
-                  {t('hub.welcome.title', 'Your Personalised Treatment Options')}
+                  {isCarer
+                    ? t('hub.carer.title', 'Supporting Someone Through Their Treatment Journey')
+                    : t('hub.welcome.title', 'Your Personalised Treatment Options')
+                  }
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-text-secondary max-w-[700px] leading-relaxed mb-4 sm:mb-5">
                   {getWelcomeMessage()}
@@ -407,6 +419,48 @@ export default function HubPage() {
             </a>
           </div>
         </section>
+
+        {/* Carer Self-Care Section - Only shown in companion mode */}
+        {isCarer && (
+          <section className="relative bg-gradient-to-br from-nhs-pink/5 via-nhs-purple/5 to-white border border-nhs-pink/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 mb-6 sm:mb-10 overflow-hidden" aria-labelledby="carer-selfcare-heading">
+            {/* Decorative accent */}
+            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-nhs-pink to-nhs-purple rounded-l-2xl" aria-hidden="true" />
+
+            <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-nhs-pink/20 to-nhs-purple/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <HeartHandIcon className="w-7 h-7 sm:w-8 sm:h-8 text-nhs-pink" />
+              </div>
+
+              <div className="flex-1">
+                <h2 id="carer-selfcare-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-3">
+                  {t('hub.carer.selfCare.title', 'Looking After Yourself')}
+                </h2>
+                <p className="text-sm sm:text-base text-text-secondary mb-4 leading-relaxed">
+                  {t('hub.carer.selfCare.tip1', 'Caring for someone can be demanding. Remember to take time for yourself and connect with others who understand your experience.')}
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    to="/support-networks"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-nhs-pink text-white text-sm font-semibold rounded-xl hover:bg-nhs-pink/90 active:scale-[0.98] transition-all shadow-sm"
+                  >
+                    <SupportNetworksIcon className="w-4 h-4" />
+                    {t('hub.carer.selfCare.findSupport', 'Find Carer Support')}
+                  </Link>
+                  <a
+                    href="https://www.carersuk.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-white border border-nhs-pink/30 text-nhs-pink text-sm font-semibold rounded-xl hover:bg-nhs-pink/5 active:scale-[0.98] transition-all"
+                  >
+                    {t('hub.carer.selfCare.carersUK', 'Carers UK')}
+                    <ExternalLinkIcon className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Decision Readiness and Progress Section - Enhanced with IDs for navigation */}
         <section id="progress-section" className="space-y-4 sm:space-y-6 mb-6 sm:mb-10 scroll-mt-20">
@@ -873,6 +927,30 @@ function StatisticsIcon() {
   return (
     <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
       <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </svg>
+  );
+}
+
+function SupportNetworksIcon({ className }: { className?: string } = {}) {
+  return (
+    <svg className={className || 'w-full h-full'} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+    </svg>
+  );
+}
+
+function HeartHandIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className || 'w-6 h-6'} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  );
+}
+
+function ExternalLinkIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className || 'w-4 h-4'} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
     </svg>
   );
 }

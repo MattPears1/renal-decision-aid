@@ -13,7 +13,6 @@
     "error": "Wax baa qaldamay. Fadlan isku day mar kale.",
     "continue": "Sii wad",
     "cancel": "Ka noqo",
-    "confirm": "Xaqiiji",
     "save": "Kaydi",
     "print": "Daabac",
     "yes": "Haa",
@@ -122,12 +121,34 @@
     "title": "Dooro Luqaddaada",
     "instruction": "Fadlan dooro luqadda aad doorbideyso. Waxaad beddeli kartaa wakhtiga kasta.",
     "selectLanguage": "Dooro luqadda",
-    "currentLanguage": "Luqadda hadda",
-    "confirmChange": "Luqadda beddelaysaa?",
-    "confirmChangeMessage": "Ma hubtaa inaad rabto inaad beddesho luqadda {{language}}? Dhammaan qoraalka waa la cusboonaysiin doonaa.",
-    "searchLanguages": "Raadi luqadaha...",
-    "languagesAvailable": "luqadood ayaa la heli karaa",
-    "noResults": "Luqad lama helin"
+    "currentLanguage": "Luqadda hadda"
+  },
+  "userRole": {
+    "title": "Waa kuma adiga?",
+    "subtitle": "Tani waxay naga caawineysaa inaan kuu habeeyno khibraddaada",
+    "patient": {
+      "title": "Waxaan sameynayaa go'aankayga daaweynta",
+      "description": "Waxaan qabaa cudurka keliyaha waxaanan rabaa inaan barto doorashooyinkayga daaweynta"
+    },
+    "carer": {
+      "title": "Waxaan taageereyaa qof",
+      "description": "Waxaan ahay daryeele, xubin qoys ah, ama saaxiib ka caawiya qof qaba cudurka keliyaha"
+    },
+    "toggle": "Ma tahay daryeele ama xubin qoys ah?",
+    "switchMode": "U beddel Qaabka Wehliyadda",
+    "patientMode": "U beddel Qaabka Bukaanka",
+    "currentMode": "Waxaad ku jirtaa qaabka {{mode}}"
+  },
+  "carerRelationship": {
+    "title": "Xiriirkaaga",
+    "subtitle": "Sidee baad ula xiriirtaa qofka aad taageereyso?",
+    "spouse": "Xaas/Lammaane",
+    "parent": "Waalid",
+    "child": "Ilmo (qaan gaadhay)",
+    "sibling": "Walaal",
+    "friend": "Saaxiib",
+    "professional": "Daryeele xirfadle ah",
+    "other": "Mid kale"
   },
   "privacy": {
     "pageAriaLabel": "Macluumaadka garashaanta",
@@ -196,46 +217,15 @@
     "homeAriaLabel": "Caawinta Go'aanka Daaweynta Keliyaha NHS - Bogga Hore"
   },
   "progress": {
-    "title": "Safarka Barashadaada",
-    "yourProgress": "Horumarkaaga",
-    "complete": "la dhammeeyay",
-    "treatments": "daaweynaha",
-    "sections": {
-      "title": "Qaybaha La Sahamayo",
-      "questionnaire": "Wax ku Saabsan Adiga",
-      "questionnaireDesc": "La wadaag xaaladaada",
-      "treatments": "Doorashooyinka Daaweynta",
-      "treatmentsDesc": "{{viewed}} ee {{total}} la sahamiyay",
-      "values": "Jimicsiga Qiimaha",
-      "valuesDesc": "Cadee mudnaantaadaada",
-      "chat": "Weydii Su'aalo",
-      "chatDesc": "Hel jawaabo",
-      "lifeGoals": "Hadafyada Nolosha",
-      "lifeGoalsDesc": "U dhig daaweynta hadafyada",
-      "statistics": "Maxay doortay dadka kale",
-      "statisticsDesc": "Arag doorashooyinka bukaanka"
-    },
-    "status": {
-      "completed": "La Dhammeeyay",
-      "inProgress": "Socda"
-    },
-    "badges": {
-      "title": "Billadahaaga",
-      "explorer": "Sahamiye",
-      "allTreatments": "Dhammaan Daaweynaha",
-      "values": "Qiimaha Cad",
-      "curious": "Maskax Fiiro",
-      "complete": "Safarka La Dhammeeyay"
-    },
-    "encouragement": {
-      "start": "Bilow safarkaaga adigoo sahamaya doorashooyinka daaweynta",
-      "beginning": "Bilow fiican! Sii sahami si aad wax badan u barato",
-      "making": "Waad horumaraysaa!",
-      "halfway": "Wax ka badan badkii - waa ku fiican tahay!",
-      "almost": "Ku dhow dhammaystiir! Qaar yar oo qaybooyin ah",
-      "complete": "Aad u fiican! Wax walba waad sahamiyay"
-    },
-    "viewSummary": "Arag Koobidaada"
+    "language": "Luqadda",
+    "privacy": "Gaarasiinta",
+    "yourJourney": "Safarkaga",
+    "aboutYou": "Wax ku saabsan Adiga",
+    "yourOptions": "Doorashooyinkaaga",
+    "ariaLabel": "Horumarka iyada oo loo marayo caawinta go'aanka",
+    "stepOfTotal": "Tallaabada {{current}} ee {{total}}",
+    "percentComplete": "{{percentage}}% la dhammeeyay",
+    "ariaProgressLabel": "Horumarka: {{current}} ee {{total}} tallaabood la dhammeeyay"
   },
   "journey": {
     "title": "Halkee Ku Jirtaa Safarka Daryeelka Keliyahaaga?",
@@ -522,14 +512,19 @@
         "action": "Bilow Sheekaysiga"
       },
       "lifeGoals": {
-        "title": "Waafaqsanaanta Hadafyada",
-        "description": "Arag sida daaweyntu ula jaanqaaddo hadafyadaada",
-        "action": "Sahami hadafyada"
+        "title": "Ku Habboonaanta Hadafyada Nolosha",
+        "description": "Arag sida daaweyno kala duwan ay ula jaanqaadaan hadafyadaada shakhsiyeed ee shaqada, qoyska, safarka, iyo wax badan.",
+        "action": "Sahami Hadafyada"
       },
       "statistics": {
-        "title": "Maxay doortay dadka kale",
-        "description": "Arag waxay go'aansadeen dadka xaaladaha la midka",
-        "action": "Arag xogta"
+        "title": "Waxa Dadka Kale Doorbideen",
+        "description": "Arag waxa dadka xaalado la mid ah ay go'aansadeen iyo natiijooyinkooda.",
+        "action": "Arag Tirakoobyada"
+      },
+      "supportNetworks": {
+        "title": "Shabakadaha Taageerada",
+        "description": "Raadi kooxaha taageerada keliyaha, ururada daryeelayaasha, iyo adeegyada NHS ee aagaaga.",
+        "action": "Raadi Taageero"
       }
     },
     "status": {
@@ -545,6 +540,40 @@
     },
     "quickAction": {
       "summary": "Arag Koobidaada"
+    },
+    "carer": {
+      "title": "Taageerida Qof Safarkiisa Daaweynta",
+      "welcome": "Soo dhawoow! Waxaad taageeraysaa qof safarkiisa daaweynta keliyaha. Ilahani waxay kaa caawin doonaan inaad fahamto doorashooyinkooda oo aad bixiso taageero macno leh.",
+      "welcomeWithRelation": "Soo dhawoow! Ahaan {{relationship}}, taageradaadu way muhiim tahay.",
+      "badge": "Qaabka Wehliyadda",
+      "selfCare": {
+        "title": "Iska Daryeelida",
+        "subtitle": "Daryeelida qof waxay noqon kartaa wax adag. Xusuusnow inaad wakhti qaadato naftaada.",
+        "tip1": "Daryeelida qof waxay noqon kartaa wax adag. Xusuusnow inaad wakhti qaadato naftaada oo aad la xiriirto dadka kale ee fahamaya khibraddaada.",
+        "tip2": "Qaado nasashooyin joogto ah oo iska eeg caafimaadkaaga.",
+        "tip3": "Ha ka baqin inaad caawimaad weydiisato markaad u baahan tahay.",
+        "findSupport": "Raadi Taageerada Daryeelayaasha",
+        "carersUK": "Carers UK"
+      },
+      "cards": {
+        "treatments": {
+          "description": "Ka caawin inay fahmaan doorashooyinkooda daaweynta"
+        },
+        "values": {
+          "description": "Wada sahami waxa ugu muhiimsan iyaga"
+        },
+        "compare": {
+          "description": "Isbarbar dhig daaweynaha dhinac dhinac"
+        },
+        "lifeGoals": {
+          "description": "Arag sida daaweynahu ugu habboon yihiin hadafyadooda nolosha"
+        },
+        "support": {
+          "title": "Shabakadaha Taageerada",
+          "description": "Raadi ururada taageerada keliyaha iyo daryeelayaasha ee degaanka",
+          "action": "Raadi Taageero"
+        }
+      }
     }
   },
   "treatments": {
@@ -693,34 +722,7 @@
     "scrollHint": "U baadh midig si aad u aragto dhammaan daaweynaha",
     "tableHeading": "Jadwalka Isbarbar Dhigga Daaweynta",
     "tableLabel": "Isbarbar dhigga doorashooyinka daaweynta keliyaha",
-    "criteria": {
-      "timeCommitment": "Wakhti ballan toddobaadkii",
-      "timeCommitmentHint": "Saacadaha daaweynta lagu qaato",
-      "location": "Goobta daaweynta",
-      "locationHint": "Halka daaweyntu ka dhacdo",
-      "travel": "Saamaynta safarka",
-      "travelHint": "Awoodda safarka iyo fasaxa",
-      "diet": "Xaddidaadda cuntada",
-      "dietHint": "Xaddidaadda cuntada iyo cabbitaanka",
-      "surgery": "Qaliinka loo baahan yahay",
-      "surgeryHint": "Naqshadaha bilowga ee loo baahan yahay",
-      "supportNeeded": "Taageerada loo baahan yahay",
-      "supportNeededHint": "Caawinta qoyska ama daryeel bixiyeyaasha",
-      "recoveryTime": "Wakhti ka soo kabashada",
-      "recoveryTimeHint": "Wakhti aad uga qalaqaliso daaweynta",
-      "longTermOutlook": "Aragtida muddada dheer",
-      "longTermOutlookHint": "Natiijada la filaayo wakhti ka dib",
-      "scheduleFlexibility": "Dabacsanaanta jadwalka",
-      "scheduleFlexibilityHint": "Xakameyso jadwalkaaga",
-      "trainingRequired": "Tababarka loo baahan yahay",
-      "trainingRequiredHint": "Wakhti barashada loo baahan yahay",
-      "survivalRates": "Heerarka badbaadada",
-      "survivalRatesHint": "Natiijada guud (way kala duwan tahay qofka)",
-      "qualityOfLife": "Tayada nolosha",
-      "qualityOfLifeHint": "Ladnaan guud",
-      "energyLevels": "Heerarka tamarta",
-      "energyLevelsHint": "Tamarta caadiga ah iyo daalka"
-    },
+    "criteria": "Heerarka",
     "recommended": "La Taliyay",
     "remember": "Xusuusnow",
     "guidance": "Ma jirto daaweyn u fiican qof walba. Doorashada ugu fiican waxay ku xidhan tahay xaaladaada gaarka ah, caafimaadkaaga, iyo qiimahaaga. Isbarbar dhigani waa bilowga wadahadallada kooxda keliyahaaga.",
@@ -749,6 +751,34 @@
       "medical": "Arrimaha Caafimaadka",
       "support": "Baahiyaha Taageerada",
       "health": "Natiijada Caafimaadka"
+    },
+    "criteria": {
+      "timeCommitment": "Wakhti ballan toddobaadkii",
+      "timeCommitmentHint": "Saacadaha daaweynta lagu qaato",
+      "location": "Goobta daaweynta",
+      "locationHint": "Halka daaweyntu ka dhacdo",
+      "travel": "Saamaynta safarka",
+      "travelHint": "Awoodda safarka iyo fasaxa",
+      "diet": "Xaddidaadda cuntada",
+      "dietHint": "Xaddidaadda cuntada iyo cabbitaanka",
+      "surgery": "Qaliinka loo baahan yahay",
+      "surgeryHint": "Naqshadaha bilowga ee loo baahan yahay",
+      "supportNeeded": "Taageerada loo baahan yahay",
+      "supportNeededHint": "Caawinta qoyska ama daryeel bixiyeyaasha",
+      "recoveryTime": "Wakhti ka soo kabashada",
+      "recoveryTimeHint": "Wakhti aad uga qalaqaliso daaweynta",
+      "longTermOutlook": "Aragtida muddada dheer",
+      "longTermOutlookHint": "Natiijada la filaayo wakhti ka dib",
+      "scheduleFlexibility": "Dabacsanaanta jadwalka",
+      "scheduleFlexibilityHint": "Xakameyso jadwalkaaga",
+      "trainingRequired": "Tababarka loo baahan yahay",
+      "trainingRequiredHint": "Wakhti barashada loo baahan yahay",
+      "survivalRates": "Heerarka badbaadada",
+      "survivalRatesHint": "Natiijada guud (way kala duwan tahay qofka)",
+      "qualityOfLife": "Tayada nolosha",
+      "qualityOfLifeHint": "Ladnaan guud",
+      "energyLevels": "Heerarka tamarta",
+      "energyLevelsHint": "Tamarta caadiga ah iyo daalka"
     },
     "values": {
       "minimalAfterRecovery": "Wax yar ka dib ka soo kabashada",
@@ -1117,9 +1147,7 @@
       "viewed": "Daaweynaha La Sahamiyay",
       "questions": "Su'aalaha Kooxdaada",
       "priorities": "Mudnaantaadaada",
-      "nextSteps": "Talaabooyinka Xigta ee La Soo Jeediyay",
-      "lifeGoals": "Waafaqsanaanta Hadafyada",
-      "statistics": "Maxay doortay dadka kale"
+      "nextSteps": "Talaabooyinka Xigta ee La Soo Jeediyay"
     },
     "print": "Daabac Koobidda",
     "email": "Emailka Koobidda",
@@ -1205,15 +1233,13 @@
       "5": "Aad u muhiim",
       "default": "Muhiim"
     },
-    "lifeGoals": {
-      "selectedGoals": "Hadafyadaada la doortay",
-      "topCompatible": "Daaweynta ugu waafaqsan",
-      "reviewGoals": "Dib u eeg hadafyadaada"
-    },
-    "statistics": {
-      "description": "Waad aragtay tiro koobta doorashooyinka bukaanada kale.",
-      "disclaimer": "Tiro koobtu waxay ku saleysan yihiin xogta magac la'aanta NHS.",
-      "reviewStats": "Dib u eeg tiro koobta"
+    "carer": {
+      "title": "Taageero Adiga Kuu Ah",
+      "description": "Daryeele ama xubin qoys ahaan, waxaad xaq u leedahay taageero. Waa kuwan ilaha kaa caawinaya safarkaan.",
+      "findSupport": "Raadi Shabakadaha Taageerada",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Websiteyaasha faa'iidada leh:"
     }
   },
   "session": {
@@ -1348,6 +1374,44 @@
       "sleep": "Nasasho markaad daal dareento"
     }
   },
+  "progress": {
+    "title": "Safarka Barashadaada",
+    "yourProgress": "Horumarkaaga",
+    "complete": "la dhammeeyay",
+    "treatments": "daaweynaha",
+    "sections": {
+      "title": "Qaybaha La Sahamayo",
+      "questionnaire": "Wax ku Saabsan Adiga",
+      "questionnaireDesc": "La wadaag xaaladaada",
+      "treatments": "Doorashooyinka Daaweynta",
+      "treatmentsDesc": "{{viewed}} ee {{total}} la sahamiyay",
+      "values": "Jimicsiga Qiimaha",
+      "valuesDesc": "Cadee mudnaantaadaada",
+      "chat": "Weydii Su'aalo",
+      "chatDesc": "Hel jawaabo"
+    },
+    "status": {
+      "completed": "La Dhammeeyay",
+      "inProgress": "Socda"
+    },
+    "badges": {
+      "title": "Billadahaaga",
+      "explorer": "Sahamiye",
+      "allTreatments": "Dhammaan Daaweynaha",
+      "values": "Qiimaha Cad",
+      "curious": "Maskax Fiiro",
+      "complete": "Safarka La Dhammeeyay"
+    },
+    "encouragement": {
+      "start": "Bilow safarkaaga adigoo sahamaya doorashooyinka daaweynta",
+      "beginning": "Bilow fiican! Sii sahami si aad wax badan u barato",
+      "making": "Waad horumaraysaa!",
+      "halfway": "Wax ka badan badkii - waa ku fiican tahay!",
+      "almost": "Ku dhow dhammaystiir! Qaar yar oo qaybooyin ah",
+      "complete": "Aad u fiican! Wax walba waad sahamiyay"
+    },
+    "viewSummary": "Arag Koobidaada"
+  },
   "scenario": {
     "title": "Maxaa Haddii? Sahamiyaha Xaaladaha",
     "subtitle": "Arag sida xaaladaha nolosha kala duwani ugu shaqeeyaan doorasho daaweyn kasta",
@@ -1445,9 +1509,7 @@
     }
   },
   "treatment": {
-    "dayInLife": "Maalin Nolosheed",
-    "faqDesc": "Su'aalaha bukaamadu badanaa ka weydiyaan daawayntan",
-    "categoryGeneral": "Guud"
+    "dayInLife": "Maalin Nolosheed"
   },
   "glossary": {
     "title": "Qaamuuska Erayada Caafimaadka",
@@ -1633,80 +1695,31 @@
       }
     }
   },
-  "lifeGoals": {
-    "title": "Waafaqsanaanta Hadafyada Nolosha",
-    "subtitle": "Arag sida daaweyntu ula jaanqaaddo hadafyadaada shaqsiyeed",
-    "introduction": "Fahamka sida daaweeyn kastaa ula dhiganto waxa muhiimka kuu ah noloshaada waxay kaa caawin kartaa go'aanka.",
-    "categories": {
-      "work": {
-        "name": "Shaqo iyo Xirfad",
-        "description": "Hadafyada la xiriira shaqadaada iyo noloshaada xirfadeed"
-      },
-      "family": {
-        "name": "Qoys iyo Xiriirka",
-        "description": "Hadafyada la xiriira waqtiga qoyska"
-      },
-      "travel": {
-        "name": "Safar iyo Fasax",
-        "description": "Hadafyada la xiriira safarka"
-      },
-      "hobbies": {
-        "name": "Madadaalo iyo Hawlaha",
-        "description": "Hadafyada la xiriira ciyaaraha iyo xiisaha"
-      },
-      "independence": {
-        "name": "Madax-bannaanida",
-        "description": "Hadafyada la xiriira ilaalinta madax-bannaanidaada"
-      },
-      "religious": {
-        "name": "Diinta iyo Ruuxnimada",
-        "description": "Hadafyada la xiriira dhaqanka diineed"
-      }
+  "supportNetworks": {
+    "title": "Shabakadaha Taageerada",
+    "subtitle": "Raadi ururada taageerada keliyaha ee degaanka iyo kuwa qaranka",
+    "searchPlaceholder": "Ku raadi magaalo ama gobol (tusaale, Bradford, Leeds)",
+    "searchLabel": "Raadi taageero aagaaga",
+    "filters": {
+      "all": "Dhammaan",
+      "patient": "Taageerada Bukaanka",
+      "carer": "Taageerada Daryeelaha",
+      "nhs": "Adeegyada NHS",
+      "national": "Qaranka"
     },
-    "goals": {
-      "fullTimeWork": "Sii wad shaqo buuxda",
-      "partTimeWork": "Shaqo wakhti kooban",
-      "retirement": "Ku raaxayso hawl-gabka",
-      "childcare": "Daryeelka carruurta",
-      "familyEvents": "Ka qaybqaadashada xafladaha qoyska",
-      "socialLife": "Ilaalinta nolosha bulshada",
-      "shortTrips": "Safarrada gaagaaban",
-      "longHolidays": "Fasaxyada dhaadheer ee dibadda",
-      "pilgrimages": "Xajka ama umrada",
-      "exercise": "Sii firfircoonaansho jireed",
-      "gardening": "Sii wad beeraha",
-      "sports": "Ka qaybqaadashada ciyaaraha",
-      "liveAlone": "Noolaan madax-bannaan",
-      "driveCar": "Sii wad gaari wadista",
-      "cookMeals": "Karinta cuntadayda",
-      "prayRegularly": "Ilaalinta waqtiyada salaadda",
-      "attendWorship": "Ka qaybqaadashada cibaadada",
-      "fastingPractice": "Sooman diineed"
-    },
-    "results": {
-      "title": "Natiijooyinkaaga Waafaqsanaanta",
-      "description": "Ku saleysan hadafyadaada la doortay",
-      "bestMatch": "Ugu fiican",
-      "noGoalsSelected": "Dooro ugu yaraan hal hadaf"
-    },
-    "compatibility": {
-      "high": "Waafaqsanaan sare",
-      "medium": "Waafaqsanaan dhexdhexaad",
-      "low": "Waafaqsanaan hoose"
-    },
-    "discussionPrompts": {
-      "title": "Su'aalaha Laga Wada Hadlo",
-      "prompt1": "Sidee daaweyntan u saameyn doontaa habkayga maalinlaha?",
-      "prompt2": "Ma gaari karaa hadafyadayda daaweyntan?",
-      "prompt3": "Waa maxay isbeddelada aan sameyn doono?"
-    }
-  },
-  "statistics": {
-    "page": {
-      "title": "Maxay doortay dadka xaaladaha la mid ah",
-      "introduction": "Fahamka waxa dadka kale ay doortay waa caawin kara. Kuwani waa tiro koob dhabta ah oo ka mid ah bukaanada kelyaha UK.",
-      "personalized": "U gaar ah profile-kaaga",
-      "compareTreatments": "Is bar bar dhi daaweynta"
-    }
+    "noResults": "Lama helin shabakado taageero \"{{query}}\"",
+    "noResultsHint": "Isku day inaad raadiso magaalo ama gobol kale, ama baadh ururadayaga qaranka ee hoose.",
+    "showingResults": "Waxaa la muujinayaa {{count}} natiijooyin \"{{query}}\"",
+    "national": "Ururada Qaranka",
+    "regional": "Taageerada Degaanka",
+    "visitWebsite": "Booqo Website-ka",
+    "callHelpline": "Wac Khadka Caawinta",
+    "services": "Adeegyada la bixiyo",
+    "coverage": "Aagga daboolista",
+    "forPatients": "Bukaamada",
+    "forCarers": "Daryeelayaasha",
+    "nhsTrust": "NHS Trust",
+    "charity": "Urur khayri",
+    "carerOrg": "Urur Daryeelayaal"
   }
 }

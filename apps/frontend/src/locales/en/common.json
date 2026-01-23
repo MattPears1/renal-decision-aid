@@ -490,6 +490,21 @@
         "title": "Ask Questions",
         "description": "Chat with our AI assistant about kidney treatment options. Get answers to your questions in a conversational way.",
         "action": "Start Chat"
+      },
+      "lifeGoals": {
+        "title": "Life Goals Compatibility",
+        "description": "See how different treatments align with your personal goals for work, family, travel, and more.",
+        "action": "Explore Goals"
+      },
+      "statistics": {
+        "title": "What Others Chose",
+        "description": "See what people in similar situations decided and their outcomes.",
+        "action": "View Statistics"
+      },
+      "supportNetworks": {
+        "title": "Support Networks",
+        "description": "Find local kidney support groups, carer organisations, and NHS services in your area.",
+        "action": "Find Support"
       }
     },
     "status": {
@@ -1266,6 +1281,14 @@
       "5": "Very important",
       "default": "Important"
     },
+    "carer": {
+      "title": "Support for You",
+      "description": "As a carer or family member, you deserve support too. Here are resources to help you on this journey.",
+      "findSupport": "Find Support Networks",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Useful websites:"
+    },
     "shareWithTeam": {
       "title": "Share with Your Kidney Team",
       "description": "Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.",
@@ -2037,5 +2060,95 @@
     "comparison-viewed": "Compare Treatments",
     "questions-prepared": "Prepare Questions",
     "journey-identified": "Identify Your Journey Stage"
+  },
+  "userRole": {
+    "title": "Who are you?",
+    "subtitle": "This helps us personalise your experience",
+    "patient": {
+      "title": "I'm making my own treatment decision",
+      "description": "I have kidney disease and want to learn about my treatment options"
+    },
+    "carer": {
+      "title": "I'm supporting someone",
+      "description": "I'm a carer, family member, or friend helping someone with kidney disease"
+    },
+    "toggle": "Are you a carer or family member?",
+    "switchMode": "Switch to Companion Mode",
+    "patientMode": "Switch to Patient Mode",
+    "currentMode": "You're in {{mode}} mode"
+  },
+  "carerRelationship": {
+    "title": "Your relationship",
+    "subtitle": "How are you connected to the person you're supporting?",
+    "spouse": "Spouse/Partner",
+    "parent": "Parent",
+    "child": "Child (adult)",
+    "sibling": "Sibling",
+    "friend": "Friend",
+    "professional": "Professional carer",
+    "other": "Other"
+  },
+  "supportNetworks": {
+    "title": "Support Networks",
+    "subtitle": "Find local and national kidney support organisations",
+    "searchPlaceholder": "Search by city or region (e.g., Bradford, Leeds)",
+    "searchLabel": "Search for support in your area",
+    "filters": {
+      "all": "All",
+      "patient": "Patient Support",
+      "carer": "Carer Support",
+      "nhs": "NHS Services",
+      "national": "National"
+    },
+    "noResults": "No support networks found for \"{{query}}\"",
+    "noResultsHint": "Try searching for a different city or region, or browse our national organisations below.",
+    "showingResults": "Showing {{count}} results for \"{{query}}\"",
+    "national": "National Organisations",
+    "regional": "Regional Support",
+    "visitWebsite": "Visit Website",
+    "callHelpline": "Call Helpline",
+    "services": "Services offered",
+    "coverage": "Coverage area",
+    "forPatients": "For patients",
+    "forCarers": "For carers",
+    "nhsTrust": "NHS Trust",
+    "charity": "Charity",
+    "carerOrg": "Carer Organisation"
+  },
+  "hub": {
+    "carer": {
+      "title": "Supporting Someone Through Their Treatment Journey",
+      "welcome": "Welcome! You're supporting someone on their kidney treatment journey. These resources will help you understand their options and provide meaningful support.",
+      "welcomeWithRelation": "Welcome! As their {{relationship}}, your support matters.",
+      "badge": "Companion Mode",
+      "selfCare": {
+        "title": "Looking After Yourself",
+        "subtitle": "Caring for someone can be demanding. Remember to take time for yourself.",
+        "tip1": "Caring for someone can be demanding. Remember to take time for yourself and connect with others who understand your experience.",
+        "tip2": "Take regular breaks and look after your own health.",
+        "tip3": "Don't be afraid to ask for help when you need it.",
+        "findSupport": "Find Carer Support",
+        "carersUK": "Carers UK"
+      },
+      "cards": {
+        "treatments": {
+          "description": "Help them understand their treatment options"
+        },
+        "values": {
+          "description": "Explore what matters most to them together"
+        },
+        "compare": {
+          "description": "Compare treatments side by side"
+        },
+        "lifeGoals": {
+          "description": "See how treatments fit their life goals"
+        },
+        "support": {
+          "title": "Support Networks",
+          "description": "Find local kidney and carer support organisations",
+          "action": "Find Support"
+        }
+      }
+    }
   }
 }

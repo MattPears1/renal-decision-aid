@@ -13,7 +13,6 @@
     "error": "出了一些问题。请重试。",
     "continue": "继续",
     "cancel": "取消",
-    "confirm": "确认",
     "save": "保存",
     "print": "打印",
     "yes": "是",
@@ -122,12 +121,32 @@
     "title": "选择您的语言",
     "instruction": "请选择您偏好的语言。您可以随时更改。",
     "selectLanguage": "选择语言",
-    "currentLanguage": "当前语言",
-    "confirmChange": "更改语言？",
-    "confirmChangeMessage": "您确定要将语言更改为{{language}}吗？所有文本都将更新。",
-    "searchLanguages": "搜索语言...",
-    "languagesAvailable": "种语言可用",
-    "noResults": "未找到语言"
+    "currentLanguage": "当前语言"
+  },
+  "userRole": {
+    "title": "您是谁？",
+    "subtitle": "这有助于我们为您个性化体验",
+    "patient": {
+      "title": "我在为自己做治疗决定",
+      "description": "我患有肾病，想了解我的治疗选择"
+    },
+    "carer": {
+      "title": "我在支持他人",
+      "description": "我是护理者、家庭成员或朋友，正在帮助患有肾病的人"
+    },
+    "toggle": "您是护理者或家庭成员吗？",
+    "switchMode": "切换到陪伴模式"
+  },
+  "carerRelationship": {
+    "title": "您的关系",
+    "subtitle": "您与您支持的人有什么关系？",
+    "spouse": "配偶/伴侣",
+    "parent": "父母",
+    "child": "子女（成年）",
+    "sibling": "兄弟姐妹",
+    "friend": "朋友",
+    "professional": "专业护理人员",
+    "other": "其他"
   },
   "privacy": {
     "pageAriaLabel": "隐私信息",
@@ -196,46 +215,15 @@
     "homeAriaLabel": "NHS肾脏治疗决策辅助工具 - 首页"
   },
   "progress": {
-    "title": "您的学习旅程",
-    "yourProgress": "您的进度",
-    "complete": "完成",
-    "treatments": "治疗方案",
-    "sections": {
-      "title": "要探索的部分",
-      "questionnaire": "关于您",
-      "questionnaireDesc": "分享您的情况",
-      "treatments": "治疗选择",
-      "treatmentsDesc": "已探索{{viewed}}/{{total}}",
-      "values": "价值观练习",
-      "valuesDesc": "明确您的优先事项",
-      "chat": "提问",
-      "chatDesc": "获得答案",
-      "lifeGoals": "生活目标",
-      "lifeGoalsDesc": "匹配治疗与目标",
-      "statistics": "其他人选择了什么",
-      "statisticsDesc": "查看患者选择"
-    },
-    "status": {
-      "completed": "已完成",
-      "inProgress": "进行中"
-    },
-    "badges": {
-      "title": "您的徽章",
-      "explorer": "探索者",
-      "allTreatments": "全部治疗方案",
-      "values": "价值观明确",
-      "curious": "好奇心",
-      "complete": "旅程完成"
-    },
-    "encouragement": {
-      "start": "通过探索治疗选择开始您的旅程",
-      "beginning": "良好的开始！继续探索以了解更多",
-      "making": "您进展良好！",
-      "halfway": "超过一半了 - 做得好！",
-      "almost": "几乎完成！只剩几个部分",
-      "complete": "太棒了！您已探索完所有内容"
-    },
-    "viewSummary": "查看您的摘要"
+    "language": "语言",
+    "privacy": "隐私",
+    "yourJourney": "您的旅程",
+    "aboutYou": "关于您",
+    "yourOptions": "您的选择",
+    "ariaLabel": "决策辅助工具进度",
+    "stepOfTotal": "第{{current}}步，共{{total}}步",
+    "percentComplete": "已完成{{percentage}}%",
+    "ariaProgressLabel": "进度：已完成{{total}}步中的{{current}}步"
   },
   "journey": {
     "title": "您目前处于肾脏护理旅程的哪个阶段？",
@@ -523,13 +511,18 @@
       },
       "lifeGoals": {
         "title": "生活目标兼容性",
-        "description": "了解治疗方案如何符合您的目标",
+        "description": "查看不同的治疗方案如何与您的工作、家庭、旅行等个人目标相匹配。",
         "action": "探索目标"
       },
       "statistics": {
-        "title": "其他人选择了什么",
-        "description": "了解类似情况的人做了什么决定",
+        "title": "其他人的选择",
+        "description": "了解类似情况的人做出了什么决定及其结果。",
         "action": "查看统计"
+      },
+      "supportNetworks": {
+        "title": "支持网络",
+        "description": "查找您所在地区的肾脏支持小组、护理者组织和NHS服务。",
+        "action": "寻找支持"
       }
     },
     "status": {
@@ -545,6 +538,21 @@
     },
     "quickAction": {
       "summary": "查看您的摘要"
+    },
+    "carer": {
+      "title": "支持他人的治疗旅程",
+      "welcome": "欢迎！您正在支持某人的肾脏治疗旅程。这些资源将帮助您了解他们的选择并提供有意义的支持。",
+      "welcomeWithRelation": "欢迎！作为他们的{{relationship}}，您的支持非常重要。",
+      "badge": "陪伴模式",
+      "selfCare": {
+        "title": "照顾自己",
+        "subtitle": "照顾他人可能很辛苦。记得给自己留出时间。",
+        "tip1": "照顾他人可能很辛苦。记得给自己留出时间，与理解您经历的人交流。",
+        "tip2": "定期休息，照顾好自己的健康。",
+        "tip3": "需要时不要害怕寻求帮助。",
+        "findSupport": "寻找护理者支持",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -693,34 +701,7 @@
     "scrollHint": "水平滚动查看所有治疗方案",
     "tableHeading": "治疗方案比较表",
     "tableLabel": "肾脏治疗选择比较",
-    "criteria": {
-      "timeCommitment": "每周时间投入",
-      "timeCommitmentHint": "用于治疗的小时数",
-      "location": "治疗地点",
-      "locationHint": "治疗进行的地点",
-      "travel": "对旅行的影响",
-      "travelHint": "旅行和度假的能力",
-      "diet": "饮食限制",
-      "dietHint": "食物和饮料的限制",
-      "surgery": "需要手术",
-      "surgeryHint": "所需的初始程序",
-      "supportNeeded": "所需支持",
-      "supportNeededHint": "来自家人或护理人员的帮助",
-      "recoveryTime": "恢复时间",
-      "recoveryTimeHint": "适应治疗的时间",
-      "longTermOutlook": "长期前景",
-      "longTermOutlookHint": "随时间的预期结果",
-      "scheduleFlexibility": "时间灵活性",
-      "scheduleFlexibilityHint": "对时间安排的控制",
-      "trainingRequired": "所需培训",
-      "trainingRequiredHint": "所需学习时间",
-      "survivalRates": "生存率",
-      "survivalRatesHint": "总体结果（因人而异）",
-      "qualityOfLife": "生活质量",
-      "qualityOfLifeHint": "整体健康状况",
-      "energyLevels": "能量水平",
-      "energyLevelsHint": "典型的能量和疲劳"
-    },
+    "criteria": "标准",
     "recommended": "推荐",
     "remember": "请记住",
     "guidance": "没有完美适合所有人的治疗方案。最佳选择取决于您的个人情况、健康状况和价值观。此比较是与您的肾脏团队讨论的起点。",
@@ -749,6 +730,34 @@
       "medical": "医学因素",
       "support": "支持需求",
       "health": "健康结果"
+    },
+    "criteria": {
+      "timeCommitment": "每周时间投入",
+      "timeCommitmentHint": "用于治疗的小时数",
+      "location": "治疗地点",
+      "locationHint": "治疗进行的地点",
+      "travel": "对旅行的影响",
+      "travelHint": "旅行和度假的能力",
+      "diet": "饮食限制",
+      "dietHint": "食物和饮料的限制",
+      "surgery": "需要手术",
+      "surgeryHint": "所需的初始程序",
+      "supportNeeded": "所需支持",
+      "supportNeededHint": "来自家人或护理人员的帮助",
+      "recoveryTime": "恢复时间",
+      "recoveryTimeHint": "适应治疗的时间",
+      "longTermOutlook": "长期前景",
+      "longTermOutlookHint": "随时间的预期结果",
+      "scheduleFlexibility": "时间灵活性",
+      "scheduleFlexibilityHint": "对时间安排的控制",
+      "trainingRequired": "所需培训",
+      "trainingRequiredHint": "所需学习时间",
+      "survivalRates": "生存率",
+      "survivalRatesHint": "总体结果（因人而异）",
+      "qualityOfLife": "生活质量",
+      "qualityOfLifeHint": "整体健康状况",
+      "energyLevels": "能量水平",
+      "energyLevelsHint": "典型的能量和疲劳"
     },
     "values": {
       "minimalAfterRecovery": "恢复后很少",
@@ -1117,9 +1126,7 @@
       "viewed": "探索过的治疗方案",
       "questions": "给您团队的问题",
       "priorities": "您的优先事项",
-      "nextSteps": "建议的下一步",
-      "lifeGoals": "生活目标兼容性",
-      "statistics": "其他人选择了什么"
+      "nextSteps": "建议的下一步"
     },
     "print": "打印摘要",
     "email": "发送摘要",
@@ -1205,15 +1212,13 @@
       "5": "非常重要",
       "default": "重要"
     },
-    "lifeGoals": {
-      "selectedGoals": "您选择的目标",
-      "topCompatible": "最兼容的治疗",
-      "reviewGoals": "查看您的目标"
-    },
-    "statistics": {
-      "description": "您已查看了其他患者选择的统计数据。",
-      "disclaimer": "统计数据基于NHS的匿名数据。",
-      "reviewStats": "查看统计"
+    "carer": {
+      "title": "对您的支持",
+      "description": "作为护理者或家庭成员，您也值得获得支持。以下是帮助您走过这段旅程的资源。",
+      "findSupport": "寻找支持网络",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "有用的网站："
     }
   },
   "session": {
@@ -1348,6 +1353,44 @@
       "sleep": "感到疲倦时休息"
     }
   },
+  "progress": {
+    "title": "您的学习旅程",
+    "yourProgress": "您的进度",
+    "complete": "完成",
+    "treatments": "治疗方案",
+    "sections": {
+      "title": "要探索的部分",
+      "questionnaire": "关于您",
+      "questionnaireDesc": "分享您的情况",
+      "treatments": "治疗选择",
+      "treatmentsDesc": "已探索{{viewed}}/{{total}}",
+      "values": "价值观练习",
+      "valuesDesc": "明确您的优先事项",
+      "chat": "提问",
+      "chatDesc": "获得答案"
+    },
+    "status": {
+      "completed": "已完成",
+      "inProgress": "进行中"
+    },
+    "badges": {
+      "title": "您的徽章",
+      "explorer": "探索者",
+      "allTreatments": "全部治疗方案",
+      "values": "价值观明确",
+      "curious": "好奇心",
+      "complete": "旅程完成"
+    },
+    "encouragement": {
+      "start": "通过探索治疗选择开始您的旅程",
+      "beginning": "良好的开始！继续探索以了解更多",
+      "making": "您进展良好！",
+      "halfway": "超过一半了 - 做得好！",
+      "almost": "几乎完成！只剩几个部分",
+      "complete": "太棒了！您已探索完所有内容"
+    },
+    "viewSummary": "查看您的摘要"
+  },
   "scenario": {
     "title": "如果？场景探索器",
     "subtitle": "看看不同的生活情况如何与每种治疗选择配合",
@@ -1445,9 +1488,7 @@
     }
   },
   "treatment": {
-    "dayInLife": "一天的生活",
-    "faqDesc": "患者经常询问的关于此治疗的问题",
-    "categoryGeneral": "一般"
+    "dayInLife": "一天的生活"
   },
   "glossary": {
     "title": "医学术语词汇表",
@@ -1563,80 +1604,30 @@
       }
     }
   },
-  "lifeGoals": {
-    "title": "生活目标兼容性",
-    "subtitle": "了解各种治疗方案如何符合您的个人目标",
-    "introduction": "了解每种治疗方案如何适合您生活中最重要的事情，可以帮助您做出决定。",
-    "categories": {
-      "work": {
-        "name": "工作与职业",
-        "description": "与您的工作和职业生活相关的目标"
-      },
-      "family": {
-        "name": "家庭与关系",
-        "description": "与家庭时间和照顾他人相关的目标"
-      },
-      "travel": {
-        "name": "旅行与假期",
-        "description": "与旅行和探索新地方相关的目标"
-      },
-      "hobbies": {
-        "name": "爱好与活动",
-        "description": "与运动和爱好相关的目标"
-      },
-      "independence": {
-        "name": "独立性",
-        "description": "与保持独立相关的目标"
-      },
-      "religious": {
-        "name": "信仰与灵性",
-        "description": "与宗教实践相关的目标"
-      }
+  "supportNetworks": {
+    "title": "支持网络",
+    "subtitle": "查找本地和全国肾脏支持组织",
+    "searchPlaceholder": "按城市或地区搜索（例如：Bradford、Leeds）",
+    "searchLabel": "搜索支持",
+    "filters": {
+      "all": "全部",
+      "patient": "患者支持",
+      "carer": "护理者支持",
+      "nhs": "NHS服务"
     },
-    "goals": {
-      "fullTimeWork": "继续全职工作",
-      "partTimeWork": "兼职或灵活工作",
-      "retirement": "享受退休生活",
-      "childcare": "照顾孩子或孙辈",
-      "familyEvents": "参加家庭活动",
-      "socialLife": "保持活跃的社交生活",
-      "shortTrips": "进行短途旅行",
-      "longHolidays": "出国长假",
-      "pilgrimages": "进行宗教朝圣",
-      "exercise": "保持身体活跃",
-      "gardening": "继续园艺",
-      "sports": "参加体育运动",
-      "liveAlone": "独立生活",
-      "driveCar": "继续开车",
-      "cookMeals": "自己做饭",
-      "prayRegularly": "保持定时祈祷",
-      "attendWorship": "参加宗教礼拜",
-      "fastingPractice": "遵守宗教斋戒"
-    },
-    "results": {
-      "title": "您的兼容性结果",
-      "description": "根据您选择的目标",
-      "bestMatch": "最佳匹配",
-      "noGoalsSelected": "请至少选择一个目标"
-    },
-    "compatibility": {
-      "high": "高度兼容",
-      "medium": "中等兼容",
-      "low": "较低兼容"
-    },
-    "discussionPrompts": {
-      "title": "讨论问题",
-      "prompt1": "这种治疗会如何影响我的日常生活？",
-      "prompt2": "这种治疗能帮我实现目标吗？",
-      "prompt3": "我需要做什么调整？"
-    }
-  },
-  "statistics": {
-    "page": {
-      "title": "类似情况的人选择了什么",
-      "introduction": "了解他人的选择可以帮助您。这些是英国肾病患者的真实统计数据。",
-      "personalized": "根据您的情况个性化",
-      "compareTreatments": "比较治疗方案"
-    }
+    "noResults": "未找到该地区的支持网络",
+    "tryDifferent": "尝试不同的搜索词或浏览下方的全国组织",
+    "national": "全国组织",
+    "regional": "地区支持",
+    "visitWebsite": "访问网站",
+    "callHelpline": "拨打帮助热线",
+    "services": "服务",
+    "regions": "覆盖地区",
+    "backToHub": "返回主页",
+    "forPatients": "患者专用",
+    "forCarers": "护理者专用",
+    "nhsTrust": "NHS信托",
+    "charity": "慈善机构",
+    "carerOrg": "护理者组织"
   }
 }

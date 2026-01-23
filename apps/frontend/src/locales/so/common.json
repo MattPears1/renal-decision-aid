@@ -123,6 +123,33 @@
     "selectLanguage": "Dooro luqadda",
     "currentLanguage": "Luqadda hadda"
   },
+  "userRole": {
+    "title": "Waa kuma adiga?",
+    "subtitle": "Tani waxay naga caawineysaa inaan kuu habeeyno khibraddaada",
+    "patient": {
+      "title": "Waxaan sameynayaa go'aankayga daaweynta",
+      "description": "Waxaan qabaa cudurka keliyaha waxaanan rabaa inaan barto doorashooyinkayga daaweynta"
+    },
+    "carer": {
+      "title": "Waxaan taageereyaa qof",
+      "description": "Waxaan ahay daryeele, xubin qoys ah, ama saaxiib ka caawiya qof qaba cudurka keliyaha"
+    },
+    "toggle": "Ma tahay daryeele ama xubin qoys ah?",
+    "switchMode": "U beddel Qaabka Wehliyadda",
+    "patientMode": "U beddel Qaabka Bukaanka",
+    "currentMode": "Waxaad ku jirtaa qaabka {{mode}}"
+  },
+  "carerRelationship": {
+    "title": "Xiriirkaaga",
+    "subtitle": "Sidee baad ula xiriirtaa qofka aad taageereyso?",
+    "spouse": "Xaas/Lammaane",
+    "parent": "Waalid",
+    "child": "Ilmo (qaan gaadhay)",
+    "sibling": "Walaal",
+    "friend": "Saaxiib",
+    "professional": "Daryeele xirfadle ah",
+    "other": "Mid kale"
+  },
   "privacy": {
     "pageAriaLabel": "Macluumaadka garashaanta",
     "progressLabel": "Horumarka dejinta: 30%",
@@ -483,6 +510,21 @@
         "title": "Weydii Su'aalo",
         "description": "La sheekeyso kaaliyahayaga AI ee ku saabsan doorashooyinka daaweynta keliyaha. Hel jawaabo su'aalahaaga si wadahadal ah.",
         "action": "Bilow Sheekaysiga"
+      },
+      "lifeGoals": {
+        "title": "Ku Habboonaanta Hadafyada Nolosha",
+        "description": "Arag sida daaweyno kala duwan ay ula jaanqaadaan hadafyadaada shakhsiyeed ee shaqada, qoyska, safarka, iyo wax badan.",
+        "action": "Sahami Hadafyada"
+      },
+      "statistics": {
+        "title": "Waxa Dadka Kale Doorbideen",
+        "description": "Arag waxa dadka xaalado la mid ah ay go'aansadeen iyo natiijooyinkooda.",
+        "action": "Arag Tirakoobyada"
+      },
+      "supportNetworks": {
+        "title": "Shabakadaha Taageerada",
+        "description": "Raadi kooxaha taageerada keliyaha, ururada daryeelayaasha, iyo adeegyada NHS ee aagaaga.",
+        "action": "Raadi Taageero"
       }
     },
     "status": {
@@ -498,6 +540,40 @@
     },
     "quickAction": {
       "summary": "Arag Koobidaada"
+    },
+    "carer": {
+      "title": "Taageerida Qof Safarkiisa Daaweynta",
+      "welcome": "Soo dhawoow! Waxaad taageeraysaa qof safarkiisa daaweynta keliyaha. Ilahani waxay kaa caawin doonaan inaad fahamto doorashooyinkooda oo aad bixiso taageero macno leh.",
+      "welcomeWithRelation": "Soo dhawoow! Ahaan {{relationship}}, taageradaadu way muhiim tahay.",
+      "badge": "Qaabka Wehliyadda",
+      "selfCare": {
+        "title": "Iska Daryeelida",
+        "subtitle": "Daryeelida qof waxay noqon kartaa wax adag. Xusuusnow inaad wakhti qaadato naftaada.",
+        "tip1": "Daryeelida qof waxay noqon kartaa wax adag. Xusuusnow inaad wakhti qaadato naftaada oo aad la xiriirto dadka kale ee fahamaya khibraddaada.",
+        "tip2": "Qaado nasashooyin joogto ah oo iska eeg caafimaadkaaga.",
+        "tip3": "Ha ka baqin inaad caawimaad weydiisato markaad u baahan tahay.",
+        "findSupport": "Raadi Taageerada Daryeelayaasha",
+        "carersUK": "Carers UK"
+      },
+      "cards": {
+        "treatments": {
+          "description": "Ka caawin inay fahmaan doorashooyinkooda daaweynta"
+        },
+        "values": {
+          "description": "Wada sahami waxa ugu muhiimsan iyaga"
+        },
+        "compare": {
+          "description": "Isbarbar dhig daaweynaha dhinac dhinac"
+        },
+        "lifeGoals": {
+          "description": "Arag sida daaweynahu ugu habboon yihiin hadafyadooda nolosha"
+        },
+        "support": {
+          "title": "Shabakadaha Taageerada",
+          "description": "Raadi ururada taageerada keliyaha iyo daryeelayaasha ee degaanka",
+          "action": "Raadi Taageero"
+        }
+      }
     }
   },
   "treatments": {
@@ -1156,6 +1232,14 @@
       "4": "Muhiim",
       "5": "Aad u muhiim",
       "default": "Muhiim"
+    },
+    "carer": {
+      "title": "Taageero Adiga Kuu Ah",
+      "description": "Daryeele ama xubin qoys ahaan, waxaad xaq u leedahay taageero. Waa kuwan ilaha kaa caawinaya safarkaan.",
+      "findSupport": "Raadi Shabakadaha Taageerada",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Websiteyaasha faa'iidada leh:"
     }
   },
   "session": {
@@ -1610,5 +1694,32 @@
         "definition": "Macdanta laga helo cuntooyinka badan ee ka caawisa dhisidda lafo xoog leh. Marka keliyuhu aysan si fiican u shaqeynayn, phosphate wuxuu isu uruurin karaa dhiigaaga oo uu daciifin karaa lafaaha. Waxaa laga yaabaa inaad u baahato inaad qaadato kiniiniyada la yiraahdo phosphate binders cuntada iyo inaad xaddido cuntooyin qaar."
       }
     }
+  },
+  "supportNetworks": {
+    "title": "Shabakadaha Taageerada",
+    "subtitle": "Raadi ururada taageerada keliyaha ee degaanka iyo kuwa qaranka",
+    "searchPlaceholder": "Ku raadi magaalo ama gobol (tusaale, Bradford, Leeds)",
+    "searchLabel": "Raadi taageero aagaaga",
+    "filters": {
+      "all": "Dhammaan",
+      "patient": "Taageerada Bukaanka",
+      "carer": "Taageerada Daryeelaha",
+      "nhs": "Adeegyada NHS",
+      "national": "Qaranka"
+    },
+    "noResults": "Lama helin shabakado taageero \"{{query}}\"",
+    "noResultsHint": "Isku day inaad raadiso magaalo ama gobol kale, ama baadh ururadayaga qaranka ee hoose.",
+    "showingResults": "Waxaa la muujinayaa {{count}} natiijooyin \"{{query}}\"",
+    "national": "Ururada Qaranka",
+    "regional": "Taageerada Degaanka",
+    "visitWebsite": "Booqo Website-ka",
+    "callHelpline": "Wac Khadka Caawinta",
+    "services": "Adeegyada la bixiyo",
+    "coverage": "Aagga daboolista",
+    "forPatients": "Bukaamada",
+    "forCarers": "Daryeelayaasha",
+    "nhsTrust": "NHS Trust",
+    "charity": "Urur khayri",
+    "carerOrg": "Urur Daryeelayaal"
   }
 }

@@ -123,6 +123,31 @@
     "selectLanguage": "Sélectionner la langue",
     "currentLanguage": "Langue actuelle"
   },
+  "userRole": {
+    "title": "Qui êtes-vous ?",
+    "subtitle": "Cela nous aide à personnaliser votre expérience",
+    "patient": {
+      "title": "Je prends ma propre décision de traitement",
+      "description": "J'ai une maladie rénale et je veux en savoir plus sur mes options de traitement"
+    },
+    "carer": {
+      "title": "J'accompagne quelqu'un",
+      "description": "Je suis un aidant, un membre de la famille ou un ami qui aide une personne atteinte d'une maladie rénale"
+    },
+    "toggle": "Êtes-vous un aidant ou un membre de la famille ?",
+    "switchMode": "Passer en mode accompagnant"
+  },
+  "carerRelationship": {
+    "title": "Votre relation",
+    "subtitle": "Quel est votre lien avec la personne que vous accompagnez ?",
+    "spouse": "Conjoint(e)/Partenaire",
+    "parent": "Parent",
+    "child": "Enfant (adulte)",
+    "sibling": "Frère/Sœur",
+    "friend": "Ami(e)",
+    "professional": "Aidant professionnel",
+    "other": "Autre"
+  },
   "privacy": {
     "pageAriaLabel": "Informations sur la confidentialité",
     "progressLabel": "Progression de la configuration : 30%",
@@ -483,6 +508,21 @@
         "title": "Poser des questions",
         "description": "Discutez avec notre assistant IA sur les options de traitement rénal. Obtenez des réponses à vos questions de manière conversationnelle.",
         "action": "Démarrer le chat"
+      },
+      "lifeGoals": {
+        "title": "Compatibilité avec vos objectifs de vie",
+        "description": "Découvrez comment les différents traitements s'alignent avec vos objectifs personnels pour le travail, la famille, les voyages et plus encore.",
+        "action": "Explorer les objectifs"
+      },
+      "statistics": {
+        "title": "Ce que les autres ont choisi",
+        "description": "Découvrez ce que des personnes dans des situations similaires ont décidé et leurs résultats.",
+        "action": "Voir les statistiques"
+      },
+      "supportNetworks": {
+        "title": "Réseaux de soutien",
+        "description": "Trouvez des groupes de soutien rénal locaux, des organisations d'aidants et des services NHS dans votre région.",
+        "action": "Trouver du soutien"
       }
     },
     "status": {
@@ -498,6 +538,21 @@
     },
     "quickAction": {
       "summary": "Voir votre résumé"
+    },
+    "carer": {
+      "title": "Accompagner quelqu'un dans son parcours de traitement",
+      "welcome": "Bienvenue ! Vous accompagnez quelqu'un dans son parcours de traitement rénal. Ces ressources vous aideront à comprendre ses options et à lui apporter un soutien significatif.",
+      "welcomeWithRelation": "Bienvenue ! En tant que {{relationship}}, votre soutien compte.",
+      "badge": "Mode accompagnant",
+      "selfCare": {
+        "title": "Prendre soin de vous",
+        "subtitle": "S'occuper de quelqu'un peut être exigeant. N'oubliez pas de prendre du temps pour vous.",
+        "tip1": "S'occuper de quelqu'un peut être exigeant. N'oubliez pas de prendre du temps pour vous et de vous connecter avec d'autres personnes qui comprennent votre expérience.",
+        "tip2": "Prenez des pauses régulières et prenez soin de votre propre santé.",
+        "tip3": "N'ayez pas peur de demander de l'aide quand vous en avez besoin.",
+        "findSupport": "Trouver du soutien pour les aidants",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
@@ -1157,6 +1212,14 @@
       "5": "Très important",
       "default": "Important"
     },
+    "carer": {
+      "title": "Soutien pour vous",
+      "description": "En tant qu'aidant ou membre de la famille, vous méritez aussi du soutien. Voici des ressources pour vous aider dans ce parcours.",
+      "findSupport": "Trouver des réseaux de soutien",
+      "carersUK": "Carers UK",
+      "kidneyCareUK": "Kidney Care UK",
+      "printLinks": "Sites web utiles :"
+    },
     "shareWithTeam": {
       "title": "Partager avec votre équipe néphrologique",
       "description": "Apportez ce résumé à votre prochain rendez-vous. Votre équipe de soins rénaux peut vous aider à discuter de vos options et répondre à vos questions.",
@@ -1571,5 +1634,31 @@
         "definition": "Un minéral présent dans de nombreux aliments qui aide à construire des os solides. Lorsque les reins ne fonctionnent pas bien, le phosphate peut s'accumuler dans votre sang et affaiblir vos os."
       }
     }
+  },
+  "supportNetworks": {
+    "title": "Réseaux de soutien",
+    "subtitle": "Trouvez des organisations de soutien rénal locales et nationales",
+    "searchPlaceholder": "Rechercher par ville ou région (ex. Bradford, Leeds)",
+    "searchLabel": "Rechercher du soutien",
+    "filters": {
+      "all": "Tous",
+      "patient": "Soutien aux patients",
+      "carer": "Soutien aux aidants",
+      "nhs": "Services NHS"
+    },
+    "noResults": "Aucun réseau de soutien trouvé pour cette région",
+    "tryDifferent": "Essayez un autre terme de recherche ou parcourez les organisations nationales ci-dessous",
+    "national": "Organisations nationales",
+    "regional": "Soutien régional",
+    "visitWebsite": "Visiter le site web",
+    "callHelpline": "Appeler la ligne d'aide",
+    "services": "Services",
+    "regions": "Zones couvertes",
+    "backToHub": "Retour au centre",
+    "forPatients": "Pour les patients",
+    "forCarers": "Pour les aidants",
+    "nhsTrust": "NHS Trust",
+    "charity": "Association caritative",
+    "carerOrg": "Organisation d'aidants"
   }
 }

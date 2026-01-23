@@ -33,6 +33,18 @@ export const SUPPORTED_LANGUAGES: LanguageConfig[] = [
   { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', direction: 'ltr', fontFamily: 'Noto Sans' },
 ];
 
+// User Role (Patient vs Carer/Companion Mode)
+export type UserRole = 'patient' | 'carer';
+
+export type CarerRelationship =
+  | 'spouse'
+  | 'parent'
+  | 'child'
+  | 'sibling'
+  | 'friend'
+  | 'professional'
+  | 'other';
+
 // Journey Stages
 export type JourneyStage =
   | 'newly-diagnosed'
@@ -111,6 +123,9 @@ export interface ValueRating {
 export interface Session {
   id: string;
   language: SupportedLanguage;
+  userRole: UserRole;
+  carerRelationship?: CarerRelationship;
+  region?: string;
   journeyStage?: JourneyStage;
   questionnaireAnswers: QuestionnaireAnswer[];
   valueRatings: ValueRating[];

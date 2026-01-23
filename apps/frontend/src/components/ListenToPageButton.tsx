@@ -1,35 +1,30 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-type ListenState = 'idle' | 'loading' | 'playing';
-
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5006';
+type ListenState = 'idle' | 'playing';
 
 export default function ListenToPageButton() {
   const { t, i18n } = useTranslation();
   const [state, setState] = useState<ListenState>('idle');
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const audioUrlRef = useRef<string | null>(null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
-  const cleanup = useCallback(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = '';
-      audioRef.current = null;
-    }
-    if (audioUrlRef.current) {
-      URL.revokeObjectURL(audioUrlRef.current);
-      audioUrlRef.current = null;
-    }
+  // Cancel speech on unmount or route change
+  useEffect(() => {
+    return () => {
+      window.speechSynthesis?.cancel();
+    };
   }, []);
 
   const handleStop = useCallback(() => {
-    cleanup();
+    window.speechSynthesis.cancel();
+    utteranceRef.current = null;
     setState('idle');
-  }, [cleanup]);
+  }, []);
 
-  const handleListen = useCallback(async () => {
-    if (state === 'playing' || state === 'loading') {
+  const handleListen = useCallback(() => {
+    if (!('speechSynthesis' in window)) return;
+
+    if (state === 'playing') {
       handleStop();
       return;
     }
@@ -40,54 +35,40 @@ export default function ListenToPageButton() {
     const pageText = mainContent.innerText?.trim();
     if (!pageText) return;
 
-    setState('loading');
+    const utterance = new SpeechSynthesisUtterance(pageText);
+    utterance.lang = i18n.language || 'en';
+    utterance.rate = 1.0;
 
-    try {
-      const response = await fetch(`${API_BASE}/api/synthesize/page`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text: pageText,
-          language: i18n.language,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Synthesis failed');
-      }
-
-      const audioBlob = await response.blob();
-      const audioUrl = URL.createObjectURL(audioBlob);
-      audioUrlRef.current = audioUrl;
-
-      const audio = new Audio(audioUrl);
-      audioRef.current = audio;
-
-      audio.onended = () => {
-        setState('idle');
-        cleanup();
-      };
-
-      audio.onerror = () => {
-        setState('idle');
-        cleanup();
-      };
-
-      await audio.play();
-      setState('playing');
-    } catch {
-      setState('idle');
-      cleanup();
+    // Select best available female voice
+    const voices = window.speechSynthesis.getVoices();
+    const lang = i18n.language || 'en';
+    const bestVoice = voices.find(v =>
+      v.lang.startsWith(lang) && v.name.includes('Google') && v.name.includes('Female')
+    ) || voices.find(v =>
+      v.lang.startsWith(lang) && (v.name.includes('Zira') || v.name.includes('Hazel') || v.name.includes('Natural'))
+    ) || voices.find(v =>
+      v.lang.startsWith(lang) && !v.localService
+    ) || voices.find(v =>
+      v.lang.startsWith(lang)
+    );
+    if (bestVoice) {
+      utterance.voice = bestVoice;
     }
-  }, [state, i18n.language, handleStop, cleanup]);
 
-  const isActive = state === 'playing' || state === 'loading';
+    utterance.onend = () => setState('idle');
+    utterance.onerror = () => setState('idle');
+
+    utteranceRef.current = utterance;
+    window.speechSynthesis.speak(utterance);
+    setState('playing');
+  }, [state, i18n.language, handleStop]);
+
+  const isActive = state === 'playing';
 
   return (
     <button
       type="button"
       onClick={handleListen}
-      disabled={state === 'loading'}
       className={`fixed bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center justify-center gap-2
                  min-w-[44px] min-h-[44px] px-3 py-2.5 sm:px-4
                  border-2 rounded-md
@@ -98,17 +79,11 @@ export default function ListenToPageButton() {
                  ${isActive
                    ? 'bg-nhs-blue border-nhs-blue text-white hover:bg-nhs-dark-blue'
                    : 'bg-bg-surface border-nhs-blue text-nhs-blue hover:bg-nhs-blue hover:text-white'
-                 }
-                 ${state === 'loading' ? 'opacity-75 cursor-wait' : ''}`}
+                 }`}
       aria-label={isActive ? t('privacy.stopReading') : t('accessibility.listenToPage')}
       title={isActive ? t('privacy.stopReading') : t('accessibility.listenToPage')}
     >
-      {state === 'loading' ? (
-        <svg className="w-5 h-5 flex-shrink-0 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-        </svg>
-      ) : isActive ? (
+      {isActive ? (
         <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <rect x="6" y="6" width="12" height="12" rx="1" />
         </svg>

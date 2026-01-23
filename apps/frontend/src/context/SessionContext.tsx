@@ -18,6 +18,8 @@ import type {
   ValueRating,
   TreatmentType,
   ChatMessage,
+  UserRole,
+  CarerRelationship,
 } from '@renal-decision-aid/shared-types';
 
 /**
@@ -26,10 +28,8 @@ import type {
  * @property {Session | null} session - Current session data
  * @property {boolean} isLoading - Whether session is loading
  * @property {string | null} error - Current error message
- * @property {number | null} timeRemaining - Time remaining in ms
  * @property {(language: SupportedLanguage) => Promise<void>} createSession - Create new session
  * @property {() => Promise<void>} endSession - End current session
- * @property {() => Promise<void>} extendSession - Extend session timeout
  * @property {(language: SupportedLanguage) => Promise<void>} setLanguage - Change language
  * @property {(stage: JourneyStage) => void} setJourneyStage - Update journey stage
  * @property {(answer: QuestionnaireAnswer) => void} addQuestionnaireAnswer - Add questionnaire answer
@@ -37,21 +37,25 @@ import type {
  * @property {(treatment: TreatmentType) => void} markTreatmentViewed - Mark treatment as viewed
  * @property {(message: ChatMessage) => void} addChatMessage - Add chat message
  * @property {(goals: string[]) => void} updateLifeGoals - Update life goals
+ * @property {(role: UserRole) => void} setUserRole - Set user role (patient/carer)
+ * @property {(relationship: CarerRelationship) => void} setCarerRelationship - Set carer relationship
+ * @property {(region: string) => void} setRegion - Set user region for support networks
  */
 interface SessionContextType {
   session: (Session & { lifeGoals?: string[] }) | null;
   isLoading: boolean;
   error: string | null;
-  timeRemaining: number | null;
 
   // Session management
   createSession: (language: SupportedLanguage) => Promise<void>;
   endSession: () => Promise<void>;
-  extendSession: () => Promise<void>;
 
   // Data updates
   setLanguage: (language: SupportedLanguage) => Promise<void>;
   setJourneyStage: (stage: JourneyStage) => void;
+  setUserRole: (role: UserRole) => void;
+  setCarerRelationship: (relationship: CarerRelationship) => void;
+  setRegion: (region: string) => void;
   addQuestionnaireAnswer: (answer: QuestionnaireAnswer) => void;
   addValueRating: (rating: ValueRating) => void;
   markTreatmentViewed: (treatment: TreatmentType) => void;
@@ -61,12 +65,6 @@ interface SessionContextType {
 
 /** Session context instance. */
 const SessionContext = createContext<SessionContextType | undefined>(undefined);
-
-/** Session duration in milliseconds (15 minutes). */
-const SESSION_DURATION_MS = 15 * 60 * 1000; // 15 minutes
-
-/** Warning threshold in milliseconds (5 minutes). */
-const WARNING_THRESHOLD_MS = 5 * 60 * 1000; // 5 minutes
 
 /**
  * Props for the SessionProvider component.
@@ -102,31 +100,6 @@ export function SessionProvider({ children }: SessionProviderProps) {
   const [session, setSession] = useState<(Session & { lifeGoals?: string[] }) | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
-
-  // Timer for session countdown
-  useEffect(() => {
-    if (!session) {
-      setTimeRemaining(null);
-      return;
-    }
-
-    const updateTimeRemaining = () => {
-      const remaining = session.expiresAt - Date.now();
-      setTimeRemaining(Math.max(0, remaining));
-
-      if (remaining <= 0) {
-        // Session expired
-        setSession(null);
-        setError(i18next.t('session.sessionExpired'));
-      }
-    };
-
-    updateTimeRemaining();
-    const interval = setInterval(updateTimeRemaining, 1000);
-
-    return () => clearInterval(interval);
-  }, [session?.expiresAt]);
 
   const createSession = useCallback(async (language: SupportedLanguage) => {
     setIsLoading(true);
@@ -137,23 +110,17 @@ export function SessionProvider({ children }: SessionProviderProps) {
       const newSession: Session = {
         id: crypto.randomUUID(),
         language,
+        userRole: 'patient', // Default to patient mode
         questionnaireAnswers: [],
         valueRatings: [],
         viewedTreatments: [],
         chatHistory: [],
         createdAt: now,
-        expiresAt: now + SESSION_DURATION_MS,
+        expiresAt: 0, // No expiration - session persists until browser is closed
         lastActivityAt: now,
       };
 
       setSession(newSession);
-
-      // In production, would also create server-side session
-      // const response = await fetch('/api/session', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ language }),
-      // });
     } catch (err) {
       setError(i18next.t('session.createError'));
       console.error('Session creation error:', err);
@@ -166,28 +133,10 @@ export function SessionProvider({ children }: SessionProviderProps) {
     if (!session) return;
 
     try {
-      // In production, would also end server-side session
-      // await fetch(`/api/session/${session.id}`, { method: 'DELETE' });
       setSession(null);
-      setTimeRemaining(null);
     } catch (err) {
       console.error('Session end error:', err);
     }
-  }, [session]);
-
-  const extendSession = useCallback(async () => {
-    if (!session) return;
-
-    const now = Date.now();
-    setSession((prev) =>
-      prev
-        ? {
-            ...prev,
-            expiresAt: now + SESSION_DURATION_MS,
-            lastActivityAt: now,
-          }
-        : null
-    );
   }, [session]);
 
   const updateSession = useCallback((updates: Partial<Session>) => {
@@ -198,7 +147,6 @@ export function SessionProvider({ children }: SessionProviderProps) {
             ...prev,
             ...updates,
             lastActivityAt: now,
-            expiresAt: now + SESSION_DURATION_MS, // Extend on activity
           }
         : null
     );
@@ -218,6 +166,27 @@ export function SessionProvider({ children }: SessionProviderProps) {
   const setJourneyStage = useCallback(
     (journeyStage: JourneyStage) => {
       updateSession({ journeyStage });
+    },
+    [updateSession]
+  );
+
+  const setUserRole = useCallback(
+    (userRole: UserRole) => {
+      updateSession({ userRole });
+    },
+    [updateSession]
+  );
+
+  const setCarerRelationship = useCallback(
+    (carerRelationship: CarerRelationship) => {
+      updateSession({ carerRelationship });
+    },
+    [updateSession]
+  );
+
+  const setRegion = useCallback(
+    (region: string) => {
+      updateSession({ region });
     },
     [updateSession]
   );
@@ -301,12 +270,13 @@ export function SessionProvider({ children }: SessionProviderProps) {
     session,
     isLoading,
     error,
-    timeRemaining,
     createSession,
     endSession,
-    extendSession,
     setLanguage,
     setJourneyStage,
+    setUserRole,
+    setCarerRelationship,
+    setRegion,
     addQuestionnaireAnswer,
     addValueRating,
     markTreatmentViewed,
@@ -335,28 +305,17 @@ export function useSession() {
 }
 
 /**
- * Helper hook for session timer display.
- * Provides formatted time remaining and warning state.
+ * @deprecated Session timer has been removed - sessions no longer expire.
+ * This hook is kept for backwards compatibility but returns static values.
  * @hook
- * @returns {Object} Timer state and controls
- * @returns {number} minutes - Minutes remaining
- * @returns {number} seconds - Seconds remaining
- * @returns {boolean} isWarning - Whether in warning threshold
- * @returns {string} formatted - Formatted time string (MM:SS)
- * @returns {() => Promise<void>} extendSession - Extend session function
+ * @returns {Object} Static timer state (no actual timing)
  */
 export function useSessionTimer() {
-  const { timeRemaining, extendSession } = useSession();
-
-  const minutes = timeRemaining ? Math.floor(timeRemaining / 60000) : 0;
-  const seconds = timeRemaining ? Math.floor((timeRemaining % 60000) / 1000) : 0;
-  const isWarning = timeRemaining !== null && timeRemaining <= WARNING_THRESHOLD_MS;
-
   return {
-    minutes,
-    seconds,
-    isWarning,
-    formatted: `${minutes}:${seconds.toString().padStart(2, '0')}`,
-    extendSession,
+    minutes: 0,
+    seconds: 0,
+    isWarning: false,
+    formatted: '--:--',
+    extendSession: async () => {},
   };
 }
