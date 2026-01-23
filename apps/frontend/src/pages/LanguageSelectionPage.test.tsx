@@ -229,7 +229,7 @@ describe('LanguageSelectionPage', () => {
       render(<LanguageSelectionPage />);
 
       const listenButtons = screen.getAllByText('Listen');
-      expect(listenButtons.length).toBe(7); // 7 languages
+      expect(listenButtons.length).toBe(15); // 15 supported languages
     });
 
     it('triggers speech synthesis when clicking listen button', async () => {
