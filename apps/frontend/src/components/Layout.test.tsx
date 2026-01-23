@@ -3,6 +3,15 @@ import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import Layout from './Layout';
 
+// Mock session and carer hooks
+vi.mock('@/context/SessionContext', () => ({
+  useSession: () => ({ session: null }),
+}));
+
+vi.mock('@/hooks/useCarerText', () => ({
+  useCarerText: () => ({ isCarer: false, relationshipLabel: '' }),
+}));
+
 // Mock child components to simplify testing
 vi.mock('./NHSHeader', () => ({
   default: () => <header data-testid="nhs-header">NHS Header</header>,
