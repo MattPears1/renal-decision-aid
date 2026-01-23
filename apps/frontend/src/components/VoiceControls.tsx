@@ -126,7 +126,7 @@ export function MicrophoneButton({
               ? 'bg-nhs-red/10 text-nhs-red hover:bg-nhs-red/20 border border-nhs-red/30'
               : 'bg-nhs-blue/10 text-nhs-blue hover:bg-nhs-blue/20 hover:scale-105 active:scale-95'
           }
-          ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+          ${isDisabled ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'}
         `}
       >
         {/* Audio level ring visualization - enhanced */}

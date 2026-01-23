@@ -750,7 +750,7 @@ export default function ValuesPage() {
                             ? `bg-gradient-to-br from-nhs-pink to-[#8a2150] text-white shadow-lg ring-4 ring-nhs-pink/30 scale-110 ${
                                 isRecentlySelected ? 'animate-value-pop' : ''
                               }`
-                            : 'bg-nhs-pale-grey text-text-secondary shadow-sm group-hover:bg-nhs-pink/10 group-hover:text-nhs-pink group-hover:scale-105 group-focus-within:ring-2 group-focus-within:ring-nhs-pink active:scale-95'
+                            : 'bg-nhs-pale-grey text-text-primary shadow-sm group-hover:bg-nhs-pink/10 group-hover:text-nhs-pink group-hover:scale-105 group-focus-within:ring-2 group-focus-within:ring-nhs-pink active:scale-95'
                         }`}
                       >
                         {option.shortLabel}
@@ -758,7 +758,7 @@ export default function ValuesPage() {
                       <span
                         id={`rating-description-${option.value}`}
                         className={`text-[10px] sm:text-xs md:text-sm text-center max-w-[60px] sm:max-w-[80px] leading-tight font-medium transition-colors ${
-                          isSelected ? 'text-nhs-pink font-bold' : 'text-text-muted group-hover:text-nhs-pink'
+                          isSelected ? 'text-nhs-pink font-bold' : 'text-text-secondary group-hover:text-nhs-pink'
                         }`}
                       >
                         {option.label}
@@ -895,7 +895,7 @@ export default function ValuesPage() {
                             <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
                               <div
                                 className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 ${
-                                  isCompleted ? 'bg-nhs-green text-white' : 'bg-nhs-pale-grey text-text-secondary'
+                                  isCompleted ? 'bg-nhs-green text-white' : 'bg-nhs-pale-grey text-text-primary'
                                 }`}
                               >
                                 {isCompleted ? (
@@ -974,7 +974,7 @@ export default function ValuesPage() {
             <button
               onClick={handleFinishAllAtOnce}
               disabled={getCompletedCount() === 0}
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-h-[52px] touch-manipulation"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 min-h-[52px] touch-manipulation"
             >
               {t('values.nav.seeResults', 'See My Results')}
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

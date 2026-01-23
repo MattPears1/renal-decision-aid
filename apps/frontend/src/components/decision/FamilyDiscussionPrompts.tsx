@@ -234,7 +234,7 @@ export default function FamilyDiscussionPrompts({
                 className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedRole === role.id
                     ? `bg-${role.color}/20 text-${role.color} ring-2 ring-${role.color}/30`
-                    : 'bg-nhs-pale-grey/50 text-text-secondary hover:bg-nhs-pale-grey'
+                    : 'bg-nhs-pale-grey/50 text-text-primary hover:bg-nhs-pale-grey'
                 }`}
               >
                 <span className="w-4 h-4">{role.icon}</span>

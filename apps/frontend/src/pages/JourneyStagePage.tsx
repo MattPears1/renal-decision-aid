@@ -344,7 +344,7 @@ function ProgressSteps({ currentStep }: ProgressStepsProps) {
                           ? 'bg-nhs-green text-white'
                           : s.step === currentStep
                             ? 'bg-nhs-blue text-white'
-                            : 'bg-nhs-pale-grey text-text-secondary'
+                            : 'bg-nhs-pale-grey text-text-primary'
                         }`}
             aria-hidden="true"
           >

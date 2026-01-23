@@ -69,7 +69,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       'transition-all duration-200 ease-out',
       'focus:outline-none focus:ring-[3px] focus:ring-offset-2 focus:ring-focus',
       'focus-visible:bg-focus focus-visible:text-text-primary',
-      'disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none',
+      'disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none',
       'min-h-[48px] touch-manipulation',
       'active:scale-[0.98] active:transition-transform active:duration-75'
     );

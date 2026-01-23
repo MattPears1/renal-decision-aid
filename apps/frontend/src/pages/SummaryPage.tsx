@@ -330,7 +330,7 @@ export default function SummaryPage() {
                 {sortedPriorities.map((value, index) => (
                   <div key={value.statementId} className="flex items-center gap-3 sm:gap-4">
                     <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0 ${
-                      index < 3 ? 'bg-nhs-green text-white' : 'bg-nhs-pale-grey text-text-secondary'
+                      index < 3 ? 'bg-nhs-green text-white' : 'bg-nhs-pale-grey text-text-primary'
                     }`}>
                       {index + 1}
                     </span>

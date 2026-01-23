@@ -652,7 +652,7 @@ export default function ComparePage() {
             {selectedValueFilters.size > 0 && (
               <button
                 onClick={() => setSelectedValueFilters(new Set())}
-                className="inline-flex items-center gap-1 px-3 py-2 text-sm text-text-muted hover:text-nhs-red transition-colors"
+                className="inline-flex items-center gap-1 px-3 py-2 text-sm text-text-secondary hover:text-nhs-red transition-colors"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

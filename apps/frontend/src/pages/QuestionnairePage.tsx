@@ -504,7 +504,7 @@ export default function QuestionnairePage() {
                         ${isChecked
                           ? 'border-nhs-blue bg-nhs-blue/5'
                           : isDisabled
-                            ? 'border-nhs-pale-grey opacity-50 cursor-not-allowed'
+                            ? 'border-nhs-pale-grey opacity-60 cursor-not-allowed'
                             : 'border-nhs-pale-grey hover:border-nhs-blue hover:bg-nhs-blue/5'
                         }
                         focus-within:ring-3 focus-within:ring-focus`}

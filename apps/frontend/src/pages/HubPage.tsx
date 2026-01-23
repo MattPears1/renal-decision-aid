@@ -574,7 +574,7 @@ export default function HubPage() {
               className={`flex flex-col items-center justify-center py-2 px-1 rounded-xl transition-all min-h-[56px] ${
                 activeNavItem === 'home'
                   ? 'bg-nhs-blue/10 text-nhs-blue'
-                  : 'text-text-muted hover:text-nhs-blue hover:bg-nhs-blue/5'
+                  : 'text-text-secondary hover:text-nhs-blue hover:bg-nhs-blue/5'
               }`}
               aria-label={t('hub.nav.home', 'Home')}
             >
@@ -587,7 +587,7 @@ export default function HubPage() {
               className={`flex flex-col items-center justify-center py-2 px-1 rounded-xl transition-all min-h-[56px] ${
                 activeNavItem === 'tools'
                   ? 'bg-nhs-blue/10 text-nhs-blue'
-                  : 'text-text-muted hover:text-nhs-blue hover:bg-nhs-blue/5'
+                  : 'text-text-secondary hover:text-nhs-blue hover:bg-nhs-blue/5'
               }`}
               aria-label={t('hub.nav.tools', 'Tools')}
             >
@@ -600,7 +600,7 @@ export default function HubPage() {
               className={`flex flex-col items-center justify-center py-2 px-1 rounded-xl transition-all min-h-[56px] ${
                 activeNavItem === 'progress'
                   ? 'bg-nhs-blue/10 text-nhs-blue'
-                  : 'text-text-muted hover:text-nhs-blue hover:bg-nhs-blue/5'
+                  : 'text-text-secondary hover:text-nhs-blue hover:bg-nhs-blue/5'
               }`}
               aria-label={t('hub.nav.progress', 'Progress')}
             >

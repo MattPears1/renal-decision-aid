@@ -382,7 +382,7 @@ export default function TreatmentDetailPage() {
           </header>
           <div className="flex flex-wrap gap-2 mb-4" role="tablist" aria-label={t('treatment.filterByCategory', 'Filter by category')}>
             {(['all', 'general', 'practical', 'medical', 'lifestyle', 'emotional'] as const).map((category) => (
-              <button key={category} role="tab" aria-selected={questionFilter === category} onClick={() => setQuestionFilter(category)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] touch-manipulation ${questionFilter === category ? 'bg-nhs-blue text-white shadow-sm' : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-blue/10 hover:text-nhs-blue'}`}>
+              <button key={category} role="tab" aria-selected={questionFilter === category} onClick={() => setQuestionFilter(category)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] touch-manipulation ${questionFilter === category ? 'bg-nhs-blue text-white shadow-sm' : 'bg-nhs-pale-grey text-text-primary hover:bg-nhs-blue/10 hover:text-nhs-blue'}`}>
                 {category === 'all' && t('treatment.categoryAll', 'All questions')}
                 {category === 'general' && t('treatment.categoryGeneral', 'General')}
                 {category === 'practical' && t('treatment.categoryPractical', 'Practical')}

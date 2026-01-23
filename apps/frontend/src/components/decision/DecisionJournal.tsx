@@ -305,7 +305,7 @@ export default function DecisionJournal({
                 className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedCategory === cat.id
                     ? `bg-${cat.color}/20 text-${cat.color} ring-2 ring-${cat.color}/30`
-                    : 'bg-nhs-pale-grey/50 text-text-secondary hover:bg-nhs-pale-grey'
+                    : 'bg-nhs-pale-grey/50 text-text-primary hover:bg-nhs-pale-grey'
                 }`}
               >
                 <span className="w-4 h-4">{cat.icon}</span>

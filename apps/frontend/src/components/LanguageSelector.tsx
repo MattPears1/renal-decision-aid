@@ -271,13 +271,13 @@ export default function LanguageSelector({
           <div className="flex gap-3 justify-end">
             <button
               onClick={cancelLanguageChange}
-              className="px-4 py-2 text-sm font-medium text-text-secondary bg-nhs-pale-grey rounded-md hover:bg-nhs-mid-grey hover:text-white transition-colors min-h-[44px]"
+              className="px-4 py-2 text-sm font-medium text-text-primary bg-nhs-pale-grey rounded-md hover:bg-nhs-dark-grey hover:text-white transition-colors min-h-[44px]"
             >
               {t('common.cancel', 'Cancel')}
             </button>
             <button
               onClick={confirmLanguageChange}
-              className="px-4 py-2 text-sm font-medium text-white bg-nhs-blue rounded-md hover:bg-nhs-dark-blue transition-colors min-h-[44px]"
+              className="px-4 py-2 text-sm font-medium text-white bg-nhs-blue rounded-md hover:bg-nhs-blue-dark transition-colors min-h-[44px]"
             >
               {t('common.confirm', 'Confirm')}
             </button>
@@ -307,8 +307,8 @@ export default function LanguageSelector({
                   'min-h-[44px] touch-manipulation',
                   isActive
                     ? 'bg-nhs-blue text-white'
-                    : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-mid-grey hover:text-white',
-                  isLoading && !isLoadingThis && 'opacity-50 cursor-not-allowed'
+                    : 'bg-nhs-pale-grey text-text-primary hover:bg-nhs-dark-grey hover:text-white',
+                  isLoading && !isLoadingThis && 'opacity-60 cursor-not-allowed'
                 )}
                 aria-current={isActive ? 'true' : undefined}
                 aria-busy={isLoadingThis}

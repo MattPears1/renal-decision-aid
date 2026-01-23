@@ -460,7 +460,7 @@ export default function LearningProgress({
                     ? 'bg-gradient-to-br from-nhs-green to-nhs-green-dark text-white shadow-md'
                     : section.isInProgress
                     ? 'bg-gradient-to-br from-nhs-blue/20 to-nhs-blue/10 text-nhs-blue'
-                    : 'bg-nhs-pale-grey/80 text-text-secondary group-hover:text-nhs-blue group-hover:bg-nhs-blue/10'
+                    : 'bg-nhs-pale-grey/80 text-text-primary group-hover:text-nhs-blue group-hover:bg-nhs-blue/10'
                 }`}
               >
                 {section.isCompleted ? <CheckIcon className="w-6 h-6" /> : section.icon}

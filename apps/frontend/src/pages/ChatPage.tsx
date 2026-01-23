@@ -749,7 +749,7 @@ export default function ChatPage() {
             <button
               type="submit"
               disabled={!input.trim() || isLoading || recordingState === 'recording'}
-              className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 active:scale-95 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus min-w-[48px] min-h-[48px] touch-manipulation"
+              className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 active:scale-95 disabled:opacity-60 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus min-w-[48px] min-h-[48px] touch-manipulation"
               aria-label={t('chat.send', 'Send message')}
             >
               <SendIcon className="w-5 h-5" />
