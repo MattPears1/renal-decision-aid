@@ -146,7 +146,15 @@
     "sibling": "兄弟姐妹",
     "friend": "朋友",
     "professional": "专业护理人员",
-    "other": "其他"
+    "other": "其他",
+    "thePerson": "您支持的人"
+  },
+  "pronouns": {
+    "you": "您",
+    "your": "您的",
+    "they": "他们",
+    "their": "他们的",
+    "them": "他们"
   },
   "privacy": {
     "pageAriaLabel": "隐私信息",
@@ -227,41 +235,61 @@
   },
   "journey": {
     "title": "您目前处于肾脏护理旅程的哪个阶段？",
+    "title_carer": "{{relationship}}目前处于肾脏护理旅程的哪个阶段？",
     "subtitle": "选择最能描述您情况的选项",
+    "subtitle_carer": "选择最能描述他们情况的选项",
     "instruction": "选择最能描述您当前情况的选项",
+    "instruction_carer": "选择最能描述他们当前情况的选项",
     "intro": "每个人的肾脏旅程都不同。为了帮助我们向您展示最相关的信息，请告诉我们您目前的状况。没有对错之分。",
+    "intro_carer": "每个人的肾脏旅程都不同。为了展示最相关的信息，请告诉我们{{relationship}}目前的状况。",
     "error": "请选择一个描述您情况的选项。如果这些都不适合，请选择「我正在支持家人或朋友」以继续。",
+    "error_carer": "请选择一个描述他们情况的选项。",
     "formLabel": "旅程阶段选项",
     "legendLabel": "选择您在肾脏旅程中的位置",
+    "legendLabel_carer": "选择{{relationship}}在肾脏旅程中的位置",
     "radioGroupLabel": "旅程阶段选项",
     "listenToQuestion": "收听此问题",
     "audioText": "您处于旅程的哪个阶段？选择最能描述您情况的选项。",
+    "audioText_carer": "{{relationship}}处于旅程的哪个阶段？选择最能描述他们情况的选项。",
     "reassurance": "如果您不确定哪个选项最适合，请不要担心。您以后仍然可以探索所有治疗方案，您的肾脏团队可以帮助澄清您的情况。您的选择有助于我们首先向您展示最相关的信息。",
+    "reassurance_carer": "如果您不确定哪个选项最适合，请不要担心。您以后仍然可以探索所有治疗方案，肾脏团队可以帮助澄清情况。",
     "needHelp": "我需要帮助选择",
     "stages": {
       "suspected": {
         "title": "我认为我可能患有肾病",
-        "description": "您担心您的肾脏健康，想了解更多关于肾病意味着什么的信息。"
+        "title_carer": "他们可能患有肾病",
+        "description": "您担心您的肾脏健康，想了解更多关于肾病意味着什么的信息。",
+        "description_carer": "他们担心自己的肾脏健康。"
       },
       "earlyDiagnosis": {
         "title": "我刚被诊断 - 早期慢性肾病",
-        "description": "您最近了解到您的肾脏状况，想了解这对您意味着什么。"
+        "title_carer": "最近被诊断 - 早期慢性肾病",
+        "description": "您最近了解到您的肾脏状况，想了解这对您意味着什么。",
+        "description_carer": "他们最近了解到自己的肾脏状况，想了解这对他们意味着什么。"
       },
       "lateDiagnosis": {
         "title": "我被诊断了 - 晚期慢性肾病",
-        "description": "您的肾功能已显著下降，您可能很快需要考虑治疗方案。"
+        "title_carer": "已诊断 - 晚期慢性肾病",
+        "description": "您的肾功能已显著下降，您可能很快需要考虑治疗方案。",
+        "description_carer": "他们的肾功能已显著下降，他们可能很快需要考虑治疗方案。"
       },
       "choosingTreatment": {
         "title": "我很快需要选择治疗方案",
-        "description": "您的肾脏团队告诉您，您需要在未来几个月开始治疗，您想了解您的选择。"
+        "title_carer": "他们很快需要选择治疗方案",
+        "description": "您的肾脏团队告诉您，您需要在未来几个月开始治疗，您想了解您的选择。",
+        "description_carer": "肾脏团队告诉他们，他们需要在未来几个月开始治疗。"
       },
       "transplantPending": {
         "title": "我即将进行移植 - 想了解更多",
-        "description": "您已在移植名单上或有活体捐献者，想了解更多关于会发生什么的信息。"
+        "title_carer": "他们即将进行移植",
+        "description": "您已在移植名单上或有活体捐献者，想了解更多关于会发生什么的信息。",
+        "description_carer": "他们已在移植名单上或有活体捐献者。"
       },
       "dialysisPending": {
         "title": "我即将开始透析 - 想了解更多",
-        "description": "您很快将开始透析治疗，想了解不同类型以及日常生活会是什么样的。"
+        "title_carer": "他们即将开始透析",
+        "description": "您很快将开始透析治疗，想了解不同类型以及日常生活会是什么样的。",
+        "description_carer": "他们很快将开始透析治疗。"
       },
       "supporting": {
         "title": "我正在支持家人或朋友",
@@ -284,7 +312,9 @@
   "questionnaire": {
     "intro": {
       "title": "告诉我们关于您自己",
+      "title_carer": "告诉我们关于{{relationship}}",
       "description": "这些问题帮助我们向您展示与您情况最相关的信息。您的回答是私密的，此会话结束后不会保存。",
+      "description_carer": "这些问题帮助我们展示与他们情况最相关的信息。您的回答是私密的，不会被保存。",
       "features": {
         "questions": "7个快速问题",
         "time": "需要3-5分钟",

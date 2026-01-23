@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import TreatmentTimeline from '@/components/TreatmentTimeline';
 import { TREATMENT_DETAIL_DATA } from '@/data/treatmentDetailData';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
@@ -17,6 +18,7 @@ export default function TreatmentDetailPage() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { tCarer } = useCarerText();
   const { markTreatmentViewed } = useSession();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [questionFilter, setQuestionFilter] = useState<'all' | 'general' | 'practical' | 'medical' | 'lifestyle' | 'emotional'>('all');
@@ -377,7 +379,7 @@ export default function TreatmentDetailPage() {
             </div>
             <div>
               <h2 id="faq-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.faq', 'Frequently Asked Questions')}</h2>
-              <p className="text-sm text-text-muted">{t('treatment.faqDesc', 'Questions that patients often ask about this treatment')}</p>
+              <p className="text-sm text-text-muted">{tCarer('treatment.faqDesc', 'Questions that patients often ask about this treatment')}</p>
             </div>
           </header>
           <div className="flex flex-wrap gap-2 mb-4" role="tablist" aria-label={t('treatment.filterByCategory', 'Filter by category')}>
@@ -462,7 +464,7 @@ export default function TreatmentDetailPage() {
               <svg className="w-7 h-7 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
             </div>
             <h2 id="action-heading" className="text-xl sm:text-2xl font-bold text-text-primary mb-2">{t('treatment.readyToLearnMore', 'Ready to Learn More?')}</h2>
-            <p className="text-text-secondary mb-6">{t('treatment.readyDescription', 'Compare this treatment with others or ask questions to help with your decision.')}</p>
+            <p className="text-text-secondary mb-6">{tCarer('treatment.readyDescription', 'Compare this treatment with others or ask questions to help with your decision.')}</p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
               <Link to="/compare" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-nhs-blue text-nhs-blue font-semibold rounded-xl hover:bg-nhs-blue hover:text-white transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[52px] touch-manipulation">
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>

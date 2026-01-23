@@ -148,7 +148,15 @@
     "sibling": "Kardes",
     "friend": "Arkadas",
     "professional": "Profesyonel bakici",
-    "other": "Diger"
+    "other": "Diger",
+    "thePerson": "desteklediginiz kisi"
+  },
+  "pronouns": {
+    "you": "sen",
+    "your": "senin",
+    "they": "onlar",
+    "their": "onlarin",
+    "them": "onlari"
   },
   "privacy": {
     "pageAriaLabel": "Gizlilik bilgileri",
@@ -229,41 +237,61 @@
   },
   "journey": {
     "title": "Bobrek Bakim Yolculugunuzda Neredesiniz?",
+    "title_carer": "{{relationship}} Bobrek Bakim Yolculugunda Nerede?",
     "subtitle": "Durumunuzu en iyi tanimlayan secenegi seciniz",
+    "subtitle_carer": "Durumlarini en iyi tanimlayan secenegi seciniz",
     "instruction": "Mevcut durumunuzu en iyi tanimlayan secenegi seciniz",
+    "instruction_carer": "Mevcut durumlarini en iyi tanimlayan secenegi seciniz",
     "intro": "Herkesin bobrek yolculugu farklidir. Size en alakali bilgileri gostermemize yardimci olmak icin, lutfen su anda nerede oldugunuzu bize soyleyiniz. Dogru veya yanlis cevap yoktur.",
+    "intro_carer": "Herkesin bobrek yolculugu farklidir. En alakali bilgileri gostermemize yardimci olmak icin, lutfen {{relationship}} su anda nerede oldugunu bize soyleyiniz.",
     "error": "Lutfen durumunuzu tanimlayan bir secenek seciniz. Bunlarin hicbiri uygun degilse, devam etmek icin \"Bir aile uyesine veya arkadasa destek oluyorum\" secenegini seciniz.",
+    "error_carer": "Lutfen durumlarini tanimlayan bir secenek seciniz.",
     "formLabel": "Yolculuk asamasi secenekleri",
     "legendLabel": "Bobrek yolculugunuzda nerede oldugunuzu seciniz",
+    "legendLabel_carer": "{{relationship}} bobrek yolculugunda nerede oldugunu seciniz",
     "radioGroupLabel": "Yolculuk asamasi secenekleri",
     "listenToQuestion": "Bu soruyu dinle",
     "audioText": "Yolculugunuzda neredesiniz? Durumunuzu en iyi tanimlayan secenegi seciniz.",
+    "audioText_carer": "{{relationship}} yolculugunda nerede? Durumlarini en iyi tanimlayan secenegi seciniz.",
     "reassurance": "Hangi secenegin en uygun oldugu konusunda emin olmasaniz da endiselenmeyiniz. Daha sonra her zaman tum tedavi seceneklerini kesfedebelirsiniz ve bobrek ekibiniz durumunuzu acikliga kavusturmaya yardimci olabilir. Seciminiz size en alakali bilgileri once gostermemize yardimci olur.",
+    "reassurance_carer": "Hangi secenegin en uygun oldugu konusunda emin olmasaniz da endiselenmeyiniz. Daha sonra her zaman tum tedavi seceneklerini kesfedebelirsiniz ve bobrek ekibi durumu acikliga kavusturmaya yardimci olabilir.",
     "needHelp": "Secerken yardima ihtiyacim var",
     "stages": {
       "suspected": {
         "title": "Bobrek hastaliğim olabileceğini düşünüyorum",
-        "description": "Böbrek sağlığınız konusunda endişeleniyorsunuz ve böbrek hastalığının ne anlama geldiği hakkında daha fazla bilgi edinmek istiyorsunuz."
+        "title_carer": "Bobrek hastaligi olabilir",
+        "description": "Böbrek sağlığınız konusunda endişeleniyorsunuz ve böbrek hastalığının ne anlama geldiği hakkında daha fazla bilgi edinmek istiyorsunuz.",
+        "description_carer": "Bobrek sagligi konusunda endiseli ve bobrek hastaliginin ne anlama geldigi hakkinda daha fazla bilgi edinmek istiyor."
       },
       "earlyDiagnosis": {
         "title": "Yeni teşhis konuldu - erken evre KBY",
-        "description": "Böbrek durumunuz hakkında yeni bilgi edindiniz ve bunun sizin için ne anlama geldiğini anlamak istiyorsunuz."
+        "title_carer": "Yeni teshis konuldu - erken evre KBY",
+        "description": "Böbrek durumunuz hakkında yeni bilgi edindiniz ve bunun sizin için ne anlama geldiğini anlamak istiyorsunuz.",
+        "description_carer": "Bobrek durumu hakkinda yeni bilgi edindi ve bunun onlar icin ne anlama geldigini anlamak istiyor."
       },
       "lateDiagnosis": {
         "title": "Teşhis konuldu - geç evre KBY",
-        "description": "Böbrek fonksiyonunuz önemli ölçüde azaldı ve yakında tedavi seçeneklerini düşünmeniz gerekebilir."
+        "title_carer": "Teshis konuldu - gec evre KBY",
+        "description": "Böbrek fonksiyonunuz önemli ölçüde azaldı ve yakında tedavi seçeneklerini düşünmeniz gerekebilir.",
+        "description_carer": "Bobrek fonksiyonu onemli olcude azaldi ve yakinda tedavi seceneklerini dusunmesi gerekebilir."
       },
       "choosingTreatment": {
         "title": "Yakında bir tedavi seçmem gerekiyor",
-        "description": "Böbrek ekibiniz, önümüzdeki aylarda tedaviye başlamanız gerekeceğini söyledi ve seçenekleriniz hakkında bilgi edinmek istiyorsunuz."
+        "title_carer": "Yakinda bir tedavi secmesi gerekiyor",
+        "description": "Böbrek ekibiniz, önümüzdeki aylarda tedaviye başlamanız gerekeceğini söyledi ve seçenekleriniz hakkında bilgi edinmek istiyorsunuz.",
+        "description_carer": "Bobrek ekibi, onumuzdeki aylarda tedaviye baslamasi gerekecegini soyledi."
       },
       "transplantPending": {
         "title": "Nakil olmak üzereyim - daha fazla bilgi edinmek istiyorum",
-        "description": "Nakil listesinde bulunuyorsunuz veya canlı bir donörünüz var ve neler bekleyeceğiniz hakkında daha fazla bilgi edinmek istiyorsunuz."
+        "title_carer": "Nakil olmak uzere",
+        "description": "Nakil listesinde bulunuyorsunuz veya canlı bir donörünüz var ve neler bekleyeceğiniz hakkında daha fazla bilgi edinmek istiyorsunuz.",
+        "description_carer": "Nakil listesinde veya canli bir donoru var."
       },
       "dialysisPending": {
         "title": "Diyalize başlamak üzereyim - daha fazla bilgi edinmek istiyorum",
-        "description": "Yakında diyalize tedavisine başlayacaksınız ve farklı türleri ve günlük yaşamın nasıl olacağını anlamak istiyorsunuz."
+        "title_carer": "Diyalize baslamak uzere",
+        "description": "Yakında diyalize tedavisine başlayacaksınız ve farklı türleri ve günlük yaşamın nasıl olacağını anlamak istiyorsunuz.",
+        "description_carer": "Yakinda diyalize tedavisine baslayacak."
       },
       "supporting": {
         "title": "Bir aile üyesine veya arkadaşa destek oluyorum",
@@ -286,7 +314,9 @@
   "questionnaire": {
     "intro": {
       "title": "Kendiniz Hakkında Bize Bilgi Verin",
+      "title_carer": "{{relationship}} Hakkinda Bize Bilgi Verin",
       "description": "Bu sorular, durumunuzla en alakalı bilgileri göstermemize yardımcı olur. Cevaplarınız gizlidir ve bu oturumdan sonra kaydedilmeyecektir.",
+      "description_carer": "Bu sorular, durumlariyla en alakali bilgileri gostermemize yardimci olur. Cevapalariniz gizlidir ve kaydedilmeyecektir.",
       "features": {
         "questions": "7 hızlı soru",
         "time": "3-5 dakika sürer",

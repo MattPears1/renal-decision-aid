@@ -19,6 +19,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import type { JourneyStage } from '@renal-decision-aid/shared-types';
 
 /**
@@ -97,6 +98,7 @@ export default function JourneyStagePage() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { setJourneyStage } = useSession();
+  const { tCarer } = useCarerText();
   const [selectedStage, setSelectedStage] = useState<JourneyStage | null>(null);
   const [showError, setShowError] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
@@ -125,13 +127,13 @@ export default function JourneyStagePage() {
 
   const handlePlayAudio = useCallback(() => {
     if ('speechSynthesis' in window) {
-      const text = t('journey.audioText', 'Where are you in your journey? Select the option that best describes your situation.');
+      const text = tCarer('journey.audioText', 'Where are you in your journey? Select the option that best describes your situation.');
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-GB';
       utterance.rate = 0.9;
       window.speechSynthesis.speak(utterance);
     }
-  }, [t]);
+  }, [tCarer]);
 
   return (
     <main className="min-h-screen bg-bg-page">
@@ -167,7 +169,7 @@ export default function JourneyStagePage() {
 
           <div className="flex items-center justify-center gap-3 flex-wrap mb-2">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary">
-              {t('journey.title', 'Where Are You in Your Journey?')}
+              {tCarer('journey.title', 'Where Are You in Your Journey?')}
             </h1>
             <button
               type="button"
@@ -184,7 +186,7 @@ export default function JourneyStagePage() {
             </button>
           </div>
           <p className="text-base sm:text-lg text-text-secondary px-2 max-w-xl mx-auto">
-            {t('journey.subtitle', 'Select the option that best describes your situation')}
+            {tCarer('journey.subtitle', 'Select the option that best describes your situation')}
           </p>
         </header>
 
@@ -198,7 +200,7 @@ export default function JourneyStagePage() {
           >
             <ErrorIcon />
             <span className="text-nhs-red-dark">
-              {t('journey.error', 'Please select an option that describes your situation. If none of these fit, select "I am supporting a family member or friend" to continue.')}
+              {tCarer('journey.error', 'Please select an option that describes your situation. If none of these fit, select "I am supporting a family member or friend" to continue.')}
             </span>
           </div>
         )}
@@ -207,7 +209,7 @@ export default function JourneyStagePage() {
         <form aria-label={t('journey.formLabel', 'Journey stage options')}>
           <fieldset>
             <legend className="sr-only">
-              {t('journey.legendLabel', 'Select where you are in your kidney journey')}
+              {tCarer('journey.legendLabel', 'Select where you are in your kidney journey')}
             </legend>
 
             <div
@@ -220,8 +222,8 @@ export default function JourneyStagePage() {
                 <JourneyCard
                   key={option.id}
                   id={option.id}
-                  title={t(option.titleKey, getDefaultTitle(option.id))}
-                  description={t(option.descriptionKey, getDefaultDescription(option.id))}
+                  title={tCarer(option.titleKey, getDefaultTitle(option.id))}
+                  description={tCarer(option.descriptionKey, getDefaultDescription(option.id))}
                   icon={option.icon}
                   isSelected={selectedStage === option.id}
                   onSelect={() => handleSelectStage(option.id)}
@@ -242,7 +244,7 @@ export default function JourneyStagePage() {
               <InfoSmallIcon />
             </div>
             <p className="text-nhs-blue-dark text-xs sm:text-sm leading-relaxed">
-              {t('journey.reassurance', 'Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.')}
+              {tCarer('journey.reassurance', 'Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.')}
             </p>
           </div>
         </div>

@@ -13,6 +13,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import { getPersonalizedStatistics, buildProfileFromSession } from '@/data/statisticsMatching';
 import {
   StatisticsDisclaimer,
@@ -34,6 +35,7 @@ import {
 export default function StatisticsPage() {
   const { t } = useTranslation();
   const { session } = useSession();
+  const { tCarer } = useCarerText();
   const [showSurvival, setShowSurvival] = useState(false);
 
   // Build user profile from session data
@@ -69,10 +71,10 @@ export default function StatisticsPage() {
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-text-primary leading-tight">
-                {t('statistics.page.title', 'What others in similar situations chose')}
+                {tCarer('statistics.page.title', 'What others in similar situations chose')}
               </h1>
               <p className="text-sm sm:text-base text-text-secondary mt-2 leading-relaxed">
-                {t('statistics.page.introduction', 'Understanding what others have chosen can help you feel less alone in your decision. These are real statistics from UK kidney patients.')}
+                {tCarer('statistics.page.introduction', 'Understanding what others have chosen can help you feel less alone in your decision. These are real statistics from UK kidney patients.')}
               </p>
             </div>
           </div>
@@ -203,23 +205,23 @@ export default function StatisticsPage() {
             </div>
             <div className="flex-1">
               <h3 className="font-bold text-text-primary text-base sm:text-lg mb-2">
-                {t('statistics.team.title', 'Discuss with your kidney team')}
+                {tCarer('statistics.team.title', 'Discuss with your kidney team')}
               </h3>
               <p className="text-sm text-text-secondary leading-relaxed mb-3">
-                {t('statistics.team.description', 'These statistics provide general context, but your kidney team knows your individual situation best. They can help you understand what these numbers mean for you and answer any questions you have.')}
+                {tCarer('statistics.team.description', 'These statistics provide general context, but your kidney team knows your individual situation best. They can help you understand what these numbers mean for you and answer any questions you have.')}
               </p>
               <ul className="space-y-1.5" role="list">
                 <li className="flex items-start gap-2 text-sm text-text-secondary">
                   <span className="text-nhs-green mt-0.5 flex-shrink-0">-</span>
-                  {t('statistics.team.point1', 'Ask about your individual risk factors and expected outcomes')}
+                  {tCarer('statistics.team.point1', 'Ask about your individual risk factors and expected outcomes')}
                 </li>
                 <li className="flex items-start gap-2 text-sm text-text-secondary">
                   <span className="text-nhs-green mt-0.5 flex-shrink-0">-</span>
-                  {t('statistics.team.point2', 'Discuss which treatments are realistic options for you')}
+                  {tCarer('statistics.team.point2', 'Discuss which treatments are realistic options for you')}
                 </li>
                 <li className="flex items-start gap-2 text-sm text-text-secondary">
                   <span className="text-nhs-green mt-0.5 flex-shrink-0">-</span>
-                  {t('statistics.team.point3', 'Explore how your lifestyle and preferences fit with each option')}
+                  {tCarer('statistics.team.point3', 'Explore how your lifestyle and preferences fit with each option')}
                 </li>
               </ul>
             </div>

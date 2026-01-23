@@ -20,6 +20,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 import { useSession } from '../context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 
 /**
  * Rating level indicating how well a treatment performs for a given criterion.
@@ -368,6 +369,7 @@ export default function ComparePage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { session } = useSession();
+  const { tCarer } = useCarerText();
 
   const [selectedTreatments, setSelectedTreatments] = useState<Set<TreatmentType>>(
     new Set(['kidney-transplant', 'hemodialysis', 'peritoneal-dialysis', 'conservative-care'])
@@ -587,7 +589,7 @@ export default function ComparePage() {
             {t('compare.title', 'Compare Your Options')}
           </h1>
           <p className="text-lg text-text-secondary max-w-3xl leading-relaxed mb-4">
-            {t(
+            {tCarer(
               'compare.description',
               'This tool helps you compare kidney treatment options side by side. You can focus on the things that matter most to you. Select the factors you want to compare below.'
             )}
@@ -618,17 +620,17 @@ export default function ComparePage() {
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
               </div>
-              {t('compare.whatMatters', 'What Matters Most to You?')}
+              {tCarer('compare.whatMatters', 'What Matters Most to You?')}
             </h2>
             {hasCompletedValues && (
               <span className="text-xs text-nhs-green font-medium bg-nhs-green/10 px-3 py-1 rounded-full">
-                {t('compare.valuesLoaded', 'Your values loaded')}
+                {tCarer('compare.valuesLoaded', 'Your values loaded')}
               </span>
             )}
           </div>
 
           <p className="text-sm text-text-secondary mb-4">
-            {t('compare.filterByValues', 'Filter the comparison by what matters most to you. Select categories to highlight relevant criteria.')}
+            {tCarer('compare.filterByValues', 'Filter the comparison by what matters most to you. Select categories to highlight relevant criteria.')}
           </p>
 
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('compare.valueFilters', 'Value filters')}>
@@ -747,7 +749,7 @@ export default function ComparePage() {
               <span className="text-sm sm:text-base">{t('compare.highlightForMe', 'Highlight treatments for me')}</span>
             </label>
             <span className="text-xs sm:text-sm text-text-secondary">
-              {t('compare.highlightHint', 'Based on your values and priorities from the questionnaire')}
+              {tCarer('compare.highlightHint', 'Based on your values and priorities from the questionnaire')}
             </span>
           </div>
         </section>
@@ -873,7 +875,7 @@ export default function ComparePage() {
                               {t(dataRow.criteriaKey)}
                             </span>
                             {isHighlighted && (
-                              <span className="w-2 h-2 bg-nhs-pink rounded-full animate-pulse" title={t('compare.matchesYourValues', 'Matches your values')} />
+                              <span className="w-2 h-2 bg-nhs-pink rounded-full animate-pulse" title={tCarer('compare.matchesYourValues', 'Matches your values')} />
                             )}
                             <Tooltip content={t(dataRow.tooltipKey, t(dataRow.hintKey))}>
                               <button
@@ -947,7 +949,7 @@ export default function ComparePage() {
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                 </svg>
               </div>
-              {t('compare.decisionSummary', 'Your Decision Summary')}
+              {tCarer('compare.decisionSummary', 'Your Decision Summary')}
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -957,7 +959,7 @@ export default function ComparePage() {
                   <svg className="w-5 h-5 text-nhs-pink" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                   </svg>
-                  {t('compare.yourTopPriorities', 'Your Top Priorities')}
+                  {tCarer('compare.yourTopPriorities', 'Your Top Priorities')}
                 </h3>
                 <ul className="space-y-2">
                   {topPriorities.map((priority, index) => (
@@ -1033,7 +1035,7 @@ export default function ComparePage() {
                     {t('compare.keyInsight', 'Key Insight')}
                   </h4>
                   <p className="text-sm text-text-secondary">
-                    {t('compare.insightMessage', 'Based on your values, {{treatment}} appears to be the best match for what matters most to you. However, the best choice depends on your individual health situation - discuss this with your kidney team.', {
+                    {tCarer('compare.insightMessage', 'Based on your values, {{treatment}} appears to be the best match for what matters most to you. However, the best choice depends on your individual health situation - discuss this with your kidney team.', {
                       treatment: t(TREATMENT_HEADERS.find(t => t.id === recommendedTreatment)?.nameKey || '')
                     })}
                   </p>
@@ -1058,7 +1060,7 @@ export default function ComparePage() {
               {t('compare.remember', 'Remember')}
             </h2>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-              {t(
+              {tCarer(
                 'compare.guidance',
                 'No treatment is perfect for everyone. The best choice depends on your personal situation, health, and values. This comparison is a starting point for discussions with your kidney team.'
               )}

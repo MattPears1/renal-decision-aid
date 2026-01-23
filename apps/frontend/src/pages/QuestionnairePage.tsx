@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import StickyProgressIndicator from '@/components/StickyProgressIndicator';
 
 /**
@@ -182,6 +183,7 @@ export default function QuestionnairePage() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { addQuestionnaireAnswer } = useSession();
+  const { tCarer } = useCarerText();
 
   const [showIntro, setShowIntro] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -292,10 +294,10 @@ export default function QuestionnairePage() {
             </div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 sm:mb-4">
-              {t('questionnaire.intro.title', 'Tell Us About Yourself')}
+              {tCarer('questionnaire.intro.title', 'Tell Us About Yourself')}
             </h1>
             <p className="text-base sm:text-lg text-text-secondary mb-6 sm:mb-8 max-w-[550px] mx-auto">
-              {t('questionnaire.intro.description', 'These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.')}
+              {tCarer('questionnaire.intro.description', 'These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.')}
             </p>
 
             {/* Features Grid */}

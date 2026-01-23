@@ -146,7 +146,15 @@
     "sibling": "Frère/Sœur",
     "friend": "Ami(e)",
     "professional": "Aidant professionnel",
-    "other": "Autre"
+    "other": "Autre",
+    "thePerson": "la personne que vous accompagnez"
+  },
+  "pronouns": {
+    "you": "vous",
+    "your": "votre",
+    "they": "ils/elles",
+    "their": "leur",
+    "them": "les"
   },
   "privacy": {
     "pageAriaLabel": "Informations sur la confidentialité",
@@ -227,41 +235,61 @@
   },
   "journey": {
     "title": "Où en êtes-vous dans votre parcours de soins rénaux ?",
+    "title_carer": "Où en est {{relationship}} dans son parcours de soins rénaux ?",
     "subtitle": "Sélectionnez l'option qui décrit le mieux votre situation",
+    "subtitle_carer": "Sélectionnez l'option qui décrit le mieux sa situation",
     "instruction": "Sélectionnez l'option qui décrit le mieux votre situation actuelle",
+    "instruction_carer": "Sélectionnez l'option qui décrit le mieux sa situation actuelle",
     "intro": "Le parcours rénal de chacun est différent. Pour nous aider à vous montrer les informations les plus pertinentes, veuillez nous dire où vous en êtes actuellement. Il n'y a pas de bonnes ou de mauvaises réponses.",
+    "intro_carer": "Le parcours rénal de chacun est différent. Pour nous aider à montrer les informations les plus pertinentes, veuillez nous dire où en est {{relationship}} actuellement.",
     "error": "Veuillez sélectionner une option qui décrit votre situation. Si aucune ne convient, sélectionnez « Je soutiens un membre de ma famille ou un ami » pour continuer.",
+    "error_carer": "Veuillez sélectionner une option qui décrit sa situation.",
     "formLabel": "Options d'étape du parcours",
     "legendLabel": "Sélectionnez où vous en êtes dans votre parcours rénal",
+    "legendLabel_carer": "Sélectionnez où en est {{relationship}} dans son parcours rénal",
     "radioGroupLabel": "Options d'étape du parcours",
     "listenToQuestion": "Écouter cette question",
     "audioText": "Où en êtes-vous dans votre parcours ? Sélectionnez l'option qui décrit le mieux votre situation.",
+    "audioText_carer": "Où en est {{relationship}} dans son parcours ? Sélectionnez l'option qui décrit le mieux sa situation.",
     "reassurance": "Ne vous inquiétez pas si vous n'êtes pas sûr(e) de l'option qui vous convient le mieux. Vous pourrez toujours explorer toutes les options de traitement plus tard, et votre équipe néphrologique pourra clarifier votre situation. Votre sélection nous aide à vous montrer d'abord les informations les plus pertinentes.",
+    "reassurance_carer": "Ne vous inquiétez pas si vous n'êtes pas sûr(e) de l'option qui convient le mieux. Vous pourrez toujours explorer toutes les options de traitement plus tard, et son équipe néphrologique pourra clarifier la situation.",
     "needHelp": "J'ai besoin d'aide pour choisir",
     "stages": {
       "suspected": {
         "title": "Je pense avoir une maladie rénale",
-        "description": "Vous êtes préoccupé(e) par votre santé rénale et souhaitez en savoir plus sur ce que signifie une maladie rénale."
+        "title_carer": "Il/elle pourrait avoir une maladie rénale",
+        "description": "Vous êtes préoccupé(e) par votre santé rénale et souhaitez en savoir plus sur ce que signifie une maladie rénale.",
+        "description_carer": "Il/elle est préoccupé(e) par sa santé rénale."
       },
       "earlyDiagnosis": {
         "title": "Je viens d'être diagnostiqué(e) - MRC stade précoce",
-        "description": "Vous avez récemment appris votre état rénal et souhaitez comprendre ce que cela signifie pour vous."
+        "title_carer": "Récemment diagnostiqué(e) - MRC stade précoce",
+        "description": "Vous avez récemment appris votre état rénal et souhaitez comprendre ce que cela signifie pour vous.",
+        "description_carer": "Il/elle a récemment appris son état rénal."
       },
       "lateDiagnosis": {
         "title": "J'ai été diagnostiqué(e) - MRC stade avancé",
-        "description": "Votre fonction rénale a diminué de manière significative et vous devrez peut-être envisager des options de traitement bientôt."
+        "title_carer": "Diagnostiqué(e) - MRC stade avancé",
+        "description": "Votre fonction rénale a diminué de manière significative et vous devrez peut-être envisager des options de traitement bientôt.",
+        "description_carer": "Sa fonction rénale a diminué de manière significative."
       },
       "choosingTreatment": {
         "title": "Je dois choisir un traitement bientôt",
-        "description": "Votre équipe néphrologique vous a dit que vous devrez commencer un traitement dans les mois à venir et vous souhaitez connaître vos options."
+        "title_carer": "Il/elle doit choisir un traitement bientôt",
+        "description": "Votre équipe néphrologique vous a dit que vous devrez commencer un traitement dans les mois à venir et vous souhaitez connaître vos options.",
+        "description_carer": "Son équipe néphrologique lui a dit qu'il/elle devra bientôt commencer un traitement."
       },
       "transplantPending": {
         "title": "Je dois recevoir une greffe - je veux en savoir plus",
-        "description": "Vous êtes sur la liste d'attente de greffe ou avez un donneur vivant et souhaitez savoir à quoi vous attendre."
+        "title_carer": "Il/elle doit recevoir une greffe",
+        "description": "Vous êtes sur la liste d'attente de greffe ou avez un donneur vivant et souhaitez savoir à quoi vous attendre.",
+        "description_carer": "Il/elle est sur la liste d'attente de greffe ou a un donneur vivant."
       },
       "dialysisPending": {
         "title": "Je dois commencer la dialyse - je veux en savoir plus",
-        "description": "Vous allez bientôt commencer un traitement de dialyse et souhaitez comprendre les différents types et à quoi ressemblera la vie quotidienne."
+        "title_carer": "Il/elle doit commencer la dialyse",
+        "description": "Vous allez bientôt commencer un traitement de dialyse et souhaitez comprendre les différents types et à quoi ressemblera la vie quotidienne.",
+        "description_carer": "Il/elle va bientôt commencer un traitement de dialyse."
       },
       "supporting": {
         "title": "Je soutiens un membre de ma famille ou un ami",
@@ -284,7 +312,9 @@
   "questionnaire": {
     "intro": {
       "title": "Parlez-nous de vous",
+      "title_carer": "Parlez-nous de {{relationship}}",
       "description": "Ces questions nous aident à vous montrer les informations les plus pertinentes pour votre situation. Vos réponses sont privées et ne seront pas enregistrées après cette session.",
+      "description_carer": "Ces questions nous aident à montrer les informations les plus pertinentes pour sa situation. Vos réponses sont privées et ne seront pas enregistrées.",
       "features": {
         "questions": "7 questions rapides",
         "time": "Prend 3 à 5 minutes",

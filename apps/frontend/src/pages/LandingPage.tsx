@@ -15,6 +15,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import { useCarerText } from '@/hooks/useCarerText';
 
 /**
  * Landing page component displaying the welcome screen and tool introduction.
@@ -30,6 +31,7 @@ import { useEffect, useState } from 'react';
  */
 export default function LandingPage() {
   const { t } = useTranslation();
+  const { tCarer } = useCarerText();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -77,7 +79,7 @@ export default function LandingPage() {
             className={`text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-10 max-w-[650px] mx-auto text-white/90 px-2
                        transform transition-all duration-700 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            {t('landing.description', 'This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.')}
+            {tCarer('landing.description', 'This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.')}
           </p>
 
           {/* Primary CTA - Staggered animation with enhanced styling */}
@@ -94,9 +96,9 @@ export default function LandingPage() {
                          hover:bg-nhs-green hover:text-white hover:shadow-2xl hover:scale-[1.02]
                          focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-4 focus:ring-offset-nhs-blue
                          active:scale-[0.98]"
-              aria-label={t('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
+              aria-label={tCarer('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
             >
-              <span>{t('landing.startButton', 'Start Your Journey')}</span>
+              <span>{tCarer('landing.startButton', 'Start Your Journey')}</span>
               <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -144,10 +146,10 @@ export default function LandingPage() {
               id="features-heading"
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 md:mb-4"
             >
-              {t('landing.featuresHeading', 'How This Tool Helps You')}
+              {tCarer('landing.featuresHeading', 'How This Tool Helps You')}
             </h2>
             <p className="text-text-secondary max-w-xl mx-auto text-base md:text-lg">
-              {t('landing.featuresSubheading', 'Everything you need to make an informed decision about your kidney treatment')}
+              {tCarer('landing.featuresSubheading', 'Everything you need to make an informed decision about your kidney treatment')}
             </p>
           </div>
           <div
@@ -166,8 +168,8 @@ export default function LandingPage() {
             {/* Feature 2: Privacy */}
             <FeatureCard
               icon={<ShieldIcon />}
-              title={t('landing.features.privacy.title', 'Your Privacy Protected')}
-              description={t('landing.features.privacy.description', 'No personal information is stored. Your answers help personalise the tool during this session only.')}
+              title={tCarer('landing.features.privacy.title', 'Your Privacy Protected')}
+              description={tCarer('landing.features.privacy.description', 'No personal information is stored. Your answers help personalise the tool during this session only.')}
               color="green"
               index={1}
             />
@@ -192,7 +194,7 @@ export default function LandingPage() {
         <div className="max-w-[900px] mx-auto">
           <div className="text-center mb-10 md:mb-14">
             <span className="inline-block px-3 py-1 bg-nhs-green/10 text-nhs-green text-sm font-semibold rounded-full mb-4">
-              {t('landing.yourJourney', 'Your Journey')}
+              {tCarer('landing.yourJourney', 'Your Journey')}
             </span>
             <h2
               id="about-heading"
@@ -201,7 +203,7 @@ export default function LandingPage() {
               {t('landing.aboutHeading', 'What This Tool Does')}
             </h2>
             <p className="text-text-secondary max-w-lg mx-auto">
-              {t('landing.aboutSubheading', 'Three simple steps to help you understand your options')}
+              {tCarer('landing.aboutSubheading', 'Three simple steps to help you understand your options')}
             </p>
           </div>
 
@@ -214,19 +216,19 @@ export default function LandingPage() {
               <AboutStep
                 number="1"
                 title={t('landing.about.steps.learn.title', 'Learn')}
-                description={t('landing.about.paragraph1', 'This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.')}
+                description={tCarer('landing.about.paragraph1', 'This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.')}
                 color="blue"
               />
               <AboutStep
                 number="2"
                 title={t('landing.about.steps.explore.title', 'Explore')}
-                description={t('landing.about.paragraph2', 'You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.')}
+                description={tCarer('landing.about.paragraph2', 'You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.')}
                 color="green"
               />
               <AboutStep
                 number="3"
                 title={t('landing.about.steps.decide.title', 'Decide')}
-                description={t('landing.about.paragraph3', 'This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you.')}
+                description={tCarer('landing.about.paragraph3', 'This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you.')}
                 color="aqua"
               />
             </div>
@@ -280,7 +282,7 @@ export default function LandingPage() {
                 {t('landing.ctaHeading', 'Ready to Begin?')}
               </h2>
               <p className="text-base sm:text-lg text-white/90 mb-6 md:mb-8 leading-relaxed max-w-xl mx-auto">
-                {t('landing.ctaDescription', 'Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break.')}
+                {tCarer('landing.ctaDescription', 'Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break.')}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -292,9 +294,9 @@ export default function LandingPage() {
                              hover:bg-nhs-green hover:text-white hover:shadow-xl hover:scale-[1.02]
                              focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 focus:ring-offset-nhs-blue
                              active:scale-[0.98]"
-                  aria-label={t('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
+                  aria-label={tCarer('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
                 >
-                  <span>{t('landing.startButton', 'Start Your Journey')}</span>
+                  <span>{tCarer('landing.startButton', 'Start Your Journey')}</span>
                   <ArrowRightIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <a

@@ -24,6 +24,7 @@ import { useNavigate } from 'react-router-dom';
 import GoalCategoryCard from '../components/goals/GoalCategoryCard';
 import CompatibilityResults from '../components/goals/CompatibilityResults';
 import { useSession } from '../context/SessionContext';
+import { useCarerText } from '../hooks/useCarerText';
 import {
   GOAL_CATEGORIES,
   LIFE_GOALS,
@@ -44,6 +45,7 @@ export default function LifeGoalsPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { session, updateLifeGoals } = useSession();
+  const { tCarer } = useCarerText();
 
   // State
   const [viewState, setViewState] = useState<ViewState>('selection');
@@ -143,11 +145,11 @@ export default function LifeGoalsPage() {
                 </div>
 
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-3 sm:mb-4 text-center tracking-tight">
-                  {t('lifeGoals.title')}
+                  {tCarer('lifeGoals.title')}
                 </h1>
 
                 <p className="text-sm sm:text-base md:text-lg text-text-secondary text-center max-w-[650px] mx-auto mb-6 sm:mb-8 leading-relaxed">
-                  {t('lifeGoals.introduction')}
+                  {tCarer('lifeGoals.introduction')}
                 </p>
 
                 {/* How it works */}
@@ -161,7 +163,7 @@ export default function LifeGoalsPage() {
                   <ol className="space-y-2 text-sm sm:text-base text-text-secondary">
                     <li className="flex items-start gap-2 sm:gap-3">
                       <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-nhs-blue text-white flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0 mt-0.5">1</span>
-                      {t('lifeGoals.howItWorks.step1')}
+                      {tCarer('lifeGoals.howItWorks.step1')}
                     </li>
                     <li className="flex items-start gap-2 sm:gap-3">
                       <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-nhs-blue text-white flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0 mt-0.5">2</span>
@@ -196,7 +198,7 @@ export default function LifeGoalsPage() {
           {/* Category cards */}
           <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
             <h2 className="text-lg sm:text-xl font-bold text-text-primary px-1">
-              {t('lifeGoals.selectCategories')}
+              {tCarer('lifeGoals.selectCategories')}
             </h2>
 
             {GOAL_CATEGORIES.map((cat) => (
@@ -220,7 +222,7 @@ export default function LifeGoalsPage() {
               <div className="text-center sm:text-left">
                 <span className="text-sm sm:text-base text-text-secondary">
                   {selectedGoals.length === 0
-                    ? t('lifeGoals.noGoalsSelected')
+                    ? tCarer('lifeGoals.noGoalsSelected')
                     : t('lifeGoals.goalsSelected', { count: selectedGoals.length })}
                 </span>
               </div>

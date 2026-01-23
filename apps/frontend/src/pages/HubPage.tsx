@@ -19,6 +19,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useCallback } from 'react';
 import { useSession } from '@/context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import LearningProgress from '@/components/LearningProgress';
 import ScenarioExplorer from '@/components/ScenarioExplorer';
 import { DecisionReadinessIndicator, DecisionJournal } from '@/components/decision';
@@ -135,15 +136,14 @@ export default function HubPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { session } = useSession();
+  const { tCarer, isCarer, relationshipLabel } = useCarerText();
   const [activeNavItem, setActiveNavItem] = useState<string>('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const journeyStage = session?.journeyStage;
   const viewedTreatments = session?.viewedTreatments || [];
   const valueRatings = session?.valueRatings || [];
-  const userRole = session?.userRole || 'patient';
   const carerRelationship = session?.carerRelationship;
-  const isCarer = userRole === 'carer';
 
   // Track scroll position for sticky header effects
   useEffect(() => {
@@ -199,21 +199,6 @@ export default function HubPage() {
       'supporting-someone': 'Here are resources to help you support your loved one through their kidney treatment journey.',
     };
     return t('hub.welcome.message', stageMessages[journeyStage || 'newly-diagnosed'] || stageMessages['newly-diagnosed']);
-  };
-
-  // Get relationship display text for carers
-  const getRelationshipText = () => {
-    if (!carerRelationship) return '';
-    const relationships: Record<string, string> = {
-      spouse: t('carerRelationship.spouse', 'Spouse/Partner'),
-      parent: t('carerRelationship.parent', 'Parent'),
-      child: t('carerRelationship.child', 'Child (adult)'),
-      sibling: t('carerRelationship.sibling', 'Sibling'),
-      friend: t('carerRelationship.friend', 'Friend'),
-      professional: t('carerRelationship.professional', 'Professional carer'),
-      other: t('carerRelationship.other', 'Other'),
-    };
-    return relationships[carerRelationship] || '';
   };
 
   return (
@@ -274,15 +259,12 @@ export default function HubPage() {
                     <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isCarer ? 'bg-nhs-pink' : 'bg-nhs-green'}`} />
                   </span>
                   {isCarer
-                    ? t('hub.carer.badge', 'Companion Mode') + (carerRelationship ? ` · ${getRelationshipText()}` : '')
-                    : t('hub.welcome.badge', 'Your personalised journey')
+                    ? t('hub.carer.badge', 'Companion Mode') + (carerRelationship ? ` · ${relationshipLabel}` : '')
+                    : tCarer('hub.welcome.badge', 'Your personalised journey')
                   }
                 </div>
                 <h1 id="welcome-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 sm:mb-5 leading-tight">
-                  {isCarer
-                    ? t('hub.carer.title', 'Supporting Someone Through Their Treatment Journey')
-                    : t('hub.welcome.title', 'Your Personalised Treatment Options')
-                  }
+                  {tCarer('hub.welcome.title', 'Your Personalised Treatment Options')}
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-text-secondary max-w-[700px] leading-relaxed mb-4 sm:mb-5">
                   {getWelcomeMessage()}
@@ -292,7 +274,7 @@ export default function HubPage() {
                     <InfoIcon className="w-4 h-4 text-nhs-blue" />
                   </div>
                   <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                    {t('hub.welcome.reminder', 'Remember, your kidney team will help you make the final decision.')}
+                    {tCarer('hub.welcome.reminder', 'Remember, your kidney team will help you make the final decision.')}
                   </p>
                 </div>
               </div>
@@ -314,10 +296,10 @@ export default function HubPage() {
           </div>
           <div className="flex-1 min-w-0">
             <p className="font-bold text-text-primary mb-1.5 text-sm sm:text-base" id="session-alert-title">
-              {t('hub.alert.title', 'Remember to save your summary')}
+              {tCarer('hub.alert.title', 'Remember to save your summary')}
             </p>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-              {t('hub.alert.message', 'Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration.')}
+              {tCarer('hub.alert.message', 'Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration.')}
             </p>
           </div>
           <Link
@@ -339,7 +321,7 @@ export default function HubPage() {
               {t('hub.pathway.title', 'How would you like to explore?')}
             </h2>
             <p className="text-sm text-text-secondary max-w-md mx-auto">
-              {t('hub.pathway.subtitle', 'Choose the approach that feels right for you')}
+              {tCarer('hub.pathway.subtitle', 'Choose the approach that feels right for you')}
             </p>
           </div>
 
@@ -363,7 +345,7 @@ export default function HubPage() {
                 </div>
                 <div className="flex-1 min-w-0 pt-1">
                   <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-1">
-                    {t('hub.pathway.guided.title', 'Your Recommended Journey')}
+                    {tCarer('hub.pathway.guided.title', 'Your Recommended Journey')}
                   </h3>
                   <p className="text-xs text-nhs-blue font-medium">
                     {t('hub.pathway.guided.time', 'About 15-20 minutes')}
@@ -371,7 +353,7 @@ export default function HubPage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base text-text-secondary mb-4 leading-relaxed">
-                {t('hub.pathway.guided.description', 'Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.')}
+                {tCarer('hub.pathway.guided.description', 'Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.')}
               </p>
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-nhs-blue group-hover:gap-3 transition-all">
@@ -410,7 +392,7 @@ export default function HubPage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base text-text-secondary mb-4 leading-relaxed">
-                {t('hub.pathway.free.description', 'Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.')}
+                {tCarer('hub.pathway.free.description', 'Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.')}
               </p>
               <span className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-nhs-blue group-hover:gap-3 transition-all">
                 {t('hub.pathway.free.action', 'Browse all options')}
@@ -493,9 +475,9 @@ export default function HubPage() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-3">
             <div>
               <h2 id="content-heading" className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary">
-                {t('hub.content.title', 'Tools to Help You Decide')}
+                {tCarer('hub.content.title', 'Tools to Help You Decide')}
               </h2>
-              <p className="text-sm sm:text-base text-text-secondary mt-1.5">{t('hub.content.subtitle', 'Explore each tool to make an informed decision')}</p>
+              <p className="text-sm sm:text-base text-text-secondary mt-1.5">{tCarer('hub.content.subtitle', 'Explore each tool to make an informed decision')}</p>
             </div>
             <div className="flex items-center gap-2 text-xs text-text-muted bg-nhs-pale-grey/50 px-3 py-1.5 rounded-full">
               <span className="w-2 h-2 bg-nhs-green rounded-full" />
@@ -552,7 +534,7 @@ export default function HubPage() {
                       </Link>
                     </h3>
                     <p className="text-sm text-text-secondary leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-3">
-                      {t(card.descriptionKey,
+                      {tCarer(card.descriptionKey,
                         card.id === 'treatments' ? 'Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.' :
                         card.id === 'model' ? 'Explore interactive 3D models showing how different treatments work in your body. See the process visually.' :
                         card.id === 'compare' ? 'See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.' :
@@ -605,10 +587,10 @@ export default function HubPage() {
                 <span>{t('hub.summary.badge', 'Final Step')}</span>
               </div>
               <h2 id="summary-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white leading-tight">
-                {t('hub.summary.title', 'Ready to Review Your Journey?')}
+                {tCarer('hub.summary.title', 'Ready to Review Your Journey?')}
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-lg leading-relaxed">
-                {t('hub.summary.description', 'View everything you have explored and create a summary to share with your kidney team at your next appointment.')}
+                {tCarer('hub.summary.description', 'View everything you have explored and create a summary to share with your kidney team at your next appointment.')}
               </p>
             </div>
             <div className="flex-shrink-0 w-full md:w-auto">
@@ -617,7 +599,7 @@ export default function HubPage() {
                 className="group inline-flex items-center justify-center gap-3 w-full md:w-auto px-6 sm:px-8 py-3.5 sm:py-4 min-h-[52px] bg-white text-nhs-green font-bold text-base sm:text-lg rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-nhs-green"
               >
                 <SummaryIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-                {t('hub.summary.button', 'View Your Summary')}
+                {tCarer('hub.summary.button', 'View Your Summary')}
                 <ChevronRightIcon className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -638,7 +620,7 @@ export default function HubPage() {
               className="group inline-flex items-center justify-center gap-3 px-10 py-3.5 min-h-[50px] bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-bold text-base rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
             >
               <SummaryIcon className="w-5 h-5" />
-              {t('hub.quickAction.summary', 'View Your Summary')}
+              {tCarer('hub.quickAction.summary', 'View Your Summary')}
               <ChevronRightIcon className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

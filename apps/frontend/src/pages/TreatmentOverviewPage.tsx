@@ -16,6 +16,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
+import { useCarerText } from '@/hooks/useCarerText';
 
 /**
  * Configuration data for a treatment card.
@@ -148,6 +149,7 @@ const TREATMENTS: TreatmentCardData[] = [
 export default function TreatmentOverviewPage() {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { tCarer } = useCarerText();
 
   return (
     <main className="min-h-screen bg-bg-page" id="main-content">
@@ -188,7 +190,7 @@ export default function TreatmentOverviewPage() {
                 {t('treatments.title', 'Understanding Kidney Treatment Options')}
               </h1>
               <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-                {t(
+                {tCarer(
                   'treatments.subtitle',
                   'When your kidneys can no longer work well enough on their own, there are several treatment options available. Each option has benefits and considerations, and the right choice depends on your health, lifestyle, and what matters most to you.'
                 )}
@@ -227,7 +229,7 @@ export default function TreatmentOverviewPage() {
               {t('treatments.infoBox.title', 'Your kidney team will guide you')}
             </p>
             <p className="text-sm text-text-secondary leading-relaxed">
-              {t(
+              {tCarer(
                 'treatments.infoBox.text',
                 'This information is to help you understand your options. Your kidney team are the experts in your care and will help you decide which treatment is most suitable for your individual situation.'
               )}
@@ -330,7 +332,7 @@ export default function TreatmentOverviewPage() {
             {t('compare.cta.title', 'Compare All Treatments')}
           </h2>
           <p className="text-text-secondary mb-6 max-w-xl mx-auto">
-            {t(
+            {tCarer(
               'compare.cta.description',
               'See all treatment options side by side to understand how they differ on the factors that matter most to you.'
             )}

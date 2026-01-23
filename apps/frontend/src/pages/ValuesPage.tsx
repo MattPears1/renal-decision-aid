@@ -20,6 +20,7 @@ import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import type { ValueRating } from '@renal-decision-aid/shared-types';
 
 /**
@@ -238,6 +239,7 @@ export default function ValuesPage() {
   const navigate = useNavigate();
   const { session, addValueRating } = useSession();
   const { vibrate } = useHapticFeedback();
+  const { tCarer, isCarer, relationshipLabel } = useCarerText();
 
   const [viewMode, setViewMode] = useState<ViewMode>('intro');
   const [currentStatement, setCurrentStatement] = useState(0);
@@ -476,10 +478,10 @@ export default function ValuesPage() {
                 </div>
 
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 tracking-tight">
-                  {t('values.intro.title', 'What Matters Most to You?')}
+                  {tCarer('values.intro.title', 'What Matters Most to You?')}
                 </h1>
                 <p className="text-base sm:text-lg text-text-secondary mb-6 sm:mb-8 max-w-[600px] mx-auto leading-relaxed">
-                  {t(
+                  {tCarer(
                     'values.intro.description',
                     'Choosing a kidney treatment is a personal decision. This exercise helps you think about your values and priorities so you can discuss them with your kidney team.'
                   )}
@@ -491,10 +493,10 @@ export default function ValuesPage() {
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                     </svg>
-                    {t('values.intro.whyMattersTitle', 'Why Your Values Matter')}
+                    {tCarer('values.intro.whyMattersTitle', 'Why Your Values Matter')}
                   </h2>
                   <p className="text-sm sm:text-base text-text-secondary mb-4">
-                    {t(
+                    {tCarer(
                       'values.intro.whyMattersText',
                       'Every kidney treatment has different effects on your daily life. Understanding what matters most to you helps identify which treatment options might suit you best.'
                     )}
@@ -504,19 +506,19 @@ export default function ValuesPage() {
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-green flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                       </svg>
-                      {t('values.intro.benefit1', 'See how each treatment aligns with your priorities')}
+                      {tCarer('values.intro.benefit1', 'See how each treatment aligns with your priorities')}
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-green flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                       </svg>
-                      {t('values.intro.benefit2', 'Prepare for conversations with your kidney team')}
+                      {tCarer('values.intro.benefit2', 'Prepare for conversations with your kidney team')}
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-green flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                       </svg>
-                      {t('values.intro.benefit3', 'Feel more confident in your decision-making')}
+                      {tCarer('values.intro.benefit3', 'Feel more confident in your decision-making')}
                     </li>
                   </ul>
                 </div>
@@ -1011,10 +1013,10 @@ export default function ValuesPage() {
                 </svg>
               </div>
               <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-4">
-                {t('values.results.title', 'Your Values Profile')}
+                {tCarer('values.results.title', 'Your Values Profile')}
               </h1>
               <p className="text-sm sm:text-lg text-text-secondary max-w-lg mx-auto">
-                {t('values.results.description', 'Based on your responses, here is what matters most to you and how treatments align with your values.')}
+                {tCarer('values.results.description', 'Based on your responses, here is what matters most to you and how treatments align with your values.')}
               </p>
             </header>
 
@@ -1050,7 +1052,7 @@ export default function ValuesPage() {
               </h2>
 
               <p className="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6">
-                {t('values.results.treatmentAlignmentDesc', 'Based on your priorities, here is how each treatment aligns with what matters to you.')}
+                {tCarer('values.results.treatmentAlignmentDesc', 'Based on your priorities, here is how each treatment aligns with what matters to you.')}
               </p>
 
               <div className="space-y-3 sm:space-y-4">
@@ -1118,7 +1120,7 @@ export default function ValuesPage() {
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 </div>
-                {t('values.results.topPriorities', 'Your Top Priorities')}
+                {tCarer('values.results.topPriorities', 'Your Top Priorities')}
               </h2>
               <div className="space-y-2 sm:space-y-3">
                 {topPriorities.map((priority, index) => {
@@ -1164,7 +1166,7 @@ export default function ValuesPage() {
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
               </div>
-              {t('values.results.allValues', 'All Your Values')}
+              {tCarer('values.results.allValues', 'All Your Values')}
             </h2>
 
             {/* Group by category */}
@@ -1225,7 +1227,7 @@ export default function ValuesPage() {
                 }}
                 className="px-4 sm:px-6 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-xl hover:bg-nhs-blue hover:text-white active:scale-95 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[52px] touch-manipulation"
               >
-                {t('values.results.editValues', 'Edit Your Values')}
+                {tCarer('values.results.editValues', 'Edit Your Values')}
               </button>
               <Link
                 to="/compare"
@@ -1237,7 +1239,7 @@ export default function ValuesPage() {
                 to="/summary"
                 className="px-4 sm:px-6 py-3 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 active:scale-95 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[52px] touch-manipulation text-center no-underline inline-flex items-center justify-center"
               >
-                {t('values.results.addToSummary', 'Add to My Summary')}
+                {tCarer('values.results.addToSummary', 'Add to My Summary')}
               </Link>
             </div>
 

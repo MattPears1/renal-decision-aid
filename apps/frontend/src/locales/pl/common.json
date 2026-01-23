@@ -146,7 +146,15 @@
     "sibling": "Rodzeństwo",
     "friend": "Przyjaciel",
     "professional": "Profesjonalny opiekun",
-    "other": "Inne"
+    "other": "Inne",
+    "thePerson": "osoba, ktorą wspierasz"
+  },
+  "pronouns": {
+    "you": "ty",
+    "your": "twoj",
+    "they": "oni",
+    "their": "ich",
+    "them": "im"
   },
   "privacy": {
     "pageAriaLabel": "Informacje o prywatności",
@@ -263,9 +271,12 @@
   },
   "journey": {
     "title": "Na jakim etapie jesteś w swojej podróży z opieką nerkową?",
+    "title_carer": "Na jakim etapie jest {{relationship}} w swojej podróży z opieką nerkową?",
     "subtitle": "Wybierz opcję, która najlepiej opisuje Twoją sytuację",
+    "subtitle_carer": "Wybierz opcję, która najlepiej opisuje jego/jej sytuację",
     "instruction": "Wybierz opcję, która najlepiej opisuje Twoją obecną sytuację",
     "intro": "Podróż każdego z neframi jest inna. Aby pomóc nam pokazać Ci najbardziej odpowiednie informacje, powiedz nam, gdzie teraz jesteś. Nie ma dobrych ani złych odpowiedzi.",
+    "intro_carer": "Podróż każdego z nerkami jest inna. Powiedz nam, gdzie teraz jest {{relationship}}.",
     "error": "Proszę wybrać opcję opisującą Twoją sytuację. Jeśli żadna nie pasuje, wybierz \"Wspieram członka rodziny lub przyjaciela\", aby kontynuować.",
     "formLabel": "Opcje etapu podróży",
     "legendLabel": "Wybierz, na jakim etapie jesteś w swojej podróży z nerkami",
@@ -277,26 +288,33 @@
     "stages": {
       "suspected": {
         "title": "Myślę, że mogę mieć chorobę nerek",
-        "description": "Martwisz się o zdrowie swoich nerek i chcesz dowiedzieć się więcej o tym, co oznacza choroba nerek."
+        "title_carer": "On/Ona może mieć chorobę nerek",
+        "description": "Martwisz się o zdrowie swoich nerek i chcesz dowiedzieć się więcej o tym, co oznacza choroba nerek.",
+        "description_carer": "On/Ona martwi się o zdrowie swoich nerek."
       },
       "earlyDiagnosis": {
         "title": "Właśnie otrzymałem diagnozę - wczesne stadium PChN",
+        "title_carer": "Niedawno zdiagnozowany - wczesne stadium PChN",
         "description": "Niedawno dowiedziałeś się o swojej chorobie nerek i chcesz zrozumieć, co to dla Ciebie oznacza."
       },
       "lateDiagnosis": {
         "title": "Mam diagnozę - późne stadium PChN",
+        "title_carer": "Zdiagnozowany - późne stadium PChN",
         "description": "Funkcja Twoich nerek znacznie się pogorszyła i wkrótce możesz musieć pomyśleć o opcjach leczenia."
       },
       "choosingTreatment": {
         "title": "Muszę wkrótce wybrać leczenie",
+        "title_carer": "On/Ona musi wkrótce wybrać leczenie",
         "description": "Twój zespół nefrologiczny powiedział Ci, że będziesz musiał rozpocząć leczenie w nadchodzących miesiącach i chcesz poznać swoje opcje."
       },
       "transplantPending": {
         "title": "Czeka mnie przeszczep - chcę dowiedzieć się więcej",
+        "title_carer": "Czeka go/ją przeszczep",
         "description": "Jesteś na liście przeszczepów lub masz żywego dawcę i chcesz wiedzieć, czego się spodziewać."
       },
       "dialysisPending": {
         "title": "Zaczynam dializę - chcę dowiedzieć się więcej",
+        "title_carer": "On/Ona zaczyna dializę",
         "description": "Wkrótce rozpoczniesz leczenie dializami i chcesz zrozumieć różne rodzaje oraz jak będzie wyglądać codzienne życie."
       },
       "supporting": {
@@ -320,7 +338,9 @@
   "questionnaire": {
     "intro": {
       "title": "Opowiedz nam o sobie",
+      "title_carer": "Opowiedz nam o {{relationship}}",
       "description": "Te pytania pomagają nam pokazać informacje najbardziej odpowiednie dla Twojej sytuacji. Twoje odpowiedzi są prywatne i nie zostaną zapisane po tej sesji.",
+      "description_carer": "Te pytania pomagają nam pokazać informacje najbardziej odpowiednie dla jego/jej sytuacji.",
       "features": {
         "questions": "7 szybkich pytań",
         "time": "Zajmuje 3-5 minut",

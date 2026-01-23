@@ -19,6 +19,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '@/context/SessionContext';
+import { useCarerText } from '@/hooks/useCarerText';
 import {
   NHSLogoIcon,
   CalendarIcon,
@@ -58,9 +59,8 @@ export default function SummaryPage() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { session, endSession } = useSession();
+  const { tCarer, isCarer } = useCarerText();
   const [linkCopied, setLinkCopied] = useState(false);
-  const userRole = session?.userRole || 'patient';
-  const isCarer = userRole === 'carer';
 
   /**
    * Triggers the browser print dialog.
@@ -197,7 +197,7 @@ export default function SummaryPage() {
                   {t('summary.readyToReview')}
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-2 sm:mb-3">
-                  {t('summary.title', 'Your Session Summary')}
+                  {tCarer('summary.title', 'Your Session Summary')}
                 </h1>
                 <p className="text-sm sm:text-base text-text-secondary flex items-center gap-2">
                   <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -236,7 +236,7 @@ export default function SummaryPage() {
           <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue/5 to-transparent border-b border-nhs-pale-grey print:bg-gray-50">
             <h2 id="progress-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2">
               <ProgressIcon className="w-5 h-5 text-nhs-blue" />
-              {t('summary.progressOverview.title', 'Your Journey Progress')}
+              {tCarer('summary.progressOverview.title', 'Your Journey Progress')}
             </h2>
           </div>
           <div className="p-4 sm:p-6">
@@ -251,13 +251,13 @@ export default function SummaryPage() {
               <ProgressCard
                 icon={<HeartIcon className="w-5 h-5" />}
                 value={progressStats.topPriorities.toString()}
-                label={t('summary.progressOverview.valuesIdentified')}
+                label={tCarer('summary.progressOverview.valuesIdentified')}
                 color="pink"
               />
               <ProgressCard
                 icon={<QuestionIcon className="w-5 h-5" />}
                 value={progressStats.questionsCount.toString()}
-                label={t('summary.progressOverview.questionsReady')}
+                label={tCarer('summary.progressOverview.questionsReady')}
                 color="yellow"
               />
               <ProgressCard
@@ -278,7 +278,7 @@ export default function SummaryPage() {
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-blue/10 rounded-lg sm:rounded-xl flex items-center justify-center">
                 <JourneyIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-blue" />
               </div>
-              {t('summary.sections.journey', 'Your Journey Stage')}
+              {tCarer('summary.sections.journey', 'Your Journey Stage')}
             </h2>
             <Link
               to="/journey"
@@ -316,7 +316,7 @@ export default function SummaryPage() {
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-pink/10 rounded-lg sm:rounded-xl flex items-center justify-center">
                 <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-pink" />
               </div>
-              {t('summary.sections.priorities', 'Your Priorities')}
+              {tCarer('summary.sections.priorities', 'Your Priorities')}
             </h2>
             <Link
               to="/values"
@@ -448,10 +448,10 @@ export default function SummaryPage() {
             <div className="text-center md:text-left">
               <h2 id="share-team-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-2 flex items-center justify-center md:justify-start gap-2">
                 <TeamIcon className="w-6 h-6 text-nhs-blue" />
-                {t('summary.shareWithTeam.title', 'Share with Your Kidney Team')}
+                {tCarer('summary.shareWithTeam.title', 'Share with Your Kidney Team')}
               </h2>
               <p className="text-sm sm:text-base text-text-secondary mb-5">
-                {t('summary.shareWithTeam.description', 'Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.')}
+                {tCarer('summary.shareWithTeam.description', 'Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.')}
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center md:justify-start print:hidden">
                 <button

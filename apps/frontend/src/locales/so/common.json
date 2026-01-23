@@ -148,7 +148,15 @@
     "sibling": "Walaal",
     "friend": "Saaxiib",
     "professional": "Daryeele xirfadle ah",
-    "other": "Mid kale"
+    "other": "Mid kale",
+    "thePerson": "qofka aad taageereyso"
+  },
+  "pronouns": {
+    "you": "adiga",
+    "your": "kaaga",
+    "they": "iyaga",
+    "their": "kooda",
+    "them": "iyaga"
   },
   "privacy": {
     "pageAriaLabel": "Macluumaadka garashaanta",
@@ -229,9 +237,12 @@
   },
   "journey": {
     "title": "Halkee Ku Jirtaa Safarka Daryeelka Keliyahaaga?",
+    "title_carer": "Halkee {{relationship}} Ku Jirtaa Safarka Daryeelka Keliyahooda?",
     "subtitle": "Dooro doorashada ugu fiican ee tilmaamaysa xaaladaada",
+    "subtitle_carer": "Dooro doorashada ugu fiican ee tilmaamaysa xaaladooda",
     "instruction": "Dooro doorashada ugu fiican ee tilmaamaysa xaaladaada hadda",
     "intro": "Safarka keliyaha qof kasta way ka duwan tahay. Si aan kuu tusno macluumaadka ugu khuseeya, fadlan noo sheeg halka aad hadda joogto. Ma jiraan jawaabo sax ama qalad ah.",
+    "intro_carer": "Safarka keliyaha qof kasta way ka duwan tahay. Fadlan noo sheeg halka {{relationship}} hadda joogo.",
     "error": "Fadlan dooro doorashada tilmaamaysa xaaladaada. Haddii midkoodna uusan kuugu habboonayn, dooro \"Waxaan taageero qof qoyska ah ama saaxiib\" si aad u sii waddo.",
     "formLabel": "Doorashooyinka marxalada safarka",
     "legendLabel": "Dooro halka aad ku jirto safarkaaga keliyaha",
@@ -243,26 +254,33 @@
     "stages": {
       "suspected": {
         "title": "Waxaan u maleynayaa inaan qabo cudurka keliyaha",
-        "description": "Waxaad ka walaacsantahay caafimaadka keliyahaaga oo waxaad rabtaa inaad wax badan ka barato waxa uu yahay cudurka keliyaha."
+        "title_carer": "Waxay u maleynayaan inay qabaan cudurka keliyaha",
+        "description": "Waxaad ka walaacsantahay caafimaadka keliyahaaga oo waxaad rabtaa inaad wax badan ka barato waxa uu yahay cudurka keliyaha.",
+        "description_carer": "Waxay ka walaacsanyihiin caafimaadkooda keliyaha."
       },
       "earlyDiagnosis": {
         "title": "Ayaa hadda la ii ogaaday - CKD marxaladdiisa hore",
+        "title_carer": "Dhawaan la ogaaday - CKD marxaladdiisa hore",
         "description": "Dhawaan ayaad wax ka baratay xaaladda keliyahaaga waxaadna rabtaa inaad fahamto waxa ay tani kuu tahay."
       },
       "lateDiagnosis": {
         "title": "Waa la ii ogaaday - CKD marxaladdiisa dambe",
+        "title_carer": "Waa la ogaaday - CKD marxaladdiisa dambe",
         "description": "Shaqada keliyahaagu aad ayay u hoos u dhacday waxaana laga yaabaa inaad u baahan tahay inaad ka fikirto doorashooyinka daaweynta dhowaan."
       },
       "choosingTreatment": {
         "title": "Waxaan u baahanahay inaan dhowaan dooro daaweyn",
+        "title_carer": "Waxay u baahanyihiin inay dhowaan dooraan daaweyn",
         "description": "Kooxda keliyahaagu waxay kuu sheegeen inaad u baahan doonto inaad bilowdo daaweyn bilaha soo socda waxaadna rabtaa inaad wax ka barato doorashooyinkaaga."
       },
       "transplantPending": {
         "title": "Waxaan samayn doonaa beddelid - waxaan rabaa inaan wax badan ka baro",
+        "title_carer": "Waxay samayn doonaan beddelid",
         "description": "Waxaad ku jirtaa liiska sugitaanka bedddelida ama waxaad leedahay deeq bixiye nool oo la habeeyey waxaadna rabtaa inaad wax badan ka ogaato waxa la filaayo."
       },
       "dialysisPending": {
         "title": "Waxaan bilaabi doonaa dialysis - waxaan rabaa inaan wax badan ka baro",
+        "title_carer": "Waxay bilaabi doonaan dialysis",
         "description": "Dhowaan ayaad bilaabi doontaa daaweynta dialysis-ka waxaadna rabtaa inaad fahamto noocyada kala duwan iyo sida nolasha maalinlaha ahi u noqon doonto."
       },
       "supporting": {
@@ -286,7 +304,9 @@
   "questionnaire": {
     "intro": {
       "title": "Noo Sheeg Wax ku Saabsan Naftaada",
+      "title_carer": "Noo Sheeg Wax ku Saabsan {{relationship}}",
       "description": "Su'aalahani waxay naga caawiyaan inaan kuu tusno macluumaadka ugu khuseeya xaaladaada. Jawaabahaagu waa qarsoodi mana la kaydiyo ka dib kulankan.",
+      "description_carer": "Su'aalahani waxay naga caawiyaan inaan tusno macluumaadka ugu khuseeya xaaladooda.",
       "features": {
         "questions": "7 su'aalood oo dhakhso ah",
         "time": "Waxay qaadataa 3-5 daqiiqo",

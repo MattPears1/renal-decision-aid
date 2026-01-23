@@ -146,7 +146,15 @@
     "sibling": "Anh chị em",
     "friend": "Bạn bè",
     "professional": "Người chăm sóc chuyên nghiệp",
-    "other": "Khác"
+    "other": "Khác",
+    "thePerson": "người bạn đang hỗ trợ"
+  },
+  "pronouns": {
+    "you": "bạn",
+    "your": "của bạn",
+    "they": "họ",
+    "their": "của họ",
+    "them": "họ"
   },
   "privacy": {
     "pageAriaLabel": "Thông tin về quyền riêng tư",
@@ -227,41 +235,61 @@
   },
   "journey": {
     "title": "Bạn đang ở đâu trong hành trình chăm sóc thận?",
+    "title_carer": "{{relationship}} đang ở đâu trong hành trình chăm sóc thận?",
     "subtitle": "Chọn tùy chọn mô tả đúng nhất tình huống của bạn",
+    "subtitle_carer": "Chọn tùy chọn mô tả đúng nhất tình huống của họ",
     "instruction": "Chọn tùy chọn mô tả đúng nhất tình huống hiện tại của bạn",
+    "instruction_carer": "Chọn tùy chọn mô tả đúng nhất tình huống hiện tại của họ",
     "intro": "Hành trình thận của mỗi người là khác nhau. Để giúp chúng tôi hiển thị thông tin phù hợp nhất, vui lòng cho chúng tôi biết bạn đang ở đâu ngay bây giờ. Không có câu trả lời đúng hay sai.",
+    "intro_carer": "Hành trình thận của mỗi người là khác nhau. Để hiển thị thông tin phù hợp nhất, vui lòng cho chúng tôi biết {{relationship}} đang ở đâu ngay bây giờ.",
     "error": "Vui lòng chọn một tùy chọn mô tả tình huống của bạn. Nếu không có tùy chọn nào phù hợp, hãy chọn \"Tôi đang hỗ trợ một thành viên trong gia đình hoặc bạn bè\" để tiếp tục.",
+    "error_carer": "Vui lòng chọn một tùy chọn mô tả tình huống của họ.",
     "formLabel": "Các tùy chọn giai đoạn hành trình",
     "legendLabel": "Chọn bạn đang ở đâu trong hành trình thận",
+    "legendLabel_carer": "Chọn {{relationship}} đang ở đâu trong hành trình thận",
     "radioGroupLabel": "Các tùy chọn giai đoạn hành trình",
     "listenToQuestion": "Nghe câu hỏi này",
     "audioText": "Bạn đang ở đâu trong hành trình của mình? Chọn tùy chọn mô tả đúng nhất tình huống của bạn.",
+    "audioText_carer": "{{relationship}} đang ở đâu trong hành trình của họ? Chọn tùy chọn mô tả đúng nhất tình huống của họ.",
     "reassurance": "Đừng lo lắng nếu bạn không chắc tùy chọn nào phù hợp nhất. Bạn luôn có thể khám phá tất cả các lựa chọn điều trị sau đó, và đội ngũ thận của bạn có thể giúp làm rõ tình huống của bạn. Lựa chọn của bạn giúp chúng tôi hiển thị thông tin phù hợp nhất trước.",
+    "reassurance_carer": "Đừng lo lắng nếu bạn không chắc tùy chọn nào phù hợp nhất. Bạn luôn có thể khám phá tất cả các lựa chọn điều trị sau đó, và đội ngũ thận có thể giúp làm rõ tình huống.",
     "needHelp": "Tôi cần trợ giúp để chọn",
     "stages": {
       "suspected": {
         "title": "Tôi nghĩ tôi có thể bị bệnh thận",
-        "description": "Bạn lo lắng về sức khỏe thận của mình và muốn tìm hiểu thêm về bệnh thận là gì."
+        "title_carer": "Họ có thể bị bệnh thận",
+        "description": "Bạn lo lắng về sức khỏe thận của mình và muốn tìm hiểu thêm về bệnh thận là gì.",
+        "description_carer": "Họ lo lắng về sức khỏe thận của mình."
       },
       "earlyDiagnosis": {
         "title": "Tôi vừa được chẩn đoán - bệnh thận mạn giai đoạn sớm",
-        "description": "Bạn mới biết về tình trạng thận của mình và muốn hiểu điều này có nghĩa gì với bạn."
+        "title_carer": "Mới được chẩn đoán - bệnh thận mạn giai đoạn sớm",
+        "description": "Bạn mới biết về tình trạng thận của mình và muốn hiểu điều này có nghĩa gì với bạn.",
+        "description_carer": "Họ mới biết về tình trạng thận và muốn hiểu điều này có nghĩa gì với họ."
       },
       "lateDiagnosis": {
         "title": "Tôi đã được chẩn đoán - bệnh thận mạn giai đoạn muộn",
-        "description": "Chức năng thận của bạn đã suy giảm đáng kể và bạn có thể cần suy nghĩ về các lựa chọn điều trị sớm."
+        "title_carer": "Đã được chẩn đoán - bệnh thận mạn giai đoạn muộn",
+        "description": "Chức năng thận của bạn đã suy giảm đáng kể và bạn có thể cần suy nghĩ về các lựa chọn điều trị sớm.",
+        "description_carer": "Chức năng thận của họ đã suy giảm đáng kể và họ có thể cần suy nghĩ về các lựa chọn điều trị sớm."
       },
       "choosingTreatment": {
         "title": "Tôi cần chọn phương pháp điều trị sớm",
-        "description": "Đội ngũ thận của bạn đã cho bạn biết rằng bạn sẽ cần bắt đầu điều trị trong những tháng tới và bạn muốn tìm hiểu về các lựa chọn của mình."
+        "title_carer": "Họ cần chọn phương pháp điều trị sớm",
+        "description": "Đội ngũ thận của bạn đã cho bạn biết rằng bạn sẽ cần bắt đầu điều trị trong những tháng tới và bạn muốn tìm hiểu về các lựa chọn của mình.",
+        "description_carer": "Đội ngũ thận đã cho họ biết rằng họ sẽ cần bắt đầu điều trị trong những tháng tới."
       },
       "transplantPending": {
         "title": "Tôi sắp được ghép thận - muốn tìm hiểu thêm",
-        "description": "Bạn đang trong danh sách chờ ghép hoặc có người hiến tặng sống và muốn biết thêm về những gì sẽ xảy ra."
+        "title_carer": "Họ sắp được ghép thận",
+        "description": "Bạn đang trong danh sách chờ ghép hoặc có người hiến tặng sống và muốn biết thêm về những gì sẽ xảy ra.",
+        "description_carer": "Họ đang trong danh sách chờ ghép hoặc có người hiến tặng sống."
       },
       "dialysisPending": {
         "title": "Tôi sắp bắt đầu lọc máu - muốn tìm hiểu thêm",
-        "description": "Bạn sẽ sớm bắt đầu điều trị lọc máu và muốn hiểu các loại khác nhau và cuộc sống hàng ngày sẽ như thế nào."
+        "title_carer": "Họ sắp bắt đầu lọc máu",
+        "description": "Bạn sẽ sớm bắt đầu điều trị lọc máu và muốn hiểu các loại khác nhau và cuộc sống hàng ngày sẽ như thế nào.",
+        "description_carer": "Họ sẽ sớm bắt đầu điều trị lọc máu."
       },
       "supporting": {
         "title": "Tôi đang hỗ trợ một thành viên trong gia đình hoặc bạn bè",
@@ -284,7 +312,9 @@
   "questionnaire": {
     "intro": {
       "title": "Hãy cho chúng tôi biết về bạn",
+      "title_carer": "Hãy cho chúng tôi biết về {{relationship}}",
       "description": "Những câu hỏi này giúp chúng tôi hiển thị thông tin phù hợp nhất với tình huống của bạn. Câu trả lời của bạn là riêng tư và sẽ không được lưu sau phiên này.",
+      "description_carer": "Những câu hỏi này giúp chúng tôi hiển thị thông tin phù hợp nhất với tình huống của họ. Câu trả lời của bạn là riêng tư và sẽ không được lưu.",
       "features": {
         "questions": "7 câu hỏi nhanh",
         "time": "Mất 3-5 phút",

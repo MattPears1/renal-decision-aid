@@ -146,7 +146,15 @@
     "sibling": "Irmao/Irma",
     "friend": "Amigo/a",
     "professional": "Cuidador profissional",
-    "other": "Outro"
+    "other": "Outro",
+    "thePerson": "a pessoa que esta a apoiar"
+  },
+  "pronouns": {
+    "you": "voce",
+    "your": "o seu",
+    "they": "eles",
+    "their": "o seu/a sua",
+    "them": "eles/elas"
   },
   "privacy": {
     "pageAriaLabel": "Informacao de privacidade",
@@ -227,9 +235,12 @@
   },
   "journey": {
     "title": "Onde Esta no Seu Percurso de Cuidados Renais?",
+    "title_carer": "Onde Esta {{relationship}} no Seu Percurso de Cuidados Renais?",
     "subtitle": "Selecione a opcao que melhor descreve a sua situacao",
+    "subtitle_carer": "Selecione a opcao que melhor descreve a situacao dele/dela",
     "instruction": "Selecione a opcao que melhor descreve a sua situacao atual",
     "intro": "O percurso renal de cada pessoa e diferente. Para nos ajudar a mostrar-lhe a informacao mais relevante, por favor diga-nos onde esta agora. Nao ha respostas certas nem erradas.",
+    "intro_carer": "O percurso renal de cada pessoa e diferente. Por favor, diga-nos onde {{relationship}} esta agora.",
     "error": "Por favor, selecione uma opcao que descreva a sua situacao. Se nenhuma se aplicar, selecione \"Estou a apoiar um familiar ou amigo\" para continuar.",
     "formLabel": "Opcoes de fase do percurso",
     "legendLabel": "Selecione onde esta no seu percurso renal",
@@ -241,26 +252,33 @@
     "stages": {
       "suspected": {
         "title": "Penso que posso ter doenca renal",
-        "description": "Esta preocupado com a sua saude renal e quer saber mais sobre o que significa a doenca renal."
+        "title_carer": "Ele/Ela pode ter doenca renal",
+        "description": "Esta preocupado com a sua saude renal e quer saber mais sobre o que significa a doenca renal.",
+        "description_carer": "Ele/Ela esta preocupado com a saude renal."
       },
       "earlyDiagnosis": {
         "title": "Acabei de ser diagnosticado - DRC em fase inicial",
+        "title_carer": "Recentemente diagnosticado - DRC em fase inicial",
         "description": "Soube recentemente da sua condicao renal e quer compreender o que isto significa para si."
       },
       "lateDiagnosis": {
         "title": "Fui diagnosticado - DRC em fase avancada",
+        "title_carer": "Diagnosticado - DRC em fase avancada",
         "description": "A sua funcao renal diminuiu significativamente e pode precisar de pensar em opcoes de tratamento em breve."
       },
       "choosingTreatment": {
         "title": "Preciso de escolher um tratamento em breve",
+        "title_carer": "Ele/Ela precisa de escolher um tratamento em breve",
         "description": "A sua equipa renal disse-lhe que vai precisar de iniciar tratamento nos proximos meses e quer conhecer as suas opcoes."
       },
       "transplantPending": {
         "title": "Vou fazer um transplante - quero saber mais",
+        "title_carer": "Ele/Ela vai fazer um transplante",
         "description": "Esta na lista de transplante ou tem um dador vivo alinhado e quer saber mais sobre o que esperar."
       },
       "dialysisPending": {
         "title": "Vou iniciar dialise - quero saber mais",
+        "title_carer": "Ele/Ela vai iniciar dialise",
         "description": "Vai comecar tratamento de dialise em breve e quer compreender os diferentes tipos e como sera a vida diaria."
       },
       "supporting": {
@@ -284,7 +302,9 @@
   "questionnaire": {
     "intro": {
       "title": "Fale-nos Sobre Si",
+      "title_carer": "Fale-nos Sobre {{relationship}}",
       "description": "Estas perguntas ajudam-nos a mostrar-lhe informação mais relevante para a sua situação. As suas respostas são privadas e não serão guardadas após esta sessão.",
+      "description_carer": "Estas perguntas ajudam-nos a mostrar informacao mais relevante para a situacao dele/dela.",
       "features": {
         "questions": "7 perguntas rápidas",
         "time": "Demora 3-5 minutos",

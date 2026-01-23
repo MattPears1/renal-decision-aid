@@ -75,14 +75,19 @@
     "title": "Kidney Treatment Decision Aid",
     "subtitle": "NHS Renal Services",
     "description": "This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.",
+    "description_carer": "This tool will help them understand their kidney treatment options and think about what matters most to them. Take your time - there are no right or wrong answers.",
     "startButton": "Start Your Journey",
+    "startButton_carer": "Start Supporting Them",
     "startButtonAriaLabel": "Start your kidney treatment decision journey",
+    "startButtonAriaLabel_carer": "Start supporting them on their kidney treatment decision journey",
     "learnMore": "Learn More About Kidney Disease",
     "heroAriaLabel": "Welcome section",
     "scrollDown": "Scroll to learn more",
     "featuresLabel": "How It Works",
     "featuresHeading": "How This Tool Helps You",
+    "featuresHeading_carer": "How This Tool Helps Them",
     "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
+    "featuresSubheading_carer": "Everything you need to help them make an informed decision about their kidney treatment",
     "features": {
       "time": {
         "title": "Takes About 15 Minutes",
@@ -90,7 +95,9 @@
       },
       "privacy": {
         "title": "Your Privacy Protected",
-        "description": "No personal information is stored. Your answers help personalise the tool during this session only."
+        "title_carer": "Their Privacy Protected",
+        "description": "No personal information is stored. Your answers help personalise the tool during this session only.",
+        "description_carer": "No personal information is stored. Their answers help personalise the tool during this session only."
       },
       "devices": {
         "title": "Works on All Devices",
@@ -98,12 +105,17 @@
       }
     },
     "yourJourney": "Your Journey",
+    "yourJourney_carer": "Their Journey",
     "aboutHeading": "What This Tool Does",
     "aboutSubheading": "Three simple steps to help you understand your options",
+    "aboutSubheading_carer": "Three simple steps to help them understand their options",
     "about": {
       "paragraph1": "This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
+      "paragraph1_carer": "This decision aid will help them explore the different treatment options available for kidney failure. They can learn about each treatment at their own pace, think about what matters most to them, and create a summary to share with their doctor or nurse.",
       "paragraph2": "You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
+      "paragraph2_carer": "You will answer a few simple questions about their situation, then explore treatments that may be suitable for them. The information stays private and is not saved after you close the browser.",
       "paragraph3": "This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you.",
+      "paragraph3_carer": "This tool does not replace medical advice from their healthcare team. It is designed to help them feel more informed and confident when discussing their options. Their kidney team are the experts in their care and will help them make the right decision.",
       "steps": {
         "learn": {
           "title": "Learn"
@@ -126,7 +138,8 @@
       "privateSecure": "Private & Secure"
     },
     "ctaHeading": "Ready to Begin?",
-    "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break."
+    "ctaDescription": "Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break.",
+    "ctaDescription_carer": "Take the first step towards understanding their kidney treatment options. You can start now and come back later if you need a break."
   },
   "language": {
     "title": "Choose Your Language",
@@ -202,41 +215,61 @@
   },
   "journey": {
     "title": "Where Are You in Your Kidney Care Journey?",
+    "title_carer": "Where is {{relationship}} in Their Kidney Care Journey?",
     "subtitle": "Select the option that best describes your situation",
+    "subtitle_carer": "Select the option that best describes their situation",
     "instruction": "Select the option that best describes your current situation",
+    "instruction_carer": "Select the option that best describes their current situation",
     "intro": "Everyone's kidney journey is different. To help us show you the most relevant information, please tell us where you are right now. There are no right or wrong answers.",
+    "intro_carer": "Everyone's kidney journey is different. To help us show the most relevant information, please tell us where {{relationship}} is right now.",
     "error": "Please select an option that describes your situation. If none of these fit, select \"I am supporting a family member or friend\" to continue.",
+    "error_carer": "Please select an option that describes their situation.",
     "formLabel": "Journey stage options",
     "legendLabel": "Select where you are in your kidney journey",
+    "legendLabel_carer": "Select where {{relationship}} is in their kidney journey",
     "radioGroupLabel": "Journey stage options",
     "listenToQuestion": "Listen to this question",
     "audioText": "Where are you in your journey? Select the option that best describes your situation.",
+    "audioText_carer": "Where is {{relationship}} in their journey? Select the option that best describes their situation.",
     "reassurance": "Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.",
+    "reassurance_carer": "Don't worry if you're unsure which option fits best. You can always explore all treatment options later, and their kidney team can help clarify the situation.",
     "needHelp": "I need help choosing",
     "stages": {
       "suspected": {
         "title": "I think I may have kidney disease",
-        "description": "You are concerned about your kidney health and want to learn more about what kidney disease means."
+        "title_carer": "They may have kidney disease",
+        "description": "You are concerned about your kidney health and want to learn more about what kidney disease means.",
+        "description_carer": "They are concerned about their kidney health and want to learn more about what kidney disease means."
       },
       "earlyDiagnosis": {
         "title": "I've just been diagnosed - early stage CKD",
-        "description": "You have recently learned about your kidney condition and want to understand what this means for you."
+        "title_carer": "Recently diagnosed - early stage CKD",
+        "description": "You have recently learned about your kidney condition and want to understand what this means for you.",
+        "description_carer": "They have recently learned about their kidney condition and want to understand what this means for them."
       },
       "lateDiagnosis": {
         "title": "I've been diagnosed - late stage CKD",
-        "description": "Your kidney function has declined significantly and you may need to think about treatment options soon."
+        "title_carer": "Diagnosed - late stage CKD",
+        "description": "Your kidney function has declined significantly and you may need to think about treatment options soon.",
+        "description_carer": "Their kidney function has declined significantly and they may need to think about treatment options soon."
       },
       "choosingTreatment": {
         "title": "I need to choose a treatment soon",
-        "description": "Your kidney team has told you that you will need to start treatment in the coming months and you want to learn about your options."
+        "title_carer": "They need to choose a treatment soon",
+        "description": "Your kidney team has told you that you will need to start treatment in the coming months and you want to learn about your options.",
+        "description_carer": "Their kidney team has told them that they will need to start treatment in the coming months."
       },
       "transplantPending": {
         "title": "I'm due to have a transplant - want to learn more",
-        "description": "You are on the transplant list or have a living donor lined up and want to know more about what to expect."
+        "title_carer": "They're due to have a transplant",
+        "description": "You are on the transplant list or have a living donor lined up and want to know more about what to expect.",
+        "description_carer": "They are on the transplant list or have a living donor lined up."
       },
       "dialysisPending": {
         "title": "I'm due to start dialysis - want to learn more",
-        "description": "You will be starting dialysis treatment soon and want to understand the different types and what daily life will be like."
+        "title_carer": "They're due to start dialysis",
+        "description": "You will be starting dialysis treatment soon and want to understand the different types and what daily life will be like.",
+        "description_carer": "They will be starting dialysis treatment soon."
       },
       "supporting": {
         "title": "I'm supporting a family member or friend",
@@ -259,7 +292,9 @@
   "questionnaire": {
     "intro": {
       "title": "Tell Us About Yourself",
+      "title_carer": "Tell Us About {{relationship}}",
       "description": "These questions help us show you information that is most relevant to your situation. Your answers are private and will not be saved after this session.",
+      "description_carer": "These questions help us show information most relevant to their situation. Your answers are private and will not be saved.",
       "features": {
         "questions": "7 quick questions",
         "time": "Takes 3-5 minutes",
@@ -425,9 +460,12 @@
     "subtitle": "Based on your responses, here's what we recommend exploring.",
     "welcome": {
       "title": "Your Personalised Treatment Options",
+      "title_carer": "Supporting Someone Through Their Treatment Journey",
       "message": "Based on what you have told us, here are resources to help you understand your kidney condition and explore your options.",
       "reminder": "Remember, your kidney team will help you make the final decision.",
-      "badge": "Your personalised journey"
+      "reminder_carer": "Remember, their kidney team will help them make the final decision.",
+      "badge": "Your personalised journey",
+      "badge_carer": "Their personalised journey"
     },
     "session": {
       "timeRemaining": "Session time remaining:",
@@ -440,50 +478,63 @@
     },
     "alert": {
       "title": "Remember to save your summary",
+      "title_carer": "Remember to save their summary",
       "message": "Your information will not be saved after this session. Create a summary before you leave to keep a record of your exploration.",
+      "message_carer": "Their information will not be saved after this session. Create a summary before you leave to keep a record of the exploration.",
       "saveNow": "Save Now"
     },
     "pathway": {
       "title": "How would you like to explore?",
       "subtitle": "Choose the approach that feels right for you",
+      "subtitle_carer": "Choose the approach that feels right for them",
       "guided": {
         "title": "Your Recommended Journey",
+        "title_carer": "Their Recommended Journey",
         "badge": "Recommended",
         "description": "Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.",
+        "description_carer": "Follow a guided step-by-step path through treatment options tailored to their situation. Perfect if they want clear direction and support.",
         "time": "About 15-20 minutes",
         "action": "Start guided journey"
       },
       "free": {
         "title": "Explore Freely",
         "description": "Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.",
+        "description_carer": "Browse all options at their own pace. Jump directly to topics that interest them. Ideal if they already know what they are looking for.",
         "time": "At your own pace",
         "action": "Browse all options"
       }
     },
     "content": {
       "title": "Tools to Help You Decide",
+      "title_carer": "Tools to Help Them Decide",
       "subtitle": "Explore each tool to make an informed decision",
-      "start": "Start exploring"
+      "subtitle_carer": "Explore each tool to help them make an informed decision",
+      "start": "Start exploring",
+      "progress": "{{count}} tools explored"
     },
     "cards": {
       "treatments": {
         "title": "Treatment Options",
         "description": "Learn about all available kidney treatment options including dialysis types, transplant, and conservative care.",
+        "description_carer": "Help them understand their treatment options",
         "action": "Explore"
       },
       "model": {
         "title": "3D Kidney Model",
         "description": "Explore interactive 3D models showing how different treatments work in your body. See the process visually.",
+        "description_carer": "Explore interactive 3D models showing how different treatments work in their body.",
         "action": "View Model"
       },
       "compare": {
         "title": "Compare Treatments",
         "description": "See all treatments side by side. Compare what matters to you - from daily time to travel flexibility.",
+        "description_carer": "See all treatments side by side. Compare what matters to them - from daily time to travel flexibility.",
         "action": "Compare"
       },
       "values": {
         "title": "Values Exercise",
         "description": "Think about what matters most to you. This exercise helps clarify your priorities to guide your decision.",
+        "description_carer": "Explore what matters most to them together. This exercise helps clarify their priorities.",
         "action": "Start"
       },
       "chat": {
@@ -494,6 +545,7 @@
       "lifeGoals": {
         "title": "Life Goals Compatibility",
         "description": "See how different treatments align with your personal goals for work, family, travel, and more.",
+        "description_carer": "See how treatments fit their life goals for work, family, travel, and more.",
         "action": "Explore Goals"
       },
       "statistics": {
@@ -514,8 +566,11 @@
     },
     "summary": {
       "title": "Ready to Review Your Journey?",
+      "title_carer": "Ready to Review Their Journey?",
       "description": "View everything you have explored and create a summary to share with your kidney team at your next appointment.",
+      "description_carer": "View everything explored and create a summary to share with their kidney team at their next appointment.",
       "button": "View Your Summary",
+      "button_carer": "View Their Summary",
       "badge": "Final Step"
     },
     "nav": {
@@ -526,13 +581,38 @@
       "summary": "Summary"
     },
     "quickAction": {
-      "summary": "View Your Summary"
+      "summary": "View Your Summary",
+      "summary_carer": "View Their Summary"
+    },
+    "carer": {
+      "title": "Supporting Someone Through Their Treatment Journey",
+      "welcome": "Welcome! You're supporting someone on their kidney treatment journey. These resources will help you understand their options and provide meaningful support.",
+      "welcomeWithRelation": "Welcome! As their {{relationship}}, your support matters.",
+      "badge": "Companion Mode",
+      "selfCare": {
+        "title": "Looking After Yourself",
+        "subtitle": "Caring for someone can be demanding. Remember to take time for yourself.",
+        "tip1": "Caring for someone can be demanding. Remember to take time for yourself and connect with others who understand your experience.",
+        "tip2": "Take regular breaks and look after your own health.",
+        "tip3": "Don't be afraid to ask for help when you need it.",
+        "findSupport": "Find Carer Support",
+        "carersUK": "Carers UK"
+      }
     }
   },
   "treatments": {
     "title": "Understanding Your Treatment Options",
     "subtitle": "There are different ways to treat kidney failure. Each has benefits and considerations.",
+    "subtitle_carer": "When {{their}} kidneys can no longer work well enough on their own, there are several treatment options available. Each option has benefits and considerations, and the right choice depends on {{their}} health, lifestyle, and what matters most to {{them}}.",
     "detailedInfoAriaLabel": "{{treatment}} detailed information",
+    "infoBox": {
+      "title": "Your kidney team will guide you",
+      "title_carer": "The kidney team will guide you",
+      "text": "This information is to help you understand your options. Your kidney team are the experts in your care and will help you decide which treatment is most suitable for your individual situation.",
+      "text_carer": "This information helps {{them}} understand {{their}} options. The kidney team are the experts in {{their}} care and will help decide which treatment is most suitable for {{their}} individual situation."
+    },
+    "mainChoices": "Your Main Treatment Choices",
+    "mainChoices_carer": "{{Their}} Main Treatment Choices",
     "facts": {
       "transplant": {
         "survival": "Best long-term survival outcomes",
@@ -671,10 +751,12 @@
     "subtitle": "See how different treatments compare across the factors that matter to you.",
     "intro": "This comparison shows how each treatment option performs across different aspects of daily life and medical care.",
     "description": "This tool helps you compare kidney treatment options side by side. You can focus on the things that matter most to you. Select the factors you want to compare below.",
+    "description_carer": "This tool helps you compare kidney treatment options side by side. You can focus on the things that matter most to {{them}}. Select the factors you want to compare below.",
     "customise": "Customise Your Comparison",
     "showTreatments": "Show treatments:",
     "highlightForMe": "Highlight treatments for me",
     "highlightHint": "Based on your values and priorities from the questionnaire",
+    "highlightHint_carer": "Based on {{their}} values and priorities from the questionnaire",
     "understandingIcons": "Understanding the Icons",
     "scrollHint": "Scroll horizontally to see all treatments",
     "tableHeading": "Treatment Comparison Table",
@@ -683,6 +765,7 @@
     "recommended": "Recommended",
     "remember": "Remember",
     "guidance": "No treatment is perfect for everyone. The best choice depends on your personal situation, health, and values. This comparison is a starting point for discussions with your kidney team.",
+    "guidance_carer": "No treatment is perfect for everyone. The best choice depends on {{their}} personal situation, health, and values. This comparison is a starting point for discussions with {{their}} kidney team.",
     "addToSummary": "Add to My Summary",
     "treatments": {
       "transplant": {
@@ -852,24 +935,38 @@
       "energyLevels": "Different treatments can affect your energy levels in different ways."
     },
     "whatMatters": "What Matters Most to You?",
+    "whatMatters_carer": "What Matters Most to {{Them}}?",
     "valuesLoaded": "Your values loaded",
+    "valuesLoaded_carer": "{{Their}} values loaded",
     "filterByValues": "Filter the comparison by what matters most to you. Select categories to highlight relevant criteria.",
+    "filterByValues_carer": "Filter the comparison by what matters most to {{them}}. Select categories to highlight relevant criteria.",
     "valueFilters": "Value filters",
     "clearFilters": "Clear",
     "completeValuesPrompt": "Complete the values exercise to see personalized recommendations.",
     "startValuesExercise": "Start now",
     "matchScore": "Match",
     "matchesYourValues": "Matches your values",
+    "matchesYourValues_carer": "Matches {{their}} values",
     "moreInfo": "More information",
     "decisionSummary": "Your Decision Summary",
+    "decisionSummary_carer": "{{Their}} Decision Summary",
     "yourTopPriorities": "Your Top Priorities",
+    "yourTopPriorities_carer": "{{Their}} Top Priorities",
     "bestMatchingTreatments": "Best Matching Treatments",
     "keyInsight": "Key Insight",
     "insightMessage": "Based on your values, {{treatment}} appears to be the best match for what matters most to you. However, the best choice depends on your individual health situation - discuss this with your kidney team.",
+    "insightMessage_carer": "Based on {{their}} values, {{treatment}} appears to be the best match for what matters most to {{them}}. However, the best choice depends on {{their}} individual health situation - discuss this with {{their}} kidney team.",
     "scrollableRegion": "Scrollable comparison table",
     "viewDetails": "View details",
     "backToHub": "Back to Hub",
-    "printComparison": "Print comparison"
+    "printComparison": "Print comparison",
+    "cta": {
+      "title": "Compare All Treatments",
+      "description": "See all treatment options side by side to understand how they differ on the factors that matter most to you.",
+      "description_carer": "See all treatment options side by side to understand how they differ on the factors that matter most to {{them}}.",
+      "button": "Compare All Treatments"
+    },
+    "withOthers": "Compare with Other Treatments"
   },
   "chat": {
     "title": "Ask Questions",
@@ -946,12 +1043,19 @@
     "example": "Example",
     "intro": {
       "title": "What Matters Most to You?",
+      "title_carer": "What Matters Most to {{relationship}}?",
       "description": "Choosing a kidney treatment is a personal decision. This exercise helps you think about your values and priorities so you can discuss them with your kidney team.",
+      "description_carer": "Understanding {{their}} values will help {{them}} and {{their}} kidney team choose the best treatment.",
       "whyMattersTitle": "Why Your Values Matter",
+      "whyMattersTitle_carer": "Why {{Their}} Values Matter",
       "whyMattersText": "Every kidney treatment has different effects on your daily life. Understanding what matters most to you helps identify which treatment options might suit you best.",
+      "whyMattersText_carer": "Every kidney treatment has different effects on daily life. Understanding what matters most to {{them}} helps identify which treatment options might suit {{them}} best.",
       "benefit1": "See how each treatment aligns with your priorities",
+      "benefit1_carer": "See how each treatment aligns with {{their}} priorities",
       "benefit2": "Prepare for conversations with your kidney team",
+      "benefit2_carer": "Prepare for conversations with {{their}} kidney team",
       "benefit3": "Feel more confident in your decision-making",
+      "benefit3_carer": "Feel more confident supporting {{their}} decision-making",
       "feature1": "10 value statements to rate",
       "feature2": "Takes about 5 minutes",
       "feature3": "No right or wrong answers",
@@ -1005,23 +1109,33 @@
     },
     "results": {
       "title": "Your Values Profile",
+      "title_carer": "{{relationship}}'s Values Profile",
       "description": "Based on your responses, here is what matters most to you and how treatments align with your values.",
+      "description_carer": "Based on {{their}} responses, here is what matters most to {{them}} and how treatments align with {{their}} values.",
       "topPriorities": "Your Top Priorities",
+      "topPriorities_carer": "{{Their}} Top Priorities",
       "allValues": "All Your Values",
+      "allValues_carer": "All {{Their}} Values",
       "editValues": "Edit Your Values",
+      "editValues_carer": "Edit {{Their}} Values",
       "compareLink": "Compare Treatments",
       "addToSummary": "Add to My Summary",
+      "addToSummary_carer": "Add to {{Their}} Summary",
       "viewTreatments": "View treatments that match your values",
+      "viewTreatments_carer": "View treatments that match {{their}} values",
       "backToHub": "Back to Hub",
       "statementsRated": "Statements rated",
       "topPrioritiesCount": "Top priorities",
       "bestMatchScore": "Best match",
       "treatmentAlignment": "Treatment Alignment",
       "treatmentAlignmentDesc": "Based on your priorities, here is how each treatment aligns with what matters to you.",
+      "treatmentAlignmentDesc_carer": "Based on {{their}} priorities, here is how each treatment aligns with what matters to {{them}}.",
       "bestMatch": "Best Match",
       "note": "Note",
       "alignmentDisclaimer": "This is a guide based on your stated preferences, not a medical recommendation. Your kidney team will help you find the best treatment for your specific situation.",
+      "alignmentDisclaimer_carer": "This is a guide based on {{their}} stated preferences, not a medical recommendation. {{Their}} kidney team will help find the best treatment for {{their}} specific situation.",
       "noPriorities": "No values were rated as \"Important\" or \"Very important\". You can edit your ratings to see your top priorities.",
+      "noPriorities_carer": "No values were rated as \"Important\" or \"Very important\". You can edit the ratings to see {{their}} top priorities.",
       "nextSteps": "What Would You Like to Do Next?"
     },
     "accessibility": {
@@ -1137,6 +1251,105 @@
       }
     }
   },
+  "lifeGoals": {
+    "title": "Your Life Goals",
+    "title_carer": "{{relationship}}'s Life Goals",
+    "introduction": "See how different treatments align with your personal goals for work, family, travel, and more.",
+    "introduction_carer": "See how different treatments align with {{their}} personal goals for work, family, travel, and more.",
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": "Choose goals that matter most to you",
+      "step1_carer": "Choose goals that matter most to {{them}}",
+      "step2": "See how each treatment option supports those goals",
+      "step3": "Get personalised compatibility insights"
+    },
+    "selectCategories": "What matters to you?",
+    "selectCategories_carer": "What matters to {{them}}?",
+    "feature": {
+      "time": "Takes 5 minutes",
+      "noRightWrong": "No right or wrong answers"
+    },
+    "noGoalsSelected": "Select goals that matter to you",
+    "noGoalsSelected_carer": "Select goals that matter to {{them}}",
+    "goalsSelected": "{{count}} goals selected",
+    "seeResults": "See Results",
+    "categories": {
+      "work": {
+        "title": "Work & Career",
+        "description": "Employment, professional goals, and financial security"
+      },
+      "family": {
+        "title": "Family & Relationships",
+        "description": "Time with loved ones, caregiving responsibilities, and family activities"
+      },
+      "travel": {
+        "title": "Travel & Holidays",
+        "description": "Trips abroad, visiting family, and spontaneous getaways"
+      },
+      "hobbies": {
+        "title": "Hobbies & Interests",
+        "description": "Sports, crafts, gardening, and other activities you enjoy"
+      },
+      "independence": {
+        "title": "Independence & Daily Life",
+        "description": "Living independently, managing your own routine, and self-sufficiency"
+      },
+      "religious": {
+        "title": "Faith & Spiritual Practice",
+        "description": "Religious observance, community worship, and spiritual activities"
+      }
+    },
+    "goals": {
+      "fullTimeWork": "Working full-time",
+      "partTimeWork": "Working part-time or flexible hours",
+      "startBusiness": "Starting or running a business",
+      "study": "Studying or training",
+      "retirement": "Enjoying retirement",
+      "familyTime": "Spending quality time with family",
+      "childcare": "Caring for children or grandchildren",
+      "eldercare": "Caring for elderly parents",
+      "socialEvents": "Attending family events and gatherings",
+      "longHaulTravel": "Long-haul travel abroad",
+      "shortTrips": "Short UK trips and weekends away",
+      "visitFamily": "Visiting family abroad",
+      "cruises": "Going on cruises",
+      "camping": "Camping and outdoor holidays",
+      "sports": "Playing sports or exercising",
+      "gardening": "Gardening",
+      "swimming": "Swimming",
+      "crafts": "Arts and crafts",
+      "music": "Playing music",
+      "livingAlone": "Living independently alone",
+      "driving": "Driving",
+      "cooking": "Cooking own meals",
+      "selfCare": "Managing own personal care",
+      "dailyPrayer": "Daily prayer and religious practice",
+      "fasting": "Religious fasting",
+      "pilgrimage": "Religious pilgrimage",
+      "communityWorship": "Attending place of worship"
+    },
+    "compatibility": {
+      "high": "High compatibility",
+      "medium": "Moderate compatibility",
+      "low": "Limited compatibility",
+      "varies": "Varies by individual"
+    },
+    "results": {
+      "title": "Your Goal Compatibility Results",
+      "title_carer": "{{relationship}}'s Goal Compatibility Results",
+      "subtitle": "How each treatment option aligns with your selected goals",
+      "subtitle_carer": "How each treatment option aligns with {{their}} selected goals",
+      "backToGoals": "Back to Goal Selection",
+      "mostCompatible": "Most compatible with your goals",
+      "mostCompatible_carer": "Most compatible with {{their}} goals",
+      "treatmentBreakdown": "Treatment Breakdown",
+      "overallScore": "Overall Compatibility",
+      "goalDetails": "Goal-by-Goal Details",
+      "noGoalsMessage": "Select some life goals to see compatibility results",
+      "printResults": "Print Results",
+      "continueToSummary": "Continue to Summary"
+    }
+  },
   "modelViewer": {
     "breadcrumb": "3D Kidney Model",
     "backToHub": "Back to Hub",
@@ -1188,14 +1401,22 @@
   },
   "summary": {
     "title": "Your Session Summary",
+    "title_carer": "{{relationship}}'s Session Summary",
     "subtitle": "Here's a summary of what you've explored today.",
+    "subtitle_carer": "Here's a summary of what you've explored together.",
     "sections": {
       "journey": "Your Journey Stage",
+      "journey_carer": "{{Their}} Journey Stage",
       "values": "What Matters to You",
+      "values_carer": "What Matters to {{Them}}",
       "viewed": "Treatments Explored",
       "questions": "Questions for Your Team",
+      "questions_carer": "Questions for {{Their}} Team",
       "priorities": "Your Priorities",
-      "nextSteps": "Suggested Next Steps"
+      "priorities_carer": "{{Their}} Priorities",
+      "nextSteps": "Suggested Next Steps",
+      "lifeGoals": "Life Goals Compatibility",
+      "statistics": "What Others Chose"
     },
     "print": "Print Summary",
     "email": "Email Summary",
@@ -1291,18 +1512,26 @@
     },
     "shareWithTeam": {
       "title": "Share with Your Kidney Team",
+      "title_carer": "Share with {{Their}} Kidney Team",
       "description": "Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.",
+      "description_carer": "Take this summary to {{their}} next appointment. {{Their}} kidney care team can help discuss options and answer questions.",
       "qrTitle": "Scan to access this tool",
       "qrDescription": "Your healthcare team can scan this code to open the NHS Kidney Treatment Decision Aid",
       "printTip": "Print this page or save as PDF to bring to your appointment",
-      "appointmentReminder": "Remember to mention this summary to your kidney team at your next appointment"
+      "printTip_carer": "Print this page or save as PDF to bring to {{their}} appointment",
+      "appointmentReminder": "Remember to mention this summary to your kidney team at your next appointment",
+      "appointmentReminder_carer": "Remember to mention this summary to {{their}} kidney team at {{their}} next appointment",
+      "saveHint": "Tip: Use \"Print / Save as PDF\" to download a copy to your device"
     },
     "progressOverview": {
       "title": "Your Journey Progress",
+      "title_carer": "{{Their}} Journey Progress",
       "sectionsCompleted": "Sections completed",
       "treatmentsExplored": "Treatments explored",
       "valuesIdentified": "Top priorities identified",
-      "questionsReady": "Questions for your team"
+      "valuesIdentified_carer": "{{Their}} top priorities identified",
+      "questionsReady": "Questions for your team",
+      "questionsReady_carer": "Questions for {{their}} team"
     },
     "copyLink": "Copy Link",
     "linkCopied": "Link copied to clipboard",
@@ -1637,10 +1866,13 @@
     "lifestyle": "Lifestyle Impact",
     "gettingStarted": "Getting Started",
     "faq": "Frequently Asked Questions",
+    "faqDesc": "Questions that patients often ask about this treatment",
+    "faqDesc_carer": "Questions that carers and family members often ask about this treatment",
     "stories": "Hear from Others",
     "storiesIntro": "These are experiences from real patients. Everyone's journey is different.",
     "readyToLearnMore": "Ready to Learn More?",
     "readyDescription": "Compare this treatment with others or ask questions to help with your decision.",
+    "readyDescription_carer": "Compare this treatment with others or ask questions to help {{them}} with {{their}} decision.",
     "exploreOthers": "Explore Other Treatments"
   },
   "glossary": {
@@ -2086,7 +2318,15 @@
     "sibling": "Sibling",
     "friend": "Friend",
     "professional": "Professional carer",
-    "other": "Other"
+    "other": "Other",
+    "thePerson": "the person you're supporting"
+  },
+  "pronouns": {
+    "you": "you",
+    "your": "your",
+    "they": "they",
+    "their": "their",
+    "them": "them"
   },
   "supportNetworks": {
     "title": "Support Networks",
@@ -2115,40 +2355,43 @@
     "charity": "Charity",
     "carerOrg": "Carer Organisation"
   },
-  "hub": {
-    "carer": {
-      "title": "Supporting Someone Through Their Treatment Journey",
-      "welcome": "Welcome! You're supporting someone on their kidney treatment journey. These resources will help you understand their options and provide meaningful support.",
-      "welcomeWithRelation": "Welcome! As their {{relationship}}, your support matters.",
-      "badge": "Companion Mode",
-      "selfCare": {
-        "title": "Looking After Yourself",
-        "subtitle": "Caring for someone can be demanding. Remember to take time for yourself.",
-        "tip1": "Caring for someone can be demanding. Remember to take time for yourself and connect with others who understand your experience.",
-        "tip2": "Take regular breaks and look after your own health.",
-        "tip3": "Don't be afraid to ask for help when you need it.",
-        "findSupport": "Find Carer Support",
-        "carersUK": "Carers UK"
-      },
-      "cards": {
-        "treatments": {
-          "description": "Help them understand their treatment options"
-        },
-        "values": {
-          "description": "Explore what matters most to them together"
-        },
-        "compare": {
-          "description": "Compare treatments side by side"
-        },
-        "lifeGoals": {
-          "description": "See how treatments fit their life goals"
-        },
-        "support": {
-          "title": "Support Networks",
-          "description": "Find local kidney and carer support organisations",
-          "action": "Find Support"
-        }
-      }
+  "statistics": {
+    "page": {
+      "title": "What others in similar situations chose",
+      "title_carer": "What others in similar situations chose",
+      "introduction": "Understanding what others have chosen can help you feel less alone in your decision. These are real statistics from UK kidney patients.",
+      "introduction_carer": "Understanding what others have chosen can help {{them}} feel less alone in {{their}} decision. These are real statistics from UK kidney patients.",
+      "personalized": "Personalised to your profile",
+      "personalized_carer": "Personalised to {{their}} profile",
+      "compareTreatments": "Compare treatments"
+    },
+    "team": {
+      "title": "Discuss with your kidney team",
+      "title_carer": "Discuss with {{their}} kidney team",
+      "description": "These statistics provide general context, but your kidney team knows your individual situation best. They can help you understand what these numbers mean for you and answer any questions you have.",
+      "description_carer": "These statistics provide general context, but {{their}} kidney team knows {{their}} individual situation best. They can help {{them}} understand what these numbers mean and answer any questions.",
+      "point1": "Ask about your individual risk factors and expected outcomes",
+      "point1_carer": "Ask about {{their}} individual risk factors and expected outcomes",
+      "point2": "Discuss which treatments are realistic options for you",
+      "point2_carer": "Discuss which treatments are realistic options for {{them}}",
+      "point3": "Explore how your lifestyle and preferences fit with each option",
+      "point3_carer": "Explore how {{their}} lifestyle and preferences fit with each option"
+    },
+    "modalities": {
+      "transplant": "Kidney Transplant",
+      "haemodialysis": "Haemodialysis",
+      "peritonealDialysis": "Peritoneal Dialysis",
+      "conservative": "Conservative Care"
+    },
+    "survival": {
+      "title": "Survival information",
+      "subtitle": "Contains sensitive statistical information",
+      "warning": "The following information contains survival statistics. These are population averages and vary greatly based on age, overall health, and many other individual factors. They should not be interpreted as predictions about your personal outlook.",
+      "warning_carer": "The following information contains survival statistics. These are population averages and vary greatly based on age, overall health, and many other individual factors. They should not be interpreted as predictions about {{their}} personal outlook.",
+      "fiveYear": "5-year: {{rate}}%",
+      "median": "Median: {{time}}",
+      "note": "Survival rates have improved significantly over recent decades and continue to improve with advances in treatment. Your kidney team can discuss what these figures mean in the context of your individual health.",
+      "note_carer": "Survival rates have improved significantly over recent decades and continue to improve with advances in treatment. {{Their}} kidney team can discuss what these figures mean in the context of {{their}} individual health."
     }
   }
 }
