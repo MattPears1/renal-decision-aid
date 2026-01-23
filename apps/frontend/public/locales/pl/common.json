@@ -13,6 +13,7 @@
     "error": "Coś poszło nie tak. Spróbuj ponownie.",
     "continue": "Kontynuuj",
     "cancel": "Anuluj",
+    "confirm": "Potwierdź",
     "save": "Zapisz",
     "print": "Drukuj",
     "yes": "Tak",
@@ -121,7 +122,12 @@
     "title": "Wybierz swój język",
     "instruction": "Wybierz preferowany język. Możesz go zmienić w dowolnym momencie.",
     "selectLanguage": "Wybierz język",
-    "currentLanguage": "Aktualny język"
+    "currentLanguage": "Aktualny język",
+    "confirmChange": "Zmienić język?",
+    "confirmChangeMessage": "Czy na pewno chcesz zmienić język na {{language}}? Cały tekst zostanie zaktualizowany.",
+    "searchLanguages": "Szukaj języków...",
+    "languagesAvailable": "dostępnych języków",
+    "noResults": "Nie znaleziono języków"
   },
   "privacy": {
     "pageAriaLabel": "Informacje o prywatności",

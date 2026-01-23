@@ -13,6 +13,7 @@
     "error": "出了一些问题。请重试。",
     "continue": "继续",
     "cancel": "取消",
+    "confirm": "确认",
     "save": "保存",
     "print": "打印",
     "yes": "是",
@@ -121,7 +122,12 @@
     "title": "选择您的语言",
     "instruction": "请选择您偏好的语言。您可以随时更改。",
     "selectLanguage": "选择语言",
-    "currentLanguage": "当前语言"
+    "currentLanguage": "当前语言",
+    "confirmChange": "更改语言？",
+    "confirmChangeMessage": "您确定要将语言更改为{{language}}吗？所有文本都将更新。",
+    "searchLanguages": "搜索语言...",
+    "languagesAvailable": "种语言可用",
+    "noResults": "未找到语言"
   },
   "privacy": {
     "pageAriaLabel": "隐私信息",

@@ -13,6 +13,7 @@
     "error": "કંઈક ખોટું થયું. કૃપા કરીને ફરી પ્રયાસ કરો.",
     "continue": "ચાલુ રાખો",
     "cancel": "રદ કરો",
+    "confirm": "પુષ્ટિ કરો",
     "save": "સાચવો",
     "print": "પ્રિન્ટ કરો",
     "yes": "હા",
@@ -121,7 +122,12 @@
     "title": "તમારી ભાષા પસંદ કરો",
     "instruction": "કૃપા કરીને તમારી પસંદગીની ભાષા પસંદ કરો. તમે ગમે ત્યારે આ બદલી શકો છો.",
     "selectLanguage": "ભાષા પસંદ કરો",
-    "currentLanguage": "વર્તમાન ભાષા"
+    "currentLanguage": "વર્તમાન ભાષા",
+    "confirmChange": "ભાષા બદલવી છે?",
+    "confirmChangeMessage": "શું તમે ખરેખર ભાષા {{language}} માં બદલવા માંગો છો? બધો ટેક્સ્ટ અપડેટ થશે.",
+    "searchLanguages": "ભાષાઓ શોધો...",
+    "languagesAvailable": "ભાષાઓ ઉપલબ્ધ",
+    "noResults": "કોઈ ભાષા મળી નથી"
   },
   "privacy": {
     "pageAriaLabel": "ગોપનીયતા માહિતી",

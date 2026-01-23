@@ -13,6 +13,7 @@
     "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
     "continue": "Tiếp tục",
     "cancel": "Hủy",
+    "confirm": "Xác nhận",
     "save": "Lưu",
     "print": "In",
     "yes": "Có",
@@ -121,7 +122,12 @@
     "title": "Chọn ngôn ngữ của bạn",
     "instruction": "Vui lòng chọn ngôn ngữ ưa thích của bạn. Bạn có thể thay đổi bất cứ lúc nào.",
     "selectLanguage": "Chọn ngôn ngữ",
-    "currentLanguage": "Ngôn ngữ hiện tại"
+    "currentLanguage": "Ngôn ngữ hiện tại",
+    "confirmChange": "Đổi ngôn ngữ?",
+    "confirmChangeMessage": "Bạn có chắc chắn muốn đổi ngôn ngữ sang {{language}} không? Tất cả văn bản sẽ được cập nhật.",
+    "searchLanguages": "Tìm kiếm ngôn ngữ...",
+    "languagesAvailable": "ngôn ngữ có sẵn",
+    "noResults": "Không tìm thấy ngôn ngữ nào"
   },
   "privacy": {
     "pageAriaLabel": "Thông tin về quyền riêng tư",

@@ -13,6 +13,7 @@
     "error": "Wax baa qaldamay. Fadlan isku day mar kale.",
     "continue": "Sii wad",
     "cancel": "Ka noqo",
+    "confirm": "Xaqiiji",
     "save": "Kaydi",
     "print": "Daabac",
     "yes": "Haa",
@@ -121,7 +122,12 @@
     "title": "Dooro Luqaddaada",
     "instruction": "Fadlan dooro luqadda aad doorbideyso. Waxaad beddeli kartaa wakhtiga kasta.",
     "selectLanguage": "Dooro luqadda",
-    "currentLanguage": "Luqadda hadda"
+    "currentLanguage": "Luqadda hadda",
+    "confirmChange": "Luqadda beddelaysaa?",
+    "confirmChangeMessage": "Ma hubtaa inaad rabto inaad beddesho luqadda {{language}}? Dhammaan qoraalka waa la cusboonaysiin doonaa.",
+    "searchLanguages": "Raadi luqadaha...",
+    "languagesAvailable": "luqadood ayaa la heli karaa",
+    "noResults": "Luqad lama helin"
   },
   "privacy": {
     "pageAriaLabel": "Macluumaadka garashaanta",

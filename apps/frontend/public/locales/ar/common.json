@@ -13,6 +13,7 @@
     "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
     "continue": "متابعة",
     "cancel": "إلغاء",
+    "confirm": "تأكيد",
     "save": "حفظ",
     "print": "طباعة",
     "yes": "نعم",
@@ -121,7 +122,12 @@
     "title": "اختر لغتك",
     "instruction": "يرجى اختيار لغتك المفضلة. يمكنك تغييرها في أي وقت.",
     "selectLanguage": "اختر اللغة",
-    "currentLanguage": "اللغة الحالية"
+    "currentLanguage": "اللغة الحالية",
+    "confirmChange": "تغيير اللغة؟",
+    "confirmChangeMessage": "هل أنت متأكد أنك تريد تغيير اللغة إلى {{language}}؟ سيتم تحديث كل النص.",
+    "searchLanguages": "البحث في اللغات...",
+    "languagesAvailable": "لغات متاحة",
+    "noResults": "لم يتم العثور على لغات"
   },
   "privacy": {
     "pageAriaLabel": "معلومات الخصوصية",

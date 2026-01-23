@@ -13,6 +13,7 @@
     "error": "Une erreur s'est produite. Veuillez réessayer.",
     "continue": "Continuer",
     "cancel": "Annuler",
+    "confirm": "Confirmer",
     "save": "Enregistrer",
     "print": "Imprimer",
     "yes": "Oui",
@@ -121,7 +122,12 @@
     "title": "Choisissez votre langue",
     "instruction": "Veuillez sélectionner votre langue préférée. Vous pouvez la changer à tout moment.",
     "selectLanguage": "Sélectionner la langue",
-    "currentLanguage": "Langue actuelle"
+    "currentLanguage": "Langue actuelle",
+    "confirmChange": "Changer de langue ?",
+    "confirmChangeMessage": "Êtes-vous sûr de vouloir changer la langue en {{language}} ? Tout le texte sera mis à jour.",
+    "searchLanguages": "Rechercher des langues...",
+    "languagesAvailable": "langues disponibles",
+    "noResults": "Aucune langue trouvée"
   },
   "privacy": {
     "pageAriaLabel": "Informations sur la confidentialité",

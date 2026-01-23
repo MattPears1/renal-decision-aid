@@ -13,6 +13,7 @@
     "error": "Bir sorun olustu. Lutfen tekrar deneyin.",
     "continue": "Devam Et",
     "cancel": "Iptal",
+    "confirm": "Onayla",
     "save": "Kaydet",
     "print": "Yazdir",
     "yes": "Evet",
@@ -121,7 +122,12 @@
     "title": "Dilinizi Secin",
     "instruction": "Lutfen tercih ettiginiz dili secin. Bunu istediginiz zaman degistirebilirsiniz.",
     "selectLanguage": "Dil secin",
-    "currentLanguage": "Mevcut dil"
+    "currentLanguage": "Mevcut dil",
+    "confirmChange": "Dili degistir?",
+    "confirmChangeMessage": "Dili {{language}} olarak degistirmek istediginizden emin misiniz? Tum metin guncellenecektir.",
+    "searchLanguages": "Dil ara...",
+    "languagesAvailable": "dil mevcut",
+    "noResults": "Dil bulunamadi"
   },
   "privacy": {
     "pageAriaLabel": "Gizlilik bilgileri",

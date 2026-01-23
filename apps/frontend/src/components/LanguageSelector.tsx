@@ -60,8 +60,11 @@ export default function LanguageSelector({
   const [isLoading, setIsLoading] = useState(false);
   const [loadingLang, setLoadingLang] = useState<SupportedLanguage | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [pendingLanguage, setPendingLanguage] = useState<SupportedLanguage | null>(null);
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const confirmDialogRef = useRef<HTMLDivElement>(null);
 
   /**
    * Gets a valid supported language from a language code.
@@ -145,42 +148,83 @@ export default function LanguageSelector({
   }, [searchQuery]);
 
   /**
-   * Handles language change with loading state and error recovery.
+   * Requests a language change - shows confirmation dialog.
    * @param {SupportedLanguage} langCode - The language code to switch to
    */
-  const handleLanguageChange = useCallback(
-    async (langCode: SupportedLanguage) => {
-      // Prevent multiple simultaneous language changes
-      if (isLoading) return;
-
-      // Show loading state for this language
-      setIsLoading(true);
-      setLoadingLang(langCode);
+  const requestLanguageChange = useCallback(
+    (langCode: SupportedLanguage) => {
+      if (isLoading || langCode === currentLang) return;
+      setPendingLanguage(langCode);
+      setShowConfirmDialog(true);
       setIsOpen(false);
-
-      // Update local state optimistically for immediate UI feedback
-      setCurrentLang(langCode);
-
-      try {
-        // Use the robust changeLanguageAndWait function with timeout and retry
-        const success = await changeLanguageAndWait(langCode);
-
-        if (!success) {
-          // If language change failed, revert to English
-          console.warn(`Language change to ${langCode} failed, reverting to English`);
-          setCurrentLang('en');
-        }
-      } catch (error) {
-        console.error('Language change error:', error);
-        // Revert to English on error
-        setCurrentLang('en');
-      } finally {
-        setIsLoading(false);
-        setLoadingLang(null);
-      }
+      setSearchQuery('');
     },
-    [isLoading]
+    [isLoading, currentLang]
   );
+
+  /**
+   * Cancels the pending language change.
+   */
+  const cancelLanguageChange = useCallback(() => {
+    setPendingLanguage(null);
+    setShowConfirmDialog(false);
+  }, []);
+
+  /**
+   * Confirms and executes the language change with loading state and error recovery.
+   */
+  const confirmLanguageChange = useCallback(async () => {
+    if (!pendingLanguage || isLoading) return;
+
+    const langCode = pendingLanguage;
+    setShowConfirmDialog(false);
+    setPendingLanguage(null);
+
+    // Show loading state for this language
+    setIsLoading(true);
+    setLoadingLang(langCode);
+
+    // Update local state optimistically for immediate UI feedback
+    setCurrentLang(langCode);
+
+    try {
+      // Use the robust changeLanguageAndWait function with timeout and retry
+      const success = await changeLanguageAndWait(langCode);
+
+      if (!success) {
+        // If language change failed, revert to English
+        console.warn(`Language change to ${langCode} failed, reverting to English`);
+        setCurrentLang('en');
+      }
+    } catch (error) {
+      console.error('Language change error:', error);
+      // Revert to English on error
+      setCurrentLang('en');
+    } finally {
+      setIsLoading(false);
+      setLoadingLang(null);
+    }
+  }, [pendingLanguage, isLoading]);
+
+  // Handle escape key to close confirmation dialog
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && showConfirmDialog) {
+        cancelLanguageChange();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [showConfirmDialog, cancelLanguageChange]);
+
+  // Focus trap for confirmation dialog
+  useEffect(() => {
+    if (showConfirmDialog && confirmDialogRef.current) {
+      const firstButton = confirmDialogRef.current.querySelector('button');
+      firstButton?.focus();
+    }
+  }, [showConfirmDialog]);
 
   /**
    * Loading spinner component for language change state.
@@ -190,41 +234,99 @@ export default function LanguageSelector({
     <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
   );
 
+  // Confirmation Dialog Component
+  const ConfirmationDialog = () => {
+    if (!showConfirmDialog || !pendingLanguage) return null;
+
+    const pendingLangInfo = SUPPORTED_LANGUAGES[pendingLanguage];
+
+    return (
+      <div
+        className="fixed inset-0 z-[1001] flex items-center justify-center p-4 bg-black/50"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) cancelLanguageChange();
+        }}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirm-dialog-title"
+      >
+        <div
+          ref={confirmDialogRef}
+          className="bg-white rounded-lg shadow-xl max-w-sm w-full p-6"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <h2
+            id="confirm-dialog-title"
+            className="text-lg font-semibold text-text-primary mb-3"
+          >
+            {t('language.confirmChange', 'Change Language?')}
+          </h2>
+          <p className="text-sm text-text-secondary mb-6">
+            {t(
+              'language.confirmChangeMessage',
+              'Are you sure you want to change the language to {{language}}? All text will be updated.',
+              { language: pendingLangInfo.nativeName }
+            )}
+          </p>
+          <div className="flex gap-3 justify-end">
+            <button
+              onClick={cancelLanguageChange}
+              className="px-4 py-2 text-sm font-medium text-text-secondary bg-nhs-pale-grey rounded-md hover:bg-nhs-mid-grey hover:text-white transition-colors min-h-[44px]"
+            >
+              {t('common.cancel', 'Cancel')}
+            </button>
+            <button
+              onClick={confirmLanguageChange}
+              className="px-4 py-2 text-sm font-medium text-white bg-nhs-blue rounded-md hover:bg-nhs-dark-blue transition-colors min-h-[44px]"
+            >
+              {t('common.confirm', 'Confirm')}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   if (variant === 'inline') {
     return (
-      <div className={clsx('flex flex-wrap gap-2', className)}>
-        {(Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguage[]).map((langCode) => {
-          const lang = SUPPORTED_LANGUAGES[langCode];
-          const isActive = langCode === currentLang;
-          const isLoadingThis = loadingLang === langCode;
+      <>
+        <ConfirmationDialog />
+        <div className={clsx('flex flex-wrap gap-2', className)}>
+          {(Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguage[]).map((langCode) => {
+            const lang = SUPPORTED_LANGUAGES[langCode];
+            const isActive = langCode === currentLang;
+            const isLoadingThis = loadingLang === langCode;
 
-          return (
-            <button
-              key={langCode}
-              onClick={() => handleLanguageChange(langCode)}
-              disabled={isLoading}
-              className={clsx(
-                'px-3 py-2.5 sm:py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5',
-                'min-h-[44px] touch-manipulation',
-                isActive
-                  ? 'bg-nhs-blue text-white'
-                  : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-mid-grey hover:text-white',
-                isLoading && !isLoadingThis && 'opacity-50 cursor-not-allowed'
-              )}
-              aria-current={isActive ? 'true' : undefined}
-              aria-busy={isLoadingThis}
-            >
-              {isLoadingThis && <LoadingSpinner />}
-              {lang.nativeName}
-            </button>
-          );
-        })}
-      </div>
+            return (
+              <button
+                key={langCode}
+                onClick={() => requestLanguageChange(langCode)}
+                disabled={isLoading}
+                className={clsx(
+                  'px-3 py-2.5 sm:py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5',
+                  'min-h-[44px] touch-manipulation',
+                  isActive
+                    ? 'bg-nhs-blue text-white'
+                    : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-mid-grey hover:text-white',
+                  isLoading && !isLoadingThis && 'opacity-50 cursor-not-allowed'
+                )}
+                aria-current={isActive ? 'true' : undefined}
+                aria-busy={isLoadingThis}
+              >
+                {isLoadingThis && <LoadingSpinner />}
+                {lang.nativeName}
+              </button>
+            );
+          })}
+        </div>
+      </>
     );
   }
 
   return (
-    <div ref={dropdownRef} className={clsx('relative inline-block', className)}>
+    <>
+      <ConfirmationDialog />
+      <div ref={dropdownRef} className={clsx('relative inline-block', className)}>
       <button
         onClick={() => !isLoading && setIsOpen(!isOpen)}
         disabled={isLoading}
@@ -325,10 +427,7 @@ export default function LanguageSelector({
                 return (
                   <button
                     key={langCode}
-                    onClick={() => {
-                      handleLanguageChange(langCode);
-                      setSearchQuery('');
-                    }}
+                    onClick={() => requestLanguageChange(langCode)}
                     className={clsx(
                       'w-full px-4 py-2.5 text-left text-sm transition-colors min-h-[44px] touch-manipulation flex items-center gap-3',
                       isActive
@@ -355,6 +454,7 @@ export default function LanguageSelector({
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

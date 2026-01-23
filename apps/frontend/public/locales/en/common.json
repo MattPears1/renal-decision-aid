@@ -13,6 +13,7 @@
     "error": "Something went wrong. Please try again.",
     "continue": "Continue",
     "cancel": "Cancel",
+    "confirm": "Confirm",
     "save": "Save",
     "print": "Print",
     "yes": "Yes",
@@ -121,7 +122,12 @@
     "title": "Choose Your Language",
     "instruction": "Please select your preferred language. You can change this at any time.",
     "selectLanguage": "Select language",
-    "currentLanguage": "Current language"
+    "currentLanguage": "Current language",
+    "confirmChange": "Change Language?",
+    "confirmChangeMessage": "Are you sure you want to change the language to {{language}}? All text will be updated.",
+    "searchLanguages": "Search languages...",
+    "languagesAvailable": "languages available",
+    "noResults": "No languages found"
   },
   "privacy": {
     "pageAriaLabel": "Privacy information",
