@@ -218,7 +218,8 @@ describe('LanguageSelectionPage', () => {
 
       await waitFor(() => {
         expect(mockChangeLanguageAndWait).toHaveBeenCalledWith('en');
-        expect(mockCreateSession).toHaveBeenCalledWith('en');
+        // createSession is now called with (language, userRole, carerRelationship, customLabel)
+        expect(mockCreateSession).toHaveBeenCalledWith('en', 'patient', undefined, undefined);
         expect(mockNavigate).toHaveBeenCalledWith('/disclaimer');
       });
     });
