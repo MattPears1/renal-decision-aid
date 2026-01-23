@@ -1,0 +1,1614 @@
+{
+  "nav": {
+    "home": "Bogga Hore",
+    "back": "Dib u noqo",
+    "next": "Xiga",
+    "skip": "Ka bood",
+    "returnToHub": "Ku noqo Xarunta",
+    "backToHub": "Dib ugu noqo Xarunta",
+    "continueToQuestionnaire": "Sii wad su'aalaha"
+  },
+  "common": {
+    "loading": "Waa la soo rarayaa...",
+    "error": "Wax baa qaldamay. Fadlan isku day mar kale.",
+    "continue": "Sii wad",
+    "cancel": "Ka noqo",
+    "save": "Kaydi",
+    "print": "Daabac",
+    "yes": "Haa",
+    "no": "Maya",
+    "notSure": "Ma hubo",
+    "moreInfo": "Macluumaad dheeraad ah",
+    "close": "Xir",
+    "back": "Dib u noqo",
+    "edit": "Wax ka beddel",
+    "add": "Ku dar",
+    "remove": "Ka saar",
+    "listenToPage": "Dhageyso boggan"
+  },
+  "accessibility": {
+    "skipToContent": "U bood qoraalka ugu muhiimsan",
+    "openMenu": "Fur liiska",
+    "closeMenu": "Xir liiska",
+    "expandSection": "Balaadhi qaybta",
+    "collapseSection": "Yaree qaybta",
+    "newWindow": "Waxay ku furaneysaa daaqad cusub",
+    "externalLink": "Xidhiidhka dibadda",
+    "settings": "Fududaynta gelitaanka",
+    "settingsLabel": "Doorashooyinka fududaynta gelitaanka - Hagaaji cabbirka qoraalka, midabka, iyo qaabeynta kale",
+    "settingsTitle": "Hagaaji cabbirka qoraalka, midabka, iyo qaabeynta kale",
+    "breadcrumb": "Hagidda waddada",
+    "pageNavigation": "Hagidda bogga",
+    "faq": "Su'aalaha inta badan la isweydiiyo",
+    "frequentlyAskedQuestions": "Su'aalaha inta badan la isweydiiyo",
+    "listenToPage": "Dhageyso boggan oo kor loo akhriyo",
+    "modal": {
+      "title": "Qaabeynta Fududaynta Gelitaanka",
+      "textSize": "Cabbirka Qoraalka",
+      "textSizeOptions": {
+        "small": "Yar",
+        "medium": "Dhexdhexaad (Caadiga)",
+        "large": "Weyn",
+        "extra-large": "Aad u weyn"
+      },
+      "highContrast": "Qaabka Midab-kala-duwanaanta Sare",
+      "reducedMotion": "Dhaqdhaqaaqa La Yareyey",
+      "lineSpacing": "Kala fogaanshaha Safka",
+      "lineSpacingOptions": {
+        "normal": "Caadi",
+        "relaxed": "Dabacsan",
+        "loose": "Kala fog"
+      },
+      "save": "Kaydi Qaabeynta",
+      "cancel": "Ka noqo",
+      "reset": "Ku celi Caadiga"
+    }
+  },
+  "landing": {
+    "title": "Caawinta Go'aanka Daaweynta Keliyaha",
+    "subtitle": "Adeegyada Keliyaha ee NHS",
+    "description": "Qalabkan wuxuu kaa caawin doonaa inaad fahanto doorashooyinkaaga daaweynta keliyaha iyo inaad ka fikirto waxa kugu muhiimsan. Wakhti qaado - jawaabo sax ama qalad ah ma jiraan.",
+    "startButton": "Bilow Safarkaga",
+    "startButtonAriaLabel": "Bilow safarka go'aanka daaweynta keliyaha",
+    "learnMore": "Wax badan ka baro Cudurka Keliyaha",
+    "heroAriaLabel": "Qaybta soo dhaweynta",
+    "featuresHeading": "Sida Qalabkan Kuu Caawinayo",
+    "featuresSubheading": "Wax walba oo aad u baahan tahay si aad u sameyso go'aan cilmi ku dhisan oo ku saabsan daaweyntaada keliyaha",
+    "features": {
+      "time": {
+        "title": "Waxay qaadataa ilaa 15 daqiiqo",
+        "description": "Ku dhamee xawlihisaaga. Waad iska nasan kartaa markasta oo aad u baahan tahay oo ku soo noqon kartaa meesha aad ka tagtay."
+      },
+      "privacy": {
+        "title": "Gaarasiintaadu Waa La Ilaaliyay",
+        "description": "Ma jirto macluumaad shaqsi ah oo la kaydiyay. Jawaabahaagu waxay caawinayaan in qalabka laguugu habeeyo inta lagu jiro kulanka keliya."
+      },
+      "devices": {
+        "title": "Waxay ku shaqeysaa Aaladaha Oo Dhan",
+        "description": "Ku isticmaal telefoonkaaga, tablet-kaaga, ama kombiyuutarkaaga. Qalabku wuu isugu habeyaa cabbirka shaashadaada si toos ah."
+      }
+    },
+    "aboutHeading": "Waxa Qalabkan Sameeyo",
+    "about": {
+      "paragraph1": "Caawintaan go'aanka waxay kaa caawin doontaa inaad sahamiso doorashooyinka kala duwan ee daaweynta ee laga heli karo fashilka keliyaha. Waad baran kartaa daaweyno kasta xawligaaga, ka fikir waxa aad ugu mudan, oo u samee koobid aad la wadaagto dhakhtarkaaga ama kalkaalisadaada.",
+      "paragraph2": "Waxaad ka jawaabi doontaa dhowr su'aalood oo fudud oo ku saabsan xaaladaada, ka dibna sahami daaweyno ku habboon. Macluumaadkaagu wuu qarsoonyahay mana la kaydiyo ka dib markaad xidhto browserka.",
+      "paragraph3": "Qalabkan ma beddelo talooyinka caafimaadka ee kooxda daryeelkaaga keliyaha. Waxaa loo sameeyay inuu kaa caawiyo inaad dareento wareysi badan oo isku kalsoon markaad kala hadleyso doorashooyinkaaga. Kooxda keliyahaaga ayaa khubaro ku ah daryeelkaaga waxayna kaa caawin doonaan inaad sameyso go'aanka kugu haboon."
+    },
+    "steps": {
+      "learn": {
+        "title": "Baro"
+      },
+      "explore": {
+        "title": "Sahami"
+      },
+      "decide": {
+        "title": "Go'aamso"
+      }
+    },
+    "trustAriaLabel": "Macluumaadka kalsoonida iyo badbaadada",
+    "trust": {
+      "evidenceBased": "Macluumaad ku salaysan caddeymo",
+      "languages": "Waxaa lagu heli karaa 7 luuqadood",
+      "accessible": "Waxa heli kara isticmaalayaasha oo dhan",
+      "noAccount": "Akoon looma baahna",
+      "time": "15 daqiiqo",
+      "privateSecure": "Qarsoodi & Ammaan"
+    },
+    "ctaHeading": "Diyaar u tahay inaad bilowdo?",
+    "ctaDescription": "Qaado talaabada ugu horeysa ee fahanka doorashooyinka daaweynta keliyahaaga. Waad bilaabi kartaa hadda oo ku soo noqon kartaa mar dambe haddii aad u baahan tahay nasasho."
+  },
+  "language": {
+    "title": "Dooro Luqaddaada",
+    "instruction": "Fadlan dooro luqadda aad doorbideyso. Waxaad beddeli kartaa wakhtiga kasta.",
+    "selectLanguage": "Dooro luqadda",
+    "currentLanguage": "Luqadda hadda"
+  },
+  "privacy": {
+    "pageAriaLabel": "Macluumaadka garashaanta",
+    "progressLabel": "Horumarka dejinta: 30%",
+    "progressText": "Tallaabada 2aad ee 4: Macluumaadka Gaarasiinta",
+    "title": "Gaarasiintaada & Macluumaadkaaga",
+    "subtitle": "Ka hor intaadan bilaaban, waxaan rabnaa inaad fahamto sida qalabkan uu u maareeyo macluumaadkaaga.",
+    "listenToPage": "Dhageyso boggan",
+    "stopReading": "Jooji akhrinta",
+    "sections": {
+      "privacy": {
+        "title": "Sida Aan U Ilaalineyno Macluumaadkaaga",
+        "content": "Jawaabahaaga waxaa loo habeeyaa si ammaan ah mana la kaydiyo si joogto ah. Qalabkan ma ururriyo macluumaad caafimaad shaqsiyeed oo ku aqoonsan kara. Xogta kulanka waxaa si toos ah loo tirtirayaa markaad xidhto qalabkan.",
+        "p1": "Qalabkan wuxuu isticmaalaa kaydinta kulanka keliya. Macluumaad kasta oo aad geliso, oo ay ku jiraan jawaabahaaga su'aalaha iyo doorashooyinka daaweynta, waxaa keliya la hayaa inta aad isticmaalayso qalabka.",
+        "p2": "Markaad xidhto browserkaaga ama ka dib 15 daqiiqo oo aan wax la falinin, macluumaadkaaga oo dhan waa la tirtiraa si toos ah. Ma kaydinno wax ku saabsan adiga.",
+        "p3": "Waxaan ururinaa macluumaad aan la aqoonsan karin oo ku saabsan sida dadku u isticmaalaan qalabkan si aan u hagaajinno. Tani ma kuu aqoonsan karto shakhsi ahaan."
+      },
+      "ai": {
+        "title": "Sida Qalabkan U Shaqeeyo",
+        "content": "Caawintaan go'aanka waxay isticmaashaa tignoolajiyada si ay u bixiso macluumaad shakhsiyeysan oo ku salaysan jawaabahaaga. Macluumaadka la bixiyay wuxuu ka soo baxay tilmaamaha caafimaadka ee NHS iyo cilmi-baarista ku salaysan caddeymo. Qalabkan wuxuu taageeraa laakiin ma beddelo wadahadallada kooxda daryeelka keliyahaaga.",
+        "p1": "Qalabkan wuxuu ku jiraa kaaliye AI ah oo ka jawaabi kara su'aalaha guud ee ku saabsan daaweynta keliyaha. AI-gu wuxuu bixiyaa macluumaad keliya - ma bixin karo talo caafimaad oo gaar ah oo ku saabsan xaaladaada.",
+        "p2": "AI-gu mararka qaar wuu qaldami karaa ama wuxuu bixin karaa macluumaad aan dhammaystirnayn. Had iyo jeer kala hadal go'aamada muhiimka ah kooxda keliyahaaga kuwaas oo yaqaan taariikhda caafimaadkaaga oo dhan.",
+        "p3": "Qalabkan ma beddelo talooyinka kooxda daryeelkaaga caafimaadka. Waxaa loo sameeyay inuu kaa caawiyo inaad dareento wareysi badan markaad kala hadleyso doorashooyinkaaga dhakhaatiirtaada iyo kalkaalisooyinkaaga."
+      },
+      "medical": {
+        "title": "Macluumaad Caafimaad Muhiim ah",
+        "content": "Qalabkan wuxuu bixiyaa macluumaad guud oo ku saabsan doorashooyinka daaweynta keliyaha. Ma aha baddalka talada caafimaadka xirfadlayaasha, baarista, ama daaweynta. Had iyo jeer la tasho takhasusliga keliyahaaga ama kooxda daryeelka caafimaadkaaga ka hor intaadan go'aamiinin wax ku saabsan daaweyntaada. Haddii aad qabto walaaco caafimaad degdeg ah, fadlan la xiriir GP-gaaga ama wac NHS 111."
+      },
+      "pii": {
+        "title": "Fadlan Ha Wadaagin Faahfaahinta Shakhsiga",
+        "intro": "Si aad u ilaaliso gaarasiintaada, fadlan ha gelin macluumaad shaqsiyeed oo ku aqoonsan kara markaad isticmaalayso qalabkan, gaar ahaan shaqada sheekaysiga.",
+        "listLabel": "Macluumaadka aadan wadaagin lahayn",
+        "items": {
+          "nhsNumber": "Lambarkaga NHS",
+          "fullName": "Magacaaga oo buuxa",
+          "address": "Cinwaankaaga guriga",
+          "dob": "Taariikhda dhalashadaada",
+          "phone": "Lambarada telefoonka",
+          "email": "Cinwaannada emailka"
+        },
+        "outro": "Weli waad noo sheegi kartaa xaaladaada siyaabo guud - tusaale ahaan, xaaladda noloshaada ama waxa aad ugu muhiimsan - adigoon wadaagin faahfaahin ku aqoonsan kara."
+      }
+    },
+    "summaryAriaLabel": "Koobidda qodobada muhiimka ah",
+    "summary": {
+      "title": "Koobid ahaan",
+      "notSaved": "Jawaabahaaga lama kaydiyo",
+      "noData": "Xog shaqsi ah lama ururriyo",
+      "leave": "Waad tegi kartaa wakhtiga kasta"
+    },
+    "consent": {
+      "title": "Fadlan xaqiiji si aad u sii waddo",
+      "understand": "Waan fahmay in macluumaadkayga aan la kaydinayn ka dib kulanka iyo inaan wadaagin macluumaad shaqsiyeed oo i aqoonsan kara",
+      "analytics": "Waan ogolahay in la ururiyo falanqeyn aan la aqoonsan karin si loo caawiyo hagaajinta qalabkan (ikhtiyaari)",
+      "error": "Fadlan xaqiiji inaad fahamtay macluumaadka gaarasiinta ka hor intaadan sii wadin"
+    },
+    "continueButton": "Waan Fahmay, Sii Wad",
+    "continueAriaLabel": "Sii wad xulashada marxalada safarka",
+    "readFullPolicy": "Akhri Siyaasadda Gaarasiinta NHS oo buuxa"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Tusaale",
+    "serviceName": "Caawinta Go'aanka Daaweynta Keliyaha",
+    "tagline": "Kaa caawinta inaad sameyso doorashooyinka cilmiga ku dhisan",
+    "homeAriaLabel": "Caawinta Go'aanka Daaweynta Keliyaha NHS - Bogga Hore"
+  },
+  "progress": {
+    "language": "Luqadda",
+    "privacy": "Gaarasiinta",
+    "yourJourney": "Safarkaga",
+    "aboutYou": "Wax ku saabsan Adiga",
+    "yourOptions": "Doorashooyinkaaga",
+    "ariaLabel": "Horumarka iyada oo loo marayo caawinta go'aanka",
+    "stepOfTotal": "Tallaabada {{current}} ee {{total}}",
+    "percentComplete": "{{percentage}}% la dhammeeyay",
+    "ariaProgressLabel": "Horumarka: {{current}} ee {{total}} tallaabood la dhammeeyay"
+  },
+  "journey": {
+    "title": "Halkee Ku Jirtaa Safarka Daryeelka Keliyahaaga?",
+    "subtitle": "Dooro doorashada ugu fiican ee tilmaamaysa xaaladaada",
+    "instruction": "Dooro doorashada ugu fiican ee tilmaamaysa xaaladaada hadda",
+    "intro": "Safarka keliyaha qof kasta way ka duwan tahay. Si aan kuu tusno macluumaadka ugu khuseeya, fadlan noo sheeg halka aad hadda joogto. Ma jiraan jawaabo sax ama qalad ah.",
+    "error": "Fadlan dooro doorashada tilmaamaysa xaaladaada. Haddii midkoodna uusan kuugu habboonayn, dooro \"Waxaan taageero qof qoyska ah ama saaxiib\" si aad u sii waddo.",
+    "formLabel": "Doorashooyinka marxalada safarka",
+    "legendLabel": "Dooro halka aad ku jirto safarkaaga keliyaha",
+    "radioGroupLabel": "Doorashooyinka marxalada safarka",
+    "listenToQuestion": "Dhageyso su'aashan",
+    "audioText": "Halkee ku jirtaa safarkaaga? Dooro doorashada ugu fiican ee tilmaamaysa xaaladaada.",
+    "reassurance": "Ha welwelin haddii aadan hubin doorashada ugu fiican ee kugu haboon. Had iyo jeer waad sahamin kartaa dhammaan doorashooyinka daaweynta, kooxda keliyahaagana waxay kaa caawin karaan inay kuu caddeeyaan xaaladaada. Doorashadaadu waxay naga caawineysaa inaan kuu tusno macluumaadka ugu khuseeya marka hore.",
+    "needHelp": "Waxaan u baahanahay caawin si aan u dooro",
+    "stages": {
+      "suspected": {
+        "title": "Waxaan u maleynayaa inaan qabo cudurka keliyaha",
+        "description": "Waxaad ka walaacsantahay caafimaadka keliyahaaga oo waxaad rabtaa inaad wax badan ka barato waxa uu yahay cudurka keliyaha."
+      },
+      "earlyDiagnosis": {
+        "title": "Ayaa hadda la ii ogaaday - CKD marxaladdiisa hore",
+        "description": "Dhawaan ayaad wax ka baratay xaaladda keliyahaaga waxaadna rabtaa inaad fahamto waxa ay tani kuu tahay."
+      },
+      "lateDiagnosis": {
+        "title": "Waa la ii ogaaday - CKD marxaladdiisa dambe",
+        "description": "Shaqada keliyahaagu aad ayay u hoos u dhacday waxaana laga yaabaa inaad u baahan tahay inaad ka fikirto doorashooyinka daaweynta dhowaan."
+      },
+      "choosingTreatment": {
+        "title": "Waxaan u baahanahay inaan dhowaan dooro daaweyn",
+        "description": "Kooxda keliyahaagu waxay kuu sheegeen inaad u baahan doonto inaad bilowdo daaweyn bilaha soo socda waxaadna rabtaa inaad wax ka barato doorashooyinkaaga."
+      },
+      "transplantPending": {
+        "title": "Waxaan samayn doonaa beddelid - waxaan rabaa inaan wax badan ka baro",
+        "description": "Waxaad ku jirtaa liiska sugitaanka bedddelida ama waxaad leedahay deeq bixiye nool oo la habeeyey waxaadna rabtaa inaad wax badan ka ogaato waxa la filaayo."
+      },
+      "dialysisPending": {
+        "title": "Waxaan bilaabi doonaa dialysis - waxaan rabaa inaan wax badan ka baro",
+        "description": "Dhowaan ayaad bilaabi doontaa daaweynta dialysis-ka waxaadna rabtaa inaad fahamto noocyada kala duwan iyo sida nolasha maalinlaha ahi u noqon doonto."
+      },
+      "supporting": {
+        "title": "Waxaan taageero qof qoyska ah ama saaxiib",
+        "description": "Qof kuugu dhow ayaa qaba cudurka keliyaha waxaadna rabtaa inaad fahamto doorashooyinkooda si aad u caawin karto taageeradooda."
+      }
+    },
+    "helpModal": {
+      "title": "Ma u baahan tahay caawin doorashada?",
+      "intro": "Waa caadi inaad dareento hubin la'aan doorashada ugu fiican ee ku tilmaamaysa. Waa kuwan talooyinyo:",
+      "tip1Title": "Ka fikir balantaadii ugu dambaysay",
+      "tip1Text": "Maxay kooxda keliyahaagu kuu sheegeen shaqada keliyahaaga iyo talaabooyinka xiga?",
+      "tip2Title": "Ka fikir waxa ku keenay halkan",
+      "tip2Text": "Ma dhakhtar ama kalkaaliso ayaa ku siiyay qalabkan? Waxay laga yaabaa inay soo jeediyeen marxalada ku khusaysa.",
+      "tip3Title": "Haddii aadan weli hubin",
+      "tip3Text": "Dooro doorashada ugu dhow ee xaaladaada. Weli waad sahamin kartaa dhammaan macluumaadka qalabkan, iyadoon loo eegin doorashada aad doorato.",
+      "note": "Kooxda keliyahaagu waa khubaro ku ah daryeelkaaga. Haddii aad qabto su'aalo ku saabsan caafimaadka keliyahaaga, fadlan si toos ah ula xiriir.",
+      "understand": "Waan fahmay"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Noo Sheeg Wax ku Saabsan Naftaada",
+      "description": "Su'aalahani waxay naga caawiyaan inaan kuu tusno macluumaadka ugu khuseeya xaaladaada. Jawaabahaagu waa qarsoodi mana la kaydiyo ka dib kulankan.",
+      "features": {
+        "questions": "7 su'aalood oo dhakhso ah",
+        "time": "Waxay qaadataa 3-5 daqiiqo",
+        "private": "Gebi ahaanba qarsoodi",
+        "skip": "Ka bood su'aal kasta"
+      },
+      "beginButton": "Bilow Su'aalaha",
+      "skipText": "Haddii aadan doonayn inaad ka jawaabto su'aalahan, waad ka boodi kartaa macluumaadka daaweynta ee guud.",
+      "skipButton": "Ka Bood Dhammaan Su'aalaha",
+      "backToJourney": "Dib ugu Noqo Marxalada Safarka"
+    },
+    "progress": {
+      "label": "Horumarka su'aalaha",
+      "questionOf": "Su'aasha {{current}} ee {{total}}",
+      "complete": "la dhammeeyay"
+    },
+    "types": {
+      "scale": "Qiimeynta Miisaanka",
+      "single": "Doorasho Hal",
+      "multiple": "Doorashooyinka Badan"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "Intee in le'eg ayaad ka taqaanaa cudurka keliyaha iyo daaweyntiisa?",
+        "hint": "Tani waxay naga caawineysaa inaan macluumaadka u habeeyno fahamkaaga hadda."
+      },
+      "goal": {
+        "title": "Maxaad rabtaa inaad ka hesho kulanka maanta?",
+        "hint": "Dooro doorashada ugu fiican ee tilmaamaysa hadafkaaga ugu weyn maanta."
+      },
+      "learning": {
+        "title": "Sidee ayaad doorataa inaad barato macluumaad cusub?",
+        "hint": "Tani waxay naga caawineysaa inaan macluumaadka u soo bandhigno siyaabaha kuugu fiican."
+      },
+      "comfort": {
+        "title": "Intee le'eg ayaad ku raaxaysataa naqshadaha caafimaadka?",
+        "hint": "Tani waa mawduuc xasaasi ah. Waad ka boodi kartaa su'aashan haddii aad doorbideyso."
+      },
+      "support": {
+        "title": "Ma leedahay taageero guriga?",
+        "hint": "Daaweyno qaarkood way fududahay iyada oo laga caawiyay qoyska ama daryeel bixiyeyaasha."
+      },
+      "living": {
+        "title": "Xaggee ayaad ku nooshahay?",
+        "hint": "Tani waxay naga caawineysaa inaan fahanno daaweyno ku habboon deegaankaaga guriga."
+      },
+      "priorities": {
+        "title": "Maxaa kuugu muhiimsan doorashada daaweynta?",
+        "hint": "Mudnaantaadaadu waxay naga caawin doontaa inaan iftiimiyno waxa kuugu muhiimsan doorashada daaweyn kasta."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Dooro ilaa {{max}} mudnaanshiyaha kuugu muhiimsan.",
+      "selectAll": "Dooro dhammaan kuwa khuseeya - waad dooran kartaa in ka badan hal doorasho."
+    },
+    "audio": {
+      "listen": "Dhageyso su'aashan"
+    },
+    "slider": {
+      "ariaLabel": "Qiimaha {{min}} ilaa {{max}}"
+    },
+    "skipQuestion": "Ka bood su'aashan",
+    "viewResults": "Arag Natiijadayda",
+    "nextQuestion": "Su'aasha Xigta",
+    "knowledge": {
+      "levels": {
+        "1": "Wax yar ayaan ka aqaan",
+        "2": "In yar ayaan ka aqaan",
+        "3": "Aqoon qaar ayaan leeyahay",
+        "4": "Wax badan ayaan ka aqaan",
+        "5": "Aad ayaan ugu wareysan ahay"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Baro aasaaska",
+          "description": "Waxaan rabaa inaan fahmo waxa uu yahay cudurka keliyaha iyo doorashooyinka daaweynta ee la heli karo"
+        },
+        "compare": {
+          "label": "Isbarbar dhig doorashooyinkayga",
+          "description": "Hore ayaan u aqaan aasaaska waxaanan rabaa inaan isbarbar dhigo daaweyno kala duwan"
+        },
+        "prepare": {
+          "label": "U diyaargarow wadahadalka",
+          "description": "Waxaan rabaa inaan u diyaariyo su'aalo iyo fikrado balantayda xigta"
+        },
+        "support": {
+          "label": "Taageer qof kale",
+          "description": "Waxaan ka caawiyaa qof qoyska ah ama saaxiib inuu fahmo doorashooyinkooda"
+        },
+        "notSure": {
+          "label": "Weli ma hubo",
+          "description": "Keliya waxaan rabaa inaan sahamo oo arko macluumaadka la heli karo"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Sawirro iyo jaantusoyin muuqaal ah",
+          "description": "Sawirada, shaxanada iyo jaantusoyinku waxay i caawiyaan inaan fahmo"
+        },
+        "audio": {
+          "label": "Dhageysiiga macluumaadka",
+          "description": "Waxaan doorataa inaan maqlo macluumaadka oo kor loo akhriyo"
+        },
+        "reading": {
+          "label": "Akhrinta qoraalka",
+          "description": "Waxaan jeclahay inaan akhriyo macluumaad qoraal ah oo faahfaahsan"
+        },
+        "video": {
+          "label": "Daawashada fiidiyowyada",
+          "description": "Fiidiyowyada iyo wareegyada ayaa igu shaqeysa ugu fiican"
+        },
+        "interactive": {
+          "label": "Qalabka isdhexgalka",
+          "description": "Waxaan ku barannaa fal iyo sahaminta"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Aad u aan raaxo ahayn",
+        "2": "In yar oo aan raaxo ahayn",
+        "3": "Dhex dhexaad",
+        "4": "Si fiican raaxo",
+        "5": "Aad u raaxo"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Haa, waxaan la noolahay qoys ama lammaane caawin kara",
+        "carers": "Haa, waxaan leeyahay daryeel bixiyeyaal xirfadleyaal ah oo i caawiya",
+        "familyNearby": "Haa, qoyskaagu waxay ku nool yihiin meel u dhow waxayna imaan karaan",
+        "limitedSupport": "Taageero xaddidan ayaan heli karaa",
+        "preferNotSay": "Waxaan doorataa inaan sheegin"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "Guri leh meel badan",
+        "homeLimited": "Guri leh meel kaydinta xaddidan",
+        "flat": "Flat ama Flat",
+        "supported": "Hoy la taageerayo ama daryeel"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Wakhti la qaadashada qoyska",
+        "independence": "Ilaalinta madax bannaanaantayda",
+        "minimiseHospital": "Yaraynta wakhti isbitaalka lagu qaado",
+        "routine": "Haysta jadwal caadi ah",
+        "control": "Haysta xakameyso daaweyntayda",
+        "longevity": "Ku noolaanshaha inta ugu dheer ee suurtogalka ah",
+        "quality": "Tayada nolosha maalin walba",
+        "travel": "Awood u yeelashada safarka"
+      }
+    }
+  },
+  "hub": {
+    "title": "Macluumaadkaaga La Habeeyey",
+    "subtitle": "Ku salaysan jawaabahaaga, waa kan waxa aan kugu talineyno inaad sahamiso.",
+    "welcome": {
+      "title": "Doorashooyinka Daaweynta ee Laguu Habeeyay",
+      "message": "Ku salaysan waxa aad noo sheegtay, waa kuwan ilaha kaa caawin doona inaad fahamto xaaladda keliyahaaga oo aad sahamiso doorashooyinkaaga.",
+      "reminder": "Xusuusnow, kooxda keliyahaagu way kaa caawin doonaan go'aanka ugu dambeya.",
+      "badge": "Safarkaaga laguu habeeyey"
+    },
+    "session": {
+      "timeRemaining": "Wakhti kulanka oo haray:",
+      "extend": "Sii kulanka",
+      "updateAnswers": "Cusbooneysii Jawaabahayga",
+      "startOver": "Dib u Bilow"
+    },
+    "alert": {
+      "title": "Xusuuso inaad kaydiyo koobidaada",
+      "message": "Macluumaadkaaga lama kaydin doono ka dib kulankan. Samee koobid ka hor intaadan tegin si aad ugu hayso diiwaanka sahamintaada.",
+      "saveNow": "Hadda Kaydi"
+    },
+    "pathway": {
+      "title": "Sidee ayaad jeceshahay inaad sahamiso?",
+      "guided": {
+        "title": "Safarkaaga La Talinayo",
+        "badge": "La Taliyay",
+        "description": "Raac waddo talaabo talaabo ah oo doorashooyinka daaweynta ee loo habeeyey xaaladaada. Ku habboon haddii aad rabto jiho cad iyo taageero.",
+        "action": "Bilow safarka la hagayo"
+      },
+      "free": {
+        "title": "Si Xor ah u Sahami",
+        "description": "Baadh dhammaan doorashooyinka xawligaaga. Si toos ah ugu bood mawduucyada kugu xiiseeya. Ku habboon haddii aad hore u taqaan waxa aad raadineyso.",
+        "action": "Baadh dhammaan doorashooyinka"
+      }
+    },
+    "content": {
+      "title": "Qalabka Kaa Caawinaya Inaad Go'aansato",
+      "subtitle": "Sahami qalab kasta si aad u sameyso go'aan cilmi ku dhisan"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Doorashooyinka Daaweynta",
+        "description": "Wax ka baro dhammaan doorashooyinka daaweynta keliyaha ee la heli karo oo ay ku jiraan noocyada dialysis-ka, bedddelida, iyo daryeelka meel-marka.",
+        "action": "Sahami"
+      },
+      "model": {
+        "title": "Sawirka 3D ee Keliyaha",
+        "description": "Sahami sawirro 3D isdhexgal ah oo muujinaya sida daaweyno kala duwan ay ugu shaqeeyaan jidhkaaga. Si muuqaal ah u arag habka.",
+        "action": "Arag Sawirka"
+      },
+      "compare": {
+        "title": "Isbarbar Dhig Daaweynaha",
+        "description": "Arag dhammaan daaweynaha dhinac dhinac. Isbarbar dhig waxa kuugu muhiimsan - laga bilaabo wakhti maalinlaha ah ilaa dabacsanaanta safarka.",
+        "action": "Isbarbar Dhig"
+      },
+      "values": {
+        "title": "Jimicsiga Qiimaha",
+        "description": "Ka fikir waxa kuugu muhiimsan. Jimicsigani wuxuu kaa caawiyaa inaad caddeeyso mudnaantaadaada si aad u hago go'aankaaga.",
+        "action": "Bilow"
+      },
+      "chat": {
+        "title": "Weydii Su'aalo",
+        "description": "La sheekeyso kaaliyahayaga AI ee ku saabsan doorashooyinka daaweynta keliyaha. Hel jawaabo su'aalahaaga si wadahadal ah.",
+        "action": "Bilow Sheekaysiga"
+      }
+    },
+    "status": {
+      "new": "Cusub",
+      "inProgress": "Socda",
+      "completed": "La Dhammeeyay"
+    },
+    "summary": {
+      "title": "Diyaar u tahay Dib u Eegidda Safarkaga?",
+      "description": "Arag wax kasta oo aad sahamiyay oo samee koobid si aad ula wadaagto kooxda keliyahaaga balantaada xigta.",
+      "button": "Arag Koobidaada",
+      "badge": "Tallaabada Ugu Dambeysa"
+    },
+    "quickAction": {
+      "summary": "Arag Koobidaada"
+    }
+  },
+  "treatments": {
+    "title": "Fahamka Doorashooyinka Daaweyntaada",
+    "subtitle": "Waxaa jira siyaabo kala duwan oo lagu daaweeyo fashilka keliyaha. Mid kasta wuxuu leeyahay faa'iidooyin iyo arrimaha la tixgeliyo.",
+    "detailedInfoAriaLabel": "Macluumaadka faahfaahsan ee {{treatment}}",
+    "facts": {
+      "transplant": {
+        "survival": "Natiijada badbaadada ee ugu fiican muddada dheer",
+        "surgery": "Waxay u baahan tahay qaliin iyo wakhti ka soo kabashada",
+        "medication": "Daawada nolosha oo dhan ayaa loo baahan yahay"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 jeer toddobaadkii, 4-5 saacadood mid walba",
+        "professionalCare": "Daryeelka iyo la socodka xirfadlaha",
+        "travel": "Safar xarunta loo baahan yahay"
+      },
+      "peritoneal": {
+        "dailyHome": "Daaweynta maalinlaha ah guriga",
+        "timingOptions": "Doorashooyinka habeenkii ama maalinta",
+        "flexibility": "Dabacsanaan iyo madax bannaanaan badan"
+      },
+      "conservative": {
+        "comfort": "Diirada raaxada iyo tayada noloshda",
+        "noDialysis": "Daaweynta dialysis-ka looma baahna",
+        "symptomManagement": "Maaraynta calaamadaha firfircoon"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "Beddelida Keliyaha",
+        "shortDescription": "Helitaanka keliye caafimaad leh oo deeq bixiye ka yimid",
+        "description": "Beddelida keliyaha waxay ku lug leedahay helitaanka keliye caafimaad leh oo ka yimid deeq bixiye nool (sida qof qoyska ah ama saaxiib) ama deeq bixiye dhintay. Bedddelid guuleysta waxay bixin kartaa tayada nolosha ugu fiican iyo badbaadada ugu dheer dad badan oo qaba fashilka keliyaha.",
+        "benefits": [
+          "Badanaa waxay bixisaa tayada nolosha ugu fiican",
+          "Kulamo dialysis caadi ah looma baahna",
+          "Xaddidaadda cuntada yar",
+          "Heerarka tamarta wanaagsan dadka intooda badan"
+        ],
+        "considerations": [
+          "Waxay u baahan tahay qaliin weyn",
+          "Looma baahan yahay in la qaato daawada hoos u dhigta difaaca jidhka nolosha oo dhan",
+          "Waxaa laga yaabaa inaad sugto keliye ku habboon",
+          "Kuuma habboona qof walba"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Haemodialysis",
+        "shortDescription": "Nadiifinta dhiigga iyadoo la isticmaalayo mishiin",
+        "description": "Haemodialysis waxay isticmaashaa mishiin si ay dhiigaaga ugu nadiifiso dibadda jidhkaaga. Tani caadi ahaan waxaa lagu sameeyaa xarun dialysis oo isbitaal ku dhex taal ama xarun bulshada, badanaa saddex jeer toddobaadkii muddo ilaa afar saacadood kulan kasta. Dadka qaarkood waxay sameeyaan haemodialysis guriga.",
+        "benefits": [
+          "Waxtar u leh ka saarista wasakhda iyo dareerta dheeraadka ah",
+          "La xiriir caadi ah kooxda daryeelka caafimaadka",
+          "Doorashada haemodialysis ee guriga ayaa loo heli karaa kuwa qaarkood",
+          "Daaweynta waa laguu sameeyaa"
+        ],
+        "considerations": [
+          "Waxay u baahan tahay booqashooyinka caadiga ah ee isbitaalka ama xarunta",
+          "Waxay u baahan tahay marin xidid (fistula ama tuubo)",
+          "Waxaa laga yaabaa inaad daal dareento ka dib daaweynta",
+          "Xaddidaadda cuntada iyo dareerta ayaa khuseysa"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Dialysis-ka Caloosha",
+        "shortDescription": "Nadiifinta dhiigga gudaha jidhka iyadoo la isticmaalayo daahda caloosha",
+        "description": "Dialysis-ka caloosha wuxuu isticmaalaa daahda calooshaada (peritoneum) sidii shaandho dabiici ah. Dareyro gaar ah ayaa lagu geliyaa calooshaada iyada oo loo marayo tuubo yar, waxay nuugtaa wasakhda, ka dibna way ka baxdaa. Tani waxaa lagu samayn karaa guriga, maalin ama habeen adiga oo hurda.",
+        "benefits": [
+          "La sameeyey guriga, madax bannaanaan badan",
+          "Jadwal dabacsan",
+          "Jidh ahaan ka tartiib badan, hoos iyo kor yar",
+          "Safarka way ka fududahay"
+        ],
+        "considerations": [
+          "Waxay u baahan tahay ballan maalinlaha ah ee daaweynta",
+          "Waxaad u baahan tahay tuubo joogto ah oo calooshaada ku taal",
+          "Khatarta infekshinka haddii farsamada aan la ilaalin",
+          "Waxay u baahan tahay meel kaydinta alaabta"
+        ]
+      },
+      "conservative": {
+        "title": "Maaraynta Meel-marka",
+        "shortDescription": "Maaraynta calaamadaha iyadoon la samayn dialysis",
+        "description": "Maaraynta meel-marka waxay diirada saaraysaa ilaalinta tayada nolosha iyo maaraynta calaamadaha iyadoon la samayn dialysis ama bedddelid. Habkani wuxuu u fiicnaan karaa dadka qaarkood, gaar ahaan kuwa da'da ah, daciifka ah, ama qaba xaaladooyin caafimaad oo kale oo halis ah. Waxay ku lug leedahay maaraynta calaamadaha taxadar leh, daawooyinka, iyo taageerada kooxda daryeelka keliyaha.",
+        "benefits": [
+          "Kulamo dialysis ama qaliin looma baahna",
+          "Diirada tayada nolosha iyo raaxada",
+          "Waxay u fiicnaan kartaa dadka qaarkood ee da'da ah ama daciifka ah",
+          "Sii wad jadwalka caadiga ah intii suurto gal ah"
+        ],
+        "considerations": [
+          "Shaqada keliyaha ayaa sii hoos u dhici doonta",
+          "Calaamadaha ayaa u baahan doona maarayn firfircoon",
+          "Muhiim ah in la yeesho wadahadalada daacadnimada leh ee ku saabsan filashooyinka",
+          "Qorshaynta daryeelka hore ayaa lagu talinayaa"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "Isbarbar Dhig Doorashooyinka Daaweynta",
+    "subtitle": "Arag sida daaweyno kala duwan ay isugu dhigaan arrimaha muhiimka ah.",
+    "categories": {
+      "lifestyle": "Saamaynta Nolosha",
+      "medical": "Arrimaha Caafimaadka la Tixgeliyay"
+    },
+    "items": {
+      "scheduleFlexibility": "Dabacsanaanta Jadwalka",
+      "travelAbility": "Awoodda Safarka",
+      "dietRestrictions": "Xaddidaadda Cuntada",
+      "hospitalVisits": "Booqashooyinka Isbitaalka",
+      "surgeryRequired": "Qaliinka Loo Baahan Yahay",
+      "medications": "Daawooyinka"
+    },
+    "values": {
+      "high": "Sare",
+      "medium": "Dhexdhexaad",
+      "low": "Hoose",
+      "limited": "Xaddidan",
+      "varies": "Way kala duwan yihiin",
+      "fewer": "Wax yar",
+      "more": "Wax badan",
+      "moderate": "Dhexdhexaad",
+      "periodic": "Hubinno jadwal ah",
+      "threePerWeek": "3 jeer toddobaadkii",
+      "monthly": "Bishii",
+      "asNeeded": "Sida loo baahdo",
+      "major": "Qaliin weyn",
+      "minor": "Naqshad yar",
+      "none": "Ma jirto",
+      "lifelong": "Daawada hoos u dhigta difaaca jidhka nolosha oo dhan",
+      "several": "Daawooyinka badan",
+      "symptomBased": "Ku salaysan calaamadaha"
+    }
+  },
+  "compare": {
+    "title": "Isbarbar Dhig Doorashooyinka Daaweynta",
+    "subtitle": "Arag sida daaweyno kala duwan ay isugu dhigaan arrimaha kuugu muhiimsan.",
+    "intro": "Isbarbar dhigani wuxuu muujinayaa sida doorashada daaweyn kasta ay ugu dhaqanto dhinacyo kala duwan oo nolosha maalinlaha ah iyo daryeelka caafimaadka.",
+    "description": "Qalabkani wuxuu kaa caawiyaa inaad isbarbar dhigto doorashooyinka daaweynta keliyaha dhinac dhinac. Waxaad diirada saari kartaa waxyaabaha kuugu muhiimsan. Ka hoos dooro arrimaha aad rabto inaad isbarbar dhigto.",
+    "customise": "U Habee Isbarbar Dhigaaga",
+    "showTreatments": "Muuji daaweynaha:",
+    "highlightForMe": "Ii iftiimi daaweynaha",
+    "highlightHint": "Ku salaysan qiimahaaga iyo mudnaantaadaada su'aalaha",
+    "understandingIcons": "Fahamka Calaamadaha",
+    "scrollHint": "U baadh midig si aad u aragto dhammaan daaweynaha",
+    "tableHeading": "Jadwalka Isbarbar Dhigga Daaweynta",
+    "tableLabel": "Isbarbar dhigga doorashooyinka daaweynta keliyaha",
+    "criteria": "Heerarka",
+    "recommended": "La Taliyay",
+    "remember": "Xusuusnow",
+    "guidance": "Ma jirto daaweyn u fiican qof walba. Doorashada ugu fiican waxay ku xidhan tahay xaaladaada gaarka ah, caafimaadkaaga, iyo qiimahaaga. Isbarbar dhigani waa bilowga wadahadallada kooxda keliyahaaga.",
+    "addToSummary": "Ku Dar Koobidayda",
+    "treatments": {
+      "transplant": {
+        "name": "Beddelida Keliyaha",
+        "type": "Qaliin"
+      },
+      "hemodialysis": {
+        "name": "Haemodialysis",
+        "type": "Dialysis-ka xarunta"
+      },
+      "peritoneal": {
+        "name": "Dialysis-ka Caloosha",
+        "type": "Dialysis-ka guriga"
+      },
+      "conservative": {
+        "name": "Daryeelka Meel-marka",
+        "type": "Daryeelka taageerada"
+      }
+    },
+    "categories": {
+      "dailyLife": "Saamaynta Nolosha Maalinlaha ah",
+      "practical": "Arrimaha Dhaqameed la Tixgeliyay",
+      "medical": "Arrimaha Caafimaadka",
+      "support": "Baahiyaha Taageerada",
+      "health": "Natiijada Caafimaadka"
+    },
+    "criteria": {
+      "timeCommitment": "Wakhti ballan toddobaadkii",
+      "timeCommitmentHint": "Saacadaha daaweynta lagu qaato",
+      "location": "Goobta daaweynta",
+      "locationHint": "Halka daaweyntu ka dhacdo",
+      "travel": "Saamaynta safarka",
+      "travelHint": "Awoodda safarka iyo fasaxa",
+      "diet": "Xaddidaadda cuntada",
+      "dietHint": "Xaddidaadda cuntada iyo cabbitaanka",
+      "surgery": "Qaliinka loo baahan yahay",
+      "surgeryHint": "Naqshadaha bilowga ee loo baahan yahay",
+      "supportNeeded": "Taageerada loo baahan yahay",
+      "supportNeededHint": "Caawinta qoyska ama daryeel bixiyeyaasha",
+      "recoveryTime": "Wakhti ka soo kabashada",
+      "recoveryTimeHint": "Wakhti aad uga qalaqaliso daaweynta",
+      "longTermOutlook": "Aragtida muddada dheer",
+      "longTermOutlookHint": "Natiijada la filaayo wakhti ka dib",
+      "scheduleFlexibility": "Dabacsanaanta jadwalka",
+      "scheduleFlexibilityHint": "Xakameyso jadwalkaaga",
+      "trainingRequired": "Tababarka loo baahan yahay",
+      "trainingRequiredHint": "Wakhti barashada loo baahan yahay",
+      "survivalRates": "Heerarka badbaadada",
+      "survivalRatesHint": "Natiijada guud (way kala duwan tahay qofka)",
+      "qualityOfLife": "Tayada nolosha",
+      "qualityOfLifeHint": "Ladnaan guud",
+      "energyLevels": "Heerarka tamarta",
+      "energyLevelsHint": "Tamarta caadiga ah iyo daalka"
+    },
+    "values": {
+      "minimalAfterRecovery": "Wax yar ka dib ka soo kabashada",
+      "regularCheckupsOnly": "Hubinno caadi ah keliya",
+      "12to15HrsWeekly": "12-15 saacadood toddobaadkii",
+      "plusTravelTime": "Dheeraad wakhti safar ah",
+      "dailyExchanges": "Beddelashooyin maalinle ah",
+      "canBeDoneOvernight": "Waxaa la samayn karaa habeenkii",
+      "minimal": "Aad u yar",
+      "clinicVisitsAsNeeded": "Booqashooyinka kiliinikga sida loo baahdo",
+      "noRestrictions": "Xaddidaad la'aan",
+      "afterRecovery": "Ka dib ka soo kabashada",
+      "hospitalClinic": "Isbitaal/kiliinik",
+      "dialysisUnit": "Xarunta dialysis-ka",
+      "home": "Guriga",
+      "anyCleanSpace": "Meel nadiif ah oo kasta",
+      "noEquipmentNeeded": "Qalab looma baahna",
+      "veryFlexible": "Aad u dabacsan",
+      "takeMedicationsOnly": "Qaado daawooyinka keliya",
+      "difficult": "Adag",
+      "mustArrangeHolidayDialysis": "Waa in la habeeyo dialysis-ka fasaxa",
+      "goodFlexibility": "Dabacsanaan wanaagsan",
+      "suppliesCanBeSentAhead": "Alaabta waa loo diri karaa hore",
+      "fewRestrictions": "Xaddidaad yar",
+      "nearNormalDiet": "Cunto ku dhow caadiga",
+      "moderateRestrictions": "Xaddidaad dhexdhexaad ah",
+      "fluidAndPotassiumLimits": "Xaddidaadda dareerta iyo potassium-ka",
+      "lessStrict": "Ka tartiib badan",
+      "moreFlexibility": "Dabacsanaan badan",
+      "managedDiet": "Cunto la maareyay",
+      "tailoredToSymptoms": "Loo habeeyay calaamadaha",
+      "majorSurgery": "Qaliin weyn",
+      "transplantOperationRequired": "Qaliinka beddelida ayaa loo baahan yahay",
+      "minorSurgery": "Qaliin yar",
+      "fistulaOrGraftCreation": "Abuuridda fistula ama beeritaanka",
+      "minorProcedure": "Naqshad yar",
+      "pdCatheterInsertion": "Gelinta tuubada PD",
+      "noneRequired": "Wax loo baahan yahay ma jirto",
+      "noSurgicalProcedures": "Naqshadaha qaliinka ma jirto",
+      "initialSupport": "Taageerada bilowga",
+      "duringRecoveryPeriod": "Mudadii ka soo kabashada",
+      "noneNeeded": "Wax loo baahan yahay ma jirto",
+      "professionalStaffProvideCare": "Shaqaalaha xirfadlaha ah ayaa bixiya daryeelka",
+      "canDoIndependently": "Waad keligaa samayn kartaa",
+      "varies": "Way kala duwan yihiin",
+      "dependsOnSymptoms": "Waxay ku xidhan tahay calaamadaha",
+      "high": "Sare",
+      "normalDailyLifePossible": "Nolosha maalinlaha ah ee caadiga ah way suurtogashaa",
+      "low": "Hoose",
+      "fixedHospitalSlots": "Wakhtiyada isbitaalka ee la go'aamiyay",
+      "chooseYourSchedule": "Dooro jadwalkaaga",
+      "noFixedSchedule": "Jadwal la go'aamiyay ma jirto",
+      "medicationTraining": "Tababarka daawada",
+      "learningYourNewRoutine": "Barasho jadwalkaaga cusub",
+      "staffDoEverything": "Shaqaalahu wax walba way sameeyaan",
+      "oneToTwoWeeksTraining": "1-2 toddobaad tababar",
+      "learnTheTechnique": "Baro farsamada",
+      "symptomManagement": "Maaraynta calaamadaha",
+      "medicationGuidance": "Hagidda daawada",
+      "bestOutcomes": "Natiijada ugu fiican",
+      "forSuitableCandidates": "Murshaxiinta ku habboon",
+      "good": "Wanaagsan",
+      "wellEstablishedTreatment": "Daaweyn si fiican loo aasaasay",
+      "similarToHaemodialysis": "Ula mid haemodialysis",
+      "qualityFocused": "Diirada tayada",
+      "comfortOverLongevity": "Raaxada hore u mari nolol dheer",
+      "excellent": "Aad u fiican",
+      "nearNormalLifePossible": "Nolosha ku dhow caadiga ah way suurtogashaa",
+      "moderate": "Dhexdhexaad",
+      "treatmentAffectsDailyRoutine": "Daaweyntu waxay saamayn ku yeelataa jadwalka maalinlaha ah",
+      "moreIndependence": "Madax bannaanaan badan",
+      "focusOnComfort": "Diirada raaxada",
+      "symptomManagementPriority": "Mudnaanta maaraynta calaamadaha",
+      "oftenExcellent": "Badanaa aad u fiican",
+      "energyRestored": "Tamarta waa la soo celiyay",
+      "variable": "Isbeddelaya",
+      "fatigueAfterSessions": "Daal ka dib kulamada",
+      "generallyGood": "Guud ahaan wanaagsan",
+      "steadyEnergyLevels": "Heerarka tamarta joogta ah",
+      "managedWithSupport": "La maareeyo iyadoo la taageerayo"
+    },
+    "legend": {
+      "title": "Hagaha Qiimeynta",
+      "excellent": "Aad u fiican",
+      "good": "Wanaagsan",
+      "moderate": "Dhexdhexaad",
+      "challenging": "Caqabad leh",
+      "varies": "Way kala duwan yihiin",
+      "excellentDesc": "Aad u fiican - Guud ahaan aad u wanaagsan",
+      "goodDesc": "Wanaagsan - Guud ahaan wanaagsan",
+      "moderateDesc": "Dhexdhexaad - Xaddidaad qaar oo la tixgeliyo",
+      "challengingDesc": "Caqabad leh - Arrimaha muhiimka ah la tixgeliyay",
+      "variesDesc": "Way kala duwan yihiin - Waxay ku xidhan tahay xaaladaha shakhsiga"
+    },
+    "viewDetails": "Arag faahfaahinta",
+    "backToHub": "Dib ugu Noqo Xarunta",
+    "printComparison": "Daabac isbarbar dhigga"
+  },
+  "chat": {
+    "title": "Weydii Su'aalo",
+    "subtitle": "Kaaliyahayaga AI wuxuu ka jawaabi karaa su'aalaha guud ee ku saabsan daaweynta keliyaha.",
+    "placeholder": "Halkan ku qor su'aashaada...",
+    "send": "Dir",
+    "disclaimer": "Kaaliyahani wuxuu bixiyaa macluumaad guud keliya mana aha beddelka talada caafimaadka ee kooxda daryeelka keliyahaaga.",
+    "welcomeMessage": "Salaamu alaykum! Waxaan halkan u joogaa inaan ka caawiyo su'aalahaaga ku saabsan cudurka keliyaha iyo doorashooyinka daaweynta. Sideen maanta kaaga caawin karaa?",
+    "errorMessage": "Waan ka xumahay, fariintaada ma habeyn karin. Fadlan isku day mar kale.",
+    "thinking": "Waan fikiraa...",
+    "backToHub": "Dib ugu Noqo Xarunta",
+    "privacyReminder": "Xusuusinta gaarasiinta:",
+    "readyToHelp": "Diyaar u ah inaan caawiyo",
+    "status": {
+      "online": "Online"
+    },
+    "messagesLabel": "Fariimaha sheekaysiga",
+    "inputLabel": "Gelinta fariinta",
+    "audioInput": "Gelinta codka",
+    "piiWarning": "Fadlan ha wadaagin macluumaad shaqsi ah sida magacaaga, lambarka NHS, ama cinwaankaaga. Sheekaysigu lama kaydiyo.",
+    "welcome": {
+      "greeting": "Salaamu alaykum! Waxaan ahay Kaaliyaha Daryeelka Keliyaha ee NHS. Waxaan halkan u joogaa inaan kaa caawiyo fahamka doorashooyinka daaweynta keliyaha.",
+      "prompt": "Waxaad i weydiin kartaa su'aalo ku saabsan dialysis-ka, beddelida, daryeelka meel-marka, ama wax kasta oo kale oo la xiriira daaweynta keliyaha. Sideen maanta kaaga caawin karaa?"
+    },
+    "suggestedQuestions": "Su'aalaha La Soo Jeediyay",
+    "questions": {
+      "q1": "Maxay tahay farqiga u dhexeeya haemodialysis iyo dialysis-ka caloosha?",
+      "q2": "Waa intee in le'eg ayey qaadataa qaliinka beddelida keliyaha?",
+      "q3": "Ma safri karaa aniga oo dialysis ku jira?",
+      "q4": "Maxay yihiin waxyeelada dhinaca ah ee daaweynta dialysis-ka?",
+      "q5": "Sideen u ogaan karaa inaan ku habboon yahay bedddelid?",
+      "q6": "Maxay tahay daryeelka meel-marka iyo yaa dooran kara?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Wax badan ii sheeg",
+      "prosAndCons": "Maxay yihiin faa'iidooyinka iyo dhib-dhibyada?",
+      "dailyLife": "Sidee tani u saameyneysaa nolosha maalinlaha ah?"
+    },
+    "voice": {
+      "startRecording": "Bilow gelinta codka",
+      "stopRecording": "Jooji duubista",
+      "listening": "Waan dhageysan ahay...",
+      "processing": "Waan habeyn ahay...",
+      "speaking": "Waan hadlayaa...",
+      "paused": "La hakiyay",
+      "playResponse": "Dhageyso jawaabta",
+      "pauseResponse": "Haki",
+      "resumeResponse": "Sii wad",
+      "stopResponse": "Jooji",
+      "loading": "Waxaa la soo raraa audio-ga...",
+      "loadingAudio": "Waxaa la soo raraa audio-ga...",
+      "requesting": "Waxaa la codsanayo ogolaanshaha...",
+      "notSupported": "Gelinta codka lama taageerayo",
+      "error": "Qalad ayaa dhacay",
+      "micPermissionDenied": "Ogolaanshaha makarafoonga waa la diiday. Fadlan ogolow gelitaanka si aad u isticmaasho gelinta codka.",
+      "noAudioDetected": "Audio lama ogaan. Fadlan isku day mar kale.",
+      "transcriptionFailed": "Qoraalka audio-ga ma laga soo saari karin. Fadlan isku day mar kale.",
+      "synthesisFailed": "Audio-ga lama dhegeysiin karin. Fadlan isku day mar kale."
+    }
+  },
+  "values": {
+    "title": "Waxa Kuugu Muhiimsan",
+    "subtitle": "Qiimee inta muhiim ah ee arrin kasta kuu tahay. Tani waxay naga caawineysaa inaan u habeeyno macluumaadkaaga.",
+    "instructions": "Dhaqaaji siidhka si aad u tilmaanto muhiimadda (1 = Aan muhiim ahayn, 5 = Aad u muhiim)",
+    "sliderLabel": "Qiimeynta muhiimadda",
+    "startExercise": "Bilow Jimicsiga Qiimaha",
+    "lessImportant": "Ka muhiim yar",
+    "moreImportant": "Ka muhiim badan",
+    "skipStatement": "Ka bood bayaanka",
+    "viewResults": "Arag Natiijadayda",
+    "statementsRemaining_one": "{{count}} bayaan haray",
+    "statementsRemaining_other": "{{count}} bayaan haray",
+    "completed": "La Dhammeeyay",
+    "intro": {
+      "title": "Maxaa Kuugu Muhiimsan?",
+      "description": "Doorashada daaweynta keliyaha waa go'aan shaqsiyeed. Jimicsigani wuxuu kaa caawiyaa inaad ka fikirto qiimahaaga iyo mudnaantaadaada si aad ula wada hadashid kooxda keliyahaaga.",
+      "feature1": "10 bayaan qiime oo la qiimeeyo",
+      "feature2": "Waxay qaadataa ilaa 5 daqiiqo",
+      "feature3": "Ma jiraan jawaabo sax ama qalad ah",
+      "feature4": "Arag mudnaantaadaada oo la koobay",
+      "beginButton": "Bilow Jimicsiga",
+      "allAtOnce": "Ma doorbidaysaa inaad aragto dhammaan bayaanadka hal mar?",
+      "viewAll": "Arag Dhammaan Bayaanadka"
+    },
+    "progress": {
+      "statement": "Bayaanka",
+      "of": "ee"
+    },
+    "defaultHint": "Qiimee inta tani kuugu muhiim tahay 1 (Aan muhiim ahayn) ilaa 5 (Aad u muhiim)",
+    "listenStatement": "Dhageyso bayaankan",
+    "nav": {
+      "back": "Dib u noqo",
+      "skip": "Ka bood",
+      "next": "Xiga",
+      "finish": "Dhammee",
+      "backToIntro": "Dib ugu Noqo Hordhaca",
+      "seeResults": "Arag Natiijadayda"
+    },
+    "allAtOnce": {
+      "title": "Qiimee Dhammaan Bayaanadka",
+      "description": "Qiimee bayaan kasta 1 (Aan muhiim ahayn) ilaa 5 (Aad u muhiim).",
+      "progress": "La Dhammeeyay"
+    },
+    "results": {
+      "title": "Koobidda Qiimahaaga",
+      "description": "Ku salaysan jawaabahaaga, waa kan waxa kuugu muhiimsan.",
+      "topPriorities": "Mudnaantaadaada Sare",
+      "allValues": "Dhammaan Qiimahaaga",
+      "editValues": "Wax ka Beddel Qiimahaaga",
+      "compareLink": "Isbarbar Dhig Daaweynaha",
+      "addToSummary": "Ku Dar Koobidayda",
+      "viewTreatments": "Arag daaweynaha ku habboon qiimahaaga",
+      "backToHub": "Dib ugu Noqo Xarunta"
+    },
+    "ratingLabels": {
+      "1": "Aan muhiim ahayn",
+      "2": "In yar muhiim",
+      "3": "Si dhexdhexaad ah muhiim",
+      "4": "Muhiim",
+      "5": "Aad u muhiim"
+    },
+    "ratings": {
+      "1": "Aan muhiim ahayn",
+      "2": "In yar muhiim",
+      "3": "Si dhexdhexaad ah muhiim",
+      "4": "Aad u muhiim",
+      "5": "Aad iyo aad u muhiim"
+    },
+    "statements": {
+      "travel": {
+        "statement": "Awood u yeelashada safarka ayaa igu muhiim ah",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "hospital-time": {
+        "statement": "Waxaan rabaa inaan yareeyo wakhti isbitaalka lagu qaado",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "needles": {
+        "statement": "Waxaan ku raaxaysanahay cirbadaha iyo naqshadaha caafimaadka",
+        "hint": "Qiimee inta aad ugu raacsan tahay bayaankan"
+      },
+      "independence": {
+        "statement": "Ilaalinta madax banaanadayda ayaa igu aad u muhiim ah",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "family-burden": {
+        "statement": "Waxaan rabaa inaan iska ilaaliyo inaan cul noqdo qoyskayga",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "longevity": {
+        "statement": "Ku noolaanshaha inta ugu dheer ee suurtogalka ah ayaa mudnaantayda ah",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "quality-of-life": {
+        "statement": "Tayada noloshdu waxay ka muhiimsan tahay dhererka nolosha",
+        "hint": "Qiimee inta aad ugu raacsan tahay bayaankan"
+      },
+      "home-treatment": {
+        "statement": "Waxaan doorataa inaan guriga ka helo daaweynta",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "work-activities": {
+        "statement": "Sii wadida shaqada ama howlahayga caadiga ah waa muhiim",
+        "hint": "Qiimee inta tani kuugu muhiim tahay"
+      },
+      "professional-care": {
+        "statement": "Waxaan doorataa in xirfadleyaal u xilsaaraan daaweyntayda",
+        "hint": "Qiimee inta aad ugu raacsan tahay bayaankan"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Ilaalinta madax banaanadayda iyo awooda inaan naftayda u daryeelo",
+        "hint": "Awood u yeelasho inaan sameeyo howlaha maalinlaha ah adigoon si weyn ugu tiirsanayn dadka kale"
+      },
+      "schedule": {
+        "text": "Haysta dabacsanaan jadwalka iyo awood u yeelashada safarka",
+        "hint": "Awood u yeelashada qorshaynta howlaha iyo safarrada iyadoon la lahayn wakhtiyo adag oo daaweynta"
+      },
+      "hospitalTime": {
+        "text": "Qaadashada wakhti yar oo isbitaalka ama kiliinikga",
+        "hint": "Yareysta tirada iyo dhererka booqashooyinka isbitaalka"
+      },
+      "homeComfort": {
+        "text": "Helitaanka daaweynta raaxada guriga",
+        "hint": "Awood u yeelashada maaraynta daaweynta guriga halkii xarun caafimaad"
+      },
+      "familyBurden": {
+        "text": "Aan cul ku noqonayn qoyskayga",
+        "hint": "Yareysta saamaynta daaweyntayda xubnaha qoyska iyo daryeel bixiyeyaasha"
+      },
+      "longevity": {
+        "text": "Ku noolaanshaha inta ugu dheer ee suurtogalka ah",
+        "hint": "Mudnaanta daaweynaha sii dheerayn kara cimriga la filayo"
+      },
+      "qualityOfLife": {
+        "text": "Tayada noloshdu ka muhiim badan dhererka nolosha",
+        "hint": "Mudnaanta ladnaanta maalinlaha ah iyo raaxada halkii cimriga ugu dheer"
+      },
+      "energyLevels": {
+        "text": "Haysta heerar tamar wanaagsan oo dareemaysa caafimaad",
+        "hint": "Yareysta daalka iyo ilaalinta tamarta caadiga ah ee howlaha"
+      },
+      "dietRestrictions": {
+        "text": "Haysta xaddidaad yar oo cuntada iyo cabbitaanka",
+        "hint": "Awood u yeelashada cuntada iyo cabbitaanka iyadoo xaddidaad yar"
+      },
+      "naturalApproach": {
+        "text": "Qaadashada hab dabiici ah iyadoo faragelino yar",
+        "hint": "Doorashada doorashooyinka daaweynta ee dareemaya inaysan ahayn wax caafimaad ah ama soo gala"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "Sawirka 3D ee Keliyaha",
+    "backToHub": "Dib ugu Noqo Xarunta",
+    "title": "Muujiyaha Sawirka 3D ee Keliyaha",
+    "interactiveDescription": "Sahami sawir 3D isdhexgal ah oo keliyaha aadanaha. Isticmaal mouse-kaaga ama taabashada si aad u wareejiso oo u weyneysid.",
+    "dragToRotate": "Jiid si aad u wareejiso",
+    "scrollToZoom": "Scroll si aad u weyneysid",
+    "labelsOn": "Calaamadaha: Shidan",
+    "labelsOff": "Calaamadaha: Daman",
+    "autoRotateOn": "Is-wareejinta: Shidan",
+    "autoRotateOff": "Is-wareejinta: Daman",
+    "reset": "Dib u celi",
+    "resetView": "Dib u celi aragtida",
+    "aboutKidneys": "Wax ku Saabsan Keliyahaaga",
+    "kidneyInfo": "Keliyahaagu waa unugyaal sida digirta u eg oo ku dhow cabbirka contiidaada. Waxay nadiifiyaan qiyaas ahaan 200 litir oo dhiig ah maalintiiba, waxay ka saaraan wasakhda iyo dareerta dheeraadka ah.",
+    "kidneyFunction": "Waxa Keliyuhu Sameeyaan",
+    "functionInfo": "Keliyuhu waxay habeeyaan cadaadiska dhiigga, waxay soo saaraan hormoonno, waxay dheelitiraan dareerta jidhka, waxayna shaandheeyan wasakhda kaadi noqota.",
+    "whenKidneysFail": "Marka Keliyuhu Fashilmaan",
+    "failureInfo": "Marka keliyuhu lumiyaan shaqadooda, daaweyno sida dialysis-ka ama bedddelida waxay caawin karaan inay sameeyaan shaqada keliyahaagu ayna mar dambe samayn karaan.",
+    "learnMore": "Wax Badan Ka Baro Doorashooyinka Daaweynta",
+    "exploreTreatments": "Sahami Daaweynaha",
+    "compareTreatments": "Isbarbar Dhig Daaweynaha",
+    "continueJourney": "Sii wad safarkaaga adigoo sahamaya doorashooyinka daaweynta",
+    "loading": "Waxaa la soo raraa Sawirka 3D...",
+    "interactiveTool": "Qalabka Barashada ee Isdhexgalka",
+    "interactive3DModel": "Sawirka 3D ee Isdhexgalka",
+    "anatomy": {
+      "kidney": {
+        "label": "Keliyaha",
+        "description": "Unugga shaandhada ugu muhiimsan ee ka saara wasakhda dhiigaaga oo soo saara kaadida."
+      },
+      "renalArtery": {
+        "label": "Xididka Keliyaha ee Keena",
+        "description": "Wuxuu qaadaa dhiig wadnaha ka yimid ilaa keliyaha si loo nadiifiyo."
+      },
+      "renalVein": {
+        "label": "Xididka Keliyaha ee Soo Celiyo",
+        "description": "Wuxuu qaadaa dhiigga la nadiifiyay keliyaha ka yimid dib ugu wadnaha."
+      },
+      "ureter": {
+        "label": "Tuubada Kaadida",
+        "description": "Tuubada qaadda kaadida keliyaha uga aadeysa xameetada."
+      },
+      "adrenalGland": {
+        "label": "Qanjidhada Korka",
+        "description": "Qanjidha yar ee korka keliyaha oo soo saarta hormoonno muhiim ah."
+      }
+    }
+  },
+  "summary": {
+    "title": "Koobidda Kulankaaga",
+    "subtitle": "Waa kan koobidda waxa aad maanta sahamiyay.",
+    "sections": {
+      "journey": "Marxalada Safarkaaga",
+      "values": "Waxa Kuugu Muhiimsan",
+      "viewed": "Daaweynaha La Sahamiyay",
+      "questions": "Su'aalaha Kooxdaada",
+      "priorities": "Mudnaantaadaada",
+      "nextSteps": "Talaabooyinka Xigta ee La Soo Jeediyay"
+    },
+    "print": "Daabac Koobidda",
+    "email": "Emailka Koobidda",
+    "startOver": "Dib u Bilow",
+    "share": "La Wadaag",
+    "sessionId": "Aqoonsiga Kulanka",
+    "notSpecified": "Lama cayimin",
+    "readyToReview": "Diyaar u ah dib u eegidda",
+    "viewed": "La Arkay",
+    "noValues": "Weli ma dhammeysan jimicsiga qiimaha.",
+    "completeValues": "Hadda dhammee",
+    "noTreatments": "Weli ma sahaminin daaweyn kasta.",
+    "exploreTreatments": "Sahami daaweynaha",
+    "seeAll": "Arag dhammaan",
+    "confirmReset": "Ma hubtaa inaad rabto inaad dib u bilowdo? Dhammaan horumarka ayaa la waayayaa.",
+    "addQuestionPlaceholder": "Qor su'aashaada...",
+    "question1": "Doorashooyinka daaweynta ee ku habboon xaaladayda waa kuwee?",
+    "question2": "Sidee noloshaydii maalinlaha ahaa u noqon lahayd daaweyn kasta?",
+    "question3": "Sideen u bilaabaa habka daaweynta aan doorbidayo?",
+    "step1": {
+      "title": "Dib u eeg koobiddan",
+      "description": "Wakhti qaado si aad u eegtid waxa aad sahamiyay oo ka fikir su'aalo dheeraad ah."
+    },
+    "step2": {
+      "title": "La wadaag qoyska ama daryeel bixiyeyaasha",
+      "description": "Haddii aad leedahay taageero guriga, kala hadal fikirradaada iyaga."
+    },
+    "step3": {
+      "title": "Kala hadal kooxda daryeelka keliyahaaga",
+      "description": "Keen koobiddan balantaada xigta si aad ugala hadashid doorashooyinkaaga."
+    },
+    "privacy": {
+      "title": "Gaarasiintaada",
+      "text": "Macluumaadkani wuxuu ku kaydsan yahay browserkaaga keliya waxaana la tirtiri doonaa markaad dhamaystirto kulankaaga. Xog shaqsi ah lama kaydin sarfar kasta."
+    },
+    "disclaimer": {
+      "title": "Xusuusinta Muhiimka ah",
+      "text": "Koobidani waa keliya ujeedooyin macluumaad mana aha talo caafimaad. Had iyo jeer kala hadal doorashooyinka daaweyntaada kooxda daryeelka keliyahaaga kuwaas oo yaqaan xaaladaada gaarka ah."
+    },
+    "printForAppointment": "U Daabac Balantaada",
+    "askMore": "Ma leedahay su'aalo badan?",
+    "printHeader": {
+      "title": "Caawinta Go'aanka Daaweynta Keliyaha NHS",
+      "subtitle": "Koobidda Kulanka Gaarka ah",
+      "dateLabel": "Taariikhda: {{date}}",
+      "footer": "Waxaa soo saaray Caawinta Go'aanka Daaweynta Keliyaha NHS - {{date}} - Dokumentigan waa kaliya wadahadal kooxda daryeelka caafimaadkaaga"
+    },
+    "shareTitle": "Koobidda Daaweynta Keliyaha NHS",
+    "shareText": "Koobiddayda go'aanka daaweynta keliyaha",
+    "readyForAppointment": "Diyaar u tahay balantaada xigta?",
+    "printInstructions": "Daabac koobiddan si aad ula tagtid kooxda daryeelka keliyahaaga",
+    "journeyStages": {
+      "newly-diagnosed": "Dhowaan la Ogaaday",
+      "monitoring": "La soo Socda",
+      "preparing": "U Diyaargarowga Daaweynta",
+      "on-dialysis": "Hadda Dialysis ku jira",
+      "transplant-waiting": "Liiska Sugitaanka Beddelida",
+      "post-transplant": "Ka dib Beddelida",
+      "supporting-someone": "Taageerida Qof"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "Waad baranaysaa xaaladda keliyahaaga waxaadna rabtaa inaad fahamto doorashooyinkaaga.",
+      "monitoring": "Keliyahaaga waa la soo socda waxaadna u diyaargarowbaysaa mustaqbalka.",
+      "preparing": "Waxaad u baahan tahay inaad dhowaan bilowdo daaweyn waxaadna rabtaa inaad fahamto doorashooyinkaaga.",
+      "on-dialysis": "Waad heleysaa dialysis waxaadna sahamineysaa doorashooyinka kale.",
+      "transplant-waiting": "Waxaad ku jirtaa liiska sugitaanka beddelida.",
+      "post-transplant": "Waxaad heshay bedddelida keliye waxaadna rabtaa taageero joogto ah.",
+      "supporting-someone": "Waxaad taageeraysaa qof aad jeceshahay oo qaba cudurka keliyaha.",
+      "default": "Marxaladaada hadda ee safarka daryeelka keliyaha."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Haemodialysis",
+      "peritoneal-dialysis": "Dialysis-ka Caloosha",
+      "home-haemodialysis": "Haemodialysis-ka Guriga",
+      "kidney-transplant": "Beddelida Keliyaha",
+      "conservative-care": "Daryeelka Meel-marka"
+    },
+    "valueLabels": {
+      "1": "Aan muhiim ahayn",
+      "2": "In yar muhiim",
+      "3": "Si dhexdhexaad ah muhiim",
+      "4": "Muhiim",
+      "5": "Aad u muhiim",
+      "default": "Muhiim"
+    }
+  },
+  "session": {
+    "timeRemaining": "Wakhti haray: {{minutes}}",
+    "sessionExpiring": "Kulankaagu dhowaan ayuu dhammaan doonaa",
+    "expiringMessage": "Kulankaagu wuxuu dhammaan doonaa {{minutes}} daqiiqo. Ma rabtaa inaad sii waddo?",
+    "extendSession": "Sii Wad Kulanka",
+    "sessionExpired": "Kulankaagu wuu dhacay. Fadlan dib u bilow.",
+    "startNewSession": "Bilow Kulan Cusub",
+    "createError": "Kulanka abuurista way guuldarreysatay. Fadlan isku day mar kale."
+  },
+  "footer": {
+    "nhsInfo": "Daryeelka Keliyaha NHS",
+    "accessibility": "Fududaynta Gelitaanka",
+    "privacyPolicy": "Siyaasadda Gaarasiinta",
+    "termsOfUse": "Shuruudaha Isticmaalka",
+    "contact": "Xiriir",
+    "contactUs": "Nala Xiriir",
+    "navigationLabel": "Hagidda hoose",
+    "supportingDecisions": "Taageerida go'aamada daryeelka caafimaadka ee cilmiga ku dhisan",
+    "copyright": "Adeegyada Cilmi-baarista Pears. Dhammaan xuquuqda way dhowran yihiin.",
+    "demoVersion": "Nooca Tusaalaha 1.0",
+    "disclaimer": {
+      "title": "Digniin Muhiim ah",
+      "text1": "Barnaamijkan waa",
+      "mockDesign": "naqshad tusaale ah",
+      "text2": "oo ay sameysay",
+      "company": "Adeegyada Cilmi-baarista Pears",
+      "text3": "ujeedooyin tusaale ah keliya. Kuma xidhna oo looma aqbalo NHS."
+    }
+  },
+  "timeline": {
+    "title": "Maalin Nolosheed",
+    "subtitle": "Arag sida maalin caadi ah u eg tahay daaweyntan",
+    "morning": "Subax",
+    "afternoon": "Galab",
+    "evening": "Fiidkii",
+    "night": "Habeen",
+    "treatmentActivities": "{{count}} howlo la xiriira daaweynta",
+    "legend": {
+      "treatment": "La xiriira daaweynta",
+      "regular": "Howlaha caadiga ah"
+    },
+    "dayType": {
+      "dialysisDay": "Maalinta Dialysis-ka (Isniin/Arbaco/Jimce)",
+      "restDay": "Maalinta Nasashada (Talaado/Khamiis/Sabti/Axad)",
+      "apdNight": "APD (Toos ahaan Habeenkii)",
+      "capd": "CAPD (Beddelashooyin Gacmeed)",
+      "typical": "Maalin Caadi ah"
+    },
+    "toggle": {
+      "dialysisDay": "Maalinta Dialysis-ka",
+      "restDay": "Maalinta Nasashada",
+      "apd": "APD",
+      "capd": "CAPD"
+    },
+    "duration": {
+      "15min": "15 daqiiqo",
+      "20min": "20 daqiiqo",
+      "30min": "30-60 daqiiqo",
+      "4hrs": "4-5 saacadood",
+      "8hrs": "8-10 saacadood"
+    },
+    "transplant": {
+      "wakeUp": "Tooso iyo jadwalka subaxda",
+      "medication": "Qaado daawooyinka hoos u dhiga difaaca jidhka",
+      "breakfast": "Quraac - cunto caafimaad leh, dheelitiran",
+      "work": "Shaqo, xiisaha, ama howlaha",
+      "lunch": "Qado - xaddidaad cunto yar",
+      "activities": "Sii wad howlaha maalinlaha ah",
+      "exercise": "Jimicsi fudud ama socodka",
+      "dinner": "Casho qoyska la socda",
+      "eveningMeds": "Daawooyinka fiidkii",
+      "relax": "Nasasho iyo wakhti firaaqada",
+      "sleep": "Qaab hurdo caadi ah"
+    },
+    "hemo": {
+      "wakeEarly": "Hore u tooso",
+      "lightBreakfast": "Quraac fudud oo leh xaddidaadda dareerta",
+      "travelTo": "Safar xarunta dialysis-ka",
+      "session": "Kulanka dialysis-ka",
+      "travelHome": "Soo noqo guriga dialysis-ka ka dib",
+      "rest": "Nasasho iyo soo kabashada - waxaa laga yaabaa inaad daal dareento",
+      "lightMeal": "Cunto fudud oo leh xaddidaadda cuntada",
+      "quietEvening": "Howlaha fiidkii ee aamusan",
+      "earlyBed": "Hore u seexo ka dib maalinta daaweynta",
+      "regularWake": "Tooso",
+      "breakfast": "Quraac oo leh tilmaamaha cuntada",
+      "normalDay": "Shaqo ama howlaha caadiga ah",
+      "lunch": "Qado - eegida dareerta iyo potassium-ka",
+      "continue": "Sii wad howlaha maalinlaha ah",
+      "dinner": "Casho qoyska la socda",
+      "leisure": "Wakhti firaaqo",
+      "sleep": "Wakhti seexasho caadi ah"
+    },
+    "pd": {
+      "disconnect": "Ka xir mishiinka APD",
+      "morning": "Jadwalka subaxda iyo qubeysta",
+      "breakfast": "Quraac - xorriyad cunto badan",
+      "work": "Shaqo ama howlaha - xor maalintii",
+      "lunch": "Qado - xaddidaad ka yar HD",
+      "activities": "Sii wad howlaha, xiiseyaasha",
+      "exercise": "Jimicsi ama howlaha dibadda",
+      "dinner": "Casho qoyska la socda",
+      "leisure": "Wakhti firaaqo fiidkii",
+      "setup": "Habee mishiinka APD",
+      "overnight": "Seexo inta APD ka shaqeyso habeenkii",
+      "capdWake": "Tooso",
+      "exchange1": "Beddelashada kowaad ee maalinta",
+      "capdBreakfast": "Quraac",
+      "capdWork": "Shaqo ama howlaha",
+      "exchange2": "Beddelashada labaad",
+      "capdLunch": "Qado",
+      "capdActivities": "Howlaha galabnimo",
+      "exchange3": "Beddelashada saddexaad",
+      "capdDinner": "Casho",
+      "capdLeisure": "Nasashada fiidkii",
+      "exchange4": "Beddelashada ugu dambeysa ka hor seexashada",
+      "capdSleep": "Seexasho"
+    },
+    "conservative": {
+      "wake": "Tooso markaad diyaar tahay",
+      "meds": "Qaado daawooyinka maaraynta calaamadaha",
+      "breakfast": "Quraac sida loo qaadan karo",
+      "morning": "Howlaha subaxda sida tamarta u ogolaato",
+      "lunch": "Qado - cun waxa aad jeceshahay",
+      "rest": "Nasasho ama howlo tartiib ah",
+      "visitors": "Wakhti qoyska ama booqadeyaasha la socda",
+      "eveningMeds": "Daawooyinka fiidkii",
+      "dinner": "Casho kuwa aad jeceshahay la socda",
+      "relax": "Fiid aamusan oo guriga",
+      "sleep": "Nasasho markaad daal dareento"
+    }
+  },
+  "progress": {
+    "title": "Safarka Barashadaada",
+    "yourProgress": "Horumarkaaga",
+    "complete": "la dhammeeyay",
+    "treatments": "daaweynaha",
+    "sections": {
+      "title": "Qaybaha La Sahamayo",
+      "questionnaire": "Wax ku Saabsan Adiga",
+      "questionnaireDesc": "La wadaag xaaladaada",
+      "treatments": "Doorashooyinka Daaweynta",
+      "treatmentsDesc": "{{viewed}} ee {{total}} la sahamiyay",
+      "values": "Jimicsiga Qiimaha",
+      "valuesDesc": "Cadee mudnaantaadaada",
+      "chat": "Weydii Su'aalo",
+      "chatDesc": "Hel jawaabo"
+    },
+    "status": {
+      "completed": "La Dhammeeyay",
+      "inProgress": "Socda"
+    },
+    "badges": {
+      "title": "Billadahaaga",
+      "explorer": "Sahamiye",
+      "allTreatments": "Dhammaan Daaweynaha",
+      "values": "Qiimaha Cad",
+      "curious": "Maskax Fiiro",
+      "complete": "Safarka La Dhammeeyay"
+    },
+    "encouragement": {
+      "start": "Bilow safarkaaga adigoo sahamaya doorashooyinka daaweynta",
+      "beginning": "Bilow fiican! Sii sahami si aad wax badan u barato",
+      "making": "Waad horumaraysaa!",
+      "halfway": "Wax ka badan badkii - waa ku fiican tahay!",
+      "almost": "Ku dhow dhammaystiir! Qaar yar oo qaybooyin ah",
+      "complete": "Aad u fiican! Wax walba waad sahamiyay"
+    },
+    "viewSummary": "Arag Koobidaada"
+  },
+  "scenario": {
+    "title": "Maxaa Haddii? Sahamiyaha Xaaladaha",
+    "subtitle": "Arag sida xaaladaha nolosha kala duwani ugu shaqeeyaan doorasho daaweyn kasta",
+    "tips": "Talooyinka",
+    "learnMore": "Wax badan ka baro {{treatment}}",
+    "compareAll": "Isbarbar Dhig Dhammaan Daaweynaha",
+    "legend": {
+      "title": "Hagaha Qiimeynta"
+    },
+    "rating": {
+      "excellent": "Aad u fiican",
+      "good": "Wanaagsan",
+      "moderate": "Dhexdhexaad",
+      "challenging": "Caqabad leh"
+    },
+    "travel": {
+      "title": "Maxaa haddii aan rabo inaan safro?",
+      "description": "Sahami sida daaweyn kasta ay u saameyso awoodaada safarka fasaxyo ama booqashooyinka",
+      "transplant": "Ka dib ka soo kabashada, waad safri kartaa si xor ah. Qaado daawooyinka adigoo leh oo og halka daryeelka looga heli karo haddii loo baahdo.",
+      "transplantTip1": "Siday warqad kooxda beddelida",
+      "transplantTip2": "Baadhitaan xaruumaha caafimaadka ee meeshaad aadayso",
+      "transplantTip3": "Ku xir daawada dheeraadka ah shandadaada gacanta",
+      "hemodialysis": "Safarka wuxuu u baahan yahay qorsheysi horudhac ah si loo habeeyo dialysis-ka meeshaad aadayso. Xaruumaha dialysis-ka fasaxa way jiraan laakiin helitaanku way kala duwan tahay.",
+      "hemodialysisTip1": "Dalbo dialysis-ka fasaxa 6-8 toddobaad ka hor",
+      "hemodialysisTip2": "Kooxda dialysis-kaagu waxay kaa caawin karaan habeynta",
+      "hemodialysisTip3": "Safarka UK-ga way ka fududahay caalami",
+      "peritoneal": "Xorriyad badan oo safarka. Alaabta waxaa loo keeni karaa meeshaad aadeyso ama waad qaadan kartaa.",
+      "peritonealTip1": "Habee gaarsiinta alaabta 4-6 toddobaad ka hor",
+      "peritonealTip2": "Diyaaradaha badanaa waxay ogol yihiin alaab dheeraad ah ee alaabta",
+      "peritonealTip3": "Waxaad u baahan tahay meel nadiif ah beddelashooyinka",
+      "conservative": "Xaddidaad dialysis ah la'aan, laakiin safarka wuxuu ku xidhan yahay sida aad dareemayso. Safarro gaagaaban ayaa laga yaabaa inay fududahaan maarayntooda.",
+      "conservativeTip1": "Kala hadal qorshooyinka safarka kooxda daryeelkaaga",
+      "conservativeTip2": "Si taxadar leh uga fikir caymiska safarka",
+      "conservativeTip3": "U qorshee wakhtiyada nasashada safarrada"
+    },
+    "work": {
+      "title": "Maxaa haddii aan rabo inaan wakhti buuxa u shaqeeyo?",
+      "description": "Arag sida daaweyno kala duwan ugu habboon yihiin sii wadista shaqada",
+      "transplant": "Ka dib 2-3 bilood oo ka soo kabasho ah, dadka intooda badan waxay ku soo noqon karaan shaqo wakhti buuxa oo leh heerar tamar ku dhow kuwa caadiga ah.",
+      "transplantTip1": "U qorshee soo noqoshada shaqada marxalado ah",
+      "transplantTip2": "Waxaa laga yaabaa inaad u baahato wakhti ka maqnaanshiyaha ballamada kiliinikga",
+      "transplantTip3": "Shaqo bixiyeyaasha badan waxay bixiyaan habeyn dabacsan",
+      "hemodialysis": "Waa suurtagal laakiin caqabad leh. Kulamadu waxay qaataan 4-5 saacadood saddex jeer toddobaadkii, oo lagu daray wakhti ka soo kabashada. Shiftiga fiidkii/aroorta hore ayaa caawini kara.",
+      "hemodialysisTip1": "Kala hadal saacadaha dabacsan shaqo bixiyaha",
+      "hemodialysisTip2": "Wakhtiyada dialysis-ka fiidkii ama aroorta hore",
+      "hemodialysisTip3": "Haemodialysis-ka guriga wuxuu bixiyaa dabacsanaan badan",
+      "peritoneal": "APD habeenkii macnaheedu waa maalmaha waa xor shaqada. CAPD waxay u baahan tahay nasashooyinka beddelashooyinka laakiin dad badan ayaa sii wada shaqaynaya.",
+      "peritonealTip1": "APD wuu ku habboon yahay shaqaalaha wakhti buuxa",
+      "peritonealTip2": "Waad samayn kartaa beddelashooyinka CAPD shaqada",
+      "peritonealTip3": "Heerarka tamarta badanaa way ka wanaagsan yihiin HD",
+      "conservative": "Waxay ku xidhan tahay calaamadaha iyo tamarta. Dad badan ayaa sii wada wakhti-qayb ama saacado la yareyay. Diirada waa tayada nolosha.",
+      "conservativeTip1": "Ka fikir yareysta saacadaha tartiib tartiib",
+      "conservativeTip2": "Kala hadal habeynta caafimaadka shaqada",
+      "conservativeTip3": "Mudnaanta sii howlaha ugu muhiimsan"
+    },
+    "liveAlone": {
+      "title": "Maxaa haddii aan keligay noolahay?",
+      "description": "Fahamo daaweyno wanaagsan u shaqeeya dadka madax bannaan u nool",
+      "transplant": "Waxaad u baahan doontaa taageero muddada ka soo kabashada (2-4 toddobaad), laakiin ka dib waad u noolaan kartaa madax bannaan ahaan.",
+      "transplantTip1": "Habee caawin toddobaadyada ugu horreeya ka dib qaliinka",
+      "transplantTip2": "Hayso xiriirka degdegga ee la heli karo",
+      "transplantTip3": "Samee xusuusiyeyaal daawada",
+      "hemodialysis": "Daaweynta waxaa lagu sameeyaa xarun shaqaale xirfadleyaal ah. Habeynta guriga looma baahna. Xiriir caadi ah kooxda daryeelka caafimaadka.",
+      "hemodialysisTip1": "Gaadiidka isbitaalka ayaa la heli karaa",
+      "hemodialysisTip2": "Shaqaaluhu way ku la socdaan muddada daaweynta",
+      "hemodialysisTip3": "Taageerada bulsho ee bukaannada kale",
+      "peritoneal": "Dad badan ayaa si guul leh u sameya PD keligood. Tababarka wuu kuu diyaariyaa si wanaagsan. Taageerada telefoonka 24/7 waa la heli karaa.",
+      "peritonealTip1": "Tababar dhammaystiran ka hor bilowga",
+      "peritonealTip2": "Booqashooyin caadi ah oo kalkaalisooyinka PD guriga",
+      "peritonealTip3": "Khadka caawimaadda 24-saac ee xaaladaha degdegga ah",
+      "conservative": "Bilowga way maarmi kartaa keligaa. Sida calaamadaha u horumaraan, waxaa laga yaabaa inaad u baahato taageero sii kordheysa. Adeegyada bulshada ayaa caawin kara.",
+      "conservativeTip1": "Hubinno caadi ah oo kooxda daryeelka",
+      "conservativeTip2": "Adeegyada taageerada bulshada waa la heli karaa",
+      "conservativeTip3": "Hore u qorshee baahiyaha daryeelka mustaqbalka"
+    },
+    "family": {
+      "title": "Maxaa haddii aan leeyahay caruur yaryar?",
+      "description": "Ka fikir sida daaweynaha ay u saameyaan daryeelida carruurta iyo wakhtiga qoyska",
+      "transplant": "Ka dib ka soo kabashada, waad si buuxda uga qayb qaadan kartaa nolosha qoyska. Tayada nolosha ugu fiican ee waalidiinta firfircoon.",
+      "transplantTip1": "Habee daryeelka carruurta muddada ka soo kabashada",
+      "transplantTip2": "Ku noqon kartaa howlaha waalidnimada caadiga ah",
+      "transplantTip3": "Tamar wanaagsan howlaha qoyska",
+      "hemodialysis": "Wakhti caadi ah oo guriga ka maqan daaweynta. Daalka ka dib kulamada wuxuu saameysi karaa howlaha qoyska. Daryeelka carruurtu waa loo baahan yahay muddada kulamada.",
+      "hemodialysisTip1": "U qorshee kulamada inta saacadaha iskuulka",
+      "hemodialysisTip2": "Ka qayb geli carruurta si da'da ku habboon",
+      "hemodialysisTip3": "U qorshee wakhtiga qoyska maalmaha aan dialysis-ka ahayn",
+      "peritoneal": "Daaweynta guriga macnaheedu waa wakhti badan oo qoyska. APD habeenkii ayuu ka tagaa maalmaha xor ah daryeelka carruurta.",
+      "peritonealTip1": "APD waxay dhacaa inta carruurtu seexanayaan",
+      "peritonealTip2": "Maalmaha ayaa xor u ah dhigidda iskuulka",
+      "peritonealTip3": "Carruurta si ammaan ah waa lagu dari karaa",
+      "conservative": "Jadwal daaweyn la'aan, laakiin heerarka tamarta way kala duwan yihiin. Diirada wakhtiga tayada leh ee qoyska.",
+      "conservativeTip1": "Mudnaanta wakhtiyada qoyska gaarka ah",
+      "conservativeTip2": "Aqbal caawinta daryeelka carruurta marka loo baahdo",
+      "conservativeTip3": "Yeelo wadahadalada daacadda ah ee carruurta"
+    }
+  },
+  "treatment": {
+    "dayInLife": "Maalin Nolosheed"
+  },
+  "glossary": {
+    "title": "Qaamuuska Erayada Caafimaadka",
+    "subtitle": "Qeexitaanno fudud, luqad cad oo erayada caafimaadka ee la xiriira cudurka keliyaha iyo daaweynta. Isticmaal sanduuqa raadinta ama ka saar qaybta si aad u hesho waxa aad u baahan tahay.",
+    "breadcrumb": "Qaamuuska",
+    "searchSection": "Raadi oo ka saar erayada",
+    "searchLabel": "Raadi erayada caafimaadka",
+    "searchPlaceholder": "Raadi eray...",
+    "clearSearch": "Nadiifi raadinta",
+    "filterByCategory": "Ka saar qaybta",
+    "resultsCount": "{{count}} eray la helay",
+    "resultsCount_one": "{{count}} eray la helay",
+    "resultsCount_other": "{{count}} eray la helay",
+    "expandAll": "Balaadhi dhammaan",
+    "collapseAll": "Yaree dhammaan",
+    "termsList": "Liiska erayada caafimaadka",
+    "viewTreatments": "Arag Doorashooyinka Daaweynta",
+    "noResults": {
+      "title": "Eray lama helin",
+      "message": "Isku day inaad hagaajiso raadintaada ama shaandhada si aad u hesho waxa aad raadineyso.",
+      "reset": "Dib u celi shaandhada"
+    },
+    "help": {
+      "title": "Ma u baahan tahay caawin badan oo faham?",
+      "description": "Haddii aadan heli karin eray ama aad u baahan tahay sharaxaad badan, kaaliyahayaga AI wuxuu kaa caawin karaa inuu ka jawaabo su'aalahaaga ku saabsan cudurka keliyaha iyo daaweynaha.",
+      "chatButton": "Weydii Su'aal"
+    },
+    "categories": {
+      "all": "Dhammaan Erayada",
+      "dialysis": "Dialysis-ka",
+      "transplant": "Beddelida",
+      "kidneyFunction": "Shaqada Keliyaha",
+      "kidney-function": "Shaqada Keliyaha",
+      "access": "Gelitaanka",
+      "care": "Doorashooyinka Daryeelka",
+      "general": "Guud"
+    },
+    "links": {
+      "learnMore": "Wax badan ka baro",
+      "treatments": "Arag daaweynaha",
+      "viewModel": "Arag sawirka 3D"
+    },
+    "terms": {
+      "dialysis": {
+        "title": "Dialysis-ka",
+        "definition": "Daaweyn sameysa qaar ka mid ah shaqada keliyahaagu ayna mar dambe samayn karaan. Waxay ka saartaa wasakhda, cusbooyinka dheeraadka ah iyo biyaha dhiigaaga. Waxaa jira laba nooc oo waaweyn: haemodialysis iyo dialysis-ka caloosha."
+      },
+      "haemodialysis": {
+        "title": "Haemodialysis (HD)",
+        "definition": "Nooc dialysis ah oo isticmaala mishiin si uu dhiigaaga ugu nadiifiyo dibadda jidhkaaga. Dhiigga waxaa lagaaga soo saaraa jidhkaaga iyada oo loo marayo tuubooyinka mishiinka dialysis-ka, kaas oo ka saara wasakhda iyo dareerta dheeraadka ah, ka dibna soo celiyo dhiigga nadiifka ah jidhkaaga. Badanaa waxaa la sameeyaa 3 jeer toddobaadkii muddo ilaa 4 saacadood kulan kasta."
+      },
+      "peritonealDialysis": {
+        "title": "Dialysis-ka Caloosha (PD)",
+        "definition": "Nooc dialysis ah oo isticmaala daahda calooshaada, oo la yiraahdo peritoneum, sidii shaandho dabiici ah. Dareyro gaar ah ayaa lagu geliyaa calooshaada iyada oo loo marayo tuubo jilicsan, halkaas oo ay ku nuugtaa wasakhda iyo dareerta dheeraadka ah, ka dibna way ka baxdaa. Waxaa lagu samayn karaa guriga."
+      },
+      "apd": {
+        "title": "APD (Dialysis-ka Caloosha ee Tooska ah)",
+        "definition": "Nooc dialysis caloosha ah halkaas oo mishiin ay si toos ah u sameeyo beddelashooyinka, badanaa adiga oo hurda habeenkii. Mishiinku wuxuu buuxiyaa oo ka soo daadiyo dareerta dialysis-ka calooshaada dhowr jeer habeenkii, isagoo ka tagaya maalmaha xor ah."
+      },
+      "capd": {
+        "title": "CAPD (Dialysis-ka Caloosha ee Joogtada ah ee Socda)",
+        "definition": "Nooc dialysis caloosha ah halkaas oo adiga si gacmeed ah aad u beddesho dareerta calooshaada, badanaa 3-4 jeer maalintii. Beddelashada kasta waxay qaadataa qiyaas ahaan 30-40 daqiiqo. Waxaad ku samayn kartaa guriga, shaqada, ama safarka."
+      },
+      "dialysate": {
+        "title": "Dialysate",
+        "definition": "Dareerta gaarka ah ee loo isticmaalo dialysis-ka si looga caawiyo ka saarista wasakhda iyo biyaha dheeraadka ah dhiigaaga. Dialysis-ka caloosha, waa dareerta gasha calooshaada. Dareerta waxay soo jiidataa wasakhda iyo biyaha dheeraadka ah dhiigaaga iyada oo loo marayo peritoneum-ka."
+      },
+      "dialysisAdequacy": {
+        "title": "Ku Filnaanta Dialysis-ka",
+        "definition": "Cabbirka sida daaweyntaada dialysis-ka ay u shaqeyneyso. Kooxda keliyahaagu mar walba ayay hubisaa tan iyaga oo isticmaala baaritaanno dhiig si ay u hubiyaan inaad heleysid dialysis ku filan si aad u caafimaad qaadato."
+      },
+      "transplant": {
+        "title": "Beddelida Keliyaha",
+        "definition": "Qaliin lagu dhigo keliye caafimaad leh oo ka yimid deeq bixiye jidhkaaga. Keliyaha cusubi wuxuu qaataa shaqada nadiifinta dhiigaaga. Bedddelid guuleysta macnaheedu waa inaadan u baahnayn dialysis, inkastoo aad u baahan doonto inaad qaadato daawooyinka noloshaada oo dhan si aad uga hortagto jidhkaaga diidmada keliyaha cusub."
+      },
+      "livingDonor": {
+        "title": "Deeq Bixiye Nool",
+        "definition": "Qof nool oo deeq bixiya mid ka mid ah keliyihiisa qof u baahan bedddelid. Deeq bixiyeyaasha nool badanaa waa xubnaha qoyska ama saaxiibada dhow, laakiin waxay sidoo kale noqon karaan dad raba inay caawiyaan qof aysan aqoon (deeq bixiyeyaasha altruistic). Dadku waxay ku noolaan karaan nolol caafimaad leh iyadoo keliya hal keliye."
+      },
+      "deceasedDonor": {
+        "title": "Deeq Bixiye Dhintay",
+        "definition": "Keliye ka yimid qof dhintay oo ogolaaday inuu deeq bixiyo unugyihiisa, ama qoyskoodu ogolaaday. Dadka badankood ee hela bedddelida keliyaha waxay ka helaan deeq bixiye dhintay."
+      },
+      "immunosuppressants": {
+        "title": "Daawada Hoos u Dhigta Difaaca Jidhka",
+        "definition": "Daawooyinka yaraynaya firfircoonida nidaamka difaacaaga. Ka dib bedddelida keliyaha, waxaad u baahan tahay inaad qaadato daawooyinkan noloshaada oo dhan si aad uga joojiso jidhkaaga inuu weeraro oo diido keliyaha cusub. Waxay kaa dhigi karaan inaad badanaa hesho infekshino."
+      },
+      "rejection": {
+        "title": "Diidmada",
+        "definition": "Marka nidaamka difaacaaga jidhkaagu uu aqoonsado keliyaha la bedelay inuu yahay shisheeye oo isku dayo inuu weeraro. Tani waa sababta aad u baahan tahay inaad qaadato daawooyinka hoos u dhiga difaaca jidhka ka dib bedddelida. Calaamadaha waxaa ka mid noqon kara dareen xanuun ah, xummad, ama kaadi yar."
+      },
+      "tissueTyping": {
+        "title": "Noocaynta Unugga",
+        "definition": "Baaritaan dhiig ah oo eega calaamadaha unugyahaaga si loo caawiyo helitaanka keliye ku habboon. Sida u dhow ee isku dhigmada adiga iyo deeq bixiyaha, sida ay u sarrayaan fursadaha bedddelid guuleysta."
+      },
+      "waitingList": {
+        "title": "Liiska Sugitaanka Beddelida",
+        "definition": "Liiska qaranka ee dadka sugaya bedddelida keliyaha ee ka timaado deeq bixiye dhintay. Marka keliye ku habboon la helo, waxaa loogu dhigaa qof liiska ku jira iyadoo lagu saleynayo nooca dhiigga, nooca unugga, iyo arrimaha kale."
+      },
+      "kidneyFunction": {
+        "title": "Shaqada Keliyaha",
+        "definition": "Sida keliyahaagu u shaqeynayaan. Keliyahaagu waxay shaandheeyan wasakhda iyo biyaha dheeraadka ah dhiigaaga, waxay caawiyaan xakameynta cadaadiska dhiigga, waxay soo saaraan hormoonno, waxayna caafimaadka u hayaan lafaaha. Shaqada keliyaha waxaa lagu cabiraa baaritaanno dhiig iyo kaadi."
+      },
+      "egfr": {
+        "title": "eGFR (Qiyaasta Heerka Nadiifinta Glomerular)",
+        "definition": "Cabbirka sida keliyahaagu si fiican ugu nadiifiyo wasakhda dhiigaaga. Waxaa lagu xisaabiyaa baaritaan dhiig ah oo cabira creatinine. eGFR caadi waa ka sareeya 90. Ka hoose 15 badanaa macnaheedu waa fashilka keliyaha iyo baahida daaweynta sida dialysis-ka ama beddelida."
+      },
+      "creatinine": {
+        "title": "Creatinine",
+        "definition": "Wasakh ay sameeyan muruqyadaada oo caadi ahaan ay ka saaraan keliyahaagu. Baaritaanka dhiigga wuxuu cabiraa inta creatinine ahi ku jirto dhiigaaga. Heerarka sare waxay noqon karaan calaamad ah in keliyahaagu aysan u shaqeynayn sida ay tahay."
+      },
+      "ckd": {
+        "title": "CKD (Cudurka Keliyaha ee Raaga)",
+        "definition": "Xaalad muddo dheer ah halkaas oo keliyahaagu aysan u shaqeynayn sida ay tahay. CKD waxaa loo qaybiyaa marxaladaha 1-5 iyadoo lagu saleynayo sida keliyahaagu u shaqeynayaan, marxalada 5 ay tahay tan ugu daran (fashilka keliyaha). Dad badan oo qaba CKD waxay ku noolaan karaan nolol caadi ah iyadoo daaweyn."
+      },
+      "kidneyFailure": {
+        "title": "Fashilka Keliyaha",
+        "definition": "Marka keliyahaagu aysan mar dambe si fiican u shaqeyn karin iyagoo keligood si ay caafimaad kuugu hayaan. Sidoo kale waxaa loo yaqaan cudurka keliyaha ee marxalada ugu dambeysa ama marxalada 5 CKD. Marxaladan, waxaad u baahan tahay daaweyn sida dialysis-ka ama bedddelida keliyaha si aad u noolaato."
+      },
+      "uraemia": {
+        "title": "Uraemia",
+        "definition": "Is uruurinta wasakhda dhiigaaga ee dhacda marka keliyahaagu aysan si fiican u nadiifin karin. Calaamadaha waxaa ka mid noqon kara dareen daal ah, xanuun, maqaarka cuncunaya, cunno yar, iyo dhibaato fikirka. Dialysis-ka ama beddelida ayaa caawin kara ka saarista wasakhdan."
+      },
+      "fistula": {
+        "title": "Fistula (AV Fistula)",
+        "definition": "Nooc gelitaan haemodialysis ah oo lagu abuuray qaliin yar oo ku xira xidid ilaa xidid, badanaa gacantaada. Tani waxay ka dhigtaa xididka inuu weynaan oo xoog badnaan si loo isticmaalo dialysis-ka. Fistula waxaa loo tixgeliyaa nooca gelitaanka ugu fiican ee haemodialysis-ka."
+      },
+      "graft": {
+        "title": "Beeritaanka (AV Graft)",
+        "definition": "Nooc gelitaan haemodialysis ah halkaas oo tuubo balaastig jilicsan loo isticmaalo in lagu xiro xidid ilaa xidid, badanaa gacantaada. Tan waxaa loo isticmaalaa marka xididyadaada aan ku habbonayn fistula."
+      },
+      "catheter": {
+        "title": "Catheter (Tuubada Dialysis-ka)",
+        "definition": "Tuubo jilicsan oo lagu geliyo xidid weyn, badanaa qoorta ama xabadka, si loo oggolaado gelitaanka haemodialysis-ka. Catheter waxaa la isticmaali karaa isla markiiba laakiin waxay leedahay khatarta infekshinka ka sarreysa fistula ama beeritaanka."
+      },
+      "pdCatheter": {
+        "title": "PD Catheter (Tenckhoff Catheter)",
+        "definition": "Tuubo jilicsan, dabacsan oo lagu dhigo calooshaada qaliin yar. Waxaa loo isticmaalaa in lagu geliyo dareerta dialysis-ka oo laga soo daadsha muddada dialysis-ka caloosha. Tuubada waxay ku taallaa meesha waxayna badanaa ka soo baxdaa in yar ka hoose xudduntaada."
+      },
+      "vascularAccess": {
+        "title": "Gelitaanka Xididka",
+        "definition": "Habka dhiigga looga soo saarayo jidhkaaga oo dib loogu soo celiyo haemodialysis-ka. Tan waxaa loo mari karaa fistula, beeritaan, ama catheter dialysis-ka. Gelitaanka xididka wanaagsan ayaa muhiim u ah daaweynta haemodialysis-ka ee wax ku oolka ah."
+      },
+      "conservativeCare": {
+        "title": "Daryeelka Meel-marka",
+        "definition": "Hab daaweyn oo diirada saara maaraynta calaamadaha iyo ilaalinta tayada nolosha iyadoon la samayn dialysis ama bedddelid. Waxay ku lug leedahay daawooyinka, isbeddelada cuntada, iyo taageerada kooxda keliyahaaga. Dadka qaarkood waxay doorataan doorashadan, gaar ahaan kuwa da'da ah ama qaba xaaladooyin caafimaad oo halis ah."
+      },
+      "supportiveCare": {
+        "title": "Daryeelka Taageerada",
+        "definition": "Daryeelka kaa caawiya inaad ku noolaato si wanaagsan xaaladaada keliyaha. Waxaa ka mid ah maaraynta calaamadaha sida xanuunka, daalka, iyo lallabada, iyo sidoo kale taageerada dareenka iyo dhaqameed adiga iyo qoyskaaga. Daryeelka taageerada waxaa la bixin karaa iyadoo la socda daaweyno kale."
+      },
+      "palliativeCare": {
+        "title": "Daryeelka Qabowga",
+        "definition": "Daryeelka takhasusliga ah ee diirada saara raaxada iyo tayada nolosha halkii la daweeyo cudurka. Kooxaha daryeelka qabowga waxay caawinayaan maaraynta calaamadaha oo waxay bixiyaan taageero dareen. Daryeelkan waxaa la bixin karaa marxalad kasta oo cudurka keliyaha, ma aha keliya dhammaadka nolosha."
+      },
+      "renalTeam": {
+        "title": "Kooxda Keliyaha (Kooxda Daryeelka Keliyaha)",
+        "definition": "Kooxda xirfadlayaasha daryeelka caafimaadka ee ku dayacaya. Tan badanaa waxaa ka mid ah dhakhaatiirta keliyaha (nephrologists), kalkaaliso takhasuslayaal ah, calalliyeyaal, la taliyayaal, iyo kuwa kale. Waxay wadajir u shaqeeyaan si ay kuu siiyaan daryeelka iyo taageerada ugu fiican."
+      },
+      "nephrologist": {
+        "title": "Nephrologist",
+        "definition": "Dhakhtar ku takhasusay cudurrada keliyaha. Nephrologist-kaaga wuxuu hogaamiyaa kooxda daryeelka keliyahaaga wuxuuna kaa caawiyaa inaad go'aamiso daaweyntaada. Waa khubarada dhammaan noocyada xaaladaha keliyaha iyo daaweynaha."
+      },
+      "anaemia": {
+        "title": "Dhiig Yaraanta",
+        "definition": "Xaalad halkaas oo aad leedahay unugyada dhiiga cas oo ka yar caadiga, taas oo kaa dhigi karta dareen daal ah iyo neeftuur. Waxay caadi ku tahay dadka qaba cudurka keliyaha sababtoo ah keliyuhu waxay soo saaraan hormoon (erythropoietin) oo caawinaya abuurista unugyada dhiiga cas. Daaweyntu waxay ku lug leedahay durriyadaha ama kaabsiyaasha birta."
+      },
+      "bloodPressure": {
+        "title": "Cadaadiska Dhiigga",
+        "definition": "Xoogga dhiigga ku riixaya derbiyada xididyadaada. Cadaadiska dhiigga sare wuxuu caadi u yahay cudurka keliyaha wuxuuna ka sii darin karaa dhaawaca keliyaha. Xakameynta cadaadiska dhiigga daawooyinka iyo isbeddelada nolosha waa qayb muhiim ah oo daryeelka keliyaha."
+      },
+      "fluidBalance": {
+        "title": "Dheelitirnaanta Dareerta",
+        "definition": "Dheelitirnaanta u dhaxeysa inta dareyro aad qaadato iyo inta ka baxda jidhkaaga. Marka keliyuhu aysan si fiican u shaqeynayn, ma saari karaan dareerta dheeraadka ah, taas oo keeni karta bararka iyo neef la'aanta. Waxaa laga yaabaa inaad u baahato inaad xaddido inta aad caabbato."
+      },
+      "potassium": {
+        "title": "Potassium",
+        "definition": "Macdanta laga helo cuntooyinka badan ee ka caawiya muruqyadaada iyo wadnahaagu inay si sax ah u shaqeeyaan. Marka keliyuhu aysan si fiican u shaqeynayn, potassium-ku wuxuu isu uruurin karaa heerar halis ah dhiigaaga. Waxaa laga yaabaa inaad u baahato inaad xaddido cuntooyinka potassium badan sida muuska, liin dhanaanka, iyo baradhuhu."
+      },
+      "phosphate": {
+        "title": "Phosphate",
+        "definition": "Macdanta laga helo cuntooyinka badan ee ka caawisa dhisidda lafo xoog leh. Marka keliyuhu aysan si fiican u shaqeynayn, phosphate wuxuu isu uruurin karaa dhiigaaga oo uu daciifin karaa lafaaha. Waxaa laga yaabaa inaad u baahato inaad qaadato kiniiniyada la yiraahdo phosphate binders cuntada iyo inaad xaddido cuntooyin qaar."
+      }
+    }
+  }
+}

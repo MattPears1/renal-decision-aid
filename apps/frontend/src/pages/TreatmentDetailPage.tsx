@@ -1,392 +1,55 @@
 /**
- * @fileoverview Treatment detail page for the NHS Renal Decision Aid.
- * Displays comprehensive information about each treatment option including
- * overview, how it works, benefits, considerations, lifestyle impact, FAQs,
- * and patient stories.
+ * Treatment detail page - displays comprehensive information about each treatment option.
+ * Includes "In Simple Terms" explanations, visual explainers, day-in-life summaries,
+ * FAQs, and categorised common questions for improved clarity.
  * @module pages/TreatmentDetailPage
- * @version 2.5.0
- * @since 1.0.0
- * @lastModified 21 January 2026
  */
-
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
 import TreatmentTimeline from '@/components/TreatmentTimeline';
+import { TREATMENT_DETAIL_DATA } from '@/data/treatmentDetailData';
 import type { TreatmentType } from '@renal-decision-aid/shared-types';
 
-/**
- * Treatment data structure containing all information about a treatment option.
- * @interface TreatmentData
- * @property {TreatmentType} id - Unique identifier for the treatment
- * @property {string} title - Display title for the treatment
- * @property {string} subtitle - Brief subtitle description
- * @property {string} description - Full description of the treatment
- * @property {Array<{icon: React.ReactNode; label: string}>} tags - Tag pills for quick info
- * @property {string} bgGradient - Tailwind gradient classes for hero background
- * @property {string} iconColor - Tailwind color class for the icon
- * @property {React.ReactNode} icon - SVG icon component for the treatment
- * @property {string[]} overview - Array of overview paragraph texts
- * @property {Array<{title: string; content: string}>} howItWorks - How it works sections
- * @property {Array<{icon: React.ReactNode; title: string}>} benefits - List of benefits
- * @property {string[]} considerations - List of considerations/warnings
- * @property {Array<{icon: React.ReactNode; title: string; content: string}>} lifestyle - Lifestyle impact info
- * @property {Array<{title: string; description: string}>} steps - Getting started steps
- * @property {Array<{question: string; answer: string}>} faqs - Frequently asked questions
- * @property {Array<{quote: string; name: string; age: number; duration: string}>} patientStories - Patient testimonials
- */
-interface TreatmentData {
-  id: TreatmentType;
-  title: string;
-  subtitle: string;
-  description: string;
-  tags: { icon: React.ReactNode; label: string }[];
-  bgGradient: string;
-  iconColor: string;
-  icon: React.ReactNode;
-  overview: string[];
-  howItWorks: { title: string; content: string }[];
-  benefits: { icon: React.ReactNode; title: string }[];
-  considerations: string[];
-  lifestyle: { icon: React.ReactNode; title: string; content: string }[];
-  steps: { title: string; description: string }[];
-  faqs: { question: string; answer: string }[];
-  patientStories: { quote: string; name: string; age: number; duration: string }[];
-}
-
-/**
- * Comprehensive treatment data for all kidney treatment options.
- * Contains detailed information for kidney transplant, hemodialysis,
- * peritoneal dialysis, and conservative care.
- * @constant {Record<TreatmentType, TreatmentData>}
- */
-const TREATMENT_DATA: Record<TreatmentType, TreatmentData> = {
-  'kidney-transplant': {
-    id: 'kidney-transplant',
-    title: 'Kidney Transplant',
-    subtitle: 'Receiving a healthy kidney from a donor can offer the best quality of life for many people with kidney failure.',
-    description: 'A kidney transplant involves receiving a healthy kidney from either a living donor (such as a family member or friend) or a deceased donor.',
-    tags: [
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>, label: 'Living or deceased donor' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, label: 'Major surgery' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>, label: 'Best long-term outcomes' },
-    ],
-    bgGradient: 'from-[#E6F4EA] to-[#f0f7f0]',
-    iconColor: 'text-nhs-green',
-    icon: (
-      <svg className="w-28 h-28" viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="4">
-        <path d="M60 15C45 15 33 27 33 42C33 52.5 39 60 39 67.5C39 82.5 52.5 90 60 90C67.5 90 81 82.5 81 67.5C81 60 87 52.5 87 42C87 27 75 15 60 15Z" />
-        <path d="M52.5 52.5C52.5 48 55.5 45 60 45C64.5 45 67.5 48 67.5 52.5C67.5 57 64.5 60 60 60C55.5 60 52.5 57 52.5 52.5Z" strokeWidth="3" />
-        <line x1="60" y1="72" x2="60" y2="84" strokeWidth="3" strokeLinecap="round" />
-        <line x1="54" y1="78" x2="66" y2="78" strokeWidth="3" strokeLinecap="round" />
-        <path d="M60 27L63 24C66 21 70.5 21 72 24C73.5 27 73.5 30 70.5 33L60 42L49.5 33C46.5 30 46.5 27 48 24C49.5 21 54 21 57 24L60 27Z" fill="currentColor" />
-      </svg>
-    ),
-    overview: [
-      'A kidney transplant is often considered the best treatment for kidney failure when suitable. A successful transplant can provide the best quality of life and longest survival for many people.',
-      'You can receive a kidney from a living donor (such as a family member, friend, or altruistic stranger) or from someone who has died (deceased donor). Living donor transplants often work better and last longer.',
-    ],
-    howItWorks: [
-      { title: 'Assessment', content: 'Your kidney team will assess whether you are suitable for a transplant. This involves blood tests, scans, and checking your overall health.' },
-      { title: 'Finding a donor', content: 'If you have a willing living donor, they will be assessed separately. Otherwise, you will be placed on the national waiting list for a deceased donor kidney.' },
-      { title: 'The operation', content: 'Transplant surgery takes 2-4 hours. The new kidney is placed in your lower abdomen and connected to your blood vessels and bladder. Your own kidneys are usually left in place.' },
-      { title: 'Recovery', content: 'Most people stay in hospital for 5-7 days after surgery. Full recovery takes 2-3 months. You will need to take immunosuppressant medications for life to prevent rejection.' },
-    ],
-    benefits: [
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, title: 'Best quality of life' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'No dialysis sessions' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>, title: 'Fewer diet restrictions' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>, title: 'Better energy levels' },
-    ],
-    considerations: [
-      'Requires major surgery with associated risks',
-      'Need to take immunosuppressant medications for life',
-      'May need to wait years for a suitable kidney from the waiting list',
-      'Not suitable for everyone - depends on overall health',
-      'Risk of rejection - the new kidney may stop working over time',
-      'Increased risk of infections due to immunosuppression',
-    ],
-    lifestyle: [
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, title: 'Travel', content: 'After recovery, most transplant patients can travel freely. You will need to plan ahead for medication supplies and know where to seek medical care if needed.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, title: 'Work', content: 'Most people can return to work 2-3 months after surgery. Many transplant recipients work full time and lead active careers.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>, title: 'Diet', content: 'Dietary restrictions are usually much less strict after a successful transplant. Your dietitian will advise you, but most people can enjoy a normal, healthy diet.' },
-    ],
-    steps: [
-      { title: 'Referral and assessment', description: 'Your kidney team will refer you for transplant assessment. This involves tests to check you are well enough for surgery.' },
-      { title: 'Finding a donor', description: 'Explore living donation options with family and friends. If no living donor is available, you will be placed on the national waiting list.' },
-      { title: 'Preparation', description: 'Stay as healthy as possible. Attend all clinic appointments and keep your vaccinations up to date.' },
-      { title: 'The transplant', description: 'When a suitable kidney becomes available, you will be called to hospital for the operation.' },
-      { title: 'Recovery and follow-up', description: 'After surgery, you will have regular clinic visits to monitor your new kidney and adjust medications.' },
-    ],
-    faqs: [
-      { question: 'How long does a transplanted kidney last?', answer: 'On average, a kidney from a living donor lasts 15-20 years, and from a deceased donor about 10-15 years. Some kidneys last much longer. If your transplant fails, you can have dialysis or another transplant.' },
-      { question: 'Can I still have a transplant if I am on dialysis?', answer: 'Yes. Many people receive a transplant while on dialysis. Being on dialysis does not prevent you from having a transplant.' },
-      { question: 'What are the risks of surgery?', answer: 'Like any major surgery, there are risks including bleeding, infection, and blood clots. Your surgical team will discuss these with you in detail.' },
-      { question: 'Will I feel the new kidney?', answer: 'No. The new kidney is placed in your lower abdomen and you cannot feel it working. Most people forget it is there.' },
-    ],
-    patientStories: [
-      { quote: 'Getting my transplant was life-changing. I went from spending hours on dialysis to being able to work full-time and travel. The surgery was a big step, but it was absolutely worth it.', name: 'James', age: 45, duration: '5 years post-transplant' },
-      { quote: 'My husband donated his kidney to me. It brought us even closer together. I am so grateful for his gift and for every day I have with my family.', name: 'Sarah', age: 52, duration: '3 years post-transplant' },
-    ],
-  },
-  'hemodialysis': {
-    id: 'hemodialysis',
-    title: 'Hospital Haemodialysis',
-    subtitle: 'Dialysis at a hospital or dialysis centre, where a machine cleans your blood with professional support.',
-    description: 'Haemodialysis uses a machine to filter your blood outside your body. This is usually done at a dialysis unit in hospital or a community centre.',
-    tags: [
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>, label: 'Hospital or centre' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, label: '3-4 times weekly' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, label: 'Professional care' },
-    ],
-    bgGradient: 'from-[#FFF7E6] to-[#fff9f0]',
-    iconColor: 'text-nhs-orange',
-    icon: (
-      <svg className="w-28 h-28" viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="4">
-        <rect x="30" y="22" width="60" height="75" rx="6" />
-        <rect x="39" y="33" width="42" height="18" rx="3" strokeWidth="3" />
-        <circle cx="48" cy="67" r="6" strokeWidth="3" />
-        <circle cx="72" cy="67" r="6" strokeWidth="3" />
-        <line x1="48" y1="78" x2="48" y2="87" strokeWidth="3" strokeLinecap="round" />
-        <line x1="72" y1="78" x2="72" y2="87" strokeWidth="3" strokeLinecap="round" />
-        <line x1="60" y1="37" x2="60" y2="46" strokeWidth="3" strokeLinecap="round" />
-        <line x1="55" y1="42" x2="65" y2="42" strokeWidth="3" strokeLinecap="round" />
-      </svg>
-    ),
-    overview: [
-      'Hospital haemodialysis (HD) is a treatment that uses a machine to filter waste products and excess fluid from your blood when your kidneys can no longer do this effectively.',
-      'Treatment is typically provided at a hospital dialysis unit or satellite centre, with trained nurses and healthcare assistants looking after you during each session.',
-    ],
-    howItWorks: [
-      { title: 'Vascular access', content: 'Before starting HD, you will need a vascular access - a way for blood to flow to the dialysis machine. This is usually a fistula (a join between an artery and vein in your arm) created with minor surgery.' },
-      { title: 'The dialysis session', content: 'During HD, your blood flows through tubes to a dialysis machine. The machine filters your blood through a special membrane, removing waste and extra water, then returns the cleaned blood to your body.' },
-      { title: 'Treatment schedule', content: 'Most people have HD three times a week, for 4-5 hours each session. The exact schedule depends on your needs and local unit availability.' },
-    ],
-    benefits: [
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>, title: 'Professional care' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, title: 'Effective treatment' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: 'Social contact' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>, title: 'No home setup' },
-    ],
-    considerations: [
-      'Requires regular hospital or centre visits 3 times per week',
-      'Each session lasts 4-5 hours plus travel time',
-      'May feel tired or washed out after treatment',
-      'Dietary and fluid restrictions are important',
-      'Need vascular access surgery (fistula or line)',
-      'Less flexibility in scheduling compared to home treatments',
-    ],
-    lifestyle: [
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, title: 'Travel', content: 'Holiday dialysis can be arranged at other centres, but requires advance planning. The dialysis team can help you arrange treatment at your destination.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, title: 'Work', content: 'Many people on HD continue to work. Evening or early morning dialysis sessions may be available to fit around your work schedule.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>, title: 'Diet', content: 'You will need to follow dietary advice to limit salt, potassium, phosphate, and fluids. A renal dietitian will help you plan meals that work for you.' },
-    ],
-    steps: [
-      { title: 'Referral', description: 'Your kidney team will refer you when your kidneys can no longer cope and you need dialysis.' },
-      { title: 'Access surgery', description: 'A fistula or graft will be created in your arm to provide access for dialysis. This needs time to mature before use.' },
-      { title: 'Training', description: 'You will be shown what to expect during dialysis sessions and how to care for your access.' },
-      { title: 'Starting treatment', description: 'Begin your regular dialysis sessions at the hospital or satellite unit.' },
-      { title: 'Ongoing care', description: 'Regular blood tests and clinic reviews to ensure your dialysis is working well.' },
-    ],
-    faqs: [
-      { question: 'Does dialysis hurt?', answer: 'The needle insertions at the start of each session may cause brief discomfort, but most people get used to this. During dialysis, you should not feel pain.' },
-      { question: 'What can I do during dialysis?', answer: 'You can read, watch TV, use a tablet, sleep, or chat with other patients. Many units have WiFi and entertainment options.' },
-      { question: 'Can I drive after dialysis?', answer: 'Most people can drive after dialysis, but you may feel tired. Some people prefer to arrange transport, especially at first.' },
-      { question: 'What if I miss a session?', answer: 'Missing sessions can be dangerous as waste and fluid build up. If you need to miss a session, contact your unit to arrange an alternative time.' },
-    ],
-    patientStories: [
-      { quote: 'At first, I found the hospital visits tiring, but the nurses became like family. I use the time to read and catch up on TV shows. It is now just part of my routine.', name: 'David', age: 68, duration: 'On HD for 4 years' },
-      { quote: 'The staff at my dialysis unit are wonderful. They take care of everything, and I know I am in good hands. It gives my family peace of mind too.', name: 'Priya', age: 55, duration: 'On HD for 2 years' },
-    ],
-  },
-  'peritoneal-dialysis': {
-    id: 'peritoneal-dialysis',
-    title: 'Peritoneal Dialysis (PD)',
-    subtitle: 'A home-based treatment that uses the natural lining of your tummy to clean your blood.',
-    description: 'Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter to clean your blood at home.',
-    tags: [
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>, label: 'Home-based' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>, label: 'Overnight or daytime' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, label: 'Daily treatment' },
-    ],
-    bgGradient: 'from-[#E6F0FA] to-[#f0f5ff]',
-    iconColor: 'text-nhs-blue',
-    icon: (
-      <svg className="w-28 h-28" viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="4">
-        <path d="M20 55L60 20L100 55" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M28 50V95H92V50" />
-        <path d="M68 65C68 75 60 83 50 83C55 80 58 74 58 68C58 58 50 50 40 50C45 46 50 44 56 44C64 44 68 54 68 65Z" strokeWidth="3" />
-        <rect x="72" y="58" width="12" height="22" rx="3" strokeWidth="3" />
-        <line x1="78" y1="80" x2="78" y2="88" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="78" cy="92" r="3" strokeWidth="2" />
-      </svg>
-    ),
-    overview: [
-      'Peritoneal dialysis is a treatment for kidney failure that you can do at home. It uses the lining of your tummy (called the peritoneum) as a natural filter to clean your blood.',
-      'A soft tube called a catheter is placed in your tummy, and you use this to put a special fluid in and out. The fluid collects waste products and extra water from your blood, which you then drain away.',
-    ],
-    howItWorks: [
-      { title: 'The PD Catheter', content: 'Before starting PD, you will have a small operation to place a thin, flexible tube (catheter) into your tummy. This is usually done under local anaesthetic and takes about an hour. The catheter stays in place permanently.' },
-      { title: 'The Exchange Process', content: 'During PD, you fill your tummy with dialysis fluid through the catheter. The fluid stays inside for several hours while waste and water pass from your blood into the fluid. You then drain out the used fluid and replace it with fresh fluid.' },
-      { title: 'APD (Automated PD)', content: 'APD uses a machine (cycler) to do exchanges automatically while you sleep. You connect at bedtime and the machine does several exchanges overnight. Days are free for normal activities.' },
-      { title: 'CAPD (Manual PD)', content: 'CAPD does not use a machine. You do exchanges yourself about 4 times during the day. Each exchange takes about 30 minutes. The fluid stays in between exchanges.' },
-    ],
-    benefits: [
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>, title: 'Treatment at home' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'Flexible schedule' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: 'No needles' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>, title: 'Easier to travel' },
-    ],
-    considerations: [
-      'Daily treatment is required, even on weekends and holidays',
-      'Need space at home for supplies (delivered monthly)',
-      'Keeping everything sterile is essential to prevent infection',
-      'Risk of peritonitis (infection) if technique is not maintained',
-      'May not be suitable for certain abdominal conditions',
-      'Some people find the responsibility of self-care challenging at first',
-    ],
-    lifestyle: [
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, title: 'Travel', content: 'PD allows more freedom to travel than hospital dialysis. Supplies can be delivered to your destination, or you can take supplies with you. Many people on PD travel for holidays and even go abroad.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, title: 'Work', content: 'Most people on PD can continue working. APD is particularly good for working people because treatment happens overnight, leaving days free for work and activities.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>, title: 'Diet', content: 'PD patients often have fewer dietary restrictions than those on haemodialysis. However, you will still need to follow guidance on salt, potassium, phosphate, and fluids.' },
-    ],
-    steps: [
-      { title: 'Assessment', description: 'Your kidney team will assess whether PD is medically suitable for you, examining your tummy and asking about previous surgeries.' },
-      { title: 'Catheter surgery', description: 'A small operation to place the catheter in your tummy. You will need 2-4 weeks for healing before starting dialysis.' },
-      { title: 'Training', description: 'Training usually takes 1-2 weeks and covers how to do exchanges, keep everything clean, and recognise problems.' },
-      { title: 'Home setup', description: 'Supplies will be delivered to your home. You will need storage space about the size of a small wardrobe.' },
-      { title: 'Ongoing support', description: 'Regular clinic visits (usually monthly) and 24/7 phone support. Your PD nurses are always available if you have questions.' },
-    ],
-    faqs: [
-      { question: 'Is PD painful?', answer: 'PD is generally not painful. You may feel a sense of fullness when fluid is in your tummy, but this usually becomes less noticeable over time.' },
-      { question: 'Can I swim with a PD catheter?', answer: 'Showering is fine once your exit site is healed. Swimming is generally not recommended due to infection risk, though some people use waterproof dressings.' },
-      { question: 'What if there is a power cut during APD?', answer: 'APD machines have battery backup for short power cuts. For longer outages, you can manually drain the fluid. Your training will cover emergency procedures.' },
-      { question: 'How long can I stay on PD?', answer: 'Many people stay on PD for several years. Over time, the peritoneum may become less effective, and some people need to switch to haemodialysis.' },
-    ],
-    patientStories: [
-      { quote: 'I was nervous about doing dialysis myself, but the training was excellent. Now I do APD every night while I sleep. I can still look after my grandchildren during the day and have even been on holiday to Spain.', name: 'Margaret', age: 72, duration: 'On APD for 3 years' },
-      { quote: 'PD gives me the freedom to maintain my daily prayers and routines. My wife was trained alongside me, so she can help when needed. It took some adjustment, but I am glad I chose this option.', name: 'Raj', age: 65, duration: 'On CAPD for 2 years' },
-    ],
-  },
-  'conservative-care': {
-    id: 'conservative-care',
-    title: 'Conservative Management',
-    subtitle: 'Medical care focused on quality of life and comfort without dialysis or transplant.',
-    description: 'Conservative management focuses on maintaining quality of life and managing symptoms without dialysis or transplant.',
-    tags: [
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>, label: 'Focus on comfort' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, label: 'Supportive care' },
-      { icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>, label: 'No hospital visits' },
-    ],
-    bgGradient: 'from-[#F3E8FF] to-[#f8f0ff]',
-    iconColor: 'text-nhs-purple',
-    icon: (
-      <svg className="w-28 h-28" viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="4">
-        <path d="M60 82.5L37.5 63C30 56 30 45 37.5 39C45 33 54 36 60 42C66 36 75 33 82.5 39C90 45 90 56 82.5 63L60 82.5Z" />
-        <path d="M30 90C30 82.5 37.5 78 45 78H52.5" strokeWidth="3" strokeLinecap="round" />
-        <path d="M90 90C90 82.5 82.5 78 75 78H67.5" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="60" cy="60" r="7.5" strokeWidth="3" />
-      </svg>
-    ),
-    overview: [
-      'Conservative management (also called supportive care or conservative kidney management) is an active treatment approach that focuses on quality of life without dialysis or transplant.',
-      'This option may be right for some people, particularly those who are elderly, frail, or have other serious health conditions. It involves careful symptom management, medications, and support from the kidney care team.',
-    ],
-    howItWorks: [
-      { title: 'Active medical management', content: 'You will continue to have regular appointments with your kidney team. Medications will be used to manage symptoms and slow kidney decline where possible.' },
-      { title: 'Symptom control', content: 'The focus is on keeping you comfortable. This includes managing symptoms like tiredness, nausea, itching, and breathlessness with medications and lifestyle adjustments.' },
-      { title: 'Supportive care', content: 'You will have access to dietitians, social workers, and other specialists. Palliative care teams may also be involved to help with symptom management and planning.' },
-      { title: 'Advance care planning', content: 'Your team will help you think about and document your wishes for future care. This ensures your preferences are known and respected.' },
-    ],
-    benefits: [
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>, title: 'Focus on quality of life' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>, title: 'No dialysis sessions' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'More time at home' },
-      { icon: <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: 'Time with loved ones' },
-    ],
-    considerations: [
-      'Kidney function will continue to decline over time',
-      'Symptoms will need active management and may change',
-      'Life expectancy may be shorter than with dialysis',
-      'Important to have honest conversations about expectations',
-      'Advance care planning is recommended',
-      'May change your mind and start dialysis later if suitable',
-    ],
-    lifestyle: [
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: 'Family & Support', content: 'Family members and friends often play an important role. The kidney team can provide information and support to help them understand what to expect.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>, title: 'Daily Life', content: 'Without dialysis appointments, you have more flexibility in your daily routine. The focus is on maintaining activities that bring you joy and meaning.' },
-      { icon: <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>, title: 'Planning Ahead', content: 'Advance care planning helps ensure your wishes are known and respected. This may include decisions about hospital admissions and end-of-life care.' },
-    ],
-    steps: [
-      { title: 'Discussion', description: 'Have an open conversation with your kidney team about your options and what matters most to you.' },
-      { title: 'Assessment', description: 'Your team will assess your overall health and help you understand what to expect with conservative care.' },
-      { title: 'Care planning', description: 'Work with your team to create a care plan focused on your comfort and quality of life.' },
-      { title: 'Ongoing support', description: 'Regular reviews and access to the kidney team, palliative care, and other specialists as needed.' },
-      { title: 'Advance planning', description: 'Document your wishes for future care and share them with your family and medical team.' },
-    ],
-    faqs: [
-      { question: 'Does choosing conservative care mean giving up?', answer: 'No. Conservative care is an active treatment choice that focuses on quality of life. You will still receive medical care and support - just without dialysis.' },
-      { question: 'How long can I live with conservative care?', answer: 'This varies greatly depending on individual circumstances. Your kidney team can give you an idea based on your health, but no one can predict exactly.' },
-      { question: 'Can I change my mind later?', answer: 'In most cases, yes. If your circumstances change, you can discuss starting dialysis with your team. However, this may not always be possible as health changes.' },
-      { question: 'Will I be in pain?', answer: 'The aim of conservative care is to keep you comfortable. Symptoms will be managed actively, and palliative care teams can help with pain control if needed.' },
-    ],
-    patientStories: [
-      { quote: 'At 85, I decided dialysis was not for me. My kidney team have been wonderful - managing my symptoms and helping me stay comfortable at home. I have been able to spend quality time with my grandchildren.', name: 'Dorothy', age: 85, duration: 'On conservative care for 18 months' },
-      { quote: 'After discussing all the options with my doctor and family, conservative care felt right for my situation. The support I receive is excellent, and I am able to focus on what matters most to me.', name: 'Harold', age: 78, duration: 'On conservative care for 1 year' },
-    ],
-  },
-};
-
-/**
- * Treatment detail page component displaying comprehensive information
- * about a specific kidney treatment option.
- *
- * Features:
- * - Hero section with treatment icon, title, and tags
- * - Overview and how it works sections
- * - Day in the life timeline
- * - Benefits and considerations
- * - Lifestyle impact information
- * - Getting started steps
- * - Expandable FAQ section
- * - Patient stories/testimonials
- * - Related treatment links
- *
- * @component
- * @returns {JSX.Element} The rendered treatment detail page
- *
- * @example
- * // Route: /treatments/kidney-transplant
- * <Route path="/treatments/:type" element={<TreatmentDetailPage />} />
- */
+/** Treatment detail page component */
 export default function TreatmentDetailPage() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { markTreatmentViewed } = useSession();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openQuestion, setOpenQuestion] = useState<number | null>(null);
+  const [questionFilter, setQuestionFilter] = useState<'all' | 'practical' | 'medical' | 'lifestyle' | 'emotional'>('all');
+  const treatment = TREATMENT_DETAIL_DATA[type as TreatmentType];
 
-  const treatment = TREATMENT_DATA[type as TreatmentType];
-
-  // Mark treatment as viewed when page loads
-  useEffect(() => {
-    if (treatment) {
-      markTreatmentViewed(treatment.id);
-    }
-  }, [treatment, markTreatmentViewed]);
+  useEffect(() => { if (treatment) markTreatmentViewed(treatment.id); }, [treatment, markTreatmentViewed]);
 
   if (!treatment) {
     return (
       <main className="min-h-screen bg-bg-page flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-text-primary mb-4">
-            {t('error.treatmentNotFound', 'Treatment not found')}
+        <div className="text-center p-8">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-nhs-pale-grey flex items-center justify-center">
+            <svg className="w-8 h-8 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <h1 className="text-xl font-bold text-text-primary mb-2">
+            {t('error.treatmentNotFound', 'Treatment Not Found')}
           </h1>
+          <p className="text-text-secondary mb-6">
+            {t('error.treatmentNotFoundDesc', 'The treatment you are looking for could not be found.')}
+          </p>
           <Link
             to="/treatments"
-            className="text-nhs-blue hover:underline"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
           >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
             {t('nav.backToTreatments', 'Back to treatments')}
           </Link>
         </div>
@@ -394,180 +57,279 @@ export default function TreatmentDetailPage() {
     );
   }
 
+  const quickNavItems = [
+    { id: 'overview', label: t('treatment.nav.overview', 'Overview') },
+    { id: 'simple-terms', label: t('treatment.nav.simpleTerms', 'In Simple Terms') },
+    { id: 'how-it-works', label: t('treatment.nav.howItWorks', 'How It Works') },
+    { id: 'day-summary', label: t('treatment.nav.daySummary', 'Typical Day') },
+    { id: 'benefits', label: t('treatment.nav.benefits', 'Benefits') },
+    { id: 'faq', label: t('treatment.nav.faq', 'FAQs') },
+    { id: 'common-questions', label: t('treatment.nav.commonQuestions', 'Questions') },
+  ];
+
   return (
     <main className="min-h-screen bg-bg-page" id="main-content" aria-label={t('treatments.detailedInfoAriaLabel', { treatment: treatment.title })}>
       {/* Breadcrumb */}
       <nav className="bg-bg-page border-b border-nhs-pale-grey" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-xl mx-auto px-4 py-3">
           <ol className="flex items-center gap-2 text-sm">
-            <li>
-              <Link to="/" className="text-nhs-blue hover:underline">
-                {t('nav.home', 'Home')}
-              </Link>
-            </li>
+            <li><Link to="/" className="text-nhs-blue hover:underline">{t('nav.home', 'Home')}</Link></li>
             <li className="text-nhs-mid-grey">/</li>
-            <li>
-              <Link to="/treatments" className="text-nhs-blue hover:underline">
-                {t('treatments.title', 'Treatment Options')}
-              </Link>
-            </li>
+            <li><Link to="/treatments" className="text-nhs-blue hover:underline">{t('treatments.title', 'Treatment Options')}</Link></li>
             <li className="text-nhs-mid-grey">/</li>
-            <li className="text-text-secondary" aria-current="page">
-              {treatment.title}
-            </li>
+            <li className="text-text-secondary" aria-current="page">{treatment.title}</li>
           </ol>
         </div>
       </nav>
 
-      <div className="max-w-container-xl mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-container-xl mx-auto px-4 py-6 md:py-10">
         {/* Hero Section */}
-        <section className={`bg-gradient-to-br ${treatment.bgGradient} rounded-lg p-4 sm:p-8 md:p-10 mb-6 sm:mb-10 flex flex-col md:flex-row gap-4 sm:gap-8 items-center`} aria-labelledby="treatment-title">
-          <div className={`${treatment.iconColor} scale-75 sm:scale-100`}>{treatment.icon}</div>
-          <div className="flex-1 text-center md:text-left">
-            <h1 id="treatment-title" className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-3">
-              {treatment.title}
-            </h1>
-            <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-3 sm:mb-4">
-              {treatment.subtitle}
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 mb-4">
-              {treatment.tags.map((tag, idx) => (
-                <span key={idx} className="inline-flex items-center gap-1 px-2 sm:px-3 py-1 bg-white border border-nhs-blue rounded-full text-xs sm:text-sm text-nhs-blue">
-                  {tag.icon}
-                  {tag.label}
-                </span>
-              ))}
+        <section className={`bg-gradient-to-br ${treatment.bgGradient} rounded-2xl p-5 sm:p-8 md:p-10 mb-6 sm:mb-8 shadow-sm`} aria-labelledby="treatment-title">
+          <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/50 rounded-full blur-xl transform scale-110" aria-hidden="true" />
+              <div className={`relative ${treatment.iconColor} p-4 bg-white/70 rounded-full shadow-md`}>
+                <div className="scale-75 sm:scale-90 md:scale-100">{treatment.icon}</div>
+              </div>
             </div>
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue text-white rounded-md font-semibold text-sm hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] touch-manipulation"
-              aria-label={t('accessibility.listenToPage', 'Listen to this page being read aloud')}
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-              </svg>
-              <span>{t('common.listenToPage', 'Listen to this page')}</span>
-            </button>
+            <div className="flex-1 text-center md:text-left">
+              <h1 id="treatment-title" className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3">{treatment.title}</h1>
+              <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-4 max-w-2xl">{treatment.subtitle}</p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 mb-5">
+                {treatment.tags.map((tag, idx) => (
+                  <span key={idx} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-nhs-pale-grey rounded-full text-xs sm:text-sm text-text-primary shadow-sm">
+                    <span className={treatment.iconColor}>{tag.icon}</span>
+                    {tag.label}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                <button type="button" className="inline-flex items-center gap-2 px-5 py-2.5 bg-nhs-blue text-white rounded-lg font-semibold text-sm hover:bg-nhs-blue-dark transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] touch-manipulation" aria-label={t('accessibility.listenToPage', 'Listen to this page being read aloud')}>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" /><path d="M15.54 8.46a5 5 0 0 1 0 7.07" /><path d="M19.07 4.93a10 10 0 0 1 0 14.14" /></svg>
+                  <span>{t('common.listenToPage', 'Listen to this page')}</span>
+                </button>
+                <Link to="/compare" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 text-nhs-blue rounded-lg font-semibold text-sm border border-nhs-blue/30 hover:bg-white hover:border-nhs-blue transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[44px] touch-manipulation">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                  <span>{t('common.compareTreatments', 'Compare')}</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Overview Section */}
-        <section className="mb-12" aria-labelledby="overview-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
-            </svg>
-            <h2 id="overview-heading" className="text-2xl font-bold text-text-primary">
-              {t('treatment.overview', `What is ${treatment.title}?`)}
-            </h2>
-          </header>
-          <div className="text-text-primary leading-relaxed space-y-4">
-            {treatment.overview.map((para, idx) => (
-              <p key={idx}>{para}</p>
+        {/* Quick Navigation */}
+        <nav className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border border-nhs-pale-grey rounded-xl p-2 mb-8 shadow-sm hidden md:block" aria-label={t('treatment.nav.quickNav', 'Quick navigation')}>
+          <ul className="flex flex-wrap gap-1 justify-center">
+            {quickNavItems.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}-heading`} className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-nhs-pale-grey hover:text-text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-1" onClick={(e) => { e.preventDefault(); document.getElementById(`${item.id}-heading`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>{item.label}</a>
+              </li>
             ))}
+          </ul>
+        </nav>
+
+        {/* Overview Section */}
+        <section className="mb-10" aria-labelledby="overview-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
+            </div>
+            <h2 id="overview-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.overview', `What is ${treatment.title}?`)}</h2>
+          </header>
+          <div className="bg-white rounded-xl border border-nhs-pale-grey p-5 sm:p-6 shadow-sm">
+            <div className="text-text-primary leading-relaxed space-y-4">
+              {treatment.overview.map((para, idx) => (<p key={idx} className="text-base sm:text-lg">{para}</p>))}
+            </div>
+          </div>
+        </section>
+
+        {/* In Simple Terms Section */}
+        <section className="mb-10" aria-labelledby="simple-terms-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-purple/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /><path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" /></svg>
+            </div>
+            <div>
+              <h2 id="simple-terms-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.inSimpleTerms', 'In Simple Terms')}</h2>
+              <p className="text-sm text-text-muted">{t('treatment.inSimpleTermsDesc', 'A plain-language explanation')}</p>
+            </div>
+          </header>
+          <div className="bg-gradient-to-br from-nhs-purple/5 to-nhs-purple/10 rounded-xl border-2 border-nhs-purple/20 p-5 sm:p-6 shadow-sm">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 hidden sm:block">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                  <svg className="w-6 h-6 text-nhs-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <p className="text-lg text-text-primary leading-relaxed">{treatment.inSimpleTerms}</p>
+              </div>
+            </div>
+            <div className="mt-6 pt-5 border-t border-nhs-purple/20">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-white/80 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-nhs-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-nhs-purple mb-1">{t('treatment.visualExplainer', 'Picture it like this:')}</p>
+                  <p className="text-text-secondary leading-relaxed">{treatment.visualExplainer.simpleVisual}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* How It Works Section */}
-        <section className="mb-12" aria-labelledby="how-it-works-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            <h2 id="how-it-works-heading" className="text-2xl font-bold text-text-primary">
-              {t('treatment.howItWorks', 'How Does It Work?')}
-            </h2>
+        <section className="mb-10" aria-labelledby="how-it-works-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+            </div>
+            <h2 id="how-it-works-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.howItWorks', 'How Does It Work?')}</h2>
           </header>
-          <div className="space-y-4">
-            {treatment.howItWorks.map((item, idx) => (
-              <div key={idx}>
-                <h3 className="font-semibold text-text-primary mb-1">{item.title}</h3>
-                <p className="text-text-secondary leading-relaxed">{item.content}</p>
+          <div className="bg-white rounded-xl border border-nhs-pale-grey overflow-hidden shadow-sm">
+            <div className="divide-y divide-nhs-pale-grey">
+              {treatment.howItWorks.map((item, idx) => (
+                <div key={idx} className="p-5 sm:p-6 flex gap-4 hover:bg-bg-surface-secondary/50 transition-colors">
+                  <div className="flex-shrink-0">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm ${treatment.iconColor.replace('text-', 'bg-')}`}>{idx + 1}</div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-text-primary mb-1 text-base sm:text-lg">{item.title}</h3>
+                    <p className="text-text-secondary leading-relaxed mb-2">{item.content}</p>
+                    <div className="bg-nhs-pale-grey/50 rounded-lg p-3 mt-2">
+                      <p className="text-sm text-text-primary flex items-start gap-2">
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-nhs-purple/20 text-nhs-purple flex-shrink-0 mt-0.5" aria-hidden="true">
+                          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                        </span>
+                        <span><strong>{t('treatment.simplyPut', 'Simply put')}:</strong> {item.simpleExplanation}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Day in the Life Summary */}
+        <section className="mb-10" aria-labelledby="day-summary-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-orange/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+            </div>
+            <h2 id="day-summary-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.quickDaySummary', 'What a Typical Day Looks Like')}</h2>
+          </header>
+          <div className="bg-gradient-to-br from-nhs-orange/5 to-nhs-warm-yellow/10 rounded-xl border border-nhs-orange/20 p-5 sm:p-6 shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+              {[{ time: 'morning', emoji: '🌅', label: t('treatment.morning', 'Morning'), text: treatment.dayInLifeSummary.morning },
+                { time: 'afternoon', emoji: '☀️', label: t('treatment.afternoon', 'Afternoon'), text: treatment.dayInLifeSummary.afternoon },
+                { time: 'evening', emoji: '🌙', label: t('treatment.evening', 'Evening'), text: treatment.dayInLifeSummary.evening }].map(({ time, emoji, label, text }) => (
+                <div key={time} className="bg-white/80 rounded-lg p-4 border border-nhs-orange/10">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg" role="img" aria-label={label}>{emoji}</span>
+                    <span className="font-semibold text-text-primary text-sm">{label}</span>
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-white rounded-lg p-4 border-2 border-nhs-orange/30">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-nhs-orange/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-nhs-orange" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-text-primary mb-1">{t('treatment.keyTakeaway', 'Key takeaway')}</p>
+                  <p className="text-text-secondary">{treatment.dayInLifeSummary.keyMessage}</p>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
         {/* Day in the Life Timeline */}
-        <section className="mb-12" aria-labelledby="timeline-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <h2 id="timeline-heading" className="text-2xl font-bold text-text-primary">
-              {t('treatment.dayInLife', 'A Day in the Life')}
-            </h2>
+        <section className="mb-10" aria-labelledby="timeline-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+            </div>
+            <h2 id="timeline-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.dayInLife', 'A Day in the Life')}</h2>
           </header>
           <TreatmentTimeline treatmentType={treatment.id} />
         </section>
 
-        {/* Benefits Section */}
-        <section className="mb-8 sm:mb-12" aria-labelledby="benefits-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            <h2 id="benefits-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
-              {t('treatment.benefits', 'Benefits')}
-            </h2>
-          </header>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-            {treatment.benefits.map((benefit, idx) => (
-              <div key={idx} className="bg-[#E6F4EA] rounded-md p-3 sm:p-4 text-center">
-                <div className="text-nhs-green mx-auto mb-2 scale-75 sm:scale-100">{benefit.icon}</div>
-                <span className="font-semibold text-nhs-green-dark text-xs sm:text-sm">{benefit.title}</span>
+        {/* Benefits & Considerations */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+          <section aria-labelledby="benefits-heading">
+            <header className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-nhs-green/10 flex items-center justify-center">
+                <svg className="w-5 h-5 text-nhs-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Considerations Section */}
-        <section className="mb-12" aria-labelledby="considerations-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-              <line x1="12" y1="9" x2="12" y2="13" />
-              <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            <h2 id="considerations-heading" className="text-2xl font-bold text-text-primary">
-              {t('treatment.considerations', 'Things to Consider')}
-            </h2>
-          </header>
-          <ul className="space-y-2" role="list">
-            {treatment.considerations.map((item, idx) => (
-              <li key={idx} className="flex items-start gap-3 p-3 bg-[#FFF8E6] border-l-4 border-nhs-warm-yellow rounded-sm">
-                <svg className="w-6 h-6 flex-shrink-0 text-[#856404]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-                </svg>
-                <span className="text-[#856404]">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+              <h2 id="benefits-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.benefits', 'Benefits')}</h2>
+            </header>
+            <div className="bg-white rounded-xl border-2 border-nhs-green/30 overflow-hidden shadow-sm h-full">
+              <div className="bg-gradient-to-r from-nhs-green/5 to-nhs-green/10 px-5 py-3 border-b border-nhs-green/20">
+                <span className="text-sm font-medium text-nhs-green-dark">{t('treatment.keyBenefits', 'Key benefits of this treatment')}</span>
+              </div>
+              <div className="p-4 sm:p-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {treatment.benefits.map((benefit, idx) => (
+                    <div key={idx} className="bg-gradient-to-br from-[#E6F4EA] to-[#d4edda] rounded-xl p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <div className="w-12 h-12 flex-shrink-0 rounded-full bg-white/80 flex items-center justify-center shadow-sm">
+                          <div className="text-nhs-green scale-75">{benefit.icon}</div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <span className="font-semibold text-nhs-green-dark text-sm leading-tight block mb-1">{benefit.title}</span>
+                          <p className="text-xs text-text-secondary leading-relaxed">{benefit.explanation}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+          <section aria-labelledby="considerations-heading">
+            <header className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-nhs-warm-yellow/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-nhs-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+              </div>
+              <h2 id="considerations-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.considerations', 'Things to Consider')}</h2>
+            </header>
+            <div className="bg-white rounded-xl border-2 border-nhs-warm-yellow/40 overflow-hidden shadow-sm h-full">
+              <div className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-warm-yellow/20 px-5 py-3 border-b border-nhs-warm-yellow/30">
+                <span className="text-sm font-medium text-[#856404]">{t('treatment.importantToKnow', 'Important things to know')}</span>
+              </div>
+              <ul className="p-4 sm:p-5 space-y-3" role="list">
+                {treatment.considerations.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 p-3 bg-gradient-to-r from-[#FFF8E6] to-[#fff3cd] rounded-lg border border-nhs-warm-yellow/30">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-nhs-warm-yellow/30 flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-[#856404]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" /></svg>
+                    </div>
+                    <span className="text-sm sm:text-base text-[#856404] leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </div>
 
         {/* Lifestyle Section */}
-        <section className="mb-8 sm:mb-12" aria-labelledby="lifestyle-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-            <h2 id="lifestyle-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
-              {t('treatment.lifestyle', 'Lifestyle Impact')}
-            </h2>
+        <section className="mb-10" aria-labelledby="lifestyle-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            </div>
+            <h2 id="lifestyle-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.lifestyle', 'Lifestyle Impact')}</h2>
           </header>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {treatment.lifestyle.map((item, idx) => (
-              <div key={idx} className="bg-white border border-nhs-pale-grey rounded-lg p-4 sm:p-6">
-                <div className="text-nhs-blue mb-3 scale-90 sm:scale-100">{item.icon}</div>
+              <div key={idx} className="bg-white border border-nhs-pale-grey rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-nhs-blue/30 transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-nhs-blue/10 flex items-center justify-center mb-4 group-hover:bg-nhs-blue/15 transition-colors">
+                  <div className="text-nhs-blue scale-75">{item.icon}</div>
+                </div>
                 <h3 className="text-base sm:text-lg font-bold text-text-primary mb-2">{item.title}</h3>
                 <p className="text-sm text-text-secondary leading-relaxed">{item.content}</p>
               </div>
@@ -576,101 +338,132 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Getting Started Steps */}
-        <section className="mb-8 sm:mb-12" aria-labelledby="steps-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <h2 id="steps-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
-              {t('treatment.gettingStarted', 'Getting Started')}
-            </h2>
+        <section className="mb-10" aria-labelledby="steps-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+            </div>
+            <h2 id="steps-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.gettingStarted', 'Getting Started')}</h2>
           </header>
-          <ol className="space-y-3 sm:space-y-4">
-            {treatment.steps.map((step, idx) => (
-              <li key={idx} className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-nhs-pale-grey rounded-md">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">
-                  {idx + 1}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-text-primary mb-1 text-sm sm:text-base">{step.title}</h3>
-                  <p className="text-xs sm:text-sm text-text-secondary">{step.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <div className="bg-white rounded-xl border border-nhs-pale-grey p-4 sm:p-6 shadow-sm">
+            <ol className="relative">
+              {treatment.steps.map((step, idx) => (
+                <li key={idx} className="flex gap-4 sm:gap-5 pb-6 last:pb-0 relative">
+                  {idx < treatment.steps.length - 1 && <div className="absolute left-4 sm:left-5 top-10 w-0.5 h-[calc(100%-2.5rem)] bg-gradient-to-b from-nhs-blue/40 to-nhs-blue/10" aria-hidden="true" />}
+                  <div className="relative z-10 flex-shrink-0">
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold text-sm sm:text-base shadow-sm ${idx === 0 ? 'bg-nhs-blue text-white' : 'bg-nhs-blue/10 text-nhs-blue border-2 border-nhs-blue/30'}`}>{idx + 1}</div>
+                  </div>
+                  <div className="flex-1 min-w-0 pt-1">
+                    <h3 className="font-semibold text-text-primary mb-1 text-sm sm:text-base">{step.title}</h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
 
         {/* FAQs Section */}
-        <section className="mb-8 sm:mb-12" aria-labelledby="faq-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-6 sm:w-8 h-6 sm:h-8 text-nhs-blue flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
-            </svg>
-            <h2 id="faq-heading" className="text-xl sm:text-2xl font-bold text-text-primary">
-              {t('treatment.faq', 'Frequently Asked Questions')}
-            </h2>
+        <section className="mb-10" aria-labelledby="faq-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" /></svg>
+            </div>
+            <h2 id="faq-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.faq', 'Frequently Asked Questions')}</h2>
           </header>
-          <div className="space-y-2" role="list" aria-label={t('accessibility.faq')}>
+          <div className="bg-white rounded-xl border border-nhs-pale-grey overflow-hidden shadow-sm" role="list" aria-label={t('accessibility.faq')}>
             {treatment.faqs.map((faq, idx) => (
-              <div key={idx} className="border border-nhs-pale-grey rounded-md overflow-hidden" role="listitem">
-                <button
-                  className="w-full px-3 sm:px-4 py-3 flex justify-between items-center gap-2 bg-white hover:bg-bg-surface-secondary text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[48px] touch-manipulation"
-                  aria-expanded={openFaq === idx}
-                  aria-controls={`faq-answer-${idx}`}
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                >
-                  <span className="text-sm sm:text-base">{faq.question}</span>
-                  <svg
-                    className={`w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue flex-shrink-0 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
-                {openFaq === idx && (
-                  <div id={`faq-answer-${idx}`} className="px-3 sm:px-4 pb-4 text-sm sm:text-base text-text-secondary leading-relaxed">
-                    {faq.answer}
+              <div key={idx} className={`border-b border-nhs-pale-grey last:border-b-0 ${openFaq === idx ? 'bg-nhs-blue/5' : ''}`} role="listitem">
+                <button className="w-full px-5 sm:px-6 py-4 flex justify-between items-center gap-3 text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[56px] touch-manipulation transition-colors hover:bg-nhs-blue/5" aria-expanded={openFaq === idx} aria-controls={`faq-answer-${idx}`} onClick={() => setOpenFaq(openFaq === idx ? null : idx)}>
+                  <span className="text-sm sm:text-base leading-snug">{faq.question}</span>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${openFaq === idx ? 'bg-nhs-blue text-white rotate-180' : 'bg-nhs-pale-grey text-nhs-blue'}`}>
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg>
                   </div>
-                )}
+                </button>
+                <div id={`faq-answer-${idx}`} className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-text-secondary leading-relaxed">{faq.answer}</div>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Patient Stories Section */}
-        <section className="mb-12" aria-labelledby="stories-heading">
-          <header className="flex items-center gap-3 mb-4 pb-3 border-b-2 border-nhs-pale-grey">
-            <svg className="w-8 h-8 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-            <h2 id="stories-heading" className="text-2xl font-bold text-text-primary">
-              {t('treatment.stories', 'Hear from Others')}
-            </h2>
+        {/* Common Questions Section */}
+        <section className="mb-10" aria-labelledby="common-questions-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-green/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+            </div>
+            <div>
+              <h2 id="common-questions-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.commonQuestions', 'Common Questions')}</h2>
+              <p className="text-sm text-text-muted">{t('treatment.commonQuestionsDesc', 'Questions that patients often ask about this treatment')}</p>
+            </div>
           </header>
-          <p className="text-text-secondary mb-4">
-            {t('treatment.storiesIntro', "These are experiences from real patients. Everyone's journey is different.")}
-          </p>
-          <div className="space-y-4">
-            {treatment.patientStories.map((story, idx) => (
-              <article key={idx} className="bg-white border border-nhs-pale-grey rounded-lg p-6 relative">
-                <span className="absolute top-4 left-6 text-6xl text-nhs-pale-grey font-serif leading-none">"</span>
-                <blockquote className="text-lg italic text-text-secondary leading-relaxed mb-4 pl-8">
-                  {story.quote}
-                </blockquote>
-                <footer className="flex items-center gap-3 pl-8">
-                  <div className="w-12 h-12 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-lg" aria-hidden="true">
-                    {story.name[0]}
+          <div className="flex flex-wrap gap-2 mb-4" role="tablist" aria-label={t('treatment.filterByCategory', 'Filter by category')}>
+            {(['all', 'practical', 'medical', 'lifestyle', 'emotional'] as const).map((category) => (
+              <button key={category} role="tab" aria-selected={questionFilter === category} onClick={() => setQuestionFilter(category)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[40px] touch-manipulation ${questionFilter === category ? 'bg-nhs-green text-white shadow-sm' : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-blue/10 hover:text-nhs-blue'}`}>
+                {category === 'all' && t('treatment.categoryAll', 'All questions')}
+                {category === 'practical' && t('treatment.categoryPractical', 'Practical')}
+                {category === 'medical' && t('treatment.categoryMedical', 'Medical')}
+                {category === 'lifestyle' && t('treatment.categoryLifestyle', 'Lifestyle')}
+                {category === 'emotional' && t('treatment.categoryEmotional', 'Emotional')}
+              </button>
+            ))}
+          </div>
+          <div className="bg-white rounded-xl border border-nhs-pale-grey overflow-hidden shadow-sm" role="list">
+            {treatment.commonQuestions.filter(q => questionFilter === 'all' || q.category === questionFilter).map((question, idx) => {
+              const originalIdx = treatment.commonQuestions.findIndex(q => q.question === question.question);
+              return (
+                <div key={originalIdx} className={`border-b border-nhs-pale-grey last:border-b-0 ${openQuestion === originalIdx ? 'bg-nhs-green/5' : ''}`} role="listitem">
+                  <button className="w-full px-5 sm:px-6 py-4 flex justify-between items-center gap-3 text-left font-semibold text-text-primary focus:outline-none focus:ring-3 focus:ring-focus focus:ring-inset min-h-[56px] touch-manipulation transition-colors hover:bg-nhs-green/5" aria-expanded={openQuestion === originalIdx} aria-controls={`question-answer-${originalIdx}`} onClick={() => setOpenQuestion(openQuestion === originalIdx ? null : originalIdx)}>
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium flex-shrink-0 ${question.category === 'practical' ? 'bg-nhs-blue/10 text-nhs-blue' : question.category === 'medical' ? 'bg-nhs-purple/10 text-nhs-purple' : question.category === 'lifestyle' ? 'bg-nhs-green/10 text-nhs-green' : 'bg-nhs-orange/10 text-nhs-orange'}`}>
+                        {question.category === 'practical' && t('treatment.categoryPractical', 'Practical')}
+                        {question.category === 'medical' && t('treatment.categoryMedical', 'Medical')}
+                        {question.category === 'lifestyle' && t('treatment.categoryLifestyle', 'Lifestyle')}
+                        {question.category === 'emotional' && t('treatment.categoryEmotional', 'Emotional')}
+                      </span>
+                      <span className="text-sm sm:text-base leading-snug">{question.question}</span>
+                    </div>
+                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${openQuestion === originalIdx ? 'bg-nhs-green text-white rotate-180' : 'bg-nhs-pale-grey text-nhs-green'}`}>
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg>
+                    </div>
+                  </button>
+                  <div id={`question-answer-${originalIdx}`} className={`overflow-hidden transition-all duration-300 ${openQuestion === originalIdx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-text-secondary leading-relaxed">{question.answer}</div>
                   </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Patient Stories Section */}
+        <section className="mb-10" aria-labelledby="stories-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            </div>
+            <div>
+              <h2 id="stories-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.stories', 'Hear from Others')}</h2>
+              <p className="text-sm text-text-secondary mt-0.5">{t('treatment.storiesIntro', "These are experiences from real patients. Everyone's journey is different.")}</p>
+            </div>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {treatment.patientStories.map((story, idx) => (
+              <article key={idx} className={`relative bg-gradient-to-br ${treatment.bgGradient} rounded-xl p-6 shadow-sm border border-white/50`}>
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/60 flex items-center justify-center" aria-hidden="true">
+                  <svg className={`w-5 h-5 ${treatment.iconColor}`} viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
+                </div>
+                <blockquote className="text-base sm:text-lg text-text-primary leading-relaxed mb-5 pr-10">&ldquo;{story.quote}&rdquo;</blockquote>
+                <footer className="flex items-center gap-3 pt-4 border-t border-text-primary/10">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm ${treatment.iconColor.replace('text-', 'bg-')} text-white`} aria-hidden="true">{story.name[0]}</div>
                   <div>
                     <div className="font-semibold text-text-primary">{story.name}, {story.age}</div>
-                    <div className="text-sm text-text-muted">{story.duration}</div>
+                    <div className="text-sm text-text-muted flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                      {story.duration}
+                    </div>
                   </div>
                 </footer>
               </article>
@@ -679,81 +472,59 @@ export default function TreatmentDetailPage() {
         </section>
 
         {/* Action Section */}
-        <section className="bg-white border-2 border-nhs-blue rounded-lg p-4 sm:p-8 mb-6 sm:mb-10" aria-labelledby="action-heading">
-          <h2 id="action-heading" className="text-lg sm:text-xl font-bold text-text-primary text-center mb-4 sm:mb-6">
-            {t('treatment.readyToLearnMore', 'Ready to Learn More?')}
-          </h2>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
-            <Link
-              to="/compare"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="7" height="7" />
-                <rect x="14" y="3" width="7" height="7" />
-                <rect x="14" y="14" width="7" height="7" />
-                <rect x="3" y="14" width="7" height="7" />
-              </svg>
-              <span>{t('compare.withOthers', 'Compare with Other Treatments')}</span>
-            </Link>
-            <Link
-              to="/chat"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 border-2 border-nhs-blue text-nhs-blue font-semibold rounded-md hover:bg-nhs-blue hover:text-white transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-              <span>{t('chat.askQuestion', 'Ask a Question About This')}</span>
-            </Link>
+        <section className="bg-gradient-to-br from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-2xl p-6 sm:p-8 mb-8" aria-labelledby="action-heading">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-7 h-7 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+            </div>
+            <h2 id="action-heading" className="text-xl sm:text-2xl font-bold text-text-primary mb-2">{t('treatment.readyToLearnMore', 'Ready to Learn More?')}</h2>
+            <p className="text-text-secondary mb-6">{t('treatment.readyDescription', 'Compare this treatment with others or ask questions to help with your decision.')}</p>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
+              <Link to="/compare" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-nhs-blue text-nhs-blue font-semibold rounded-xl hover:bg-nhs-blue hover:text-white transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[52px] touch-manipulation">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                <span>{t('compare.withOthers', 'Compare with Other Treatments')}</span>
+              </Link>
+              <Link to="/chat" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-xl hover:bg-nhs-blue-dark transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[52px] touch-manipulation">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+                <span>{t('chat.askQuestion', 'Ask a Question About This')}</span>
+              </Link>
+            </div>
           </div>
         </section>
 
         {/* Related Treatments */}
-        <section className="mb-6 sm:mb-10 pt-6 sm:pt-8 border-t border-nhs-pale-grey" aria-labelledby="related-heading">
-          <h2 id="related-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-4">
-            {t('treatment.exploreOthers', 'Explore Other Treatments')}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            {Object.values(TREATMENT_DATA)
-              .filter((t) => t.id !== treatment.id)
-              .map((relatedTreatment) => (
-                <Link
-                  key={relatedTreatment.id}
-                  to={`/treatments/${relatedTreatment.id}`}
-                  className="bg-white border border-nhs-pale-grey rounded-md p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
-                >
-                  <div className={`w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 ${relatedTreatment.iconColor}`}>
-                    <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold text-text-primary text-sm sm:text-base">{relatedTreatment.title}</span>
-                </Link>
-              ))}
+        <section className="mb-8" aria-labelledby="related-heading">
+          <header className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /></svg>
+            </div>
+            <h2 id="related-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.exploreOthers', 'Explore Other Treatments')}</h2>
+          </header>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {Object.values(TREATMENT_DETAIL_DATA).filter((t) => t.id !== treatment.id).map((relatedTreatment) => (
+              <Link key={relatedTreatment.id} to={`/treatments/${relatedTreatment.id}`} className={`group bg-gradient-to-br ${relatedTreatment.bgGradient} rounded-xl p-4 sm:p-5 flex items-center gap-4 hover:shadow-lg hover:-translate-y-1 transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[72px] touch-manipulation border border-white/50`}>
+                <div className={`w-12 h-12 flex-shrink-0 rounded-xl bg-white/70 flex items-center justify-center ${relatedTreatment.iconColor} shadow-sm group-hover:shadow-md transition-shadow`}>
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 8v8M8 12h8" /></svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="font-semibold text-text-primary text-sm sm:text-base block">{relatedTreatment.title}</span>
+                  <span className="text-xs text-text-secondary">{t('common.learnMore', 'Learn more')}</span>
+                </div>
+                <svg className={`w-5 h-5 ${relatedTreatment.iconColor} opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
+              </Link>
+            ))}
           </div>
         </section>
 
         {/* Navigation Buttons */}
-        <nav className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-nhs-pale-grey" aria-label={t('accessibility.pageNavigation')}>
-          <button
-            onClick={() => navigate('/treatments')}
-            className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-3 text-nhs-blue font-medium hover:underline focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 rounded min-h-[48px] touch-manipulation"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="19" y1="12" x2="5" y2="12" />
-              <polyline points="12 19 5 12 12 5" />
-            </svg>
+        <nav className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-nhs-pale-grey" aria-label={t('accessibility.pageNavigation')}>
+          <button onClick={() => navigate('/treatments')} className="inline-flex items-center justify-center sm:justify-start gap-2 px-5 py-3 text-nhs-blue font-medium hover:bg-nhs-blue/5 rounded-xl focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation transition-colors">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" /></svg>
             <span>{t('nav.backToTreatments', 'Back to All Treatments')}</span>
           </button>
-          <Link
-            to="/summary"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[48px] touch-manipulation"
-          >
+          <Link to="/summary" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-nhs-blue text-white font-semibold rounded-xl hover:bg-nhs-blue-dark transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2 min-h-[52px] touch-manipulation">
             <span>{t('summary.addToMy', 'Add to My Summary')}</span>
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
           </Link>
         </nav>
       </div>

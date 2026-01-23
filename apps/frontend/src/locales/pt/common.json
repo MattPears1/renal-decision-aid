@@ -1,0 +1,1430 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "back": "Voltar",
+    "next": "Seguinte",
+    "skip": "Saltar",
+    "returnToHub": "Regressar ao Centro",
+    "backToHub": "Voltar ao Centro",
+    "continueToQuestionnaire": "Continuar para o questionario"
+  },
+  "common": {
+    "loading": "A carregar...",
+    "error": "Ocorreu um erro. Por favor, tente novamente.",
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "print": "Imprimir",
+    "yes": "Sim",
+    "no": "Nao",
+    "notSure": "Nao tenho a certeza",
+    "moreInfo": "Mais informacoes",
+    "close": "Fechar",
+    "back": "Voltar",
+    "edit": "Editar",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "listenToPage": "Ouvir esta pagina"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar para o conteudo principal",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "expandSection": "Expandir seccao",
+    "collapseSection": "Recolher seccao",
+    "newWindow": "Abre numa nova janela",
+    "externalLink": "Ligacao externa",
+    "settings": "Acessibilidade",
+    "settingsLabel": "Opcoes de acessibilidade - Ajustar tamanho do texto, contraste e outras definicoes de acessibilidade",
+    "settingsTitle": "Ajustar tamanho do texto, contraste e outras definicoes de acessibilidade",
+    "breadcrumb": "Navegacao de migalhas de pao",
+    "pageNavigation": "Navegacao da pagina",
+    "faq": "Perguntas frequentes",
+    "frequentlyAskedQuestions": "Perguntas frequentes",
+    "listenToPage": "Ouvir esta pagina em voz alta",
+    "modal": {
+      "title": "Definicoes de Acessibilidade",
+      "textSize": "Tamanho do Texto",
+      "textSizeOptions": {
+        "small": "Pequeno",
+        "medium": "Medio (Predefinido)",
+        "large": "Grande",
+        "extra-large": "Extra Grande"
+      },
+      "highContrast": "Modo de Alto Contraste",
+      "reducedMotion": "Movimento Reduzido",
+      "lineSpacing": "Espacamento entre Linhas",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Relaxado",
+        "loose": "Amplo"
+      },
+      "save": "Guardar Definicoes",
+      "cancel": "Cancelar",
+      "reset": "Repor Predefinicoes"
+    }
+  },
+  "landing": {
+    "title": "Apoio a Decisao sobre Tratamento Renal",
+    "subtitle": "Servicos Renais do NHS",
+    "description": "Esta ferramenta vai ajuda-lo a compreender as suas opcoes de tratamento renal e a pensar no que e mais importante para si. Leve o tempo que precisar - nao ha respostas certas nem erradas.",
+    "startButton": "Iniciar o Seu Percurso",
+    "startButtonAriaLabel": "Iniciar o seu percurso de decisao sobre tratamento renal",
+    "learnMore": "Saiba Mais Sobre a Doenca Renal",
+    "heroAriaLabel": "Seccao de boas-vindas",
+    "featuresHeading": "Como Esta Ferramenta o Ajuda",
+    "featuresSubheading": "Tudo o que precisa para tomar uma decisao informada sobre o seu tratamento renal",
+    "features": {
+      "time": {
+        "title": "Demora Cerca de 15 Minutos",
+        "description": "Complete ao seu proprio ritmo. Pode fazer pausas sempre que precisar e voltar onde parou."
+      },
+      "privacy": {
+        "title": "A Sua Privacidade Esta Protegida",
+        "description": "Nenhuma informacao pessoal e guardada. As suas respostas ajudam a personalizar a ferramenta apenas durante esta sessao."
+      },
+      "devices": {
+        "title": "Funciona em Todos os Dispositivos",
+        "description": "Use no seu telemovel, tablet ou computador. A ferramenta adapta-se automaticamente ao tamanho do seu ecra."
+      }
+    },
+    "aboutHeading": "O Que Esta Ferramenta Faz",
+    "about": {
+      "paragraph1": "Este apoio a decisao vai ajuda-lo a explorar as diferentes opcoes de tratamento disponiveis para a insuficiencia renal. Pode aprender sobre cada tratamento ao seu proprio ritmo, pensar no que e mais importante para si e criar um resumo para partilhar com o seu medico ou enfermeiro.",
+      "paragraph2": "Vai responder a algumas perguntas simples sobre a sua situacao e depois explorar os tratamentos que podem ser adequados para si. A sua informacao permanece privada e nao e guardada apos fechar o navegador.",
+      "paragraph3": "Esta ferramenta nao substitui o aconselhamento medico da sua equipa de saude. Foi concebida para o ajudar a sentir-se mais informado e confiante ao discutir as suas opcoes. A sua equipa renal sao os especialistas no seu cuidado e vao ajuda-lo a tomar a decisao certa para si.",
+      "steps": {
+        "learn": {
+          "title": "Aprender"
+        },
+        "explore": {
+          "title": "Explorar"
+        },
+        "decide": {
+          "title": "Decidir"
+        }
+      }
+    },
+    "trustAriaLabel": "Informacao de confianca e seguranca",
+    "trust": {
+      "evidenceBased": "Informacao baseada em evidencia",
+      "languages": "Disponivel em 11 idiomas",
+      "accessible": "Acessivel para todos os utilizadores",
+      "noAccount": "Sem necessidade de conta",
+      "time": "15 minutos",
+      "privateSecure": "Privado e Seguro"
+    },
+    "ctaHeading": "Pronto para Comecar?",
+    "ctaDescription": "De o primeiro passo para compreender as suas opcoes de tratamento renal. Pode comecar agora e voltar mais tarde se precisar de uma pausa."
+  },
+  "language": {
+    "title": "Escolha o Seu Idioma",
+    "instruction": "Por favor, selecione o seu idioma preferido. Pode alterar isto a qualquer momento.",
+    "selectLanguage": "Selecionar idioma",
+    "currentLanguage": "Idioma atual"
+  },
+  "privacy": {
+    "pageAriaLabel": "Informacao de privacidade",
+    "progressLabel": "Progresso da configuracao: 30%",
+    "progressText": "Passo 2 de 4: Informacao de Privacidade",
+    "title": "A Sua Privacidade e Informacao",
+    "subtitle": "Antes de comecar, queremos que compreenda como esta ferramenta trata a sua informacao.",
+    "listenToPage": "Ouvir esta pagina",
+    "stopReading": "Parar leitura",
+    "sections": {
+      "privacy": {
+        "title": "Como Protegemos a Sua Informacao",
+        "content": "As suas respostas sao processadas de forma segura e nao sao armazenadas permanentemente. Esta ferramenta nao recolhe informacoes de saude pessoais que o possam identificar. Os dados da sua sessao sao automaticamente eliminados quando fecha esta ferramenta.",
+        "p1": "Esta ferramenta utiliza armazenamento apenas de sessao. Qualquer informacao que introduzir, incluindo as suas respostas a perguntas e preferencias de tratamento, e mantida apenas enquanto utiliza a ferramenta.",
+        "p2": "Quando fecha o seu navegador ou apos 15 minutos de inatividade, toda a sua informacao e automaticamente eliminada. Nao guardamos nada sobre si.",
+        "p3": "Recolhemos informacoes anonimas sobre como as pessoas utilizam esta ferramenta para nos ajudar a melhora-la. Isto nao o pode identificar pessoalmente."
+      },
+      "ai": {
+        "title": "Como Esta Ferramenta Funciona",
+        "content": "Este apoio a decisao utiliza tecnologia para fornecer informacoes personalizadas com base nas suas respostas. A informacao fornecida baseia-se nas diretrizes clinicas do NHS e em investigacao baseada em evidencia. Esta ferramenta apoia, mas nao substitui, as discussoes com a sua equipa de cuidados renais.",
+        "p1": "Esta ferramenta inclui um assistente de IA que pode responder a perguntas gerais sobre tratamentos renais. A IA fornece apenas informacoes - nao pode dar aconselhamento medico especifico para a sua situacao.",
+        "p2": "A IA pode por vezes cometer erros ou fornecer informacoes incompletas. Discuta sempre as decisoes importantes com a sua equipa renal que conhece o seu historico medico completo.",
+        "p3": "Esta ferramenta nao substitui o aconselhamento da sua equipa de saude. Foi concebida para o ajudar a sentir-se mais informado ao discutir as suas opcoes com os seus medicos e enfermeiros."
+      },
+      "medical": {
+        "title": "Informacao Medica Importante",
+        "content": "Esta ferramenta fornece informacoes gerais sobre opcoes de tratamento renal. Nao substitui aconselhamento medico profissional, diagnostico ou tratamento. Consulte sempre o seu especialista renal ou equipa de saude antes de tomar qualquer decisao sobre o seu tratamento. Se tiver preocupacoes de saude urgentes, por favor contacte o seu medico de familia ou ligue para o NHS 111."
+      },
+      "pii": {
+        "title": "Por Favor, Nao Partilhe Dados Pessoais",
+        "intro": "Para proteger a sua privacidade, por favor nao introduza qualquer informacao pessoal que o possa identificar ao usar esta ferramenta, especialmente na funcao de chat.",
+        "listLabel": "Informacao que nao deve partilhar",
+        "items": {
+          "nhsNumber": "O seu numero do NHS",
+          "fullName": "O seu nome completo",
+          "address": "A sua morada",
+          "dob": "A sua data de nascimento",
+          "phone": "Numeros de telefone",
+          "email": "Enderecos de email"
+        },
+        "outro": "Pode ainda falar-nos sobre a sua situacao em termos gerais - por exemplo, a sua situacao de vida ou o que e mais importante para si - sem partilhar detalhes identificativos."
+      }
+    },
+    "summaryAriaLabel": "Resumo dos pontos-chave",
+    "summary": {
+      "title": "Em Resumo",
+      "notSaved": "As suas respostas nao sao guardadas",
+      "noData": "Nenhum dado pessoal e recolhido",
+      "leave": "Pode sair a qualquer momento"
+    },
+    "consent": {
+      "title": "Por favor, confirme para continuar",
+      "understand": "Compreendo que a minha informacao nao e guardada apos esta sessao e nao partilharei informacao pessoal identificativa",
+      "analytics": "Concordo com a recolha de analises anonimas para ajudar a melhorar esta ferramenta (opcional)",
+      "error": "Por favor, confirme que compreende a informacao de privacidade antes de continuar"
+    },
+    "continueButton": "Compreendo, Continuar",
+    "continueAriaLabel": "Continuar para a selecao da fase do percurso",
+    "readFullPolicy": "Ler a Politica de Privacidade completa do NHS"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Demonstracao",
+    "serviceName": "Apoio a Decisao sobre Tratamento Renal",
+    "tagline": "A ajuda-lo a fazer escolhas informadas",
+    "homeAriaLabel": "Apoio a Decisao sobre Tratamento Renal do NHS - Inicio"
+  },
+  "progress": {
+    "language": "Idioma",
+    "privacy": "Privacidade",
+    "yourJourney": "O Seu Percurso",
+    "aboutYou": "Sobre Si",
+    "yourOptions": "As Suas Opcoes",
+    "ariaLabel": "Progresso atraves do apoio a decisao",
+    "stepOfTotal": "Passo {{current}} de {{total}}",
+    "percentComplete": "{{percentage}}% concluido",
+    "ariaProgressLabel": "Progresso: {{current}} de {{total}} passos concluidos"
+  },
+  "journey": {
+    "title": "Onde Esta no Seu Percurso de Cuidados Renais?",
+    "subtitle": "Selecione a opcao que melhor descreve a sua situacao",
+    "instruction": "Selecione a opcao que melhor descreve a sua situacao atual",
+    "intro": "O percurso renal de cada pessoa e diferente. Para nos ajudar a mostrar-lhe a informacao mais relevante, por favor diga-nos onde esta agora. Nao ha respostas certas nem erradas.",
+    "error": "Por favor, selecione uma opcao que descreva a sua situacao. Se nenhuma se aplicar, selecione \"Estou a apoiar um familiar ou amigo\" para continuar.",
+    "formLabel": "Opcoes de fase do percurso",
+    "legendLabel": "Selecione onde esta no seu percurso renal",
+    "radioGroupLabel": "Opcoes de fase do percurso",
+    "listenToQuestion": "Ouvir esta pergunta",
+    "audioText": "Onde esta no seu percurso? Selecione a opcao que melhor descreve a sua situacao.",
+    "reassurance": "Nao se preocupe se nao tiver a certeza de qual opcao se adequa melhor. Pode sempre explorar todas as opcoes de tratamento mais tarde, e a sua equipa renal pode ajudar a esclarecer a sua situacao. A sua selecao ajuda-nos a mostrar-lhe a informacao mais relevante primeiro.",
+    "needHelp": "Preciso de ajuda para escolher",
+    "stages": {
+      "suspected": {
+        "title": "Penso que posso ter doenca renal",
+        "description": "Esta preocupado com a sua saude renal e quer saber mais sobre o que significa a doenca renal."
+      },
+      "earlyDiagnosis": {
+        "title": "Acabei de ser diagnosticado - DRC em fase inicial",
+        "description": "Soube recentemente da sua condicao renal e quer compreender o que isto significa para si."
+      },
+      "lateDiagnosis": {
+        "title": "Fui diagnosticado - DRC em fase avancada",
+        "description": "A sua funcao renal diminuiu significativamente e pode precisar de pensar em opcoes de tratamento em breve."
+      },
+      "choosingTreatment": {
+        "title": "Preciso de escolher um tratamento em breve",
+        "description": "A sua equipa renal disse-lhe que vai precisar de iniciar tratamento nos proximos meses e quer conhecer as suas opcoes."
+      },
+      "transplantPending": {
+        "title": "Vou fazer um transplante - quero saber mais",
+        "description": "Esta na lista de transplante ou tem um dador vivo alinhado e quer saber mais sobre o que esperar."
+      },
+      "dialysisPending": {
+        "title": "Vou iniciar dialise - quero saber mais",
+        "description": "Vai comecar tratamento de dialise em breve e quer compreender os diferentes tipos e como sera a vida diaria."
+      },
+      "supporting": {
+        "title": "Estou a apoiar um familiar ou amigo",
+        "description": "Alguem proximo de si tem doenca renal e quer compreender as opcoes para o ajudar a apoiar."
+      }
+    },
+    "helpModal": {
+      "title": "Precisa de Ajuda para Escolher?",
+      "intro": "E perfeitamente normal sentir-se inseguro sobre qual fase o descreve melhor. Aqui estao algumas dicas:",
+      "tip1Title": "Pense na sua consulta mais recente",
+      "tip1Text": "O que lhe disse a sua equipa renal sobre a sua funcao renal e os proximos passos?",
+      "tip2Title": "Considere o que o trouxe aqui",
+      "tip2Text": "Esta ferramenta foi-lhe dada por um medico ou enfermeiro? Eles podem ter sugerido qual fase se aplica a si.",
+      "tip3Title": "Se ainda nao tiver a certeza",
+      "tip3Text": "Escolha a opcao que parece mais proxima da sua situacao. Ainda podera explorar toda a informacao nesta ferramenta, independentemente da opcao que selecionar.",
+      "note": "A sua equipa renal sao os especialistas no seu cuidado. Se tiver duvidas sobre a sua saude renal, por favor contacte-os diretamente.",
+      "understand": "Compreendo"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Fale-nos Sobre Si",
+      "description": "Estas perguntas ajudam-nos a mostrar-lhe informacao mais relevante para a sua situacao. As suas respostas sao privadas e nao serao guardadas apos esta sessao.",
+      "features": {
+        "questions": "7 perguntas rapidas",
+        "time": "Demora 3-5 minutos",
+        "private": "Completamente privado",
+        "skip": "Salte qualquer pergunta"
+      },
+      "beginButton": "Comecar Perguntas",
+      "skipText": "Se preferir nao responder a estas perguntas, pode saltar para informacao geral sobre tratamentos.",
+      "skipButton": "Saltar Todas as Perguntas",
+      "backToJourney": "Voltar a Fase do Percurso"
+    },
+    "progress": {
+      "label": "Progresso das perguntas",
+      "questionOf": "Pergunta {{current}} de {{total}}",
+      "complete": "concluido"
+    },
+    "types": {
+      "scale": "Classificacao em Escala",
+      "single": "Escolha Unica",
+      "multiple": "Escolha Multipla"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "Quanto sabe sobre a doenca renal e os seus tratamentos?",
+        "hint": "Isto ajuda-nos a adaptar a informacao ao seu nivel de conhecimento atual."
+      },
+      "goal": {
+        "title": "O que gostaria de obter desta sessao?",
+        "hint": "Selecione a opcao que melhor descreve o seu objetivo principal hoje."
+      },
+      "learning": {
+        "title": "Como prefere aprender nova informacao?",
+        "hint": "Isto ajuda-nos a apresentar a informacao de formas que funcionem melhor para si."
+      },
+      "comfort": {
+        "title": "Quao confortavel esta com procedimentos medicos?",
+        "hint": "Este e um topico sensivel. Pode saltar esta pergunta se preferir."
+      },
+      "support": {
+        "title": "Tem apoio em casa?",
+        "hint": "Alguns tratamentos sao mais faceis com ajuda de familiares ou cuidadores."
+      },
+      "living": {
+        "title": "Onde vive?",
+        "hint": "Isto ajuda-nos a compreender quais tratamentos podem funcionar melhor no seu ambiente domestico."
+      },
+      "priorities": {
+        "title": "O que e mais importante para si na escolha de um tratamento?",
+        "hint": "As suas prioridades vao ajudar-nos a destacar o que e importante para si em cada opcao de tratamento."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Selecione ate {{max}} prioridades que sao mais importantes para si.",
+      "selectAll": "Selecione todas as que se aplicam - pode escolher mais do que uma opcao."
+    },
+    "audio": {
+      "listen": "Ouvir esta pergunta"
+    },
+    "slider": {
+      "ariaLabel": "Valor de {{min}} a {{max}}"
+    },
+    "skipQuestion": "Saltar esta pergunta",
+    "viewResults": "Ver os Meus Resultados",
+    "nextQuestion": "Pergunta Seguinte",
+    "knowledge": {
+      "levels": {
+        "1": "Sei muito pouco",
+        "2": "Sei um pouco",
+        "3": "Tenho algum conhecimento",
+        "4": "Sei bastante",
+        "5": "Estou muito bem informado"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Aprender o basico",
+          "description": "Quero compreender o que significa a doenca renal e as opcoes de tratamento disponiveis"
+        },
+        "compare": {
+          "label": "Comparar as minhas opcoes",
+          "description": "Ja sei o basico e quero comparar diferentes tratamentos"
+        },
+        "prepare": {
+          "label": "Preparar para uma discussao",
+          "description": "Quero preparar perguntas e pensamentos para a minha proxima consulta"
+        },
+        "support": {
+          "label": "Apoiar outra pessoa",
+          "description": "Estou a ajudar um familiar ou amigo a compreender as suas opcoes"
+        },
+        "notSure": {
+          "label": "Ainda nao tenho a certeza",
+          "description": "Quero apenas explorar e ver que informacao esta disponivel"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Diagramas visuais e imagens",
+          "description": "Imagens, graficos e diagramas ajudam-me a compreender"
+        },
+        "audio": {
+          "label": "Ouvir informacao",
+          "description": "Prefiro ouvir a informacao em voz alta"
+        },
+        "reading": {
+          "label": "Ler texto",
+          "description": "Gosto de ler informacao escrita detalhada"
+        },
+        "video": {
+          "label": "Ver videos",
+          "description": "Videos e animacoes funcionam melhor para mim"
+        },
+        "interactive": {
+          "label": "Ferramentas interativas",
+          "description": "Aprendo fazendo e explorando"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Muito desconfortavel",
+        "2": "Algo desconfortavel",
+        "3": "Neutro",
+        "4": "Razoavelmente confortavel",
+        "5": "Muito confortavel"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Sim, vivo com familia ou parceiro que pode ajudar",
+        "carers": "Sim, tenho cuidadores profissionais que me ajudam",
+        "familyNearby": "Sim, a familia vive perto e pode visitar",
+        "limitedSupport": "Tenho apoio limitado disponivel",
+        "preferNotSay": "Prefiro nao dizer"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "Casa com bastante espaco",
+        "homeLimited": "Casa com espaco de armazenamento limitado",
+        "flat": "Apartamento",
+        "supported": "Alojamento assistido ou de cuidados"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Passar tempo com a familia",
+        "independence": "Manter a minha independencia",
+        "minimiseHospital": "Minimizar tempo no hospital",
+        "routine": "Manter uma rotina regular",
+        "control": "Ter controlo sobre o meu tratamento",
+        "longevity": "Viver o mais tempo possivel",
+        "quality": "Qualidade de vida no dia a dia",
+        "travel": "Poder viajar"
+      }
+    }
+  },
+  "hub": {
+    "title": "A Sua Informacao Personalizada",
+    "subtitle": "Com base nas suas respostas, eis o que recomendamos explorar.",
+    "welcome": {
+      "title": "As Suas Opcoes de Tratamento Personalizadas",
+      "message": "Com base no que nos disse, aqui estao recursos para o ajudar a compreender a sua condicao renal e explorar as suas opcoes.",
+      "reminder": "Lembre-se, a sua equipa renal vai ajuda-lo a tomar a decisao final.",
+      "badge": "O seu percurso personalizado"
+    },
+    "session": {
+      "timeRemaining": "Tempo restante da sessao:",
+      "extend": "Prolongar sessao",
+      "updateAnswers": "Atualizar as Minhas Respostas",
+      "startOver": "Recomecar"
+    },
+    "alert": {
+      "title": "Lembre-se de guardar o seu resumo",
+      "message": "A sua informacao nao sera guardada apos esta sessao. Crie um resumo antes de sair para manter um registo da sua exploracao.",
+      "saveNow": "Guardar Agora"
+    },
+    "pathway": {
+      "title": "Como gostaria de explorar?",
+      "guided": {
+        "title": "O Seu Percurso Recomendado",
+        "badge": "Recomendado",
+        "description": "Siga um caminho guiado passo a passo atraves das opcoes de tratamento adaptadas a sua situacao. Perfeito se quiser direcao clara e apoio.",
+        "action": "Iniciar percurso guiado"
+      },
+      "free": {
+        "title": "Explorar Livremente",
+        "description": "Navegue por todas as opcoes ao seu proprio ritmo. Va diretamente aos topicos que lhe interessam. Ideal se ja sabe o que procura.",
+        "action": "Navegar todas as opcoes"
+      }
+    },
+    "content": {
+      "title": "Ferramentas para o Ajudar a Decidir",
+      "subtitle": "Explore cada ferramenta para tomar uma decisao informada"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Opcoes de Tratamento",
+        "description": "Saiba mais sobre todas as opcoes de tratamento renal disponiveis, incluindo tipos de dialise, transplante e cuidados conservadores.",
+        "action": "Explorar"
+      },
+      "model": {
+        "title": "Modelo 3D do Rim",
+        "description": "Explore modelos 3D interativos que mostram como funcionam os diferentes tratamentos no seu corpo. Veja o processo visualmente.",
+        "action": "Ver Modelo"
+      },
+      "compare": {
+        "title": "Comparar Tratamentos",
+        "description": "Veja todos os tratamentos lado a lado. Compare o que e importante para si - desde o tempo diario ate a flexibilidade para viajar.",
+        "action": "Comparar"
+      },
+      "values": {
+        "title": "Exercicio de Valores",
+        "description": "Pense no que e mais importante para si. Este exercicio ajuda a clarificar as suas prioridades para guiar a sua decisao.",
+        "action": "Comecar"
+      },
+      "chat": {
+        "title": "Fazer Perguntas",
+        "description": "Converse com o nosso assistente de IA sobre opcoes de tratamento renal. Obtenha respostas as suas perguntas de forma conversacional.",
+        "action": "Iniciar Chat"
+      }
+    },
+    "status": {
+      "new": "Novo",
+      "inProgress": "Em Curso",
+      "completed": "Concluido"
+    },
+    "summary": {
+      "title": "Pronto para Rever o Seu Percurso?",
+      "description": "Veja tudo o que explorou e crie um resumo para partilhar com a sua equipa renal na proxima consulta.",
+      "button": "Ver o Seu Resumo",
+      "badge": "Passo Final"
+    },
+    "quickAction": {
+      "summary": "Ver o Seu Resumo"
+    }
+  },
+  "treatments": {
+    "title": "Compreender as Suas Opcoes de Tratamento",
+    "subtitle": "Existem diferentes formas de tratar a insuficiencia renal. Cada uma tem beneficios e consideracoes.",
+    "detailedInfoAriaLabel": "Informacao detalhada sobre {{treatment}}",
+    "facts": {
+      "transplant": {
+        "survival": "Melhores resultados de sobrevivencia a longo prazo",
+        "surgery": "Requer cirurgia e tempo de recuperacao",
+        "medication": "Medicacao para toda a vida necessaria"
+      },
+      "hemodialysis": {
+        "frequency": "3-4 vezes por semana, 4-5 horas cada",
+        "professionalCare": "Cuidados e monitorizacao profissionais",
+        "travel": "Deslocacao ao centro necessaria"
+      },
+      "peritoneal": {
+        "dailyHome": "Tratamento diario em casa",
+        "timingOptions": "Opcoes noturnas ou diurnas",
+        "flexibility": "Maior flexibilidade e independencia"
+      },
+      "conservative": {
+        "comfort": "Foco no conforto e qualidade de vida",
+        "noDialysis": "Sem necessidade de tratamento de dialise",
+        "symptomManagement": "Gestao ativa de sintomas"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "Transplante Renal",
+        "shortDescription": "Receber um rim saudavel de um dador",
+        "description": "Um transplante renal envolve receber um rim saudavel de um dador vivo (como um familiar ou amigo) ou de um dador falecido. Um transplante bem-sucedido pode proporcionar a melhor qualidade de vida e maior sobrevivencia para muitas pessoas com insuficiencia renal.",
+        "benefits": [
+          "Frequentemente proporciona a melhor qualidade de vida",
+          "Sem necessidade de sessoes regulares de dialise",
+          "Menos restricoes dieteticas",
+          "Melhores niveis de energia para a maioria das pessoas"
+        ],
+        "considerations": [
+          "Requer cirurgia major",
+          "Necessidade de tomar medicamentos imunossupressores para toda a vida",
+          "Pode ser necessario esperar por um rim adequado",
+          "Nao e adequado para toda a gente"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Hemodialise",
+        "shortDescription": "Filtracao do sangue usando uma maquina",
+        "description": "A hemodialise usa uma maquina para filtrar o seu sangue fora do seu corpo. Isto e geralmente feito numa unidade de dialise num hospital ou centro comunitario, tipicamente tres vezes por semana durante cerca de quatro horas cada sessao. Algumas pessoas fazem hemodialise em casa.",
+        "benefits": [
+          "Eficaz a remover residuos e liquido em excesso",
+          "Contacto regular com a equipa de saude",
+          "Opcao de hemodialise em casa disponivel para alguns",
+          "O tratamento e feito por si"
+        ],
+        "considerations": [
+          "Requer visitas regulares ao hospital ou centro",
+          "Necessita de acesso vascular (fistula ou linha)",
+          "Pode sentir-se cansado apos o tratamento",
+          "Aplicam-se restricoes dieteticas e de liquidos"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Dialise Peritoneal",
+        "shortDescription": "Filtracao do sangue dentro do corpo usando o revestimento do abdomen",
+        "description": "A dialise peritoneal usa o revestimento do seu abdomen (peritoneu) como um filtro natural. Um liquido especial e colocado no seu abdomen atraves de um pequeno tubo, absorve os produtos residuais e depois e drenado. Isto pode ser feito em casa, durante o dia ou durante a noite enquanto dorme.",
+        "benefits": [
+          "Feita em casa, maior independencia",
+          "Horario mais flexivel",
+          "Mais suave para o corpo, menos altos e baixos",
+          "Mais facil viajar"
+        ],
+        "considerations": [
+          "Requer compromisso de tratamento diario",
+          "Necessita de um tubo permanente no seu abdomen",
+          "Risco de infecao se a tecnica nao for mantida",
+          "Requer espaco de armazenamento para materiais"
+        ]
+      },
+      "conservative": {
+        "title": "Tratamento Conservador",
+        "shortDescription": "Gestao de sintomas sem dialise",
+        "description": "O tratamento conservador foca-se em manter a qualidade de vida e gerir os sintomas sem dialise ou transplante. Esta abordagem pode ser adequada para algumas pessoas, particularmente as que sao idosas, frageis ou tem outras condicoes de saude graves. Envolve gestao cuidadosa de sintomas, medicamentos e apoio da equipa de cuidados renais.",
+        "benefits": [
+          "Sem necessidade de sessoes de dialise ou cirurgia",
+          "Foco na qualidade de vida e conforto",
+          "Pode ser apropriado para alguns doentes idosos ou frageis",
+          "Manter a rotina habitual tanto quanto possivel"
+        ],
+        "considerations": [
+          "A funcao renal continuara a declinar",
+          "Os sintomas vao necessitar de gestao ativa",
+          "Importante ter conversas honestas sobre expectativas",
+          "Planeamento antecipado de cuidados e recomendado"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "Comparar Opcoes de Tratamento",
+    "subtitle": "Veja como os diferentes tratamentos se comparam em fatores-chave.",
+    "categories": {
+      "lifestyle": "Impacto no Estilo de Vida",
+      "medical": "Consideracoes Medicas"
+    },
+    "items": {
+      "scheduleFlexibility": "Flexibilidade de Horario",
+      "travelAbility": "Capacidade de Viajar",
+      "dietRestrictions": "Restricoes Dieteticas",
+      "hospitalVisits": "Visitas ao Hospital",
+      "surgeryRequired": "Cirurgia Necessaria",
+      "medications": "Medicamentos"
+    },
+    "values": {
+      "high": "Alta",
+      "medium": "Media",
+      "low": "Baixa",
+      "limited": "Limitada",
+      "varies": "Varia",
+      "fewer": "Menos",
+      "more": "Mais",
+      "moderate": "Moderada",
+      "periodic": "Consultas periodicas",
+      "threePerWeek": "3 vezes por semana",
+      "monthly": "Mensalmente",
+      "asNeeded": "Conforme necessario",
+      "major": "Cirurgia major",
+      "minor": "Procedimento menor",
+      "none": "Nenhuma",
+      "lifelong": "Imunossupressores para toda a vida",
+      "several": "Varios medicamentos",
+      "symptomBased": "Baseado em sintomas"
+    }
+  },
+  "compare": {
+    "title": "Comparar Opcoes de Tratamento",
+    "subtitle": "Veja como os diferentes tratamentos se comparam nos fatores que sao importantes para si.",
+    "intro": "Esta comparacao mostra como cada opcao de tratamento se comporta em diferentes aspetos da vida diaria e cuidados medicos.",
+    "description": "Esta ferramenta ajuda-o a comparar as opcoes de tratamento renal lado a lado. Pode focar-se nas coisas que sao mais importantes para si. Selecione os fatores que quer comparar abaixo.",
+    "customise": "Personalize a Sua Comparacao",
+    "showTreatments": "Mostrar tratamentos:",
+    "highlightForMe": "Destacar tratamentos para mim",
+    "highlightHint": "Com base nos seus valores e prioridades do questionario",
+    "understandingIcons": "Compreender os Icones",
+    "scrollHint": "Deslize horizontalmente para ver todos os tratamentos",
+    "tableHeading": "Tabela de Comparacao de Tratamentos",
+    "tableLabel": "Comparacao de opcoes de tratamento renal",
+    "criteria": "Criterios",
+    "recommended": "Recomendado",
+    "remember": "Lembre-se",
+    "guidance": "Nenhum tratamento e perfeito para toda a gente. A melhor escolha depende da sua situacao pessoal, saude e valores. Esta comparacao e um ponto de partida para discussoes com a sua equipa renal.",
+    "addToSummary": "Adicionar ao Meu Resumo",
+    "treatments": {
+      "transplant": {
+        "name": "Transplante Renal",
+        "type": "Cirurgia"
+      },
+      "hemodialysis": {
+        "name": "Hemodialise",
+        "type": "Dialise no centro"
+      },
+      "peritoneal": {
+        "name": "Dialise Peritoneal",
+        "type": "Dialise em casa"
+      },
+      "conservative": {
+        "name": "Cuidados Conservadores",
+        "type": "Cuidados de suporte"
+      }
+    },
+    "categories": {
+      "dailyLife": "Impacto na Vida Diaria",
+      "practical": "Consideracoes Praticas",
+      "medical": "Fatores Medicos",
+      "support": "Requisitos de Apoio",
+      "health": "Resultados de Saude"
+    },
+    "criteria": {
+      "timeCommitment": "Compromisso de tempo por semana",
+      "timeCommitmentHint": "Horas gastas em tratamento",
+      "location": "Local do tratamento",
+      "locationHint": "Onde o tratamento acontece",
+      "travel": "Impacto nas viagens",
+      "travelHint": "Capacidade de viajar e fazer ferias",
+      "diet": "Restricoes dieteticas",
+      "dietHint": "Limitacoes em comida e bebida",
+      "surgery": "Cirurgia necessaria",
+      "surgeryHint": "Procedimentos iniciais necessarios",
+      "supportNeeded": "Apoio necessario",
+      "supportNeededHint": "Ajuda de familia ou cuidadores",
+      "recoveryTime": "Tempo de recuperacao",
+      "recoveryTimeHint": "Tempo para se adaptar ao tratamento",
+      "longTermOutlook": "Perspetiva a longo prazo",
+      "longTermOutlookHint": "Resultados esperados ao longo do tempo",
+      "scheduleFlexibility": "Flexibilidade de horario",
+      "scheduleFlexibilityHint": "Controlo sobre o seu horario",
+      "trainingRequired": "Formacao necessaria",
+      "trainingRequiredHint": "Tempo de aprendizagem necessario",
+      "survivalRates": "Taxas de sobrevivencia",
+      "survivalRatesHint": "Resultados gerais (varia por pessoa)",
+      "qualityOfLife": "Qualidade de vida",
+      "qualityOfLifeHint": "Bem-estar geral",
+      "energyLevels": "Niveis de energia",
+      "energyLevelsHint": "Energia e fadiga tipicas"
+    },
+    "values": {
+      "minimalAfterRecovery": "Minimo apos recuperacao",
+      "regularCheckupsOnly": "Apenas consultas regulares",
+      "12to15HrsWeekly": "12-15 horas semanais",
+      "plusTravelTime": "Mais tempo de deslocacao",
+      "dailyExchanges": "Trocas diarias",
+      "canBeDoneOvernight": "Pode ser feito durante a noite",
+      "minimal": "Minimo",
+      "clinicVisitsAsNeeded": "Visitas a clinica conforme necessario",
+      "noRestrictions": "Sem restricoes",
+      "afterRecovery": "Apos recuperacao",
+      "hospitalClinic": "Hospital/clinica",
+      "dialysisUnit": "Unidade de dialise",
+      "home": "Casa",
+      "anyCleanSpace": "Qualquer espaco limpo",
+      "noEquipmentNeeded": "Sem necessidade de equipamento",
+      "veryFlexible": "Muito flexivel",
+      "takeMedicationsOnly": "Apenas tomar medicamentos",
+      "difficult": "Dificil",
+      "mustArrangeHolidayDialysis": "Deve organizar dialise de ferias",
+      "goodFlexibility": "Boa flexibilidade",
+      "suppliesCanBeSentAhead": "Materiais podem ser enviados antecipadamente",
+      "fewRestrictions": "Poucas restricoes",
+      "nearNormalDiet": "Dieta quase normal",
+      "moderateRestrictions": "Restricoes moderadas",
+      "fluidAndPotassiumLimits": "Limites de liquidos e potassio",
+      "lessStrict": "Menos rigoroso",
+      "moreFlexibility": "Mais flexibilidade",
+      "managedDiet": "Dieta controlada",
+      "tailoredToSymptoms": "Adaptada aos sintomas",
+      "majorSurgery": "Cirurgia major",
+      "transplantOperationRequired": "Operacao de transplante necessaria",
+      "minorSurgery": "Cirurgia menor",
+      "fistulaOrGraftCreation": "Criacao de fistula ou enxerto",
+      "minorProcedure": "Procedimento menor",
+      "pdCatheterInsertion": "Insercao de cateter de DP",
+      "noneRequired": "Nenhuma necessaria",
+      "noSurgicalProcedures": "Sem procedimentos cirurgicos",
+      "initialSupport": "Apoio inicial",
+      "duringRecoveryPeriod": "Durante o periodo de recuperacao",
+      "noneNeeded": "Nenhum necessario",
+      "professionalStaffProvideCare": "Profissionais de saude prestam cuidados",
+      "canDoIndependently": "Pode fazer de forma independente",
+      "varies": "Varia",
+      "dependsOnSymptoms": "Depende dos sintomas",
+      "high": "Alto",
+      "normalDailyLifePossible": "Vida diaria normal possivel",
+      "low": "Baixo",
+      "fixedHospitalSlots": "Horarios fixos no hospital",
+      "chooseYourSchedule": "Escolha o seu horario",
+      "noFixedSchedule": "Sem horario fixo",
+      "medicationTraining": "Formacao em medicacao",
+      "learningYourNewRoutine": "Aprender a sua nova rotina",
+      "staffDoEverything": "A equipa faz tudo",
+      "oneToTwoWeeksTraining": "1-2 semanas de formacao",
+      "learnTheTechnique": "Aprender a tecnica",
+      "symptomManagement": "Gestao de sintomas",
+      "medicationGuidance": "Orientacao sobre medicacao",
+      "bestOutcomes": "Melhores resultados",
+      "forSuitableCandidates": "Para candidatos adequados",
+      "good": "Bom",
+      "wellEstablishedTreatment": "Tratamento bem estabelecido",
+      "similarToHaemodialysis": "Semelhante a hemodialise",
+      "qualityFocused": "Focado na qualidade",
+      "comfortOverLongevity": "Conforto sobre longevidade",
+      "excellent": "Excelente",
+      "nearNormalLifePossible": "Vida quase normal possivel",
+      "moderate": "Moderado",
+      "treatmentAffectsDailyRoutine": "Tratamento afeta a rotina diaria",
+      "moreIndependence": "Mais independencia",
+      "focusOnComfort": "Foco no conforto",
+      "symptomManagementPriority": "Prioridade na gestao de sintomas",
+      "oftenExcellent": "Frequentemente excelente",
+      "energyRestored": "Energia restaurada",
+      "variable": "Variavel",
+      "fatigueAfterSessions": "Fadiga apos sessoes",
+      "generallyGood": "Geralmente bom",
+      "steadyEnergyLevels": "Niveis de energia estaveis",
+      "managedWithSupport": "Gerido com apoio"
+    },
+    "legend": {
+      "title": "Guia de Classificacao",
+      "excellent": "Excelente",
+      "good": "Bom",
+      "moderate": "Moderado",
+      "challenging": "Desafiante",
+      "varies": "Varia",
+      "excellentDesc": "Excelente - Geralmente muito favoravel",
+      "goodDesc": "Bom - Geralmente favoravel",
+      "moderateDesc": "Moderado - Algumas limitacoes a considerar",
+      "challengingDesc": "Desafiante - Consideracoes significativas",
+      "variesDesc": "Varia - Depende das circunstancias individuais"
+    },
+    "viewDetails": "Ver detalhes",
+    "backToHub": "Voltar ao Centro",
+    "printComparison": "Imprimir comparacao"
+  },
+  "chat": {
+    "title": "Fazer Perguntas",
+    "subtitle": "O nosso assistente de IA pode responder a perguntas gerais sobre tratamentos renais.",
+    "placeholder": "Escreva a sua pergunta aqui...",
+    "send": "Enviar",
+    "disclaimer": "Este assistente fornece apenas informacoes gerais e nao substitui o aconselhamento medico da sua equipa de cuidados renais.",
+    "welcomeMessage": "Ola! Estou aqui para ajudar a responder as suas perguntas sobre doenca renal e opcoes de tratamento. Como posso ajuda-lo hoje?",
+    "errorMessage": "Desculpe, nao consegui processar a sua mensagem. Por favor, tente novamente.",
+    "thinking": "A pensar...",
+    "backToHub": "Voltar ao Centro",
+    "privacyReminder": "Lembrete de privacidade:",
+    "readyToHelp": "Pronto para ajudar",
+    "status": {
+      "online": "Online"
+    },
+    "messagesLabel": "Mensagens do chat",
+    "inputLabel": "Campo de mensagem",
+    "audioInput": "Entrada de voz",
+    "piiWarning": "Por favor, nao partilhe informacoes pessoais como o seu nome, numero do NHS ou morada. Este chat nao e guardado.",
+    "welcome": {
+      "greeting": "Ola! Sou o Assistente de Cuidados Renais do NHS. Estou aqui para o ajudar a compreender as opcoes de tratamento renal.",
+      "prompt": "Pode fazer-me perguntas sobre dialise, transplantes, cuidados conservadores ou qualquer outra coisa relacionada com tratamento renal. Como posso ajuda-lo hoje?"
+    },
+    "suggestedQuestions": "Perguntas Sugeridas",
+    "questions": {
+      "q1": "Qual e a diferenca entre hemodialise e dialise peritoneal?",
+      "q2": "Quanto tempo demora uma cirurgia de transplante renal?",
+      "q3": "Posso viajar enquanto faco dialise?",
+      "q4": "Quais sao os efeitos secundarios do tratamento de dialise?",
+      "q5": "Como sei se sou adequado para um transplante?",
+      "q6": "O que e o tratamento conservador e quem pode escolhe-lo?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Conte-me mais",
+      "prosAndCons": "Quais sao os pros e contras?",
+      "dailyLife": "Como isto afeta a vida diaria?"
+    },
+    "voice": {
+      "startRecording": "Iniciar entrada de voz",
+      "stopRecording": "Parar gravacao",
+      "listening": "A ouvir...",
+      "processing": "A processar...",
+      "speaking": "A falar...",
+      "paused": "Pausado",
+      "playResponse": "Ouvir resposta",
+      "pauseResponse": "Pausa",
+      "resumeResponse": "Retomar",
+      "stopResponse": "Parar",
+      "loading": "A carregar audio...",
+      "loadingAudio": "A carregar audio...",
+      "requesting": "A pedir permissao...",
+      "notSupported": "Entrada de voz nao suportada",
+      "error": "Ocorreu um erro",
+      "micPermissionDenied": "Permissao do microfone foi negada. Por favor, permita o acesso para usar a entrada de voz.",
+      "noAudioDetected": "Nao foi detetado audio. Por favor, tente novamente.",
+      "transcriptionFailed": "Falha na transcricao do audio. Por favor, tente novamente.",
+      "synthesisFailed": "Falha ao reproduzir audio. Por favor, tente novamente."
+    }
+  },
+  "values": {
+    "title": "O Que E Importante Para Si",
+    "subtitle": "Classifique a importancia de cada fator para si. Isto ajuda-nos a personalizar a sua informacao.",
+    "instructions": "Mova o cursor para indicar a importancia (1 = Nao importante, 5 = Muito importante)",
+    "sliderLabel": "Classificacao de importancia",
+    "startExercise": "Iniciar Exercicio de Valores",
+    "lessImportant": "Menos importante",
+    "moreImportant": "Mais importante",
+    "skipStatement": "Saltar esta afirmacao",
+    "viewResults": "Ver os Meus Resultados",
+    "statementsRemaining_one": "{{count}} afirmacao restante",
+    "statementsRemaining_other": "{{count}} afirmacoes restantes",
+    "completed": "Concluido",
+    "intro": {
+      "title": "O Que E Mais Importante Para Si?",
+      "description": "Escolher um tratamento renal e uma decisao pessoal. Este exercicio ajuda-o a pensar sobre os seus valores e prioridades para poder discuti-los com a sua equipa renal.",
+      "feature1": "10 afirmacoes de valores para classificar",
+      "feature2": "Demora cerca de 5 minutos",
+      "feature3": "Nao ha respostas certas nem erradas",
+      "feature4": "Veja as suas prioridades resumidas",
+      "beginButton": "Comecar Exercicio",
+      "allAtOnce": "Prefere ver todas as afirmacoes de uma vez?",
+      "viewAll": "Ver Todas as Afirmacoes"
+    },
+    "progress": {
+      "statement": "Afirmacao",
+      "of": "de"
+    },
+    "defaultHint": "Classifique a importancia disto para si de 1 (Nao importante) a 5 (Muito importante)",
+    "listenStatement": "Ouvir esta afirmacao",
+    "nav": {
+      "back": "Voltar",
+      "skip": "Saltar",
+      "next": "Seguinte",
+      "finish": "Terminar",
+      "backToIntro": "Voltar a Introducao",
+      "seeResults": "Ver os Meus Resultados"
+    },
+    "allAtOnce": {
+      "title": "Classificar Todas as Afirmacoes",
+      "description": "Classifique cada afirmacao de 1 (Nao importante) a 5 (Muito importante).",
+      "progress": "Concluido"
+    },
+    "results": {
+      "title": "O Seu Resumo de Valores",
+      "description": "Com base nas suas respostas, eis o que e mais importante para si.",
+      "topPriorities": "As Suas Principais Prioridades",
+      "allValues": "Todos os Seus Valores",
+      "editValues": "Editar os Seus Valores",
+      "compareLink": "Comparar Tratamentos",
+      "addToSummary": "Adicionar ao Meu Resumo",
+      "viewTreatments": "Ver tratamentos que correspondem aos seus valores",
+      "backToHub": "Voltar ao Centro"
+    },
+    "ratingLabels": {
+      "1": "Nao importante",
+      "2": "Ligeiramente importante",
+      "3": "Moderadamente importante",
+      "4": "Importante",
+      "5": "Muito importante"
+    },
+    "ratings": {
+      "1": "Nao importante",
+      "2": "Ligeiramente importante",
+      "3": "Moderadamente importante",
+      "4": "Muito importante",
+      "5": "Extremamente importante"
+    },
+    "statements": {
+      "travel": {
+        "statement": "Poder viajar e importante para mim",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "hospital-time": {
+        "statement": "Quero minimizar o tempo passado no hospital",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "needles": {
+        "statement": "Estou confortavel com agulhas e procedimentos medicos",
+        "hint": "Classifique o quanto concorda com esta afirmacao"
+      },
+      "independence": {
+        "statement": "Manter a minha independencia e muito importante para mim",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "family-burden": {
+        "statement": "Quero evitar ser um fardo para a minha familia",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "longevity": {
+        "statement": "Viver o mais tempo possivel e a minha prioridade",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "quality-of-life": {
+        "statement": "A qualidade de vida importa mais do que a duracao da vida",
+        "hint": "Classifique o quanto concorda com esta afirmacao"
+      },
+      "home-treatment": {
+        "statement": "Preferiria fazer tratamento em casa",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "work-activities": {
+        "statement": "Continuar a trabalhar ou fazer as minhas atividades habituais e importante",
+        "hint": "Classifique a importancia disto para si"
+      },
+      "professional-care": {
+        "statement": "Preferiria que profissionais cuidassem do meu tratamento",
+        "hint": "Classifique o quanto concorda com esta afirmacao"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Manter a minha independencia e poder cuidar de mim proprio",
+        "hint": "Poder fazer atividades diarias sem depender muito de outros"
+      },
+      "schedule": {
+        "text": "Ter flexibilidade no meu horario e poder viajar",
+        "hint": "Poder planear atividades e viagens sem horarios de tratamento rigorosos"
+      },
+      "hospitalTime": {
+        "text": "Passar menos tempo no hospital ou clinica",
+        "hint": "Minimizar o numero e duracao das visitas ao hospital"
+      },
+      "homeComfort": {
+        "text": "Receber tratamento no conforto da minha casa",
+        "hint": "Poder gerir o tratamento em casa em vez de numa unidade medica"
+      },
+      "familyBurden": {
+        "text": "Nao ser um fardo para a minha familia",
+        "hint": "Minimizar o impacto do meu tratamento nos familiares e cuidadores"
+      },
+      "longevity": {
+        "text": "Viver o mais tempo possivel",
+        "hint": "Priorizar tratamentos que possam prolongar a esperanca de vida"
+      },
+      "qualityOfLife": {
+        "text": "Qualidade de vida sobre duracao de vida",
+        "hint": "Priorizar o bem-estar diario e conforto sobre a longevidade maxima"
+      },
+      "energyLevels": {
+        "text": "Ter bons niveis de energia e sentir-me bem",
+        "hint": "Minimizar a fadiga e manter energia normal para atividades"
+      },
+      "dietRestrictions": {
+        "text": "Ter menos restricoes na comida e bebida",
+        "hint": "Poder comer e beber com limitacoes minimas"
+      },
+      "naturalApproach": {
+        "text": "Adotar uma abordagem mais natural com menos intervencoes",
+        "hint": "Preferir opcoes de tratamento que parecam menos invasivas ou medicas"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "Modelo 3D do Rim",
+    "backToHub": "Voltar ao Centro",
+    "title": "Visualizador de Modelo 3D do Rim",
+    "interactiveDescription": "Explore um modelo 3D interativo dos rins humanos. Use o rato ou toque para rodar e ampliar.",
+    "dragToRotate": "Arraste para rodar",
+    "scrollToZoom": "Deslize para ampliar",
+    "labelsOn": "Legendas: Ligadas",
+    "labelsOff": "Legendas: Desligadas",
+    "autoRotateOn": "Rotacao Automatica: Ligada",
+    "autoRotateOff": "Rotacao Automatica: Desligada",
+    "reset": "Repor",
+    "resetView": "Repor vista",
+    "aboutKidneys": "Sobre os Seus Rins",
+    "kidneyInfo": "Os seus rins sao orgaos em forma de feijao com cerca do tamanho do seu punho. Filtram cerca de 200 litros de sangue diariamente, removendo residuos e liquido em excesso.",
+    "kidneyFunction": "O Que os Rins Fazem",
+    "functionInfo": "Os rins regulam a pressao arterial, produzem hormonas, equilibram os liquidos corporais e filtram produtos residuais para a urina.",
+    "whenKidneysFail": "Quando os Rins Falham",
+    "failureInfo": "Quando os rins perdem funcao, tratamentos como dialise ou transplante podem ajudar a fazer o trabalho que os seus rins ja nao conseguem fazer.",
+    "learnMore": "Saiba Mais Sobre Opcoes de Tratamento",
+    "exploreTreatments": "Explorar Tratamentos",
+    "compareTreatments": "Comparar Tratamentos",
+    "continueJourney": "Continue o seu percurso explorando opcoes de tratamento",
+    "loading": "A Carregar Modelo 3D...",
+    "interactiveTool": "Ferramenta de Aprendizagem Interativa",
+    "interactive3DModel": "Modelo 3D Interativo",
+    "anatomy": {
+      "kidney": {
+        "label": "Rim",
+        "description": "O orgao de filtracao principal que remove residuos do seu sangue e produz urina."
+      },
+      "renalArtery": {
+        "label": "Arteria Renal",
+        "description": "Transporta sangue do coracao para o rim para filtracao."
+      },
+      "renalVein": {
+        "label": "Veia Renal",
+        "description": "Transporta sangue filtrado do rim de volta para o coracao."
+      },
+      "ureter": {
+        "label": "Ureter",
+        "description": "O tubo que transporta urina do rim para a bexiga."
+      },
+      "adrenalGland": {
+        "label": "Glandula Suprarrenal",
+        "description": "Uma pequena glandula no topo do rim que produz hormonas importantes."
+      }
+    }
+  },
+  "summary": {
+    "title": "O Seu Resumo da Sessao",
+    "subtitle": "Aqui esta um resumo do que explorou hoje.",
+    "sections": {
+      "journey": "A Sua Fase do Percurso",
+      "values": "O Que E Importante Para Si",
+      "viewed": "Tratamentos Explorados",
+      "questions": "Perguntas para a Sua Equipa",
+      "priorities": "As Suas Prioridades",
+      "nextSteps": "Proximos Passos Sugeridos"
+    },
+    "print": "Imprimir Resumo",
+    "email": "Enviar Resumo por Email",
+    "startOver": "Recomecar",
+    "share": "Partilhar",
+    "sessionId": "ID da Sessao",
+    "notSpecified": "Nao especificado",
+    "readyToReview": "Pronto para rever",
+    "viewed": "Visto",
+    "noValues": "Ainda nao completou o exercicio de valores.",
+    "completeValues": "Completar agora",
+    "noTreatments": "Ainda nao explorou nenhum tratamento.",
+    "exploreTreatments": "Explorar tratamentos",
+    "seeAll": "Ver todos",
+    "confirmReset": "Tem a certeza de que quer recomecar? Todo o seu progresso sera perdido.",
+    "addQuestionPlaceholder": "Escreva a sua propria pergunta...",
+    "question1": "Quais opcoes de tratamento sao adequadas para a minha situacao?",
+    "question2": "Como seria a minha vida diaria com cada tratamento?",
+    "question3": "Como comeco o processo para o meu tratamento preferido?",
+    "step1": {
+      "title": "Rever este resumo",
+      "description": "Reserve tempo para ver o que explorou e pense em quaisquer perguntas adicionais."
+    },
+    "step2": {
+      "title": "Partilhar com familia ou cuidadores",
+      "description": "Se tem apoio em casa, discuta os seus pensamentos com eles."
+    },
+    "step3": {
+      "title": "Discutir com a sua equipa de cuidados renais",
+      "description": "Leve este resumo a sua proxima consulta para discutir as suas opcoes."
+    },
+    "privacy": {
+      "title": "A Sua Privacidade",
+      "text": "Esta informacao esta armazenada apenas no seu navegador e sera eliminada quando terminar a sua sessao. Nenhum dado pessoal foi guardado em qualquer servidor."
+    },
+    "disclaimer": {
+      "title": "Lembrete Importante",
+      "text": "Este resumo e apenas para fins informativos e nao constitui aconselhamento medico. Discuta sempre as suas opcoes de tratamento com a sua equipa de cuidados renais que conhece as suas circunstancias individuais."
+    },
+    "printForAppointment": "Imprimir para a Sua Consulta",
+    "askMore": "Tem mais perguntas?",
+    "printHeader": {
+      "title": "Apoio a Decisao sobre Tratamento Renal do NHS",
+      "subtitle": "O Seu Resumo Pessoal da Sessao",
+      "dateLabel": "Data: {{date}}",
+      "footer": "Gerado pelo Apoio a Decisao sobre Tratamento Renal do NHS - {{date}} - Este documento e apenas para discussao com a sua equipa de saude"
+    },
+    "shareTitle": "Resumo de Tratamento Renal do NHS",
+    "shareText": "O meu resumo de decisao sobre tratamento renal",
+    "readyForAppointment": "Pronto para a sua proxima consulta?",
+    "printInstructions": "Imprima este resumo para levar a sua equipa de cuidados renais",
+    "journeyStages": {
+      "newly-diagnosed": "Recentemente Diagnosticado",
+      "monitoring": "Em Monitorizacao",
+      "preparing": "A Preparar para Tratamento",
+      "on-dialysis": "Atualmente em Dialise",
+      "transplant-waiting": "Na Lista de Espera para Transplante",
+      "post-transplant": "Apos Transplante",
+      "supporting-someone": "A Apoiar Alguem"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "Esta a aprender sobre a sua condicao renal e quer compreender as suas opcoes.",
+      "monitoring": "Os seus rins estao a ser monitorizados e esta a preparar-se para o futuro.",
+      "preparing": "Precisa de iniciar tratamento em breve e quer compreender as suas escolhas.",
+      "on-dialysis": "Esta a receber dialise e a explorar outras opcoes.",
+      "transplant-waiting": "Esta na lista de espera para transplante.",
+      "post-transplant": "Fez um transplante renal e quer apoio continuo.",
+      "supporting-someone": "Esta a apoiar um ente querido com doenca renal.",
+      "default": "A sua fase atual no percurso de cuidados renais."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Hemodialise",
+      "peritoneal-dialysis": "Dialise Peritoneal",
+      "home-haemodialysis": "Hemodialise Domiciliaria",
+      "kidney-transplant": "Transplante Renal",
+      "conservative-care": "Cuidados Conservadores"
+    },
+    "valueLabels": {
+      "1": "Nao importante",
+      "2": "Ligeiramente importante",
+      "3": "Moderadamente importante",
+      "4": "Importante",
+      "5": "Muito importante",
+      "default": "Importante"
+    }
+  },
+  "session": {
+    "timeRemaining": "Tempo restante: {{minutes}}",
+    "sessionExpiring": "A sua sessao vai expirar em breve",
+    "expiringMessage": "A sua sessao vai expirar em {{minutes}} minutos. Gostaria de continuar?",
+    "extendSession": "Continuar Sessao",
+    "sessionExpired": "A sua sessao expirou. Por favor, recomece.",
+    "startNewSession": "Iniciar Nova Sessao",
+    "createError": "Falha ao criar sessao. Por favor, tente novamente."
+  },
+  "footer": {
+    "nhsInfo": "Cuidados Renais do NHS",
+    "accessibility": "Acessibilidade",
+    "privacyPolicy": "Politica de Privacidade",
+    "termsOfUse": "Termos de Utilizacao",
+    "contact": "Contacto",
+    "contactUs": "Contacte-nos",
+    "navigationLabel": "Navegacao do rodape",
+    "supportingDecisions": "A apoiar decisoes de saude informadas",
+    "copyright": "Pears Research Services. Todos os direitos reservados.",
+    "demoVersion": "Versao de Demonstracao 1.0",
+    "disclaimer": {
+      "title": "Aviso Importante",
+      "text1": "Esta aplicacao e um",
+      "mockDesign": "design de demonstracao",
+      "text2": "criado por",
+      "company": "Pears Research Services",
+      "text3": "apenas para fins de demonstracao. Nao esta afiliada nem e aprovada pelo NHS."
+    }
+  },
+  "timeline": {
+    "title": "Um Dia na Vida",
+    "subtitle": "Veja como e um dia tipico com este tratamento",
+    "morning": "Manha",
+    "afternoon": "Tarde",
+    "evening": "Fim de Tarde",
+    "night": "Noite",
+    "treatmentActivities": "{{count}} atividades relacionadas com o tratamento",
+    "legend": {
+      "treatment": "Relacionado com o tratamento",
+      "regular": "Atividades regulares"
+    },
+    "dayType": {
+      "dialysisDay": "Dia de Dialise (Seg/Qua/Sex)",
+      "restDay": "Dia de Descanso (Ter/Qui/Sab/Dom)",
+      "apdNight": "DPA (Automatizada Noturna)",
+      "capd": "DPCA (Trocas Manuais)",
+      "typical": "Dia Tipico"
+    },
+    "toggle": {
+      "dialysisDay": "Dia de Dialise",
+      "restDay": "Dia de Descanso",
+      "apd": "DPA",
+      "capd": "DPCA"
+    },
+    "duration": {
+      "15min": "15 min",
+      "20min": "20 min",
+      "30min": "30-60 min",
+      "4hrs": "4-5 horas",
+      "8hrs": "8-10 horas"
+    },
+    "transplant": {
+      "wakeUp": "Acordar e rotina matinal",
+      "medication": "Tomar medicamentos imunossupressores",
+      "breakfast": "Pequeno-almoco - refeicao saudavel e equilibrada",
+      "work": "Trabalho, passatempos ou atividades",
+      "lunch": "Almoco - poucas restricoes dieteticas",
+      "activities": "Continuar atividades diarias",
+      "exercise": "Exercicio ligeiro ou caminhada",
+      "dinner": "Jantar com a familia",
+      "eveningMeds": "Medicamentos da noite",
+      "relax": "Relaxamento e tempo de lazer",
+      "sleep": "Padrao de sono normal"
+    },
+    "hemo": {
+      "wakeEarly": "Acordar cedo",
+      "lightBreakfast": "Pequeno-almoco ligeiro com limites de liquidos",
+      "travelTo": "Deslocacao ao centro de dialise",
+      "session": "Sessao de dialise",
+      "travelHome": "Regresso a casa da dialise",
+      "rest": "Descanso e recuperacao - pode sentir-se cansado",
+      "lightMeal": "Refeicao ligeira com restricoes dieteticas",
+      "quietEvening": "Atividades tranquilas ao fim do dia",
+      "earlyBed": "Deitar cedo apos dia de tratamento",
+      "regularWake": "Acordar",
+      "breakfast": "Pequeno-almoco seguindo orientacoes dieteticas",
+      "normalDay": "Trabalho ou atividades regulares",
+      "lunch": "Almoco - atencao a liquidos e potassio",
+      "continue": "Continuar atividades diarias",
+      "dinner": "Jantar com a familia",
+      "leisure": "Tempo de lazer",
+      "sleep": "Hora de deitar normal"
+    },
+    "pd": {
+      "disconnect": "Desligar da maquina de DPA",
+      "morning": "Rotina matinal e banho",
+      "breakfast": "Pequeno-almoco - mais liberdade dietetica",
+      "work": "Trabalho ou atividades - livre durante o dia",
+      "lunch": "Almoco - menos restricoes que HD",
+      "activities": "Continuar atividades, passatempos",
+      "exercise": "Exercicio ou atividades ao ar livre",
+      "dinner": "Jantar com a familia",
+      "leisure": "Tempo de lazer ao fim do dia",
+      "setup": "Configurar maquina de DPA",
+      "overnight": "Dormir enquanto DPA funciona durante a noite",
+      "capdWake": "Acordar",
+      "exchange1": "Primeira troca do dia",
+      "capdBreakfast": "Pequeno-almoco",
+      "capdWork": "Trabalho ou atividades",
+      "exchange2": "Segunda troca",
+      "capdLunch": "Almoco",
+      "capdActivities": "Atividades da tarde",
+      "exchange3": "Terceira troca",
+      "capdDinner": "Jantar",
+      "capdLeisure": "Relaxamento ao fim do dia",
+      "exchange4": "Troca final antes de dormir",
+      "capdSleep": "Dormir"
+    },
+    "conservative": {
+      "wake": "Acordar quando estiver pronto",
+      "meds": "Tomar medicamentos para gestao de sintomas",
+      "breakfast": "Pequeno-almoco conforme tolerado",
+      "morning": "Atividades matinais conforme a energia permitir",
+      "lunch": "Almoco - comer o que gostar",
+      "rest": "Descanso ou atividades suaves",
+      "visitors": "Tempo com familia ou visitantes",
+      "eveningMeds": "Medicamentos da noite",
+      "dinner": "Jantar com entes queridos",
+      "relax": "Noite tranquila em casa",
+      "sleep": "Descansar quando cansado"
+    }
+  },
+  "progress": {
+    "title": "O Seu Percurso de Aprendizagem",
+    "yourProgress": "O Seu Progresso",
+    "complete": "concluido",
+    "treatments": "tratamentos",
+    "sections": {
+      "title": "Seccoes para Explorar",
+      "questionnaire": "Sobre Si",
+      "questionnaireDesc": "Partilhe a sua situacao",
+      "treatments": "Opcoes de Tratamento",
+      "treatmentsDesc": "{{viewed}} de {{total}} explorados",
+      "values": "Exercicio de Valores",
+      "valuesDesc": "Clarifique as suas prioridades",
+      "chat": "Fazer Perguntas",
+      "chatDesc": "Obtenha respostas"
+    },
+    "status": {
+      "completed": "Concluido",
+      "inProgress": "Em Curso"
+    },
+    "badges": {
+      "title": "As Suas Medalhas",
+      "explorer": "Explorador",
+      "allTreatments": "Todos os Tratamentos",
+      "values": "Valores Claros",
+      "curious": "Mente Curiosa",
+      "complete": "Percurso Completo"
+    },
+    "encouragement": {
+      "start": "Comece o seu percurso explorando opcoes de tratamento",
+      "beginning": "Otimo inicio! Continue a explorar para saber mais",
+      "making": "Esta a fazer bom progresso!",
+      "halfway": "Mais de metade - muito bem!",
+      "almost": "Quase completo! Apenas mais algumas seccoes",
+      "complete": "Excelente! Explorou tudo"
+    },
+    "viewSummary": "Ver o Seu Resumo"
+  },
+  "scenario": {
+    "title": "E Se? Explorador de Cenarios",
+    "subtitle": "Veja como diferentes situacoes de vida funcionam com cada opcao de tratamento",
+    "tips": "Dicas",
+    "learnMore": "Saiba mais sobre {{treatment}}",
+    "compareAll": "Comparar Todos os Tratamentos",
+    "legend": {
+      "title": "Guia de Classificacao"
+    },
+    "rating": {
+      "excellent": "Excelente",
+      "good": "Bom",
+      "moderate": "Moderado",
+      "challenging": "Desafiante"
+    },
+    "travel": {
+      "title": "E se eu quiser viajar?",
+      "description": "Explore como cada tratamento afeta a sua capacidade de viajar para ferias ou visitas",
+      "transplant": "Apos a recuperacao, pode viajar livremente. Leve os medicamentos consigo e saiba onde procurar cuidados se necessario.",
+      "transplantTip1": "Leve uma carta da sua equipa de transplante",
+      "transplantTip2": "Pesquise unidades medicas no seu destino",
+      "transplantTip3": "Leve medicacao extra na bagagem de mao",
+      "hemodialysis": "Viajar requer planeamento antecipado para organizar dialise no seu destino. Existem unidades de dialise de ferias mas a disponibilidade varia.",
+      "hemodialysisTip1": "Reserve dialise de ferias 6-8 semanas antes",
+      "hemodialysisTip2": "A sua equipa de dialise pode ajudar com os preparativos",
+      "hemodialysisTip3": "Viagens no Reino Unido sao mais faceis do que internacionais",
+      "peritoneal": "Mais liberdade para viajar. Os materiais podem ser entregues no seu destino ou pode leva-los consigo.",
+      "peritonealTip1": "Organize entrega de materiais 4-6 semanas antes",
+      "peritonealTip2": "As companhias aereas geralmente permitem bagagem extra para materiais",
+      "peritonealTip3": "Precisa de um espaco limpo para as trocas",
+      "conservative": "Sem restricoes de dialise, mas viajar depende de como se sente. Viagens curtas podem ser mais faceis de gerir.",
+      "conservativeTip1": "Discuta planos de viagem com a sua equipa de cuidados",
+      "conservativeTip2": "Considere cuidadosamente o seguro de viagem",
+      "conservativeTip3": "Planeie periodos de descanso durante as viagens"
+    },
+    "work": {
+      "title": "E se eu quiser trabalhar a tempo inteiro?",
+      "description": "Veja como os diferentes tratamentos se adaptam a manutencao de emprego",
+      "transplant": "Apos 2-3 meses de recuperacao, a maioria das pessoas pode voltar ao trabalho a tempo inteiro com niveis de energia quase normais.",
+      "transplantTip1": "Planeie um regresso faseado ao trabalho",
+      "transplantTip2": "Pode precisar de tempo livre para consultas",
+      "transplantTip3": "Muitos empregadores oferecem acordos flexiveis",
+      "hemodialysis": "Possivel mas desafiante. As sessoes demoram 4-5 horas tres vezes por semana, mais tempo de recuperacao. Turnos noturnos/matinais podem ajudar.",
+      "hemodialysisTip1": "Discuta horarios flexiveis com o empregador",
+      "hemodialysisTip2": "Horarios de dialise ao fim do dia ou de manha cedo",
+      "hemodialysisTip3": "Hemodialise domiciliaria oferece mais flexibilidade",
+      "peritoneal": "DPA noturna significa que os dias ficam livres para trabalhar. DPCA requer pausas para trocas mas muitos continuam a trabalhar.",
+      "peritonealTip1": "DPA e ideal para trabalhadores a tempo inteiro",
+      "peritonealTip2": "Pode fazer trocas de DPCA no trabalho",
+      "peritonealTip3": "Niveis de energia frequentemente melhores que HD",
+      "conservative": "Depende dos sintomas e energia. Muitos continuam a tempo parcial ou com horario reduzido. O foco e na qualidade de vida.",
+      "conservativeTip1": "Considere reduzir horas gradualmente",
+      "conservativeTip2": "Discuta ajustes com saude ocupacional",
+      "conservativeTip3": "Priorize atividades que mais importam"
+    },
+    "liveAlone": {
+      "title": "E se eu viver sozinho?",
+      "description": "Compreenda quais tratamentos funcionam bem para pessoas que vivem de forma independente",
+      "transplant": "Vai precisar de apoio durante a recuperacao (2-4 semanas), mas depois pode viver de forma independente.",
+      "transplantTip1": "Organize ajuda para as primeiras semanas apos a cirurgia",
+      "transplantTip2": "Tenha contactos de emergencia disponiveis",
+      "transplantTip3": "Configure lembretes de medicacao",
+      "hemodialysis": "O tratamento e feito num centro com profissionais de saude. Nao e necessaria configuracao em casa. Contacto regular com a equipa de saude.",
+      "hemodialysisTip1": "Transporte hospitalar pode estar disponivel",
+      "hemodialysisTip2": "A equipa monitoriza-o durante o tratamento",
+      "hemodialysisTip3": "Apoio social de outros doentes",
+      "peritoneal": "Muitas pessoas fazem DP sozinhas com sucesso. A formacao prepara-o bem. Apoio telefonico 24/7 disponivel.",
+      "peritonealTip1": "Formacao completa antes de comecar",
+      "peritonealTip2": "Visitas domiciliarias regulares de enfermeiros de DP",
+      "peritonealTip3": "Linha de ajuda 24 horas para emergencias",
+      "conservative": "Inicialmente gerivel sozinho. A medida que os sintomas progridem, pode precisar de apoio crescente. Servicos comunitarios podem ajudar.",
+      "conservativeTip1": "Check-ins regulares com a equipa de cuidados",
+      "conservativeTip2": "Servicos de apoio comunitario disponiveis",
+      "conservativeTip3": "Planeie antecipadamente necessidades futuras de cuidados"
+    },
+    "family": {
+      "title": "E se eu tiver filhos pequenos?",
+      "description": "Considere como os tratamentos afetam o cuidado de criancas e tempo em familia",
+      "transplant": "Apos a recuperacao, pode estar totalmente envolvido na vida familiar. Melhor qualidade de vida para parentalidade ativa.",
+      "transplantTip1": "Organize cuidados de criancas durante a recuperacao",
+      "transplantTip2": "Pode voltar as atividades parentais normais",
+      "transplantTip3": "Boa energia para atividades em familia",
+      "hemodialysis": "Tempo regular longe de casa para tratamento. Cansaco apos sessoes pode afetar atividades familiares. Cuidados de criancas necessarios durante sessoes.",
+      "hemodialysisTip1": "Agende sessoes durante o horario escolar",
+      "hemodialysisTip2": "Envolva as criancas de forma apropriada a idade",
+      "hemodialysisTip3": "Planeie tempo em familia nos dias sem dialise",
+      "peritoneal": "Tratamento em casa significa mais tempo com a familia. DPA noturna deixa os dias livres para cuidar das criancas.",
+      "peritonealTip1": "DPA acontece enquanto as criancas dormem",
+      "peritonealTip2": "Dias livres para levar/buscar a escola",
+      "peritonealTip3": "Criancas podem ser envolvidas em seguranca",
+      "conservative": "Sem horario de tratamento, mas niveis de energia variam. Foco em tempo de qualidade com a familia.",
+      "conservativeTip1": "Priorize momentos especiais em familia",
+      "conservativeTip2": "Aceite ajuda com cuidados de criancas quando necessario",
+      "conservativeTip3": "Tenha conversas honestas com as criancas"
+    }
+  },
+  "treatment": {
+    "dayInLife": "Um Dia na Vida"
+  }
+}

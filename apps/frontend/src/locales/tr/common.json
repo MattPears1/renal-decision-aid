@@ -1,0 +1,1430 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "back": "Geri",
+    "next": "Ileri",
+    "skip": "Atla",
+    "returnToHub": "Merkeze Don",
+    "backToHub": "Merkeze Don",
+    "continueToQuestionnaire": "Ankete devam et"
+  },
+  "common": {
+    "loading": "Yukleniyor...",
+    "error": "Bir sorun olustu. Lutfen tekrar deneyin.",
+    "continue": "Devam Et",
+    "cancel": "Iptal",
+    "save": "Kaydet",
+    "print": "Yazdir",
+    "yes": "Evet",
+    "no": "Hayir",
+    "notSure": "Emin degilim",
+    "moreInfo": "Daha fazla bilgi",
+    "close": "Kapat",
+    "back": "Geri",
+    "edit": "Duzenle",
+    "add": "Ekle",
+    "remove": "Kaldir",
+    "listenToPage": "Bu sayfayi dinle"
+  },
+  "accessibility": {
+    "skipToContent": "Ana icerege atla",
+    "openMenu": "Menuyu ac",
+    "closeMenu": "Menuyu kapat",
+    "expandSection": "Bolumu genislet",
+    "collapseSection": "Bolumu daralt",
+    "newWindow": "Yeni pencerede acilir",
+    "externalLink": "Harici baglanti",
+    "settings": "Erisilebilirlik",
+    "settingsLabel": "Erisilebilirlik secenekleri - Yazi boyutu, kontrast ve diger erisilebilirlik ayarlarini duzenleyin",
+    "settingsTitle": "Yazi boyutu, kontrast ve diger erisilebilirlik ayarlarini duzenleyin",
+    "breadcrumb": "Kirintilarin navigasyonu",
+    "pageNavigation": "Sayfa navigasyonu",
+    "faq": "Sikca sorulan sorular",
+    "frequentlyAskedQuestions": "Sikca sorulan sorular",
+    "listenToPage": "Bu sayfanin sesli okunmasini dinle",
+    "modal": {
+      "title": "Erisilebilirlik Ayarlari",
+      "textSize": "Yazi Boyutu",
+      "textSizeOptions": {
+        "small": "Kucuk",
+        "medium": "Orta (Varsayilan)",
+        "large": "Buyuk",
+        "extra-large": "Cok Buyuk"
+      },
+      "highContrast": "Yuksek Kontrast Modu",
+      "reducedMotion": "Azaltilmis Hareket",
+      "lineSpacing": "Satir Araligi",
+      "lineSpacingOptions": {
+        "normal": "Normal",
+        "relaxed": "Rahat",
+        "loose": "Genis"
+      },
+      "save": "Ayarlari Kaydet",
+      "cancel": "Iptal",
+      "reset": "Varsayilana Sifirla"
+    }
+  },
+  "landing": {
+    "title": "Bobrek Tedavisi Karar Destek Araci",
+    "subtitle": "NHS Bobrek Hizmetleri",
+    "description": "Bu arac, bobrek tedavi seceneklerinizi anlamaniza ve sizin icin en onemli seyleri dusunmenize yardimci olacaktir. Aceleniz yok - dogru veya yanlis cevap yoktur.",
+    "startButton": "Yolculugunuza Baslayin",
+    "startButtonAriaLabel": "Bobrek tedavisi karar yolculugunuza baslayin",
+    "learnMore": "Bobrek Hastaligi Hakkinda Daha Fazla Bilgi Edinin",
+    "heroAriaLabel": "Karsilama bolumu",
+    "featuresHeading": "Bu Arac Size Nasil Yardimci Olur",
+    "featuresSubheading": "Bobrek tedaviniz hakkinda bilincli bir karar vermeniz icin ihtiyaciniz olan her sey",
+    "features": {
+      "time": {
+        "title": "Yaklasik 15 Dakika Surer",
+        "description": "Kendi hizinizda tamamlayin. Ihtiyac duydugunuzda ara verebilir ve kaldiginiz yerden devam edebilirsiniz."
+      },
+      "privacy": {
+        "title": "Gizliliginiz Korunur",
+        "description": "Hicbir kisisel bilgi saklanmaz. Cevapalariniz sadece bu oturum sirasinda araci kisisellistirmek icin kullanilir."
+      },
+      "devices": {
+        "title": "Tum Cihazlarda Calisir",
+        "description": "Telefonunuzda, tabletinizde veya bilgisayarinizda kullanin. Arac ekran boyutunuza otomatik olarak uyum saglar."
+      }
+    },
+    "aboutHeading": "Bu Arac Ne Yapar",
+    "about": {
+      "paragraph1": "Bu karar destek araci, bobrek yetmezligi icin mevcut farkli tedavi seceneklerini kesfetmenize yardimci olacaktir. Her tedavi hakkinda kendi hizinizda bilgi edinebilir, sizin icin en onemli seyleri dusunebilir ve doktorunuz veya hemsirenizle paylasmak icin bir ozet olusturabilirsiniz.",
+      "paragraph2": "Durumunuz hakkinda birkac basit soruyu cevaplayacak, ardindan sizin icin uygun olabilecek tedavileri kesfedeceksiniz. Bilgileriniz gizli kalir ve tarayiciyi kapattiginizda kaydedilmez.",
+      "paragraph3": "Bu arac, saglik ekibinizden alinan tibbi tavsiyelerin yerini almaz. Seceneklerinizi tartisirken daha bilgili ve kendinden emin hissetmenize yardimci olmak icin tasarlanmistir. Bobrek ekibiniz bakim konusundaki uzmanlardir ve sizin icin dogru karari vermenize yardimci olacaklardir.",
+      "steps": {
+        "learn": {
+          "title": "Ogren"
+        },
+        "explore": {
+          "title": "Kesfet"
+        },
+        "decide": {
+          "title": "Karar Ver"
+        }
+      }
+    },
+    "trustAriaLabel": "Guven ve guvenlik bilgileri",
+    "trust": {
+      "evidenceBased": "Kanita dayali bilgi",
+      "languages": "11 dilde mevcut",
+      "accessible": "Tum kullanicilar icin erisilebilir",
+      "noAccount": "Hesap gerektirmez",
+      "time": "15 dakika",
+      "privateSecure": "Ozel ve Guvenli"
+    },
+    "ctaHeading": "Baslamaya Hazir misiniz?",
+    "ctaDescription": "Bobrek tedavi seceneklerinizi anlamak icin ilk adimi atin. Simdi baslayabilir ve ara vermeniz gerekirse daha sonra geri donebilirsiniz."
+  },
+  "language": {
+    "title": "Dilinizi Secin",
+    "instruction": "Lutfen tercih ettiginiz dili secin. Bunu istediginiz zaman degistirebilirsiniz.",
+    "selectLanguage": "Dil secin",
+    "currentLanguage": "Mevcut dil"
+  },
+  "privacy": {
+    "pageAriaLabel": "Gizlilik bilgileri",
+    "progressLabel": "Kurulum ilerlemesi: %30",
+    "progressText": "Adim 2/4: Gizlilik Bilgileri",
+    "title": "Gizliliginiz ve Bilgileriniz",
+    "subtitle": "Baslamadan once, bu aracin bilgilerinizi nasil isleyecegini anlamanizi istiyoruz.",
+    "listenToPage": "Bu sayfayi dinle",
+    "stopReading": "Okuma durdur",
+    "sections": {
+      "privacy": {
+        "title": "Bilgilerinizi Nasil Koruyoruz",
+        "content": "Yanitlariniz guvenli bir sekilde islenir ve kalici olarak saklanmaz. Bu arac sizi tanimlayabilecek kisisel saglik bilgilerini toplamaz. Oturum verileriniz bu araci kapattiginizda otomatik olarak silinir.",
+        "p1": "Bu arac yalnizca oturum depolamasi kullanir. Girdiginiz tum bilgiler, sorulara verdiginiz yanitlar ve tedavi tercihleri dahil, yalnizca araci kullanirken saklanir.",
+        "p2": "Tarayicinizi kapattiginizda veya 15 dakika inaktif kaldiginizda tum bilgileriniz otomatik olarak silinir. Hakkinda hicbir sey kaydetmiyoruz.",
+        "p3": "Bu araci gelistirmemize yardimci olmak icin insanlarin araci nasil kullandigi hakkinda anonim bilgiler topluyoruz. Bu sizi kisisel olarak tanimlayamaz."
+      },
+      "ai": {
+        "title": "Bu Arac Nasil Calisir",
+        "content": "Bu karar destek araci, yanitlariniza gore kisisellestirilmis bilgi saglamak icin teknoloji kullanir. Saglanan bilgiler NHS klinik kilavuzlarindan ve kanita dayali arastirmalardan alinmistir. Bu arac, bobrek bakim ekibinizle yapacaginiz gorusmeleri destekler ancak yerini almaz.",
+        "p1": "Bu arac, bobrek tedavileri hakkindaki genel sorulari cevaplayabilen bir yapay zeka asistani icerir. Yapay zeka yalnizca bilgi saglar - durumunuza ozel tibbi tavsiye veremez.",
+        "p2": "Yapay zeka bazen hata yapabilir veya eksik bilgi saglayabilir. Onemli kararlari her zaman tam tibbi gecmisinizi bilen bobrek ekibinizle gorusun.",
+        "p3": "Bu arac, saglik ekibinizden alinan tavsiyelerin yerini almaz. Seceneklerinizi doktor ve hemsirelerinizle gorusurken daha bilgili hissetmenize yardimci olmak icin tasarlanmistir."
+      },
+      "medical": {
+        "title": "Onemli Tibbi Bilgi",
+        "content": "Bu arac, bobrek tedavi secenekleri hakkinda genel bilgi saglar. Profesyonel tibbi tavsiye, teshis veya tedavinin yerini almaz. Tedaviniz hakkinda herhangi bir karar vermeden once her zaman bobrek uzmaniniza veya saglik ekibinize danisin. Acil saglik endiseleriniz varsa, lutfen aile hekiminize basvurun veya NHS 111'i arayin."
+      },
+      "pii": {
+        "title": "Lutfen Kisisel Bilgilerinizi Paylasmayun",
+        "intro": "Gizliliginizi korumak icin, bu araci kullanirken, ozellikle sohbet ozelliginde, sizi tanimlayabilecek kisisel bilgileri girmeyiniz.",
+        "listLabel": "Paylasmameniz gereken bilgiler",
+        "items": {
+          "nhsNumber": "NHS numaraniz",
+          "fullName": "Tam adiniz",
+          "address": "Ev adresiniz",
+          "dob": "Dogum tarihiniz",
+          "phone": "Telefon numaralari",
+          "email": "E-posta adresleri"
+        },
+        "outro": "Tanimlayici ayrintilari paylasmadan durumunuz hakkinda genel terimlerle hala konusabilirsiniz - ornegin, yasam durumunuz veya sizin icin en onemli seyler."
+      }
+    },
+    "summaryAriaLabel": "Temel noktalar ozeti",
+    "summary": {
+      "title": "Ozet Olarak",
+      "notSaved": "Cevapalariniz kaydedilmez",
+      "noData": "Kisisel veri toplanmaz",
+      "leave": "Istediginiz zaman cikabalirsiniz"
+    },
+    "consent": {
+      "title": "Devam etmek icin lutfen onaylayin",
+      "understand": "Bilgilerimin bu oturumdan sonra kaydedilmedigini ve kisisel tanimlayici bilgiler paylasmayacagimi anliyorum",
+      "analytics": "Bu araci gelistirmeye yardimci olmak icin anonim analitik toplanmasini kabul ediyorum (istege bagli)",
+      "error": "Devam etmeden once lutfen gizlilik bilgilerini anladiginizi onaylayin"
+    },
+    "continueButton": "Anliyorum, Devam Et",
+    "continueAriaLabel": "Yolculuk asamasi secimne devam et",
+    "readFullPolicy": "Tam NHS Gizlilik Politikasini Okuyun"
+  },
+  "header": {
+    "nhs": "NHS",
+    "demo": "Demo",
+    "serviceName": "Bobrek Tedavisi Karar Destek Araci",
+    "tagline": "Bilincli secimler yapmaniza yardimci olmak",
+    "homeAriaLabel": "NHS Bobrek Tedavisi Karar Destek Araci - Ana Sayfa"
+  },
+  "progress": {
+    "language": "Dil",
+    "privacy": "Gizlilik",
+    "yourJourney": "Yolculugunuz",
+    "aboutYou": "Hakkinda",
+    "yourOptions": "Secenekleriniz",
+    "ariaLabel": "Karar destek araci ilerlemesi",
+    "stepOfTotal": "Adim {{current}} / {{total}}",
+    "percentComplete": "%{{percentage}} tamamlandi",
+    "ariaProgressLabel": "Ilerleme: {{total}} adimdan {{current}} tamamlandi"
+  },
+  "journey": {
+    "title": "Bobrek Bakim Yolculugunuzda Neredesiniz?",
+    "subtitle": "Durumunuzu en iyi tanimlayan secenegi seciniz",
+    "instruction": "Mevcut durumunuzu en iyi tanimlayan secenegi seciniz",
+    "intro": "Herkesin bobrek yolculugu farklidir. Size en alakali bilgileri gostermemize yardimci olmak icin, lutfen su anda nerede oldugunuzu bize soyleyiniz. Dogru veya yanlis cevap yoktur.",
+    "error": "Lutfen durumunuzu tanimlayan bir secenek seciniz. Bunlarin hicbiri uygun degilse, devam etmek icin \"Bir aile uyesine veya arkadasa destek oluyorum\" secenegini seciniz.",
+    "formLabel": "Yolculuk asamasi secenekleri",
+    "legendLabel": "Bobrek yolculugunuzda nerede oldugunuzu seciniz",
+    "radioGroupLabel": "Yolculuk asamasi secenekleri",
+    "listenToQuestion": "Bu soruyu dinle",
+    "audioText": "Yolculugunuzda neredesiniz? Durumunuzu en iyi tanimlayan secenegi seciniz.",
+    "reassurance": "Hangi secenegin en uygun oldugu konusunda emin olmasaniz da endiselenmeyiniz. Daha sonra her zaman tum tedavi seceneklerini kesfedebelirsiniz ve bobrek ekibiniz durumunuzu acikliga kavusturmaya yardimci olabilir. Seciminiz size en alakali bilgileri once gostermemize yardimci olur.",
+    "needHelp": "Secerken yardima ihtiyacim var",
+    "stages": {
+      "suspected": {
+        "title": "Bobrek hastaliğim olabileceğini düşünüyorum",
+        "description": "Böbrek sağlığınız konusunda endişeleniyorsunuz ve böbrek hastalığının ne anlama geldiği hakkında daha fazla bilgi edinmek istiyorsunuz."
+      },
+      "earlyDiagnosis": {
+        "title": "Yeni teşhis konuldu - erken evre KBY",
+        "description": "Böbrek durumunuz hakkında yeni bilgi edindiniz ve bunun sizin için ne anlama geldiğini anlamak istiyorsunuz."
+      },
+      "lateDiagnosis": {
+        "title": "Teşhis konuldu - geç evre KBY",
+        "description": "Böbrek fonksiyonunuz önemli ölçüde azaldı ve yakında tedavi seçeneklerini düşünmeniz gerekebilir."
+      },
+      "choosingTreatment": {
+        "title": "Yakında bir tedavi seçmem gerekiyor",
+        "description": "Böbrek ekibiniz, önümüzdeki aylarda tedaviye başlamanız gerekeceğini söyledi ve seçenekleriniz hakkında bilgi edinmek istiyorsunuz."
+      },
+      "transplantPending": {
+        "title": "Nakil olmak üzereyim - daha fazla bilgi edinmek istiyorum",
+        "description": "Nakil listesinde bulunuyorsunuz veya canlı bir donörünüz var ve neler bekleyeceğiniz hakkında daha fazla bilgi edinmek istiyorsunuz."
+      },
+      "dialysisPending": {
+        "title": "Diyalize başlamak üzereyim - daha fazla bilgi edinmek istiyorum",
+        "description": "Yakında diyalize tedavisine başlayacaksınız ve farklı türleri ve günlük yaşamın nasıl olacağını anlamak istiyorsunuz."
+      },
+      "supporting": {
+        "title": "Bir aile üyesine veya arkadaşa destek oluyorum",
+        "description": "Yakınınız böbrek hastalığına sahip ve onlara destek olmak için seçeneklerini anlamak istiyorsunuz."
+      }
+    },
+    "helpModal": {
+      "title": "Secmekte Yardima mi Ihtiyaciniz Var?",
+      "intro": "Hangi asama sizi en iyi tanimlayacagi konusunda emin olamamak tamamen normal. Iste bazi ipuclari:",
+      "tip1Title": "Son randevunuzu dusunun",
+      "tip1Text": "Bobrek ekibiniz bobrek fonksiyonunuz ve sonraki adimlar hakkinda size ne soyledi?",
+      "tip2Title": "Sizi buraya getiren seyi dusunun",
+      "tip2Text": "Bu araci bir doktor veya hemsire tarafindan mi alduniz? Size hangi asama icin uygun oldugunu onermiş olabilirler.",
+      "tip3Title": "Hala emin degilseniz",
+      "tip3Text": "Durumunuza en yakin hissedilen secenegi seciniz. Hangi secenegi secerseniz seciniz, bu aractaki tum bilgileri kesfedebileceksiniz.",
+      "note": "Bobrek ekibiniz bakiminiz konusundaki uzmanlardir. Bobrek sagliginiz hakkinda sorulariniz varsa, lutfen dogrudan onlarla iletisime geciniz.",
+      "understand": "Anliyorum"
+    }
+  },
+  "questionnaire": {
+    "intro": {
+      "title": "Kendiniz Hakkinda Bize Bilgi Verin",
+      "description": "Bu sorular, durumunuzla en alakali bilgileri gostermemize yardimci olur. Cevapalariniz gizlidir ve bu oturumdan sonra kaydedilmeyecektir.",
+      "features": {
+        "questions": "7 hizli soru",
+        "time": "3-5 dakika surer",
+        "private": "Tamamen gizli",
+        "skip": "Herhangi bir soruyu atlayin"
+      },
+      "beginButton": "Sorulara Basla",
+      "skipText": "Bu sorulari cevaplamak istemezseniz, genel tedavi bilgilerine atlayabilirsiniz.",
+      "skipButton": "Tum Sorulari Atla",
+      "backToJourney": "Yolculuk Asamasına Don"
+    },
+    "progress": {
+      "label": "Soru ilerlemesi",
+      "questionOf": "Soru {{current}} / {{total}}",
+      "complete": "tamamlandi"
+    },
+    "types": {
+      "scale": "Olcek Degerlendirmesi",
+      "single": "Tekli Secim",
+      "multiple": "Coklu Secim"
+    },
+    "questions": {
+      "knowledge": {
+        "title": "Bobrek hastaligi ve tedavileri hakkinda ne kadar bilginiz var?",
+        "hint": "Bu, bilgileri mevcut anlamaniza gore uyarlamamiza yardimci olur."
+      },
+      "goal": {
+        "title": "Bu oturumdan ne elde etmek istersiniz?",
+        "hint": "Bugunku ana hedefinizi en iyi tanimlayan secenegi seciniz."
+      },
+      "learning": {
+        "title": "Yeni bilgileri nasil ogrenmeyi tercih edersiniz?",
+        "hint": "Bu, bilgileri sizin icin en iyi calisan sekillerde sunmamiza yardimci olur."
+      },
+      "comfort": {
+        "title": "Tibbi islemler konusunda kendinizi ne kadar rahat hissediyorsunuz?",
+        "hint": "Bu hassas bir konudur. Tercih ederseniz bu soruyu atlayabilirsiniz."
+      },
+      "support": {
+        "title": "Evde desteginiz var mi?",
+        "hint": "Bazi tedaviler aile veya bakacilardan yardimla daha kolaydir."
+      },
+      "living": {
+        "title": "Nerede yasiyorsunuz?",
+        "hint": "Bu, ev ortaminizda hangi tedavilerin en iyi calisabilecegini anlamamiza yardimci olur."
+      },
+      "priorities": {
+        "title": "Bir tedavi secerken sizin icin en onemli olan nedir?",
+        "hint": "Oncelikleriniz, her tedavi seceneginde sizin icin onemli olanlari vurgulamamiza yardimci olacaktir."
+      }
+    },
+    "hints": {
+      "selectUpTo": "Sizin icin en onemli olan en fazla {{max}} onceligi seciniz.",
+      "selectAll": "Gecerli olan tum secenekleri seciniz - birden fazla secenek secebilirsiniz."
+    },
+    "audio": {
+      "listen": "Bu soruyu dinle"
+    },
+    "slider": {
+      "ariaLabel": "{{min}} ile {{max}} arasinda deger"
+    },
+    "skipQuestion": "Bu soruyu atla",
+    "viewResults": "Sonuclarimi Gor",
+    "nextQuestion": "Sonraki Soru",
+    "knowledge": {
+      "levels": {
+        "1": "Cok az biliyorum",
+        "2": "Biraz biliyorum",
+        "3": "Bir miktar bilgim var",
+        "4": "Oldukca cok biliyorum",
+        "5": "Cok iyi bilgiliyim"
+      }
+    },
+    "goal": {
+      "options": {
+        "learnBasics": {
+          "label": "Temelleri ogren",
+          "description": "Bobrek hastaliginin ne anlama geldigini ve mevcut tedavi seceneklerini anlamak istiyorum"
+        },
+        "compare": {
+          "label": "Seceneklerimi karsilastir",
+          "description": "Temelleri zaten biliyorum ve farkli tedavileri karsilastirmak istiyorum"
+        },
+        "prepare": {
+          "label": "Bir gorusmeye hazirlan",
+          "description": "Bir sonraki randevum icin sorular ve dusunceler hazirlamak istiyorum"
+        },
+        "support": {
+          "label": "Baskasina destek ol",
+          "description": "Bir aile uyesine veya arkadasa seceneklerini anlamasinda yardimci oluyorum"
+        },
+        "notSure": {
+          "label": "Henuz emin degilim",
+          "description": "Sadece kesfetmek ve hangi bilgilerin mevcut oldugunu gormek istiyorum"
+        }
+      }
+    },
+    "learning": {
+      "options": {
+        "visual": {
+          "label": "Gorsel diyagramlar ve resimler",
+          "description": "Resimler, grafikler ve diyagramlar anlamamasina yardimci oluyor"
+        },
+        "audio": {
+          "label": "Bilgiyi dinleme",
+          "description": "Bilgiyi sesli olarak dinlemeyi tercih ediyorum"
+        },
+        "reading": {
+          "label": "Metin okuma",
+          "description": "Detayli yazili bilgi okumaktan hoslaniyorum"
+        },
+        "video": {
+          "label": "Video izleme",
+          "description": "Videolar ve animasyonlar benim icin en iyi calisiyor"
+        },
+        "interactive": {
+          "label": "Interaktif araclar",
+          "description": "Yaparak ve kesfederek ogreniyorum"
+        }
+      }
+    },
+    "comfort": {
+      "levels": {
+        "1": "Cok rahatsiz",
+        "2": "Biraz rahatsiz",
+        "3": "Notr",
+        "4": "Oldukca rahat",
+        "5": "Cok rahat"
+      }
+    },
+    "support": {
+      "options": {
+        "familyPartner": "Evet, yardimci olabilecek aile veya esimle yasiyorum",
+        "carers": "Evet, bana yardimci olan profesyonel bakicalarim var",
+        "familyNearby": "Evet, ailem yakinlarda yasiyor ve ziyarete gelebilir",
+        "limitedSupport": "Sinirli destegim var",
+        "preferNotSay": "Soylememeyi tercih ediyorum"
+      }
+    },
+    "living": {
+      "options": {
+        "homeSpace": "Bol alanli ev",
+        "homeLimited": "Sinirli depolama alanli ev",
+        "flat": "Daire veya apartman",
+        "supported": "Destekli veya bakim konaklama"
+      }
+    },
+    "priorities": {
+      "options": {
+        "familyTime": "Aileyle vakit gecirmek",
+        "independence": "Bagimsizligimi korumak",
+        "minimiseHospital": "Hastanede gecirilen sureyi en aza indirmek",
+        "routine": "Duzenlı bir rutini surdürmek",
+        "control": "Tedavim uzerinde kontrole sahip olmak",
+        "longevity": "Mumkun oldugunca uzun yasamak",
+        "quality": "Gun be gun yasam kalitesi",
+        "travel": "Seyahat edebilmek"
+      }
+    }
+  },
+  "hub": {
+    "title": "Kisisellestirilmis Bilgileriniz",
+    "subtitle": "Yanitlariniza dayanarak, kesfetmenizi onerdiklerimiz.",
+    "welcome": {
+      "title": "Kisisellestirilmis Tedavi Secenekleriniz",
+      "message": "Bize soylediklerinize dayanarak, bobrek durumunuzu anlamaniza ve seceneklerinizi kesfetmenize yardimci olacak kaynaklar.",
+      "reminder": "Unutmayiniz, bobrek ekibiniz son karari vermenize yardimci olacaktir.",
+      "badge": "Kisisellestirilmis yolculugunuz"
+    },
+    "session": {
+      "timeRemaining": "Oturum kalan sure:",
+      "extend": "Oturumu uzat",
+      "updateAnswers": "Cevapalarimi Guncelle",
+      "startOver": "Yeniden Basla"
+    },
+    "alert": {
+      "title": "Ozetinizi kaydetmeyi unutmayiniz",
+      "message": "Bilgileriniz bu oturumdan sonra kaydedilmeyecektir. Kesfinizin kaydini tutmak icin ayrilmadan once bir ozet olusturunuz.",
+      "saveNow": "Simdi Kaydet"
+    },
+    "pathway": {
+      "title": "Nasil kesfetmek istersiniz?",
+      "guided": {
+        "title": "Onerilen Yolculugunuz",
+        "badge": "Onerilen",
+        "description": "Durumunuza uyarlanmis tedavi secenekleri araciligiyla adim adim rehberli bir yol izleyiniz. Net yon ve destek istiyorsaniz idealdir.",
+        "action": "Rehberli yolculuga basla"
+      },
+      "free": {
+        "title": "Serbest Kesfet",
+        "description": "Tum seceneklere kendi hizinizda goz atiniz. Ilginizi ceken konulara dogrudan atlayin. Zaten ne aradiginizi biliyorsaniz idealdir.",
+        "action": "Tum seceneklere goz at"
+      }
+    },
+    "content": {
+      "title": "Karar Vermenize Yardimci Araclar",
+      "subtitle": "Bilinçli bir karar vermek icin her araci kesfediuniz"
+    },
+    "cards": {
+      "treatments": {
+        "title": "Tedavi Secenekleri",
+        "description": "Diyaliz turleri, nakil ve konservatif bakim dahil mevcut tum bobrek tedavi seceneklerini ogrenin.",
+        "action": "Kesfet"
+      },
+      "model": {
+        "title": "3D Bobrek Modeli",
+        "description": "Farkli tedavilerin vucudunuzda nasil calistigini gosteren interaktif 3D modelleri kesfediuniz. Sureci gorsel olarak gorunuz.",
+        "action": "Modeli Gor"
+      },
+      "compare": {
+        "title": "Tedavileri Karsilastir",
+        "description": "Tum tedavileri yan yana gorunuz. Sizin icin onemli olanlari karsilastiruniz - gunluk sureden seyahat esnekligine kadar.",
+        "action": "Karsilastir"
+      },
+      "values": {
+        "title": "Degerler Egzersizi",
+        "description": "Sizin icin en onemli olanlari dusununuz. Bu egzersiz, kararinizi yonlendirmek icin onceliklerinizi netlestirmenize yardimci olur.",
+        "action": "Basla"
+      },
+      "chat": {
+        "title": "Soru Sorun",
+        "description": "Bobrek tedavi secenekleri hakkinda yapay zeka asistanimizla sohbet ediuniz. Sorulariniza konusma halinde yanitlar aliniz.",
+        "action": "Sohbet Basla"
+      }
+    },
+    "status": {
+      "new": "Yeni",
+      "inProgress": "Devam Ediyor",
+      "completed": "Tamamlandi"
+    },
+    "summary": {
+      "title": "Yolculugunuzu Incelemeye Hazir misiniz?",
+      "description": "Kesfettiklerinizin tumunu gorunuz ve bir sonraki randevunuzda bobrek ekibinizle paylasmak icin bir ozet olusturunuz.",
+      "button": "Ozetinizi Gorunuz",
+      "badge": "Son Adim"
+    },
+    "quickAction": {
+      "summary": "Ozetinizi Gorunuz"
+    }
+  },
+  "treatments": {
+    "title": "Tedavi Seceneklerinizi Anlama",
+    "subtitle": "Bobrek yetmezligini tedavi etmenin farkli yollari vardir. Her birinin faydalari ve dikkat edilmesi gereken noktalari vardir.",
+    "detailedInfoAriaLabel": "{{treatment}} detayli bilgi",
+    "facts": {
+      "transplant": {
+        "survival": "En iyi uzun vadeli sagkalim sonuclari",
+        "surgery": "Ameliyat ve iyilesme suresi gerektirir",
+        "medication": "Omur boyu ilac gereklidir"
+      },
+      "hemodialysis": {
+        "frequency": "Haftada 3-4 kez, her biri 4-5 saat",
+        "professionalCare": "Profesyonel bakim ve izleme",
+        "travel": "Merkeze seyahat gereklidir"
+      },
+      "peritoneal": {
+        "dailyHome": "Evde gunluk tedavi",
+        "timingOptions": "Gece veya gunduz secenekleri",
+        "flexibility": "Daha fazla esneklik ve bagimsizlik"
+      },
+      "conservative": {
+        "comfort": "Konfor ve yasam kalitesine odaklanma",
+        "noDialysis": "Diyaliz tedavisi gerektirmez",
+        "symptomManagement": "Aktif semptom yonetimi"
+      }
+    },
+    "types": {
+      "transplant": {
+        "title": "Bobrek Nakli",
+        "shortDescription": "Bir donorden saglikli bobrek alma",
+        "description": "Bobrek nakli, canli bir donorden (aile uyesi veya arkadas gibi) veya vefat etmis bir donorden saglikli bir bobrek almaya icerır. Basarili bir nakil, bobrek yetmezligi olan birçok kisi icin en iyi yasam kalitesini ve en uzun sagkalimi saglayabilir.",
+        "benefits": [
+          "Genellikle en iyi yasam kalitesini saglar",
+          "Duzenlı diyaliz seanslari gerektirmez",
+          "Daha az diyet kisitlamasi",
+          "Cogu kisi icin daha iyi enerji seviyeleri"
+        ],
+        "considerations": [
+          "Buyuk ameliyat gerektirir",
+          "Omur boyu bagisaklik sistemini baski altina alan ilaclar almak gerekir",
+          "Uygun bir bobrek icin beklemek gerekebilir",
+          "Herkes icin uygun degildir"
+        ]
+      },
+      "hemodialysis": {
+        "title": "Hemodiyaliz",
+        "shortDescription": "Bir makine kullanarak kani filtreleme",
+        "description": "Hemodiyaliz, kaninizi vucudunuzun disinda filtrelemek icin bir makine kullanir. Bu genellikle hastane veya toplum merkezindeki bir diyaliz unitesinde, tipik olarak haftada uc kez yaklasik dort saat yapilir. Bazi insanlar evde hemodiyaliz yapar.",
+        "benefits": [
+          "Atiklari ve fazla siviyi cikarmaida etkilidir",
+          "Saglik ekibiyle duzenlı temas",
+          "Bazi icin ev hemodiyaliz secenegi mevcuttur",
+          "Tedavi sizin icin yapilir"
+        ],
+        "considerations": [
+          "Duzenlı hastane veya merkez ziyaretleri gerektirir",
+          "Damar erisimi (fistul veya hat) gerekir",
+          "Tedaviden sonra yorgunluk hissedilebilir",
+          "Diyet ve sivi kisitlamalari uygulanir"
+        ]
+      },
+      "peritonealDialysis": {
+        "title": "Periton Diyalizi",
+        "shortDescription": "Karin zarini kullanarak vucudun icinde kani filtreleme",
+        "description": "Periton diyalizi, karnunizin ic yuzeyini (periton) dogal bir filtre olarak kullanir. Ozel bir sivi kucuk bir tup araciligiyla karnuniza konulur, atik urunleri emer ve sonra bosaltilir. Bu evde, gunduz veya gece uyurken yapilabilir.",
+        "benefits": [
+          "Evde yapilir, daha fazla bagimsizlik",
+          "Daha esnek program",
+          "Vucuda daha nazik, daha az inis cikis",
+          "Seyahat etmesi daha kolay"
+        ],
+        "considerations": [
+          "Gunluk tedavi taahhudunu gerektirir",
+          "Karninizda kalici bir tup gerekir",
+          "Teknik korunmazsa enfeksiyon riski",
+          "Malzemeler icin depolama alani gerektirir"
+        ]
+      },
+      "conservative": {
+        "title": "Konservatif Yonetim",
+        "shortDescription": "Diyaliz olmadan semptomlari yonetme",
+        "description": "Konservatif yonetim, diyaliz veya nakil olmadan yasam kalitesini korumaya ve semptomlari yonetmeye odaklanir. Bu yaklasim bazi insanlar icin, ozellikle yasli, kirik veya diger ciddi saglik sorunlari olanlar icin dogru olabilir. Dikkatli semptom yonetimi, ilaclar ve bobrek bakim ekibinin destegini icerir.",
+        "benefits": [
+          "Diyaliz seanslari veya ameliyat gerekmez",
+          "Yasam kalitesi ve konfora odaklanma",
+          "Bazi yasli veya kirik hastalar icin uygun olabilir",
+          "Olasi oldugu kadar normal rutini surdurme"
+        ],
+        "considerations": [
+          "Bobrek fonksiyonu dusmaya devam edecektir",
+          "Semptomlarin aktif yonetimi gerekecektir",
+          "Beklentiler hakkinda durustce konusmalar onemlidir",
+          "Ileri bakim planlamasi onerilir"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "title": "Tedavi Seceneklerini Karsilastir",
+    "subtitle": "Farkli tedavilerin temel faktorler arasinda nasil karsilastirildigini gorunuz.",
+    "categories": {
+      "lifestyle": "Yasam Tarzi Etkisi",
+      "medical": "Tibbi Hususlar"
+    },
+    "items": {
+      "scheduleFlexibility": "Program Esnekligi",
+      "travelAbility": "Seyahat Yeteneği",
+      "dietRestrictions": "Diyet Kisitlamalari",
+      "hospitalVisits": "Hastane Ziyaretleri",
+      "surgeryRequired": "Ameliyat Gerekliligi",
+      "medications": "Ilaclar"
+    },
+    "values": {
+      "high": "Yuksek",
+      "medium": "Orta",
+      "low": "Dusuk",
+      "limited": "Sinirli",
+      "varies": "Degisken",
+      "fewer": "Daha Az",
+      "more": "Daha Fazla",
+      "moderate": "Orta",
+      "periodic": "Periyodik kontroller",
+      "threePerWeek": "Haftada 3 kez",
+      "monthly": "Aylik",
+      "asNeeded": "Gerektiginde",
+      "major": "Buyuk ameliyat",
+      "minor": "Kucuk islem",
+      "none": "Yok",
+      "lifelong": "Omur boyu bagisaklik baski altina alan ilaclar",
+      "several": "Birçok ilac",
+      "symptomBased": "Semptomlara dayali"
+    }
+  },
+  "compare": {
+    "title": "Tedavi Seceneklerini Karsilastir",
+    "subtitle": "Farkli tedavilerin sizin icin onemli faktorler arasinda nasil karsilastirildigini gorunuz.",
+    "intro": "Bu karsilastirma, her tedavi seceneginin gunluk yasam ve tibbi bakimin farkli yonlerinde nasil performans gosterdigini gosteriyor.",
+    "description": "Bu arac, bobrek tedavi seceneklerini yan yana karsilastirmaniza yardimci olur. Sizin icin en onemli seylere odaklanabilirsiniz. Asagida karsilastirmak istediginiz faktorleri seciniz.",
+    "customise": "Karsilastirmanizi Ozellestiriniz",
+    "showTreatments": "Tedavileri goster:",
+    "highlightForMe": "Benim icin tedavileri vurgula",
+    "highlightHint": "Anketten aldığınız degerler ve oncelliklere dayanarak",
+    "understandingIcons": "Simgeleri Anlama",
+    "scrollHint": "Tum tedavileri gormek icin yatay olarak kaydirun",
+    "tableHeading": "Tedavi Karsilastirma Tablosu",
+    "tableLabel": "Bobrek tedavi seceneklerinin karsilastirmasi",
+    "criteria": "Kriterler",
+    "recommended": "Onerilen",
+    "remember": "Unutmayuniz",
+    "guidance": "Hicbir tedavi herkes icin mukemmel degildir. En iyi secim kisisel durumunuza, sagligunuza ve degerlerinize baglidir. Bu karsilastirma, bobrek ekibinizle yapacaginiz gorusmelerin bir baslangic noktasidir.",
+    "addToSummary": "Ozetime Ekle",
+    "treatments": {
+      "transplant": {
+        "name": "Bobrek Nakli",
+        "type": "Ameliyat"
+      },
+      "hemodialysis": {
+        "name": "Hemodiyaliz",
+        "type": "Merkez ici diyaliz"
+      },
+      "peritoneal": {
+        "name": "Periton Diyalizi",
+        "type": "Ev diyalizi"
+      },
+      "conservative": {
+        "name": "Konservatif Bakim",
+        "type": "Destekleyici bakim"
+      }
+    },
+    "categories": {
+      "dailyLife": "Gunluk Yasam Etkisi",
+      "practical": "Pratik Hususlar",
+      "medical": "Tibbi Faktorler",
+      "support": "Destek Gereksinimleri",
+      "health": "Saglik Sonuclari"
+    },
+    "criteria": {
+      "timeCommitment": "Haftalik zaman taahhudü",
+      "timeCommitmentHint": "Tedaviye harcanan saatler",
+      "location": "Tedavi yeri",
+      "locationHint": "Tedavinin yapildigi yer",
+      "travel": "Seyahat uzerindeki etkisi",
+      "travelHint": "Seyahat ve tatil yapabilme",
+      "diet": "Diyet kisitlamalari",
+      "dietHint": "Yemek ve icecek sinirliamalari",
+      "surgery": "Ameliyat gerekliligi",
+      "surgeryHint": "Ilk islemler gerekli",
+      "supportNeeded": "Gerekli destek",
+      "supportNeededHint": "Aile veya bakicalardan yardim",
+      "recoveryTime": "Iyilesme suresi",
+      "recoveryTimeHint": "Tedaviye uyum suresi",
+      "longTermOutlook": "Uzun vadeli gorunum",
+      "longTermOutlookHint": "Zaman icinde beklenen sonuclar",
+      "scheduleFlexibility": "Program esnekligi",
+      "scheduleFlexibilityHint": "Programiniz uzerindeki kontrol",
+      "trainingRequired": "Egitim gerekliligi",
+      "trainingRequiredHint": "Gerekli ogrenme suresi",
+      "survivalRates": "Sagkalim oranlari",
+      "survivalRatesHint": "Genel sonuclar (kisiden kisiye degisir)",
+      "qualityOfLife": "Yasam kalitesi",
+      "qualityOfLifeHint": "Genel iyilik hali",
+      "energyLevels": "Enerji seviyeleri",
+      "energyLevelsHint": "Tipik enerji ve yorgunluk"
+    },
+    "values": {
+      "minimalAfterRecovery": "Iyilesmeden sonra minimal",
+      "regularCheckupsOnly": "Yalnizca duzenlı kontroller",
+      "12to15HrsWeekly": "Haftalik 12-15 saat",
+      "plusTravelTime": "Arti seyahat suresi",
+      "dailyExchanges": "Gunluk degisimler",
+      "canBeDoneOvernight": "Gece boyunca yapilabilir",
+      "minimal": "Minimal",
+      "clinicVisitsAsNeeded": "Gerektiginde klinik ziyaretleri",
+      "noRestrictions": "Kisitlama yok",
+      "afterRecovery": "Iyilesmeden sonra",
+      "hospitalClinic": "Hastane/klinik",
+      "dialysisUnit": "Diyaliz unitesi",
+      "home": "Ev",
+      "anyCleanSpace": "Herhangi temiz bir alan",
+      "noEquipmentNeeded": "Ekipman gerekmez",
+      "veryFlexible": "Cok esnek",
+      "takeMedicationsOnly": "Sadece ilac alin",
+      "difficult": "Zor",
+      "mustArrangeHolidayDialysis": "Tatil diyalizi ayarlamak gerekir",
+      "goodFlexibility": "Iyi esneklik",
+      "suppliesCanBeSentAhead": "Malzemeler onceden gonderilebilir",
+      "fewRestrictions": "Az kisitlama",
+      "nearNormalDiet": "Normale yakin diyet",
+      "moderateRestrictions": "Orta duzey kisitlamalar",
+      "fluidAndPotassiumLimits": "Sivi ve potasyum sinirlari",
+      "lessStrict": "Daha az siki",
+      "moreFlexibility": "Daha fazla esneklik",
+      "managedDiet": "Yonetilen diyet",
+      "tailoredToSymptoms": "Semptomlara uyarlanmis",
+      "majorSurgery": "Buyuk ameliyat",
+      "transplantOperationRequired": "Nakil ameliyati gerekli",
+      "minorSurgery": "Kucuk ameliyat",
+      "fistulaOrGraftCreation": "Fistul veya greft olusturma",
+      "minorProcedure": "Kucuk islem",
+      "pdCatheterInsertion": "PD kateter yerlestirilmesi",
+      "noneRequired": "Gerekmiyor",
+      "noSurgicalProcedures": "Cerrahi islem yok",
+      "initialSupport": "Ilk destek",
+      "duringRecoveryPeriod": "Iyilesme doneminde",
+      "noneNeeded": "Gerekmiyor",
+      "professionalStaffProvideCare": "Profesyonel personel bakim saglar",
+      "canDoIndependently": "Bagimsiz olarak yapilabilir",
+      "varies": "Degiskenlik gosterir",
+      "dependsOnSymptoms": "Semptomlara bagli",
+      "high": "Yuksek",
+      "normalDailyLifePossible": "Normal gunluk yasam mumkun",
+      "low": "Dusuk",
+      "fixedHospitalSlots": "Sabit hastane zaman dilimleri",
+      "chooseYourSchedule": "Programinizi seciniz",
+      "noFixedSchedule": "Sabit program yok",
+      "medicationTraining": "Ilac egitimi",
+      "learningYourNewRoutine": "Yeni rutininizi ogrenmek",
+      "staffDoEverything": "Personel her seyi yapar",
+      "oneToTwoWeeksTraining": "1-2 hafta egitim",
+      "learnTheTechnique": "Teknigi ogrenin",
+      "symptomManagement": "Semptom yonetimi",
+      "medicationGuidance": "Ilac rehberligi",
+      "bestOutcomes": "En iyi sonuclar",
+      "forSuitableCandidates": "Uygun adaylar icin",
+      "good": "Iyi",
+      "wellEstablishedTreatment": "Iyi kurulmus tedavi",
+      "similarToHaemodialysis": "Hemodiyalize benzer",
+      "qualityFocused": "Kalite odakli",
+      "comfortOverLongevity": "Uzun omur yerine konfor",
+      "excellent": "Mukemmel",
+      "nearNormalLifePossible": "Normale yakin yasam mumkun",
+      "moderate": "Orta",
+      "treatmentAffectsDailyRoutine": "Tedavi gunluk rutini etkiler",
+      "moreIndependence": "Daha fazla bagimsizlik",
+      "focusOnComfort": "Konfora odaklanma",
+      "symptomManagementPriority": "Semptom yonetimi oncelligi",
+      "oftenExcellent": "Cogu zaman mukemmel",
+      "energyRestored": "Enerji yenilendi",
+      "variable": "Degisken",
+      "fatigueAfterSessions": "Seanslardan sonra yorgunluk",
+      "generallyGood": "Genellikle iyi",
+      "steadyEnergyLevels": "Sabit enerji seviyeleri",
+      "managedWithSupport": "Destekle yonetilen"
+    },
+    "legend": {
+      "title": "Degerlendirme Kilavuzu",
+      "excellent": "Mukemmel",
+      "good": "Iyi",
+      "moderate": "Orta",
+      "challenging": "Zorlu",
+      "varies": "Degisken",
+      "excellentDesc": "Mukemmel - Genellikle cok olumlu",
+      "goodDesc": "Iyi - Genellikle olumlu",
+      "moderateDesc": "Orta - Bazi sinirlamamalar dikkate alinmali",
+      "challengingDesc": "Zorlu - Onemli hususlar",
+      "variesDesc": "Degisken - Bireysel kosullara bagli"
+    },
+    "viewDetails": "Detaylari gor",
+    "backToHub": "Merkeze Don",
+    "printComparison": "Karsilastirmayi yazdir"
+  },
+  "chat": {
+    "title": "Soru Sorun",
+    "subtitle": "Yapay zeka asistanimiz bobrek tedavileri hakkindaki genel sorulari cevaplayabilir.",
+    "placeholder": "Sorunuzu buraya yaziniz...",
+    "send": "Gonder",
+    "disclaimer": "Bu asistan yalnizca genel bilgi saglar ve bobrek bakim ekibinizden alinan tibbi tavsiyenin yerini tutmaz.",
+    "welcomeMessage": "Merhaba! Bobrek hastaligi ve tedavi secenekleri hakkindaki sorularinizi cevaplamak icin buradayim. Size bugün nasıl yardimci olabilirim?",
+    "errorMessage": "Uzgunum, mesajinizi isleyemedim. Lutfen tekrar deneyiniz.",
+    "thinking": "Dusunuyor...",
+    "backToHub": "Merkeze Don",
+    "privacyReminder": "Gizlilik hatirlatmasi:",
+    "readyToHelp": "Yardima hazir",
+    "status": {
+      "online": "Cevrimici"
+    },
+    "messagesLabel": "Sohbet mesajlari",
+    "inputLabel": "Mesaj girisi",
+    "audioInput": "Sesli giris",
+    "piiWarning": "Lutfen adiniz, NHS numaraniz veya adresiniz gibi kisisel bilgileri paylasmayiniz. Bu sohbet kaydedilmez.",
+    "welcome": {
+      "greeting": "Merhaba! Ben NHS Bobrek Bakim Asistaniyim. Bobrek tedavi seceneklerini anlamaniza yardimci olmak icin buradayim.",
+      "prompt": "Bana diyaliz, nakil, konservatif bakim veya bobrek tedavisiyle ilgili baska herhangi bir sey hakkinda sorular sorabilirsiniz. Size bugun nasil yardimci olabilirim?"
+    },
+    "suggestedQuestions": "Onerilen Sorular",
+    "questions": {
+      "q1": "Hemodiyaliz ve periton diyalizi arasındaki fark nedir?",
+      "q2": "Bobrek nakli ameliyati ne kadar surer?",
+      "q3": "Diyalizdeyken seyahat edebilir miyim?",
+      "q4": "Diyaliz tedavisinin yan etkileri nelerdir?",
+      "q5": "Nakil icin uygun olup olmadığımı nasil anlarim?",
+      "q6": "Konservatif bakim nedir ve kimler secebilir?"
+    },
+    "quickReplies": {
+      "tellMeMore": "Daha fazla anlat",
+      "prosAndCons": "Artilari ve eksileri nelerdir?",
+      "dailyLife": "Bu gunluk yasami nasil etkiler?"
+    },
+    "voice": {
+      "startRecording": "Sesli girisi baslat",
+      "stopRecording": "Kaydi durdur",
+      "listening": "Dinliyor...",
+      "processing": "Isleniyor...",
+      "speaking": "Konusuyor...",
+      "paused": "Duraklatildi",
+      "playResponse": "Yaniti dinle",
+      "pauseResponse": "Duraklat",
+      "resumeResponse": "Devam Et",
+      "stopResponse": "Dur",
+      "loading": "Ses yukleniyor...",
+      "loadingAudio": "Ses yukleniyor...",
+      "requesting": "Izin isteniyor...",
+      "notSupported": "Sesli giris desteklenmiyor",
+      "error": "Hata olustu",
+      "micPermissionDenied": "Mikrofon izni reddedildi. Sesli girisi kullanmak icin lutfen erisime izin veriniz.",
+      "noAudioDetected": "Ses algilanmadi. Lutfen tekrar deneyiniz.",
+      "transcriptionFailed": "Ses metne donusturulemedi. Lutfen tekrar deneyiniz.",
+      "synthesisFailed": "Ses calinamadi. Lutfen tekrar deneyiniz."
+    }
+  },
+  "values": {
+    "title": "Sizin Icin Onemli Olanlar",
+    "subtitle": "Her faktorun sizin icin ne kadar onemli oldugunu degerlendirin. Bu, bilgilerinizi kisisellestirmemize yardimci olur.",
+    "instructions": "Onem derecesini belirtmek icin kaydiriciyi hareket ettirin (1 = Onemli degil, 5 = Cok onemli)",
+    "sliderLabel": "Onem derecesi",
+    "startExercise": "Degerler Egzersizine Basla",
+    "lessImportant": "Daha az onemli",
+    "moreImportant": "Daha onemli",
+    "skipStatement": "Bu ifadeyi atla",
+    "viewResults": "Sonuclarimi Gor",
+    "statementsRemaining_one": "{{count}} ifade kaldi",
+    "statementsRemaining_other": "{{count}} ifade kaldi",
+    "completed": "Tamamlandi",
+    "intro": {
+      "title": "Sizin Icin En Onemli Olan Nedir?",
+      "description": "Bobrek tedavisi secmek kisisel bir karardir. Bu egzersiz, degerleriniz ve oncelikleriniz hakkinda dusunmenize yardimci olur, böylece bobrek ekibinizle tartisabilirsiniz.",
+      "feature1": "Degerlendirilecek 10 deger ifadesi",
+      "feature2": "Yaklasik 5 dakika surer",
+      "feature3": "Dogru veya yanlis cevap yok",
+      "feature4": "Onceliklerinizin ozetini gorunuz",
+      "beginButton": "Egzersize Basla",
+      "allAtOnce": "Tum ifadeleri ayni anda gormek mi tercih ediyorsunuz?",
+      "viewAll": "Tum Ifadeleri Gor"
+    },
+    "progress": {
+      "statement": "Ifade",
+      "of": "/"
+    },
+    "defaultHint": "Bunun sizin icin ne kadar onemli oldugunu 1 (Onemli degil) ile 5 (Cok onemli) arasinda degerlendirin",
+    "listenStatement": "Bu ifadeyi dinle",
+    "nav": {
+      "back": "Geri",
+      "skip": "Atla",
+      "next": "Ileri",
+      "finish": "Bitir",
+      "backToIntro": "Girişe Don",
+      "seeResults": "Sonuclarimi Gor"
+    },
+    "allAtOnce": {
+      "title": "Tum Ifadeleri Degerlendir",
+      "description": "Her ifadeyi 1 (Onemli degil) ile 5 (Cok onemli) arasinda degerlendirin.",
+      "progress": "Tamamlandi"
+    },
+    "results": {
+      "title": "Degerler Ozetiniz",
+      "description": "Yanitlariniza dayanarak, sizin icin en onemli olanlar.",
+      "topPriorities": "En Onemli Oncelikleriniz",
+      "allValues": "Tum Degerleriniz",
+      "editValues": "Degerlerinizi Duzenleyin",
+      "compareLink": "Tedavileri Karsilastir",
+      "addToSummary": "Ozetime Ekle",
+      "viewTreatments": "Degerlerinizle eslesen tedavileri gorunuz",
+      "backToHub": "Merkeze Don"
+    },
+    "ratingLabels": {
+      "1": "Onemli degil",
+      "2": "Biraz onemli",
+      "3": "Orta derecede onemli",
+      "4": "Onemli",
+      "5": "Cok onemli"
+    },
+    "ratings": {
+      "1": "Onemli degil",
+      "2": "Biraz onemli",
+      "3": "Orta derecede onemli",
+      "4": "Cok onemli",
+      "5": "Son derece onemli"
+    },
+    "statements": {
+      "travel": {
+        "statement": "Seyahat edebilmek benim icin onemli",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "hospital-time": {
+        "statement": "Hastanede gecirilen sureyi en aza indirmek istiyorum",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "needles": {
+        "statement": "Igneler ve tibbi islemler konusunda rahatim",
+        "hint": "Bu ifadeye ne kadar katildiginizi degerlendirin"
+      },
+      "independence": {
+        "statement": "Bagimsizligimi korumak benim icin cok onemli",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "family-burden": {
+        "statement": "Aileme yuk olmaktan kacinmak istiyorum",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "longevity": {
+        "statement": "Mumkun oldugunca uzun yasamak benim onceliğim",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "quality-of-life": {
+        "statement": "Yasam kalitesi, yasam suresinden daha onemli",
+        "hint": "Bu ifadeye ne kadar katildiginizi degerlendirin"
+      },
+      "home-treatment": {
+        "statement": "Tedaviyi evde yaptirmayit tercih ederdim",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "work-activities": {
+        "statement": "Calismaya veya normal aktivitelerimi yapmaya devam etmek onemli",
+        "hint": "Bunun sizin icin ne kadar onemli oldugunu degerlendirin"
+      },
+      "professional-care": {
+        "statement": "Profesyonellerin tedavime bakmasini tercih ederdim",
+        "hint": "Bu ifadeye ne kadar katildiginizi degerlendirin"
+      }
+    },
+    "statementsList": {
+      "independence": {
+        "text": "Bagimsizligimi korumak ve kendi basima bakabilmek",
+        "hint": "Baskalarina cok bagimli olmadan gunluk aktiviteleri yapabilmek"
+      },
+      "schedule": {
+        "text": "Programimda esneklige ve seyahat edebilmeye sahip olmak",
+        "hint": "Siki tedavi zamanlari olmadan aktiviteler ve geziler planlayabilmek"
+      },
+      "hospitalTime": {
+        "text": "Hastane veya klinikte daha az zaman gecirmek",
+        "hint": "Hastane ziyaretlerinin sayisini ve suresini en aza indirmek"
+      },
+      "homeComfort": {
+        "text": "Evimin konforunda tedavi almak",
+        "hint": "Tedaviyi tibbi tesis yerine evde yonetebilmek"
+      },
+      "familyBurden": {
+        "text": "Aileme yuk olmamak",
+        "hint": "Tedavimin aile uyeleri ve bakicilar uzerindeki etkisini en aza indirmek"
+      },
+      "longevity": {
+        "text": "Mumkun oldugunca uzun yasamak",
+        "hint": "Yasam beklentisini uzatabilecek tedavilere oncelik vermek"
+      },
+      "qualityOfLife": {
+        "text": "Yasam suresi yerine yasam kalitesi",
+        "hint": "Maksimum omur yerine gunluk iyilige ve konfora oncelik vermek"
+      },
+      "energyLevels": {
+        "text": "Iyi enerji seviyelerine sahip olmak ve iyi hissetmek",
+        "hint": "Yorgunlugu en aza indirmek ve aktiviteler icin normal enerjiyi korumak"
+      },
+      "dietRestrictions": {
+        "text": "Yemek ve icecek uzerinde daha az kisitlamaya sahip olmak",
+        "hint": "Minimum sinirlamalarla yiyip icebilmek"
+      },
+      "naturalApproach": {
+        "text": "Daha az mudahaleyle daha dogal bir yaklasim benimsemek",
+        "hint": "Daha az invaziv veya tibbi hissettiren tedavi seceneklerini tercih etmek"
+      }
+    }
+  },
+  "modelViewer": {
+    "breadcrumb": "3D Bobrek Modeli",
+    "backToHub": "Merkeze Don",
+    "title": "3D Bobrek Modeli Görüntüleyici",
+    "interactiveDescription": "Insan bobreklerinin interaktif 3D modelini kesfediuniz. Dondurmek ve yakınlastirmak icin farenizi veya dokunmatik ekrani kullaniniz.",
+    "dragToRotate": "Döndürmek için sürükle",
+    "scrollToZoom": "Yakınlaştırmak için kaydır",
+    "labelsOn": "Etiketler: Acik",
+    "labelsOff": "Etiketler: Kapali",
+    "autoRotateOn": "Otomatik Donme: Acik",
+    "autoRotateOff": "Otomatik Donme: Kapali",
+    "reset": "Sifirla",
+    "resetView": "Gorunumu sifirla",
+    "aboutKidneys": "Bobrekleriniz Hakkinda",
+    "kidneyInfo": "Bobrekleriniz yaklasik yumruğunuz buyukluğunde fasulye sekilli organlardır. Gunluk yaklasik 200 litre kani filtreler, atik ve fazla siviyi uzaklastirir.",
+    "kidneyFunction": "Bobrekler Ne Yapar",
+    "functionInfo": "Bobrekler kan basincini duzenlier, hormon uretir, vucut sivilarini dengeler ve atik urunleri idrarara filtreler.",
+    "whenKidneysFail": "Bobrekler Yetersiz Kaldiginda",
+    "failureInfo": "Bobrekler fonksiyonunu kaybettiginde, diyaliz veya nakil gibi tedaviler bobreklerinizin artik yapamadigi isi yapmaya yardimci olabilir.",
+    "learnMore": "Tedavi Secenekleri Hakkinda Daha Fazla Bilgi Edinin",
+    "exploreTreatments": "Tedavileri Kesfet",
+    "compareTreatments": "Tedavileri Karsilastir",
+    "continueJourney": "Tedavi seceneklerini kesfederek yolculuğunuza devam edin",
+    "loading": "3D Model Yukleniyor...",
+    "interactiveTool": "Interaktif Ogrenme Araci",
+    "interactive3DModel": "Interaktif 3D Model",
+    "anatomy": {
+      "kidney": {
+        "label": "Bobrek",
+        "description": "Kaninizdan atiklari uzaklastiran ve idrar ureten ana filtreleme organi."
+      },
+      "renalArtery": {
+        "label": "Renal Arter",
+        "description": "Filtrelenmek uzere kalpten bobregine kan tasir."
+      },
+      "renalVein": {
+        "label": "Renal Ven",
+        "description": "Filtrelenmis kani bobrekten kalbe geri tasir."
+      },
+      "ureter": {
+        "label": "Ureter",
+        "description": "Idrari bobrekten mesaneye tasiyan tup."
+      },
+      "adrenalGland": {
+        "label": "Adrenal Bez",
+        "description": "Bobregin ustunde onemli hormonlar ureten kucuk bir bez."
+      }
+    }
+  },
+  "summary": {
+    "title": "Oturum Ozetiniz",
+    "subtitle": "Bugun kesfettiklerinizin ozeti.",
+    "sections": {
+      "journey": "Yolculuk Asamaniz",
+      "values": "Sizin Icin Onemli Olanlar",
+      "viewed": "Kesfedilen Tedaviler",
+      "questions": "Ekibiniz Icin Sorular",
+      "priorities": "Oncelikleriniz",
+      "nextSteps": "Onerilen Sonraki Adimlar"
+    },
+    "print": "Ozeti Yazdir",
+    "email": "Ozeti E-postayla Gonder",
+    "startOver": "Yeniden Basla",
+    "share": "Paylas",
+    "sessionId": "Oturum Kimliği",
+    "notSpecified": "Belirtilmedi",
+    "readyToReview": "Incelemeye hazir",
+    "viewed": "Goruntulendi",
+    "noValues": "Degerler egzersizini henuz tamamlamadiniz.",
+    "completeValues": "Simdi tamamla",
+    "noTreatments": "Henuz hicbir tedaviyi kesfetmediniz.",
+    "exploreTreatments": "Tedavileri kesfet",
+    "seeAll": "Tumunu gor",
+    "confirmReset": "Yeniden baslamak istediginizden emin misiniz? Tum ilerlemeniz kaybolacak.",
+    "addQuestionPlaceholder": "Kendi sorunuzu yaziniz...",
+    "question1": "Durumum icin hangi tedavi secenekleri uygundur?",
+    "question2": "Her tedaviyle gunluk yaşam nasil olurdu?",
+    "question3": "Tercih ettigim tedavi icin sureci nasil baslatirım?",
+    "step1": {
+      "title": "Bu ozeti inceleyin",
+      "description": "Kesfettiklerinize goz atin ve ek sorularinizi dusunun."
+    },
+    "step2": {
+      "title": "Aile veya bakicilarla paylasin",
+      "description": "Evde desteginiz varsa, dusuncelerinizi onlarla tartisın."
+    },
+    "step3": {
+      "title": "Bobrek bakim ekibinizle goruşun",
+      "description": "Seceneklerinizi tartismak icin bu ozeti bir sonraki randevunuza getirin."
+    },
+    "privacy": {
+      "title": "Gizliliginiz",
+      "text": "Bu bilgiler yalnizca tarayicinizda saklanir ve oturumunuz sonunda silinir. Hicbir sunucuda kisisel veri kaydedilmemistir."
+    },
+    "disclaimer": {
+      "title": "Onemli Hatirlatma",
+      "text": "Bu ozet yalnizca bilgi amaclidir ve tibbi tavsiye degildir. Tedavi seceneklerinizi her zaman bireysel durumunuzu bilen bobrek bakim ekibinizle gorusun."
+    },
+    "printForAppointment": "Randevunuz Icin Yazdirin",
+    "askMore": "Daha fazla sorunuz mu var?",
+    "printHeader": {
+      "title": "NHS Bobrek Tedavisi Karar Destek Araci",
+      "subtitle": "Kisisel Oturum Ozetiniz",
+      "dateLabel": "Tarih: {{date}}",
+      "footer": "NHS Bobrek Tedavisi Karar Destek Araci tarafindan olusturuldu - {{date}} - Bu belge yalnizca saglik ekibinizle goruşme icindir"
+    },
+    "shareTitle": "NHS Bobrek Tedavi Özeti",
+    "shareText": "Bobrek tedavisi karar ozetim",
+    "readyForAppointment": "Bir sonraki randevunuza hazir misiniz?",
+    "printInstructions": "Bobrek bakim ekibinize goturmek icin bu ozeti yazdirin",
+    "journeyStages": {
+      "newly-diagnosed": "Yeni Teshis Konuldu",
+      "monitoring": "Takip Ediliyor",
+      "preparing": "Tedaviye Hazirlaniyor",
+      "on-dialysis": "Suan Diyalizde",
+      "transplant-waiting": "Nakil Bekleme Listesinde",
+      "post-transplant": "Nakil Sonrasi",
+      "supporting-someone": "Birine Destek Oluyor"
+    },
+    "journeyDescriptions": {
+      "newly-diagnosed": "Bobrek durumunuz hakkinda bilgi ediniyorsunuz ve seceneklerinizi anlamak istiyorsunuz.",
+      "monitoring": "Bobrekleriniz takip ediliyor ve gelecege hazirlanyorsunuz.",
+      "preparing": "Yakinda tedaviye baslamaniz gerekiyor ve secimlerinizi anlamak istiyorsunuz.",
+      "on-dialysis": "Diyaliz aliyorsunuz ve diger secenekleri kesefediyorsunuz.",
+      "transplant-waiting": "Nakil bekleme listesindesiniz.",
+      "post-transplant": "Bobrek nakli oldunuz ve devamli destek istiyorsunuz.",
+      "supporting-someone": "Bobrek hastaligi olan bir yakinimza destek oluyorsunuz.",
+      "default": "Bobrek bakim yolculugunuzda mevcut asamaniz."
+    },
+    "treatmentLabels": {
+      "haemodialysis": "Hemodiyaliz",
+      "peritoneal-dialysis": "Periton Diyalizi",
+      "home-haemodialysis": "Evde Hemodiyaliz",
+      "kidney-transplant": "Bobrek Nakli",
+      "conservative-care": "Konservatif Bakim"
+    },
+    "valueLabels": {
+      "1": "Onemli degil",
+      "2": "Biraz onemli",
+      "3": "Orta derecede onemli",
+      "4": "Onemli",
+      "5": "Cok onemli",
+      "default": "Onemli"
+    }
+  },
+  "session": {
+    "timeRemaining": "Kalan sure: {{minutes}}",
+    "sessionExpiring": "Oturumunuz yakinda sona erecek",
+    "expiringMessage": "Oturumunuz {{minutes}} dakika icinde sona erecek. Devam etmek ister misiniz?",
+    "extendSession": "Oturuma Devam Et",
+    "sessionExpired": "Oturumunuz sona erdi. Lutfen yeniden baslayin.",
+    "startNewSession": "Yeni Oturum Basla",
+    "createError": "Oturum olusturulamadi. Lutfen tekrar deneyin."
+  },
+  "footer": {
+    "nhsInfo": "NHS Bobrek Bakimi",
+    "accessibility": "Erisilebilirlik",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfUse": "Kullanim Kosullari",
+    "contact": "Iletisim",
+    "contactUs": "Bize Ulasin",
+    "navigationLabel": "Alt bilgi navigasyonu",
+    "supportingDecisions": "Bilinçli saglik kararlarin desteklemek",
+    "copyright": "Pears Research Services. Tum haklari saklidir.",
+    "demoVersion": "Demo Surum 1.0",
+    "disclaimer": {
+      "title": "Onemli Feragatname",
+      "text1": "Bu uygulama",
+      "mockDesign": "ornek bir tasarim",
+      "text2": "olup",
+      "company": "Pears Research Services",
+      "text3": "tarafindan yalnizca gosterim amaciyla olusturulmustur. NHS ile bagli degildir veya NHS tarafindan onaylanmamistir."
+    }
+  },
+  "timeline": {
+    "title": "Gunluk Yasam",
+    "subtitle": "Bu tedaviyle tipik bir gunun nasil gorunduğunu gorun",
+    "morning": "Sabah",
+    "afternoon": "Ogleden Sonra",
+    "evening": "Aksam",
+    "night": "Gece",
+    "treatmentActivities": "{{count}} tedaviyle ilgili aktivite",
+    "legend": {
+      "treatment": "Tedaviyle ilgili",
+      "regular": "Normal aktiviteler"
+    },
+    "dayType": {
+      "dialysisDay": "Diyaliz Gunu (Pzt/Car/Cum)",
+      "restDay": "Dinlenme Gunu (Sal/Per/Cts/Paz)",
+      "apdNight": "APD (Otomatik Gece Boyunca)",
+      "capd": "CAPD (Manuel Degisimler)",
+      "typical": "Tipik Gun"
+    },
+    "toggle": {
+      "dialysisDay": "Diyaliz Gunu",
+      "restDay": "Dinlenme Gunu",
+      "apd": "APD",
+      "capd": "CAPD"
+    },
+    "duration": {
+      "15min": "15 dk",
+      "20min": "20 dk",
+      "30min": "30-60 dk",
+      "4hrs": "4-5 saat",
+      "8hrs": "8-10 saat"
+    },
+    "transplant": {
+      "wakeUp": "Uyanma ve sabah rutini",
+      "medication": "Bagisaklik bastirici ilaclarinizi alin",
+      "breakfast": "Kahvalti - saglikli, dengeli ogun",
+      "work": "Is, hobiler veya aktiviteler",
+      "lunch": "Ogle yemegi - az diyet kisitlamasi",
+      "activities": "Gunluk aktivitelere devam edin",
+      "exercise": "Hafif egzersiz veya yuruyus",
+      "dinner": "Aileyle aksam yemegi",
+      "eveningMeds": "Aksam ilaclari",
+      "relax": "Rahatlama ve bos zaman",
+      "sleep": "Normal uyku duzeni"
+    },
+    "hemo": {
+      "wakeEarly": "Erken uyanin",
+      "lightBreakfast": "Sivi siniriyla hafif kahvalti",
+      "travelTo": "Diyaliz merkezine gidin",
+      "session": "Diyaliz seansi",
+      "travelHome": "Diyalizden eve donun",
+      "rest": "Dinlenme ve iyilesme - yorgun hissedebilirsiniz",
+      "lightMeal": "Diyet kisitlamalariyla hafif ogün",
+      "quietEvening": "Sessiz aksam aktiviteleri",
+      "earlyBed": "Tedavi gunundan sonra erken yatma",
+      "regularWake": "Uyanin",
+      "breakfast": "Diyet kurallarına uygun kahvalti",
+      "normalDay": "Is veya normal aktiviteler",
+      "lunch": "Ogle yemegi - sivi ve potasyuma dikkat edin",
+      "continue": "Gunluk aktivitelere devam edin",
+      "dinner": "Aileyle aksam yemegi",
+      "leisure": "Bos zaman",
+      "sleep": "Normal yatma vakti"
+    },
+    "pd": {
+      "disconnect": "APD makinesinden baglantiyı kesin",
+      "morning": "Sabah rutini ve dus",
+      "breakfast": "Kahvalti - daha fazla diyet ozgurlugu",
+      "work": "Is veya aktiviteler - gunduz serbestsiniz",
+      "lunch": "Ogle yemegi - HD'den daha az kisitlama",
+      "activities": "Aktivitelere, hobilere devam edin",
+      "exercise": "Egzersiz veya dis mekan aktiviteleri",
+      "dinner": "Aileyle aksam yemegi",
+      "leisure": "Aksam bos zamani",
+      "setup": "APD makinesini kurun",
+      "overnight": "APD gece boyunca calisirken uyuyun",
+      "capdWake": "Uyanin",
+      "exchange1": "Gunun ilk degisimi",
+      "capdBreakfast": "Kahvalti",
+      "capdWork": "Is veya aktiviteler",
+      "exchange2": "Ikinci degisim",
+      "capdLunch": "Ogle yemegi",
+      "capdActivities": "Ogleden sonra aktiviteleri",
+      "exchange3": "Ucuncu degisim",
+      "capdDinner": "Aksam yemegi",
+      "capdLeisure": "Aksam rahatlamasi",
+      "exchange4": "Yatmadan once son degisim",
+      "capdSleep": "Uyku"
+    },
+    "conservative": {
+      "wake": "Hazir oldugunuzda uyanin",
+      "meds": "Semptom yonetimi ilaclarini alin",
+      "breakfast": "Tolere edilebildigi sekilde kahvalti",
+      "morning": "Enerji izin verdigi kadar sabah aktiviteleri",
+      "lunch": "Ogle yemegi - keyfinizialniz seyler yiyin",
+      "rest": "Dinlenme veya hafif aktiviteler",
+      "visitors": "Aile veya ziyaretcilerle vakit gecirin",
+      "eveningMeds": "Aksam ilaclari",
+      "dinner": "Sevdiklerinizle aksam yemegi",
+      "relax": "Evde sessiz aksam",
+      "sleep": "Yorgun oldugunuzda dinlenin"
+    }
+  },
+  "progress": {
+    "title": "Ogrenme Yolculugunuz",
+    "yourProgress": "Ilerlemeniz",
+    "complete": "tamamlandi",
+    "treatments": "tedaviler",
+    "sections": {
+      "title": "Kesfedilecek Bolumler",
+      "questionnaire": "Hakkinda",
+      "questionnaireDesc": "Durumunuzu paylasin",
+      "treatments": "Tedavi Secenekleri",
+      "treatmentsDesc": "{{viewed}} / {{total}} kesfedildi",
+      "values": "Degerler Egzersizi",
+      "valuesDesc": "Onceliklerinizi netlestirin",
+      "chat": "Soru Sorun",
+      "chatDesc": "Yanitlar alin"
+    },
+    "status": {
+      "completed": "Tamamlandi",
+      "inProgress": "Devam Ediyor"
+    },
+    "badges": {
+      "title": "Rozetleriniz",
+      "explorer": "Kâsif",
+      "allTreatments": "Tum Tedaviler",
+      "values": "Degerler Netlesti",
+      "curious": "Merakli Zihin",
+      "complete": "Yolculuk Tamamlandi"
+    },
+    "encouragement": {
+      "start": "Tedavi seceneklerini kesfederek yolculugunuza baslayin",
+      "beginning": "Iyi bir baslangic! Daha fazla ogremek icin kesfetmeye devam edin",
+      "making": "Iyi ilerleme kaydediyorsunuz!",
+      "halfway": "Yarindan fazla bitti - aferin!",
+      "almost": "Neredeyse tamamlandi! Sadece birkac bolum daha",
+      "complete": "Mukemmel! Her seyi kesefettiniz"
+    },
+    "viewSummary": "Ozetinizi Gorunuz"
+  },
+  "scenario": {
+    "title": "Ya... Senaryo Kesfi",
+    "subtitle": "Farkli yasam durumlarinin her tedavi secenegiyle nasil calistigini gorun",
+    "tips": "Ipuclari",
+    "learnMore": "{{treatment}} hakkinda daha fazla bilgi edinin",
+    "compareAll": "Tum Tedavileri Karsilastir",
+    "legend": {
+      "title": "Degerlendirme Kilavuzu"
+    },
+    "rating": {
+      "excellent": "Mukemmel",
+      "good": "Iyi",
+      "moderate": "Orta",
+      "challenging": "Zorlu"
+    },
+    "travel": {
+      "title": "Ya seyahat etmek istersem?",
+      "description": "Her tedavinin tatil veya ziyaret icin seyahat etme yeteneğinizi nasil etkiledigini kesfetdin",
+      "transplant": "Iyilesme sonrasi serbestce seyahat edebilirsiniz. Ilaclarinizi yaninizda tasiyin ve ihtiyac halinde nerede bakim arayacaginizi bilin.",
+      "transplantTip1": "Nakil ekibinizden bir mektup tasiyin",
+      "transplantTip2": "Gideceiğiniz yerdeki tibbi tesisleri arastirin",
+      "transplantTip3": "El bagajinda ekstra ilac tasiyin",
+      "hemodialysis": "Seyahat, gideceiginiz yerde diyaliz ayarlamak icin onceden planlama gerektirir. Tatil diyaliz uniteleri mevcuttur ancak musaitlik farklilik gosterir.",
+      "hemodialysisTip1": "Tatil diyalizini 6-8 hafta onceden ayirtin",
+      "hemodialysisTip2": "Diyaliz ekibiniz duzenlemeleyerde yardimci olabilir",
+      "hemodialysisTip3": "Ingiltere icinde seyahat uluslararasidan daha kolaydir",
+      "peritoneal": "Seyahat etmek icin daha fazla ozgurluk. Malzemeler gideceginiz yere gonderilebilir veya yanınizda goturebilirsiniz.",
+      "peritonealTip1": "Malzeme teslimatini 4-6 hafta onceden ayarlayin",
+      "peritonealTip2": "Havayollari genellikle malzemeler icin ekstra bagaja izin verir",
+      "peritonealTip3": "Degisimler icin temiz bir alan gerekir",
+      "conservative": "Diyaliz kisitlamasi yok, ancak seyahat nasil hissettiğinize bağlidir. Kisa seyahatler yonetimi daha kolay olabilir.",
+      "conservativeTip1": "Seyahat planlarinizi bakim ekibinizle gorusun",
+      "conservativeTip2": "Seyahat sigortasini dikkatli dusunun",
+      "conservativeTip3": "Seyahatler sirasinda dinlenme sureler planlаyin"
+    },
+    "work": {
+      "title": "Ya tam zamanli calismak istersem?",
+      "description": "Farkli tedavilerin istihdam surdurmeye nasil uyduğunu gorun",
+      "transplant": "2-3 ay iyilesme sonrasi, cogu kisi normale yakin enerji seviyeleriyle tam zamanli ise donebilir.",
+      "transplantTip1": "Ise kademeli bir donus planlayin",
+      "transplantTip2": "Klinik randevulari icin izin almaniz gerekebilir",
+      "transplantTip3": "Bircok isveren esnek duzenllemeler sunar",
+      "hemodialysis": "Mumkun ama zorlu. Seanslar haftada uc kez 4-5 saat surer, arti iyilesme suresi. Aksam/erken vardiyalar yardimci olabilir.",
+      "hemodialysisTip1": "Isverenle esnek saatleri gorusun",
+      "hemodialysisTip2": "Aksam veya sabah erken diyaliz zaman dilimleri",
+      "hemodialysisTip3": "Evde hemodiyaliz daha fazla esneklik saglar",
+      "peritoneal": "Gece APD gunlerin is icin serbest oldugu anlamina gelir. CAPD degisimler icin ara gerektirir ama çoğu calismaya devam eder.",
+      "peritonealTip1": "APD tam zamanli calisanlar icin idealdir",
+      "peritonealTip2": "CAPD degisimlerini iste yapabilirsiniz",
+      "peritonealTip3": "Enerji seviyeleri cogu zaman HD'den daha iyi",
+      "conservative": "Semptomlara ve enerjiye baglidir. Bircogu yari zamanli veya azaltilmis saatlerle devam eder. Odak yasam kalitesidir.",
+      "conservativeTip1": "Saatleri kademeli olarak azaltmayi dusunun",
+      "conservativeTip2": "Is sagligi ile duzlemeleri gorusun",
+      "conservativeTip3": "En önemli aktivitelere oncelik verin"
+    },
+    "liveAlone": {
+      "title": "Ya yalniz yasiyorsam?",
+      "description": "Bagimsiz yasayan insanlar icin hangi tedavilerin iyi calistigini anlayin",
+      "transplant": "Iyilesme sirasinda destek gerekecek (2-4 hafta), ama sonrasinda bagimsiz yasayabilirsiniz.",
+      "transplantTip1": "Ameliyat sonrasi ilk birkac hafta icin yardim ayarlayin",
+      "transplantTip2": "Acil durum irtibatlari hazir bulundurun",
+      "transplantTip3": "Ilac hatirlaticilari kurun",
+      "hemodialysis": "Tedavi profesyonel personelle bir merkezde yapilir. Ev kurulumu gerekmez. Saglik ekibiyle duzenlı temas.",
+      "hemodialysisTip1": "Hastane ulasimi mevcut olabilir",
+      "hemodialysisTip2": "Personel tedavi sirasinda sizi izler",
+      "hemodialysisTip3": "Diger hastalardan sosyal destek",
+      "peritoneal": "Bircok kisi PD'yi yalniz basariyla yapiyor. Egitim sizi iyi hazirlar. 7/24 telefon destegi mevcuttur.",
+      "peritonealTip1": "Baslamadan once kapsamli egitim",
+      "peritonealTip2": "PD hemsirelerinden duzenlı ev ziyaretleri",
+      "peritonealTip3": "Acil durumlar icin 24 saat yardim hatti",
+      "conservative": "Baslangicta yalniz yonetilebilir. Semptomlar ilerledikce artan desteğe ihtiyaciniz olabilir. Toplum hizmetleri yardimci olabilir.",
+      "conservativeTip1": "Bakim ekibiyle duzenlı kontroller",
+      "conservativeTip2": "Toplum destek hizmetleri mevcuttur",
+      "conservativeTip3": "Gelecekteki bakim ihtiyaclari icin onceden planlayin"
+    },
+    "family": {
+      "title": "Ya kucuk cocuklarim varsa?",
+      "description": "Tedavilerin cocuk bakimini ve aile zamanini nasil etkiledigini dusunun",
+      "transplant": "Iyilesme sonrasi aile yasamina tam olarak katilabilirsiniz. Aktif ebeveynlik icin en iyi yasam kalitesi.",
+      "transplantTip1": "Iyilesme sirasinda cocuk bakimi ayarlayin",
+      "transplantTip2": "Normal ebeveynlik aktivitelerine donebilirsiniz",
+      "transplantTip3": "Aile aktiviteleri icin iyi enerji",
+      "hemodialysis": "Tedavi icin duzenlı olarak evden uzakta zaman. Seanslardan sonra yorgunluk aile aktivitelerini etkileyebilir. Seanslar sirasinda cocuk bakimi gerekir.",
+      "hemodialysisTip1": "Seanslari okul saatlerine gore planlayin",
+      "hemodialysisTip2": "Cocuklari yasa uygun sekilde dahil edin",
+      "hemodialysisTip3": "Diyaliz olmayan gunlerde aile zamani planlayin",
+      "peritoneal": "Ev tabanli tedavi aileyle daha fazla zaman demektir. Gece APD gunleri cocuk bakimi icin serbest birakir.",
+      "peritonealTip1": "APD cocuklar uyurken gerceklesir",
+      "peritonealTip2": "Gunler okula gotup getirmek icin serbest",
+      "peritonealTip3": "Cocuklar guvenli bir sekilde dahil edilebilir",
+      "conservative": "Tedavi programi yok, ama enerji seviyeleri degisir. Aileyle kaliteli zamana odaklanin.",
+      "conservativeTip1": "Ozel aile anlarinai onceliklendirin",
+      "conservativeTip2": "Gerektiginde cocuk bakimi yardimini kabul edin",
+      "conservativeTip3": "Cocuklarla durustce konusmalar yapin"
+    }
+  },
+  "treatment": {
+    "dayInLife": "Gunluk Yasam"
+  }
+}

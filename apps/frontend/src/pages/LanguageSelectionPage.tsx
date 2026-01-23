@@ -4,9 +4,9 @@
  * before starting their decision journey.
  *
  * @module pages/LanguageSelectionPage
- * @version 2.5.0
+ * @version 2.6.0
  * @since 1.0.0
- * @lastModified 21 January 2026
+ * @lastModified 23 January 2026
  *
  * @requires react
  * @requires react-router-dom
@@ -16,7 +16,7 @@
  * @requires @/config/i18n
  */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
@@ -43,6 +43,13 @@ export default function LanguageSelectionPage() {
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger entrance animations
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSelectLanguage = useCallback((langCode: SupportedLanguage) => {
     setSelectedLanguage(langCode);
@@ -132,9 +139,36 @@ export default function LanguageSelectionPage() {
 
   return (
     <main className="min-h-screen bg-bg-page">
+      {/* Progress indicator */}
+      <div className="bg-white border-b border-nhs-pale-grey">
+        <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-3">
+          <div
+            className="h-1.5 bg-nhs-pale-grey rounded-full overflow-hidden"
+            role="progressbar"
+            aria-valuenow={15}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={t('language.progressLabel', 'Setup progress: 15%')}
+          >
+            <div className="h-full w-[15%] bg-gradient-to-r from-nhs-blue to-nhs-aqua-green rounded-full transition-all duration-500" />
+          </div>
+          <p className="text-center text-xs text-text-secondary mt-2">
+            {t('language.progressText', 'Step 1 of 4: Select Language')}
+          </p>
+        </div>
+      </div>
+
       <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
-        {/* Page Header */}
-        <header className="text-center mb-6 sm:mb-8 md:mb-10">
+        {/* Page Header with animation */}
+        <header
+          className={`text-center mb-6 sm:mb-8 md:mb-10 transform transition-all duration-500 ease-out
+                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+        >
+          {/* Globe icon */}
+          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-nhs-blue/10 rounded-full mb-4 sm:mb-6">
+            <GlobeIcon className="w-8 h-8 sm:w-10 sm:h-10 text-nhs-blue" />
+          </div>
+
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-3">
             {t('language.title', 'Choose Your Language')}
           </h1>
@@ -143,15 +177,10 @@ export default function LanguageSelectionPage() {
           </p>
         </header>
 
-        {/* Instruction Text */}
-        <p className="text-center text-sm sm:text-base text-text-secondary mb-6 sm:mb-8 max-w-[700px] mx-auto px-2">
-          {t('language.changeAnytime', 'Please select the language you would like to use. You can change this at any time using the language button at the top of the screen.')}
-        </p>
-
         {/* Error Message */}
         {error && (
           <div
-            className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 mb-4 sm:mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[700px] mx-auto text-sm sm:text-base"
+            className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 mb-4 sm:mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[700px] mx-auto text-sm sm:text-base animate-fade-in"
             role="alert"
             aria-live="assertive"
           >
@@ -160,17 +189,18 @@ export default function LanguageSelectionPage() {
           </div>
         )}
 
-        {/* Language Grid */}
+        {/* Language Grid with staggered animation */}
         <form aria-label={t('language.formLabel', 'Language selection')}>
           <fieldset>
             <legend className="sr-only">{t('language.legendLabel', 'Available languages - select one')}</legend>
 
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8"
+              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-[900px] mx-auto
+                         transform transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               role="radiogroup"
               aria-label={t('language.radioGroupLabel', 'Available languages')}
             >
-              {SUPPORTED_LANGUAGES.map((lang) => (
+              {SUPPORTED_LANGUAGES.map((lang, index) => (
                 <LanguageCard
                   key={lang.code}
                   code={lang.code}
@@ -182,27 +212,36 @@ export default function LanguageSelectionPage() {
                   isPlaying={playingAudio === lang.code}
                   onSelect={() => handleSelectLanguage(lang.code)}
                   onPlayAudio={(e) => handlePlayAudio(lang.code, e)}
+                  index={index}
                 />
               ))}
             </div>
           </fieldset>
 
-          {/* Help Text */}
+          {/* Help Text - Enhanced styling */}
           <div
-            className="flex items-center justify-center gap-2 p-3 sm:p-4 mb-6 sm:mb-8 bg-blue-50 rounded-md text-nhs-blue-dark max-w-[700px] mx-auto text-sm sm:text-base"
+            className={`flex items-center justify-center gap-2 sm:gap-3 p-4 mb-6 sm:mb-8 bg-gradient-to-r from-blue-50 to-nhs-pale-grey/50
+                       rounded-lg border border-nhs-blue/10 text-nhs-blue-dark max-w-[700px] mx-auto text-sm sm:text-base
+                       transform transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             aria-live="polite"
           >
-            <InfoIcon />
+            <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-nhs-blue/10 rounded-full flex items-center justify-center">
+              <InfoIcon />
+            </div>
             <span>{t('language.sessionNote', 'Your language choice will be remembered for this session')}</span>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-nhs-pale-grey max-w-[700px] mx-auto">
+          {/* Navigation Buttons - Enhanced */}
+          <div
+            className={`flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-6 border-t border-nhs-pale-grey max-w-[700px] mx-auto
+                       transform transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
             <button
               type="button"
               onClick={() => navigate('/')}
-              className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue hover:underline
-                         focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded text-base"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue
+                         transition-all duration-200 hover:bg-nhs-blue/5 rounded-lg
+                         focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 text-base font-medium"
               aria-label={t('nav.backToHome', 'Go back to home page')}
             >
               <BackIcon />
@@ -213,24 +252,25 @@ export default function LanguageSelectionPage() {
               type="button"
               onClick={handleContinue}
               disabled={isLoading || !selectedLanguage}
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] w-full sm:w-auto sm:min-w-[200px] justify-center
-                         bg-nhs-green text-white font-bold rounded-md text-base sm:text-lg
-                         transition-colors duration-150
-                         hover:bg-nhs-green-dark
+              className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[52px] w-full sm:w-auto sm:min-w-[200px] justify-center
+                         bg-nhs-green text-white font-bold rounded-lg text-base sm:text-lg
+                         transition-all duration-200 ease-out
+                         hover:bg-nhs-green-dark hover:shadow-lg hover:scale-[1.02]
                          focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2
-                         disabled:bg-nhs-mid-grey disabled:cursor-not-allowed"
+                         disabled:bg-nhs-mid-grey disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none
+                         active:scale-[0.98]"
               aria-label={t('nav.continueWithLanguage', 'Continue with selected language')}
               aria-busy={isLoading}
             >
               {isLoading ? (
                 <>
-                  <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  {t('common.loading', 'Loading...')}
+                  <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                  <span>{t('common.loading', 'Loading...')}</span>
                 </>
               ) : (
                 <>
-                  {t('common.continue', 'Continue')}
-                  <ForwardIcon />
+                  <span>{t('common.continue', 'Continue')}</span>
+                  <ForwardIcon className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </>
               )}
             </button>
@@ -253,6 +293,7 @@ export default function LanguageSelectionPage() {
  * @property {boolean} isPlaying - Whether audio preview is playing
  * @property {Function} onSelect - Callback when language is selected
  * @property {Function} onPlayAudio - Callback to play audio preview
+ * @property {number} [index] - Card index for staggered animations
  */
 interface LanguageCardProps {
   code: string;
@@ -264,6 +305,7 @@ interface LanguageCardProps {
   isPlaying: boolean;
   onSelect: () => void;
   onPlayAudio: (e: React.MouseEvent) => void;
+  index?: number;
 }
 
 /**
@@ -284,21 +326,23 @@ function LanguageCard({
   isPlaying,
   onSelect,
   onPlayAudio,
+  index = 0,
 }: LanguageCardProps) {
   const { t } = useTranslation();
 
   return (
     <label
-      className={`relative flex flex-col items-center text-center p-4 sm:p-6 min-h-[160px] sm:min-h-[180px]
-                  bg-white border-2 rounded-lg cursor-pointer
-                  transition-all duration-200
-                  hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5
+      className={`group relative flex flex-col items-center text-center p-4 sm:p-5 min-h-[140px] sm:min-h-[160px]
+                  bg-white border-2 rounded-xl cursor-pointer
+                  transition-all duration-300 ease-out
+                  hover:shadow-lg hover:-translate-y-1
                   focus-within:outline-none focus-within:ring-[3px] focus-within:ring-focus focus-within:ring-offset-2
                   ${isSelected
-                    ? 'border-nhs-blue border-[3px] bg-blue-50'
-                    : 'border-nhs-pale-grey'
+                    ? 'border-nhs-blue border-[3px] bg-gradient-to-b from-blue-50 to-white shadow-md'
+                    : 'border-nhs-pale-grey hover:border-nhs-blue/50'
                   }`}
       data-lang={code}
+      style={{ animationDelay: `${index * 50}ms` }}
     >
       {/* Hidden Radio Input */}
       <input
@@ -311,20 +355,23 @@ function LanguageCard({
         aria-label={t('language.selectLanguageAriaLabel', 'Select {{name}} as your preferred language', { name: englishName })}
       />
 
-      {/* Selected Checkmark */}
-      {isSelected && (
-        <span
-          className="absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue rounded-full flex items-center justify-center"
-          aria-hidden="true"
-        >
-          <CheckIcon />
-        </span>
-      )}
+      {/* Selected Checkmark with animation */}
+      <span
+        className={`absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center
+                   transition-all duration-300 ${isSelected ? 'bg-nhs-blue scale-100 opacity-100' : 'bg-nhs-pale-grey scale-75 opacity-0'}`}
+        aria-hidden="true"
+      >
+        <CheckIcon />
+      </span>
 
-      {/* Language Icon */}
+      {/* Language Icon with hover effect */}
       <div
-        className={`w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-4 flex items-center justify-center rounded-md text-lg sm:text-xl font-bold
-                    ${isSelected ? 'bg-nhs-blue text-white' : 'bg-nhs-pale-grey text-nhs-blue'}`}
+        className={`w-11 h-11 sm:w-12 sm:h-12 mb-3 flex items-center justify-center rounded-lg text-base sm:text-lg font-bold
+                    transition-all duration-300
+                    ${isSelected
+                      ? 'bg-nhs-blue text-white shadow-md scale-105'
+                      : 'bg-nhs-pale-grey/70 text-nhs-blue group-hover:bg-nhs-blue/10'
+                    }`}
         aria-hidden="true"
       >
         {code === 'en' ? <LanguageIcon /> : code.toUpperCase()}
@@ -332,33 +379,33 @@ function LanguageCard({
 
       {/* Native Name */}
       <span
-        className="text-xl sm:text-2xl font-bold text-text-primary mb-1 leading-tight"
+        className="text-lg sm:text-xl font-bold text-text-primary mb-0.5 leading-tight"
         style={{ fontFamily, direction }}
       >
         {nativeName}
       </span>
 
       {/* English Name */}
-      <span className="text-sm sm:text-base text-text-secondary mb-3 sm:mb-4">
+      <span className="text-xs sm:text-sm text-text-secondary mb-2 sm:mb-3">
         {englishName}
       </span>
 
-      {/* Audio Preview Button */}
+      {/* Audio Preview Button - Compact */}
       <button
         type="button"
         onClick={onPlayAudio}
-        className={`inline-flex items-center gap-2 px-3 sm:px-4 py-2 min-h-[44px] text-sm font-medium
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[36px] text-xs sm:text-sm font-medium
                     border rounded-full z-10 relative
-                    transition-colors duration-150
+                    transition-all duration-200
                     focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2
                     ${isPlaying
-                      ? 'bg-nhs-blue text-white border-nhs-blue'
-                      : 'text-nhs-blue border-nhs-blue hover:bg-nhs-blue hover:text-white'
+                      ? 'bg-nhs-blue text-white border-nhs-blue scale-105'
+                      : 'text-nhs-blue border-nhs-blue/50 hover:bg-nhs-blue hover:text-white hover:border-nhs-blue'
                     }`}
         aria-label={t('language.hearPronunciation', 'Hear {{name}} pronunciation', { name: englishName })}
       >
         <AudioIcon />
-        <span>{t('language.listen', 'Listen')}</span>
+        <span>{isPlaying ? t('language.playing', 'Playing...') : t('language.listen', 'Listen')}</span>
       </button>
     </label>
   );
@@ -367,6 +414,26 @@ function LanguageCard({
 // ============================================================================
 // Icon Components
 // ============================================================================
+
+/** Globe icon for language selection header. */
+function GlobeIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
 
 /** Error icon component for displaying error states. */
 function ErrorIcon() {
@@ -408,10 +475,10 @@ function BackIcon() {
   );
 }
 
-function ForwardIcon() {
+function ForwardIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg
-      className="w-5 h-5"
+      className={className}
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden="true"

@@ -170,6 +170,7 @@ const ActivityIcon = ({ type, className = '' }: { type: TimelineActivity['icon']
  * @param {string} props.label - Display label for the section
  * @param {string} props.bgColor - Tailwind background color class
  * @param {string} props.borderColor - Tailwind border color class
+ * @param {string} props.accentColor - Tailwind accent color class
  * @returns {JSX.Element | null} The rendered section or null if empty
  */
 const TimeSection = ({
@@ -178,12 +179,14 @@ const TimeSection = ({
   label,
   bgColor,
   borderColor,
+  accentColor,
 }: {
   timeOfDay: TimeOfDay;
   activities: TimelineActivity[];
   label: string;
   bgColor: string;
   borderColor: string;
+  accentColor: string;
 }) => {
   const { t } = useTranslation();
 
@@ -219,42 +222,74 @@ const TimeSection = ({
   if (activities.length === 0) return null;
 
   return (
-    <div className={`${bgColor} rounded-xl p-4 border ${borderColor}`}>
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-nhs-blue">{getTimeIcon()}</span>
-        <h4 className="font-semibold text-text-primary">{label}</h4>
+    <div className={`${bgColor} rounded-2xl overflow-hidden border ${borderColor} shadow-sm`}>
+      {/* Section header */}
+      <div className={`${accentColor} px-4 py-3 flex items-center gap-2`}>
+        <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center shadow-sm">
+          <span className="text-text-primary">{getTimeIcon()}</span>
+        </div>
+        <div>
+          <h4 className="font-bold text-text-primary text-sm">{label}</h4>
+          <span className="text-xs text-text-secondary">
+            {activities.length} {activities.length === 1 ? t('timeline.activity', 'activity') : t('timeline.activities', 'activities')}
+          </span>
+        </div>
       </div>
-      <div className="space-y-3">
+
+      {/* Activities list */}
+      <div className="p-3 space-y-2">
         {activities.map((activity, index) => (
           <div
             key={index}
-            className={`flex items-start gap-3 p-2 rounded-lg transition-colors ${
+            className={`relative flex items-start gap-3 p-3 rounded-xl transition-all ${
               activity.isTreatmentRelated
-                ? 'bg-nhs-blue/10 border border-nhs-blue/20'
-                : 'bg-white/50'
+                ? 'bg-nhs-blue/10 border-2 border-nhs-blue/30 shadow-sm'
+                : 'bg-white/70 border border-transparent hover:border-nhs-pale-grey'
             }`}
           >
+            {/* Treatment indicator badge */}
+            {activity.isTreatmentRelated && (
+              <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-nhs-blue flex items-center justify-center shadow-sm" aria-label={t('timeline.treatmentActivity', 'Treatment activity')}>
+                <svg className="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+            )}
+
+            {/* Icon */}
             <div
-              className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
+              className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center shadow-sm ${
                 activity.isTreatmentRelated
                   ? 'bg-nhs-blue text-white'
-                  : 'bg-nhs-pale-grey text-text-secondary'
+                  : 'bg-white text-text-secondary border border-nhs-pale-grey'
               }`}
             >
-              <ActivityIcon type={activity.icon} className="w-4 h-4" />
+              <ActivityIcon type={activity.icon} className="w-5 h-5" />
             </div>
+
+            {/* Content */}
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-xs font-medium text-nhs-blue bg-nhs-blue/10 px-2 py-0.5 rounded">
+              <div className="flex items-center gap-2 flex-wrap mb-1">
+                <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
+                  activity.isTreatmentRelated
+                    ? 'bg-nhs-blue text-white'
+                    : 'bg-nhs-blue/10 text-nhs-blue'
+                }`}>
                   {activity.time}
                 </span>
                 {activity.duration && (
-                  <span className="text-xs text-text-muted">
-                    ({activity.duration})
+                  <span className="text-xs text-text-muted flex items-center gap-1">
+                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    {activity.duration}
                   </span>
                 )}
               </div>
-              <p className="text-sm text-text-primary mt-1">{activity.activity}</p>
+              <p className={`text-sm leading-relaxed ${
+                activity.isTreatmentRelated ? 'text-text-primary font-medium' : 'text-text-secondary'
+              }`}>{activity.activity}</p>
             </div>
           </div>
         ))}
@@ -468,15 +503,17 @@ export default function TreatmentTimeline({ treatmentType, compact = false }: Tr
   };
 
   return (
-    <div className={`bg-white rounded-2xl border border-nhs-pale-grey overflow-hidden ${compact ? 'p-4' : 'p-6'}`}>
+    <div className={`bg-white rounded-2xl border border-nhs-pale-grey overflow-hidden shadow-sm ${compact ? 'p-4' : 'p-5 sm:p-6'}`}>
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
         <div>
           <h3 className="text-lg font-bold text-text-primary flex items-center gap-2">
-            <svg className="w-6 h-6 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
+            <div className="w-8 h-8 rounded-lg bg-nhs-blue/10 flex items-center justify-center">
+              <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
             {t('timeline.title', 'A Day in the Life')}
           </h3>
           <p className="text-sm text-text-secondary mt-1">
@@ -484,15 +521,15 @@ export default function TreatmentTimeline({ treatmentType, compact = false }: Tr
           </p>
         </div>
 
-        {/* Day type toggle */}
+        {/* Day type toggle - Enhanced pill style */}
         {showDayToggle && (
-          <div className="flex gap-2">
+          <div className="flex p-1 bg-nhs-pale-grey rounded-xl">
             <button
               onClick={() => setSelectedDay('dialysis')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 ${
+              className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-1 min-h-[44px] ${
                 selectedDay === 'dialysis'
-                  ? 'bg-nhs-blue text-white'
-                  : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-blue/10'
+                  ? 'bg-nhs-blue text-white shadow-md'
+                  : 'text-text-secondary hover:text-text-primary'
               }`}
             >
               {treatmentType === 'hemodialysis'
@@ -501,10 +538,10 @@ export default function TreatmentTimeline({ treatmentType, compact = false }: Tr
             </button>
             <button
               onClick={() => setSelectedDay('regular')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 ${
+              className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-1 min-h-[44px] ${
                 selectedDay === 'regular'
-                  ? 'bg-nhs-blue text-white'
-                  : 'bg-nhs-pale-grey text-text-secondary hover:bg-nhs-blue/10'
+                  ? 'bg-nhs-blue text-white shadow-md'
+                  : 'text-text-secondary hover:text-text-primary'
               }`}
             >
               {treatmentType === 'hemodialysis'
@@ -515,67 +552,88 @@ export default function TreatmentTimeline({ treatmentType, compact = false }: Tr
         )}
       </div>
 
-      {/* Day info badge */}
-      <div className="flex items-center gap-3 mb-6 p-3 bg-nhs-blue/5 rounded-xl border border-nhs-blue/20">
-        <div className="w-10 h-10 bg-nhs-blue/20 rounded-full flex items-center justify-center">
-          <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      {/* Day info badge - Enhanced */}
+      <div className="flex items-center gap-4 mb-6 p-4 bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 rounded-xl border border-nhs-blue/15">
+        <div className="w-12 h-12 bg-nhs-blue/15 rounded-xl flex items-center justify-center">
+          <svg className="w-6 h-6 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
             <line x1="16" y1="2" x2="16" y2="6" />
             <line x1="8" y1="2" x2="8" y2="6" />
             <line x1="3" y1="10" x2="21" y2="10" />
           </svg>
         </div>
-        <div>
-          <p className="font-medium text-text-primary">{getDayLabel()}</p>
+        <div className="flex-1">
+          <p className="font-semibold text-text-primary">{getDayLabel()}</p>
           <p className="text-sm text-text-secondary">
             {t('timeline.treatmentActivities', '{{count}} treatment-related activities', { count: treatmentHours })}
           </p>
         </div>
+        {treatmentHours > 0 && (
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-nhs-blue/20 rounded-full">
+            <svg className="w-4 h-4 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+            <span className="text-xs font-medium text-nhs-blue">{t('timeline.treatmentLabel', 'Treatment')}</span>
+          </div>
+        )}
       </div>
 
-      {/* Timeline grid */}
-      <div className={`grid gap-4 ${compact ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+      {/* Timeline grid - Enhanced with connecting visual */}
+      <div className={`grid gap-4 ${compact ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 xl:grid-cols-4'}`}>
         <TimeSection
           timeOfDay="morning"
           activities={currentSchedule.morning}
           label={t('timeline.morning', 'Morning')}
-          bgColor="bg-amber-50"
-          borderColor="border-amber-200"
+          bgColor="bg-amber-50/50"
+          borderColor="border-amber-200/60"
+          accentColor="bg-gradient-to-r from-amber-100 to-amber-50"
         />
         <TimeSection
           timeOfDay="afternoon"
           activities={currentSchedule.afternoon}
           label={t('timeline.afternoon', 'Afternoon')}
-          bgColor="bg-orange-50"
-          borderColor="border-orange-200"
+          bgColor="bg-orange-50/50"
+          borderColor="border-orange-200/60"
+          accentColor="bg-gradient-to-r from-orange-100 to-orange-50"
         />
         <TimeSection
           timeOfDay="evening"
           activities={currentSchedule.evening}
           label={t('timeline.evening', 'Evening')}
-          bgColor="bg-purple-50"
-          borderColor="border-purple-200"
+          bgColor="bg-purple-50/50"
+          borderColor="border-purple-200/60"
+          accentColor="bg-gradient-to-r from-purple-100 to-purple-50"
         />
         <TimeSection
           timeOfDay="night"
           activities={currentSchedule.night}
           label={t('timeline.night', 'Night')}
-          bgColor="bg-indigo-50"
-          borderColor="border-indigo-200"
+          bgColor="bg-indigo-50/50"
+          borderColor="border-indigo-200/60"
+          accentColor="bg-gradient-to-r from-indigo-100 to-indigo-50"
         />
       </div>
 
-      {/* Legend */}
-      <div className="mt-6 pt-4 border-t border-nhs-pale-grey">
-        <div className="flex flex-wrap gap-4 text-sm">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded bg-nhs-blue/20 border border-nhs-blue/30" />
-            <span className="text-text-secondary">{t('timeline.legend.treatment', 'Treatment-related')}</span>
+      {/* Legend - Enhanced */}
+      <div className="mt-6 pt-5 border-t border-nhs-pale-grey">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-lg bg-nhs-blue/10 border-2 border-nhs-blue/30 flex items-center justify-center">
+                <svg className="w-3 h-3 text-nhs-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <span className="text-text-secondary">{t('timeline.legend.treatment', 'Treatment-related')}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-lg bg-white border border-nhs-pale-grey" />
+              <span className="text-text-secondary">{t('timeline.legend.regular', 'Regular activities')}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded bg-white/50 border border-nhs-pale-grey" />
-            <span className="text-text-secondary">{t('timeline.legend.regular', 'Regular activities')}</span>
-          </div>
+          <p className="text-xs text-text-muted">
+            {t('timeline.disclaimer', 'Times are approximate and may vary')}
+          </p>
         </div>
       </div>
     </div>

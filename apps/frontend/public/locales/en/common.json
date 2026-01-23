@@ -1331,5 +1331,328 @@
   },
   "treatment": {
     "dayInLife": "A Day in the Life"
+  },
+  "decision": {
+    "readiness": {
+      "title": "Decision Readiness",
+      "checklistTitle": "Your Exploration Checklist",
+      "viewSummary": "View Your Summary",
+      "level": {
+        "starting": "Starting",
+        "exploring": "Exploring",
+        "preparing": "Preparing",
+        "ready": "Ready"
+      },
+      "encouragement": {
+        "starting": "You are at the beginning of your exploration. Take your time to learn about each treatment option.",
+        "exploring": "Good progress! Continue exploring to build a clearer picture of your options.",
+        "preparing": "You are well on your way. Consider completing the values exercise to clarify your priorities.",
+        "ready": "You have explored thoroughly. You are well-prepared to discuss options with your kidney team."
+      },
+      "checklist": {
+        "treatmentsExplored": "Explored at least 2 treatments",
+        "treatmentsExploredDesc": "Learn about different treatment options available to you",
+        "allTreatments": "Reviewed all treatment options",
+        "allTreatmentsDesc": "Understand the full range of choices",
+        "valuesCompleted": "Completed values exercise",
+        "valuesCompletedDesc": "Clarify what matters most to you",
+        "comparisonViewed": "Compared treatments",
+        "comparisonViewedDesc": "See how treatments differ on key factors",
+        "questionsPrepared": "Asked questions",
+        "questionsPreparedDesc": "Used the chat to explore your queries",
+        "journeyIdentified": "Identified your journey stage",
+        "journeyIdentifiedDesc": "Understand where you are in your kidney care journey"
+      }
+    },
+    "questions": {
+      "title": "Questions for Your Kidney Team",
+      "subtitle": "Based on your exploration, here are personalized questions you might want to ask at your next appointment.",
+      "instructions": "Select the questions you want to remember to ask.",
+      "selected": "selected",
+      "copy": "Copy to clipboard",
+      "copied": "Copied!",
+      "print": "Print questions",
+      "addCustom": "Add your own question",
+      "customPlaceholder": "Type your question here...",
+      "customLabel": "Your question",
+      "viewAll": "View all {{count}} questions",
+      "categories": {
+        "all": "All",
+        "general": "General",
+        "treatment": "Treatment",
+        "lifestyle": "Lifestyle",
+        "support": "Support"
+      },
+      "reasons": {
+        "everyoneAsks": "A common question many people ask",
+        "planAhead": "Helps you plan ahead",
+        "knowYourTeam": "Know who can help you",
+        "understandDiagnosis": "Understand your diagnosis better",
+        "stayInformed": "Stay informed about your condition",
+        "preserveFunction": "Learn how to preserve kidney function",
+        "bePrepared": "Be prepared for what comes next",
+        "informedChoice": "Make a more informed choice",
+        "flexibility": "Understand your flexibility",
+        "optimizeOutcome": "Optimize your outcome",
+        "knowExpectations": "Know what to expect",
+        "supportEffectively": "Support your loved one effectively",
+        "lookAfterYourself": "Look after yourself too",
+        "basedOnValues": "Based on what you said matters to you",
+        "maintainHealth": "Maintain your kidney health long-term",
+        "qualityOfLife": "Improve your quality of life"
+      },
+      "general": {
+        "suitability": "Which treatment options are most suitable for my specific situation?",
+        "timeline": "What is the likely timeline for when I will need to start treatment?",
+        "support": "Who can I contact if I have questions between appointments?"
+      },
+      "stage": {
+        "newlyDiagnosed": {
+          "tests": "What tests do I need to fully understand my kidney function?",
+          "next": "What happens next in my care?"
+        },
+        "monitoring": {
+          "slowDown": "What can I do to slow down kidney disease progression?",
+          "frequency": "How often will my kidney function be monitored?"
+        },
+        "preparing": {
+          "timing": "When should I expect to need treatment?",
+          "comparison": "Can you help me understand the key differences between my options?"
+        },
+        "onDialysis": {
+          "optimizing": "How can I optimize my health while on dialysis?",
+          "changes": "If I want to change my type of dialysis, what are my options?"
+        },
+        "transplantWaiting": {
+          "waitTime": "What is the typical wait time for a transplant in my area?",
+          "preparation": "How can I best prepare for surgery?"
+        },
+        "postTransplant": {
+          "care": "What follow-up care will I need after my transplant?",
+          "lifestyle": "What lifestyle changes should I make to protect my new kidney?"
+        },
+        "supporting": {
+          "helpHow": "How can I best support my loved one through treatment?",
+          "carerSupport": "What support is available for carers like me?"
+        }
+      },
+      "treatment": {
+        "transplant": {
+          "eligibility": "Am I eligible for a kidney transplant?",
+          "livingDonor": "Could a family member or friend donate a kidney to me?",
+          "recovery": "What is the recovery time after transplant surgery?"
+        },
+        "hemodialysis": {
+          "schedule": "What dialysis schedules are available?",
+          "home": "Is home haemodialysis an option for me?",
+          "access": "What type of dialysis access would be best for me?"
+        },
+        "peritoneal": {
+          "suitable": "Is peritoneal dialysis suitable for my situation?",
+          "training": "How long is the training for peritoneal dialysis?",
+          "lifestyle": "How will PD affect my daily routine?"
+        },
+        "conservative": {
+          "symptoms": "How will my symptoms be managed?",
+          "support": "What support services are available for conservative care?",
+          "planning": "What advance care planning should I consider?"
+        }
+      },
+      "values": {
+        "travel": "How much flexibility will I have to travel with each treatment?",
+        "hospitalTime": "How much time will I need to spend in hospital with each option?",
+        "independence": "Which treatment will allow me to maintain the most independence?",
+        "familyBurden": "How can I minimize the impact on my family with each treatment?",
+        "longevity": "What are the survival statistics for each treatment option?",
+        "qualityOfLife": "Which treatment offers the best quality of life?",
+        "homeTreatment": "Can I do my treatment at home?",
+        "workActivities": "Which treatment will best allow me to continue working?"
+      }
+    },
+    "journal": {
+      "title": "Decision Journal",
+      "subtitle": "Record your thoughts, concerns, and questions as you explore your options.",
+      "whatOnMind": "What's on your mind?",
+      "placeholder": "Write your thoughts here...",
+      "addEntry": "Add Entry",
+      "entryCount": "{{count}} entries",
+      "noEntries": "Record your thoughts",
+      "moreEntries": "+{{count}} more entries",
+      "relatedTreatment": "Related to a specific treatment? (optional)",
+      "allTreatments": "No specific treatment",
+      "resolve": "Mark as resolved",
+      "unresolve": "Mark as unresolved",
+      "printEntries": "Print journal entries",
+      "showResolved": "Show resolved",
+      "empty": "Start recording your thoughts and concerns.",
+      "noMatching": "No entries match your filter.",
+      "categories": {
+        "thought": "Thought",
+        "concern": "Concern",
+        "question": "Question",
+        "positive": "Positive"
+      },
+      "filter": {
+        "all": "All"
+      },
+      "stats": {
+        "total": "entries",
+        "concerns": "active concerns",
+        "resolved": "resolved"
+      }
+    },
+    "stats": {
+      "title": "What Others in Similar Situations Chose",
+      "titleShort": "What Others Choose",
+      "subtitle": "You are not alone in making this decision. Here is what others with similar situations chose.",
+      "basedOnSimilar": "Based on similar journeys",
+      "chose": "chose",
+      "commonReasons": "Common reasons:",
+      "satisfactionLabel": "Satisfaction score (out of 5)",
+      "importantNote": "Important to remember",
+      "disclaimer": "These figures are illustrative and based on anonymized NHS data. Your choice should be based on your individual circumstances and discussions with your kidney team.",
+      "encouragement1": "Remember:",
+      "encouragement2": "There is no wrong choice. The best treatment is the one that works for your life and circumstances.",
+      "treatments": {
+        "monitoring": "Continue monitoring",
+        "lifestyle": "Lifestyle changes",
+        "immediate": "Discuss treatment options",
+        "transplantPrep": "Early transplant preparation",
+        "livingDonor": "Living donor transplant",
+        "deceasedDonor": "Deceased donor transplant",
+        "homeHemo": "Home haemodialysis",
+        "activeMonitoring": "Active monitoring with care team",
+        "lifestyleFocused": "Lifestyle-focused management"
+      },
+      "reasons": {
+        "monitoring": {
+          "1": "Want to preserve kidney function as long as possible",
+          "2": "Not ready to start treatment yet"
+        },
+        "lifestyle": {
+          "1": "Prefer to try non-medical approaches first",
+          "2": "Want to feel in control of my health"
+        },
+        "immediate": {
+          "1": "Want to be prepared and informed early"
+        },
+        "transplantPrep": {
+          "1": "Want the best long-term outcome"
+        },
+        "transplant": {
+          "1": "Best quality of life and independence",
+          "2": "Fewer dietary restrictions",
+          "3": "No regular dialysis sessions"
+        },
+        "hemodialysis": {
+          "1": "Prefer treatment done by professionals",
+          "2": "Regular contact with healthcare team",
+          "3": "No home setup required"
+        },
+        "peritoneal": {
+          "1": "More flexibility and independence",
+          "2": "Prefer treatment at home"
+        },
+        "conservative": {
+          "1": "Focus on quality of life over medical intervention"
+        },
+        "livingDonor": {
+          "1": "Shorter wait time and better match"
+        },
+        "deceasedDonor": {
+          "1": "No suitable living donor available"
+        },
+        "homeHemo": {
+          "1": "Maximum flexibility with dialysis"
+        },
+        "activeMonitoring": {
+          "1": "Regular check-ups to catch any issues early",
+          "2": "Ensure long-term health of the transplant"
+        },
+        "lifestyleFocused": {
+          "1": "Maintain healthy habits for kidney longevity"
+        }
+      }
+    },
+    "family": {
+      "title": "Discuss with Your Support Network",
+      "titleShort": "Talk to Your Support Network",
+      "subtitle": "Involving your loved ones can help you feel supported and make a more confident decision. Here are some conversation starters.",
+      "cardSubtitle": "Get conversation starters",
+      "cardDescription": "Including your loved ones in your decision can provide valuable support and perspective.",
+      "compactSubtitle": "Select who you want to talk to for conversation ideas.",
+      "viewPrompts": "View conversation prompts",
+      "selectRole": "Who would you like to talk to?",
+      "talkingTo": "Talking to your",
+      "whyTitle": "Why involve others in your decision?",
+      "why": {
+        "perspective": "They can offer different perspectives you might not have considered",
+        "support": "They can provide emotional support during a difficult time",
+        "practical": "They may need to help with practical aspects of treatment",
+        "emotional": "Talking helps process emotions and reduce anxiety"
+      },
+      "tipsTitle": "Tips for a good conversation",
+      "tips": {
+        "timing": "Choose a quiet time when you will not be interrupted",
+        "listen": "Listen to their concerns as well as sharing yours",
+        "emotions": "It is okay for everyone to feel emotional - this is normal",
+        "professional": "Consider involving a healthcare professional if helpful",
+        "revisit": "You do not have to decide everything in one conversation"
+      },
+      "remember": "Remember:",
+      "encouragement": "It is okay to take your time and have multiple conversations. Your loved ones want to support you.",
+      "roles": {
+        "partner": "Partner",
+        "partnerDesc": "Your partner will be affected by your treatment choice and can be a key source of support.",
+        "children": "Children",
+        "childrenDesc": "Children of all ages may have questions and need reassurance about what is happening.",
+        "parents": "Parents",
+        "parentsDesc": "Your parents may want to help and may have questions about how to support you.",
+        "friends": "Friends",
+        "friendsDesc": "Good friends can provide practical help and emotional support.",
+        "employer": "Employer",
+        "employerDesc": "You may need to discuss work adjustments and time off for treatment."
+      },
+      "categories": {
+        "general": "Starting the conversation",
+        "feelings": "Talking about feelings",
+        "practical": "Practical matters",
+        "support": "Getting support"
+      },
+      "prompts": {
+        "partner": {
+          "daily": "How do you think this might change our daily routine?",
+          "support": "What kind of support do you think you could offer?",
+          "feelings": "How are you feeling about all of this?",
+          "future": "What are your hopes for our future together?",
+          "together": "I want us to make this decision together - what are your thoughts?"
+        },
+        "children": {
+          "explain": "I have something important to tell you about my health...",
+          "feelings": "How do you feel about what I have told you?",
+          "routine": "Some things might change a bit at home, but I want you to know...",
+          "questions": "Do you have any questions? There are no silly questions.",
+          "help": "There are small ways you could help that would mean a lot to me..."
+        },
+        "parents": {
+          "update": "I wanted to update you on what is happening with my kidneys...",
+          "concerns": "I know you might be worried, so I wanted to talk to you directly.",
+          "involvement": "I would like you to be involved in this decision...",
+          "donor": "There is something called living donor transplant that I wanted to discuss..."
+        },
+        "friends": {
+          "share": "I have been dealing with some health stuff I wanted to share with you...",
+          "support": "It would really help to have someone to talk to about this.",
+          "social": "I might need to adjust some of our usual plans, but I still want to see you.",
+          "listen": "I do not need advice right now, I just need someone to listen."
+        },
+        "employer": {
+          "inform": "I need to let you know about a health condition that may affect my work...",
+          "adjustments": "I may need some adjustments to my schedule or working arrangements.",
+          "appointments": "I will need time off for medical appointments.",
+          "rights": "Can we discuss what support and adjustments are available to me?"
+        }
+      }
+    }
   }
 }

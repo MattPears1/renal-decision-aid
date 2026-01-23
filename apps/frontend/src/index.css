@@ -388,6 +388,15 @@
     }
   }
 
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
   .skeleton {
     @apply bg-nhs-pale-grey rounded animate-pulse;
   }
@@ -989,28 +998,41 @@ body {
   /* Base print styles */
   body {
     @apply bg-white text-black;
-    font-size: 12pt;
-    line-height: 1.5;
+    font-size: 11pt;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif !important;
   }
 
   /* Hide non-essential elements */
   .no-print,
   .print\\:hidden,
-  header,
-  footer,
-  nav,
+  header:not(.print-header),
+  footer:not(.print-footer),
+  nav:not(.print-nav),
   .skip-link,
-  button:not([type="submit"]),
-  [role="banner"],
-  [role="contentinfo"],
-  .fixed,
-  .sticky {
+  button:not(.print-button),
+  [role="banner"]:not(.print-header),
+  [role="contentinfo"]:not(.print-footer),
+  .fixed:not(.print-fixed),
+  .sticky,
+  input,
+  textarea,
+  .back-to-top,
+  .bottom-bar {
     display: none !important;
   }
 
   /* Show elements only for print */
   .print\\:block {
     display: block !important;
+  }
+
+  .print\\:flex {
+    display: flex !important;
+  }
+
+  .print\\:grid {
+    display: grid !important;
   }
 
   /* Ensure content is visible */
@@ -1020,19 +1042,24 @@ body {
     max-width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
+    background: white !important;
   }
 
-  /* Link URLs */
-  a[href]::after {
+  /* Link URLs - only show for external links in body content */
+  a[href^="http"]::after {
     content: " (" attr(href) ")";
-    font-size: 0.8em;
+    font-size: 0.75em;
     color: #666;
+    word-break: break-all;
   }
 
-  /* Don't show URLs for internal links */
+  /* Don't show URLs for internal or navigation links */
   a[href^="#"]::after,
-  a[href^="javascript"]::after {
-    content: "";
+  a[href^="/"]::after,
+  a[href^="javascript"]::after,
+  nav a::after,
+  .print-no-url::after {
+    content: "" !important;
   }
 
   /* Page breaks */
@@ -1041,8 +1068,23 @@ body {
     page-break-inside: avoid;
   }
 
-  img, figure, table {
+  img, figure, table, .print-keep-together {
     page-break-inside: avoid;
+  }
+
+  /* Force page break before specific sections */
+  .print-page-break-before {
+    page-break-before: always;
+  }
+
+  .print-page-break-after {
+    page-break-after: always;
+  }
+
+  /* Avoid orphans and widows */
+  p, li {
+    orphans: 3;
+    widows: 3;
   }
 
   /* Ensure colors print correctly */
@@ -1051,25 +1093,193 @@ body {
     print-color-adjust: exact !important;
   }
 
-  /* Borders for cards */
+  /* Cards and sections - clean borders */
   .card,
-  [class*="rounded"],
-  [class*="border"] {
-    border: 1px solid #ccc !important;
+  section[class*="rounded"],
+  div[class*="rounded-xl"],
+  div[class*="rounded-2xl"] {
+    border: 1pt solid #d1d5db !important;
+    border-radius: 8pt !important;
+    background: white !important;
   }
 
-  /* Remove shadows */
+  /* Remove shadows and gradients */
   [class*="shadow"] {
     box-shadow: none !important;
   }
 
+  [class*="bg-gradient"] {
+    background: white !important;
+  }
+
   /* Print header/footer margins */
   @page {
-    margin: 2cm 1.5cm;
+    margin: 1.5cm 1.5cm 2cm 1.5cm;
+    size: A4 portrait;
   }
 
   @page :first {
     margin-top: 1cm;
+  }
+
+  /* NHS Branding in print */
+  .print-nhs-header {
+    border-bottom: 3pt solid #005EB8 !important;
+    padding-bottom: 12pt !important;
+    margin-bottom: 16pt !important;
+  }
+
+  .print-nhs-footer {
+    border-top: 1pt solid #d1d5db !important;
+    padding-top: 12pt !important;
+    margin-top: 16pt !important;
+    font-size: 9pt;
+    color: #666 !important;
+  }
+
+  /* Summary page specific print styles */
+  .summary-section {
+    margin-bottom: 16pt !important;
+    page-break-inside: avoid;
+  }
+
+  .summary-section-header {
+    background: #f3f4f6 !important;
+    padding: 8pt 12pt !important;
+    border-bottom: 2pt solid #005EB8 !important;
+    font-weight: bold !important;
+  }
+
+  /* Value bars in print */
+  .print-value-bar {
+    height: 8pt !important;
+    background: #e5e7eb !important;
+    border-radius: 4pt !important;
+    overflow: hidden;
+  }
+
+  .print-value-bar-fill {
+    height: 100% !important;
+    background: #005EB8 !important;
+  }
+
+  /* Treatment cards in print */
+  .print-treatment-card {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8pt !important;
+    border: 1pt solid #d1d5db !important;
+    border-radius: 4pt !important;
+    margin-bottom: 6pt !important;
+  }
+
+  /* Questions list in print */
+  .print-question-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 6pt 0 !important;
+    border-bottom: 0.5pt solid #e5e7eb !important;
+  }
+
+  .print-question-item:last-child {
+    border-bottom: none !important;
+  }
+
+  /* QR Code print styles */
+  .print-qr-section {
+    text-align: center !important;
+    padding: 12pt !important;
+    border: 1pt dashed #d1d5db !important;
+    border-radius: 8pt !important;
+    background: #f9fafb !important;
+    page-break-inside: avoid;
+  }
+
+  .print-qr-code {
+    width: 100pt !important;
+    height: 100pt !important;
+    margin: 0 auto 8pt auto !important;
+  }
+
+  /* Progress indicators in print */
+  .print-progress-indicator {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4pt !important;
+    padding: 4pt 8pt !important;
+    background: #f3f4f6 !important;
+    border-radius: 4pt !important;
+    font-size: 9pt !important;
+  }
+
+  /* Lists in print */
+  ul, ol {
+    padding-left: 16pt !important;
+    margin: 8pt 0 !important;
+  }
+
+  li {
+    margin-bottom: 4pt !important;
+  }
+
+  /* Disclaimer and privacy boxes in print */
+  .print-info-box {
+    padding: 10pt !important;
+    border-left: 3pt solid #005EB8 !important;
+    background: #f0f4f5 !important;
+    margin: 12pt 0 !important;
+    font-size: 10pt !important;
+  }
+
+  .print-warning-box {
+    padding: 10pt !important;
+    border-left: 3pt solid #FFB81C !important;
+    background: #fff7e6 !important;
+    margin: 12pt 0 !important;
+    font-size: 10pt !important;
+  }
+
+  /* Two-column layout for print */
+  .print-two-column {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16pt !important;
+  }
+
+  /* Compact mode for fitting more content */
+  .print-compact * {
+    margin-bottom: 4pt !important;
+  }
+
+  .print-compact p {
+    margin-bottom: 6pt !important;
+  }
+
+  /* Ensure icons print well */
+  svg {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Badge styles in print */
+  .print-badge {
+    display: inline-block !important;
+    padding: 2pt 6pt !important;
+    background: #e5e7eb !important;
+    border-radius: 3pt !important;
+    font-size: 8pt !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+  }
+
+  .print-badge-success {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+  }
+
+  .print-badge-primary {
+    background: #dbeafe !important;
+    color: #1e40af !important;
   }
 }
 
@@ -1163,4 +1373,518 @@ body {
 
 .btn-interactive:active::after {
   opacity: 0.2;
+}
+
+/* ==========================================================================
+   Enhanced Scroll Containers for Mobile (Comparison Tables)
+   ========================================================================== */
+
+/* Smooth horizontal scroll with custom scrollbar */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: var(--nhs-pale-grey);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--nhs-mid-grey);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--nhs-blue);
+}
+
+/* Scroll snap for card grids on mobile */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 16px;
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* ==========================================================================
+   Table Accessibility Enhancements (Compare Page)
+   ========================================================================== */
+
+/* Sticky table header with better visual separation */
+.table-header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: inherit;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Table row hover with keyboard focus support */
+.table-row-interactive {
+  @apply transition-colors duration-150;
+}
+
+.table-row-interactive:hover,
+.table-row-interactive:focus-within {
+  @apply bg-nhs-blue/5;
+}
+
+/* Sticky first column for comparison tables */
+.table-cell-sticky {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: inherit;
+}
+
+/* ==========================================================================
+   Loading and Animation Enhancements
+   ========================================================================== */
+
+/* Fade in animation for chat messages and cards */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Slide in from left (for assistant messages) */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Slide in from right (for user messages) */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scale in animation for buttons and interactive elements */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Typing dots animation */
+@keyframes typing-dot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+.typing-dot {
+  animation: typing-dot 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Recording pulse animation */
+@keyframes recording-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(218, 41, 28, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(218, 41, 28, 0);
+  }
+}
+
+.animate-recording-pulse {
+  animation: recording-pulse 1.5s ease-in-out infinite;
+}
+
+/* Audio wave animation */
+@keyframes audio-wave {
+  0%, 100% {
+    height: 15%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.audio-wave-bar {
+  animation: audio-wave 0.8s ease-in-out infinite;
+}
+
+.audio-wave-bar:nth-child(1) { animation-delay: 0s; }
+.audio-wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.audio-wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.audio-wave-bar:nth-child(4) { animation-delay: 0.3s; }
+.audio-wave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* Value selection pop animation */
+@keyframes value-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-value-pop {
+  animation: value-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Progress fill animation */
+@keyframes progress-fill {
+  from {
+    width: 0;
+  }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger children animations */
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 350ms; }
+.stagger-children > *:nth-child(9) { animation-delay: 400ms; }
+.stagger-children > *:nth-child(10) { animation-delay: 450ms; }
+
+/* Slow pulse for status indicators */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Subtle pulse for badges (Best Fit indicator) */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Chat Message Styles
+   ========================================================================== */
+
+/* Chat bubble tail effect */
+.chat-bubble-assistant {
+  position: relative;
+}
+
+.chat-bubble-assistant::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-left: inherit;
+  border-bottom: inherit;
+  border-radius: 0 0 0 4px;
+  transform: rotate(45deg);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.chat-bubble-user {
+  position: relative;
+}
+
+.chat-bubble-user::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-radius: 0 0 4px 0;
+  transform: rotate(-45deg);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+/* ==========================================================================
+   Values Slider Styles
+   ========================================================================== */
+
+/* Custom rating slider track */
+.rating-track {
+  position: relative;
+  height: 4px;
+  background: linear-gradient(90deg, var(--nhs-pale-grey) 0%, var(--nhs-pink) 100%);
+  border-radius: 2px;
+}
+
+/* Rating option with hover lift effect */
+.rating-option {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease;
+}
+
+.rating-option:hover:not(.rating-option-selected) {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.rating-option:active {
+  transform: scale(0.95);
+}
+
+.rating-option-selected {
+  transform: scale(1.1);
+}
+
+/* Touch ripple effect */
+@keyframes touch-ripple {
+  from {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.touch-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  pointer-events: none;
+  animation: touch-ripple 0.5s ease-out forwards;
+}
+
+/* ==========================================================================
+   Improved Form Field Accessibility
+   ========================================================================== */
+
+/* Form group with clear visual hierarchy */
+.form-group {
+  @apply mb-6;
+}
+
+.form-group:last-child {
+  @apply mb-0;
+}
+
+/* Enhanced radio/checkbox cards for touch */
+.radio-card,
+.checkbox-card {
+  @apply relative flex items-start gap-3 p-4
+         bg-white border-2 border-nhs-pale-grey rounded-lg
+         cursor-pointer transition-all duration-200
+         min-h-[56px];
+}
+
+.radio-card:hover,
+.checkbox-card:hover {
+  @apply border-nhs-blue bg-nhs-blue/5;
+}
+
+.radio-card:has(input:checked),
+.checkbox-card:has(input:checked) {
+  @apply border-nhs-blue bg-[#E6F0FA] ring-2 ring-nhs-blue/30;
+}
+
+.radio-card:has(input:focus-visible),
+.checkbox-card:has(input:focus-visible) {
+  @apply ring-[3px] ring-focus ring-offset-2;
+}
+
+/* ==========================================================================
+   Mobile Bottom Navigation Enhancement
+   ========================================================================== */
+
+/* Fixed bottom bar with safe area support */
+.bottom-bar {
+  @apply fixed bottom-0 left-0 right-0 z-50
+         bg-white/95 backdrop-blur-sm
+         border-t border-nhs-pale-grey
+         shadow-[0_-4px_12px_rgba(0,0,0,0.1)];
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* ==========================================================================
+   Card Component Polish
+   ========================================================================== */
+
+/* Interactive card with refined hover state */
+.card-hover {
+  @apply transition-all duration-300 ease-out;
+}
+
+.card-hover:hover {
+  @apply shadow-xl -translate-y-1;
+}
+
+/* Card with gradient overlay for hero sections */
+.card-gradient-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-gradient-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Scroll Hint Indicator (for horizontal scroll)
+   ========================================================================== */
+
+.scroll-hint {
+  position: relative;
+}
+
+.scroll-hint::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-hint.scrolled-end::after {
+  opacity: 0;
+}
+
+/* ==========================================================================
+   Focus Management for Modals and Dialogs
+   ========================================================================== */
+
+/* Trap focus within modal */
+.focus-trap {
+  @apply isolate;
+}
+
+/* Restore focus indicator when returning from modal */
+.focus-return:focus-visible {
+  @apply ring-[3px] ring-focus ring-offset-2 outline-none;
+}
+
+/* ==========================================================================
+   Screen Reader Only (Enhanced)
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }

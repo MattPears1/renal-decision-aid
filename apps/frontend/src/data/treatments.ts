@@ -10,6 +10,8 @@ export interface TreatmentInfo {
   titleKey: string;
   shortDescriptionKey: string;
   descriptionKey: string;
+  /** Optional key for a simpler plain-language explanation */
+  simpleExplanationKey?: string;
   benefitsKeys: string[];
   considerationsKeys: string[];
   iconPath: string;
@@ -23,6 +25,7 @@ export const TREATMENTS: TreatmentInfo[] = [
     titleKey: 'treatments.types.transplant.title',
     shortDescriptionKey: 'treatments.types.transplant.shortDescription',
     descriptionKey: 'treatments.types.transplant.description',
+    simpleExplanationKey: 'treatments.types.transplant.simpleExplanation',
     benefitsKeys: [
       'treatments.types.transplant.benefits.0',
       'treatments.types.transplant.benefits.1',
@@ -44,6 +47,7 @@ export const TREATMENTS: TreatmentInfo[] = [
     titleKey: 'treatments.types.hemodialysis.title',
     shortDescriptionKey: 'treatments.types.hemodialysis.shortDescription',
     descriptionKey: 'treatments.types.hemodialysis.description',
+    simpleExplanationKey: 'treatments.types.hemodialysis.simpleExplanation',
     benefitsKeys: [
       'treatments.types.hemodialysis.benefits.0',
       'treatments.types.hemodialysis.benefits.1',
@@ -65,6 +69,7 @@ export const TREATMENTS: TreatmentInfo[] = [
     titleKey: 'treatments.types.peritonealDialysis.title',
     shortDescriptionKey: 'treatments.types.peritonealDialysis.shortDescription',
     descriptionKey: 'treatments.types.peritonealDialysis.description',
+    simpleExplanationKey: 'treatments.types.peritonealDialysis.simpleExplanation',
     benefitsKeys: [
       'treatments.types.peritonealDialysis.benefits.0',
       'treatments.types.peritonealDialysis.benefits.1',
@@ -86,6 +91,7 @@ export const TREATMENTS: TreatmentInfo[] = [
     titleKey: 'treatments.types.conservative.title',
     shortDescriptionKey: 'treatments.types.conservative.shortDescription',
     descriptionKey: 'treatments.types.conservative.description',
+    simpleExplanationKey: 'treatments.types.conservative.simpleExplanation',
     benefitsKeys: [
       'treatments.types.conservative.benefits.0',
       'treatments.types.conservative.benefits.1',

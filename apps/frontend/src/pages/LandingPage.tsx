@@ -4,9 +4,9 @@
  * with key features, trust indicators, and call-to-action sections.
  *
  * @module pages/LandingPage
- * @version 2.5.0
+ * @version 2.6.0
  * @since 1.0.0
- * @lastModified 21 January 2026
+ * @lastModified 23 January 2026
  *
  * @requires react-router-dom
  * @requires react-i18next
@@ -14,6 +14,7 @@
 
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 /**
  * Landing page component displaying the welcome screen and tool introduction.
@@ -29,89 +30,128 @@ import { useTranslation } from 'react-i18next';
  */
 export default function LandingPage() {
   const { t } = useTranslation();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger entrance animations after mount
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      {/* Hero Section - More impactful with animated elements */}
+      {/* Hero Section - Enhanced with staggered animations */}
       <section
         className="relative bg-gradient-to-br from-nhs-blue via-nhs-blue to-nhs-blue-dark text-white py-16 md:py-24 lg:py-32 px-4 overflow-hidden"
         aria-label={t('landing.heroAriaLabel', 'Welcome section')}
       >
-        {/* Decorative background elements */}
+        {/* Decorative background elements with subtle animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-nhs-blue-bright/10 rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-nhs-aqua-green/10 rounded-full blur-2xl animate-pulse-slow" />
+          {/* Additional decorative element */}
+          <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-white/5 rounded-full blur-2xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
         </div>
 
         <div className="relative max-w-[900px] mx-auto text-center">
-          {/* NHS Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
-            <span className="w-2 h-2 bg-nhs-green rounded-full animate-pulse" />
+          {/* NHS Badge - Animated entrance */}
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 md:mb-8 border border-white/20
+                       transform transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+          >
+            <span className="w-2 h-2 bg-nhs-green rounded-full animate-pulse" aria-hidden="true" />
             <span className="text-sm font-medium text-white/90">{t('landing.subtitle', 'NHS Renal Services')}</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight">
+          {/* Main heading - Staggered animation */}
+          <h1
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white leading-tight tracking-tight
+                       transform transition-all duration-700 ease-out delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
             {t('landing.title', 'Kidney Treatment Decision Aid')}
           </h1>
 
-          <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-[650px] mx-auto text-white/90">
+          {/* Description - Staggered animation */}
+          <p
+            className={`text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-10 max-w-[650px] mx-auto text-white/90 px-2
+                       transform transition-all duration-700 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
             {t('landing.description', 'This tool will help you understand your kidney treatment options and think about what matters most to you. Take your time - there are no right or wrong answers.')}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Primary CTA - Staggered animation with enhanced styling */}
+          <div
+            className={`flex flex-col sm:flex-row items-center justify-center gap-4
+                       transform transition-all duration-700 ease-out delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
             <Link
               to="/language"
-              className="group inline-flex items-center justify-center gap-3 px-10 py-5
-                         text-lg font-bold bg-white text-nhs-blue
-                         rounded-xl min-h-[60px] shadow-xl
-                         no-underline transition-all duration-300
-                         hover:bg-nhs-green hover:text-white hover:shadow-2xl hover:scale-105
-                         focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-4 focus:ring-offset-nhs-blue"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5
+                         text-base sm:text-lg font-bold bg-white text-nhs-blue
+                         rounded-xl min-h-[56px] sm:min-h-[60px] shadow-xl w-full sm:w-auto
+                         no-underline transition-all duration-300 ease-out
+                         hover:bg-nhs-green hover:text-white hover:shadow-2xl hover:scale-[1.02]
+                         focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-4 focus:ring-offset-nhs-blue
+                         active:scale-[0.98]"
               aria-label={t('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
             >
-              {t('landing.startButton', 'Start Your Journey')}
-              <ArrowRightIcon className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <span>{t('landing.startButton', 'Start Your Journey')}</span>
+              <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
-          {/* Trust indicators below CTA */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-white/80">
-            <div className="flex items-center gap-2">
-              <ShieldCheckIcon className="w-5 h-5" />
-              <span>{t('landing.trust.evidenceBased')}</span>
+          {/* Trust indicators - Staggered animation with improved layout */}
+          <div
+            className={`mt-10 md:mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-white/90
+                       transform transition-all duration-700 ease-out delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full backdrop-blur-sm">
+              <ShieldCheckIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-green" />
+              <span className="font-medium">{t('landing.trust.evidenceBased', 'Evidence-based')}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <ClockSmallIcon className="w-5 h-5" />
-              <span>{t('landing.trust.time', '15 minutes')}</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full backdrop-blur-sm">
+              <ClockSmallIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="font-medium">{t('landing.trust.time', '15 minutes')}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <LockSmallIcon className="w-5 h-5" />
-              <span>{t('landing.trust.privateSecure', 'Private & Secure')}</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full backdrop-blur-sm">
+              <LockSmallIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="font-medium">{t('landing.trust.privateSecure', 'Private & Secure')}</span>
             </div>
           </div>
         </div>
+
+        {/* Scroll indicator for mobile */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/60 animate-bounce" aria-hidden="true">
+          <span className="text-xs font-medium">{t('landing.scrollDown', 'Scroll to learn more')}</span>
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
       </section>
 
-      {/* Key Features Section - Enhanced cards */}
+      {/* Key Features Section - Enhanced with better visual hierarchy */}
       <section
-        className="bg-bg-surface py-16 md:py-24 px-4"
+        className="bg-bg-surface py-12 md:py-20 lg:py-24 px-4"
         aria-labelledby="features-heading"
       >
         <div className="max-w-container-lg mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-block px-3 py-1 bg-nhs-blue/10 text-nhs-blue text-sm font-semibold rounded-full mb-4">
+              {t('landing.featuresLabel', 'How It Works')}
+            </span>
             <h2
               id="features-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 md:mb-4"
             >
               {t('landing.featuresHeading', 'How This Tool Helps You')}
             </h2>
-            <p className="text-text-secondary max-w-xl mx-auto">
+            <p className="text-text-secondary max-w-xl mx-auto text-base md:text-lg">
               {t('landing.featuresSubheading', 'Everything you need to make an informed decision about your kidney treatment')}
             </p>
           </div>
           <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             role="list"
           >
             {/* Feature 1: Time */}
@@ -120,6 +160,7 @@ export default function LandingPage() {
               title={t('landing.features.time.title', 'Takes About 15 Minutes')}
               description={t('landing.features.time.description', 'Complete at your own pace. You can take breaks whenever you need and return to where you left off.')}
               color="blue"
+              index={0}
             />
 
             {/* Feature 2: Privacy */}
@@ -128,6 +169,7 @@ export default function LandingPage() {
               title={t('landing.features.privacy.title', 'Your Privacy Protected')}
               description={t('landing.features.privacy.description', 'No personal information is stored. Your answers help personalise the tool during this session only.')}
               color="green"
+              index={1}
             />
 
             {/* Feature 3: Device Support */}
@@ -136,53 +178,69 @@ export default function LandingPage() {
               title={t('landing.features.devices.title', 'Works on All Devices')}
               description={t('landing.features.devices.description', 'Use on your phone, tablet, or computer. The tool adapts to your screen size automatically.')}
               color="aqua"
+              index={2}
             />
           </div>
         </div>
       </section>
 
-      {/* About Section - Improved with visual structure */}
+      {/* About Section - Redesigned with connected steps */}
       <section
-        className="bg-gradient-to-b from-bg-page to-bg-surface py-16 md:py-24 px-4"
+        className="bg-gradient-to-b from-bg-page to-bg-surface py-12 md:py-20 lg:py-24 px-4"
         aria-labelledby="about-heading"
       >
         <div className="max-w-[900px] mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-block px-3 py-1 bg-nhs-green/10 text-nhs-green text-sm font-semibold rounded-full mb-4">
+              {t('landing.yourJourney', 'Your Journey')}
+            </span>
             <h2
               id="about-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 md:mb-4"
             >
               {t('landing.aboutHeading', 'What This Tool Does')}
             </h2>
+            <p className="text-text-secondary max-w-lg mx-auto">
+              {t('landing.aboutSubheading', 'Three simple steps to help you understand your options')}
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            <AboutStep
-              number="1"
-              title={t('landing.about.steps.learn.title', 'Learn')}
-              description={t('landing.about.paragraph1', 'This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.')}
-            />
-            <AboutStep
-              number="2"
-              title={t('landing.about.steps.explore.title', 'Explore')}
-              description={t('landing.about.paragraph2', 'You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.')}
-            />
-            <AboutStep
-              number="3"
-              title={t('landing.about.steps.decide.title', 'Decide')}
-              description={t('landing.about.paragraph3', 'This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you.')}
-            />
+          {/* Steps with connecting lines */}
+          <div className="relative">
+            {/* Connecting line - hidden on mobile */}
+            <div className="hidden md:block absolute top-[60px] left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-nhs-blue via-nhs-green to-nhs-aqua-green" aria-hidden="true" />
+
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+              <AboutStep
+                number="1"
+                title={t('landing.about.steps.learn.title', 'Learn')}
+                description={t('landing.about.paragraph1', 'This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.')}
+                color="blue"
+              />
+              <AboutStep
+                number="2"
+                title={t('landing.about.steps.explore.title', 'Explore')}
+                description={t('landing.about.paragraph2', 'You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.')}
+                color="green"
+              />
+              <AboutStep
+                number="3"
+                title={t('landing.about.steps.decide.title', 'Decide')}
+                description={t('landing.about.paragraph3', 'This tool does not replace medical advice from your healthcare team. It is designed to help you feel more informed and confident when discussing your options. Your kidney team are the experts in your care and will help you make the right decision for you.')}
+                color="aqua"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Section - Enhanced visual design */}
+      {/* Trust Section - Enhanced visual design with icons */}
       <section
-        className="bg-nhs-pale-grey/50 py-12 px-4"
+        className="bg-gradient-to-b from-white to-nhs-pale-grey/30 py-10 md:py-14 px-4"
         aria-label={t('landing.trustAriaLabel', 'Trust and safety information')}
       >
         <div className="max-w-container-lg mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <TrustItem
               icon={<NHSLogoIcon />}
               text={t('landing.trust.evidenceBased', 'Evidence-based information')}
@@ -203,47 +261,54 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Secondary CTA Section - Enhanced with card design */}
+      {/* Secondary CTA Section - Enhanced with gradient and better mobile layout */}
       <section
-        className="bg-bg-surface py-16 md:py-24 px-4"
+        className="bg-bg-surface py-12 md:py-20 lg:py-24 px-4"
         aria-labelledby="cta-heading"
       >
         <div className="max-w-[900px] mx-auto">
-          <div className="bg-gradient-to-br from-nhs-blue to-nhs-blue-dark rounded-2xl p-8 md:p-12 text-center shadow-xl">
-            <h2
-              id="cta-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white"
-            >
-              {t('landing.ctaHeading', 'Ready to Begin?')}
-            </h2>
-            <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-xl mx-auto">
-              {t('landing.ctaDescription', 'Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break.')}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/language"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4
-                           text-lg font-bold bg-white text-nhs-blue
-                           rounded-xl min-h-[56px] shadow-lg
-                           no-underline transition-all duration-300
-                           hover:bg-nhs-green hover:text-white hover:scale-105
-                           focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 focus:ring-offset-nhs-blue"
-                aria-label={t('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
+          <div className="relative bg-gradient-to-br from-nhs-blue via-nhs-blue to-nhs-blue-dark rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" aria-hidden="true" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-nhs-aqua-green/10 rounded-full translate-y-1/2 -translate-x-1/2" aria-hidden="true" />
+
+            <div className="relative z-10">
+              <h2
+                id="cta-heading"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white"
               >
-                {t('landing.startButton', 'Start Your Journey')}
-                <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <a
-                href="https://www.nhs.uk/conditions/kidney-disease/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors
-                           focus:bg-focus focus:text-text-primary focus:outline-none focus:ring-2 focus:ring-focus rounded px-3 py-2"
-              >
-                {t('landing.learnMore', 'Learn More About Kidney Disease')}
-                <ExternalLinkIcon />
-                <span className="sr-only">({t('accessibility.newWindow', 'opens in new tab')})</span>
-              </a>
+                {t('landing.ctaHeading', 'Ready to Begin?')}
+              </h2>
+              <p className="text-base sm:text-lg text-white/90 mb-6 md:mb-8 leading-relaxed max-w-xl mx-auto">
+                {t('landing.ctaDescription', 'Take the first step towards understanding your kidney treatment options. You can start now and come back later if you need a break.')}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  to="/language"
+                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4
+                             text-base sm:text-lg font-bold bg-white text-nhs-blue
+                             rounded-xl min-h-[52px] sm:min-h-[56px] shadow-lg w-full sm:w-auto
+                             no-underline transition-all duration-300 ease-out
+                             hover:bg-nhs-green hover:text-white hover:shadow-xl hover:scale-[1.02]
+                             focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2 focus:ring-offset-nhs-blue
+                             active:scale-[0.98]"
+                  aria-label={t('landing.startButtonAriaLabel', 'Start your kidney treatment decision journey')}
+                >
+                  <span>{t('landing.startButton', 'Start Your Journey')}</span>
+                  <ArrowRightIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <a
+                  href="https://www.nhs.uk/conditions/kidney-disease/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm sm:text-base
+                             focus:bg-focus focus:text-text-primary focus:outline-none focus:ring-2 focus:ring-focus rounded px-3 py-2"
+                >
+                  {t('landing.learnMore', 'Learn More About Kidney Disease')}
+                  <ExternalLinkIcon />
+                  <span className="sr-only">({t('accessibility.newWindow', 'opens in new tab')})</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -275,23 +340,25 @@ export default function LandingPage() {
  * @property {string} title - Feature title text
  * @property {string} description - Feature description text
  * @property {'blue' | 'green' | 'aqua'} [color] - Color theme for the card
+ * @property {number} [index] - Card index for staggered animations
  */
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   color?: 'blue' | 'green' | 'aqua';
+  index?: number;
 }
 
 /**
  * Feature card component displaying a key feature of the decision aid.
- * Includes icon, title, and description with hover effects.
+ * Includes icon, title, and description with hover effects and entrance animations.
  *
  * @component
  * @param {FeatureCardProps} props - Component props
  * @returns {JSX.Element} Rendered feature card
  */
-function FeatureCard({ icon, title, description, color = 'blue' }: FeatureCardProps) {
+function FeatureCard({ icon, title, description, color = 'blue', index = 0 }: FeatureCardProps) {
   const colorClasses = {
     blue: 'bg-nhs-blue group-hover:bg-nhs-blue-dark',
     green: 'bg-nhs-green group-hover:bg-nhs-green-dark',
@@ -299,26 +366,36 @@ function FeatureCard({ icon, title, description, color = 'blue' }: FeatureCardPr
   };
 
   const borderColors = {
-    blue: 'group-hover:border-nhs-blue',
-    green: 'group-hover:border-nhs-green',
-    aqua: 'group-hover:border-nhs-aqua-green',
+    blue: 'group-hover:border-nhs-blue hover:shadow-nhs-blue/10',
+    green: 'group-hover:border-nhs-green hover:shadow-nhs-green/10',
+    aqua: 'group-hover:border-nhs-aqua-green hover:shadow-nhs-aqua-green/10',
+  };
+
+  const lightBgColors = {
+    blue: 'group-hover:bg-blue-50/50',
+    green: 'group-hover:bg-green-50/50',
+    aqua: 'group-hover:bg-teal-50/50',
   };
 
   return (
     <article
-      className={`group text-center p-8 bg-white rounded-xl border-2 border-transparent shadow-sm
-                 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${borderColors[color]}`}
+      className={`group text-center p-6 sm:p-8 bg-white rounded-xl border-2 border-nhs-pale-grey shadow-sm
+                 transition-all duration-300 ease-out
+                 hover:-translate-y-1 hover:shadow-lg hover:border-2
+                 ${borderColors[color]} ${lightBgColors[color]}`}
       role="listitem"
+      style={{ animationDelay: `${index * 100}ms` }}
     >
       <div
-        className={`w-18 h-18 mx-auto mb-6 rounded-2xl flex items-center justify-center transition-colors duration-300 ${colorClasses[color]}`}
-        style={{ width: '72px', height: '72px' }}
+        className={`w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px] mx-auto mb-4 sm:mb-6 rounded-xl sm:rounded-2xl
+                   flex items-center justify-center transition-all duration-300 ${colorClasses[color]}
+                   group-hover:scale-105 group-hover:shadow-md`}
         aria-hidden="true"
       >
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-text-primary mb-3">{title}</h3>
-      <p className="text-base text-text-secondary leading-relaxed m-0">
+      <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2 sm:mb-3">{title}</h3>
+      <p className="text-sm sm:text-base text-text-secondary leading-relaxed m-0">
         {description}
       </p>
     </article>
@@ -331,33 +408,56 @@ function FeatureCard({ icon, title, description, color = 'blue' }: FeatureCardPr
  * @property {string} number - Step number to display
  * @property {string} title - Step title
  * @property {string} description - Step description text
+ * @property {'blue' | 'green' | 'aqua'} [color] - Color theme for the step
  */
 interface AboutStepProps {
   number: string;
   title: string;
   description: string;
+  color?: 'blue' | 'green' | 'aqua';
 }
 
 /**
  * About step component showing a numbered step in the process.
- * Used in the "What This Tool Does" section.
+ * Used in the "What This Tool Does" section with connecting visual elements.
  *
  * @component
  * @param {AboutStepProps} props - Component props
  * @returns {JSX.Element} Rendered about step
  */
-function AboutStep({ number, title, description }: AboutStepProps) {
+function AboutStep({ number, title, description, color = 'blue' }: AboutStepProps) {
+  const colorClasses = {
+    blue: 'bg-nhs-blue',
+    green: 'bg-nhs-green',
+    aqua: 'bg-nhs-aqua-green',
+  };
+
+  const ringColors = {
+    blue: 'ring-nhs-blue/20',
+    green: 'ring-nhs-green/20',
+    aqua: 'ring-nhs-aqua-green/20',
+  };
+
   return (
-    <div className="relative p-6 bg-white rounded-xl shadow-sm border border-nhs-pale-grey hover:shadow-md transition-shadow">
-      <div className="flex items-center gap-3 mb-4">
-        <span className="w-10 h-10 rounded-full bg-nhs-blue text-white font-bold text-lg flex items-center justify-center flex-shrink-0">
+    <div className="relative flex flex-col items-center text-center group">
+      {/* Step number with ring effect */}
+      <div className="relative z-10 mb-4 md:mb-6">
+        <span
+          className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full ${colorClasses[color]} text-white font-bold text-xl sm:text-2xl
+                     flex items-center justify-center shadow-lg ring-4 ${ringColors[color]}
+                     transition-transform duration-300 group-hover:scale-110`}
+        >
           {number}
         </span>
-        <h3 className="text-lg font-bold text-text-primary">{title}</h3>
       </div>
-      <p className="text-sm text-text-secondary leading-relaxed">
-        {description}
-      </p>
+
+      {/* Content card */}
+      <div className="p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-nhs-pale-grey hover:shadow-md transition-all duration-300 h-full">
+        <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2 sm:mb-3">{title}</h3>
+        <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
+          {description}
+        </p>
+      </div>
     </div>
   );
 }
@@ -383,11 +483,12 @@ interface TrustItemProps {
  */
 function TrustItem({ icon, text }: TrustItemProps) {
   return (
-    <div className="flex flex-col items-center gap-3 p-4 bg-white rounded-xl shadow-sm text-center">
-      <span className="w-10 h-10 flex items-center justify-center text-nhs-blue" aria-hidden="true">
+    <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 bg-white rounded-xl shadow-sm text-center
+                    transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+      <span className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-nhs-blue rounded-lg bg-nhs-blue/5" aria-hidden="true">
         {icon}
       </span>
-      <span className="text-sm font-medium text-text-primary">{text}</span>
+      <span className="text-xs sm:text-sm font-medium text-text-primary leading-tight">{text}</span>
     </div>
   );
 }

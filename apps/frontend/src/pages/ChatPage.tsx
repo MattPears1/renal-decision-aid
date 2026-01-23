@@ -20,7 +20,7 @@
  * @requires @renal-decision-aid/shared-types
  */
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useLayoutEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSession } from '@/context/SessionContext';
@@ -35,6 +35,35 @@ import {
   AudioWaveform,
 } from '@/components/VoiceControls';
 import type { ChatMessage } from '@renal-decision-aid/shared-types';
+
+/**
+ * Detects if the virtual keyboard is likely open on mobile devices.
+ * @returns {boolean} True if keyboard is likely open
+ */
+function useVirtualKeyboard() {
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+
+  useEffect(() => {
+    // Only run on mobile devices
+    if (typeof window === 'undefined' || !('visualViewport' in window)) {
+      return;
+    }
+
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+
+    const handleResize = () => {
+      // Keyboard is likely open if viewport height is significantly less than window height
+      const heightDiff = window.innerHeight - viewport.height;
+      setIsKeyboardOpen(heightDiff > 150);
+    };
+
+    viewport.addEventListener('resize', handleResize);
+    return () => viewport.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isKeyboardOpen;
+}
 
 /**
  * Translation keys for suggested questions shown to users.
@@ -80,12 +109,18 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [showPiiWarning, setShowPiiWarning] = useState(true);
   const [lastAssistantMessage, setLastAssistantMessage] = useState<string | null>(null);
+  const [newMessageId, setNewMessageId] = useState<string | null>(null);
 
   // Capture the language when the page loads (before user can change it on this page)
   // This represents the language from the page they navigated from
   const [initialLanguage] = useState(() => i18n.language);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const isKeyboardOpen = useVirtualKeyboard();
+
+  // Screen reader announcements
+  const [announcement, setAnnouncement] = useState('');
 
   // Voice recording hook
   const {
@@ -138,10 +173,35 @@ export default function ChatPage() {
     }
   }, [session?.chatHistory]);
 
-  // Auto-scroll to bottom
+  // Auto-scroll to bottom with improved mobile handling
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, isLoading]);
+    const scrollToBottom = () => {
+      if (messagesEndRef.current) {
+        // Use a slight delay to ensure DOM has updated
+        requestAnimationFrame(() => {
+          messagesEndRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end',
+          });
+        });
+      }
+    };
+
+    scrollToBottom();
+
+    // On mobile, also scroll when keyboard opens/closes
+    if (isKeyboardOpen) {
+      setTimeout(scrollToBottom, 100);
+    }
+  }, [messages, isLoading, isKeyboardOpen]);
+
+  // Clear new message animation after it plays
+  useEffect(() => {
+    if (newMessageId) {
+      const timer = setTimeout(() => setNewMessageId(null), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [newMessageId]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -176,25 +236,31 @@ export default function ChatPage() {
     const text = messageText || input.trim();
     if (!text || isLoading) return;
 
+    const userMessageId = `user-${Date.now()}`;
     const userMessage: ChatMessage = {
-      id: `user-${Date.now()}`,
+      id: userMessageId,
       role: 'user',
       content: text,
       timestamp: Date.now(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
+    setNewMessageId(userMessageId);
     addChatMessage(userMessage);
     setInput('');
     setIsLoading(true);
+
+    // Announce to screen readers
+    setAnnouncement(t('chat.accessibility.messageSent', 'Message sent. Waiting for response...'));
 
     try {
       // Pass the initial language to tell the AI what language to respond in
       const response = await chatApi.sendMessage(text, session?.id, initialLanguage);
 
       if (response.data) {
+        const assistantMessageId = `assistant-${Date.now()}`;
         const assistantMessage: ChatMessage = {
-          id: `assistant-${Date.now()}`,
+          id: assistantMessageId,
           role: 'assistant',
           content: response.data.response,
           timestamp: typeof response.data.timestamp === 'string'
@@ -202,21 +268,30 @@ export default function ChatPage() {
             : response.data.timestamp,
         };
         setMessages((prev) => [...prev, assistantMessage]);
+        setNewMessageId(assistantMessageId);
         addChatMessage(assistantMessage);
+
+        // Announce response to screen readers
+        setAnnouncement(t('chat.accessibility.responseReceived', 'Response received from assistant.'));
       } else {
         throw new Error(response.message || 'Failed to get response');
       }
     } catch (error) {
       // Fallback to mock response for development
       const mockResponse = generateMockResponse(text);
+      const assistantMessageId = `assistant-${Date.now()}`;
       const assistantMessage: ChatMessage = {
-        id: `assistant-${Date.now()}`,
+        id: assistantMessageId,
         role: 'assistant',
         content: mockResponse,
         timestamp: Date.now(),
       };
       setMessages((prev) => [...prev, assistantMessage]);
+      setNewMessageId(assistantMessageId);
       addChatMessage(assistantMessage);
+
+      // Announce response to screen readers
+      setAnnouncement(t('chat.accessibility.responseReceived', 'Response received from assistant.'));
     } finally {
       setIsLoading(false);
       inputRef.current?.focus();
@@ -272,23 +347,37 @@ export default function ChatPage() {
   }, [messages]);
 
   return (
-    <main className="flex flex-col h-[calc(100vh-64px)] max-h-[calc(100vh-64px)] bg-gradient-to-b from-bg-page to-nhs-pale-grey/30">
+    <main
+      className={`flex flex-col bg-gradient-to-b from-bg-page to-nhs-pale-grey/30 ${
+        isKeyboardOpen ? 'h-[100dvh]' : 'h-[calc(100vh-64px)] max-h-[calc(100vh-64px)]'
+      }`}
+    >
+      {/* Screen reader announcements (live region) */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {announcement}
+      </div>
+
       {/* Breadcrumb Navigation - Enhanced */}
       <nav className="bg-white/80 backdrop-blur-sm border-b border-nhs-pale-grey flex-shrink-0" aria-label={t('accessibility.breadcrumb')}>
         <div className="max-w-container-lg mx-auto px-4 py-3">
           <ol className="flex items-center gap-2 text-sm">
             <li>
-              <Link to="/" className="text-nhs-blue hover:text-nhs-blue-dark transition-colors">
+              <Link to="/" className="text-nhs-blue hover:text-nhs-blue-dark transition-colors no-underline hover:underline">
                 {t('nav.home', 'Home')}
               </Link>
             </li>
-            <li className="text-nhs-mid-grey">/</li>
+            <li className="text-nhs-mid-grey" aria-hidden="true">/</li>
             <li>
-              <Link to="/hub" className="text-nhs-blue hover:text-nhs-blue-dark transition-colors">
+              <Link to="/hub" className="text-nhs-blue hover:text-nhs-blue-dark transition-colors no-underline hover:underline">
                 {t('hub.title', 'Your Hub')}
               </Link>
             </li>
-            <li className="text-nhs-mid-grey">/</li>
+            <li className="text-nhs-mid-grey" aria-hidden="true">/</li>
             <li className="text-text-secondary font-medium" aria-current="page">
               {t('chat.title', 'Ask Questions')}
             </li>
@@ -349,12 +438,14 @@ export default function ChatPage() {
 
       {/* Chat Container */}
       <div className="flex-1 flex flex-col max-w-container-lg mx-auto w-full overflow-hidden">
-        {/* Messages Area - Enhanced with modern bubbles */}
+        {/* Messages Area - Enhanced with modern bubbles and animations */}
         <div
-          className="flex-1 overflow-y-auto px-4 md:px-6 py-6 flex flex-col gap-5"
+          ref={messagesContainerRef}
+          className="flex-1 overflow-y-auto px-4 md:px-6 py-6 flex flex-col gap-5 scroll-mobile"
           role="log"
           aria-live="polite"
           aria-label={t('chat.messagesLabel', 'Chat messages')}
+          aria-relevant="additions"
         >
           {/* Welcome message if no chat history */}
           {messages.length === 0 && (
@@ -406,94 +497,122 @@ export default function ChatPage() {
             </>
           )}
 
-          {/* Chat Messages - Modern bubble design with mobile optimization */}
-          {messages.map((message, index) => (
-            <div
-              key={message.id}
-              className={`flex gap-2 sm:gap-4 max-w-[92%] sm:max-w-[85%] animate-fade-in ${
-                message.role === 'assistant' ? 'self-start' : 'self-end flex-row-reverse'
-              }`}
-            >
-              <div
-                className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 shadow-md ${
-                  message.role === 'assistant'
-                    ? 'bg-gradient-to-br from-nhs-blue to-nhs-blue-dark'
-                    : 'bg-gradient-to-br from-nhs-aqua-green to-[#008577]'
-                }`}
+          {/* Chat Messages - Modern bubble design with animations */}
+          {messages.map((message, index) => {
+            const isNewMessage = message.id === newMessageId;
+            const isAssistant = message.role === 'assistant';
+
+            return (
+              <article
+                key={message.id}
+                className={`flex gap-2 sm:gap-4 max-w-[92%] sm:max-w-[85%] ${
+                  isNewMessage
+                    ? isAssistant
+                      ? 'animate-slide-in-left'
+                      : 'animate-slide-in-right'
+                    : ''
+                } ${isAssistant ? 'self-start' : 'self-end flex-row-reverse'}`}
+                aria-label={isAssistant
+                  ? t('chat.accessibility.assistantMessage', 'Assistant message')
+                  : t('chat.accessibility.userMessage', 'Your message')
+                }
               >
-                {message.role === 'assistant' ? (
-                  <BotIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                ) : (
-                  <UserIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                )}
-              </div>
-              <div className="flex flex-col gap-1 sm:gap-2 min-w-0 flex-1">
+                {/* Avatar */}
                 <div
-                  className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl leading-relaxed shadow-sm ${
-                    message.role === 'assistant'
-                      ? 'bg-white border border-nhs-pale-grey rounded-tl-md'
-                      : 'bg-gradient-to-br from-nhs-blue to-nhs-blue-dark text-white rounded-tr-md'
-                  }`}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 shadow-md transition-transform duration-200 ${
+                    isAssistant
+                      ? 'bg-gradient-to-br from-nhs-blue to-nhs-blue-dark'
+                      : 'bg-gradient-to-br from-nhs-aqua-green to-[#008577]'
+                  } ${isNewMessage ? 'animate-scale-in' : ''}`}
+                  aria-hidden="true"
                 >
-                  <p className="whitespace-pre-wrap text-sm sm:text-base break-words">{message.content}</p>
-                  {/* Speaker button for assistant messages */}
-                  {message.role === 'assistant' && (
-                    <div className="flex items-center gap-2 mt-3 pt-3 border-t border-nhs-pale-grey">
-                      <SpeakerButton
-                        speechState={lastAssistantMessage === message.content ? speechState : 'idle'}
-                        onClick={() => handlePlayResponse(message.content)}
-                        progress={lastAssistantMessage === message.content ? speechProgress : 0}
-                        error={speechError}
-                        size="sm"
-                      />
-                      <span className="text-xs text-text-muted">
-                        {lastAssistantMessage === message.content && speechState === 'playing'
-                          ? t('chat.voice.speaking', 'Speaking...')
-                          : lastAssistantMessage === message.content && speechState === 'paused'
-                            ? t('chat.voice.paused', 'Paused')
-                            : t('chat.voice.playResponse', 'Listen to response')}
-                      </span>
+                  {isAssistant ? (
+                    <BotIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  ) : (
+                    <UserIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  )}
+                </div>
+
+                {/* Message Content */}
+                <div className="flex flex-col gap-1 sm:gap-2 min-w-0 flex-1">
+                  <div
+                    className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl leading-relaxed shadow-sm transition-shadow duration-200 hover:shadow-md ${
+                      isAssistant
+                        ? 'bg-white border border-nhs-pale-grey rounded-tl-md chat-bubble-assistant'
+                        : 'bg-gradient-to-br from-nhs-blue to-nhs-blue-dark text-white rounded-tr-md chat-bubble-user'
+                    }`}
+                  >
+                    <p className="whitespace-pre-wrap text-sm sm:text-base break-words">{message.content}</p>
+
+                    {/* Speaker button for assistant messages */}
+                    {isAssistant && (
+                      <div className="flex items-center gap-2 mt-3 pt-3 border-t border-nhs-pale-grey">
+                        <SpeakerButton
+                          speechState={lastAssistantMessage === message.content ? speechState : 'idle'}
+                          onClick={() => handlePlayResponse(message.content)}
+                          progress={lastAssistantMessage === message.content ? speechProgress : 0}
+                          error={speechError}
+                          size="sm"
+                        />
+                        <span className="text-xs text-text-muted">
+                          {lastAssistantMessage === message.content && speechState === 'playing'
+                            ? t('chat.voice.speaking', 'Speaking...')
+                            : lastAssistantMessage === message.content && speechState === 'paused'
+                              ? t('chat.voice.paused', 'Paused')
+                              : t('chat.voice.playResponse', 'Listen to response')}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Timestamp */}
+                  <span
+                    className={`text-[10px] sm:text-xs text-text-muted px-2 ${
+                      !isAssistant ? 'text-right' : ''
+                    }`}
+                  >
+                    <time dateTime={new Date(message.timestamp).toISOString()}>
+                      {formatTime(message.timestamp)}
+                    </time>
+                  </span>
+
+                  {/* Quick Replies for last assistant message */}
+                  {isAssistant && index === messages.length - 1 && !isLoading && (
+                    <div className="flex flex-wrap gap-2 mt-1 sm:mt-2 stagger-children" role="group" aria-label={t('chat.accessibility.quickReplies', 'Quick reply options')}>
+                      {QUICK_REPLY_KEYS.map((key, idx) => {
+                        const reply = t(key);
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => handleSend(reply)}
+                            className="px-3 sm:px-4 py-2 bg-white border-2 border-nhs-blue/30 text-xs sm:text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm min-h-[36px] sm:min-h-[40px] touch-manipulation animate-scale-in"
+                          >
+                            {reply}
+                          </button>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
-                <span
-                  className={`text-[10px] sm:text-xs text-text-muted px-2 ${
-                    message.role === 'user' ? 'text-right' : ''
-                  }`}
-                >
-                  {formatTime(message.timestamp)}
-                </span>
-                {/* Quick Replies for last assistant message - Enhanced with mobile sizing */}
-                {message.role === 'assistant' && index === messages.length - 1 && !isLoading && (
-                  <div className="flex flex-wrap gap-2 mt-1 sm:mt-2">
-                    {QUICK_REPLY_KEYS.map((key, idx) => {
-                      const reply = t(key);
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => handleSend(reply)}
-                          className="px-3 sm:px-4 py-2 bg-white border-2 border-nhs-blue/30 text-xs sm:text-sm font-medium text-nhs-blue rounded-full hover:bg-nhs-blue hover:border-nhs-blue hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-focus shadow-sm min-h-[36px] sm:min-h-[40px] touch-manipulation"
-                        >
-                          {reply}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+              </article>
+            );
+          })}
 
-          {/* Typing Indicator - Enhanced */}
+          {/* Typing Indicator - Enhanced with better animation */}
           {isLoading && (
-            <div className="flex gap-4 max-w-[85%] self-start animate-fade-in">
+            <div
+              className="flex gap-4 max-w-[85%] self-start animate-slide-in-left"
+              role="status"
+              aria-label={t('chat.accessibility.typing', 'Assistant is typing')}
+            >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-nhs-blue to-nhs-blue-dark flex items-center justify-center flex-shrink-0 shadow-md">
                 <BotIcon className="w-6 h-6 text-white" />
               </div>
-              <div className="bg-white border border-nhs-pale-grey rounded-2xl rounded-tl-md px-6 py-5 flex items-center gap-2 shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-nhs-blue/60 animate-bounce" style={{ animationDelay: '0ms' }} />
-                <span className="w-2.5 h-2.5 rounded-full bg-nhs-blue/60 animate-bounce" style={{ animationDelay: '200ms' }} />
-                <span className="w-2.5 h-2.5 rounded-full bg-nhs-blue/60 animate-bounce" style={{ animationDelay: '400ms' }} />
+              <div className="bg-white border border-nhs-pale-grey rounded-2xl rounded-tl-md px-6 py-5 flex items-center gap-1.5 shadow-sm chat-bubble-assistant">
+                <span className="w-2.5 h-2.5 rounded-full bg-nhs-blue typing-dot" />
+                <span className="w-2.5 h-2.5 rounded-full bg-nhs-blue typing-dot" />
+                <span className="w-2.5 h-2.5 rounded-full bg-nhs-blue typing-dot" />
+                <span className="sr-only">{t('chat.accessibility.typing', 'Assistant is typing')}</span>
               </div>
             </div>
           )}
@@ -502,30 +621,66 @@ export default function ChatPage() {
         </div>
 
         {/* Input Area - Enhanced for mobile with voice controls */}
-        <div className="flex-shrink-0 border-t border-nhs-pale-grey bg-white/95 backdrop-blur-sm p-3 sm:p-4 shadow-lg">
-          {/* Voice Status Indicator */}
+        <div className={`flex-shrink-0 border-t border-nhs-pale-grey bg-white/95 backdrop-blur-sm p-3 sm:p-4 shadow-lg safe-area-inset-bottom ${
+          isKeyboardOpen ? 'pb-2' : ''
+        }`}>
+          {/* Voice Status Indicator - Enhanced with better visual feedback */}
           {(recordingState !== 'idle' || speechState === 'playing' || speechState === 'loading') && (
-            <div className="max-w-3xl mx-auto mb-3">
-              <div className="flex items-center justify-center gap-3 py-2 px-4 bg-nhs-pale-grey/50 rounded-lg">
+            <div className="max-w-3xl mx-auto mb-3 animate-fade-in">
+              <div
+                className={`flex items-center justify-center gap-3 py-3 px-4 rounded-xl transition-colors ${
+                  recordingState === 'recording'
+                    ? 'bg-nhs-red/10 border border-nhs-red/30'
+                    : speechState === 'playing'
+                      ? 'bg-nhs-green/10 border border-nhs-green/30'
+                      : 'bg-nhs-pale-grey/50'
+                }`}
+                role="status"
+                aria-live="polite"
+              >
                 <VoiceStatusIndicator
                   recordingState={recordingState}
                   speechState={speechState}
                 />
                 {recordingState === 'recording' && (
-                  <AudioWaveform
-                    level={audioLevel}
-                    isActive={true}
-                    variant="recording"
-                    className="flex-shrink-0"
-                  />
+                  <div className="flex items-center gap-1 h-6">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-1 bg-nhs-red rounded-full audio-wave-bar"
+                        style={{
+                          height: `${20 + Math.random() * 80}%`,
+                          animationDelay: `${i * 0.1}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
                 )}
                 {speechState === 'playing' && (
-                  <AudioWaveform
-                    level={0.5}
-                    isActive={true}
-                    variant="playing"
-                    className="flex-shrink-0"
-                  />
+                  <div className="flex items-center gap-1 h-6">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-1 bg-nhs-green rounded-full audio-wave-bar"
+                        style={{
+                          height: `${20 + Math.random() * 80}%`,
+                          animationDelay: `${i * 0.1}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* Cancel button for recording */}
+                {recordingState === 'recording' && (
+                  <button
+                    type="button"
+                    onClick={cancelRecording}
+                    className="ml-2 p-1.5 text-nhs-red hover:bg-nhs-red/10 rounded-full transition-colors"
+                    aria-label={t('chat.voice.cancel', 'Cancel recording')}
+                  >
+                    <CloseIcon className="w-4 h-4" />
+                  </button>
                 )}
               </div>
             </div>
@@ -537,8 +692,10 @@ export default function ChatPage() {
               handleSend();
             }}
             className="flex gap-2 sm:gap-3 items-end max-w-3xl mx-auto"
+            role="search"
+            aria-label={t('chat.accessibility.messageForm', 'Send a message')}
           >
-            {/* Microphone button - standalone on mobile, inline on desktop */}
+            {/* Microphone button - standalone on desktop */}
             <div className="hidden sm:block">
               <MicrophoneButton
                 recordingState={recordingState}
@@ -565,10 +722,16 @@ export default function ChatPage() {
                       : t('chat.placeholder', 'Type your question here...')
                 }
                 rows={1}
-                className="w-full px-3 sm:px-5 py-3 sm:py-4 pr-24 sm:pr-12 border-2 border-nhs-pale-grey rounded-xl sm:rounded-2xl resize-none focus:outline-none focus:border-nhs-blue focus:ring-4 focus:ring-nhs-blue/20 transition-all shadow-sm text-sm sm:text-base"
+                className={`w-full px-3 sm:px-5 py-3 sm:py-4 pr-24 sm:pr-12 border-2 rounded-xl sm:rounded-2xl resize-none focus:outline-none focus:border-nhs-blue focus:ring-4 focus:ring-nhs-blue/20 transition-all shadow-sm text-sm sm:text-base ${
+                  recordingState === 'recording'
+                    ? 'border-nhs-red/50 bg-nhs-red/5'
+                    : 'border-nhs-pale-grey bg-white'
+                }`}
                 aria-label={t('chat.inputLabel', 'Message input')}
+                aria-describedby="chat-disclaimer"
                 disabled={isLoading || recordingState === 'recording' || recordingState === 'processing'}
                 style={{ fontSize: '16px' }} // Prevents iOS zoom on focus
+                enterKeyHint="send"
               />
               {/* Mobile-only inline voice button */}
               <div className="absolute right-2 bottom-2 sm:hidden flex items-center gap-1">
@@ -586,15 +749,18 @@ export default function ChatPage() {
             <button
               type="submit"
               disabled={!input.trim() || isLoading || recordingState === 'recording'}
-              className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus min-w-[48px] min-h-[48px] touch-manipulation"
+              className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue to-nhs-blue-dark text-white font-semibold rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 active:scale-95 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus min-w-[48px] min-h-[48px] touch-manipulation"
               aria-label={t('chat.send', 'Send message')}
             >
               <SendIcon className="w-5 h-5" />
               <span className="hidden sm:inline">{t('chat.send', 'Send')}</span>
             </button>
           </form>
-          <p className="text-[10px] sm:text-xs text-text-muted mt-2 sm:mt-3 text-center flex items-center justify-center gap-1 px-2">
-            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+          <p
+            id="chat-disclaimer"
+            className="text-[10px] sm:text-xs text-text-muted mt-2 sm:mt-3 text-center flex items-center justify-center gap-1 px-2"
+          >
+            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
             </svg>
             <span>{t('chat.disclaimer', 'This assistant provides general information only and is not a substitute for medical advice from your kidney care team.')}</span>

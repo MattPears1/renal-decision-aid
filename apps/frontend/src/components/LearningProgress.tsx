@@ -2,12 +2,12 @@
  * @fileoverview Learning progress component for the NHS Renal Decision Aid.
  * Tracks and displays user progress through the learning journey.
  * @module components/LearningProgress
- * @version 2.5.0
+ * @version 2.6.0
  * @since 1.5.0
- * @lastModified 21 January 2026
+ * @lastModified 23 January 2026
  */
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
@@ -75,18 +75,47 @@ const ProgressRing = ({
   size = 80,
   strokeWidth = 8,
   color = '#005EB8',
+  animated = true,
 }: {
   progress: number;
   size?: number;
   strokeWidth?: number;
   color?: string;
+  animated?: boolean;
 }) => {
+  const [displayProgress, setDisplayProgress] = useState(animated ? 0 : progress);
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
-  const offset = circumference - (progress / 100) * circumference;
+  const offset = circumference - (displayProgress / 100) * circumference;
+
+  // Animate progress on mount
+  useEffect(() => {
+    if (animated) {
+      const timer = setTimeout(() => {
+        setDisplayProgress(progress);
+      }, 150);
+      return () => clearTimeout(timer);
+    } else {
+      setDisplayProgress(progress);
+    }
+  }, [progress, animated]);
+
+  // Determine gradient colors based on progress
+  const getGradientId = () => `progress-gradient-${size}`;
+  const gradientColors = progress >= 75
+    ? ['#007F3B', '#00A499']
+    : progress >= 50
+    ? ['#00A499', '#005EB8']
+    : ['#005EB8', '#0072CE'];
 
   return (
     <svg width={size} height={size} className="transform -rotate-90">
+      <defs>
+        <linearGradient id={getGradientId()} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor={gradientColors[0]} />
+          <stop offset="100%" stopColor={gradientColors[1]} />
+        </linearGradient>
+      </defs>
       {/* Background circle */}
       <circle
         cx={size / 2}
@@ -96,18 +125,21 @@ const ProgressRing = ({
         stroke="#E8EDEE"
         strokeWidth={strokeWidth}
       />
-      {/* Progress circle */}
+      {/* Progress circle with gradient */}
       <circle
         cx={size / 2}
         cy={size / 2}
         r={radius}
         fill="none"
-        stroke={color}
+        stroke={`url(#${getGradientId()})`}
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}
         strokeDashoffset={offset}
         strokeLinecap="round"
-        className="transition-all duration-700 ease-out"
+        className="transition-all duration-1000 ease-out"
+        style={{
+          filter: 'drop-shadow(0 2px 4px rgba(0, 94, 184, 0.2))',
+        }}
       />
     </svg>
   );
@@ -134,22 +166,22 @@ const Badge = ({
   isEarned: boolean;
   size?: 'sm' | 'md';
 }) => {
-  const sizeClasses = size === 'sm' ? 'w-10 h-10' : 'w-14 h-14';
+  const sizeClasses = size === 'sm' ? 'w-11 h-11' : 'w-14 h-14';
   const iconSize = size === 'sm' ? 'w-5 h-5' : 'w-7 h-7';
 
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-1.5 group">
       <div
-        className={`${sizeClasses} rounded-full flex items-center justify-center transition-all duration-300 ${
+        className={`${sizeClasses} rounded-full flex items-center justify-center transition-all duration-500 transform ${
           isEarned
-            ? 'bg-gradient-to-br from-nhs-green to-nhs-green-dark text-white shadow-lg'
-            : 'bg-nhs-pale-grey text-text-muted'
+            ? 'bg-gradient-to-br from-nhs-green via-nhs-green to-nhs-green-dark text-white shadow-lg ring-4 ring-nhs-green/20 scale-100 group-hover:scale-110'
+            : 'bg-nhs-pale-grey/80 text-text-muted scale-95 opacity-60'
         }`}
       >
-        <span className={iconSize}>{icon}</span>
+        <span className={`${iconSize} transition-transform ${isEarned ? 'group-hover:rotate-12' : ''}`}>{icon}</span>
       </div>
       <span
-        className={`text-xs text-center font-medium ${
+        className={`text-xs text-center font-semibold transition-colors max-w-[64px] leading-tight ${
           isEarned ? 'text-nhs-green' : 'text-text-muted'
         }`}
       >
@@ -376,77 +408,81 @@ export default function LearningProgress({
 
   // Full variant - detailed progress view
   return (
-    <div className="bg-white rounded-2xl border border-nhs-pale-grey overflow-hidden">
-      {/* Header with overall progress */}
-      <div className="p-6 bg-gradient-to-r from-nhs-blue/5 to-nhs-green/5 border-b border-nhs-pale-grey">
-        <div className="flex flex-col sm:flex-row items-center gap-6">
-          <div className="relative">
-            <ProgressRing progress={progress.overallProgress} size={100} strokeWidth={10} />
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-nhs-pale-grey/80 overflow-hidden shadow-sm">
+      {/* Header with overall progress - enhanced gradient */}
+      <div className="relative p-6 sm:p-7 bg-gradient-to-br from-nhs-blue/8 via-nhs-aqua-green/5 to-nhs-green/8 border-b border-nhs-pale-grey/50 overflow-hidden">
+        {/* Decorative background */}
+        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-nhs-blue/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" aria-hidden="true" />
+
+        <div className="relative flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
+          <div className="relative flex-shrink-0">
+            <ProgressRing progress={progress.overallProgress} size={110} strokeWidth={12} />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-2xl font-bold text-nhs-blue">{progress.overallProgress}%</span>
-              <span className="text-xs text-text-secondary">{t('progress.complete', 'complete')}</span>
+              <span className="text-3xl font-bold text-nhs-blue tabular-nums">{progress.overallProgress}%</span>
+              <span className="text-xs text-text-secondary font-medium">{t('progress.complete', 'complete')}</span>
             </div>
           </div>
 
-          <div className="flex-1 text-center sm:text-left">
-            <h2 className="text-xl font-bold text-text-primary mb-2">
+          <div className="flex-1 text-center sm:text-left min-w-0">
+            <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-2 leading-tight">
               {t('progress.title', 'Your Learning Journey')}
             </h2>
             {showEncouragement && (
-              <p className="text-text-secondary">{encouragementMessage}</p>
+              <p className="text-sm sm:text-base text-text-secondary leading-relaxed">{encouragementMessage}</p>
             )}
           </div>
         </div>
       </div>
 
-      {/* Sections list */}
-      <div className="p-6">
-        <h3 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-4">
+      {/* Sections list - enhanced styling */}
+      <div className="p-5 sm:p-6">
+        <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-4">
           {t('progress.sections.title', 'Sections to Explore')}
         </h3>
 
         <div className="space-y-3">
-          {sections.map((section) => (
+          {sections.map((section, index) => (
             <Link
               key={section.id}
               to={section.path}
-              className={`flex items-center gap-4 p-4 rounded-xl border transition-all hover:shadow-md ${
+              className={`group flex items-center gap-4 p-4 rounded-xl border-2 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 animate-fade-in ${
                 section.isCompleted
-                  ? 'bg-nhs-green/5 border-nhs-green/30'
+                  ? 'bg-nhs-green/5 border-nhs-green/40 hover:border-nhs-green'
                   : section.isInProgress
-                  ? 'bg-nhs-blue/5 border-nhs-blue/30'
+                  ? 'bg-nhs-blue/5 border-nhs-blue/40 hover:border-nhs-blue'
                   : 'bg-white border-nhs-pale-grey hover:border-nhs-blue/50'
               }`}
+              style={{ animationDelay: `${index * 50}ms` }}
             >
               <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105 ${
                   section.isCompleted
-                    ? 'bg-nhs-green text-white'
+                    ? 'bg-gradient-to-br from-nhs-green to-nhs-green-dark text-white shadow-md'
                     : section.isInProgress
-                    ? 'bg-nhs-blue/20 text-nhs-blue'
-                    : 'bg-nhs-pale-grey text-text-secondary'
+                    ? 'bg-gradient-to-br from-nhs-blue/20 to-nhs-blue/10 text-nhs-blue'
+                    : 'bg-nhs-pale-grey/80 text-text-secondary group-hover:text-nhs-blue group-hover:bg-nhs-blue/10'
                 }`}
               >
                 {section.isCompleted ? <CheckIcon className="w-6 h-6" /> : section.icon}
               </div>
 
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-text-primary">{section.title}</p>
+                <p className="font-semibold text-text-primary group-hover:text-nhs-blue transition-colors">{section.title}</p>
                 <p className="text-sm text-text-secondary">{section.description}</p>
               </div>
 
               <div className="flex-shrink-0">
                 {section.isCompleted ? (
-                  <span className="text-xs font-medium text-nhs-green bg-nhs-green/10 px-2 py-1 rounded-full">
+                  <span className="text-xs font-semibold text-nhs-green bg-nhs-green/15 px-3 py-1.5 rounded-full ring-1 ring-nhs-green/20">
                     {t('progress.status.completed', 'Completed')}
                   </span>
                 ) : section.isInProgress ? (
-                  <span className="text-xs font-medium text-nhs-blue bg-nhs-blue/10 px-2 py-1 rounded-full">
+                  <span className="text-xs font-semibold text-nhs-blue bg-nhs-blue/10 px-3 py-1.5 rounded-full ring-1 ring-nhs-blue/20">
                     {t('progress.status.inProgress', 'In Progress')}
                   </span>
                 ) : (
                   <svg
-                    className="w-5 h-5 text-text-muted"
+                    className="w-5 h-5 text-text-muted group-hover:text-nhs-blue group-hover:translate-x-1 transition-all"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -461,13 +497,13 @@ export default function LearningProgress({
         </div>
       </div>
 
-      {/* Badges section */}
-      <div className="p-6 bg-gradient-to-r from-nhs-pale-grey/50 to-white border-t border-nhs-pale-grey">
-        <h3 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-4">
+      {/* Badges section - enhanced with better visual hierarchy */}
+      <div className="p-5 sm:p-6 bg-gradient-to-br from-nhs-pale-grey/30 via-white to-nhs-pale-grey/20 border-t border-nhs-pale-grey/50">
+        <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-4 text-center sm:text-left">
           {t('progress.badges.title', 'Your Badges')}
         </h3>
 
-        <div className="flex justify-around flex-wrap gap-4">
+        <div className="flex justify-around items-start flex-wrap gap-3 sm:gap-4">
           <Badge
             icon={
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -517,12 +553,12 @@ export default function LearningProgress({
         </div>
       </div>
 
-      {/* Summary action */}
+      {/* Summary action - enhanced CTA */}
       {progress.overallProgress >= 50 && (
-        <div className="p-4 bg-nhs-green/5 border-t border-nhs-green/20">
+        <div className="p-4 sm:p-5 bg-gradient-to-r from-nhs-green/10 to-nhs-aqua-green/10 border-t border-nhs-green/20">
           <Link
             to="/summary"
-            className="flex items-center justify-center gap-2 w-full py-3 bg-nhs-green text-white font-semibold rounded-xl hover:bg-nhs-green-dark transition-colors focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
+            className="group flex items-center justify-center gap-3 w-full py-3.5 bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-semibold rounded-xl hover:shadow-lg active:scale-[0.98] transition-all focus:outline-none focus:ring-3 focus:ring-focus focus:ring-offset-2"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -531,6 +567,9 @@ export default function LearningProgress({
               <line x1="16" y1="17" x2="8" y2="17" />
             </svg>
             {t('progress.viewSummary', 'View Your Summary')}
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </Link>
         </div>
       )}

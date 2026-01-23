@@ -78,11 +78,11 @@ export function MicrophoneButton({
   const hasError = recordingState === 'error';
   const isDisabled = !isSupported || isProcessing || isRequesting;
 
-  // Size classes
+  // Size classes - enhanced for better touch targets
   const sizeClasses = {
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10',
-    lg: 'w-12 h-12',
+    sm: 'w-9 h-9 min-w-[36px] min-h-[36px]',
+    md: 'w-11 h-11 min-w-[44px] min-h-[44px]',
+    lg: 'w-14 h-14 min-w-[56px] min-h-[56px]',
   };
 
   const iconSizes = {
@@ -117,24 +117,40 @@ export function MicrophoneButton({
         aria-label={getLabel()}
         aria-pressed={isRecording}
         className={`
-          relative flex items-center justify-center rounded-full transition-all duration-200
+          relative flex items-center justify-center rounded-full transition-all duration-200 touch-manipulation
           focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2
           ${sizeClasses[size]}
           ${isRecording
-            ? 'bg-nhs-red text-white hover:bg-nhs-red/90 animate-pulse'
+            ? 'bg-nhs-red text-white hover:bg-nhs-red/90 animate-recording-pulse shadow-lg shadow-nhs-red/30'
             : hasError
-              ? 'bg-nhs-red/10 text-nhs-red hover:bg-nhs-red/20'
-              : 'bg-nhs-blue/10 text-nhs-blue hover:bg-nhs-blue/20'
+              ? 'bg-nhs-red/10 text-nhs-red hover:bg-nhs-red/20 border border-nhs-red/30'
+              : 'bg-nhs-blue/10 text-nhs-blue hover:bg-nhs-blue/20 hover:scale-105 active:scale-95'
           }
           ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
         `}
       >
-        {/* Audio level ring visualization */}
+        {/* Audio level ring visualization - enhanced */}
         {isRecording && (
-          <span
-            className="absolute inset-0 rounded-full border-2 border-nhs-red animate-ping"
-            style={{ transform: `scale(${1 + audioLevel * 0.3})`, opacity: 0.6 }}
-          />
+          <>
+            <span
+              className="absolute inset-0 rounded-full border-2 border-nhs-red"
+              style={{
+                transform: `scale(${1 + audioLevel * 0.4})`,
+                opacity: Math.max(0.2, audioLevel * 0.8),
+                transition: 'transform 0.1s ease-out, opacity 0.1s ease-out',
+              }}
+              aria-hidden="true"
+            />
+            <span
+              className="absolute inset-0 rounded-full border border-nhs-red/50"
+              style={{
+                transform: `scale(${1.2 + audioLevel * 0.3})`,
+                opacity: Math.max(0.1, audioLevel * 0.5),
+                transition: 'transform 0.15s ease-out, opacity 0.15s ease-out',
+              }}
+              aria-hidden="true"
+            />
+          </>
         )}
 
         {/* Icon */}
@@ -147,9 +163,9 @@ export function MicrophoneButton({
         )}
       </button>
 
-      {/* Recording duration badge */}
+      {/* Recording duration badge - enhanced */}
       {isRecording && duration > 0 && (
-        <span className="text-xs font-mono text-nhs-red animate-pulse">
+        <span className="text-xs font-mono font-semibold text-nhs-red bg-nhs-red/10 px-2 py-0.5 rounded-full" aria-live="polite">
           {formatDuration(duration)}
         </span>
       )}
@@ -214,11 +230,11 @@ export function SpeakerButton({
   const hasError = speechState === 'error';
   const isActive = isPlaying || isPaused || isLoading;
 
-  // Size classes
+  // Size classes - enhanced for better touch targets
   const sizeClasses = {
-    sm: 'w-7 h-7',
-    md: 'w-8 h-8',
-    lg: 'w-10 h-10',
+    sm: 'w-8 h-8 min-w-[32px] min-h-[32px]',
+    md: 'w-10 h-10 min-w-[40px] min-h-[40px]',
+    lg: 'w-12 h-12 min-w-[48px] min-h-[48px]',
   };
 
   const iconSizes = {
@@ -244,26 +260,27 @@ export function SpeakerButton({
       aria-label={getLabel()}
       aria-pressed={isPlaying}
       className={`
-        relative flex items-center justify-center rounded-full transition-all duration-200
+        relative flex items-center justify-center rounded-full transition-all duration-200 touch-manipulation
         focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-1
         ${sizeClasses[size]}
         ${isPlaying
-          ? 'bg-nhs-green text-white hover:bg-nhs-green/90'
+          ? 'bg-nhs-green text-white hover:bg-nhs-green/90 shadow-md shadow-nhs-green/20'
           : isPaused
-            ? 'bg-nhs-blue text-white hover:bg-nhs-blue/90'
+            ? 'bg-nhs-blue text-white hover:bg-nhs-blue/90 shadow-md shadow-nhs-blue/20'
             : hasError
-              ? 'bg-nhs-red/10 text-nhs-red hover:bg-nhs-red/20'
-              : 'bg-nhs-pale-grey text-nhs-dark-grey hover:bg-nhs-mid-grey/30'
+              ? 'bg-nhs-red/10 text-nhs-red hover:bg-nhs-red/20 border border-nhs-red/30'
+              : 'bg-nhs-pale-grey text-nhs-dark-grey hover:bg-nhs-mid-grey/30 hover:scale-105 active:scale-95'
         }
         ${isLoading ? 'opacity-70 cursor-wait' : 'cursor-pointer'}
         ${className}
       `}
     >
-      {/* Progress ring */}
+      {/* Progress ring - enhanced with smoother animation */}
       {isActive && !hasError && (
         <svg
           className="absolute inset-0 w-full h-full -rotate-90"
           viewBox="0 0 36 36"
+          aria-hidden="true"
         >
           <circle
             cx="18"
@@ -271,7 +288,7 @@ export function SpeakerButton({
             r="16"
             fill="none"
             stroke="currentColor"
-            strokeOpacity="0.2"
+            strokeOpacity="0.15"
             strokeWidth="2"
           />
           <circle
@@ -280,10 +297,10 @@ export function SpeakerButton({
             r="16"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeDasharray={`${progress * 100} 100`}
             strokeLinecap="round"
-            className="transition-all duration-100"
+            className="transition-all duration-150 ease-linear"
           />
         </svg>
       )}

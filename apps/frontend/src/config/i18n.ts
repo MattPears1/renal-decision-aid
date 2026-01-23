@@ -28,6 +28,7 @@ export const SUPPORTED_LANGUAGES = {
   ta: { name: 'Tamil', nativeName: 'தமிழ்', dir: 'ltr' },
   pl: { name: 'Polish', nativeName: 'Polski', dir: 'ltr' },
   ar: { name: 'Arabic', nativeName: 'العربية', dir: 'rtl' },
+  pt: { name: 'Portuguese', nativeName: 'Português', dir: 'ltr' },
 } as const;
 
 /**
@@ -53,6 +54,7 @@ export const LANGUAGE_FONTS: Record<SupportedLanguage, string> = {
   ta: '"Noto Sans Tamil", "Latha", sans-serif',
   pl: '"NHS Regular", "Frutiger", "Arial", sans-serif',
   ar: '"Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", "Tahoma", sans-serif',
+  pt: '"NHS Regular", "Frutiger", "Arial", sans-serif',
 };
 
 /**
@@ -101,7 +103,7 @@ function getInitialLanguage(): string {
  * - English as default language for first-time visitors
  * - User language preference saved to localStorage
  * - Lazy loading of translation files via HTTP backend
- * - Support for 10 languages including RTL (Urdu, Arabic)
+ * - Support for 11 languages including RTL (Urdu, Arabic)
  * - NHS-appropriate medical terminology
  * - Mobile-optimized with timeout and retry logic
  *

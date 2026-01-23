@@ -4,9 +4,9 @@
  * to receive personalized content and recommendations.
  *
  * @module pages/JourneyStagePage
- * @version 2.5.0
+ * @version 2.6.0
  * @since 1.0.0
- * @lastModified 21 January 2026
+ * @lastModified 23 January 2026
  *
  * @requires react
  * @requires react-router-dom
@@ -15,7 +15,7 @@
  * @requires @renal-decision-aid/shared-types
  */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSession } from '@/context/SessionContext';
@@ -100,6 +100,12 @@ export default function JourneyStagePage() {
   const [selectedStage, setSelectedStage] = useState<JourneyStage | null>(null);
   const [showError, setShowError] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSelectStage = useCallback((stageId: JourneyStage) => {
     setSelectedStage(stageId);
@@ -129,27 +135,47 @@ export default function JourneyStagePage() {
 
   return (
     <main className="min-h-screen bg-bg-page">
-      {/* Progress Indicator */}
-      <div className="bg-white border-b border-nhs-pale-grey">
-        <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-3 sm:py-4">
-          <ProgressSteps currentStep={3} />
+      {/* Progress Indicator - Enhanced */}
+      <div className="bg-white border-b border-nhs-pale-grey sticky top-0 z-10">
+        <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-3">
+          <div
+            className="h-1.5 bg-nhs-pale-grey rounded-full overflow-hidden mb-2"
+            role="progressbar"
+            aria-valuenow={50}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={t('journey.progressLabel', 'Setup progress: 50%')}
+          >
+            <div className="h-full w-[50%] bg-gradient-to-r from-nhs-blue to-nhs-aqua-green rounded-full transition-all duration-500" />
+          </div>
+          <p className="text-center text-xs text-text-secondary">
+            {t('journey.progressText', 'Step 3 of 4: Your Journey')}
+          </p>
         </div>
       </div>
 
       <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
-        {/* Page Header */}
-        <header className="text-center mb-6 sm:mb-8">
-          <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap mb-2">
+        {/* Page Header - Enhanced with icon */}
+        <header
+          className={`text-center mb-6 sm:mb-8 transform transition-all duration-500 ease-out
+                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+        >
+          {/* Journey icon */}
+          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-nhs-aqua-green/10 rounded-full mb-4 sm:mb-6">
+            <JourneyIcon className="w-8 h-8 sm:w-10 sm:h-10 text-nhs-aqua-green" />
+          </div>
+
+          <div className="flex items-center justify-center gap-3 flex-wrap mb-2">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary">
               {t('journey.title', 'Where Are You in Your Journey?')}
             </h1>
             <button
               type="button"
               onClick={handlePlayAudio}
-              className="flex-shrink-0 w-11 h-11 min-w-[44px] min-h-[44px] bg-nhs-blue text-white rounded-full
+              className="flex-shrink-0 w-10 h-10 min-w-[44px] min-h-[44px] bg-nhs-blue/10 text-nhs-blue rounded-full
                          flex items-center justify-center
-                         transition-all duration-150
-                         hover:bg-nhs-blue-dark hover:scale-105
+                         transition-all duration-200
+                         hover:bg-nhs-blue hover:text-white hover:scale-105
                          focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
               aria-label={t('journey.listenToQuestion', 'Listen to this question')}
               title={t('journey.listenToQuestion', 'Listen to this question')}
@@ -157,23 +183,16 @@ export default function JourneyStagePage() {
               <AudioIcon />
             </button>
           </div>
-          <p className="text-base sm:text-lg text-text-secondary px-2">
+          <p className="text-base sm:text-lg text-text-secondary px-2 max-w-xl mx-auto">
             {t('journey.subtitle', 'Select the option that best describes your situation')}
           </p>
         </header>
-
-        {/* Introduction Text */}
-        <div className="max-w-[700px] mx-auto text-center mb-6 sm:mb-8 px-2">
-          <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-            {t('journey.intro', 'Everyone\'s kidney journey is different. To help us show you the most relevant information, please tell us where you are right now. There are no right or wrong answers.')}
-          </p>
-        </div>
 
         {/* Error Message */}
         {showError && (
           <div
             id="error-message"
-            className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 mb-4 sm:mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-md max-w-[900px] mx-auto text-sm sm:text-base"
+            className="flex items-center gap-2 sm:gap-3 p-4 mb-4 sm:mb-6 bg-red-50 border-l-4 border-nhs-red rounded-r-lg max-w-[900px] mx-auto text-sm sm:text-base animate-fade-in"
             role="alert"
             aria-live="polite"
           >
@@ -184,7 +203,7 @@ export default function JourneyStagePage() {
           </div>
         )}
 
-        {/* Journey Stage Cards */}
+        {/* Journey Stage Cards - Enhanced grid with animation */}
         <form aria-label={t('journey.formLabel', 'Journey stage options')}>
           <fieldset>
             <legend className="sr-only">
@@ -192,11 +211,12 @@ export default function JourneyStagePage() {
             </legend>
 
             <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8"
+              className={`grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-[900px] mx-auto
+                         transform transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               role="radiogroup"
               aria-label={t('journey.radioGroupLabel', 'Journey stage options')}
             >
-              {JOURNEY_OPTIONS.map((option) => (
+              {JOURNEY_OPTIONS.map((option, index) => (
                 <JourneyCard
                   key={option.id}
                   id={option.id}
@@ -205,29 +225,41 @@ export default function JourneyStagePage() {
                   icon={option.icon}
                   isSelected={selectedStage === option.id}
                   onSelect={() => handleSelectStage(option.id)}
+                  index={index}
                 />
               ))}
             </div>
           </fieldset>
         </form>
 
-        {/* Reassurance Box */}
-        <div className="bg-blue-50 border-l-4 border-nhs-blue rounded-r-md p-3 sm:p-4 mb-6 sm:mb-8 max-w-[900px] mx-auto">
-          <p className="text-nhs-blue-dark text-xs sm:text-sm">
-            {t('journey.reassurance', 'Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.')}
-          </p>
+        {/* Reassurance Box - Enhanced */}
+        <div
+          className={`bg-gradient-to-r from-blue-50 to-nhs-pale-grey/30 border-l-4 border-nhs-blue rounded-r-lg p-4 mb-6 sm:mb-8 max-w-[900px] mx-auto
+                     transform transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-nhs-blue/10 rounded-full flex items-center justify-center">
+              <InfoSmallIcon />
+            </div>
+            <p className="text-nhs-blue-dark text-xs sm:text-sm leading-relaxed">
+              {t('journey.reassurance', 'Do not worry if you are unsure which option fits best. You can always explore all treatment options later, and your kidney team can help clarify your situation. Your selection helps us show you the most relevant information first.')}
+            </p>
+          </div>
         </div>
 
-        {/* Help Button */}
-        <div className="text-center mb-6 sm:mb-8">
+        {/* Help Button - Enhanced */}
+        <div
+          className={`text-center mb-6 sm:mb-8 transform transition-all duration-500 delay-300
+                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
           <button
             type="button"
             onClick={() => setShowHelpModal(true)}
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px]
-                       bg-transparent border-2 border-nhs-blue rounded-md
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 min-h-[48px]
+                       bg-white border-2 border-nhs-blue rounded-lg shadow-sm
                        text-nhs-blue font-semibold text-sm sm:text-base
-                       transition-colors duration-150
-                       hover:bg-nhs-blue hover:text-white
+                       transition-all duration-200
+                       hover:bg-nhs-blue hover:text-white hover:shadow-md
                        focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
             aria-haspopup="dialog"
           >
@@ -236,13 +268,17 @@ export default function JourneyStagePage() {
           </button>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-nhs-pale-grey max-w-[900px] mx-auto">
+        {/* Navigation Buttons - Enhanced */}
+        <div
+          className={`flex flex-col-reverse sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-6 border-t border-nhs-pale-grey max-w-[900px] mx-auto
+                     transform transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
           <button
             type="button"
             onClick={() => navigate('/disclaimer')}
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue hover:underline
-                       focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 rounded text-base"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 min-h-[48px] text-nhs-blue font-medium
+                       transition-all duration-200 hover:bg-nhs-blue/5 rounded-lg
+                       focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 text-base"
           >
             <BackIcon />
             {t('nav.back', 'Back')}
@@ -251,15 +287,19 @@ export default function JourneyStagePage() {
           <button
             type="button"
             onClick={handleContinue}
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[48px] w-full sm:w-auto sm:min-w-[140px] justify-center
-                       bg-nhs-green text-white font-bold rounded-md text-base sm:text-lg
-                       transition-colors duration-150
-                       hover:bg-nhs-green-dark
-                       focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2"
+            disabled={!selectedStage}
+            className={`group inline-flex items-center gap-2 px-6 sm:px-8 py-3 min-h-[52px] w-full sm:w-auto sm:min-w-[160px] justify-center
+                       font-bold rounded-lg text-base sm:text-lg
+                       transition-all duration-200 ease-out
+                       focus:outline-none focus:ring-[3px] focus:ring-focus focus:ring-offset-2
+                       ${selectedStage
+                         ? 'bg-nhs-green text-white hover:bg-nhs-green-dark hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]'
+                         : 'bg-nhs-mid-grey text-white cursor-not-allowed opacity-60'
+                       }`}
             aria-label={t('nav.continueToQuestionnaire', 'Continue to questionnaire')}
           >
-            {t('common.continue', 'Continue')}
-            <ForwardIcon />
+            <span>{t('common.continue', 'Continue')}</span>
+            <ForwardIcon className={`w-5 h-5 transition-transform duration-200 ${selectedStage ? 'group-hover:translate-x-0.5' : ''}`} />
           </button>
         </div>
       </div>
@@ -322,7 +362,7 @@ function ProgressSteps({ currentStep }: ProgressStepsProps) {
   );
 }
 
-// Journey Card Component
+// Journey Card Component - Enhanced
 interface JourneyCardProps {
   id: string;
   title: string;
@@ -330,20 +370,22 @@ interface JourneyCardProps {
   icon: React.ReactNode;
   isSelected: boolean;
   onSelect: () => void;
+  index?: number;
 }
 
-function JourneyCard({ id, title, description, icon, isSelected, onSelect }: JourneyCardProps) {
+function JourneyCard({ id, title, description, icon, isSelected, onSelect, index = 0 }: JourneyCardProps) {
   return (
     <label
-      className={`relative flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white border-2 rounded-lg cursor-pointer min-h-[100px]
-                  transition-all duration-200
-                  hover:border-nhs-blue hover:shadow-md hover:-translate-y-0.5
+      className={`group relative flex gap-3 sm:gap-4 p-4 sm:p-5 bg-white border-2 rounded-xl cursor-pointer min-h-[100px]
+                  transition-all duration-300 ease-out
+                  hover:shadow-lg hover:-translate-y-1
                   focus-within:outline-none focus-within:ring-[3px] focus-within:ring-focus focus-within:ring-offset-2
                   ${isSelected
-                    ? 'border-nhs-blue bg-blue-50 shadow-md'
-                    : 'border-nhs-pale-grey'
+                    ? 'border-nhs-blue border-[3px] bg-gradient-to-br from-blue-50 to-white shadow-md'
+                    : 'border-nhs-pale-grey hover:border-nhs-blue/50'
                   }`}
       tabIndex={0}
+      style={{ animationDelay: `${index * 50}ms` }}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -362,23 +404,22 @@ function JourneyCard({ id, title, description, icon, isSelected, onSelect }: Jou
         aria-describedby={`desc-${id}`}
       />
 
-      {/* Selected Checkmark */}
-      {isSelected && (
-        <span
-          className="absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue rounded-full flex items-center justify-center"
-          aria-hidden="true"
-        >
-          <CheckIcon />
-        </span>
-      )}
+      {/* Selected Checkmark - Animated */}
+      <span
+        className={`absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center
+                   transition-all duration-300 ${isSelected ? 'bg-nhs-blue scale-100 opacity-100' : 'bg-nhs-pale-grey scale-75 opacity-0'}`}
+        aria-hidden="true"
+      >
+        <CheckIcon />
+      </span>
 
-      {/* Icon */}
+      {/* Icon - Enhanced with animation */}
       <div
-        className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-md flex items-center justify-center
-                    transition-colors duration-150
+        className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center
+                    transition-all duration-300
                     ${isSelected
-                      ? 'bg-nhs-blue text-white'
-                      : 'bg-bg-surface-secondary text-nhs-blue'
+                      ? 'bg-nhs-blue text-white shadow-md scale-105'
+                      : 'bg-nhs-pale-grey/50 text-nhs-blue group-hover:bg-nhs-blue/10'
                     }`}
         aria-hidden="true"
       >
@@ -387,7 +428,7 @@ function JourneyCard({ id, title, description, icon, isSelected, onSelect }: Jou
 
       {/* Content */}
       <div className="flex-1 pr-6 sm:pr-8 min-w-0">
-        <h3 className="text-base sm:text-lg font-bold text-text-primary mb-1 leading-tight">
+        <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1 leading-tight">
           {title}
         </h3>
         <p
@@ -528,9 +569,50 @@ function getDefaultDescription(id: JourneyStage): string {
 }
 
 // Icon Components
+
+/** Journey/path icon for page header. */
+function JourneyIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="5" cy="6" r="3" />
+      <circle cx="19" cy="18" r="3" />
+      <path d="M5 9c0 4.5 2.5 6.5 7 8.5s7 4.5 7 8.5" />
+    </svg>
+  );
+}
+
+/** Small info icon for reassurance box. */
+function InfoSmallIcon() {
+  return (
+    <svg
+      className="w-4 h-4 text-nhs-blue"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 16v-4" />
+      <path d="M12 8h.01" />
+    </svg>
+  );
+}
+
 function AudioIcon() {
   return (
-    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
       <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
       <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
@@ -647,9 +729,9 @@ function BackIcon() {
   );
 }
 
-function ForwardIcon() {
+function ForwardIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
     </svg>

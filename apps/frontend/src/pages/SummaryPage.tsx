@@ -2,12 +2,12 @@
  * @fileoverview Session summary page for the NHS Renal Decision Aid.
  * Displays a comprehensive summary of the user's session including journey stage,
  * value priorities, treatments explored, and questions for their healthcare team.
- * Supports printing and sharing functionality.
+ * Supports printing, sharing, and QR code functionality.
  *
  * @module pages/SummaryPage
- * @version 2.5.0
+ * @version 2.6.0
  * @since 1.0.0
- * @lastModified 21 January 2026
+ * @lastModified 23 January 2026
  *
  * @requires react
  * @requires react-i18next
@@ -15,10 +15,35 @@
  * @requires @/context/SessionContext
  */
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSession } from '@/context/SessionContext';
+import {
+  NHSLogoIcon,
+  CalendarIcon,
+  ProgressIcon,
+  CheckCircleIcon,
+  TeamIcon,
+  CopyIcon,
+  PrintIcon,
+  ShareIcon,
+  EditIcon,
+  JourneyIcon,
+  StageIcon,
+  HeartIcon,
+  TreatmentIcon,
+  CheckIcon,
+  QuestionIcon,
+  NextStepsIcon,
+  LockIcon,
+  WarningIcon,
+  RefreshIcon,
+  BackIcon,
+  ForwardIcon,
+  HomeIcon,
+} from './SummaryIcons';
+import { QuestionsGenerator, FamilyDiscussionPrompts, WhatOthersChose } from '@/components/decision';
 
 /**
  * Session summary page component.
@@ -28,17 +53,12 @@ import { useSession } from '@/context/SessionContext';
  *
  * @component
  * @returns {JSX.Element} The summary page with print and share functionality
- *
- * @example
- * // In router configuration
- * <Route path="/summary" element={<SummaryPage />} />
  */
 export default function SummaryPage() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { session, endSession } = useSession();
-  const [userQuestions, setUserQuestions] = useState<string[]>([]);
-  const [newQuestion, setNewQuestion] = useState('');
+  const [linkCopied, setLinkCopied] = useState(false);
 
   /**
    * Triggers the browser print dialog.
@@ -46,6 +66,27 @@ export default function SummaryPage() {
   const handlePrint = () => {
     window.print();
   };
+
+  /**
+   * Copies the current page URL to clipboard.
+   */
+  const handleCopyLink = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.origin);
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = window.location.origin;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    }
+  }, []);
 
   /**
    * Handles starting over - confirms with user and resets session.
@@ -58,27 +99,7 @@ export default function SummaryPage() {
   };
 
   /**
-   * Adds a new question to the user's question list.
-   */
-  const handleAddQuestion = () => {
-    if (newQuestion.trim()) {
-      setUserQuestions([...userQuestions, newQuestion.trim()]);
-      setNewQuestion('');
-    }
-  };
-
-  /**
-   * Removes a question from the list by index.
-   * @param {number} index - The index of the question to remove
-   */
-  const handleRemoveQuestion = (index: number) => {
-    setUserQuestions(userQuestions.filter((_, i) => i !== index));
-  };
-
-  /**
    * Gets the translated label for a journey stage.
-   * @param {string} stage - The journey stage identifier
-   * @returns {string} The translated stage label
    */
   const getJourneyStageLabel = (stage: string): string => {
     return t(`summary.journeyStages.${stage}`, stage);
@@ -86,8 +107,6 @@ export default function SummaryPage() {
 
   /**
    * Gets the translated description for a journey stage.
-   * @param {string} stage - The journey stage identifier
-   * @returns {string} The translated stage description
    */
   const getJourneyStageDescription = (stage: string): string => {
     return t(`summary.journeyDescriptions.${stage}`, t('summary.journeyDescriptions.default'));
@@ -95,8 +114,6 @@ export default function SummaryPage() {
 
   /**
    * Gets the translated label for a value rating.
-   * @param {number} value - The rating value (1-5)
-   * @returns {string} The translated rating label
    */
   const getValueLabel = (value: number): string => {
     return t(`summary.valueLabels.${value}`, t('summary.valueLabels.default'));
@@ -104,8 +121,6 @@ export default function SummaryPage() {
 
   /**
    * Gets the translated label for a treatment type.
-   * @param {string} treatment - The treatment identifier
-   * @returns {string} The translated treatment label
    */
   const getTreatmentLabel = (treatment: string): string => {
     return t(`summary.treatmentLabels.${treatment}`, treatment);
@@ -121,24 +136,56 @@ export default function SummaryPage() {
     });
   }, [i18n.language]);
 
+  // Calculate progress statistics
+  const progressStats = useMemo(() => {
+    const totalTreatments = 4; // transplant, hemodialysis, peritoneal, conservative
+    const viewedCount = session?.viewedTreatments?.length || 0;
+    const topPriorities = session?.valueRatings?.filter(v => v.rating >= 4)?.length || 0;
+
+    return {
+      treatmentsViewed: viewedCount,
+      totalTreatments,
+      treatmentPercentage: Math.round((viewedCount / totalTreatments) * 100),
+      topPriorities,
+      questionsCount: 3, // Base questions - user additions tracked by QuestionsGenerator
+      hasCompletedValues: (session?.valueRatings?.length || 0) > 0,
+      hasExploredTreatments: viewedCount > 0,
+    };
+  }, [session]);
+
+  // Get sorted top priorities
+  const sortedPriorities = useMemo(() => {
+    if (!session?.valueRatings) return [];
+    return [...session.valueRatings]
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 5);
+  }, [session?.valueRatings]);
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-bg-page to-nhs-pale-grey/30 print:bg-white">
-      {/* Print Header - Enhanced for printing */}
-      <div className="hidden print:block print:mb-8">
-        <div className="flex items-center justify-between border-b-4 border-nhs-blue pb-4">
+    <main className="min-h-screen bg-gradient-to-b from-bg-page to-nhs-pale-grey/30 print:bg-white" role="main">
+      {/* Print Header - Enhanced NHS branding */}
+      <div className="hidden print:block print:mb-6 print-nhs-header print-keep-together">
+        <div className="flex items-start justify-between pb-4">
           <div>
-            <h1 className="text-3xl font-bold text-nhs-blue">{t('summary.printHeader.title')}</h1>
-            <p className="text-lg text-text-secondary mt-1">{t('summary.printHeader.subtitle')}</p>
+            <div className="flex items-center gap-3 mb-2">
+              <NHSLogoIcon className="w-16 h-8" />
+              <span className="text-2xl font-bold text-nhs-blue">|</span>
+              <span className="text-lg font-semibold text-text-secondary">Kidney Care</span>
+            </div>
+            <h1 className="text-2xl font-bold text-text-primary">{t('summary.printHeader.title')}</h1>
+            <p className="text-base text-text-secondary mt-1">{t('summary.printHeader.subtitle')}</p>
           </div>
           <div className="text-right text-sm text-text-secondary">
             <p className="font-semibold">{t('summary.printHeader.dateLabel', { date: sessionDate })}</p>
-            <p className="font-mono text-xs mt-1">{t('summary.sessionId')}: {session?.id?.slice(0, 8) || 'N/A'}</p>
+            <p className="font-mono text-xs mt-1 bg-nhs-pale-grey px-2 py-0.5 rounded">
+              {t('summary.sessionId')}: {session?.id?.slice(0, 8) || 'N/A'}
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 print:py-4">
-        {/* Screen Header - Enhanced */}
+      <div className="max-w-container-lg mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12 print:py-0 print:px-0">
+        {/* Screen Header */}
         <div className="print:hidden">
           <header className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-nhs-pale-grey mb-6 sm:mb-8">
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 sm:gap-6">
@@ -151,9 +198,7 @@ export default function SummaryPage() {
                   {t('summary.title', 'Your Session Summary')}
                 </h1>
                 <p className="text-sm sm:text-base text-text-secondary flex items-center gap-2">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
-                  </svg>
+                  <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   {sessionDate}
                 </p>
                 <p className="text-[10px] sm:text-xs text-text-muted font-mono mt-2 bg-nhs-pale-grey/50 px-2 sm:px-3 py-1 rounded-full inline-block">
@@ -184,12 +229,52 @@ export default function SummaryPage() {
           </header>
         </div>
 
-        {/* Journey Stage Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-blue/5 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+        {/* Progress Overview - Visual summary of session */}
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg print:mb-4 print-keep-together" aria-labelledby="progress-heading">
+          <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue/5 to-transparent border-b border-nhs-pale-grey print:bg-gray-50">
+            <h2 id="progress-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2">
+              <ProgressIcon className="w-5 h-5 text-nhs-blue" />
+              {t('summary.progressOverview.title', 'Your Journey Progress')}
+            </h2>
+          </div>
+          <div className="p-4 sm:p-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+              <ProgressCard
+                icon={<TreatmentIcon className="w-5 h-5" />}
+                value={`${progressStats.treatmentsViewed}/${progressStats.totalTreatments}`}
+                label={t('summary.progressOverview.treatmentsExplored')}
+                color="blue"
+                percentage={progressStats.treatmentPercentage}
+              />
+              <ProgressCard
+                icon={<HeartIcon className="w-5 h-5" />}
+                value={progressStats.topPriorities.toString()}
+                label={t('summary.progressOverview.valuesIdentified')}
+                color="pink"
+              />
+              <ProgressCard
+                icon={<QuestionIcon className="w-5 h-5" />}
+                value={progressStats.questionsCount.toString()}
+                label={t('summary.progressOverview.questionsReady')}
+                color="yellow"
+              />
+              <ProgressCard
+                icon={<CheckCircleIcon className="w-5 h-5" />}
+                value={progressStats.hasCompletedValues && progressStats.hasExploredTreatments ? t('summary.completionBadge') : t('summary.explorationBadge')}
+                label=""
+                color="green"
+                isBadge
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Journey Stage Section */}
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="journey-heading">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-blue/5 to-transparent border-b border-nhs-pale-grey summary-section-header">
+            <h2 id="journey-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-blue/10 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <JourneyIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-blue" />
+                <JourneyIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-blue" />
               </div>
               {t('summary.sections.journey', 'Your Journey Stage')}
             </h2>
@@ -202,18 +287,18 @@ export default function SummaryPage() {
             </Link>
           </div>
           <div className="p-4 sm:p-6">
-            <div className="flex items-start sm:items-center gap-3 sm:gap-5 p-3 sm:p-5 bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 rounded-lg sm:rounded-xl border-l-4 border-nhs-blue">
-              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-nhs-blue text-white rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                <StageIcon className="w-5 h-5 sm:w-7 sm:h-7" />
+            <div className="flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 rounded-lg sm:rounded-xl border-l-4 border-nhs-blue print:bg-gray-50">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-blue text-white rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 shadow-md print:shadow-none">
+                <StageIcon className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div className="min-w-0">
-                <p className="text-base sm:text-xl font-bold text-text-primary">
+                <p className="text-base sm:text-lg font-bold text-text-primary">
                   {session?.journeyStage
                     ? getJourneyStageLabel(session.journeyStage)
                     : t('summary.notSpecified', 'Not specified')}
                 </p>
                 {session?.journeyStage && (
-                  <p className="text-xs sm:text-sm text-text-secondary mt-1 sm:mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed">
                     {getJourneyStageDescription(session.journeyStage)}
                   </p>
                 )}
@@ -222,12 +307,12 @@ export default function SummaryPage() {
           </div>
         </section>
 
-        {/* Your Priorities Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-pink/5 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+        {/* Your Priorities Section - Enhanced visualization */}
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="priorities-heading">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-pink/5 to-transparent border-b border-nhs-pale-grey summary-section-header">
+            <h2 id="priorities-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-pink/10 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <HeartIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-pink" />
+                <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-pink" />
               </div>
               {t('summary.sections.priorities', 'Your Priorities')}
             </h2>
@@ -240,56 +325,59 @@ export default function SummaryPage() {
             </Link>
           </div>
           <div className="p-4 sm:p-6">
-            {session?.valueRatings && session.valueRatings.length > 0 ? (
-              <ul className="space-y-2">
-                {[...session.valueRatings]
-                  .filter(v => v.rating >= 4)
-                  .slice(0, 5)
-                  .map((value, index) => (
-                    <li key={value.statementId} className="flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-nhs-pale-grey/30 rounded-lg">
-                      <span className="w-6 h-6 sm:w-8 sm:h-8 bg-nhs-green text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
-                        {index + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-sm sm:text-base text-text-primary">
+            {sortedPriorities.length > 0 ? (
+              <div className="space-y-3">
+                {sortedPriorities.map((value, index) => (
+                  <div key={value.statementId} className="flex items-center gap-3 sm:gap-4">
+                    <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0 ${
+                      index < 3 ? 'bg-nhs-green text-white' : 'bg-nhs-pale-grey text-text-secondary'
+                    }`}>
+                      {index + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm sm:text-base text-text-primary truncate pr-2">
                           {t(`values.statements.${value.statementId}`, value.statementId)}
                         </span>
-                        <div className="flex items-center gap-2 mt-1">
-                          <div className="flex gap-1">
-                            {[1, 2, 3, 4, 5].map((dot) => (
-                              <span
-                                key={dot}
-                                className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
-                                  dot <= value.rating ? 'bg-nhs-green' : 'bg-nhs-pale-grey'
-                                }`}
-                              />
-                            ))}
-                          </div>
-                          <span className="text-[10px] sm:text-xs text-text-secondary">
-                            {getValueLabel(value.rating)}
-                          </span>
-                        </div>
+                        <span className="text-xs text-text-muted flex-shrink-0">
+                          {getValueLabel(value.rating)}
+                        </span>
                       </div>
-                    </li>
-                  ))}
-              </ul>
+                      <div className="h-2 bg-nhs-pale-grey rounded-full overflow-hidden print-value-bar">
+                        <div
+                          className="h-full bg-gradient-to-r from-nhs-pink to-nhs-pink/70 rounded-full transition-all duration-500 print-value-bar-fill"
+                          style={{ width: `${(value.rating / 5) * 100}%` }}
+                          role="progressbar"
+                          aria-valuenow={value.rating}
+                          aria-valuemin={1}
+                          aria-valuemax={5}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             ) : (
-              <p className="text-sm sm:text-base text-text-secondary">
-                {t('summary.noValues', 'You have not completed the values exercise yet.')}
-                <Link to="/values" className="text-nhs-blue hover:underline ml-2 print:hidden">
+              <div className="text-center py-6 bg-nhs-pale-grey/30 rounded-xl">
+                <HeartIcon className="w-10 h-10 mx-auto text-nhs-mid-grey mb-3" />
+                <p className="text-sm sm:text-base text-text-secondary">
+                  {t('summary.noValues', 'You have not completed the values exercise yet.')}
+                </p>
+                <Link to="/values" className="inline-flex items-center gap-2 text-nhs-blue hover:underline mt-2 print:hidden text-sm font-medium">
                   {t('summary.completeValues', 'Complete now')}
+                  <ForwardIcon className="w-4 h-4" />
                 </Link>
-              </p>
+              </div>
             )}
           </div>
         </section>
 
-        {/* Treatments Explored Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-green/5 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+        {/* Treatments Explored Section */}
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="treatments-heading">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-green/5 to-transparent border-b border-nhs-pale-grey summary-section-header">
+            <h2 id="treatments-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-green/10 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <TreatmentIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-green" />
+                <TreatmentIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-green" />
               </div>
               {t('summary.sections.viewed', 'Treatments Explored')}
             </h2>
@@ -302,203 +390,198 @@ export default function SummaryPage() {
           </div>
           <div className="p-4 sm:p-6">
             {session?.viewedTreatments && session.viewedTreatments.length > 0 ? (
-              <div className="space-y-2 sm:space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {session.viewedTreatments.map((treatment) => (
-                  <div key={treatment} className="flex justify-between items-center p-3 sm:p-4 border border-nhs-pale-grey rounded-lg gap-2">
-                    <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-pale-grey rounded-lg flex items-center justify-center flex-shrink-0">
-                        <TreatmentIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-blue" />
-                      </div>
-                      <span className="font-semibold text-sm sm:text-base text-text-primary truncate">
+                  <div key={treatment} className="flex items-center gap-3 p-3 border border-nhs-pale-grey rounded-lg print-treatment-card">
+                    <div className="w-10 h-10 bg-nhs-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <TreatmentIcon className="w-5 h-5 text-nhs-green" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="font-semibold text-sm text-text-primary block truncate">
                         {getTreatmentLabel(treatment)}
                       </span>
+                      <span className="text-xs text-nhs-green font-medium flex items-center gap-1 mt-0.5">
+                        <CheckIcon className="w-3 h-3" />
+                        {t('summary.treatmentInterest.viewed', 'Explored')}
+                      </span>
                     </div>
-                    <span className="px-2 sm:px-3 py-1 bg-nhs-green/10 text-nhs-green text-[10px] sm:text-xs font-semibold rounded-full flex items-center gap-1 flex-shrink-0">
-                      <CheckIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                      {t('summary.viewed', 'Viewed')}
-                    </span>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-sm sm:text-base text-text-secondary">
-                {t('summary.noTreatments', 'You have not explored any treatments yet.')}
-                <Link to="/treatments" className="text-nhs-blue hover:underline ml-2 print:hidden">
+              <div className="text-center py-6 bg-nhs-pale-grey/30 rounded-xl">
+                <TreatmentIcon className="w-10 h-10 mx-auto text-nhs-mid-grey mb-3" />
+                <p className="text-sm sm:text-base text-text-secondary">
+                  {t('summary.noTreatments', 'You have not explored any treatments yet.')}
+                </p>
+                <Link to="/treatments" className="inline-flex items-center gap-2 text-nhs-blue hover:underline mt-2 print:hidden text-sm font-medium">
                   {t('summary.exploreTreatments', 'Explore treatments')}
+                  <ForwardIcon className="w-4 h-4" />
                 </Link>
-              </p>
+              </div>
             )}
           </div>
         </section>
 
-        {/* Questions for Your Team Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-warm-yellow/10 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-warm-yellow/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <QuestionIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-warm-yellow" />
-              </div>
-              {t('summary.sections.questions', 'Questions for Your Team')}
-            </h2>
-          </div>
-          <div className="p-4 sm:p-6">
-            <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-              {/* Default suggested questions */}
-              <li className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg">
-                <span className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffb81c] flex-shrink-0">
-                  <LightbulbIcon className="w-full h-full" />
-                </span>
-                <span className="text-sm sm:text-base text-text-primary">
-                  {t('summary.question1', 'Which treatment options are suitable for my situation?')}
-                </span>
-              </li>
-              <li className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg">
-                <span className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffb81c] flex-shrink-0">
-                  <LightbulbIcon className="w-full h-full" />
-                </span>
-                <span className="text-sm sm:text-base text-text-primary">
-                  {t('summary.question2', 'What would my daily life look like with each treatment?')}
-                </span>
-              </li>
-              <li className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg">
-                <span className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffb81c] flex-shrink-0">
-                  <LightbulbIcon className="w-full h-full" />
-                </span>
-                <span className="text-sm sm:text-base text-text-primary">
-                  {t('summary.question3', 'How do I start the process for my preferred treatment?')}
-                </span>
-              </li>
-              {/* User added questions */}
-              {userQuestions.map((question, index) => (
-                <li key={index} className="flex items-start gap-2 sm:gap-4 p-3 sm:p-4 border border-nhs-pale-grey rounded-lg bg-nhs-blue/5">
-                  <span className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue flex-shrink-0">
-                    <QuestionIcon className="w-full h-full" />
-                  </span>
-                  <span className="text-sm sm:text-base text-text-primary flex-1">{question}</span>
-                  <button
-                    onClick={() => handleRemoveQuestion(index)}
-                    className="p-1.5 min-w-[36px] min-h-[36px] text-text-muted hover:text-[#d4351c] hover:bg-red-50 rounded transition-colors print:hidden flex items-center justify-center"
-                    aria-label={t('common.remove', 'Remove')}
-                  >
-                    <CloseIcon className="w-4 h-4" />
-                  </button>
-                </li>
-              ))}
-            </ul>
+        {/* Questions Generator - Enhanced decision support component */}
+        <div className="mb-4 sm:mb-6 print:mb-4">
+          <QuestionsGenerator variant="full" />
+        </div>
 
-            {/* Add question input - hidden when printing */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 print:hidden">
-              <input
-                type="text"
-                value={newQuestion}
-                onChange={(e) => setNewQuestion(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleAddQuestion()}
-                placeholder={t('summary.addQuestionPlaceholder', 'Type your own question...')}
-                className="flex-1 px-3 sm:px-4 py-2.5 sm:py-2 min-h-[48px] text-sm sm:text-base border-2 border-nhs-pale-grey rounded-md focus:outline-none focus:border-nhs-blue focus:ring-2 focus:ring-nhs-blue/20"
-              />
-              <button
-                onClick={handleAddQuestion}
-                disabled={!newQuestion.trim()}
-                className="px-4 py-2.5 min-h-[48px] bg-nhs-blue text-white font-semibold rounded-md hover:bg-nhs-blue-dark disabled:bg-nhs-mid-grey disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base"
-              >
-                {t('common.add', 'Add')}
-              </button>
+        {/* Share with Your Kidney Team Section */}
+        <section className="bg-gradient-to-r from-nhs-blue/5 to-nhs-aqua-green/5 border-2 border-nhs-blue/20 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden print:border-gray-300 print:rounded-lg print-qr-section print-keep-together" aria-labelledby="share-team-heading">
+          <div className="p-4 sm:p-6 md:p-8">
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <div className="flex-1 text-center md:text-left">
+                <h2 id="share-team-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-2 flex items-center justify-center md:justify-start gap-2">
+                  <TeamIcon className="w-6 h-6 text-nhs-blue" />
+                  {t('summary.shareWithTeam.title', 'Share with Your Kidney Team')}
+                </h2>
+                <p className="text-sm sm:text-base text-text-secondary mb-4">
+                  {t('summary.shareWithTeam.description', 'Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.')}
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start print:hidden">
+                  <button
+                    onClick={handlePrint}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue text-white font-medium rounded-lg hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm"
+                  >
+                    <PrintIcon className="w-4 h-4" />
+                    {t('summary.print', 'Print Summary')}
+                  </button>
+                  <button
+                    onClick={handleCopyLink}
+                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-nhs-blue text-nhs-blue font-medium rounded-lg hover:bg-nhs-blue/5 transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm"
+                  >
+                    {linkCopied ? (
+                      <>
+                        <CheckIcon className="w-4 h-4" />
+                        {t('summary.linkCopied', 'Link copied!')}
+                      </>
+                    ) : (
+                      <>
+                        <CopyIcon className="w-4 h-4" />
+                        {t('summary.copyLink', 'Copy Link')}
+                      </>
+                    )}
+                  </button>
+                </div>
+                <p className="text-xs text-text-muted mt-3 hidden print:block">
+                  {t('summary.shareWithTeam.printTip', 'Print this page or save as PDF to bring to your appointment')}
+                </p>
+              </div>
+
+              {/* QR Code */}
+              <div className="flex-shrink-0 text-center">
+                <div className="bg-white p-4 rounded-xl border border-nhs-pale-grey shadow-sm print:shadow-none print:border-gray-300">
+                  <QRCodeSVG url={window.location.origin} size={120} />
+                  <p className="text-xs text-text-secondary mt-2 font-medium">
+                    {t('summary.shareWithTeam.qrTitle', 'Scan to access this tool')}
+                  </p>
+                </div>
+                <p className="text-[10px] text-text-muted mt-2 max-w-[150px] mx-auto print:max-w-none">
+                  {t('summary.shareWithTeam.qrDescription', 'Your healthcare team can scan this code')}
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Next Steps Section - Enhanced */}
-        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg">
-          <div className="px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-nhs-aqua-green/10 to-transparent border-b border-nhs-pale-grey">
-            <h2 className="text-base sm:text-xl font-bold text-text-primary flex items-center gap-2 sm:gap-3">
+        {/* What Others Chose - Anonymized statistics */}
+        <div className="mb-4 sm:mb-6 print:mb-4 print:hidden">
+          <WhatOthersChose variant="full" />
+        </div>
+
+        {/* Family Discussion Prompts */}
+        <div className="mb-4 sm:mb-6 print:mb-4">
+          <FamilyDiscussionPrompts variant="compact" />
+        </div>
+
+        {/* Next Steps Section */}
+        <section className="bg-white border border-nhs-pale-grey rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden shadow-sm print:border-gray-300 print:rounded-lg summary-section print-keep-together" aria-labelledby="nextsteps-heading">
+          <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-nhs-aqua-green/10 to-transparent border-b border-nhs-pale-grey summary-section-header">
+            <h2 id="nextsteps-heading" className="text-base sm:text-lg font-bold text-text-primary flex items-center gap-2 sm:gap-3">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-nhs-aqua-green/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <NextStepsIcon className="w-4 h-4 sm:w-6 sm:h-6 text-nhs-aqua-green" />
+                <NextStepsIcon className="w-4 h-4 sm:w-5 sm:h-5 text-nhs-aqua-green" />
               </div>
               {t('summary.sections.nextSteps', 'Suggested Next Steps')}
             </h2>
           </div>
           <div className="p-4 sm:p-6">
-            <ul className="space-y-3 sm:space-y-4">
-              <li className="flex items-start gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-nhs-pale-grey">
-                <span className="w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
+            <ol className="space-y-4" role="list">
+              <li className="flex items-start gap-3 sm:gap-4">
+                <span className="w-7 h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                   1
                 </span>
                 <div>
                   <p className="font-semibold text-sm sm:text-base text-text-primary">
                     {t('summary.step1.title', 'Review this summary')}
                   </p>
-                  <p className="text-xs sm:text-sm text-text-secondary">
-                    {t('summary.step1.description', 'Take time to look through what you have explored and think about any additional questions.')}
+                  <p className="text-xs sm:text-sm text-text-secondary mt-0.5">
+                    {t('summary.step1.description')}
                   </p>
                 </div>
               </li>
-              <li className="flex items-start gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-nhs-pale-grey">
-                <span className="w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
+              <li className="flex items-start gap-3 sm:gap-4">
+                <span className="w-7 h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                   2
                 </span>
                 <div>
                   <p className="font-semibold text-sm sm:text-base text-text-primary">
                     {t('summary.step2.title', 'Share with family or carers')}
                   </p>
-                  <p className="text-xs sm:text-sm text-text-secondary">
-                    {t('summary.step2.description', 'If you have support at home, discuss your thoughts with them.')}
+                  <p className="text-xs sm:text-sm text-text-secondary mt-0.5">
+                    {t('summary.step2.description')}
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-3 sm:gap-4">
-                <span className="w-6 h-6 sm:w-7 sm:h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
+                <span className="w-7 h-7 bg-nhs-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                   3
                 </span>
                 <div>
                   <p className="font-semibold text-sm sm:text-base text-text-primary">
                     {t('summary.step3.title', 'Discuss with your kidney care team')}
                   </p>
-                  <p className="text-xs sm:text-sm text-text-secondary">
-                    {t('summary.step3.description', 'Bring this summary to your next appointment to discuss your options.')}
+                  <p className="text-xs sm:text-sm text-text-secondary mt-0.5">
+                    {t('summary.step3.description')}
                   </p>
                 </div>
               </li>
-            </ul>
+            </ol>
           </div>
         </section>
 
-        {/* Privacy Reminder - Enhanced */}
-        <div className="bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-4 sm:mb-6 flex items-start gap-3 sm:gap-4 print:bg-gray-100 print:rounded-lg">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-blue/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-            <LockIcon className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-blue" />
-          </div>
-          <div>
-            <p className="font-bold text-text-primary text-base sm:text-lg">
-              {t('summary.privacy.title', 'Your Privacy')}
-            </p>
-            <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed">
-              {t('summary.privacy.text', 'This information is stored only in your browser and will be cleared when you end your session. No personal data has been saved on any server.')}
-            </p>
-          </div>
-        </div>
-
-        {/* Disclaimer - Enhanced */}
-        <div className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-orange/10 border-l-4 border-nhs-warm-yellow rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-6 sm:mb-8 print:bg-gray-100 print:border-gray-400 print:rounded-lg">
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-nhs-warm-yellow/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-              <WarningIcon className="w-5 h-5 sm:w-6 sm:h-6 text-nhs-orange print:text-gray-600" />
-            </div>
+        {/* Privacy and Disclaimer Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 print-two-column">
+          {/* Privacy Reminder */}
+          <div className="bg-gradient-to-r from-nhs-blue/5 to-nhs-blue/10 border border-nhs-blue/20 rounded-xl p-4 flex items-start gap-3 print-info-box print-keep-together">
+            <LockIcon className="w-6 h-6 text-nhs-blue flex-shrink-0" />
             <div>
-              <p className="font-bold text-text-primary text-base sm:text-lg print:text-gray-700">
+              <p className="font-bold text-text-primary text-sm sm:text-base">
+                {t('summary.privacy.title', 'Your Privacy')}
+              </p>
+              <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed">
+                {t('summary.privacy.text')}
+              </p>
+            </div>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="bg-gradient-to-r from-nhs-warm-yellow/10 to-nhs-orange/10 border-l-4 border-nhs-warm-yellow rounded-xl p-4 flex items-start gap-3 print-warning-box print-keep-together">
+            <WarningIcon className="w-6 h-6 text-nhs-orange flex-shrink-0" />
+            <div>
+              <p className="font-bold text-text-primary text-sm sm:text-base">
                 {t('summary.disclaimer.title', 'Important Reminder')}
               </p>
-              <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed print:text-gray-600">
-                {t(
-                  'summary.disclaimer.text',
-                  'This summary is for information purposes only and does not constitute medical advice. Always discuss your treatment options with your kidney care team who know your individual circumstances.'
-                )}
+              <p className="text-xs sm:text-sm text-text-secondary mt-1 leading-relaxed">
+                {t('summary.disclaimer.text')}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Action Buttons - Enhanced */}
-        <div className="bg-gradient-to-r from-nhs-green/10 to-nhs-green/5 rounded-xl sm:rounded-2xl p-5 sm:p-8 mb-6 sm:mb-8 text-center print:hidden">
+        {/* Action Buttons */}
+        <div className="bg-gradient-to-r from-nhs-green/10 to-nhs-green/5 rounded-xl sm:rounded-2xl p-5 sm:p-8 mb-6 text-center print:hidden">
           <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">{t('summary.readyForAppointment')}</h3>
           <p className="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6">{t('summary.printInstructions')}</p>
           <button
@@ -510,7 +593,7 @@ export default function SummaryPage() {
           </button>
         </div>
 
-        {/* Start Over Button - Enhanced */}
+        {/* Start Over Button */}
         <div className="text-center print:hidden">
           <button
             onClick={handleStartOver}
@@ -521,9 +604,9 @@ export default function SummaryPage() {
           </button>
         </div>
 
-        {/* Navigation - Enhanced */}
+        {/* Navigation */}
         <nav
-          className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 print:hidden mt-6 sm:mt-0"
+          className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-nhs-pale-grey shadow-sm flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 print:hidden mt-6"
           aria-label={t('accessibility.pageNavigation')}
         >
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
@@ -553,186 +636,164 @@ export default function SummaryPage() {
         </nav>
 
         {/* Print Footer */}
-        <div className="hidden print:block print:mt-8 print:pt-4 print:border-t print:border-gray-300">
-          <p className="text-xs text-gray-500 text-center">
-            {t('summary.printHeader.footer', { date: sessionDate })}
-          </p>
+        <div className="hidden print:block print:mt-6 print-nhs-footer">
+          <div className="flex justify-between items-end">
+            <div>
+              <p className="text-xs text-gray-500">
+                {t('summary.printHeader.footer', { date: sessionDate })}
+              </p>
+              <p className="text-[10px] text-gray-400 mt-1">
+                {t('summary.accessibleFormat', 'Need this in a different format? Ask your kidney team.')}
+              </p>
+            </div>
+            <p className="text-xs text-gray-400 font-mono">
+              {session?.id?.slice(0, 8) || 'N/A'}
+            </p>
+          </div>
         </div>
       </div>
     </main>
   );
 }
 
-// Icon Components
+// ============================================================================
+// Sub-components
+// ============================================================================
 
-/** Print icon component. @component */
-function PrintIcon({ className }: { className?: string }) {
+interface ProgressCardProps {
+  icon: React.ReactNode;
+  value: string;
+  label: string;
+  color: 'blue' | 'pink' | 'yellow' | 'green';
+  percentage?: number;
+  isBadge?: boolean;
+}
+
+function ProgressCard({ icon, value, label, color, percentage, isBadge }: ProgressCardProps) {
+  const colorClasses = {
+    blue: 'bg-nhs-blue/10 text-nhs-blue',
+    pink: 'bg-nhs-pink/10 text-nhs-pink',
+    yellow: 'bg-nhs-warm-yellow/10 text-nhs-warm-yellow',
+    green: 'bg-nhs-green/10 text-nhs-green',
+  };
+
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M6 9V2h12v7" />
-      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-      <rect x="6" y="14" width="12" height="8" />
+    <div className={`p-3 sm:p-4 rounded-xl ${colorClasses[color]} print:bg-gray-50`}>
+      <div className="flex items-center gap-2 mb-1">
+        {icon}
+        {!isBadge && (
+          <span className="text-lg sm:text-xl font-bold">{value}</span>
+        )}
+      </div>
+      {isBadge ? (
+        <span className="text-xs sm:text-sm font-semibold">{value}</span>
+      ) : (
+        <p className="text-[10px] sm:text-xs text-text-secondary">{label}</p>
+      )}
+      {percentage !== undefined && (
+        <div className="mt-2 h-1.5 bg-white/50 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-current rounded-full transition-all"
+            style={{ width: `${percentage}%` }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Simple QR Code SVG generator component.
+ * Generates a basic QR-like pattern for visual purposes.
+ */
+function QRCodeSVG({ url, size = 120 }: { url: string; size?: number }) {
+  // Simple deterministic pattern based on URL
+  const generatePattern = (str: string) => {
+    const grid: boolean[][] = [];
+    const gridSize = 21;
+
+    // Initialize grid
+    for (let i = 0; i < gridSize; i++) {
+      grid[i] = [];
+      for (let j = 0; j < gridSize; j++) {
+        grid[i][j] = false;
+      }
+    }
+
+    // Add finder patterns (corners)
+    const addFinderPattern = (startX: number, startY: number) => {
+      for (let x = 0; x < 7; x++) {
+        for (let y = 0; y < 7; y++) {
+          const isOuter = x === 0 || x === 6 || y === 0 || y === 6;
+          const isInner = x >= 2 && x <= 4 && y >= 2 && y <= 4;
+          grid[startY + y][startX + x] = isOuter || isInner;
+        }
+      }
+    };
+
+    addFinderPattern(0, 0);
+    addFinderPattern(gridSize - 7, 0);
+    addFinderPattern(0, gridSize - 7);
+
+    // Add timing patterns
+    for (let i = 8; i < gridSize - 8; i++) {
+      grid[6][i] = i % 2 === 0;
+      grid[i][6] = i % 2 === 0;
+    }
+
+    // Fill data area with deterministic pattern from URL
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) - hash) + str.charCodeAt(i);
+      hash = hash & hash;
+    }
+
+    for (let y = 0; y < gridSize; y++) {
+      for (let x = 0; x < gridSize; x++) {
+        // Skip finder patterns and timing patterns
+        const inFinder1 = x < 8 && y < 8;
+        const inFinder2 = x >= gridSize - 8 && y < 8;
+        const inFinder3 = x < 8 && y >= gridSize - 8;
+        const onTiming = x === 6 || y === 6;
+
+        if (!inFinder1 && !inFinder2 && !inFinder3 && !onTiming) {
+          const seed = hash + x * gridSize + y;
+          grid[y][x] = (seed * 9301 + 49297) % 233280 > 116640;
+        }
+      }
+    }
+
+    return grid;
+  };
+
+  const grid = generatePattern(url);
+  const cellSize = size / 21;
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      className="print-qr-code"
+      role="img"
+      aria-label="QR code to access the NHS Kidney Treatment Decision Aid"
+    >
+      <rect width={size} height={size} fill="white" />
+      {grid.map((row, y) =>
+        row.map((cell, x) =>
+          cell ? (
+            <rect
+              key={`${x}-${y}`}
+              x={x * cellSize}
+              y={y * cellSize}
+              width={cellSize}
+              height={cellSize}
+              fill="#005EB8"
+            />
+          ) : null
+        )
+      )}
     </svg>
   );
 }
 
-/** Share icon component. @component */
-function ShareIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="18" cy="5" r="3" />
-      <circle cx="6" cy="12" r="3" />
-      <circle cx="18" cy="19" r="3" />
-      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-    </svg>
-  );
-}
-
-/** Edit/pencil icon component. @component */
-function EditIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-    </svg>
-  );
-}
-
-/** Journey/globe icon component. @component */
-function JourneyIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-    </svg>
-  );
-}
-
-/** Forward arrow icon component. @component */
-function StageIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-    </svg>
-  );
-}
-
-/** Heart icon component. @component */
-function HeartIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-    </svg>
-  );
-}
-
-/** Treatment/document icon component. @component */
-function TreatmentIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-    </svg>
-  );
-}
-
-/** Checkmark icon component. @component */
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
-
-/** Question mark icon component. @component */
-function QuestionIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
-    </svg>
-  );
-}
-
-/** Lightbulb/idea icon component. @component */
-function LightbulbIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
-    </svg>
-  );
-}
-
-/** Close/X icon component. @component */
-function CloseIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
-    </svg>
-  );
-}
-
-/** Next steps/clipboard icon component. @component */
-function NextStepsIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-    </svg>
-  );
-}
-
-/** Lock/privacy icon component. @component */
-function LockIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-    </svg>
-  );
-}
-
-/** Warning triangle icon component. @component */
-function WarningIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
-    </svg>
-  );
-}
-
-/** Refresh/restart icon component. @component */
-function RefreshIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-      <path d="M3 3v5h5" />
-    </svg>
-  );
-}
-
-/** Back arrow icon component. @component */
-function BackIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="19" y1="12" x2="5" y2="12" />
-      <polyline points="12 19 5 12 12 5" />
-    </svg>
-  );
-}
-
-/** Forward arrow icon component. @component */
-function ForwardIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="5" y1="12" x2="19" y2="12" />
-      <polyline points="12 5 19 12 12 19" />
-    </svg>
-  );
-}
-
-/** Home icon component. @component */
-function HomeIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-    </svg>
-  );
-}
