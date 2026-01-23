@@ -174,7 +174,7 @@ describe('LanguageSelectionPage', () => {
     it('disables continue button when no language is selected', () => {
       render(<LanguageSelectionPage />);
 
-      const continueButton = screen.getByText('Continue');
+      const continueButton = screen.getByRole('button', { name: /continue/i });
       expect(continueButton).toBeDisabled();
     });
 
@@ -182,7 +182,7 @@ describe('LanguageSelectionPage', () => {
       const user = userEvent.setup();
       render(<LanguageSelectionPage />);
 
-      const continueButton = screen.getByText('Continue');
+      const continueButton = screen.getByRole('button', { name: /continue/i });
       expect(continueButton).toBeDisabled();
 
       // Select a language
