@@ -2310,7 +2310,7 @@
     "currentMode": "You're in {{mode}} mode"
   },
   "companionBanner": {
-    "text": "Companion mode — this session is about {{relationship}}"
+    "text": "Companion mode — this session is about {{relationship}}. Complete this resource as if you were them."
   },
   "carerRelationship": {
     "title": "Your relationship",
