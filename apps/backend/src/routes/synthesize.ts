@@ -208,6 +208,113 @@ router.post('/', async (req: Request, res: Response) => {
 });
 
 /**
+ * Language names for system prompt instructions.
+ * @constant {Record<string, string>}
+ */
+const LANGUAGE_NAMES: Record<string, string> = {
+  en: 'English',
+  zh: 'Chinese (Simplified)',
+  hi: 'Hindi',
+  pa: 'Punjabi',
+  bn: 'Bengali',
+  ur: 'Urdu',
+  gu: 'Gujarati',
+  ta: 'Tamil',
+  pl: 'Polish',
+  ar: 'Arabic',
+  pt: 'Portuguese',
+  fr: 'French',
+  so: 'Somali',
+  tr: 'Turkish',
+  vi: 'Vietnamese',
+};
+
+/**
+ * Read an entire page aloud using gpt-4o-mini-tts with instructions.
+ *
+ * POST /api/synthesize/page
+ *
+ * @async
+ * @function
+ * @param {Request} req - Express request object
+ * @param {string} req.body.text - Page text content to read (required)
+ * @param {string} req.body.language - Language code for speech
+ * @param {Response} res - Express response object
+ * @returns {Promise<void>} MP3 audio stream
+ */
+router.post('/page', async (req: Request, res: Response) => {
+  try {
+    if (!openai) {
+      res.status(503).json({
+        error: 'Service Unavailable',
+        message: 'Text-to-speech service is not configured',
+      });
+      return;
+    }
+
+    const { text, language } = req.body;
+
+    if (!text || typeof text !== 'string' || text.trim().length === 0) {
+      res.status(400).json({
+        error: 'Bad Request',
+        message: 'Text is required and must be a non-empty string',
+      });
+      return;
+    }
+
+    // Truncate very long pages to avoid API limits
+    const maxChars = 16000;
+    const truncatedText = text.length > maxChars ? text.slice(0, maxChars) : text;
+
+    const languageName = LANGUAGE_NAMES[language] || 'English';
+
+    const instructions = `You are reading a webpage aloud to a user who speaks ${languageName}. Read the following text naturally and clearly in ${languageName}. Speak at a comfortable pace. Do not add any commentary or introduction - just read the content directly.`;
+
+    logger.debug('Processing page synthesis request', {
+      requestId: req.requestId,
+      textLength: truncatedText.length,
+      language,
+      languageName,
+    });
+
+    const mp3Response = await openai.audio.speech.create({
+      model: 'gpt-4o-mini-tts',
+      voice: 'nova',
+      input: truncatedText,
+      instructions,
+      response_format: 'mp3',
+    });
+
+    const audioBuffer = await mp3Response.arrayBuffer();
+
+    res.set({
+      'Content-Type': 'audio/mpeg',
+      'Content-Length': audioBuffer.byteLength.toString(),
+      'Cache-Control': 'no-cache',
+    });
+
+    res.send(Buffer.from(audioBuffer));
+  } catch (error) {
+    logError(error as Error, { requestId: req.requestId, operation: 'synthesize-page' });
+
+    if (error instanceof OpenAI.APIError) {
+      if (error.status === 429) {
+        res.status(429).json({
+          error: 'Rate Limited',
+          message: 'Too many requests. Please wait a moment and try again.',
+        });
+        return;
+      }
+    }
+
+    res.status(500).json({
+      error: 'Synthesis Error',
+      message: 'Unable to generate speech for this page. Please try again.',
+    });
+  }
+});
+
+/**
  * Get list of available TTS voices and models.
  *
  * GET /api/synthesize/voices

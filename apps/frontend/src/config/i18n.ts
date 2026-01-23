@@ -111,7 +111,7 @@ function getInitialLanguage(): string {
  * - English as default language for first-time visitors
  * - User language preference saved to localStorage
  * - Lazy loading of translation files via HTTP backend
- * - Support for 11 languages including RTL (Urdu, Arabic)
+ * - Support for 15 languages including RTL (Urdu, Arabic)
  * - NHS-appropriate medical terminology
  * - Mobile-optimized with timeout and retry logic
  *

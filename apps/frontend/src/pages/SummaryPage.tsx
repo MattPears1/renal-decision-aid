@@ -2,7 +2,7 @@
  * @fileoverview Session summary page for the NHS Renal Decision Aid.
  * Displays a comprehensive summary of the user's session including journey stage,
  * value priorities, treatments explored, and questions for their healthcare team.
- * Supports printing, sharing, and QR code functionality.
+ * Supports printing, sharing, and PDF download functionality.
  *
  * @module pages/SummaryPage
  * @version 2.6.0
@@ -441,59 +441,58 @@ export default function SummaryPage() {
         </div>
 
         {/* Share with Your Kidney Team Section */}
-        <section className="bg-gradient-to-r from-nhs-blue/5 to-nhs-aqua-green/5 border-2 border-nhs-blue/20 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden print:border-gray-300 print:rounded-lg print-qr-section print-keep-together" aria-labelledby="share-team-heading">
+        <section className="bg-gradient-to-r from-nhs-blue/5 to-nhs-aqua-green/5 border-2 border-nhs-blue/20 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 overflow-hidden print:border-gray-300 print:rounded-lg print-share-section print-keep-together" aria-labelledby="share-team-heading">
           <div className="p-4 sm:p-6 md:p-8">
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className="flex-1 text-center md:text-left">
-                <h2 id="share-team-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-2 flex items-center justify-center md:justify-start gap-2">
-                  <TeamIcon className="w-6 h-6 text-nhs-blue" />
-                  {t('summary.shareWithTeam.title', 'Share with Your Kidney Team')}
-                </h2>
-                <p className="text-sm sm:text-base text-text-secondary mb-4">
-                  {t('summary.shareWithTeam.description', 'Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.')}
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start print:hidden">
-                  <button
-                    onClick={handlePrint}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-nhs-blue text-white font-medium rounded-lg hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm"
-                  >
-                    <PrintIcon className="w-4 h-4" />
-                    {t('summary.print', 'Print Summary')}
-                  </button>
-                  <button
-                    onClick={handleCopyLink}
-                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-nhs-blue text-nhs-blue font-medium rounded-lg hover:bg-nhs-blue/5 transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm"
-                  >
-                    {linkCopied ? (
-                      <>
-                        <CheckIcon className="w-4 h-4" />
-                        {t('summary.linkCopied', 'Link copied!')}
-                      </>
-                    ) : (
-                      <>
-                        <CopyIcon className="w-4 h-4" />
-                        {t('summary.copyLink', 'Copy Link')}
-                      </>
-                    )}
-                  </button>
-                </div>
-                <p className="text-xs text-text-muted mt-3 hidden print:block">
-                  {t('summary.shareWithTeam.printTip', 'Print this page or save as PDF to bring to your appointment')}
-                </p>
+            <div className="text-center md:text-left">
+              <h2 id="share-team-heading" className="text-lg sm:text-xl font-bold text-text-primary mb-2 flex items-center justify-center md:justify-start gap-2">
+                <TeamIcon className="w-6 h-6 text-nhs-blue" />
+                {t('summary.shareWithTeam.title', 'Share with Your Kidney Team')}
+              </h2>
+              <p className="text-sm sm:text-base text-text-secondary mb-5">
+                {t('summary.shareWithTeam.description', 'Take this summary to your next appointment. Your kidney care team can help you discuss your options and answer your questions.')}
+              </p>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center md:justify-start print:hidden">
+                <button
+                  onClick={handlePrint}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[48px] bg-nhs-blue text-white font-semibold rounded-xl hover:bg-nhs-blue-dark transition-colors focus:outline-none focus:ring-2 focus:ring-focus shadow-sm text-sm sm:text-base"
+                >
+                  <PrintIcon className="w-5 h-5" />
+                  {t('summary.printOrSave', 'Print / Save as PDF')}
+                </button>
+                <button
+                  onClick={() => navigator.share?.({
+                    title: t('summary.shareTitle', 'My Kidney Treatment Summary'),
+                    text: t('summary.shareText', 'Check out this kidney treatment decision tool'),
+                    url: window.location.origin,
+                  }).catch(() => {})}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[48px] border-2 border-nhs-blue text-nhs-blue font-semibold rounded-xl hover:bg-nhs-blue/5 transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base"
+                >
+                  <ShareIcon className="w-5 h-5" />
+                  {t('summary.shareToDevice', 'Share to Device')}
+                </button>
+                <button
+                  onClick={handleCopyLink}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[48px] border-2 border-nhs-pale-grey text-text-secondary font-medium rounded-xl hover:bg-nhs-pale-grey/20 transition-colors focus:outline-none focus:ring-2 focus:ring-focus text-sm sm:text-base"
+                >
+                  {linkCopied ? (
+                    <>
+                      <CheckIcon className="w-4 h-4 text-nhs-green" />
+                      {t('summary.linkCopied', 'Link copied!')}
+                    </>
+                  ) : (
+                    <>
+                      <CopyIcon className="w-4 h-4" />
+                      {t('summary.copyLink', 'Copy Link')}
+                    </>
+                  )}
+                </button>
               </div>
-
-              {/* QR Code */}
-              <div className="flex-shrink-0 text-center">
-                <div className="bg-white p-4 rounded-xl border border-nhs-pale-grey shadow-sm print:shadow-none print:border-gray-300">
-                  <QRCodeSVG url={window.location.origin} size={120} />
-                  <p className="text-xs text-text-secondary mt-2 font-medium">
-                    {t('summary.shareWithTeam.qrTitle', 'Scan to access this tool')}
-                  </p>
-                </div>
-                <p className="text-[10px] text-text-muted mt-2 max-w-[150px] mx-auto print:max-w-none">
-                  {t('summary.shareWithTeam.qrDescription', 'Your healthcare team can scan this code')}
-                </p>
-              </div>
+              <p className="text-xs text-text-muted mt-4 print:hidden">
+                {t('summary.shareWithTeam.saveHint', 'Tip: Use "Print / Save as PDF" to download a copy to your device')}
+              </p>
+              <p className="text-xs text-text-muted mt-3 hidden print:block">
+                {t('summary.shareWithTeam.printTip', 'Printed from the NHS Kidney Treatment Decision Aid')}
+              </p>
             </div>
           </div>
         </section>
@@ -594,15 +593,28 @@ export default function SummaryPage() {
 
         {/* Action Buttons */}
         <div className="bg-gradient-to-r from-nhs-green/10 to-nhs-green/5 rounded-xl sm:rounded-2xl p-5 sm:p-8 mb-6 text-center print:hidden">
-          <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">{t('summary.readyForAppointment')}</h3>
-          <p className="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6">{t('summary.printInstructions')}</p>
-          <button
-            onClick={handlePrint}
-            className="group inline-flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
-          >
-            <PrintIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-            {t('summary.printForAppointment', 'Print for Your Appointment')}
-          </button>
+          <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">{t('summary.readyForAppointment', 'Ready for Your Appointment?')}</h3>
+          <p className="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6">{t('summary.saveInstructions', 'Save or print this summary to bring with you.')}</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button
+              onClick={handlePrint}
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-gradient-to-r from-nhs-green to-nhs-green-dark text-white font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+            >
+              <PrintIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+              {t('summary.printOrSave', 'Print / Save as PDF')}
+            </button>
+            <button
+              onClick={() => navigator.share?.({
+                title: t('summary.shareTitle', 'My Kidney Treatment Summary'),
+                text: t('summary.shareText', 'Check out this kidney treatment decision tool'),
+                url: window.location.origin,
+              }).catch(() => {})}
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-4 min-h-[48px] border-2 border-nhs-green text-nhs-green-dark font-bold text-base sm:text-lg rounded-xl hover:bg-nhs-green/10 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-focus focus:ring-offset-2"
+            >
+              <ShareIcon className="w-5 h-5" />
+              {t('summary.shareToDevice', 'Share to Device')}
+            </button>
+          </div>
         </div>
 
         {/* Start Over Button */}
@@ -714,100 +726,6 @@ function ProgressCard({ icon, value, label, color, percentage, isBadge }: Progre
   );
 }
 
-/**
- * Simple QR Code SVG generator component.
- * Generates a basic QR-like pattern for visual purposes.
- */
-function QRCodeSVG({ url, size = 120 }: { url: string; size?: number }) {
-  // Simple deterministic pattern based on URL
-  const generatePattern = (str: string) => {
-    const grid: boolean[][] = [];
-    const gridSize = 21;
-
-    // Initialize grid
-    for (let i = 0; i < gridSize; i++) {
-      grid[i] = [];
-      for (let j = 0; j < gridSize; j++) {
-        grid[i][j] = false;
-      }
-    }
-
-    // Add finder patterns (corners)
-    const addFinderPattern = (startX: number, startY: number) => {
-      for (let x = 0; x < 7; x++) {
-        for (let y = 0; y < 7; y++) {
-          const isOuter = x === 0 || x === 6 || y === 0 || y === 6;
-          const isInner = x >= 2 && x <= 4 && y >= 2 && y <= 4;
-          grid[startY + y][startX + x] = isOuter || isInner;
-        }
-      }
-    };
-
-    addFinderPattern(0, 0);
-    addFinderPattern(gridSize - 7, 0);
-    addFinderPattern(0, gridSize - 7);
-
-    // Add timing patterns
-    for (let i = 8; i < gridSize - 8; i++) {
-      grid[6][i] = i % 2 === 0;
-      grid[i][6] = i % 2 === 0;
-    }
-
-    // Fill data area with deterministic pattern from URL
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = ((hash << 5) - hash) + str.charCodeAt(i);
-      hash = hash & hash;
-    }
-
-    for (let y = 0; y < gridSize; y++) {
-      for (let x = 0; x < gridSize; x++) {
-        // Skip finder patterns and timing patterns
-        const inFinder1 = x < 8 && y < 8;
-        const inFinder2 = x >= gridSize - 8 && y < 8;
-        const inFinder3 = x < 8 && y >= gridSize - 8;
-        const onTiming = x === 6 || y === 6;
-
-        if (!inFinder1 && !inFinder2 && !inFinder3 && !onTiming) {
-          const seed = hash + x * gridSize + y;
-          grid[y][x] = (seed * 9301 + 49297) % 233280 > 116640;
-        }
-      }
-    }
-
-    return grid;
-  };
-
-  const grid = generatePattern(url);
-  const cellSize = size / 21;
-
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      className="print-qr-code"
-      role="img"
-      aria-label="QR code to access the NHS Kidney Treatment Decision Aid"
-    >
-      <rect width={size} height={size} fill="white" />
-      {grid.map((row, y) =>
-        row.map((cell, x) =>
-          cell ? (
-            <rect
-              key={`${x}-${y}`}
-              x={x * cellSize}
-              y={y * cellSize}
-              width={cellSize}
-              height={cellSize}
-              fill="#005EB8"
-            />
-          ) : null
-        )
-      )}
-    </svg>
-  );
-}
 
 /**
  * Life Goals summary section component.

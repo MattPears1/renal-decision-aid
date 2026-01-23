@@ -1109,12 +1109,13 @@ body {
     background: white !important;
   }
 
-  /* Remove shadows and gradients */
+  /* Remove shadows */
   [class*="shadow"] {
     box-shadow: none !important;
   }
 
-  [class*="bg-gradient"] {
+  /* Simplify gradients to solid backgrounds for print */
+  [class*="bg-gradient"]:not(.summary-section-header):not(.print-share-section) {
     background: white !important;
   }
 
@@ -1131,29 +1132,44 @@ body {
   /* NHS Branding in print */
   .print-nhs-header {
     border-bottom: 3pt solid #005EB8 !important;
-    padding-bottom: 12pt !important;
-    margin-bottom: 16pt !important;
+    padding-bottom: 14pt !important;
+    margin-bottom: 20pt !important;
+    background: white !important;
+  }
+
+  .print-nhs-header h1 {
+    font-size: 18pt !important;
+    color: #212b32 !important;
+    margin-top: 6pt !important;
   }
 
   .print-nhs-footer {
-    border-top: 1pt solid #d1d5db !important;
+    border-top: 2pt solid #005EB8 !important;
     padding-top: 12pt !important;
-    margin-top: 16pt !important;
+    margin-top: 20pt !important;
     font-size: 9pt;
-    color: #666 !important;
+    color: #4c6272 !important;
   }
 
   /* Summary page specific print styles */
   .summary-section {
-    margin-bottom: 16pt !important;
+    margin-bottom: 14pt !important;
     page-break-inside: avoid;
+    border: 1pt solid #d1d5db !important;
+    border-radius: 6pt !important;
+    overflow: hidden;
   }
 
   .summary-section-header {
-    background: #f3f4f6 !important;
-    padding: 8pt 12pt !important;
+    background: #f0f4f5 !important;
+    padding: 10pt 14pt !important;
     border-bottom: 2pt solid #005EB8 !important;
     font-weight: bold !important;
+  }
+
+  .summary-section-header h2 {
+    font-size: 12pt !important;
+    color: #212b32 !important;
   }
 
   /* Value bars in print */
@@ -1191,20 +1207,14 @@ body {
     border-bottom: none !important;
   }
 
-  /* QR Code print styles */
-  .print-qr-section {
+  /* Share section print styles */
+  .print-share-section {
     text-align: center !important;
-    padding: 12pt !important;
-    border: 1pt dashed #d1d5db !important;
+    padding: 16pt !important;
+    border: 2pt solid #005EB8 !important;
     border-radius: 8pt !important;
-    background: #f9fafb !important;
+    background: #f0f4f5 !important;
     page-break-inside: avoid;
-  }
-
-  .print-qr-code {
-    width: 100pt !important;
-    height: 100pt !important;
-    margin: 0 auto 8pt auto !important;
   }
 
   /* Progress indicators in print */
@@ -1233,14 +1243,6 @@ body {
     padding: 10pt !important;
     border-left: 3pt solid #005EB8 !important;
     background: #f0f4f5 !important;
-    margin: 12pt 0 !important;
-    font-size: 10pt !important;
-  }
-
-  .print-warning-box {
-    padding: 10pt !important;
-    border-left: 3pt solid #FFB81C !important;
-    background: #fff7e6 !important;
     margin: 12pt 0 !important;
     font-size: 10pt !important;
   }
@@ -1286,6 +1288,75 @@ body {
   .print-badge-primary {
     background: #dbeafe !important;
     color: #1e40af !important;
+  }
+
+  /* Enhanced progress cards in print */
+  .summary-section .grid {
+    gap: 8pt !important;
+  }
+
+  .summary-section .grid > div {
+    padding: 8pt !important;
+    border: 0.5pt solid #d1d5db !important;
+    border-radius: 4pt !important;
+    background: #f9fafb !important;
+  }
+
+  /* Treatment comparison bars in print */
+  .summary-section [class*="bg-nhs-green"],
+  .summary-section [class*="bg-nhs-blue"] {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Print-friendly icon containers */
+  .summary-section-header [class*="rounded-lg"],
+  .summary-section-header [class*="rounded-xl"] {
+    background: #005EB8 !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .summary-section-header [class*="rounded-lg"] svg,
+  .summary-section-header [class*="rounded-xl"] svg {
+    color: white !important;
+  }
+
+  /* Ensure section content has good padding */
+  .summary-section > div:not(.summary-section-header) {
+    padding: 12pt !important;
+  }
+
+  /* Nice separator lines between list items */
+  .summary-section ol li,
+  .summary-section ul li {
+    padding-bottom: 6pt !important;
+    margin-bottom: 6pt !important;
+    border-bottom: 0.5pt solid #e5e7eb !important;
+  }
+
+  .summary-section ol li:last-child,
+  .summary-section ul li:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Disclaimer box enhancement */
+  .print-warning-box {
+    padding: 12pt !important;
+    border-left: 4pt solid #FFB81C !important;
+    background: #fffbeb !important;
+    margin: 14pt 0 !important;
+    font-size: 9pt !important;
+    border-radius: 0 4pt 4pt 0 !important;
+  }
+
+  /* Print page URL at bottom of printed document */
+  .print-nhs-footer::after {
+    content: "";
+    display: block;
+    margin-top: 8pt;
+    font-size: 8pt;
+    color: #768692;
   }
 }
 

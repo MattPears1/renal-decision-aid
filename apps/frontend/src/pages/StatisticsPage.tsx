@@ -165,8 +165,14 @@ export default function StatisticsPage() {
                   >
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-medium text-text-primary text-sm">
-                        {t(`statistics.modalities.${item.modality === 'conservative' ? 'conservative' : item.modality}`,
-                          item.modality)}
+                        {t(`statistics.modalities.${
+                          ({
+                            'transplant': 'transplant',
+                            'haemodialysis': 'haemodialysis',
+                            'peritoneal-dialysis': 'peritonealDialysis',
+                            'conservative': 'conservative',
+                          } as Record<string, string>)[item.modality] || item.modality
+                        }`, item.modality)}
                       </span>
                       <span className="text-sm font-semibold text-text-primary">
                         {item.fiveYearSurvival

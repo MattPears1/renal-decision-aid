@@ -6,7 +6,13 @@
     "skip": "Skip",
     "returnToHub": "Return to Hub",
     "backToHub": "Back to Hub",
+    "backToTreatments": "Back to treatments",
+    "returnToHome": "Return to Home",
     "continueToQuestionnaire": "Continue to questionnaire"
+  },
+  "error": {
+    "treatmentNotFound": "Treatment Not Found",
+    "treatmentNotFoundDesc": "The treatment you are looking for could not be found."
   },
   "common": {
     "loading": "Loading...",
@@ -39,6 +45,7 @@
     "settingsLabel": "Accessibility options - Adjust text size, contrast, and other accessibility settings",
     "settingsTitle": "Adjust text size, contrast, and other accessibility settings",
     "breadcrumb": "Breadcrumb navigation",
+    "backToTop": "Back to top",
     "pageNavigation": "Page navigation",
     "faq": "Frequently asked questions",
     "frequentlyAskedQuestions": "Frequently asked questions",
@@ -73,6 +80,8 @@
     "startButtonAriaLabel": "Start your kidney treatment decision journey",
     "learnMore": "Learn More About Kidney Disease",
     "heroAriaLabel": "Welcome section",
+    "scrollDown": "Scroll to learn more",
+    "featuresLabel": "How It Works",
     "featuresHeading": "How This Tool Helps You",
     "featuresSubheading": "Everything you need to make an informed decision about your kidney treatment",
     "features": {
@@ -89,7 +98,9 @@
         "description": "Use on your phone, tablet, or computer. The tool adapts to your screen size automatically."
       }
     },
+    "yourJourney": "Your Journey",
     "aboutHeading": "What This Tool Does",
+    "aboutSubheading": "Three simple steps to help you understand your options",
     "about": {
       "paragraph1": "This decision aid will help you explore the different treatment options available for kidney failure. You can learn about each treatment at your own pace, think about what matters most to you, and create a summary to share with your doctor or nurse.",
       "paragraph2": "You will answer a few simple questions about your situation, then explore treatments that may be suitable for you. Your information stays private and is not saved after you close the browser.",
@@ -109,7 +120,7 @@
     "trustAriaLabel": "Trust and safety information",
     "trust": {
       "evidenceBased": "Evidence-based information",
-      "languages": "Available in 11 languages",
+      "languages": "Available in 15 languages",
       "accessible": "Accessible for all users",
       "noAccount": "No account required",
       "time": "15 minutes",
@@ -194,17 +205,6 @@
     "serviceName": "Kidney Treatment Decision Aid",
     "tagline": "Helping you make informed choices",
     "homeAriaLabel": "NHS Kidney Treatment Decision Aid - Home"
-  },
-  "progress": {
-    "language": "Language",
-    "privacy": "Privacy",
-    "yourJourney": "Your Journey",
-    "aboutYou": "About You",
-    "yourOptions": "Your Options",
-    "ariaLabel": "Progress through decision aid",
-    "stepOfTotal": "Step {{current}} of {{total}}",
-    "percentComplete": "{{percentage}}% complete",
-    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed"
   },
   "journey": {
     "title": "Where Are You in Your Kidney Care Journey?",
@@ -438,6 +438,8 @@
     "session": {
       "timeRemaining": "Session time remaining:",
       "extend": "Extend session",
+      "update": "Update",
+      "home": "Home",
       "updateAnswers": "Update My Answers",
       "startOver": "Start Over",
       "glossary": "Glossary"
@@ -449,21 +451,25 @@
     },
     "pathway": {
       "title": "How would you like to explore?",
+      "subtitle": "Choose the approach that feels right for you",
       "guided": {
         "title": "Your Recommended Journey",
         "badge": "Recommended",
         "description": "Follow a guided step-by-step path through treatment options tailored to your situation. Perfect if you want clear direction and support.",
+        "time": "About 15-20 minutes",
         "action": "Start guided journey"
       },
       "free": {
         "title": "Explore Freely",
         "description": "Browse all options at your own pace. Jump directly to topics that interest you. Ideal if you already know what you are looking for.",
+        "time": "At your own pace",
         "action": "Browse all options"
       }
     },
     "content": {
       "title": "Tools to Help You Decide",
-      "subtitle": "Explore each tool to make an informed decision"
+      "subtitle": "Explore each tool to make an informed decision",
+      "start": "Start exploring"
     },
     "cards": {
       "treatments": {
@@ -512,6 +518,13 @@
       "description": "View everything you have explored and create a summary to share with your kidney team at your next appointment.",
       "button": "View Your Summary",
       "badge": "Final Step"
+    },
+    "nav": {
+      "mobileLabel": "Quick navigation",
+      "home": "Home",
+      "tools": "Tools",
+      "progress": "Progress",
+      "summary": "Summary"
     },
     "quickAction": {
       "summary": "View Your Summary"
@@ -667,7 +680,7 @@
     "scrollHint": "Scroll horizontally to see all treatments",
     "tableHeading": "Treatment Comparison Table",
     "tableLabel": "Comparison of kidney treatment options",
-    "criteria": "Criteria",
+    "criteriaLabel": "Criteria",
     "recommended": "Recommended",
     "remember": "Remember",
     "guidance": "No treatment is perfect for everyone. The best choice depends on your personal situation, health, and values. This comparison is a starting point for discussions with your kidney team.",
@@ -1446,6 +1459,15 @@
     }
   },
   "progress": {
+    "language": "Language",
+    "privacy": "Privacy",
+    "yourJourney": "Your Journey",
+    "aboutYou": "About You",
+    "yourOptions": "Your Options",
+    "ariaLabel": "Progress through decision aid",
+    "stepOfTotal": "Step {{current}} of {{total}}",
+    "percentComplete": "{{percentage}}% complete",
+    "ariaProgressLabel": "Progress: {{current}} of {{total}} steps completed",
     "title": "Your Learning Journey",
     "yourProgress": "Your Progress",
     "complete": "complete",
@@ -1584,6 +1606,7 @@
     }
   },
   "treatment": {
+    "overview": "What is {{treatment}}?",
     "dayInLife": "A Day in the Life",
     "inSimpleTerms": "In Simple Terms",
     "inSimpleTermsDesc": "A plain-language explanation",
@@ -2248,5 +2271,239 @@
         "description": "Clinical guidelines for the management of chronic kidney disease."
       }
     }
+  },
+  "decision": {
+    "readiness": {
+      "title": "Decision Readiness",
+      "checklistTitle": "Your Exploration Checklist",
+      "level": {
+        "starting": "starting",
+        "exploring": "exploring",
+        "progressing": "progressing",
+        "ready": "ready"
+      },
+      "encouragement": {
+        "starting": "You are at the beginning of your exploration. Take your time to learn about each treatment option.",
+        "exploring": "Great start! Keep exploring to learn more about your options.",
+        "progressing": "You are making good progress! Consider completing the remaining sections.",
+        "ready": "Excellent! You have explored everything and are ready to discuss with your kidney team."
+      },
+      "checklist": {
+        "treatmentsExplored": "Explore Treatment Options",
+        "treatmentsExploredDesc": "View at least 2 treatment options to understand what is available",
+        "allTreatments": "View All Treatments",
+        "allTreatmentsDesc": "Explore all 4 treatment options for a complete picture",
+        "valuesCompleted": "Complete Values Exercise",
+        "valuesCompletedDesc": "Clarify what matters most to you in a treatment",
+        "comparisonViewed": "Compare Treatments",
+        "comparisonViewedDesc": "See how treatments compare side by side",
+        "questionsPrepared": "Prepare Questions",
+        "questionsPreparedDesc": "Use the chat to think about questions for your kidney team",
+        "journeyIdentified": "Identify Your Journey Stage",
+        "journeyIdentifiedDesc": "Understand where you are in your decision-making journey"
+      }
+    },
+    "journal": {
+      "title": "Decision Journal",
+      "noEntries": "Record your thoughts",
+      "addEntry": "Add a new thought",
+      "placeholder": "Write your thoughts here..."
+    },
+    "questions": {
+      "title": "Questions for Your Kidney Team",
+      "subtitle": "Based on your exploration, here are personalised questions you might want to ask at your next appointment.",
+      "instructions": "Select the questions you want to remember to ask.",
+      "selected": "selected",
+      "viewAll": "View all {{count}} questions",
+      "addCustom": "Add your own question",
+      "customPlaceholder": "Type your question here...",
+      "customLabel": "Your question",
+      "copy": "Copy to clipboard",
+      "copied": "Copied!",
+      "print": "Print questions",
+      "categories": {
+        "all": "All",
+        "general": "General",
+        "treatment": "Treatment",
+        "lifestyle": "Lifestyle",
+        "support": "Support"
+      },
+      "general": {
+        "suitability": "Which treatment options are most suitable for me given my overall health?",
+        "timeline": "What is the expected timeline for starting treatment, and how should I prepare?",
+        "support": "What support services are available to me and my family during this process?"
+      },
+      "reasons": {
+        "everyoneAsks": "A question most people find helpful to ask",
+        "planAhead": "Helps you plan ahead",
+        "knowYourTeam": "Understanding your support network",
+        "understandDiagnosis": "Helps you understand your diagnosis",
+        "preserveFunction": "Helps preserve kidney function",
+        "stayInformed": "Staying informed about your condition",
+        "bePrepared": "Being prepared for treatment",
+        "informedChoice": "Making an informed choice",
+        "optimizeOutcome": "Optimising your treatment outcome",
+        "flexibility": "Understanding your treatment flexibility",
+        "maintainHealth": "Maintaining your long-term health",
+        "qualityOfLife": "Quality of life considerations",
+        "supportEffectively": "Supporting effectively",
+        "lookAfterYourself": "Looking after yourself as a carer",
+        "basedOnValues": "Based on what you said matters to you"
+      },
+      "stage": {
+        "newlyDiagnosed": {
+          "tests": "What tests do I need, and what will they tell us about my kidney function?",
+          "next": "What are the next steps after my diagnosis, and when will I need to make treatment decisions?"
+        },
+        "monitoring": {
+          "slowDown": "What lifestyle changes can help slow down the progression of my kidney disease?",
+          "frequency": "How often should I have check-ups, and what signs should I watch for?"
+        },
+        "preparing": {
+          "timing": "When is the best time to start treatment, and how will I know when it is needed?",
+          "comparison": "How do the different treatment options compare for someone in my situation?"
+        },
+        "onDialysis": {
+          "optimizing": "How can I make the most of my current dialysis treatment?",
+          "changes": "Is it possible to change my treatment type if my current one is not working well for me?"
+        },
+        "transplantWaiting": {
+          "waitTime": "What is the expected waiting time for a transplant, and what can I do while waiting?",
+          "preparation": "How should I prepare myself physically and emotionally for the transplant?"
+        },
+        "postTransplant": {
+          "care": "What long-term care and monitoring will I need after my transplant?",
+          "lifestyle": "What lifestyle adjustments should I make to protect my transplanted kidney?"
+        },
+        "supporting": {
+          "helpHow": "How can I best support the person I care for through their treatment journey?",
+          "carerSupport": "What support is available specifically for carers and family members?"
+        }
+      },
+      "treatment": {
+        "transplant": {
+          "eligibility": "Am I eligible for a kidney transplant, and what factors affect my suitability?",
+          "livingDonor": "Could a family member or friend be a living donor, and how does that process work?",
+          "recovery": "What is the recovery process like after a transplant, and when can I return to normal activities?"
+        },
+        "hemodialysis": {
+          "schedule": "What does a typical haemodialysis schedule look like, and can it be adjusted?",
+          "home": "Could I do haemodialysis at home, and what equipment or support would I need?",
+          "access": "What type of dialysis access is best for me, and how is it created?"
+        },
+        "peritoneal": {
+          "suitable": "Is peritoneal dialysis suitable for me given my medical history and living situation?",
+          "training": "What training will I receive to do peritoneal dialysis at home?",
+          "lifestyle": "How will peritoneal dialysis affect my daily routine, including work and travel?"
+        },
+        "conservative": {
+          "symptoms": "How will my symptoms be managed with conservative care, and what can I expect?",
+          "support": "What palliative and supportive care services are available to me?",
+          "planning": "How can I plan ahead to ensure my wishes are respected?"
+        }
+      },
+      "values": {
+        "travel": "How will each treatment option affect my ability to travel and go on holiday?",
+        "hospitalTime": "How much time will I need to spend at the hospital or clinic for each treatment?",
+        "independence": "Which treatment gives me the most independence and control over my daily life?",
+        "familyBurden": "How much involvement will my family or carers need for each treatment option?",
+        "longevity": "Which treatment option offers the best long-term survival outcomes for someone like me?",
+        "qualityOfLife": "Which treatment is most likely to give me the best quality of life overall?",
+        "homeTreatment": "Can I receive my treatment at home, and what would that involve?",
+        "workActivities": "How will each treatment affect my ability to work or do the activities I enjoy?"
+      }
+    },
+    "stats": {
+      "title": "What Others in Similar Situations Chose",
+      "titleShort": "What Others Choose",
+      "subtitle": "You are not alone in making this decision. Here is what others with similar situations chose.",
+      "basedOnSimilar": "Based on similar journeys",
+      "chose": "chose",
+      "commonReasons": "Common reasons:",
+      "satisfactionLabel": "Satisfaction score (out of 5)",
+      "importantNote": "Important to remember",
+      "disclaimer": "These figures are illustrative and based on anonymised NHS data. Your choice should be based on your individual circumstances and discussions with your kidney team.",
+      "encouragement1": "Remember:",
+      "encouragement2": "There is no wrong choice. The best treatment is the one that works for your life and circumstances.",
+      "treatments": {
+        "monitoring": "Active monitoring",
+        "lifestyle": "Lifestyle changes",
+        "immediate": "Immediate treatment discussion",
+        "transplantPrep": "Early transplant preparation",
+        "homeHemo": "Home haemodialysis",
+        "livingDonor": "Living donor transplant",
+        "deceasedDonor": "Deceased donor transplant",
+        "activeMonitoring": "Active health monitoring",
+        "lifestyleFocused": "Lifestyle-focused approach"
+      },
+      "reasons": {
+        "monitoring": {
+          "1": "Preserves remaining kidney function for longer",
+          "2": "Allows time to understand all options fully"
+        },
+        "lifestyle": {
+          "1": "Can slow progression of kidney disease",
+          "2": "Improves overall health and wellbeing"
+        },
+        "immediate": {
+          "1": "Addresses urgent health needs quickly"
+        },
+        "transplantPrep": {
+          "1": "Best long-term outcomes when planned early"
+        },
+        "transplant": {
+          "1": "Best long-term survival outcomes",
+          "2": "Closest to normal lifestyle after recovery",
+          "3": "Freedom from regular dialysis sessions"
+        },
+        "hemodialysis": {
+          "1": "Professional care and monitoring at each session",
+          "2": "Regular contact with healthcare team",
+          "3": "Well-established and widely available treatment"
+        },
+        "peritoneal": {
+          "1": "Treatment can be done at home on your schedule",
+          "2": "More flexibility for work and daily activities"
+        },
+        "conservative": {
+          "1": "Focus on quality of life and comfort"
+        },
+        "homeHemo": {
+          "1": "Flexibility to dialyse at times that suit you"
+        },
+        "livingDonor": {
+          "1": "Shorter waiting time and better planned surgery"
+        },
+        "deceasedDonor": {
+          "1": "No need for a family member to undergo surgery"
+        },
+        "activeMonitoring": {
+          "1": "Catches any changes early for prompt action",
+          "2": "Provides peace of mind through regular check-ups"
+        },
+        "lifestyleFocused": {
+          "1": "Supports long-term transplant health through healthy habits"
+        }
+      }
+    },
+    "family": {
+      "titleShort": "Talk to Your Support Network",
+      "compactSubtitle": "Select who you want to talk to for conversation ideas.",
+      "roles": {
+        "partner": "Partner",
+        "children": "Children",
+        "parents": "Parents",
+        "friends": "Friends",
+        "employer": "Employer"
+      }
+    }
+  },
+  "explorationChecklist": {
+    "treatments-explored": "Explore Treatment Options",
+    "all-treatments": "View All Treatments",
+    "values-completed": "Complete Values Exercise",
+    "comparison-viewed": "Compare Treatments",
+    "questions-prepared": "Prepare Questions",
+    "journey-identified": "Identify Your Journey Stage"
   }
 }

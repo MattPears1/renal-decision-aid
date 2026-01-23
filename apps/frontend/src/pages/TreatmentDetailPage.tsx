@@ -140,7 +140,7 @@ export default function TreatmentDetailPage() {
             <div className="w-10 h-10 rounded-xl bg-nhs-blue/10 flex items-center justify-center">
               <svg className="w-5 h-5 text-nhs-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
             </div>
-            <h2 id="overview-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.overview', `What is ${treatment.title}?`)}</h2>
+            <h2 id="overview-heading" className="text-xl sm:text-2xl font-bold text-text-primary">{t('treatment.overview', { treatment: treatment.title, defaultValue: 'What is {{treatment}}?' })}</h2>
           </header>
           <div className="bg-white rounded-xl border border-nhs-pale-grey p-5 sm:p-6 shadow-sm">
             <div className="text-text-primary leading-relaxed space-y-4">

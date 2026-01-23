@@ -15,6 +15,7 @@ import NHSHeader from './NHSHeader';
 import NHSFooter from './NHSFooter';
 import AccessibilityModal from './AccessibilityModal';
 import BackToTop from './BackToTop';
+import ListenToPageButton from './ListenToPageButton';
 
 /**
  * Main layout component that wraps all pages.
@@ -92,6 +93,9 @@ export default function Layout() {
 
       {/* Back to Top Button */}
       <BackToTop threshold={400} />
+
+      {/* Listen to Page Button (Fixed Position - Bottom Left) */}
+      <ListenToPageButton />
 
       {/* Accessibility Settings Button (Fixed Position) */}
       <AccessibilityButton onOpenModal={() => setIsAccessibilityModalOpen(true)} />
