@@ -8,10 +8,8 @@ function TestConsumer() {
     session,
     isLoading,
     error,
-    timeRemaining,
     createSession,
     endSession,
-    extendSession,
     setLanguage,
     setJourneyStage,
     addQuestionnaireAnswer,
@@ -27,14 +25,12 @@ function TestConsumer() {
       <span data-testid="journey-stage">{session?.journeyStage || 'no-stage'}</span>
       <span data-testid="is-loading">{isLoading ? 'loading' : 'not-loading'}</span>
       <span data-testid="error">{error || 'no-error'}</span>
-      <span data-testid="time-remaining">{timeRemaining !== null ? timeRemaining : 'no-time'}</span>
       <span data-testid="answers-count">{session?.questionnaireAnswers.length || 0}</span>
       <span data-testid="ratings-count">{session?.valueRatings.length || 0}</span>
       <span data-testid="viewed-count">{session?.viewedTreatments.length || 0}</span>
       <span data-testid="chat-count">{session?.chatHistory.length || 0}</span>
       <button onClick={() => createSession('en')}>Create Session</button>
       <button onClick={() => endSession()}>End Session</button>
-      <button onClick={() => extendSession()}>Extend Session</button>
       <button onClick={() => setLanguage('hi')}>Set Hindi</button>
       <button onClick={() => setJourneyStage('newly-diagnosed')}>Set Stage</button>
       <button onClick={() => addQuestionnaireAnswer({ questionId: 'q1', value: 'yes', timestamp: Date.now() })}>
@@ -291,55 +287,24 @@ describe('SessionContext', () => {
       expect(screen.getByTestId('chat-count')).toHaveTextContent('1');
     });
 
-    it('extends session timeout', async () => {
-      render(
-        <SessionProvider>
-          <TestConsumer />
-        </SessionProvider>
-      );
-
-      await act(async () => {
-        screen.getByText('Create Session').click();
-      });
-
-      // Initial time should be around 15 minutes (900000ms)
-      const initialTime = Number(screen.getByTestId('time-remaining').textContent);
-      expect(initialTime).toBeGreaterThan(890000); // Allow some tolerance
-
-      // Advance time by 1 minute
-      await act(async () => {
-        vi.advanceTimersByTime(60000);
-      });
-
-      // Time should have decreased
-      const timeAfterDecrease = Number(screen.getByTestId('time-remaining').textContent);
-      expect(timeAfterDecrease).toBeLessThan(initialTime);
-
-      // Extend session
-      await act(async () => {
-        screen.getByText('Extend Session').click();
-      });
-
-      // Time should be reset to full duration (15 minutes = 900000ms)
-      const newTime = Number(screen.getByTestId('time-remaining').textContent);
-      expect(newTime).toBeGreaterThan(timeAfterDecrease);
-    });
   });
 
-  describe('useSessionTimer hook', () => {
-    it('returns zero values when no session exists', () => {
+  describe('useSessionTimer hook (deprecated)', () => {
+    it('returns static zero values (timer functionality removed)', () => {
       render(
         <SessionProvider>
           <TimerTestConsumer />
         </SessionProvider>
       );
 
+      // Timer is now deprecated - returns static values
       expect(screen.getByTestId('timer-minutes')).toHaveTextContent('0');
       expect(screen.getByTestId('timer-seconds')).toHaveTextContent('0');
       expect(screen.getByTestId('timer-is-warning')).toHaveTextContent('ok');
+      expect(screen.getByTestId('timer-formatted')).toHaveTextContent('--:--');
     });
 
-    it('formats time correctly when session exists', async () => {
+    it('returns static values even after creating session (no timer)', async () => {
       // Create a combined test component
       function CombinedConsumer() {
         const { createSession } = useSession();
@@ -365,44 +330,10 @@ describe('SessionContext', () => {
         screen.getByText('Create').click();
       });
 
-      // Initial time should be 15 minutes (15:00)
-      expect(screen.getByTestId('timer-minutes')).toHaveTextContent('15');
+      // Timer is deprecated - returns static values regardless of session
+      expect(screen.getByTestId('timer-minutes')).toHaveTextContent('0');
       expect(screen.getByTestId('timer-seconds')).toHaveTextContent('0');
-      expect(screen.getByTestId('timer-formatted')).toHaveTextContent('15:00');
-    });
-
-    it('shows warning when time is below threshold', async () => {
-      function CombinedConsumer() {
-        const { createSession } = useSession();
-        const { isWarning } = useSessionTimer();
-
-        return (
-          <div>
-            <span data-testid="timer-is-warning">{isWarning ? 'warning' : 'ok'}</span>
-            <button onClick={() => createSession('en')}>Create</button>
-          </div>
-        );
-      }
-
-      render(
-        <SessionProvider>
-          <CombinedConsumer />
-        </SessionProvider>
-      );
-
-      await act(async () => {
-        screen.getByText('Create').click();
-      });
-
-      // Initially should not be warning (15 minutes left)
-      expect(screen.getByTestId('timer-is-warning')).toHaveTextContent('ok');
-
-      // Advance time by 11 minutes (leaving 4 minutes, which is below 5-minute threshold)
-      await act(async () => {
-        vi.advanceTimersByTime(11 * 60 * 1000);
-      });
-
-      expect(screen.getByTestId('timer-is-warning')).toHaveTextContent('warning');
+      expect(screen.getByTestId('timer-formatted')).toHaveTextContent('--:--');
     });
   });
 });
